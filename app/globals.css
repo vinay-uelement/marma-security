@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 
-
 @font-face {
   font-family: "Inter";
   src: url("/fonts/inter.woff2") format("woff2");
@@ -40,6 +39,11 @@
   --color-white: #FFFFFF;
   --color-nav-text: #101010;
 
+  /* ================= Navbar Styles ================= */
+  --nav-gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.36) 100%);
+  --nav-blur: blur(1000px);
+  --nav-shadow: 0px 4px 24px -1px #00000033;
+
   /* Optional future tokens */
   --color-border: #E5E5E5;
   --color-muted: #6B7280;
@@ -66,7 +70,6 @@
   --font-banner: var(--font-banner);
 }
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -79,7 +82,69 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.fl2 {
+  @apply font-body font-normal text-[16px] leading-[30px] text-nav-text hover:font-medium transition-all text-[var(--color-nav-text)];
+}
 
+.nav-logo {
+  @apply h-5 sm:h-6 lg:h-8 w-auto object-contain max-w-[100px] sm:max-w-none;
+}
+
+.nav-icon {
+  @apply w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] lg:w-[34px] lg:h-[34px] object-contain;
+}
+
+.footer-logo {
+  @apply h-8 md:h-10 w-auto object-contain;
+}
+
+.footer-social-icon {
+  @apply w-[20px] h-[20px] object-contain;
+}
+
+.footer-link {
+  @apply font-body font-semibold text-[20px] leading-[100%] text-white hover:text-white/70 transition-colors;
+}
+
+.footer-btn-text {
+  @apply font-banner font-normal text-[24px] leading-[60px];
+}
+
+.footer-container {
+  @apply bg-[#5C0D0D] text-white pt-16 relative overflow-hidden;
+}
+
+.footer-bottom-bar {
+  @apply bg-[#6C1717] mt-8 border-t border-white/10;
+}
+
+.footer-form-glass {
+  background: linear-gradient(130.96deg, rgba(255, 255, 255, 0.55) -36.72%, rgba(255, 255, 255, 0.1) 100%);
+  border: 1px solid #FFFFFF;
+  backdrop-filter: blur(45.73509216308594px);
+  box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
+  @apply w-full max-w-[550px] rounded-3xl p-8 lg:p-10;
+}
+
+.footer-input-field {
+  background: rgba(212, 212, 212, 0.08);
+  border: 1px solid #FFFFFF;
+  color: #D4D4D433;
+  box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
+  @apply font-body font-normal text-[20px] leading-[30px] rounded-[14px] px-5 py-4 text-white placeholder-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all w-full;
+}
+
+.footer-input-field::placeholder {
+  @apply text-white/70 font-body font-normal text-[18px] leading-[30px];
+}
+
+
+.navbar-glass {
+  background: var(--nav-gradient);
+  backdrop-filter: var(--nav-blur);
+  -webkit-backdrop-filter: var(--nav-blur);
+  box-shadow: var(--nav-shadow);
+}
 
 h1,
 h2,
@@ -99,30 +164,6 @@ p {
 /* Banner-specific utility class */
 .banner-heading {
   font-family: var(--font-banner);
-}
-
-/* =========================
-   🔘 Reusable Utility Classes
-========================= */
-
-.text-primary {
-  color: var(--color-text-primary);
-}
-
-.text-accent {
-  color: var(--color-accent);
-}
-
-.bg-primary {
-  background-color: var(--color-bg-primary);
-}
-
-.bg-accent {
-  background-color: var(--color-accent);
-}
-
-.text-white {
-  color: var(--color-white);
 }
 
 

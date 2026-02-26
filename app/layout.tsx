@@ -17,8 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased flex flex-col min-h-screen">
         <Navbar />
-        {/* Main content pushed down to account for the fixed header height */}
-        <main className="flex-grow pt-16">
+        <main className="flex-grow ">
           {children}
         </main>
         <Footer />
