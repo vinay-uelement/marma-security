@@ -1,4 +1,5 @@
 import Banner from "@/components/global/Banner";
+import Testimonial from "@/components/testimonial/Testimonial";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           rightImageAlt="Marma Security Device"
         // rightImage="/your-device.png" // Uncomment when adding the device image later
         />
+        <Testimonial />
       </main>
     </div>
   );

@@ -138,6 +138,28 @@ body {
   @apply text-white/70 font-body font-normal text-[18px] leading-[30px];
 }
 
+/* ================= Testimonial Styles ================= */
+.tm-header-pro {
+  @apply font-title font-bold text-[32px] leading-[1.2] md:text-[42px] lg:text-[52px] lg:leading-[42px] tracking-normal;
+}
+
+.tm-card-name-bold {
+  @apply font-title font-semibold text-[24px] leading-[1.2] lg:text-[30px] lg:leading-[42px] tracking-normal;
+}
+
+.tm-card-text-body {
+  @apply font-body font-normal text-[13px] leading-[1.6] lg:text-[14px] lg:leading-[28px] tracking-normal;
+  color: #EAEAEA;
+}
+
+.tm-card-subtitle-reg {
+  @apply font-body font-normal text-[14px] leading-[1.5] lg:text-[16px] lg:leading-[42px] tracking-normal;
+  color: #ECECEC;
+}
+
+.tm-card-rating {
+  @apply font-title font-bold text-[16px] lg:text-[18px] leading-[42px] text-[#B1B1B1];
+}
 
 .navbar-glass {
   background: var(--nav-gradient);
@@ -146,14 +168,39 @@ body {
   box-shadow: var(--nav-shadow);
 }
 
+/* ================= Product Page Styles ================= */
+.prod-hero-title {
+  @apply font-banner text-[#323232] font-normal text-[28px] md:text-[32px] leading-[1.3] md:leading-[42px] tracking-normal;
+}
+
+.prod-hero-desc {
+  @apply font-body font-normal text-[16px] md:text-[18px] leading-[1.5] md:leading-[28px] tracking-normal;
+  color: #323232;
+}
+
+/* ================= Product Showcase Styles ================= */
+.ps-section-name {
+  @apply font-banner font-normal text-[28px] md:text-[32px] leading-[60px] tracking-normal;
+  color: #000000;
+}
+
+.ps-feature-heading {
+  @apply font-body font-normal text-[26px] md:text-[34px] leading-[44px] tracking-normal;
+  color: #323232;
+}
+
+.ps-feature-text {
+  @apply font-body font-normal text-[16px] md:text-[18px] leading-[28px] tracking-normal;
+  color: #323232;
+}
+
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-title);
-  color: var(--color-text-primary);
 }
 
 p {

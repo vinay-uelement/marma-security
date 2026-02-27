@@ -38,7 +38,7 @@ export default function Navbar() {
                 <nav className="hidden lg:flex items-center lg:space-x-6 xl:space-x-10 whitespace-nowrap">
                     <a href="#" className="fl2">Technology</a>
                     <a href="#" className="fl2">Solutions</a>
-                    <a href="#" className="fl2">Products</a>
+                    <a href="/product" className="fl2">Products</a>
                     <a href="#" className="fl2">Partners</a>
                     <a href="#" className="fl2">About us</a>
                 </nav>
@@ -99,7 +99,7 @@ export default function Navbar() {
                 <div className="lg:hidden absolute top-[110%] left-0 w-full navbar-glass rounded-2xl py-5 px-6 shadow-xl flex flex-col space-y-4 z-40">
                     <a href="#" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Technology</a>
                     <a href="#" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Solutions</a>
-                    <a href="#" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Products</a>
+                    <a href="/product" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Products</a>
                     <a href="#" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Partners</a>
                     <a href="#" className="fl2 pb-3" onClick={() => setIsMobileMenuOpen(false)}>About us</a>
                 </div>
