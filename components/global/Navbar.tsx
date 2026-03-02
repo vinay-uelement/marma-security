@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useState, useEffect } from "react"
 
 export default function Navbar() {
@@ -24,20 +25,22 @@ export default function Navbar() {
             <div className="navbar-glass flex items-center justify-between gap-4 lg:gap-6 px-4 lg:px-6 py-3 rounded-full shadow-lg relative z-50">
                 {/* Left Side: Logo */}
                 <div className="flex flex-1 items-center min-w-0">
-                    <Image
-                        src="/logo.png"
-                        alt="Marma Security"
-                        width={200}
-                        height={40}
-                        className="nav-logo"
-                        priority /* Since it's LCP for the header */
-                    />
+                    <Link href="/">
+                        <Image 
+                            src="/logo.png"
+                            alt="Marma Security"
+                            width={200}
+                            height={40}
+                            className="nav-logo"
+                            priority /* Since it's LCP for the header */
+                        />
+                    </Link>
                 </div>
 
                 {/* Center: Desktop Navigation Links */}
                 <nav className="hidden lg:flex items-center lg:space-x-6 xl:space-x-10 whitespace-nowrap">
                     <a href="#" className="fl2">Technology</a>
-                    <a href="#" className="fl2">Solutions</a>
+                    <a href="/solutions" className="fl2">Solutions</a>
                     <a href="/product" className="fl2">Products</a>
                     <a href="#" className="fl2">Partners</a>
                     <a href="#" className="fl2">About us</a>
@@ -98,7 +101,7 @@ export default function Navbar() {
             {isMobileMenuOpen && (
                 <div className="lg:hidden absolute top-[110%] left-0 w-full navbar-glass rounded-2xl py-5 px-6 shadow-xl flex flex-col space-y-4 z-40">
                     <a href="#" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Technology</a>
-                    <a href="#" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Solutions</a>
+                    <a href="/solutions" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Solutions</a>
                     <a href="/product" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Products</a>
                     <a href="#" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Partners</a>
                     <a href="#" className="fl2 pb-3" onClick={() => setIsMobileMenuOpen(false)}>About us</a>

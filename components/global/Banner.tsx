@@ -18,6 +18,8 @@ export interface BannerProps {
     buttons?: BannerButton[];
     rightImage?: string;
     rightImageAlt?: string;
+    showRightImageCircle?: boolean;
+    titleClassName?: string;
 }
 
 export default function Banner({
@@ -27,7 +29,9 @@ export default function Banner({
     subtitle,
     buttons = [],
     rightImage,
-    rightImageAlt = "Banner Image"
+    rightImageAlt = "Banner Image",
+    showRightImageCircle = false,
+    titleClassName = "font-banner text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-sm"
 }: BannerProps) {
     // Dynamic height class assignment based on the prop
     const heightClass = heightVariant === '900' ? 'min-h-[900px] lg:h-[900px]' : 'min-h-[810px] lg:h-[810px]';
@@ -49,7 +53,7 @@ export default function Banner({
                     {/* Left Column: Text, Subtitle, and Buttons */}
                     <div className="flex flex-col space-y-6 lg:pr-10 text-white z-20">
                         {/* Title text */}
-                        <div className="font-banner text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-sm">
+                        <div className={titleClassName}>
                             {title}
                         </div>
 
@@ -66,17 +70,21 @@ export default function Banner({
                                 {buttons.map((btn, index) => {
                                     const isPrimary = btn.variant !== 'secondary' && btn.variant !== 'outline';
 
-                                    const baseClass = "flex items-center justify-between gap-5 rounded-full pl-8 pr-2 py-2 transition-transform hover:scale-[1.02] tracking-wide group shadow-sm";
+                                    const baseClass = isPrimary
+                                        ? "inline-flex items-center justify-between gap-4 md:gap-5 rounded-full pl-6 md:pl-8 pr-1.5 py-1.5 transition-transform hover:scale-[1.02] group shadow-sm w-fit"
+                                        : "inline-flex items-center justify-between gap-4 md:gap-5 rounded-full pl-6 md:pl-8 pr-2 py-2 transition-transform hover:scale-[1.02] tracking-wide group shadow-sm w-fit";
 
                                     const variantClass = isPrimary
-                                        ? "bg-[#FF0000] text-white hover:bg-[#d12222]"
+                                        ? "bg-[#FF0000] text-white hover:bg-[#E10000]"
                                         : "bg-transparent border border-white text-white hover:bg-white/10";
 
-                                    const textClass = "footer-btn-text tracking-[0.02em]";
+                                    const textClass = isPrimary
+                                        ? "font-banner text-[20px] md:text-[24px] font-normal  tracking-[-0.01em]"
+                                        : "footer-btn-text tracking-[0.02em]";
 
                                     const iconContainerClass = isPrimary
-                                        ? "bg-white text-[#FF0000] rounded-full p-2 group-hover:bg-gray-100 transition-colors"
-                                        : "border border-white text-white rounded-full p-2 group-hover:bg-white/10 transition-colors";
+                                        ? "bg-[#F4F4F4] text-[#FF0000] rounded-full p-2 md:p-2.5 flex items-center justify-center shrink-0 group-hover:bg-white transition-colors"
+                                        : "border border-white text-white rounded-full p-2 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors";
 
                                     const ButtonContent = (
                                         <button
@@ -109,13 +117,16 @@ export default function Banner({
 
                     {/* Right Column: Hero Graphic/Image conditionally */}
                     {rightImage && (
-                        <div className="flex justify-center lg:justify-end items-center relative z-20 mt-8 lg:mt-0">
-                            <div className="relative w-full max-w-[500px] xl:max-w-[650px] aspect-square lg:aspect-[4/3]">
+                        <div className="flex justify-center lg:justify-end items-center relative z-20 mt-12 lg:mt-0 w-full lg:w-auto">
+                            <div className="relative w-full max-w-[350px] sm:max-w-[400px] xl:max-w-[450px] aspect-square flex items-center justify-center">
+                                {showRightImageCircle && (
+                                    <div className="absolute inset-0 m-auto w-[90%] h-[90%] rounded-full bg-[#E12120] shadow-2xl" />
+                                )}
                                 <Image
                                     src={rightImage}
                                     alt={rightImageAlt}
                                     fill
-                                    className="object-contain"
+                                    className={`object-contain z-10 ${showRightImageCircle ? 'scale-[1.15] drop-shadow-2xl' : ''}`}
                                     priority={true}
                                 />
                             </div>

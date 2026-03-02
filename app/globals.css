@@ -194,14 +194,19 @@ body {
   color: #323232;
 }
 
+/* ================= Solutions Page Styles ================= */
+.solutions-faded-bg-text {
+  @apply font-body font-bold text-[36px] md:text-[42px] leading-[62px] tracking-[-0.01em] uppercase whitespace-nowrap;
+}
+
+
 
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-}
+h6 {}
 
 p {
   font-family: var(--font-body);
