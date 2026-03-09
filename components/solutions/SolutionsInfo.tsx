@@ -5,9 +5,12 @@ export default function SolutionsInfo() {
     return (
         <section className="relative w-full py-16 md:py-24 bg-[#FFFFFF] overflow-hidden">
 
-            {/* Faded Background Text spanning above the Grid */}
-            <div className="w-full solutions-faded-bg-text text-[#F1F1F1] text-right overflow-hidden ">
-                One Solution. Every Environment.
+            {/* Faded Background Text - aligned to right column only */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 w-full mb-[-20px] md:mb-[-10px]">
+                <div className="hidden lg:block"></div>
+                <div className="solutions-faded-bg-text text-[#F1F1F1] text-right overflow-hidden text-[24px] md:text-[32px] lg:text-[40px] leading-[1.2] md:leading-[52px] whitespace-normal lg:whitespace-nowrap">
+                    One Solution. Every Environment.
+                </div>
             </div>
 
             {/* Main Content Grid */}
@@ -42,7 +45,13 @@ export default function SolutionsInfo() {
                                 Explore
                             </span>
                             <div className="border border-[#FF0000] text-[#FF0000] rounded-full p-2 flex items-center justify-center shrink-0 ml-4 group-hover:bg-[#FF0000]/10 transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                <Image
+                                    src="/arrow-red.png"
+                                    alt="Arrow"
+                                    width={20}
+                                    height={20}
+                                    className="object-contain"
+                                />
                             </div>
                         </button>
                     </div>
@@ -53,3 +62,4 @@ export default function SolutionsInfo() {
         </section>
     );
 }
+ 

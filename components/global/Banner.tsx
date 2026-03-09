@@ -12,8 +12,10 @@ export interface BannerButton {
 
 export interface BannerProps {
     backgroundImage: string;
-    heightVariant?: '900' | '810';
+    heightVariant?: '900' | '810' | '794';
     title: React.ReactNode;
+    middleText?: React.ReactNode;
+    middleTextClassName?: string;
     subtitle?: React.ReactNode;
     buttons?: BannerButton[];
     rightImage?: string;
@@ -26,6 +28,8 @@ export default function Banner({
     backgroundImage,
     heightVariant = '900',
     title,
+    middleText,
+    middleTextClassName = "font-title font-medium text-[20px] md:text-[24px] leading-[34px] tracking-[-0.01em] text-white max-w-[550px]",
     subtitle,
     buttons = [],
     rightImage,
@@ -34,7 +38,11 @@ export default function Banner({
     titleClassName = "font-banner text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-sm"
 }: BannerProps) {
     // Dynamic height class assignment based on the prop
-    const heightClass = heightVariant === '900' ? 'min-h-[900px] lg:h-[900px]' : 'min-h-[810px] lg:h-[810px]';
+    const heightClass = heightVariant === '900'
+        ? 'min-h-[900px] lg:h-[900px]'
+        : heightVariant === '810'
+            ? 'min-h-[810px] lg:h-[810px]'
+            : 'min-h-[794px] lg:h-[794px]';
 
     return (
         <section
@@ -47,15 +55,22 @@ export default function Banner({
             }}
         >
             {/* Main Content Container inside the Banner */}
-            <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 w-full py-12 lg:py-0">
+            <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 w-full py-12 lg:py-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center h-full">
 
                     {/* Left Column: Text, Subtitle, and Buttons */}
-                    <div className="flex flex-col space-y-6 lg:pr-10 text-white z-20">
+                    <div className="flex flex-col space-y-6 pb-5 text-white z-20">
                         {/* Title text */}
                         <div className={titleClassName}>
                             {title}
                         </div>
+
+                        {/* Render Middle Text conditionally */}
+                        {middleText && (
+                            <div className={middleTextClassName}>
+                                {middleText}
+                            </div>
+                        )}
 
                         {/* Render Subtitle conditionally */}
                         {subtitle && (
@@ -71,7 +86,7 @@ export default function Banner({
                                     const isPrimary = btn.variant !== 'secondary' && btn.variant !== 'outline';
 
                                     const baseClass = isPrimary
-                                        ? "inline-flex items-center justify-between gap-4 md:gap-5 rounded-full pl-6 md:pl-8 pr-1.5 py-1.5 transition-transform hover:scale-[1.02] group shadow-sm w-fit"
+                                        ? "inline-flex items-center justify-between gap-4 md:gap-5 rounded-full pl-6 md:pl-8 pr-2 py-2 transition-transform hover:scale-[1.02] group shadow-sm w-fit"
                                         : "inline-flex items-center justify-between gap-4 md:gap-5 rounded-full pl-6 md:pl-8 pr-2 py-2 transition-transform hover:scale-[1.02] tracking-wide group shadow-sm w-fit";
 
                                     const variantClass = isPrimary

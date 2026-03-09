@@ -76,8 +76,8 @@ export default function SolutionsTabs() {
             </div>
 
             {/* Tabs Navigation */}
-            <div className="w-full border-b-[6px] border-[#F1F1F1] mb-16 select-none">
-                <div className="flex items-center gap-8 md:gap-12 min-w-max -mb-[1px]">
+            <div className="w-full border-b-[6px] border-[#F1F1F1] mb-16 select-none max-lg:overflow-x-auto ">
+                <div className="flex items-center gap-6 md:gap-8 lg:gap-12 min-w-max -mb-[1px]">
                     {tabItems.map((tab) => {
                         const isActive = activeTab === tab.id;
                         return (
@@ -102,10 +102,6 @@ export default function SolutionsTabs() {
             {/* Tab Content Section */}
             <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start pb-8">
 
-                {/* Fading Background Text */}
-                <div className="absolute top-10 md:top-16 lg:top-24 right-0 lg:-right-[5vw] xl:-right-[10vw] z-0 solutions-faded-bg-text text-[#F1F1F1] pointer-events-none select-none" style={{ opacity: 0.8 }}>
-                    One Solution. Every Environment
-                </div>
 
                 {/* Left Content */}
                 <div className="flex flex-col">
