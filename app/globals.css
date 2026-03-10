@@ -204,7 +204,7 @@ body {
   box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
   border-radius: 18.29px;
   border: 1px solid #FFFFFF;
-  background-color:linear-gradient(130.96deg, rgba(255, 255, 255, 0.55) -36.72%, rgba(255, 255, 255, 0.1) 100%);
+  background-color: linear-gradient(130.96deg, rgba(255, 255, 255, 0.55) -36.72%, rgba(255, 255, 255, 0.1) 100%);
 
 
 }
@@ -233,4 +233,15 @@ button {
 img {
   max-width: 100%;
   height: auto;
+}
+@layer components {
+  .security-card-title {
+    @apply font-body font-semibold text-[24px] leading-[62px] tracking-[-0.01em] text-[#323232];
+  }
+  .security-card-desc {
+    @apply font-title font-normal text-[24px] leading-[34px] tracking-[-0.01em] text-[#323232];
+  }
+  .security-card-link-text {
+    @apply font-title font-normal text-[24px] leading-[34px] tracking-[-0.01em];
+  }
 }

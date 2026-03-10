@@ -17,11 +17,14 @@ export interface BannerProps {
     middleText?: React.ReactNode;
     middleTextClassName?: string;
     subtitle?: React.ReactNode;
+    subtitleClassName?: string;
     buttons?: BannerButton[];
     rightImage?: string;
     rightImageAlt?: string;
     showRightImageCircle?: boolean;
     titleClassName?: string;
+    rightImageClassName?: string;
+    rightImageCircleClassName?: string;
 }
 
 export default function Banner({
@@ -31,22 +34,21 @@ export default function Banner({
     middleText,
     middleTextClassName = "font-title font-medium text-[20px] md:text-[24px] leading-[34px] tracking-[-0.01em] text-white max-w-[550px]",
     subtitle,
+    subtitleClassName = "font-body text-lg md:text-xl text-white/90 max-w-[550px] leading-relaxed font-light",
     buttons = [],
     rightImage,
     rightImageAlt = "Banner Image",
     showRightImageCircle = false,
-    titleClassName = "font-banner text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-sm"
+    titleClassName = "font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white drop-shadow-sm",
+    rightImageClassName = "scale-[1.15] drop-shadow-2xl",
+    rightImageCircleClassName = "bg-[#E12120] shadow-2xl",
 }: BannerProps) {
-    // Dynamic height class assignment based on the prop
-    const heightClass = heightVariant === '900'
-        ? 'min-h-[900px] lg:h-[900px]'
-        : heightVariant === '810'
-            ? 'min-h-[810px] lg:h-[810px]'
-            : 'min-h-[794px] lg:h-[794px]';
+    // Dynamic height class assignment based on the prop - updated to single 100vh height
+    const heightClass = 'min-h-[100vh]';
 
     return (
         <section
-            className={`relative w-full flex items-center overflow-hidden pt-20 lg:pt-0 ${heightClass}`}
+            className={`relative w-full flex items-center overflow-visible overflow-x-clip pt-20 lg:pt-0 ${heightClass}`}
             style={{
                 backgroundImage: `url('${backgroundImage}')`,
                 backgroundSize: 'cover',
@@ -74,14 +76,14 @@ export default function Banner({
 
                         {/* Render Subtitle conditionally */}
                         {subtitle && (
-                            <div className="font-body text-lg md:text-xl text-white/90 max-w-[550px] leading-relaxed font-light">
+                            <div className={subtitleClassName}>
                                 {subtitle}
                             </div>
                         )}
 
                         {/* Render Buttons conditionally */}
                         {buttons && buttons.length > 0 && (
-                            <div className="flex flex-wrap items-center gap-6 pt-8">
+                            <div className="flex flex-wrap items-center gap-6 pt-12 lg:pt-25">
                                 {buttons.map((btn, index) => {
                                     const isPrimary = btn.variant !== 'secondary' && btn.variant !== 'outline';
 
@@ -132,16 +134,17 @@ export default function Banner({
 
                     {/* Right Column: Hero Graphic/Image conditionally */}
                     {rightImage && (
-                        <div className="flex justify-center lg:justify-end items-center relative z-20 mt-12 lg:mt-0 w-full lg:w-auto">
-                            <div className="relative w-full max-w-[350px] sm:max-w-[400px] xl:max-w-[450px] aspect-square flex items-center justify-center">
+                        <div className="flex justify-center lg:justify-end items-center relative z-20 mt-4 lg:mt-0 w-full lg:w-auto">
+                            <div className="relative w-full max-w-[400px] md:max-w-[500px] lg:max-w-[650px] xl:max-w-[800px] flex items-center justify-center">
                                 {showRightImageCircle && (
-                                    <div className="absolute inset-0 m-auto w-[90%] h-[90%] rounded-full bg-[#E12120] shadow-2xl" />
+                                    <div className={`absolute inset-0 m-auto w-[90%] h-[90%] rounded-full ${rightImageCircleClassName}`} />
                                 )}
                                 <Image
                                     src={rightImage}
                                     alt={rightImageAlt}
-                                    fill
-                                    className={`object-contain z-10 ${showRightImageCircle ? 'scale-[1.15] drop-shadow-2xl' : ''}`}
+                                    width={1000}
+                                    height={1000}
+                                    className={`object-contain w-full h-auto ${rightImageClassName}`}
                                     priority={true}
                                 />
                             </div>

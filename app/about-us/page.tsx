@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react';
+import HighlightedText from "@/components/global/HighlightedText";
 import Banner from "@/components/global/Banner";
 import SimplifyLife from "@/components/partners/SimplifyLife";
 import PartnersBottomBanner from "@/components/partners/PartnersBottomBanner";
@@ -16,10 +17,10 @@ export default function PartnersPage() {
             <Banner
                 backgroundImage="/banner-about-us.png"
                 heightVariant="794"
-                titleClassName="font-body font-semi-bold text-[28px] md:text-[36px] lg:text-[42px] leading-[1.3] md:leading-[52px] tracking-[-0.01em] pb-3 md:pb-5 text-white drop-shadow-sm"
+                titleClassName="font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] pb-3 md:pb-5 text-white drop-shadow-sm"
                 title={
                     <>
-                        Redefining  <span className="text-[#FF0000]"> Cybersecurity.</span>
+                        Redefining  <HighlightedText text="Cybersecurity." />
                         <br className="hidden md:block" />
                         Through Simplicit
                     </>

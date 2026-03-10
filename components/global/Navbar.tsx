@@ -43,7 +43,7 @@ export default function Navbar() {
                     <a href="/solutions" className="fl2">Solutions</a>
                     <a href="/product" className="fl2">Products</a>
                     <a href="/partners" className="fl2">Partners</a>
-                    <a href="#" className="fl2">About us</a>
+                    <a href="/about-us" className="fl2">About us</a>
                 </nav>
 
                 {/* Right Side: Icons & Mobile Toggle */}
@@ -104,7 +104,7 @@ export default function Navbar() {
                     <a href="/solutions" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Solutions</a>
                     <a href="/product" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Products</a>
                     <a href="/partners" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Partners</a>
-                    <a href="#" className="fl2 pb-3" onClick={() => setIsMobileMenuOpen(false)}>About us</a>
+                    <a href="/about-us" className="fl2 pb-3" onClick={() => setIsMobileMenuOpen(false)}>About us</a>
                 </div>
             )}
         </header>
