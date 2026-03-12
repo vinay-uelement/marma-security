@@ -57,7 +57,7 @@ body {
 }
 
 .fl2 {
-  @apply font-body font-normal text-[16px] leading-[30px] text-nav-text hover:font-medium transition-all text-[var(--color-nav-text)];
+  @apply font-body font-normal text-[14px] xl:text-[16px] leading-[30px] text-nav-text hover:font-medium transition-all text-[var(--color-nav-text)];
 }
 
 .nav-logo {
@@ -85,36 +85,38 @@ body {
 }
 
 .footer-container {
-  @apply bg-[#5C0D0D] text-white pt-16 relative overflow-hidden;
+  @apply bg-[#201C1C] text-white pt-16 relative overflow-hidden;
 }
 
 .footer-bottom-bar {
-  @apply bg-[#6C1717] mt-8 border-t border-white/10;
+  @apply bg-[#FF0000] mt-8 border-t border-white/10;
 }
 
 .footer-form-glass {
-  background: linear-gradient(130.96deg, rgba(255, 255, 255, 0.55) -36.72%, rgba(255, 255, 255, 0.1) 100%);
-  border: 1px solid #FFFFFF;
-  backdrop-filter: blur(45.73509216308594px);
+background: linear-gradient(130.96deg, rgba(255, 255, 255, 0.176) -36.72%, rgba(255, 255, 255, 0.032) 100%);
+border: 1px solid #FFFFFF47;
+backdrop-filter: blur(45.73509216308594px);
+
   box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
+
   @apply w-full max-w-[550px] rounded-3xl p-8 lg:p-10;
 }
 
 .footer-input-field {
   background: rgba(212, 212, 212, 0.08);
-  border: 1px solid #FFFFFF;
+border: 1px solid #FFFFFF52;  
   color: #D4D4D433;
   box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
   @apply font-body font-normal text-[20px] leading-[30px] rounded-[14px] px-5 py-4 text-white placeholder-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all w-full;
 }
 
 .footer-input-field::placeholder {
-  @apply text-white/70 font-body font-normal text-[18px] leading-[30px];
+  @apply text-[#FFFFFFCC] font-body font-normal text-[18px] leading-[30px];
 }
 
 /* ================= Testimonial Styles ================= */
 .tm-header-pro {
-  @apply font-title font-bold text-[32px] leading-[1.2] md:text-[42px] lg:text-[52px] lg:leading-[42px] tracking-normal;
+  @apply font-title font-[500] text-[32px] leading-[1.2] md:text-[42px] lg:text-[52px] lg:leading-[42px] tracking-normal;
 }
 
 .tm-card-name-bold {
@@ -200,13 +202,12 @@ body {
 }
 
 .stats-glass-card {
-  backdrop-filter: blur(45.73509216308594px);
+  background: linear-gradient(130.96deg, rgba(255, 255, 255, 0.2035) -36.72%, rgba(255, 255, 255, 0.037) 100%);
+  -webkit-backdrop-filter: blur(45.7px);
+backdrop-filter: blur(45.7px);
   box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
   border-radius: 18.29px;
   border: 1px solid #FFFFFF;
-  background-color: linear-gradient(130.96deg, rgba(255, 255, 255, 0.55) -36.72%, rgba(255, 255, 255, 0.1) 100%);
-
-
 }
 
 p {
@@ -234,13 +235,16 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 @layer components {
   .security-card-title {
     @apply font-body font-semibold text-[24px] leading-[62px] tracking-[-0.01em] text-[#323232];
   }
+
   .security-card-desc {
     @apply font-title font-normal text-[24px] leading-[34px] tracking-[-0.01em] text-[#323232];
   }
+
   .security-card-link-text {
     @apply font-title font-normal text-[24px] leading-[34px] tracking-[-0.01em];
   }

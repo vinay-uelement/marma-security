@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import HighlightedText from '../global/HighlightedText';
 
 const testimonials = [
     {
@@ -30,16 +31,16 @@ export default function Testimonial() {
                 {/* The user will add the actual image named testimonial-home */}
                 <div
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url('/testimonial-home.png')` }}
+                    style={{ backgroundImage: `url('/Testimonial-section.png')` }}
                 />
                 {/* Dark overlay and blur effect */}
-                <div className="absolute inset-0 bg-black/60 backdrop-blur-[8px]" />
+                <div className="absolute " />
             </div>
 
             <div className="relative z-10 w-full mb-10 lg:mb-16 pl-6 lg:pl-12 pr-0 max-w-[1440px] mx-auto">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-12 relative w-full">
-                    <h2 className="tm-header-pro text-white whitespace-normal md:whitespace-nowrap">
-                        See what our <span className="text-[#FF0000]">customers</span> say
+                <div className="flex flex-col items-center text-center md:flex-row md:items-center md:text-left justify-between gap-6 md:gap-12 relative w-full">
+                    <h2 className="tm-header-pro text-white whitespace-normal md:whitespace-nowrap w-full">
+                        See what our <HighlightedText text="customers" className="text-[#FFF] font-bold"  imageClassName='bottom-[-20px] right-0 md:bottom-[-25px]'/> say
                     </h2>
 
                     {/* The decorative red line reaches the container edge naturally */}

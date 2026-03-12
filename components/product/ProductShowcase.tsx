@@ -15,70 +15,78 @@ export interface ProductShowcaseProps {
 export default function ProductShowcase({ productName, mainFeature, subFeatures }: ProductShowcaseProps) {
     return (
         <section className="w-full mt-20 lg:mt-32">
-            <div className="mb-8">
-                <h2 className="ps-section-name">{productName}</h2>
-                <div className="w-[130px] h-[6px] bg-[#FF0000]" />
+
+            {/* Header */}
+            <div className="mb-10 text-center md:text-left">
+                <h2 className="font-title font-bold text-[36px] md:text-[42px] tracking-tight text-[#000000]">
+                    {productName}
+                </h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
                 {/* Main Feature Card (Left Column) */}
-                <div className="bg-[#F1F1F1] rounded-lg p-6 md:p-8 lg:p-12 flex flex-col relative h-full">
-                    {/* Link Icon */}
-                    <div className="absolute top-4 right-4 md:top-6 md:right-6 lg:top-8 lg:right-8 w-[36px] h-[36px] md:w-[46px] md:h-[46px] rounded-full bg-[#6C6C6C] flex items-center justify-center cursor-pointer z-10">
-                        <Image src="/product-arrow.png" alt="Link" width={26} height={18} className="object-contain w-[14px] md:w-[26px]" />
+                <div className="bg-[#F7F7F7] rounded-[24px] flex flex-col relative h-full overflow-hidden border border-[#E5E5E5]/50 flex-1">
+
+                    {/* Top Link Icon */}
+                    <div className="absolute top-6 right-6 w-[40px] h-[40px] rounded-full bg-[#EBEBEB] flex items-center justify-center cursor-pointer z-30 hover:bg-[#DFDFDF] transition-colors">
+                        <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 11L11 1M11 1H3M11 1V9" stroke="#FF0000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                     </div>
 
                     {/* Image Area */}
-                    <div className="w-full flex justify-center lg:justify-start mb-8 lg:mb-12 mt-4 md:mt-0">
+                    <div className="w-full flex-grow flex items-center justify-center px-8 relative z-20 pb-0 pt-16 md:pt-0 -mb-[40px] md:-mb-[60px] lg:-mb-[80px]">
                         {mainFeature.image && (
                             <Image
                                 src={mainFeature.image}
                                 alt={mainFeature.title}
-                                width={368}
-                                height={315}
-                                className="object-contain drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)] w-[75%] sm:w-[60%] md:w-full max-w-[368px] h-auto lg:h-[315px]"
+                                width={310}
+                                height={376}
+                                className="object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)] w-[85%] sm:w-[70%] md:w-[60%] lg:w-[75%] max-w-[368px] h-auto"
                                 priority
                             />
                         )}
                     </div>
 
                     {/* Content Area */}
-                    <div className="flex flex-col justify-between items-center lg:items-start text-center lg:text-left mt-auto">
-                        <h3 className="ps-feature-heading uppercase mb-4">
+                    <div className="bg-[#EDEDED] px-6 sm:px-10 pb-10 md:pb-12 pt-[60px] md:pt-[80px] lg:pt-[60px] flex flex-col justify-end items-center text-center mt-auto w-full relative z-10">
+                        <h3 className="font-body font-bold text-[22px] md:text-[26px] tracking-wide text-[#323232] mb-4 uppercase w-full">
                             {mainFeature.title}
                         </h3>
-                        <div className="w-[80px] h-[6px] bg-[#FF0000] mb-6" />
-                        <p className="ps-feature-text text-left">
+                        <p className="font-body font-normal text-[15px] md:text-[17px] leading-[26px] tracking-[-0.01em] text-[#606060] max-w-[420px]">
                             {mainFeature.description}
                         </p>
                     </div>
                 </div>
 
-                {/* Sub Features Column (Right Column) */}
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-6 h-full flex-1">
                     {subFeatures.map((feat, idx) => (
-                        <div key={idx} className="bg-[#F1F1F1] rounded-lg p-6 md:p-8 lg:p-10 flex flex-col md:flex-row gap-6 md:gap-8 items-center flex-1 h-full">
-                            <div className="w-full md:w-[60%] order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left">
-                                <h3 className="ps-feature-heading uppercase mb-4">
-                                    {feat.title}
-                                </h3>
-                                <div className="w-[80px] h-[6px] bg-[#FF0000] mb-6" />
-                                <p className="ps-feature-text text-left">
-                                    {feat.description}
-                                </p>
-                            </div>
-                            <div className="w-full md:w-[40%] flex items-center justify-center h-full order-1 md:order-2 mb-4 md:mb-0">
-                                {feat.image ? (
-                                    <Image
-                                        src={feat.image}
-                                        alt={feat.title}
-                                        width={400}
-                                        height={400}
-                                        className="object-contain drop-shadow-xl w-[60%] sm:w-[50%] md:w-full h-auto"
-                                    />
-                                ) : (
-                                    <div className="w-full h-[200px] border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center text-gray-400 font-body">Image Asset Required</div>
-                                )}
+                        <div key={idx} className="bg-[#FAFAFA] border border-[#E5E5E5]/50 rounded-[24px] flex flex-col flex-1 overflow-hidden group h-full relative">
+                            {/* Bottom Grey Strip */}
+                            <div className="absolute bottom-0 left-0 w-full h-[40px] bg-[#EEEEEE] z-0" />
+
+                            <div className="flex flex-col md:flex-row w-full h-full relative z-10 items-stretch">
+                                {/* Left Content */}
+                                <div className="w-full md:w-[60%] flex flex-col justify-center md:items-start items-center text-center md:text-left pt-8 md:pt-0 px-8 md:pl-10 pb-2 z-20">
+                                    <h3 className="font-body font-bold text-[20px] md:text-[22px] tracking-wide text-[#323232] mb-4 uppercase">
+                                        {feat.title}
+                                    </h3>
+                                    <p className="font-body font-normal text-[15px] md:text-[17px] leading-[26px] tracking-[-0.01em] text-[#606060]">
+                                        {feat.description}
+                                    </p>
+                                </div>
+
+                                {/* Right Image */}
+                                <div className="w-full md:w-[40%] flex items-end md:items-center justify-center relative min-h-[180px] md:min-h-[220px] mt-2 md:mt-15 pr-0 pb-0 z-30">
+                                    {feat.image && (
+                                        /* eslint-disable-next-line @next/next/no-img-element */
+                                        <img
+                                            src={feat.image}
+                                            alt={feat.title}
+                                            className="object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)] w-auto h-auto max-w-[80%] md:max-w-full max-h-[200px] md:max-h-[250px] relative z-30"
+                                        />
+                                    )}
+                                </div>
                             </div>
                         </div>
                     ))}

@@ -15,77 +15,71 @@ interface TabData {
 const tabItems: TabData[] = [
     {
         id: "healthcare",
-        label: "Healthcare",
-        title: "Securing digital healthcare ecosystems.",
-        description: "Marma secures healthcare networks against data breaches, ransomware, and unauthorized access by delivering continuous, network-level protection across the entire digital infrastructure. From patient record systems and administrative platforms to connected medical devices and IoT equipment, Marma ensures every device on the network is protected in real time.",
+        label: "Complex Setup & Maintenance",
+        title: "Clear & Benefit-Focused",
+        description: "Marma installs in under five minutes and begins protecting your network immediately. Designed with simplicity at its core, it requires no technical knowledge, manual configurations, or ongoing maintenance. Once set up, Marma runs automatically in the background, continuously monitoring and defending your entire Wi-Fi network against cyber threats.",
         image: "/healthcare-solution.png"
     },
     {
         id: "legal",
-        label: "Legal",
-        title: "Protecting sensitive legal documents.",
+        label: "Privacy & Data Safety Concerns",
+        title: "Clear & Benefit-Focused",
         description: "Law firms handle highly sensitive client data. Marma provides enterprise-grade encryption and network monitoring to prevent unauthorized access to privileged communications and case files across your entire infrastructure.",
         image: "/healthcare-solution.png" // Placeholder
     },
     {
         id: "finance",
-        label: "Finance",
-        title: "Safeguarding financial transactions.",
+        label: "Rising Cyber Threats",
+        title: "Clear & Benefit-Focused",
         description: "Financial institutions require the highest level of security. Our zero-trust architecture ensures that every transaction, client portfolio, and internal communication remains completely isolated from external threats.",
         image: "/healthcare-solution.png" // Placeholder
     },
     {
         id: "manufacturing",
-        label: "Manufacturing",
-        title: "Defending industrial control systems.",
+        label: "Expensive Security Solutions",
+        title: "Clear & Benefit-Focused",
         description: "Modern manufacturing relies on connected IoT devices. Marma protects operational technology (OT) from disruption, ensuring production lines continue running without vulnerability to external network attacks.",
         image: "/healthcare-solution.png" // Placeholder
     },
-    {
-        id: "smb",
-        label: "Small and Medium Business",
-        title: "Enterprise security for growing businesses.",
-        description: "Small businesses are frequent targets for cyberattacks. Marma provides affordable, plug-and-play network security that protects your entire office network without requiring a dedicated IT security team.",
-        image: "/healthcare-solution.png" // Placeholder
-    }
+
 ];
 
-export default function SolutionsTabs() {
+export default function Challengestab() {
     const [activeTab, setActiveTab] = useState<string>(tabItems[0].id);
 
     const activeData = tabItems.find(t => t.id === activeTab) || tabItems[0];
 
     return (
-        <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-[30px] md:py-[100px] bg-[#FFFFFF]">
+        <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-4 bg-[#FFFFFF]">
 
             {/* Header Section */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 md:mb-26 gap-8">
-                <h2 className="font-title  text-[36px] md:text-[52px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232]">
-                    Security That <HighlightedText text='Adapts ' className='text-[#323232] font-bold' imageClassName='bottom-[-10px] md:bottom-[-22px]' /><br className="hidden md:block" /> to You
+            <div className="flex flex-col md:flex-row justify-between items-center md:items-center mb-[60px] gap-8 text-center md:text-left">
+                <h2 className="font-title text-[36px] md:text-[52px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232]">
+                    Overcoming your <HighlightedText text="challenges" className='font-bold' />
                 </h2>
 
                 {/* Decorative Red Line Graphic */}
-                <div className="hidden md:flex items-center justify-end w-full max-w-[400px] lg:max-w-[500px] lg:-mr-12">
+                <div className="hidden md:flex items-start justify-end w-full max-w-[400px] lg:max-w-[500px] lg:-mr-12 -mt-16 lg:-mt-24">
                     <Image
-                        src="/rightside-section-homepage-new.png"
+                        src="/homepage-right-decorativesection.png"
                         alt="Decorative Line"
                         width={500}
                         height={60}
-                        className="object-contain w-full h-auto"
+                        className="object-contain w-full h-auto transform -translate-y-4 lg:-translate-y-8"
                     />
                 </div>
             </div>
 
             {/* Tabs Navigation */}
-            <div className="w-full border-b-[6px] border-[#F1F1F1] mb-[40px] md:mb-[100px] select-none max-lg:overflow-x-auto ">
-                <div className="flex items-center gap-6 md:gap-8 lg:gap-12 min-w-max -mb-[1px]">
+            <div className="w-full border-b-[6px] border-[#F1F1F1] mb-16 select-none max-lg:overflow-x-auto ">
+                <div className="flex items-start gap-6 md:gap-8 lg:gap-12 min-w-max -mb-[1px]">
                     {tabItems.map((tab) => {
                         const isActive = activeTab === tab.id;
                         return (
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`relative pb-4 text-[18px] md:text-[24px] font-body transition-colors leading-[34px] tracking-[-0.01em] ${isActive
+                                className={`relative pb-4 text-[16px] md:text-[20px] font-body transition-colors leading-[1.3] md:leading-[30px] tracking-[-0.01em] text-left whitespace-normal w-fit max-w-[150px] md:max-w-[200px] ${isActive
                                     ? "text-[#323232] font-semibold"
                                     : "text-[#989898] font-medium hover:text-[#666666]"
                                     }`}
@@ -105,7 +99,7 @@ export default function SolutionsTabs() {
 
 
                 {/* Left Content */}
-                <div className="flex flex-col">
+                <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
                     <h3 className="font-body font-normal text-[26px] md:text-[34px] leading-[1.3] md:leading-[44px] tracking-[-0.01em] text-[#323232] mb-8 lg:mb-12 max-w-[450px]">
                         {activeData.title}
                     </h3>
@@ -115,7 +109,7 @@ export default function SolutionsTabs() {
                 </div>
 
                 {/* Right Image */}
-                <div className="w-full flex items-start justify-start lg:mt-1">
+                <div className="w-full flex justify-center lg:justify-start lg:mt-1">
                     <Image
                         key={activeData.id} // Forces image to explicitly re-animate/fade on tab change if desired later
                         src={activeData.image}
@@ -131,4 +125,3 @@ export default function SolutionsTabs() {
         </section>
     );
 }
-  

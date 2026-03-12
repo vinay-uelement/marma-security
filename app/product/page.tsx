@@ -1,87 +1,66 @@
 
 import Image from "next/image";
+import Link from "next/link";
 import ProductShowcase from "@/components/product/ProductShowcase";
+import Banner from "@/components/global/Banner";
+import HighlightedText from "@/components/global/HighlightedText";
 
 export default function ProductPage() {
     return (
-        <div className="flex flex-col min-h-screen pt-20 pb-[100px] bg-[#FFFFFF]">
-            <main className="flex-grow max-w-[1440px] w-full mx-auto px-6 lg:px-12">
+        <main className="flex min-h-screen flex-col bg-[#FFFFFF] pb-[100px]">
+            {/* Hero Banner Section */}
+            <Banner
+                backgroundImage="/product-banner.png" // Expects the red line decorative image here
+                heightVariant="900"
+                title={
+                    <>
+                        Security <HighlightedText text="Products" /><br className="hidden lg:block" />
+                        for Every Network
+                    </>
+                }
+                titleClassName="font-banner font-normal text-[36px] md:text-[50px] lg:text-[60px] leading-[1.2] tracking-[-0.01em] text-white"
+                subtitle={
+                    <>
+                        Marma offers a range of intelligent cybersecurity<br className="hidden xl:block" />
+                        products designed to protect entire networks with ease.<br className="hidden xl:block" />
+                        Built for both homes and businesses, our solutions<br className="hidden xl:block" />
+                        deliver enterprise-grade security without the complexity<br className="hidden xl:block" />
+                        of traditional tools.
+                    </>
+                }
+                subtitleClassName="font-body font-light text-[16px] md:text-[20px] lg:text-[24px] leading-[1.6] md:leading-[35px] text-[#E0E0E0] max-w-[650px] mt-6"
+                rightContent={
+                    <div className="flex flex-col sm:flex-row gap-2 lg:gap-3 items-center justify-center lg:justify-end w-full h-full lg:translate-x-[-20px] z-30 pt-12 lg:pt-0">
 
-                {/* Hero Section */}
-                <section className="grid grid-cols-1 lg:grid-cols-3 gap-10 xl:gap-16 pt-12 md:pt-24 items-stretch">
-
-                    {/* Left Column: Text Content */}
-                    <div className="flex flex-col justify-center lg:justify-between lg:pr-8 mb-12 lg:mb-0 mt-4 lg:mt-14 items-center lg:items-start text-center lg:text-left text-balance">
-                        <h1 className="prod-hero-title text-[#000000] mb-8 lg:mb-16 max-w-[400px]">
-                            Security <span className="text-[#FF0000]">Products</span> for<br className="hidden lg:inline" /> Every Network
-                        </h1>
-                        <p className="prod-hero-desc max-w-[420px] lg:max-w-[450px] pb-4">
-                            Marma offers a range of intelligent cybersecurity products designed to protect entire networks with ease. Built for both homes and businesses, our solutions deliver enterprise-grade security without the complexity of traditional tools.
-                        </p>
-                    </div>
-
-                    {/* Middle Column: SafeHome Card */}
-                    <div className="bg-[#F1F1F1] rounded-lg p-6 md:p-8 pb-10 flex flex-col items-center relative cursor-pointer">
-                        {/* Link Icon */}
-                        <div className="absolute top-4 right-4 md:top-6 md:right-6 w-[36px] h-[36px] md:w-[46px] md:h-[46px] rounded-full bg-[#6C6C6C] flex items-center justify-center">
+                        {/* SafeHome Card */}
+                        <Link href="#safehome" className="group relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] transition-transform hover:-translate-y-2 duration-300">
                             <Image
-                                src="/product-arrow.png"
-                                alt="Arrow"
-                                width={26}
-                                height={26}
-                                className="object-contain w-[14px] md:w-[26px]"
-                            />
-                        </div>
-
-                        {/* Product Image */}
-                        <div className="flex-grow flex items-center justify-center w-full mt-8 md:mt-12 mb-6 md:mb-8 min-h-[200px] sm:min-h-[250px] md:min-h-[300px]">
-                            <Image
-                                src="/product1safehome.png"
-                                alt="SafeHome Device"
-                                width={266}
-                                height={311}
-                                className="object-contain drop-shadow-2xl w-[60%] sm:w-[50%] md:w-full max-w-[266px] h-auto lg:h-[311px]"
+                                src="/right-side-product-banner1.png"
+                                alt="SafeHome Product"
+                                width={340}
+                                height={420}
+                                className="object-contain w-full h-auto drop-shadow-2xl"
                                 priority
                             />
-                        </div>
+                        </Link>
 
-                        {/* Product Title */}
-                        <h3 className="font-body font-semibold text-[26px] md:text-[32px] leading-[34px] text-[#323232]">
-                            SafeHome
-                        </h3>
-                    </div>
-
-                    {/* Right Column: SafeBiz Card */}
-                    <div className="bg-[#F1F1F1] rounded-lg p-6 md:p-8 pb-10 flex flex-col items-center relative cursor-pointer">
-                        {/* Link Icon */}
-                        <div className="absolute top-4 right-4 md:top-6 md:right-6 w-[36px] h-[36px] md:w-[46px] md:h-[46px] rounded-full bg-[#6C6C6C] flex items-center justify-center z-10">
+                        {/* SafeBiz Card */}
+                        <Link href="#safebiz" className="group relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] transition-transform hover:-translate-y-2 duration-300">
                             <Image
-                                src="/product-arrow.png"
-                                alt="Arrow"
-                                width={26}
-                                height={26}
-                                className="object-contain w-[14px] md:w-[26px]"
+                                src="/right-side-product-banner2.png"
+                                alt="SafeBiz Product"
+                                width={340}
+                                height={420}
+                                className="object-contain w-full h-auto drop-shadow-2xl"
+                                priority
                             />
-                        </div>
-
-                        {/* Product Image */}
-                        <div className="flex-grow flex items-center justify-center w-full mt-8 md:mt-12 mb-6 md:mb-8 min-h-[200px] sm:min-h-[250px] md:min-h-[300px] z-10">
-                            <Image
-                                src="/product2biz.png"
-                                alt="SafeBiz Device"
-                                width={266}
-                                height={311}
-                                className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] w-[60%] sm:w-[50%] md:w-full max-w-[266px] h-auto lg:h-[311px]"
-                            />
-                        </div>
-
-                        {/* Product Title */}
-                        <h3 className="font-body font-semibold text-[26px] md:text-[32px] leading-[34px] text-[#323232] z-10">
-                            SafeBiz
-                        </h3>
+                        </Link>
                     </div>
+                }
+            />
 
-                </section>
+            {/* Product Showcases Content Area */}
+            <div className="flex-grow max-w-[1440px] w-full mx-auto px-6 lg:px-12 pt-20">
 
                 <div className="pb-32 max-sm:pb-2">
                     {/* SafeHome Product Showcase */}
@@ -128,7 +107,7 @@ export default function ProductPage() {
                         ]}
                     />
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
     );
 }

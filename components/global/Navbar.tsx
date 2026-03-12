@@ -26,7 +26,7 @@ export default function Navbar() {
                 {/* Left Side: Logo */}
                 <div className="flex flex-1 items-center min-w-0">
                     <Link href="/">
-                        <Image 
+                        <Image
                             src="/logo.png"
                             alt="Marma Security"
                             width={200}
@@ -38,8 +38,8 @@ export default function Navbar() {
                 </div>
 
                 {/* Center: Desktop Navigation Links */}
-                <nav className="hidden lg:flex items-center lg:space-x-6 xl:space-x-10 whitespace-nowrap">
-                    <a href="#" className="fl2">Technology</a>
+                <nav className="hidden lg:flex items-center lg:space-x-4 xl:space-x-10 whitespace-nowrap">
+                    <a href="/technology" className="fl2">Technology</a>
                     <a href="/solutions" className="fl2">Solutions</a>
                     <a href="/product" className="fl2">Products</a>
                     <a href="/partners" className="fl2">Partners</a>
@@ -100,7 +100,7 @@ export default function Navbar() {
             {/* Mobile Navigation Menu Overlay Dropdown */}
             {isMobileMenuOpen && (
                 <div className="lg:hidden absolute top-[110%] left-0 w-full navbar-glass rounded-2xl py-5 px-6 shadow-xl flex flex-col space-y-4 z-40">
-                    <a href="#" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Technology</a>
+                    <a href="/technology" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Technology</a>
                     <a href="/solutions" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Solutions</a>
                     <a href="/product" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Products</a>
                     <a href="/partners" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Partners</a>

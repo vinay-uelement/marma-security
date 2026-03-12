@@ -1,41 +1,56 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function PartnersBottomBanner() {
     return (
-        <section
-            className="relative w-full min-h-[500px] md:min-h-[600px] mb-25 flex items-center overflow-hidden py-16 lg:py-0"
-            style={{
-                backgroundImage: `url('/partner-banner-bottom.png')`, // Fallback/Placeholder path
-                backgroundSize: 'cover',
-                backgroundPosition: 'left center',
-                backgroundRepeat: 'no-repeat'
-            }}
-        >
-            {/* Main Content Container */}
-            <div className="relative z-10 w-full flex flex-col md:flex-row items-center justify-between">
+        <section className="w-full relative py-12 lg:py-16 mb-20 bg-[#fff]">
+            
+            {/* Top Left Decorative Red Line */}
+            <div className="flex absolute top-12 lg:top-16 left-0 w-[15%] h-[1.5px] bg-[#FF0000] z-20 items-center">
+                <div className="absolute right-0 translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#FF0000] shadow-[0_0_12px_4px_rgba(255,0,0,0.25)]" />
+            </div>
 
-                {/* Left Side spacer to push content right if needed because background image has devices on the left */}
-                <div className="hidden md:block w-full md:w-1/2 h-full min-h-[400px]"></div>
-
-                {/* Right Side: Text / Info */}
-                <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 lg:px-12 flex justify-end items-center h-full">
-
-                    {/* Right-Aligned Text Stack */}
-                    <div className="w-full flex flex-col items-center md:items-end text-center md:text-right space-y-4 md:space-y-6 bg-black/40 md:bg-transparent p-6 md:p-0 rounded-2xl md:rounded-none mt-8 md:mt-0">
-
-                        <h2 className="btm-banner-patner text-[28px] md:text-[32px] leading-tight md:leading-[34px]">
-                            Simplified Network Security
-                        </h2>
-
-                        <h3 className="btm-banner-patner-sub md:pl-5 max-w-[500px] md:max-w-[650px] text-[20px] md:text-[24px] leading-tight md:leading-[28px]">
-                            Automated protection that scales effortlessly across client environments.
-                        </h3>
-
-                        <p className="btm-banner-patner-desc max-w-[500px] md:max-w-[650px] pt-2 md:pt-4 text-[#EAEAEA] text-[14px] md:text-[16px]">
-                            Marma delivers automated, network-level security that is easy to deploy, manage, and scale—removing complexity while ensuring consistent protection for every client. With centralized control and real-time threat protection, it secures all connected devices without added operational effort.
-                        </p>
-
+            {/* The grey background strip that goes across the bottom */}
+            <div className="absolute bottom-0 w-full h-[3%] lg:h-[10%] bg-[#F2F2F2] z-0" />
+            
+            <div className="w-full max-w-[1440px] mx-auto px-6  lg:px-12 relative z-20 mt-6  md:mt-16 lg:mt-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 lg:gap-20 items-end">
+                    
+                    {/* Left Column: Device Image */}
+                    <div className="flex justify-center items-center w-full min-h-[250px] md:min-h-[350px] lg:min-h-[500px]">
+                        <div className="relative w-full max-w-[220px] md:max-w-[300px] lg:max-w-[423px] aspect-[423/495] translate-y-4 lg:translate-y-16 z-30">
+                            <Image
+                                src="/black-device-homepage.png" 
+                                alt="Marma Security Black Device"
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)]"
+                            />
+                        </div>
                     </div>
+
+                    {/* Right Column: Text Content */}
+                    <div className="flex flex-col space-y-4 relative z-10 pb-16 pt-8 md:pt-12 lg:pt-0 lg:pb-0 text-center lg:text-left items-center lg:items-start max-w-[600px] mx-auto lg:mx-0">
+                        {/* Title */}
+                        <h3 className="font-body font-semibold text-[26px] md:text-[30px] leading-[1.3] md:leading-[40px] tracking-[-0.01em] text-[#323232]">
+                            Simplified Network Security
+                        </h3>
+                        
+                        {/* Subtitle */}
+                        <p className="font-body font-normal text-[20px] md:text-[24px] leading-[1.4] md:leading-[32px] tracking-normal text-[#323232] pb-2">
+                            Automated protection that scales effortlessly across client environments.
+                        </p>
+                        
+                        {/* Description */}
+                        <p className="font-body font-light text-[16px] md:text-[20px] leading-[1.6] md:leading-[30px] tracking-[-0.01em] text-[#323232] pb-0 text-justify md:text-left">
+                            Marma delivers automated, network-level security that is easy to deploy, manage, and scale removing complexity while ensuring consistent protection for every client With centralized control and real-time threat protection, it secures all connected devices without added operational effort.
+                        </p>
+                        
+                        <p className="font-body font-semibold text-[16px] md:text-[18px] leading-[1.5] md:leading-[26px] tracking-[-0.01em] text-[#323232]">
+                            We think that’s unacceptable.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </section>

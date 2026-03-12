@@ -1,3 +1,4 @@
+'use client'
 import HighlightedText from "@/components/global/HighlightedText";
 import Banner from "@/components/global/Banner";
 import SolutionsTabs from "@/components/solutions/SolutionsTabs";
@@ -8,16 +9,18 @@ export default function SolutionsPage() {
     return (
         <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
             <Banner
-                backgroundImage="/solutionbanner.png"
-                titleClassName="font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white drop-shadow-sm"
+                backgroundImage="/banner-solution.png"
+                heightVariant="900"
                 title={
                     <>
-                        Complete <br className="hidden sm:block" />
-                        <HighlightedText text="Cybersecurity" /> for <br className="hidden sm:block" />
-                        Homes, Businesses <br className="hidden sm:block" />
-                        and others.
+                        Complete <HighlightedText text="Cybersecurity" /><br className="hidden md:block" />
+                        for Homes, Businesses and<br className="hidden md:block" />
+                        others.
                     </>
                 }
+                titleClassName="font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white"
+                subtitle={<>Enterprise-grade cybersecurity that works in minutes.<br className="hidden sm:block" /> No IT or technical expertise needed.</>}
+                subtitleClassName="font-title font-light text-[18px] md:text-[24px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-[#E0E0E0] max-w-[550px]"
                 buttons={[
                     {
                         label: "Explore",
@@ -26,9 +29,9 @@ export default function SolutionsPage() {
                         icon: true
                     }
                 ]}
-                rightImage="/solution-banner-right.png"
-                showRightImageCircle={true}
-                heightVariant="900"
+                rightImage="/solution-banner-right1.png"
+                showRightImageCircle={false}
+                rightImageClassName="lg:w-[650px] sm:w-[500px] h-auto lg:-translate-x-[-90px] translate-y-[15%] lg:translate-y-[15%] xl:translate-y-[20%] z-30 transform-gpu"
             />
 
             <SolutionsTabs />

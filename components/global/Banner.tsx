@@ -25,6 +25,7 @@ export interface BannerProps {
     titleClassName?: string;
     rightImageClassName?: string;
     rightImageCircleClassName?: string;
+    rightContent?: React.ReactNode;
 }
 
 export default function Banner({
@@ -42,13 +43,14 @@ export default function Banner({
     titleClassName = "font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white drop-shadow-sm",
     rightImageClassName = "scale-[1.15] drop-shadow-2xl",
     rightImageCircleClassName = "bg-[#E12120] shadow-2xl",
+    rightContent,
 }: BannerProps) {
     // Dynamic height class assignment based on the prop - updated to single 100vh height
     const heightClass = 'min-h-[100vh]';
 
     return (
         <section
-            className={`relative w-full flex items-center overflow-visible overflow-x-clip pt-20 lg:pt-0 ${heightClass}`}
+            className={`relative w-full flex items-center overflow-visible overflow-x-clip py-28 lg:py-32 ${heightClass}`}
             style={{
                 backgroundImage: `url('${backgroundImage}')`,
                 backgroundSize: 'cover',
@@ -61,7 +63,7 @@ export default function Banner({
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center h-full">
 
                     {/* Left Column: Text, Subtitle, and Buttons */}
-                    <div className="flex flex-col space-y-6 pb-5 text-white z-20">
+                    <div className="flex flex-col space-y-6 pb-5 text-white z-20 items-center lg:items-start text-center lg:text-left">
                         {/* Title text */}
                         <div className={titleClassName}>
                             {title}
@@ -83,7 +85,7 @@ export default function Banner({
 
                         {/* Render Buttons conditionally */}
                         {buttons && buttons.length > 0 && (
-                            <div className="flex flex-wrap items-center gap-6 pt-12 lg:pt-25">
+                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-12 lg:pt-25 w-full">
                                 {buttons.map((btn, index) => {
                                     const isPrimary = btn.variant !== 'secondary' && btn.variant !== 'outline';
 
@@ -133,7 +135,11 @@ export default function Banner({
                     </div>
 
                     {/* Right Column: Hero Graphic/Image conditionally */}
-                    {rightImage && (
+                    {rightContent ? (
+                        <div className="flex justify-center lg:justify-end items-center relative z-20 mt-4 lg:mt-0 w-full lg:w-auto h-full">
+                            {rightContent}
+                        </div>
+                    ) : rightImage && (
                         <div className="flex justify-center lg:justify-end items-center relative z-20 mt-4 lg:mt-0 w-full lg:w-auto">
                             <div className="relative w-full max-w-[400px] md:max-w-[500px] lg:max-w-[650px] xl:max-w-[800px] flex items-center justify-center">
                                 {showRightImageCircle && (
@@ -146,6 +152,7 @@ export default function Banner({
                                     height={1000}
                                     className={`object-contain w-full h-auto ${rightImageClassName}`}
                                     priority={true}
+                                    fetchPriority="high"
                                 />
                             </div>
                         </div>

@@ -21,44 +21,44 @@ export default function SolutionsInfo({
     const isRight = imagePosition === 'right';
 
     return (
-        <section className="relative w-full py-16 md:py-24 bg-[#FFFFFF] overflow-hidden">
+        <section className="relative w-full pt-12 pb-16 md:pt-20 md:pb-24 flex flex-col items-center overflow-x-clip">
 
             {/* Faded Background Text */}
-            <div className={`grid grid-cols-1 lg:grid-cols-2 w-full mb-[-20px] md:mb-[-10px] ${isRight ? 'lg:flex-row-reverse' : ''}`}>
-                <div className={`hidden lg:block ${isRight ? 'order-2' : ''}`}></div>
-                <div className={`solutions-faded-bg-text text-[#F1F1F1] overflow-hidden text-[24px] md:text-[32px] lg:text-[40px] leading-[1.2] md:leading-[52px] whitespace-normal lg:whitespace-nowrap ${isRight ? 'text-left order-1 pl-12' : 'text-right'}`}>
+            <div className="w-full flex justify-center z-0 select-none pointer-events-none px-4 max-w-[1440px] mx-auto">
+                <span className="font-body font-bold text-[32px] sm:text-[42px] lg:text-[70px] leading-[1.2] lg:leading-[62px] text-[#F1F1F1] tracking-[-0.01em] uppercase text-center w-full break-words">
                     {bgText}
-                </div>
+                </span>
             </div>
 
             {/* Main Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 relative z-10 h-full items-stretch w-full">
+            <div className="w-full max-w-[1440px] bg-[#f7f7f7] mx-auto px-6 lg:px-12 grid grid-cols-1 py-12 lg:py-20 lg:grid-cols-2 gap-12 lg:gap-16 relative z-10 items-center rounded-sm">
 
                 {/* Image Side */}
-                <div className={`relative w-full h-full min-h-[300px] md:min-h-[400px] lg:min-h-[420px] rounded-[12px] md:rounded-[24px] overflow-hidden shadow-lg lg:shadow-none ${isRight ? 'lg:order-2 lg:rounded-l-none lg:rounded-r-[24px]' : 'lg:order-1 lg:rounded-r-none lg:rounded-l-[24px]'
+                <div className={`relative w-full h-[300px] md:h-[400px] lg:h-[420px] rounded-[24px] overflow-hidden ${isRight ? 'lg:order-2' : 'lg:order-1'
                     }`}>
                     <Image
                         src={imageSrc}
                         alt="Cybersecurity monitoring"
                         fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
                         className="object-cover object-center"
                     />
                 </div>
 
                 {/* Content Side */}
-                <div className={`flex flex-col h-full z-10 relative mt-8 lg:mt-0 w-full max-w-full shrink-0 ${isRight ? 'lg:order-1' : 'lg:order-2'
+                <div className={`flex flex-col z-10 relative w-full items-center text-center lg:items-start lg:text-left ${isRight ? 'lg:order-1' : 'lg:order-2'
                     }`}>
-                    <div className="bg-[#F1F1F1] p-8 md:p-16 lg:p-20 xl:p-24 flex flex-col justify-center flex-grow shadow-sm z-10 relative">
-                        <h3 className="font-body font-semibold text-[24px] xl:text-[24px] leading-[34px] tracking-[-0.01em] text-[#323232] mb-6">
+                    <div className="bg-transparent flex flex-col justify-center items-center lg:items-start relative">
+                        <h3 className="font-body font-semibold text-[24px] md:text-[30px] leading-[1.3] pb-[20px] md:leading-[40px] tracking-[-0.01em] text-[#323232] mb-6">
                             {title}
                         </h3>
 
-                        <p className="font-body font-normal text-[16px] md:text-[18px] leading-[26px] tracking-[-0.01em] text-[#323232] mb-10">
+                        <p className="font-body font-light text-[16px] md:text-[20px] leading-[1.6] md:leading-[26px] tracking-[-0.01em] text-[#323232] mb-20">
                             {description}
                         </p>
 
                         {/* Outlined Explore Button */}
-                        <button className="flex items-center justify-between gap-5 rounded-full pl-6 pr-1.5 py-1.5 transition-transform hover:scale-[1.02] bg-transparent border-[1.5px] border-[#FF0000] text-[#FF0000] w-fit">
+                        <button className="flex items-center justify-between gap-5 rounded-full pl-6 pr-1.5 py-1.5 transition-transform hover:scale-[1.02] bg-transparent border-[1.5px] border-[#FF0000] text-[#FF0000] w-fit mt-4 lg:mt-0">
                             <span className="font-banner text-[20px] md:text-[22px] font-normal leading-none pt-0.5 tracking-[0.01em]">
                                 Explore
                             </span>

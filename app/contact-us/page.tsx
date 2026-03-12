@@ -1,5 +1,5 @@
 
-"use client"
+'use client'
 
 import React from 'react';
 import HighlightedText from "@/components/global/HighlightedText";
@@ -15,20 +15,42 @@ import Image from 'next/image';
 export default function PartnersPage() {
     return (
         <main className="w-full flex-grow flex flex-col items-center">
-            {/* Wait for the user to provide the exact background image. It is loaded conditionally or temporarily blank. */}
-            <Banner
-                backgroundImage="/banner-contact-us.png"
-                heightVariant="794"
-                titleClassName="font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] pb-3 md:pb-5 text-white drop-shadow-sm"
-                title={
-                    <>
-                        Get in   <HighlightedText text="Touch." />
+            {/* Custom Contact Us Hero Section designed exactly to the Figma reference */}
+            <section
+                className="relative w-full min-h-[100vh] flex flex-col justify-start items-center overflow-x-clip pt-32 lg:pt-40"
+                style={{
+                    backgroundImage: `url('/banner-contact-us.png')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                }}
+            >
+                {/* Text Content */}
+                <div className="relative z-10 w-full px-6 lg:px-12 flex flex-col items-center justify-center text-center mt-10 md:mt-16">
+                    <h1 className="font-title font-medium text-[32px] md:text-[42px] lg:text-[48px] leading-[1.2] tracking-normal text-white drop-shadow-sm mb-6">
+                        We’re here to help you <br className="block sm:hidden" />secure what matters most.
+                    </h1>
+                    
+                    <p className="font-body font-light text-[15px] md:text-[18px] lg:text-[20px] leading-[1.6] md:leading-[1.8] tracking-wide text-[#EAEAEA] max-w-[850px] mx-auto">
+                        Have questions about Marma or want to learn how our solutions fit your needs? Our team is ready to
+                        assist you with product details, deployment guidance, and support. Reach out to us today, and let’s build
+                        a safer digital environment together.
+                    </p>
+                </div>
 
-                    </>
-                }
-                middleText="We’re here to help you secure what matters most."
-                subtitle="Have questions about Marma or want to learn how our solutions fit your needs? Our team is ready to assist you with product details, deployment guidance, and support. Reach out to us today, and let’s build a safer digital environment together."
-            />
+                {/* Overlapping Phones Image Block */}
+                <div className="relative w-full max-w-[850px] mx-auto mt-12 md:mt-15 lg:mb-[-120px] flex justify-center z-20 px-4">
+                    <Image
+                        src="/banner-contact-secondry.png"
+                        alt="Marma Security Mobile App"
+                        width={600}
+                        height={500}
+                        className="object-contain w-full sm:w-[85%] md:w-[680px] h-auto drop-shadow-2xl"
+                        priority
+                        sizes="(max-width: 768px) 100vw, 850px"
+                    />
+                </div>
+            </section>
 
 
 

@@ -31,7 +31,7 @@ const stats: StatItem[] = [
 
 export default function StatsSection() {
     return (
-        <section className="relative w-full py-0 overflow-hidden mb-12 md:mb-28">
+        <section className="relative w-full py-0 overflow-hidden">
             {/* Background Image with Blur and Overlay — reuses the testimonial-home background look */}
             <div className="absolute inset-0 z-0">
                 <div
@@ -43,7 +43,7 @@ export default function StatsSection() {
             <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-10 md:py-16 lg:py-20">
 
                 {/* Stats Glass Card */}
-                <div className="stats-glass-card p-5 md:p-8 lg:p-12">
+                <div className="stats-glass-card p-[10px] md:p-[71px] lg:p-12">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-26">
                         {stats.map((stat, index) => (
                             <div
