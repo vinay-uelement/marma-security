@@ -53,7 +53,7 @@ const features: FeatureItem[] = [
 
 export default function SimplifyLife() {
     return (
-        <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-20 md:py-44 bg-[#FFF]">
+        <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-10 md:py-14 bg-[#FFF]">
 
             {/* Header Section */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-start mb-16 md:mb-24 gap-8">
@@ -76,7 +76,7 @@ export default function SimplifyLife() {
             {/* Features List Layout */}
             <div className="flex flex-col gap-12 lg:gap-16">
                 {features.map((feature) => (
-                    <div key={feature.id} className="grid grid-cols-1 md:grid-cols-[1fr_1fr] lg:grid-cols-[1.2fr_1fr_1fr] gap-4 md:gap-8 lg:gap-12 items-start md:items-center">
+                    <div key={feature.id} className="grid grid-cols-1 md:grid-cols-[1fr_1fr] lg:grid-cols-[1.2fr_1fr_1fr] gap-4 md:gap-8 lg:gap-12 items-start  md:items-center">
 
                         {/* 1. Image Column */}
                         <div className="relative w-full aspect-[16/9] lg:aspect-[1.5/1] rounded-[16px] overflow-hidden shadow-sm mb-4 md:mb-0">

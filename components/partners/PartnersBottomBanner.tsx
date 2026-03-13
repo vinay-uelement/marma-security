@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function PartnersBottomBanner() {
     return (
-        <section className="w-full relative py-12 lg:py-16 mb-20 bg-[#fff]">
+        <section className="w-full relative py-12 lg:py-16 mb-3 md-mb-20 bg-[#fff]">
             
             {/* Top Left Decorative Red Line */}
             <div className="flex absolute top-12 lg:top-16 left-0 w-[15%] h-[1.5px] bg-[#FF0000] z-20 items-center">
@@ -17,20 +17,20 @@ export default function PartnersBottomBanner() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 lg:gap-20 items-end">
                     
                     {/* Left Column: Device Image */}
-                    <div className="flex justify-center items-center w-full min-h-[250px] md:min-h-[350px] lg:min-h-[500px]">
+                    <div className="flex justify-center mt-5 items-center w-full min-h-[250px] md:min-h-[350px] lg:min-h-[500px]">
                         <div className="relative w-full max-w-[220px] md:max-w-[300px] lg:max-w-[423px] aspect-[423/495] translate-y-4 lg:translate-y-16 z-30">
                             <Image
-                                src="/images/home/black-device-homepage.png" 
+                                src="/images/home/black-device-homepage.webp" 
                                 alt="Marma Security Black Device"
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 50vw"
-                                className="object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)]"
+                                className="object-contain drop-shadow-[-25px_15px_40px_rgba(0,0,0,0.2)]"
                             />
                         </div>
                     </div>
 
                     {/* Right Column: Text Content */}
-                    <div className="flex flex-col space-y-4 relative z-10 pb-16 pt-8 md:pt-12 lg:pt-0 lg:pb-0 text-center lg:text-left items-center lg:items-start max-w-[600px] mx-auto lg:mx-0">
+                    <div className="flex flex-col space-y-4 relative z-10 pb-6 md-pb-16 pt-8 md:pt-12 lg:pt-0 lg:pb-0 text-center lg:text-left items-center lg:items-start max-w-[600px] mx-auto lg:mx-0">
                         {/* Title */}
                         <h3 className="partners-btm-title">
                             Simplified Network Security

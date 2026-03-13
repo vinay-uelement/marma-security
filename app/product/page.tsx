@@ -8,7 +8,7 @@ import HighlightedText from "@/components/global/HighlightedText";
 
 export default function ProductPage() {
     return (
-        <main className="flex min-h-screen flex-col bg-[#FFFFFF] pb-[100px]">
+        <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
             {/* Hero Banner Section */}
             <Banner
                 backgroundImage="/images/banners/product-banner.webp" // Expects the red line decorative image here
@@ -19,7 +19,7 @@ export default function ProductPage() {
                         for Every Network
                     </>
                 }
-                titleClassName="font-banner font-normal text-[36px] md:text-[50px] lg:text-[60px] leading-[1.2] tracking-[-0.01em] text-white"
+                titleClassName="font-banner font-normal text-[32px] md:text-[45px] lg:text-[60px] leading-[1.2] tracking-[-0.01em] text-white"
                 subtitle={
                     <>
                         Marma offers a range of intelligent cybersecurity<br className="hidden xl:block" />
@@ -61,9 +61,9 @@ export default function ProductPage() {
             />
 
             {/* Product Showcases Content Area */}
-            <div className="flex-grow max-w-[1440px] w-full mx-auto px-6 lg:px-12 pt-20">
+            <div className="flex-grow max-w-[1440px] w-full mx-auto px-6 lg:px-12">
 
-                <div className="pb-32 max-sm:pb-2">
+                <div className="pb-20 max-sm:pb-2">
                     {/* SafeHome Product Showcase */}
                     <ProductShowcase
                         productName="SafeHome"

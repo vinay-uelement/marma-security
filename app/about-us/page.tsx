@@ -51,7 +51,7 @@ export default function PartnersPage() {
                 </div>
             </section>
 
-            <section className="w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-12 md:py-36 bg-[#FFFFFF]">
+            <section className="w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-12 md:pt-36 bg-[#FFFFFF]">
 
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-center mb-10 md:mb-[70px] gap-8 text-center md:text-left">
