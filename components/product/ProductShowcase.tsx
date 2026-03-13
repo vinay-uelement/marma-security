@@ -14,7 +14,7 @@ export interface ProductShowcaseProps {
 
 export default function ProductShowcase({ productName, mainFeature, subFeatures }: ProductShowcaseProps) {
     return (
-        <section className="w-full mt-20 lg:mt-32">
+        <section className="w-full mt-10 lg:mt-20">
 
             {/* Header */}
             <div className="mb-10 text-center md:text-left">

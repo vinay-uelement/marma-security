@@ -38,14 +38,14 @@ const teamMembers: TeamMember[] = [
         id: "member-4",
         name: "Ganesh",
         role: "COO & Director",
-        image: "/images/about/about-us-team4.png",
+        image: "/images/about/about-us-team4.webp",
         linkedinUrl: "#"
     },
     {
         id: "member-5",
         name: "Ganesh",
         role: "COO & Director",
-        image: "/images/about/about-us-team1.webp",
+        image: "/images/about/about-us-team5.webp",
         linkedinUrl: "#"
     },
         {
@@ -84,9 +84,9 @@ export default function OurTeam() {
         <div className="flex flex-col w-full">
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 min-h-[400px]">
                 {visibleMembers.map((member, index) => (
-                    <div key={`${member.id}-${index + currentIndex}`} className="flex flex-col rounded-[16px] md:rounded-[10px] border border-[#F1F1F1] bg-[#F1F1F1] overflow-hidden p-3 md:p-4 animate-fade-in group">
+                    <div key={`${member.id}-${index + currentIndex}`} className="flex flex-col rounded-[10px]  border border-[#F1F1F1] bg-[#F1F1F1] overflow-hidden p-[16px]  animate-fade-in group">
                         {/* Photo inside card */}
-                        <div className="relative w-full aspect-[3/3.5] rounded-[12px] md:rounded-[14px] overflow-hidden mb-4 md:mb-5 transition-transform group-hover:scale-[1.01]">
+                        <div className="relative w-full aspect-[3/3.5] rounded-[7px]  overflow-hidden mb-4 md:mb-5 transition-transform group-hover:scale-[1.01]">
                             <Image
                                 src={member.image}
                                 alt={member.name}
@@ -131,7 +131,7 @@ export default function OurTeam() {
 
             {/* Bottom Carousel Navigation block */}
             {teamMembers.length > ITEMS_PER_PAGE && (
-                <div className="w-full flex justify-between items-center mt-12 md:mt-20 pt-6 md:pt-10 gap-6 md:gap-12">
+                <div className="w-full flex justify-between items-center mt-12 md:mt-20 pt-3 md:pt-0 gap-6 md:gap-12">
                     
                     {/* Progress Bar Container - dynamically flexes to fill available space besides buttons */}
                     <div className="flex-grow relative h-[3px]">
