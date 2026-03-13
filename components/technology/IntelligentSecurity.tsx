@@ -14,37 +14,37 @@ interface TechFeatureItem {
 const features: TechFeatureItem[] = [
     {
         id: "phishblock",
-        iconUrl: "/ic_outline-message.png",
+        iconUrl: "/images/global/ic_outline-message.png",
         title: "PhishBlock",
         description: "Protection against phishing attacks",
     },
     {
         id: "netimmunity",
-        iconUrl: "/bx_globe.png",
+        iconUrl: "/images/global/bx_globe.png",
         title: "NetImmunity",
         description: "Protection against network-based attacks",
     },
     {
         id: "malwareguard",
-        iconUrl: "/tabler_virus.png",
+        iconUrl: "/images/global/tabler_virus.png",
         title: "MalwareGuard",
         description: "Protection against dangerous malware and spyware",
     },
     {
         id: "ransomguard",
-        iconUrl: "/ic_outline-shield.png",
+        iconUrl: "/images/global/ic_outline-shield.png",
         title: "RansomGuard",
         description: "Protection against dangerous ransomware",
     },
     {
         id: "phishblock-2",
-        iconUrl: "/ic_outline-message.png",
+        iconUrl: "/images/global/ic_outline-message.png",
         title: "PhishBlock",
         description: "Protection against phishing attacks",
     },
     {
         id: "phishblock-3",
-        iconUrl: "/ic_outline-shield.png",
+        iconUrl: "/images/global/ic_outline-shield.png",
         title: "PhishBlock",
         description: "Protection against phishing attacks",
     },
@@ -77,7 +77,7 @@ export default function IntelligentSecurity() {
             {/* Desktop right-edge bleed image, strictly sticking to 0px from right screen edge */}
             <div className="absolute right-0 top-[12%] lg:top-[12%] z-0 hidden min-[901px]:flex justify-end w-[400px] lg:w-[500px] pointer-events-none">
                 <Image
-                    src="/Technology-below-banner.png"
+                    src="/images/banners/Technology-below-banner.webp"
                     alt="Background wire graphic"
                     width={500}
                     height={150}
@@ -104,7 +104,7 @@ export default function IntelligentSecurity() {
                     <div className="flex min-[901px]:hidden items-center justify-end w-full mt-8 -mr-6">
                         <div className="w-full max-w-[320px] sm:max-w-[400px]">
                             <Image
-                                src="/Technology-below-banner.png"
+                                src="/images/banners/Technology-below-banner.webp"
                                 alt="Background wire graphic"
                                 width={300}
                                 height={90}

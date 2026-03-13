@@ -18,35 +18,35 @@ const tabItems: TabData[] = [
         label: "Healthcare",
         title: "Securing digital healthcare ecosystems.",
         description: "Marma secures healthcare networks against data breaches, ransomware, and unauthorized access by delivering continuous, network-level protection across the entire digital infrastructure. From patient record systems and administrative platforms to connected medical devices and IoT equipment, Marma ensures every device on the network is protected in real time.",
-        image: "/healthcare-solution.png"
+        image: "/images/solutions/healthcare-solution.webp"
     },
     {
         id: "legal",
         label: "Legal",
         title: "Protecting sensitive legal documents.",
         description: "Law firms handle highly sensitive client data. Marma provides enterprise-grade encryption and network monitoring to prevent unauthorized access to privileged communications and case files across your entire infrastructure.",
-        image: "/healthcare-solution.png" // Placeholder
+        image: "/images/solutions/healthcare-solution.webp" // Placeholder
     },
     {
         id: "finance",
         label: "Finance",
         title: "Safeguarding financial transactions.",
         description: "Financial institutions require the highest level of security. Our zero-trust architecture ensures that every transaction, client portfolio, and internal communication remains completely isolated from external threats.",
-        image: "/healthcare-solution.png" // Placeholder
+        image: "/images/solutions/healthcare-solution.webp" // Placeholder
     },
     {
         id: "manufacturing",
         label: "Manufacturing",
         title: "Defending industrial control systems.",
         description: "Modern manufacturing relies on connected IoT devices. Marma protects operational technology (OT) from disruption, ensuring production lines continue running without vulnerability to external network attacks.",
-        image: "/healthcare-solution.png" // Placeholder
+        image: "/images/solutions/healthcare-solution.webp" // Placeholder
     },
     {
         id: "smb",
         label: "Small and Medium Business",
         title: "Enterprise security for growing businesses.",
         description: "Small businesses are frequent targets for cyberattacks. Marma provides affordable, plug-and-play network security that protects your entire office network without requiring a dedicated IT security team.",
-        image: "/healthcare-solution.png" // Placeholder
+        image: "/images/solutions/healthcare-solution.webp" // Placeholder
     }
 ];
 
@@ -67,7 +67,7 @@ export default function SolutionsTabs() {
                 {/* Decorative Red Line Graphic */}
                 <div className="hidden md:flex items-center justify-end w-full max-w-[400px] lg:max-w-[500px] lg:-mr-12">
                     <Image
-                        src="/rightside-section-homepage-new.png"
+                        src="/images/home/rightside-section-homepage-new.webp"
                         alt="Decorative Line"
                         width={500}
                         height={60}

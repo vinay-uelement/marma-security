@@ -18,7 +18,7 @@ export default function PartnersPage() {
             <section
                 className="relative w-full min-h-[100vh] flex flex-col justify-start items-center overflow-x-clip pt-32 lg:pt-40"
                 style={{
-                    backgroundImage: `url('/banner-contact-us.png')`,
+                    backgroundImage: `url('/images/banners/banner-contact-us.webp')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat'
@@ -40,7 +40,7 @@ export default function PartnersPage() {
                 {/* Overlapping Phones Image Block */}
                 <div className="relative w-full max-w-[850px] mx-auto mt-12 md:mt-15 lg:mb-[-120px] flex justify-center z-20 px-4">
                     <Image
-                        src="/banner-contact-secondry.png"
+                        src="/images/banners/banner-contact-secondry.webp"
                         alt="Marma Security Mobile App"
                         width={600}
                         height={500}

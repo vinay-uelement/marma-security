@@ -10,7 +10,7 @@ export default function ProtectionBanner() {
                    Ensure the user uploads "phishing-protection-bg.png" or updates this URL
                 */}
                 <Image
-                    src="/homepage-below-near.png"
+                    src="/images/home/homepage-below-near.webp"
                     alt="Protection against phishing attacks"
                     fill
                     className="object-cover object-center"

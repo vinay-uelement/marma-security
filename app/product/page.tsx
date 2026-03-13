@@ -11,7 +11,7 @@ export default function ProductPage() {
         <main className="flex min-h-screen flex-col bg-[#FFFFFF] pb-[100px]">
             {/* Hero Banner Section */}
             <Banner
-                backgroundImage="/product-banner.png" // Expects the red line decorative image here
+                backgroundImage="/images/banners/product-banner.webp" // Expects the red line decorative image here
                 heightVariant="900"
                 title={
                     <>
@@ -36,7 +36,7 @@ export default function ProductPage() {
                         {/* SafeHome Card */}
                         <Link href="#safehome" className="group relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] transition-transform hover:-translate-y-2 duration-300">
                             <Image
-                                src="/right-side-product-banner1.png"
+                                src="/images/banners/right-side-product-banner1.webp"
                                 alt="SafeHome Product"
                                 width={340}
                                 height={420}
@@ -48,7 +48,7 @@ export default function ProductPage() {
                         {/* SafeBiz Card */}
                         <Link href="#safebiz" className="group relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] transition-transform hover:-translate-y-2 duration-300">
                             <Image
-                                src="/right-side-product-banner2.png"
+                                src="/images/banners/right-side-product-banner2.webp"
                                 alt="SafeBiz Product"
                                 width={340}
                                 height={420}
@@ -70,18 +70,18 @@ export default function ProductPage() {
                         mainFeature={{
                             title: "CYBERSECURITY PROTECTION",
                             description: "SafeBiz Security Gateway protects all internet-connected devices on your network from phishing, ransomware, malware, IoT/Network attacks, and the latest cyber threats.",
-                            image: "/product1safehome.png"
+                            image: "/images/product/product1safehome.png"
                         }}
                         subFeatures={[
                             {
                                 title: "DATA PROTECTION",
                                 description: "SafeHome protects all connected devices on your network from cyberattacks targeting your financial and personal data, safeguarding your privacy and protecting your family on the internet.",
-                                image: "/data-protect-safehome.png" // Asset not provided yet
+                                image: "/images/features/data-protect-safehome.webp" // Asset not provided yet
                             },
                             {
                                 title: "SECURE SMART HOME",
                                 description: "SafeHome protects all smart devices in your smart home connected to your wifi network such as cameras, digital doorlock, appliances, your car and protects these sensitive devices from cyber attacks.",
-                                image: "/securehome-safehome.png" // Asset not provided yet
+                                image: "/images/features/securehome-safehome.webp" // Asset not provided yet
                             }
                         ]}
                     />
@@ -92,18 +92,18 @@ export default function ProductPage() {
                         mainFeature={{
                             title: "ENTERPRISE SECURITY",
                             description: "SafeBiz provides robust protection for enterprise networks, shielding sensitive business data and infrastructure from advanced persisting threats and unauthorized access.",
-                            image: "/product2biz.png"
+                            image: "/images/product/product2biz.png"
                         }}
                         subFeatures={[
                             {
                                 title: "CLOUD PROTECTION",
                                 description: "Ensure your cloud workloads and remote environments remain inaccessible to attackers with real-time continuous monitoring and automated threat mitigation.",
-                                image: "/customer-safebiz.png" // Asset not provided yet
+                                image: "/images/features/customer-safebiz.webp" // Asset not provided yet
                             },
                             {
                                 title: "ZERO TRUST ARCHITECTURE",
                                 description: "Implement strict access controls and verify every request regardless of origin, protecting your endpoints with industry-leading zero trust frameworks.",
-                                image: "/securehome-safehome.png" // Asset not provided yet
+                                image: "/images/features/securehome-safehome.webp" // Asset not provided yet
                             }
                         ]}
                     />

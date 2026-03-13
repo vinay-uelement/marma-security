@@ -28,6 +28,8 @@ export interface BannerProps {
     rightImageCircleClassName?: string;
     rightContent?: React.ReactNode;
     ContinerClass?:string;
+    backgroundSize?: string;
+    sectionClassName?: string;
 }
 
 export default function Banner({
@@ -46,15 +48,24 @@ export default function Banner({
     rightImageClassName = "scale-[1.15] drop-shadow-2xl",
     rightImageCircleClassName = "bg-[#E12120] shadow-2xl",
     rightContent,
-    ContinerClass = 'h-[100vh]'
+    ContinerClass = 'h-[100vh]',
+    backgroundSize = "cover",
+    sectionClassName = "py-20 lg:py-24",
 }: BannerProps) {
+    // Dynamic height class assignment based on the prop
+    const heightMap: Record<string, string> = {
+        '900': 'min-h-[90vh]',
+        '810': 'min-h-[100vh]',
+        '794': 'min-h-[100vh]',
+    };
+    const heightClass = heightMap[heightVariant] || 'min-h-[90vh]';
 
     return (
         <section
-            className={`relative w-full flex items-center overflow-visible overflow-x-clip py-28 lg:py-32 ${ContinerClass}`}
+            className={`relative w-full flex items-center overflow-visible overflow-x-clip ${ContinerClass} ${sectionClassName} ${heightClass}`}
             style={{
                 backgroundImage: `url('${backgroundImage}')`,
-                backgroundSize: 'cover',
+                backgroundSize: backgroundSize,
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'
             }}
@@ -96,15 +107,15 @@ export default function Banner({
 
                                     const variantClass = isPrimary
                                         ? "bg-[#FF0000] text-white hover:bg-[#E10000]"
-                                        : "bg-transparent border border-[#FFFFFF25] text-white hover:bg-white/10";
+                                        : "bg-transparent border border-[#FFFFFF40] text-white hover:bg-white/10";
 
                                     const textClass = isPrimary
                                         ? "font-banner text-[16px] md:text-[20px] font-normal  tracking-[-0.01em]"
                                         : "text-[16px] md:text-[20px] tracking-[0.02em]";
 
                                     const iconContainerClass = isPrimary
-                                        ? "bg-[#F4F4F4] text-[#FF0000] rounded-full p-1 flex items-center justify-center shrink-0 group-hover:bg-white transition-colors"
-                                        : "border border-white text-white rounded-full p-1 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors";
+                                        ? "bg-[#F4F4F4] text-[#FF0000] rounded-full p-2 md:p-2.5 flex items-center justify-center shrink-0 group-hover:bg-white transition-colors"
+                                        : "border border-[#FFFFFF40] text-white rounded-full p-2 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors";
 
                                     const ButtonContent = (
                                         <button

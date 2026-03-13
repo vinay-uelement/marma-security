@@ -29,7 +29,7 @@ export default function ContactSection() {
             {/* Right-side decorative image placeholder — user replaces this src */}
             <div className="absolute top-0 mt-[100px] md-mt-[120px] right-0 h-full w-[140px] lg:w-[220px] pointer-events-none z-0 hidden lg:block">
                 <Image
-                    src="/contact-us-right.png"
+                    src="/images/contact/contact-us-right.png"
                     alt="Decorative"
                     fill
                     sizes="220px"
@@ -74,7 +74,7 @@ export default function ContactSection() {
                             {/* Phone */}
                             <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB]">
                                 <div className="flex items-center justify-center w-[68px] h-[68px] rounded-full bg-[#EDEDED] shrink-0">
-                                    <Image src="/contact-us-calling-icon.png" alt="Phone" width={28} height={28} className="object-contain" />
+                                    <Image src="/images/contact/contact-us-calling-icon.png" alt="Phone" width={28} height={28} className="object-contain" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <span className="contact-card-label">Phone Number</span>
@@ -85,7 +85,7 @@ export default function ContactSection() {
                             {/* Corporate Office */}
                             <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB]">
                                 <div className="flex items-center justify-center w-[68px] h-[68px] rounded-full bg-[#EDEDED] shrink-0">
-                                    <Image src="/contact-us-map.png" alt="Location" width={28} height={28} className="object-contain" />
+                                    <Image src="/images/contact/contact-us-map.png" alt="Location" width={28} height={28} className="object-contain" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <span className="contact-card-label">Corporate Office</span>
@@ -96,7 +96,7 @@ export default function ContactSection() {
                             {/* Email */}
                             <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB]">
                                 <div className="flex items-center justify-center w-[68px] h-[68px] rounded-full bg-[#EDEDED] shrink-0">
-                                    <Image src="/contact-us-mail.png" alt="Email" width={28} height={28} className="object-contain" />
+                                    <Image src="/images/contact/contact-us-mail.png" alt="Email" width={28} height={28} className="object-contain" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <span className="contact-card-label">Email</span>
@@ -177,13 +177,13 @@ export default function ContactSection() {
                                     {/* Mini social icons */}
                                     <div className="flex items-center gap-4">
                                         <Link href="#" aria-label="X / Twitter" className="hover:opacity-70 transition-opacity">
-                                            <Image src="/contact-us-x.png" alt="X/Twitter" width={72} height={72} className="object-contain" />
+                                            <Image src="/images/contact/contact-us-x.png" alt="X/Twitter" width={72} height={72} className="object-contain" />
                                         </Link>
                                         <Link href="#" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
-                                            <Image src="/contact-us-insta.png" alt="Instagram" width={72} height={72} className="object-contain" />
+                                            <Image src="/images/contact/contact-us-insta.png" alt="Instagram" width={72} height={72} className="object-contain" />
                                         </Link>
                                         <Link href="#" aria-label="LinkedIn" className="hover:opacity-70 transition-opacity">
-                                            <Image src="/contact-us-linkedin.png" alt="LinkedIn" width={72} height={72} className="object-contain" />
+                                            <Image src="/images/contact/contact-us-linkedin.png" alt="LinkedIn" width={72} height={72} className="object-contain" />
                                         </Link>
                                     </div>
 
@@ -194,7 +194,7 @@ export default function ContactSection() {
                                     >
                                         <span className="contact-submit-text">Submit</span>
                                         <div className="flex items-center justify-center w-[34px] h-[34px] rounded-full bg-white border border-[#FF0000]">
-                                            <Image src="/contact-us-arrow.png" alt="Arrow" width={10} height={10} className="object-contain" />
+                                            <Image src="/images/contact/contact-us-arrow.png" alt="Arrow" width={10} height={10} className="object-contain" />
                                         </div>
                                     </button>
                                 </div>

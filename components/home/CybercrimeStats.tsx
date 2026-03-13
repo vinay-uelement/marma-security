@@ -10,7 +10,7 @@ export default function CybercrimeStats() {
                     {/* The placeholder image will need to be replaced with the actual black device image by the user */}
                     <div className="relative w-full max-w-[423px] aspect-[423/495] translate-y-[20%] lg:translate-y-[25%] z-30">
                         <Image
-                            src="/black-device-homepage.png" // Placeholder path for the black device + phone
+                            src="/images/home/black-device-homepage.webp" // Placeholder path for the black device + phone
                             alt="Marma Security Black Device"
                             fill
                             sizes="(max-width: 1024px) 100vw, 50vw"

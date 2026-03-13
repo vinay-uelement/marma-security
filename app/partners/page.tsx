@@ -14,7 +14,7 @@ export default function PartnersPage() {
             <section
                 className="relative w-full min-h-[100vh] flex justify-center items-center overflow-x-clip py-28 md:py-32"
                 style={{
-                    backgroundImage: `url('/banner-partners.png')`,
+                    backgroundImage: `url('/images/banners/banner-partners.webp')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat'
@@ -54,9 +54,9 @@ export default function PartnersPage() {
 
                             {/* Learn More Button */}
                             <Link href="#">
-                                <button className="flex items-center justify-between gap-5 bg-transparent border border-white rounded-full pl-8 pr-2 py-2 group transition-transform hover:scale-[1.02] cursor-pointer w-fit min-w-[200px] text-left whitespace-nowrap">
+                                <button className="flex items-center justify-between gap-5 bg-transparent border border-[#FFFFFF40] rounded-full pl-8 pr-2 py-2 group transition-transform hover:scale-[1.02] cursor-pointer w-fit min-w-[200px] text-left whitespace-nowrap">
                                     <span className="text-white footer-btn-text tracking-wide text-[16px] md:text-[18px]">Learn more</span>
-                                    <div className="border border-white text-white rounded-full p-2 flex items-center justify-center flex-shrink-0">
+                                    <div className="border border-[#FFFFFF40] text-white rounded-full p-2 flex items-center justify-center flex-shrink-0">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                                     </div>
                                 </button>

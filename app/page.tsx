@@ -17,7 +17,7 @@ export default function Home() {
     <div className="flex flex-col bg-[#FFFFFF] min-h-screen">
       <main className="flex-grow">
         <Banner
-          backgroundImage="/Banner-homepage-new.png" // Solid dark bg for testing before image is added
+          backgroundImage="/images/banners/Banner-homepage-new.webp" // Solid dark bg for testing before image is added
           heightVariant="900"
           ContinerClass="h-[93vh]"
           title={<>Radically Simplified <br className="hidden md:block" /><HighlightedText text="Cybersecurity" /> for Small<br className="hidden lg:block" /> Businesses and Home</>}
@@ -29,8 +29,10 @@ export default function Home() {
             { label: 'Store', href: '#', variant: 'outline', icon: true }
           ]}
           rightImageAlt="Marma Security Device"
-          rightImage="/homepage-right-banner1.png"
+          rightImage="/images/banners/homepage-right-banner1.webp"
           rightImageClassName="lg:w-[72vh] lg:h-[730px] lg:-translate-x-[-70px] translate-y-[7%] lg:translate-y-[15%] xl:translate-y-[15%] z-30 transform-gpu"
+          backgroundSize="cover"
+          sectionClassName="py-8 lg:py-12"
         />
       </main>
       {/* Updated section with responsive top padding and overflow control */}
@@ -51,7 +53,7 @@ export default function Home() {
             <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[500px] -mr-6 md:-mr-12 lg:-mr-16">
 
               <Image
-                src="/rightside-section-homepage-new.png"
+                src="/images/home/rightside-section-homepage-new.webp"
                 alt="Decorative Line"
                 width={500}
                 height={60}
@@ -78,7 +80,7 @@ export default function Home() {
         {/* Red Decorative Line container on Home page only */}
         <div className="flex w-full mb-12 relative h-[20px] md:h-[30px] w-[350px] md:w-[600px] lg:w-[800px]">
           <Image
-            src="/red-decorative-line-solution-info.png"
+            src="/images/solutions/red-decorative-line-solution-info.png"
             alt="Red Decorative Line"
             fill
             sizes="(max-width: 768px) 350px, (max-width: 1024px) 600px, 800px"

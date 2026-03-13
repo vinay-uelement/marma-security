@@ -16,7 +16,7 @@ export default function HighlightedText({
         <span className={`relative inline-block z-10 ${className}`}>
             {text}
             <Image
-                src="/highlighting.png"
+                src="/images/global/highlighting.png"
                 alt="highlight"
                 width={180}
                 height={28}

@@ -13,7 +13,7 @@ export interface TechnologyBannerProps {
 export default function TechnologyBanner({
     title,
     subtitle,
-    backgroundImage = "/Technology-banner.png", // Ensure this matches user's file name
+    backgroundImage = "/images/banners/Technology-banner.webp", // Ensure this matches user's file name
     buttonText = "Explore",
     buttonLink = "#"
 }: TechnologyBannerProps) {

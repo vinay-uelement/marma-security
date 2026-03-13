@@ -11,7 +11,7 @@ interface SolutionsInfoProps {
 }
 
 export default function SolutionsInfo({
-    imageSrc = "/OneSolution.png",
+    imageSrc = "/images/solutions/OneSolution.webp",
     imagePosition = 'left',
     bgText = "One Solution. Every Environment.",
     title = "A unified cybersecurity platform designed to protect networks across homes, businesses, and critical industries.",
@@ -64,7 +64,7 @@ export default function SolutionsInfo({
                             </span>
                             <div className="border border-[#FF0000] text-[#FF0000] rounded-full p-2 flex items-center justify-center shrink-0 ml-4 group-hover:bg-[#FF0000]/10 transition-colors">
                                 <Image
-                                    src="/arrow-red.png"
+                                    src="/images/global/arrow-red.png"
                                     alt="Arrow"
                                     width={20}
                                     height={20}

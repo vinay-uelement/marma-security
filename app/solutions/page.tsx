@@ -8,7 +8,7 @@ export default function SolutionsPage() {
     return (
         <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
             <Banner
-                backgroundImage="/banner-solution.png"
+                backgroundImage="/images/banners/banner-solution.webp"
                 heightVariant="900"
                 ContinerClass="h-[93vh]"
                 title={
@@ -29,7 +29,7 @@ export default function SolutionsPage() {
                         icon: true
                     }
                 ]}
-                rightImage="/solution-banner-right1.png"
+                rightImage="/images/banners/solution-banner-right1.webp"
                 showRightImageCircle={false}
                 rightImageClassName="lg:w-[72dvh] sm:w-[500px] h-auto lg:-translate-x-[-90px] translate-y-[15%] lg:translate-y-[15%] xl:translate-y-[20%] z-30 transform-gpu"
             />

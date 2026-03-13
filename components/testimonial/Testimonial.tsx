@@ -31,7 +31,7 @@ export default function Testimonial() {
                 {/* The user will add the actual image named testimonial-home */}
                 <div
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url('/Testimonial-section.png')` }}
+                    style={{ backgroundImage: `url('/images/home/Testimonial-section.webp')` }}
                 />
                 {/* Dark overlay and blur effect */}
                 <div className="absolute " />
@@ -63,7 +63,7 @@ export default function Testimonial() {
                             {/* Quote Icon */}
                             <div className="absolute top-8 right-8">
                                 <Image
-                                    src="/quote-icon.png"
+                                    src="/images/global/quote-icon.png"
                                     alt="Quote"
                                     width={32}
                                     height={24}

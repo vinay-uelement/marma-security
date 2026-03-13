@@ -11,7 +11,7 @@ export default function Footer() {
                         {/* Top: Logo & Description */}
                         <div className="flex flex-col items-start pb-8 lg:pb-15 gap-10 w-full">
                             <Image
-                                src="/marmalogofooter.png"
+                                src="/images/global/marmalogofooter.png"
                                 alt="Marma Security"
                                 width={200}
                                 height={40}
@@ -52,13 +52,13 @@ export default function Footer() {
                             {/* Social Icons */}
                             <div className="flex items-end space-x-6 pb-2 mt-auto">
                                 <a href="#" aria-label="Instagram" className="hover:opacity-80 transition-opacity">
-                                    <Image src="/insta-icon.png" alt="Instagram" width={28} height={28} className="object-contain" />
+                                    <Image src="/images/global/insta-icon.png" alt="Instagram" width={28} height={28} className="object-contain" />
                                 </a>
                                 <a href="#" aria-label="Facebook" className="hover:opacity-80 transition-opacity">
-                                    <Image src="/fb-icon.png" alt="Facebook" width={28} height={28} className="object-contain" />
+                                    <Image src="/images/global/fb-icon.png" alt="Facebook" width={28} height={28} className="object-contain" />
                                 </a>
                                 <a href="#" aria-label="Twitter" className="hover:opacity-80 transition-opacity">
-                                    <Image src="/twitter-icon.png" alt="Twitter" width={28} height={28} className="object-contain" />
+                                    <Image src="/images/global/twitter-icon.png" alt="Twitter" width={28} height={28} className="object-contain" />
                                 </a>
                             </div>
                         </div>

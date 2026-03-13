@@ -36,7 +36,7 @@ export default function StatsSection() {
             <div className="absolute inset-0 z-0">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url('background-stats.png')` }}
+                    style={{ backgroundImage: `url('/images/about/background-stats.webp')` }}
                 />
             </div>
 

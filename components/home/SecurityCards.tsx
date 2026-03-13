@@ -15,28 +15,28 @@ const cards: SecurityCard[] = [
         title: "PhishBlock",
         description: "Protection against phishing attacks",
         number: "01",
-        image: "/Malware-guard.png", // User will replace this later
+        image: "/images/features/Malware-guard.webp", // User will replace this later
         linkHref: "#"
     },
     {
         title: "NetImmunity",
         description: "Protection against network-based attacks",
         number: "02",
-        image: "/Malware-guard.png", // User will replace this later
+        image: "/images/features/Malware-guard.webp",
         linkHref: "#"
     },
     {
         title: "MalwareGuard",
         description: "Protection against dangerous malware and spyware",
         number: "03",
-        image: "/Malware-guard.png", // User will replace this later
+        image: "/images/features/Malware-guard.webp", // User will replace this later
         linkHref: "#"
     },
     {
         title: "RansomGuard",
         description: "Protection against dangerous ransomware",
         number: "04",
-        image: "/Malware-guard.png",
+        image: "/images/features/Malware-guard.webp",
         linkHref: "#"
     }
 ];

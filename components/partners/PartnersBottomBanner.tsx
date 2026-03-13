@@ -20,7 +20,7 @@ export default function PartnersBottomBanner() {
                     <div className="flex justify-center items-center w-full min-h-[250px] md:min-h-[350px] lg:min-h-[500px]">
                         <div className="relative w-full max-w-[220px] md:max-w-[300px] lg:max-w-[423px] aspect-[423/495] translate-y-4 lg:translate-y-16 z-30">
                             <Image
-                                src="/black-device-homepage.png" 
+                                src="/images/home/black-device-homepage.png" 
                                 alt="Marma Security Black Device"
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 50vw"

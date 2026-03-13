@@ -15,7 +15,7 @@ export default function PartnersPage() {
             <section
                 className="relative w-full min-h-[100vh] flex justify-center items-center overflow-x-clip py-28 md:py-32"
                 style={{
-                    backgroundImage: `url('/banner-about-us.png')`,
+                    backgroundImage: `url('/images/banners/banner-about-us.webp')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat'
@@ -62,8 +62,8 @@ export default function PartnersPage() {
                     {/* Decorative Red Line Graphic */}
                     <div className="hidden md:flex items-start justify-end w-full max-w-[400px] lg:max-w-[500px] lg:-mr-12 -mt-16 lg:-mt-24">
                         <Image
-                            src="/Technology-below-banner.png"
-                            alt="Decorative Line"
+                            src="/images/banners/Technology-below-banner.webp"
+                            alt="Decorative Line"   
                             width={500}
                             height={60}
                             className="object-contain w-full h-auto transform -translate-y-4 lg:-translate-y-8"

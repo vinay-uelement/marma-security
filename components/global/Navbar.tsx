@@ -37,7 +37,7 @@ export default function Navbar() {
                 <div className="flex flex-1 items-center min-w-0">
                     <Link href="/">
                         <Image
-                            src="/logo.png"
+                            src="/images/global/logo.png"
                             alt="Marma Security"
                             width={200}
                             height={40}
@@ -76,7 +76,7 @@ export default function Navbar() {
                         aria-label="Contact Us"
                     >
                         <Image
-                            src="/call-nav.png"
+                            src="/images/global/call-nav.png"
                             alt="Call"
                             width={34}
                             height={34}
@@ -90,7 +90,7 @@ export default function Navbar() {
                         aria-label="Portal/Shop"
                     >
                         <Image
-                            src="/shop-nav.png"
+                            src="/images/global/shop-nav.png"
                             alt="Shop"
                             width={34}
                             height={34}

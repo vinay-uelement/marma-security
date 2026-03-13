@@ -12,7 +12,7 @@ interface FeatureItem {
 const features: FeatureItem[] = [
     {
         id: "truck-rolls",
-        image: "/simplify-img1.png", // Using existing placeholder
+        image: "/images/partners/simplify-img1.webp", // Using existing placeholder
         title: "No More Truck Rolls",
         description: (
             <>
@@ -25,7 +25,7 @@ const features: FeatureItem[] = [
     },
     {
         id: "proof-of-value",
-        image: "/simplify-img2.png", // Using existing placeholder
+        image: "/images/partners/simplify-img2.webp", // Using existing placeholder
         title: "Continous Proof of Value",
         description: (
             <>
@@ -38,7 +38,7 @@ const features: FeatureItem[] = [
     },
     {
         id: "wfh-use-cases",
-        image: "/simplify-img3.png", // Using existing placeholder
+        image: "/images/partners/simplify-img3.webp", // Using existing placeholder
         title: "Serve WFH Use Cases",
         description: (
             <>
@@ -64,7 +64,7 @@ export default function SimplifyLife() {
                 {/* Decorative Red Line Graphic */}
                 <div className="hidden md:flex items-start justify-end w-full max-w-[400px] lg:max-w-[500px] lg:-mr-12">
                     <Image
-                        src="/rightside-section-homepage-new.png"
+                        src="/images/home/rightside-section-homepage-new.webp"
                         alt="Decorative Line"
                         width={500}
                         height={60}

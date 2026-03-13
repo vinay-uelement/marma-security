@@ -18,28 +18,28 @@ const tabItems: TabData[] = [
         label: "Complex Setup & Maintenance",
         title: "Clear & Benefit-Focused",
         description: "Marma installs in under five minutes and begins protecting your network immediately. Designed with simplicity at its core, it requires no technical knowledge, manual configurations, or ongoing maintenance. Once set up, Marma runs automatically in the background, continuously monitoring and defending your entire Wi-Fi network against cyber threats.",
-        image: "/healthcare-solution.png"
+        image: "/images/solutions/healthcare-solution.webp"
     },
     {
         id: "legal",
         label: "Privacy & Data Safety Concerns",
         title: "Clear & Benefit-Focused",
         description: "Law firms handle highly sensitive client data. Marma provides enterprise-grade encryption and network monitoring to prevent unauthorized access to privileged communications and case files across your entire infrastructure.",
-        image: "/healthcare-solution.png" // Placeholder
+        image: "/images/solutions/healthcare-solution.webp" // Placeholder
     },
     {
         id: "finance",
         label: "Rising Cyber Threats",
         title: "Clear & Benefit-Focused",
         description: "Financial institutions require the highest level of security. Our zero-trust architecture ensures that every transaction, client portfolio, and internal communication remains completely isolated from external threats.",
-        image: "/healthcare-solution.png" // Placeholder
+        image: "/images/solutions/healthcare-solution.webp" // Placeholder
     },
     {
         id: "manufacturing",
         label: "Expensive Security Solutions",
         title: "Clear & Benefit-Focused",
         description: "Modern manufacturing relies on connected IoT devices. Marma protects operational technology (OT) from disruption, ensuring production lines continue running without vulnerability to external network attacks.",
-        image: "/healthcare-solution.png" // Placeholder
+        image: "/images/solutions/healthcare-solution.webp" // Placeholder
     },
 
 ];
@@ -61,7 +61,7 @@ export default function Challengestab() {
                 {/* Decorative Red Line Graphic */}
                 <div className="hidden md:flex items-start justify-end w-full max-w-[400px] lg:max-w-[500px] lg:-mr-12 -mt-16 lg:-mt-24">
                     <Image
-                        src="/homepage-right-decorativesection.png"
+                        src="/images/home/homepage-right-decorativesection.webp"
                         alt="Decorative Line"
                         width={500}
                         height={60}

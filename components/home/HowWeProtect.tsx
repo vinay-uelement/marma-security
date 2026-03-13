@@ -13,7 +13,7 @@ interface FeatureItem {
 const features: FeatureItem[] = [
     {
         id: "quick-setup",
-        image: "/protect-image-homepage.jpg", // Using placeholder, user to replace
+        image: "/images/home/protect-image-homepage.webp", // Using placeholder, user to replace
         title: "Quick & Effortless Setup",
         description: (
             <>
@@ -36,7 +36,7 @@ const features: FeatureItem[] = [
     },
     {
         id: "automated-protection",
-        image: "/protection-homepage.jpg", // Using placeholder, user to replace
+        image: "/images/home/protection-homepage.webp", // Using placeholder, user to replace
         title: "Fully Automated \nProtection",
         description: (
             <>
@@ -59,7 +59,7 @@ const features: FeatureItem[] = [
     },
     {
         id: "zero-maintenance",
-        image: "/zero-maintainace.png", // Using placeholder, user to replace
+        image: "/images/features/zero-maintainace.webp", // Using placeholder, user to replace
         title: "Zero Maintenance \nRequired",
         description: (
             <>
@@ -95,7 +95,7 @@ export default function HowWeProtect() {
                 {/* Decorative Red Line Graphic */}
                 <div className="hidden md:flex items-center justify-end w-full max-w-[400px] lg:max-w-[500px] lg:-mr-12">
                     <Image
-                        src="/homepage-right-side-how-we-protect.png" // User can upload custom red line image here
+                        src="/images/home/homepage-right-side-how-we-protect.png" // User can upload custom red line image here
                         alt="Decorative Line"
                         width={500}
                         height={60}

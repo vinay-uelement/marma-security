@@ -17,42 +17,42 @@ const teamMembers: TeamMember[] = [
         id: "member-1",
         name: "Ganesh",
         role: "COO & Director",
-        image: "/about-us-team1.png",
+        image: "/images/about/about-us-team1.webp",
         linkedinUrl: "#"
     },
     {
         id: "member-2",
         name: "Ganesh",
         role: "COO & Director",
-        image: "/about-us-team2.png",
+        image: "/images/about/about-us-team2.webp",
         linkedinUrl: "#"
     },
     {
         id: "member-3",
         name: "Ganesh",
         role: "COO & Director",
-        image: "/about-us-team3.png",
+        image: "/images/about/about-us-team3.webp",
         linkedinUrl: "#"
     },
     {
         id: "member-4",
         name: "Ganesh",
         role: "COO & Director",
-        image: "/about-us-team4.png",
+        image: "/images/about/about-us-team4.png",
         linkedinUrl: "#"
     },
     {
         id: "member-5",
         name: "Ganesh",
         role: "COO & Director",
-        image: "/about-us-team1.png",
+        image: "/images/about/about-us-team1.webp",
         linkedinUrl: "#"
     },
         {
         id: "member-6",
         name: "Ganesh",
         role: "COO & Director",
-        image: "/about-us-team1.png",
+        image: "/images/about/about-us-team1.webp",
         linkedinUrl: "#"
     }
 ];
@@ -116,7 +116,7 @@ export default function OurTeam() {
                                     className="flex items-center justify-center w-[32px] h-[32px] md:w-[38px] md:h-[38px] rounded-full bg-white shadow-sm shrink-0 transition-transform hover:scale-[1.05]"
                                 >
                                     <Image
-                                        src="/linkedin-vector.png"
+                                        src="/images/global/linkedin-vector.png"
                                         alt="LinkedIn"
                                         width={18}
                                         height={18}
