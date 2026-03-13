@@ -115,13 +115,13 @@ export default function IntelligentSecurity() {
                     </div>
                 </div>
 
-                <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 w-full mt-4 min-h-[400px]">
+                <div className="relative z-10 grid grid-cols-1 md:ms-20 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 w-full mt-4 min-h-[300px]">
                     {visibleFeatures.map((feature, index) => (
                         <div key={`${feature.id}-${index + currentIndex}`} className="flex flex-col items-center sm:items-start group animate-fade-in">
 
                             {/* Icon Container block matching Figma gray circle aesthetic */}
-                            <div className="w-[100px] h-[100px] md:w-[120px] md:h-[120px] rounded-full bg-[#F5F5F5] flex items-center justify-center mb-6 lg:mb-8 transition-transform group-hover:scale-[1.03]">
-                                <div className="relative w-[40px] h-[40px] md:w-[50px] md:h-[50px]">
+                            <div className="w-[100px] h-[100px] md:w-[80px] md:h-[80px] rounded-full bg-[#F5F5F5] flex items-center justify-center mb-6 lg:mb-8 transition-transform group-hover:scale-[1.03]">
+                                <div className="relative w-[20px] h-[20px] md:w-[40px] md:h-[40px]">
                                     <Image
                                         src={feature.iconUrl}
                                         alt={feature.title}
@@ -138,12 +138,12 @@ export default function IntelligentSecurity() {
                             </h3>
 
                             {/* Feature Text/Description */}
-                            <p className="tech-feature-desc mb-6 flex-grow text-center sm:text-left w-full h-auto sm:max-w-[85%]">
+                            <p className="tech-feature-desc  text-center sm:text-left w-full h-[40%] sm:max-w-[60%]">
                                 {feature.description}
                             </p>
 
                             {/* Explore Link */}
-                            <Link href="#" className="inline-flex items-center gap-4 group/btn mt-auto mx-auto sm:mx-0 pt-2 pb-1">
+                            <Link href="#" className="inline-flex items-center gap-4 group/btn mx-auto sm:mx-0 pt-2 pb-1">
                                 <span className="tech-feature-explore group-hover/btn:text-[#E10000] transition-colors">
                                     Explore
                                 </span>

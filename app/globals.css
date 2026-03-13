@@ -85,7 +85,7 @@ img {
 }
 
 .nav-logo {
-  @apply h-5 sm:h-6 lg:h-8 w-auto object-contain max-w-[100px] sm:max-w-none;
+  @apply h-5 sm:h-6 lg:h-6 w-auto object-contain max-w-[100px] sm:max-w-none;
 }
 
 .nav-icon {
@@ -301,7 +301,7 @@ border: 1px solid #FFFFFF52;
 }
 
 .solutions-info-bg-text {
-  @apply font-body font-bold text-[32px] sm:text-[42px] lg:text-[70px] leading-[1.2] lg:leading-[62px] text-[#F1F1F1] tracking-[-0.01em] uppercase text-center;
+  @apply font-body font-bold text-[60px] sm:text-[42px] lg:text-[75px] leading-[1.2] lg:leading-[62px] text-[#F1F1F1] tracking-[-0.01em] uppercase text-center;
 }
 
 .solutions-info-title {

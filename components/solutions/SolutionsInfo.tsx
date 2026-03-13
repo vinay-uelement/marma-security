@@ -13,7 +13,7 @@ interface SolutionsInfoProps {
 export default function SolutionsInfo({
     imageSrc = "/images/solutions/OneSolution.webp",
     imagePosition = 'left',
-    bgText = "One Solution. Every Environment.",
+    bgText = "One Solution. Every Environment",
     title = "A unified cybersecurity platform designed to protect networks across homes, businesses, and critical industries.",
     description = "Marma delivers enterprise-grade, network-level cybersecurity that adapts seamlessly to a wide range of use cases—from residential environments and small businesses to healthcare, finance, education, and other critical sectors. Built for simplicity and scale, Marma protects every device connected to your Wi-Fi network without requiring complex setups or technical expertise."
 }: SolutionsInfoProps) {
@@ -21,11 +21,11 @@ export default function SolutionsInfo({
     const isRight = imagePosition === 'right';
 
     return (
-        <section className="relative w-full pt-12 pb-16 md:pt-20 md:pb-24 flex flex-col items-center overflow-x-clip">
+        <section className="relative w-full pt-12 pb-16 md:pt-10 md:pb-24 flex flex-col items-center overflow-x-clip">
 
             {/* Faded Background Text */}
-            <div className="w-full flex justify-center z-0 select-none pointer-events-none px-4 max-w-[1440px] mx-auto">
-                <span className="solutions-info-bg-text w-full break-words">
+            <div className="w-full absolute top-4 -translate-y-1/2 flex justify-center z-0 select-none pointer-events-none px-4 max-w-[1440px] mx-auto">
+                <span className="solutions-info-bg-text w-full whitespace-nowrap">
                     {bgText}
                 </span>
             </div>
@@ -58,7 +58,7 @@ export default function SolutionsInfo({
                         </p>
 
                         {/* Outlined Explore Button */}
-                        <button className="flex items-center justify-between gap-5 rounded-full pl-6 pr-1.5 py-1.5 transition-transform hover:scale-[1.02] bg-transparent border-[1.5px] border-[#FF0000] text-[#FF0000] w-fit mt-4 lg:mt-0">
+                        <button className="flex items-center justify-between gap-5 rounded-full pl-6 pr-1.5 py-1.5 transition-transform hover:scale-[1.02] bg-transparent border-[1.5px] border-[#FF000025] text-[#FF0000] w-fit mt-4 lg:mt-0">
                             <span className="solutions-info-btn-text pt-0.5">
                                 Explore
                             </span>

@@ -15,14 +15,12 @@ const cards: SecurityCard[] = [
         title: "PhishBlock",
         description: "Protection against phishing attacks",
         number: "01",
-        image: "/images/features/Malware-guard.webp", // User will replace this later
         linkHref: "#"
     },
     {
         title: "NetImmunity",
         description: "Protection against network-based attacks",
         number: "02",
-        image: "/images/features/Malware-guard.webp",
         linkHref: "#"
     },
     {
@@ -36,7 +34,6 @@ const cards: SecurityCard[] = [
         title: "RansomGuard",
         description: "Protection against dangerous ransomware",
         number: "04",
-        image: "/images/features/Malware-guard.webp",
         linkHref: "#"
     }
 ];
@@ -51,7 +48,7 @@ export default function SecurityCards() {
                         Robust cybersecurity at an affordable price
                     </h2>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-15">
                     {cards.map((card, index) => (
                         <div key={index} className="flex flex-col h-full relative">
                             {/* Top Area: Number or Image */}
@@ -70,8 +67,8 @@ export default function SecurityCards() {
                                     <span
                                         className="font-title font-bold leading-none text-transparent"
                                         style={{
-                                            WebkitTextStroke: '2px #F0F0F0',
-                                            fontSize: 'clamp(80px, 10vw, 130px)',
+                                            WebkitTextStroke: '2px #DED8D8',
+                                            fontSize: 'clamp(100px, 12vw, 150px)',
                                             userSelect: 'none'
                                         }}
                                     >

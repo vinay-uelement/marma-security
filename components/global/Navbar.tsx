@@ -32,15 +32,15 @@ export default function Navbar() {
     return (
         <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[93%] max-w-[1400px] z-50">
             {/* Main Navbar Container */}
-            <div className="navbar-glass flex items-center justify-between gap-4 lg:gap-6 px-3 lg:px-3 py-2 rounded-full shadow-lg relative z-50">
+            <div className="navbar-glass flex items-center justify-between gap-4 lg:gap-6 px-3 py-2 ps-10 rounded-full shadow-lg relative z-50 border-[0.5px]">
                 {/* Left Side: Logo */}
                 <div className="flex flex-1 items-center min-w-0">
                     <Link href="/">
                         <Image
                             src="/images/global/logo.png"
                             alt="Marma Security"
-                            width={200}
-                            height={40}
+                            width={1000}
+                            height={1000}
                             className="nav-logo"
                             priority /* Since it's LCP for the header */
                         />

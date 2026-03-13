@@ -102,8 +102,8 @@ export default function Banner({
                                     const isPrimary = btn.variant !== 'secondary' && btn.variant !== 'outline';
 
                                     const baseClass = isPrimary
-                                        ? "inline-flex items-center justify-between gap-6 md:gap-7 rounded-full pl-6 md:pl-8 pr-1 py-2 transition-transform hover:scale-[1.02] group shadow-sm w-fit"
-                                        : "inline-flex items-center justify-between gap-6 md:gap-7 rounded-full pl-6 md:pl-8 pr-1 py-2 transition-transform hover:scale-[1.02] tracking-wide group shadow-sm w-fit";
+                                        ? "inline-flex items-center justify-between gap-6 md:gap-7 rounded-full pl-6 md:pl-8 pr-1 py-1 transition-transform hover:scale-[1.02] group shadow-sm w-fit"
+                                        : "inline-flex items-center justify-between gap-6 md:gap-7 rounded-full pl-6 md:pl-8 pr-1 py-1 transition-transform hover:scale-[1.02] tracking-wide group shadow-sm w-fit";
 
                                     const variantClass = isPrimary
                                         ? "bg-[#FF0000] text-white hover:bg-[#E10000]"
@@ -114,8 +114,8 @@ export default function Banner({
                                         : "text-[16px] md:text-[20px] tracking-[0.02em]";
 
                                     const iconContainerClass = isPrimary
-                                        ? "bg-[#F4F4F4] text-[#FF0000] rounded-full p-2 md:p-2.5 flex items-center justify-center shrink-0 group-hover:bg-white transition-colors"
-                                        : "border border-[#FFFFFF40] text-white rounded-full p-2 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors";
+                                        ? "bg-[#F4F4F4] text-[#FF0000] rounded-full p-1 flex items-center justify-center shrink-0 group-hover:bg-white transition-colors"
+                                        : "border border-[#FFFFFF40] text-white rounded-full p-1 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors";
 
                                     const ButtonContent = (
                                         <button
@@ -126,7 +126,7 @@ export default function Banner({
                                             <span className={textClass}>{btn.label}</span>
                                             {btn.icon && (
                                                 <div className={iconContainerClass}>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                                                 </div>
                                             )}
                                         </button>

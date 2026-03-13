@@ -21,7 +21,7 @@ export default function Home() {
           heightVariant="900"
           ContinerClass="h-[93vh]"
           title={<>Radically Simplified <br className="hidden md:block" /><HighlightedText text="Cybersecurity" /> for Small<br className="hidden lg:block" /> Businesses and Home</>}
-          titleClassName="font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white"
+          titleClassName="font-banner font-normal text-[32px] md:text-[40px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white"
           subtitle={<>Enterprise-grade cybersecurity that works in minutes. <br className="hidden sm:block" />No IT or technical expertise needed.</>}
           subtitleClassName="font-title font-light text-[18px] md:text-[24px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-white max-w-[550px]"
           buttons={[
@@ -78,7 +78,7 @@ export default function Home() {
       {/* Inverted Solutions Info Component */}
       <div className="w-full max-w-[1440px] mx-auto pt-14 bg-[#fff]" >
         {/* Red Decorative Line container on Home page only */}
-        <div className="flex w-full mb-12 relative h-[20px] md:h-[30px] w-[350px] md:w-[600px] lg:w-[800px]">
+        <div className="flex mb-12 relative h-[30px] md:h-[50px] w-[500px] md:w-[600px] lg:w-[1000px]">
           <Image
             src="/images/solutions/red-decorative-line-solution-info.png"
             alt="Red Decorative Line"
