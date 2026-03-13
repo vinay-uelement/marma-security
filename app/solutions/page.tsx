@@ -1,4 +1,3 @@
-'use client'
 import HighlightedText from "@/components/global/HighlightedText";
 import Banner from "@/components/global/Banner";
 import SolutionsTabs from "@/components/solutions/SolutionsTabs";

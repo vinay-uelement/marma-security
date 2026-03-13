@@ -6,8 +6,7 @@ export default function Footer() {
         <footer className="footer-container">
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-                    {/* Left Column: Info & Links */}
-                    {/* Left Column: Info & Links */}
+             
                     <div className="flex flex-col h-full ">
                         {/* Top: Logo & Description */}
                         <div className="flex flex-col items-start pb-8 lg:pb-15 gap-10 w-full">
@@ -19,13 +18,13 @@ export default function Footer() {
                                 className="footer-logo"
                             />
                             
-                            <p className="font-body font-normal text-[20px] leading-[28px] tracking-[-0.01em] text-[#898989] ">
+                            <p className="footer-desc-text">
                                 All security updates, patches, and improvements are handled automatically in the background.
                             </p>
                         </div>
 
                         {/* Middle: Links Grid */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-4 pb-15 w-full  font-title font-semibold text-[18px] text-white place-items-start">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-4 pb-15 w-full footer-nav-grid place-items-start">
                             <a href="/technology" className="hover:text-white/70 transition-colors">Technology</a>
                             <a href="/product" className="hover:text-white/70 transition-colors">Products</a>
                             <a href="/about-us" className="hover:text-white/70 transition-colors">About us</a>
@@ -35,13 +34,11 @@ export default function Footer() {
                             <a href="/contact-us" className="hover:text-white/70 transition-colors">Contact</a>
                         </div>
                         
-                        {/* Line Separator */}
                         <div className="w-full h-px bg-[#FFFFFF33] mb-10 md-mb-15 mix-blend-screen" />
 
-                        {/* Bottom: Contact Info & Socials */}
                         <div className="flex flex-col gap-10 flex-grow">
                             {/* Contact Details */}
-                            <div className="flex flex-col sm:flex-row gap-8 justify-between pr-5 sm:gap-16 font-body font-normal text-[16px] text-[#FFFFFF] items-start">
+                            <div className="flex flex-col sm:flex-row gap-8 justify-between pr-5 sm:gap-16 footer-contact-text items-start">
                                 <a href="tel:+910456123852" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                                     <span>+910456123852</span>
@@ -109,7 +106,7 @@ export default function Footer() {
             {/* Copyright Bottom Bar */}
             <div className="footer-bottom-bar">
                 <div className="max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-center">
-                    <p className="text-#fff text-[13px] font-body text-center">
+                    <p className="footer-copyright text-white">
                          &copy; Copyright  {new Date().getFullYear()}  - Lift Media
                     </p>
                 </div>

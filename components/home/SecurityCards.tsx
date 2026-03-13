@@ -15,25 +15,28 @@ const cards: SecurityCard[] = [
         title: "PhishBlock",
         description: "Protection against phishing attacks",
         number: "01",
+        image: "/Malware-guard.png", // User will replace this later
         linkHref: "#"
     },
     {
         title: "NetImmunity",
         description: "Protection against network-based attacks",
         number: "02",
+        image: "/Malware-guard.png", // User will replace this later
         linkHref: "#"
     },
     {
         title: "MalwareGuard",
         description: "Protection against dangerous malware and spyware",
         number: "03",
-        image: "/placeholder-card-image.png", // User will replace this later
+        image: "/Malware-guard.png", // User will replace this later
         linkHref: "#"
     },
     {
         title: "RansomGuard",
         description: "Protection against dangerous ransomware",
         number: "04",
+        image: "/Malware-guard.png",
         linkHref: "#"
     }
 ];
@@ -44,7 +47,7 @@ export default function SecurityCards() {
             <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
                 <div className="w-full h-[1px] px-10 bg-[#E5E5E5] mb-16 lg:mb-20" />
                 <div className="text-center mb-16 md:mb-24 relative z-10">
-                    <h2 className="font-title font-medium text-[32px] md:text-[46px] leading-[1.2] md:leading-[62px] text-[#323232] tracking-[-0.01em]">
+                    <h2 className="home-cards-heading">
                         Robust cybersecurity at an affordable price
                     </h2>
                 </div>

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -60,7 +60,7 @@ export default function SolutionsTabs() {
 
             {/* Header Section */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 md:mb-26 gap-8">
-                <h2 className="font-title  text-[36px] md:text-[52px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232]">
+                <h2 className="solutions-section-heading">
                     Security That <HighlightedText text='Adapts ' className='text-[#323232] font-bold' imageClassName='bottom-[-10px] md:bottom-[-22px]' /><br className="hidden md:block" /> to You
                 </h2>
 
@@ -106,10 +106,10 @@ export default function SolutionsTabs() {
 
                 {/* Left Content */}
                 <div className="flex flex-col">
-                    <h3 className="font-body font-normal text-[26px] md:text-[34px] leading-[1.3] md:leading-[44px] tracking-[-0.01em] text-[#323232] mb-8 lg:mb-12 max-w-[450px]">
+                    <h3 className="solutions-tab-title mb-8 lg:mb-12 max-w-[450px]">
                         {activeData.title}
                     </h3>
-                    <p className="font-body font-normal text-[16px] md:text-[18px] leading-[1.5] md:leading-[28px] tracking-[-0.01em] text-[#323232]">
+                    <p className="solutions-tab-desc">
                         {activeData.description}
                     </p>
                 </div>

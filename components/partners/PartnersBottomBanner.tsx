@@ -32,21 +32,21 @@ export default function PartnersBottomBanner() {
                     {/* Right Column: Text Content */}
                     <div className="flex flex-col space-y-4 relative z-10 pb-16 pt-8 md:pt-12 lg:pt-0 lg:pb-0 text-center lg:text-left items-center lg:items-start max-w-[600px] mx-auto lg:mx-0">
                         {/* Title */}
-                        <h3 className="font-body font-semibold text-[26px] md:text-[30px] leading-[1.3] md:leading-[40px] tracking-[-0.01em] text-[#323232]">
+                        <h3 className="partners-btm-title">
                             Simplified Network Security
                         </h3>
                         
                         {/* Subtitle */}
-                        <p className="font-body font-normal text-[20px] md:text-[24px] leading-[1.4] md:leading-[32px] tracking-normal text-[#323232] pb-2">
+                        <p className="partners-btm-subtitle pb-2">
                             Automated protection that scales effortlessly across client environments.
                         </p>
                         
                         {/* Description */}
-                        <p className="font-body font-light text-[16px] md:text-[20px] leading-[1.6] md:leading-[30px] tracking-[-0.01em] text-[#323232] pb-0 text-justify md:text-left">
+                        <p className="partners-btm-desc pb-0 text-justify md:text-left">
                             Marma delivers automated, network-level security that is easy to deploy, manage, and scale removing complexity while ensuring consistent protection for every client With centralized control and real-time threat protection, it secures all connected devices without added operational effort.
                         </p>
                         
-                        <p className="font-body font-semibold text-[16px] md:text-[18px] leading-[1.5] md:leading-[26px] tracking-[-0.01em] text-[#323232]">
+                        <p className="partners-btm-emphasis">
                             We think that’s unacceptable.
                         </p>
                     </div>

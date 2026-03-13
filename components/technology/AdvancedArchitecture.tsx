@@ -14,7 +14,7 @@ export default function AdvancedArchitecture() {
 
                 {/* Typography Layout */}
                 <div className="text-center w-full max-w-[900px] mx-auto">
-                    <h2 className="font-title font-medium text-[32px] md:text-[42px] leading-[1.3] md:leading-[52px] tracking-[-0.01em] text-[#323232] text-center">
+                    <h2 className="tech-architecture-heading">
                         <HighlightedText
                             text="Advanced cybersecurity"
                             className="font-bold text-[#323232]"

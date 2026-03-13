@@ -54,7 +54,7 @@ export default function Challengestab() {
 
             {/* Header Section */}
             <div className="flex flex-col md:flex-row justify-between items-center md:items-center mb-[60px] gap-8 text-center md:text-left">
-                <h2 className="font-title text-[36px] md:text-[52px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232]">
+                <h2 className="home-challenge-heading">
                     Overcoming your <HighlightedText text="challenges" className='font-bold' />
                 </h2>
 
@@ -100,10 +100,10 @@ export default function Challengestab() {
 
                 {/* Left Content */}
                 <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-                    <h3 className="font-body font-normal text-[26px] md:text-[34px] leading-[1.3] md:leading-[44px] tracking-[-0.01em] text-[#323232] mb-8 lg:mb-12 max-w-[450px]">
+                    <h3 className="home-challenge-title mb-8 lg:mb-12 max-w-[450px]">
                         {activeData.title}
                     </h3>
-                    <p className="font-body font-normal text-[16px] md:text-[18px] leading-[1.5] md:leading-[28px] tracking-[-0.01em] text-[#323232]">
+                    <p className="home-challenge-desc">
                         {activeData.description}
                     </p>
                 </div>

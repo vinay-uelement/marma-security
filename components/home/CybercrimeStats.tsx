@@ -21,13 +21,13 @@ export default function CybercrimeStats() {
 
                 {/* Right Column: Text Content */}
                 <div className="flex flex-col space-y-6 relative z-10 pb-16 pt-12 md:pt-2 lg:pb-0 text-center lg:text-left items-center lg:items-start">
-                    <h3 className="font-body font-semibold text-[30px] leading-[40px] tracking-[-0.01em] text-[#323232] pb-[20px]">
+                    <h3 className="home-cybercrime-title pb-[20px]">
                         Cybercriminals don’t discriminate—small businesses and homes are their easiest targets.
                     </h3>
-                    <p className="font-body font-light text-[20px] leading-[30px] tracking-[-0.01em] text-[#323232] pb-[10px] ">
+                    <p className="home-cybercrime-body pb-[10px] ">
                         43% of cyberattacks are targeted at small businesses and about 41% of small businesses have experienced some form of cyberattack in the last 12 months. In addition, nearly 1 million Americans reported being the victim of a cybercrime to the FBI in 2023, and 11 million Americans experienced identity theft in 2023.
                     </p>
-                    <p className="font-body font-semibold text-[18px] leading-[26px] tracking-[-0.01em] text-[#323232]">
+                    <p className="home-cybercrime-emphasis">
                         We think that’s unacceptable.
                     </p>
                 </div>

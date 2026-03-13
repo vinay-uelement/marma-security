@@ -13,16 +13,16 @@ interface FeatureItem {
 const features: FeatureItem[] = [
     {
         id: "quick-setup",
-        image: "/quick-effortless-homebanner.png", // Using placeholder, user to replace
+        image: "/protect-image-homepage.jpg", // Using placeholder, user to replace
         title: "Quick & Effortless Setup",
         description: (
             <>
-                <strong className="font-body font-semibold text-[18px] leading-[26px] tracking-[-0.01em] text-[#323232] block mb-4">Get protected in under 5<br />minutes.</strong>
-                <p className="font-body font-light text-[16px] leading-[26px] tracking-[-0.01em] text-[#989898] mb-6">
+                <strong className="home-protect-strong block mb-4">Get protected in under 5<br />minutes.</strong>
+                <p className="home-protect-desc mb-6">
                     No technical expertise, networking knowledge, or complex configurations required—simply plug in and go.
                 </p>
                 <Link href="#" className="flex items-center gap-4 group w-fit">
-                    <span className="font-body text-[16px] text-[#FF0000] group-hover:text-[#E10000] transition-colors">
+                    <span className="home-protect-link group-hover:text-[#E10000] transition-colors">
                         Learn more
                     </span>
                     <span className="text-[#FF0000] group-hover:text-[#E10000] transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
@@ -36,16 +36,16 @@ const features: FeatureItem[] = [
     },
     {
         id: "automated-protection",
-        image: "/protect-img2.png", // Using placeholder, user to replace
+        image: "/protection-homepage.jpg", // Using placeholder, user to replace
         title: "Fully Automated \nProtection",
         description: (
             <>
-                <strong className="font-body font-semibold text-[18px] leading-[26px] tracking-[-0.01em] text-[#323232] block mb-4">Security that runs itself.</strong>
-                <p className="font-body font-light text-[16px] leading-[26px] tracking-[-0.01em] text-[#989898] mb-6">
+                <strong className="home-protect-strong block mb-4">Security that runs itself.</strong>
+                <p className="home-protect-desc mb-6">
                     Marma continuously monitors your network and blocks threats in real time, without any manual intervention.
                 </p>
                 <Link href="#" className="flex items-center gap-4 group w-fit">
-                    <span className="font-body text-[16px] text-[#FF0000] group-hover:text-[#E10000] transition-colors">
+                    <span className="home-protect-link group-hover:text-[#E10000] transition-colors">
                         Learn more
                     </span>
                     <span className="text-[#FF0000] group-hover:text-[#E10000] transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
@@ -59,16 +59,16 @@ const features: FeatureItem[] = [
     },
     {
         id: "zero-maintenance",
-        image: "/protect-img3.png", // Using placeholder, user to replace
+        image: "/zero-maintainace.png", // Using placeholder, user to replace
         title: "Zero Maintenance \nRequired",
         description: (
             <>
-                <strong className="font-body font-semibold text-[18px] leading-[26px] tracking-[-0.01em] text-[#323232] block mb-4">No updates, no <br />monitoring, no hassle.</strong>
-                <p className="font-body font-light text-[16px] leading-[26px] tracking-[-0.01em] text-[#989898] mb-6">
+                <strong className="home-protect-strong block mb-4">No updates, no <br />monitoring, no hassle.</strong>
+                <p className="home-protect-desc mb-6">
                     All security updates, patches, and improvements are handled automatically in the background.
                 </p>
                 <Link href="#" className="flex items-center gap-4 group w-fit">
-                    <span className="font-body text-[16px] text-[#FF0000] group-hover:text-[#E10000] transition-colors">
+                    <span className="home-protect-link group-hover:text-[#E10000] transition-colors">
                         Learn more
                     </span>
                     <span className="text-[#FF0000] group-hover:text-[#E10000] transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
@@ -88,7 +88,7 @@ export default function HowWeProtect() {
 
             {/* Header Section */}
             <div className="flex flex-col md:flex-row justify-between items-center md:items-center mb-16 md:mb-24 gap-8 text-center md:text-left">
-                <h2 className="font-title font-normal text-[36px] md:text-[52px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232] w-full">
+                <h2 className="home-protect-heading w-full">
                     How we <HighlightedText text="protect you?" className="font-bold text-[#323232]" imageClassName="absolute h-auto object-contain pointer-events-none -z-10 bottom-[-20px] md:bottom-[-24px] left-3/4 -translate-x-1/2 w-[70%]" />
                 </h2>
 
@@ -123,7 +123,7 @@ export default function HowWeProtect() {
 
                         {/* 2. Title Column */}
                         <div className="flex flex-col justify-start md:pt-5 h-full">
-                            <h3 className="font-body font-light text-[26px] md:text-[28px] lg:text-[32px] leading-[1.3] md:leading-[34px] tracking-[-0.01em] text-[#323232] whitespace-pre-line">
+                            <h3 className="home-protect-title whitespace-pre-line">
                                 {feature.title}
                             </h3>
                         </div>

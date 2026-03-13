@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
 import HighlightedText from '../global/HighlightedText';
@@ -92,7 +92,7 @@ export default function IntelligentSecurity() {
                 <div className="flex flex-col min-[901px]:flex-row justify-between items-center z-10 relative mb-16 gap-8">
 
                     {/* TEXT: Centered below 901px, left-aligned above */}
-                    <h2 className="w-full font-title text-[36px] md:text-[42px] min-[1121px]:text-[52px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232] text-center min-[901px]:text-left">
+                    <h2 className="w-full tech-section-heading text-center min-[901px]:text-left">
                         Intelligent <HighlightedText text="security" className="font-bold text-[#323232]" imageClassName="bottom-[-15px] md:bottom-[-20px] left-1/2 -translate-x-1/2" /> that works
                         <br className="hidden min-[901px]:block" /> silently in the background.
                     </h2>
@@ -133,18 +133,18 @@ export default function IntelligentSecurity() {
                             </div>
 
                             {/* Feature Title */}
-                            <h3 className="font-body font-semibold text-[20px] md:text-[22px] leading-[26px] tracking-[-0.01px] text-[#323232] mb-4 text-center sm:text-left w-full">
+                            <h3 className="tech-feature-title mb-4 text-center sm:text-left w-full">
                                 {feature.title}
                             </h3>
 
                             {/* Feature Text/Description */}
-                            <p className="font-body font-normal text-[16px] md:text-[18px] leading-[1.6] md:leading-[26px] tracking-[-0.01px] text-[#606060] mb-6 flex-grow text-center sm:text-left w-full h-auto sm:max-w-[85%]">
+                            <p className="tech-feature-desc mb-6 flex-grow text-center sm:text-left w-full h-auto sm:max-w-[85%]">
                                 {feature.description}
                             </p>
 
                             {/* Explore Link */}
                             <Link href="#" className="inline-flex items-center gap-4 group/btn mt-auto mx-auto sm:mx-0 pt-2 pb-1">
-                                <span className="font-body text-[16px] md:text-[18px] text-[#FF0000] group-hover/btn:text-[#E10000] transition-colors">
+                                <span className="tech-feature-explore group-hover/btn:text-[#E10000] transition-colors">
                                     Explore
                                 </span>
                                 <span className="text-[#FF0000] group-hover/btn:text-[#E10000] transition-transform group-hover/btn:translate-x-1 flex items-center justify-center translate-y-[2px]">

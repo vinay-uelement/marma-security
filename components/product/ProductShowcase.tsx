@@ -18,7 +18,7 @@ export default function ProductShowcase({ productName, mainFeature, subFeatures 
 
             {/* Header */}
             <div className="mb-10 text-center md:text-left">
-                <h2 className="font-title font-bold text-[36px] md:text-[42px] tracking-tight text-[#000000]">
+                <h2 className="prod-showcase-name">
                     {productName}
                 </h2>
             </div>
@@ -50,10 +50,10 @@ export default function ProductShowcase({ productName, mainFeature, subFeatures 
 
                     {/* Content Area */}
                     <div className="bg-[#EDEDED] px-6 sm:px-10 pb-10 md:pb-12 pt-[60px] md:pt-[80px] lg:pt-[60px] flex flex-col justify-end items-center text-center mt-auto w-full relative z-10">
-                        <h3 className="font-body font-bold text-[22px] md:text-[26px] tracking-wide text-[#323232] mb-4 uppercase w-full">
+                        <h3 className="prod-showcase-main-title mb-4 w-full">
                             {mainFeature.title}
                         </h3>
-                        <p className="font-body font-normal text-[15px] md:text-[17px] leading-[26px] tracking-[-0.01em] text-[#606060] max-w-[420px]">
+                        <p className="prod-showcase-main-desc max-w-[420px]">
                             {mainFeature.description}
                         </p>
                     </div>
@@ -68,10 +68,10 @@ export default function ProductShowcase({ productName, mainFeature, subFeatures 
                             <div className="flex flex-col md:flex-row w-full h-full relative z-10 items-stretch">
                                 {/* Left Content */}
                                 <div className="w-full md:w-[60%] flex flex-col justify-center md:items-start items-center text-center md:text-left pt-8 md:pt-0 px-8 md:pl-10 pb-2 z-20">
-                                    <h3 className="font-body font-bold text-[20px] md:text-[22px] tracking-wide text-[#323232] mb-4 uppercase">
+                                    <h3 className="prod-showcase-sub-title mb-4">
                                         {feat.title}
                                     </h3>
-                                    <p className="font-body font-normal text-[15px] md:text-[17px] leading-[26px] tracking-[-0.01em] text-[#606060]">
+                                    <p className="prod-showcase-sub-desc">
                                         {feat.description}
                                     </p>
                                 </div>

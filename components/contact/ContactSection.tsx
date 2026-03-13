@@ -48,7 +48,7 @@ export default function ContactSection() {
                         {/* Top block: "Let's Talk" + sub-heading */}
                         <div className="flex flex-col">
                             {/* "Let's Talk" heading */}
-                            <h2 className="font-title font-normal text-[42px] md:text-[52px] leading-[1.1] tracking-[-0.01em] text-[#323232]">
+                            <h2 className="contact-section-heading">
                                 Let&apos;s{' '}
                                 <HighlightedText
                                     text="Talk"
@@ -61,10 +61,10 @@ export default function ContactSection() {
                             <div className="mt-10 md:mt-14" />
 
                             {/* Sub-heading */}
-                            <h3 className="font-title font-bold text-[22px] md:text-[26px] leading-[1.3] text-[#323232]">
+                            <h3 className="contact-subheading">
                                 Get advice any time.
                             </h3>
-                            <p className="font-body font-normal text-[16px] md:text-[18px] leading-[1.6] text-[#666666] mt-3 max-w-[380px]">
+                            <p className="contact-subheading-desc mt-3 max-w-[380px]">
                                 Connect with our team for reliable, expert guidance whenever you need it.
                             </p>
                         </div>
@@ -77,8 +77,8 @@ export default function ContactSection() {
                                     <Image src="/contact-us-calling-icon.png" alt="Phone" width={28} height={28} className="object-contain" />
                                 </div>
                                 <div className="flex flex-col gap-1">
-                                    <span className="font-title font-bold text-[13px] leading-none tracking-wide text-[#323232] uppercase">Phone Number</span>
-                                    <span className="font-body font-normal text-[16px] leading-none text-[#323232]">+91 45687412232</span>
+                                    <span className="contact-card-label">Phone Number</span>
+                                    <span className="contact-card-value">+91 45687412232</span>
                                 </div>
                             </div>
 
@@ -88,8 +88,8 @@ export default function ContactSection() {
                                     <Image src="/contact-us-map.png" alt="Location" width={28} height={28} className="object-contain" />
                                 </div>
                                 <div className="flex flex-col gap-1">
-                                    <span className="font-title font-bold text-[13px] leading-none tracking-wide text-[#323232] uppercase">Corporate Office</span>
-                                    <span className="font-body font-normal text-[16px] leading-none text-[#323232]">sdfghjkfghjnmk., sdfghj</span>
+                                    <span className="contact-card-label">Corporate Office</span>
+                                    <span className="contact-card-value">sdfghjkfghjnmk., sdfghj</span>
                                 </div>
                             </div>
 
@@ -99,8 +99,8 @@ export default function ContactSection() {
                                     <Image src="/contact-us-mail.png" alt="Email" width={28} height={28} className="object-contain" />
                                 </div>
                                 <div className="flex flex-col gap-1">
-                                    <span className="font-title font-bold text-[13px] leading-none tracking-wide text-[#323232] uppercase">Email</span>
-                                    <span className="font-body font-normal text-[16px] leading-none text-[#323232]">asdfghjk@gmail.com</span>
+                                    <span className="contact-card-label">Email</span>
+                                    <span className="contact-card-value">asdfghjk@gmail.com</span>
                                 </div>
                             </div>
                         </div>
@@ -111,7 +111,7 @@ export default function ContactSection() {
 
                     {/* ───── Right Column: Form ───── */}
                     <div className="flex flex-col">
-                        <h3 className="font-title font-bold text-[22px] md:text-[26px] leading-[1.3] text-[#323232] mb-6">
+                        <h3 className="contact-form-heading mb-6">
                             Let&apos;s talk about your business.
                         </h3>
 
@@ -126,7 +126,7 @@ export default function ContactSection() {
                                         placeholder="Your name here"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 bg-[#F9F9F9] border border-[#E5E5E5] rounded-[8px] font-body font-normal text-[16px] text-[#323232] placeholder:text-[#BBBBBB] outline-none focus:border-[#FF0000] transition-colors"
+                                        className="contact-form-input"
                                     />
                                     <input
                                         type="email"
@@ -134,7 +134,7 @@ export default function ContactSection() {
                                         placeholder="Your email here"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 bg-[#F9F9F9] border border-[#E5E5E5] rounded-[8px] font-body font-normal text-[16px] text-[#323232] placeholder:text-[#BBBBBB] outline-none focus:border-[#FF0000] transition-colors"
+                                        className="contact-form-input"
                                     />
                                 </div>
 
@@ -144,7 +144,7 @@ export default function ContactSection() {
                                         name="subject"
                                         value={formData.subject}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 bg-[#F9F9F9] border border-[#E5E5E5] rounded-[8px] font-body font-normal text-[16px] text-[#989898] outline-none focus:border-[#FF0000] transition-colors appearance-none"
+                                        className="contact-form-select"
                                     >
                                         <option value="" disabled>Select Subject</option>
                                         <option value="general">General Inquiry</option>
@@ -158,7 +158,7 @@ export default function ContactSection() {
                                         placeholder="Your phone number"
                                         value={formData.phone}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 bg-[#F9F9F9] border border-[#E5E5E5] rounded-[8px] font-body font-normal text-[16px] text-[#323232] placeholder:text-[#BBBBBB] outline-none focus:border-[#FF0000] transition-colors"
+                                        className="contact-form-input"
                                     />
                                 </div>
 
@@ -169,7 +169,7 @@ export default function ContactSection() {
                                     rows={8}
                                     value={formData.message}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-[#F9F9F9] border border-[#E5E5E5] rounded-[8px] font-body font-normal text-[16px] text-[#323232] placeholder:text-[#BBBBBB] outline-none focus:border-[#FF0000] transition-colors resize-none"
+                                    className="contact-form-input resize-none"
                                 />
 
                                 {/* Bottom row: Social + Submit */}
@@ -192,7 +192,7 @@ export default function ContactSection() {
                                         type="submit"
                                         className="inline-flex items-center gap-3 bg-[#FF0000] hover:bg-[#D10000] text-white rounded-full pl-7 pr-2 py-2 transition-colors"
                                     >
-                                        <span className="font-body font-medium text-[20px]">Submit</span>
+                                        <span className="contact-submit-text">Submit</span>
                                         <div className="flex items-center justify-center w-[34px] h-[34px] rounded-full bg-white border border-[#FF0000]">
                                             <Image src="/contact-us-arrow.png" alt="Arrow" width={10} height={10} className="object-contain" />
                                         </div>

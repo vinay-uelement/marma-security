@@ -1,5 +1,4 @@
 
-'use client'
 
 import React from 'react';
 import HighlightedText from "@/components/global/HighlightedText";
@@ -27,11 +26,11 @@ export default function PartnersPage() {
             >
                 {/* Text Content */}
                 <div className="relative z-10 w-full px-6 lg:px-12 flex flex-col items-center justify-center text-center mt-10 md:mt-16">
-                    <h1 className="font-title font-medium text-[32px] md:text-[42px] lg:text-[48px] leading-[1.2] tracking-normal text-white drop-shadow-sm mb-6">
+                    <h1 className="contact-banner-title mb-6">
                         We’re here to help you <br className="block sm:hidden" />secure what matters most.
                     </h1>
                     
-                    <p className="font-body font-light text-[15px] md:text-[18px] lg:text-[20px] leading-[1.6] md:leading-[1.8] tracking-wide text-[#EAEAEA] max-w-[850px] mx-auto">
+                    <p className="contact-banner-desc max-w-[850px] mx-auto">
                         Have questions about Marma or want to learn how our solutions fit your needs? Our team is ready to
                         assist you with product details, deployment guidance, and support. Reach out to us today, and let’s build
                         a safer digital environment together.

@@ -99,10 +99,10 @@ export default function OurTeam() {
                         {/* Info Row: Name + Role on left, LinkedIn on right */}
                         <div className="flex items-end justify-between px-1 pb-1 mt-auto">
                             <div className="flex flex-col">
-                                <h3 className="font-body font-semibold text-[16px] md:text-[20px] lg:text-[22px] leading-[24px] md:leading-[28px] text-[#323232]">
+                                <h3 className="about-team-name">
                                     {member.name}
                                 </h3>
-                                <p className="font-body font-normal text-[12px] md:text-[14px] lg:text-[16px] leading-[18px] md:leading-[22px] text-[#666666]">
+                                <p className="about-team-role">
                                     {member.role}
                                 </p>
                             </div>

@@ -3,9 +3,19 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
+
+const navLinks = [
+    { href: "/technology", label: "Technology" },
+    { href: "/solutions", label: "Solutions" },
+    { href: "/product", label: "Products" },
+    { href: "/partners", label: "Partners" },
+    { href: "/about-us", label: "About us" },
+];
 
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     // Close mobile menu when screen size is lg or larger
     useEffect(() => {
@@ -39,17 +49,29 @@ export default function Navbar() {
 
                 {/* Center: Desktop Navigation Links */}
                 <nav className="hidden lg:flex items-center lg:space-x-4 xl:space-x-10 whitespace-nowrap">
-                    <a href="/technology" className="fl2">Technology</a>
-                    <a href="/solutions" className="fl2">Solutions</a>
-                    <a href="/product" className="fl2">Products</a>
-                    <a href="/partners" className="fl2">Partners</a>
-                    <a href="/about-us" className="fl2">About us</a>
+                    {navLinks.map((link) => {
+                        const isActive = pathname === link.href;
+                        return (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className={`fl2 ${
+                                    isActive
+                                        ? "!font-bold !text-[13px] xl:!text-[14px] !text-[#000000]"
+                                        : ""
+                                }`}
+                            >
+                                {link.label}
+                            </Link>
+                        );
+                    })}
                 </nav>
 
                 {/* Right Side: Icons & Mobile Toggle */}
                 <div className="flex flex-1 items-center space-x-1 sm:space-x-2 lg:space-x-3 justify-end min-w-0">
-                    {/* Phone/Contact Icon */}
-                    <button
+                    {/* Phone/Contact Icon — linked to Contact Us page */}
+                    <Link
+                        href="/contact-us"
                         className="flex items-center justify-center transition-transform hover:scale-105"
                         aria-label="Contact Us"
                     >
@@ -60,7 +82,7 @@ export default function Navbar() {
                             height={34}
                             className="nav-icon"
                         />
-                    </button>
+                    </Link>
 
                     {/* Portal/Cart Icon */}
                     <button
@@ -100,11 +122,24 @@ export default function Navbar() {
             {/* Mobile Navigation Menu Overlay Dropdown */}
             {isMobileMenuOpen && (
                 <div className="lg:hidden absolute top-[110%] left-0 w-full navbar-glass rounded-2xl py-5 px-6 shadow-xl flex flex-col space-y-4 z-40">
-                    <a href="/technology" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Technology</a>
-                    <a href="/solutions" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Solutions</a>
-                    <a href="/product" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Products</a>
-                    <a href="/partners" className="fl2 border-b border-gray-200/30 pb-3" onClick={() => setIsMobileMenuOpen(false)}>Partners</a>
-                    <a href="/about-us" className="fl2 pb-3" onClick={() => setIsMobileMenuOpen(false)}>About us</a>
+                    {navLinks.map((link, index) => {
+                        const isActive = pathname === link.href;
+                        const isLast = index === navLinks.length - 1;
+                        return (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className={`fl2 ${!isLast ? "border-b border-gray-200/30" : ""} pb-3 ${
+                                    isActive
+                                        ? "!font-bold !text-[13px] xl:!text-[14px] !text-[#000000]"
+                                        : ""
+                                }`}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                {link.label}
+                            </Link>
+                        );
+                    })}
                 </div>
             )}
         </header>

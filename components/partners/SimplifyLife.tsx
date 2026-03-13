@@ -16,8 +16,8 @@ const features: FeatureItem[] = [
         title: "No More Truck Rolls",
         description: (
             <>
-                <strong className="font-body font-semibold text-[22px] leading-[28px] tracking-[-0.01em] text-[#323232] block mb-4">Fully remote deployment<br />and management.</strong>
-                <p className="font-body font-normal text-[20px] leading-[28px] tracking-[-0.01em] text-[#323232]">
+                <strong className="partners-simplify-strong block mb-4">Fully remote deployment<br />and management.</strong>
+                <p className="partners-simplify-desc">
                     Marma can be deployed in minutes with simple phone-guided setup through an intuitive app, reducing effort, cost, and deployment time.
                 </p>
             </>
@@ -29,8 +29,8 @@ const features: FeatureItem[] = [
         title: "Continous Proof of Value",
         description: (
             <>
-                <strong className="font-body font-semibold text-[22px] leading-[28px] tracking-[-0.01em] text-[#323232] block mb-4">Measurable security<br />performance in real time.</strong>
-                <p className="font-body font-normal text-[20px] leading-[28px] tracking-[-0.01em] text-[#323232]">
+                <strong className="partners-simplify-strong block mb-4">Measurable security<br />performance in real time.</strong>
+                <p className="partners-simplify-desc">
                     Cybersecurity often works invisibly—making value hard to see. Marma delivers clear, continuous visibility into blocked threats through an intuitive app.
                 </p>
             </>
@@ -42,8 +42,8 @@ const features: FeatureItem[] = [
         title: "Serve WFH Use Cases",
         description: (
             <>
-                <strong className="font-body font-semibold text-[22px] leading-[28px] tracking-[-0.01em] text-[#323232] block mb-4">Secure remote work from<br />any location.</strong>
-                <p className="font-body font-normal text-[20px] leading-[28px] tracking-[-0.01em] text-[#323232]">
+                <strong className="partners-simplify-strong block mb-4">Secure remote work from<br />any location.</strong>
+                <p className="partners-simplify-desc">
                     Marma secures vulnerable home networks, protecting remote work, smart devices, and families from cyber risks.
                 </p>
             </>
@@ -57,7 +57,7 @@ export default function SimplifyLife() {
 
             {/* Header Section */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-start mb-16 md:mb-24 gap-8">
-                <h2 className="font-title mt-8 lg:mt-24 text-[36px] md:text-[52px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232]">
+                <h2 className="partners-simplify-heading mt-8 lg:mt-24">
                     <HighlightedText text="Simplify" className="text-[#323232] font-bold" imageClassName="bottom-[-10px] md:bottom-[-20px] right-[0]" /> Your Life.
                 </h2>
 
@@ -91,7 +91,7 @@ export default function SimplifyLife() {
 
                         {/* 2. Title Column */}
                         <div className="flex flex-col justify-start md:pt-5 h-full">
-                            <h3 className="font-body font-normal text-[26px] md:text-[32px] lg:text-[34px] leading-[1.3] md:leading-[34px] tracking-[-0.01em] text-[#323232]">
+                            <h3 className="partners-simplify-title">
                                 {feature.title}
                             </h3>
                         </div>

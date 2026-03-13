@@ -21,7 +21,7 @@ export default function ProtectionBanner() {
 
                 {/* Bottom Text */}
                 <div className="absolute bottom-6 inset-x-0 w-full text-center md:text-left md:bottom-12 md:left-12 lg:bottom-16 lg:left-16 z-10 px-4">
-                    <h2 className="font-title font-normal text-[32px] leading-[42px] tracking-[-0.01em] text-[#FFFFFF]">
+                    <h2 className="home-protection-banner-title">
                         Protection against phishing <br className="hidden sm:block" />attacks
                     </h2>
                 </div>
