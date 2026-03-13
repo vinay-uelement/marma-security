@@ -32,7 +32,7 @@ export default function Navbar() {
     return (
         <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[93%] max-w-[1400px] z-50">
             {/* Main Navbar Container */}
-            <div className="navbar-glass flex items-center justify-between gap-4 lg:gap-6 px-4 lg:px-6 py-3 rounded-full shadow-lg relative z-50">
+            <div className="navbar-glass flex items-center justify-between gap-4 lg:gap-6 px-3 lg:px-3 py-2 rounded-full shadow-lg relative z-50">
                 {/* Left Side: Logo */}
                 <div className="flex flex-1 items-center min-w-0">
                     <Link href="/">
@@ -68,7 +68,7 @@ export default function Navbar() {
                 </nav>
 
                 {/* Right Side: Icons & Mobile Toggle */}
-                <div className="flex flex-1 items-center space-x-1 sm:space-x-2 lg:space-x-3 justify-end min-w-0">
+                <div className="flex flex-1 items-center gap-3 justify-end min-w-0">
                     {/* Phone/Contact Icon — linked to Contact Us page */}
                     <Link
                         href="/contact-us"

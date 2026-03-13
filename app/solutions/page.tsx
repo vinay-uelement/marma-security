@@ -10,6 +10,7 @@ export default function SolutionsPage() {
             <Banner
                 backgroundImage="/banner-solution.png"
                 heightVariant="900"
+                ContinerClass="h-[93vh]"
                 title={
                     <>
                         Complete <HighlightedText text="Cybersecurity" /><br className="hidden md:block" />
@@ -30,7 +31,7 @@ export default function SolutionsPage() {
                 ]}
                 rightImage="/solution-banner-right1.png"
                 showRightImageCircle={false}
-                rightImageClassName="lg:w-[650px] sm:w-[500px] h-auto lg:-translate-x-[-90px] translate-y-[15%] lg:translate-y-[15%] xl:translate-y-[20%] z-30 transform-gpu"
+                rightImageClassName="lg:w-[72dvh] sm:w-[500px] h-auto lg:-translate-x-[-90px] translate-y-[15%] lg:translate-y-[15%] xl:translate-y-[20%] z-30 transform-gpu"
             />
 
             <SolutionsTabs />

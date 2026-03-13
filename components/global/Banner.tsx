@@ -27,6 +27,7 @@ export interface BannerProps {
     rightImageClassName?: string;
     rightImageCircleClassName?: string;
     rightContent?: React.ReactNode;
+    ContinerClass?:string;
 }
 
 export default function Banner({
@@ -45,13 +46,12 @@ export default function Banner({
     rightImageClassName = "scale-[1.15] drop-shadow-2xl",
     rightImageCircleClassName = "bg-[#E12120] shadow-2xl",
     rightContent,
+    ContinerClass = 'h-[100vh]'
 }: BannerProps) {
-    // Dynamic height class assignment based on the prop - updated to single 100vh height
-    const heightClass = 'min-h-[100vh]';
 
     return (
         <section
-            className={`relative w-full flex items-center overflow-visible overflow-x-clip py-28 lg:py-32 ${heightClass}`}
+            className={`relative w-full flex items-center overflow-visible overflow-x-clip py-28 lg:py-32 ${ContinerClass}`}
             style={{
                 backgroundImage: `url('${backgroundImage}')`,
                 backgroundSize: 'cover',
@@ -91,20 +91,20 @@ export default function Banner({
                                     const isPrimary = btn.variant !== 'secondary' && btn.variant !== 'outline';
 
                                     const baseClass = isPrimary
-                                        ? "inline-flex items-center justify-between gap-4 md:gap-5 rounded-full pl-6 md:pl-8 pr-2 py-2 transition-transform hover:scale-[1.02] group shadow-sm w-fit"
-                                        : "inline-flex items-center justify-between gap-4 md:gap-5 rounded-full pl-6 md:pl-8 pr-2 py-2 transition-transform hover:scale-[1.02] tracking-wide group shadow-sm w-fit";
+                                        ? "inline-flex items-center justify-between gap-6 md:gap-7 rounded-full pl-6 md:pl-8 pr-1 py-2 transition-transform hover:scale-[1.02] group shadow-sm w-fit"
+                                        : "inline-flex items-center justify-between gap-6 md:gap-7 rounded-full pl-6 md:pl-8 pr-1 py-2 transition-transform hover:scale-[1.02] tracking-wide group shadow-sm w-fit";
 
                                     const variantClass = isPrimary
                                         ? "bg-[#FF0000] text-white hover:bg-[#E10000]"
-                                        : "bg-transparent border border-white text-white hover:bg-white/10";
+                                        : "bg-transparent border border-[#FFFFFF25] text-white hover:bg-white/10";
 
                                     const textClass = isPrimary
-                                        ? "font-banner text-[20px] md:text-[24px] font-normal  tracking-[-0.01em]"
-                                        : "footer-btn-text tracking-[0.02em]";
+                                        ? "font-banner text-[16px] md:text-[20px] font-normal  tracking-[-0.01em]"
+                                        : "text-[16px] md:text-[20px] tracking-[0.02em]";
 
                                     const iconContainerClass = isPrimary
-                                        ? "bg-[#F4F4F4] text-[#FF0000] rounded-full p-2 md:p-2.5 flex items-center justify-center shrink-0 group-hover:bg-white transition-colors"
-                                        : "border border-white text-white rounded-full p-2 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors";
+                                        ? "bg-[#F4F4F4] text-[#FF0000] rounded-full p-1 flex items-center justify-center shrink-0 group-hover:bg-white transition-colors"
+                                        : "border border-white text-white rounded-full p-1 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors";
 
                                     const ButtonContent = (
                                         <button
@@ -115,7 +115,7 @@ export default function Banner({
                                             <span className={textClass}>{btn.label}</span>
                                             {btn.icon && (
                                                 <div className={iconContainerClass}>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                                                 </div>
                                             )}
                                         </button>

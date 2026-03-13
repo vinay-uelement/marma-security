@@ -19,6 +19,7 @@ export default function Home() {
         <Banner
           backgroundImage="/Banner-homepage-new.png" // Solid dark bg for testing before image is added
           heightVariant="900"
+          ContinerClass="h-[93vh]"
           title={<>Radically Simplified <br className="hidden md:block" /><HighlightedText text="Cybersecurity" /> for Small<br className="hidden lg:block" /> Businesses and Home</>}
           titleClassName="font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white"
           subtitle={<>Enterprise-grade cybersecurity that works in minutes. <br className="hidden sm:block" />No IT or technical expertise needed.</>}
@@ -29,7 +30,7 @@ export default function Home() {
           ]}
           rightImageAlt="Marma Security Device"
           rightImage="/homepage-right-banner1.png"
-          rightImageClassName="lg:w-[600px] lg:h-[730px] lg:-translate-x-[-70px] translate-y-[7%] lg:translate-y-[15%] xl:translate-y-[15%] z-30 transform-gpu"
+          rightImageClassName="lg:w-[72vh] lg:h-[730px] lg:-translate-x-[-70px] translate-y-[7%] lg:translate-y-[15%] xl:translate-y-[15%] z-30 transform-gpu"
         />
       </main>
       {/* Updated section with responsive top padding and overflow control */}
