@@ -71,7 +71,7 @@ export default function PartnersPage() {
                   <span className="text-white footer-btn-text tracking-wide text-[16px] md:text-[18px]">
                     Learn more
                   </span>
-                  <div className="border border-[#FFFFFF40] text-white rounded-full p-2 flex items-center justify-center flex-shrink-0">
+                  <div className="border border-[#FFFFFF] text-white rounded-full p-2 flex items-center justify-center flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -95,7 +95,6 @@ export default function PartnersPage() {
       </section>
 
       <SimplifyLife />
-
       <PartnersBottomBanner />
     </main>
   );

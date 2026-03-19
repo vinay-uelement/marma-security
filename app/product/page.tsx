@@ -14,30 +14,35 @@ export default function ProductPage() {
         <Banner
           backgroundImage="/images/banners/product-banner.webp"
           heightVariant="900"
+          ContinerClass="h-auto lg:h-[100vh]"
+          sectionClassName="py-16 lg:py-24"
           title={
             <>
-              Security <HighlightedText text="Products" />
-              <br className="hidden lg:block" />
-              for Every Network
+              Security{" "}
+              <HighlightedText
+                text="Products"
+                imageClassName="bottom-[-18px] md:bottom-[-20px]"
+              />
+              <br className="hidden lg:block" /> for Every Network
             </>
           }
           titleClassName="font-banner font-normal text-[32px] md:text-[45px] lg:text-[60px] leading-[1.2] tracking-[-0.01em] text-white"
           subtitle={
             <>
               Marma offers a range of intelligent cybersecurity
-              <br className="hidden xl:block" />
+              <br className="hidden lg:block" />
               products designed to protect entire networks with ease.
-              <br className="hidden xl:block" />
+              <br className="hidden lg:block" />
               Built for both homes and businesses, our solutions
-              <br className="hidden xl:block" />
+              <br className="hidden lg:block" />
               deliver enterprise-grade security without the complexity
-              <br className="hidden xl:block" />
+              <br className="hidden lg:block" />
               of traditional tools.
             </>
           }
           subtitleClassName="font-body font-light text-[16px] md:text-[20px] lg:text-[24px] leading-[1.6] md:leading-[35px] text-[#E0E0E0] max-w-[650px] mt-6"
           rightContent={
-            <div className="flex flex-col sm:flex-row gap-2 lg:gap-3 items-center justify-center lg:justify-end w-full h-full lg:translate-x-[-20px] z-30 pt-12 lg:pt-0">
+            <div className="flex flex-col sm:flex-row gap-4 lg:gap-3 items-center justify-center lg:justify-end w-full h-full lg:translate-x-[-20px] z-30 py-8 lg:py-0">
               {/* SafeHome Card */}
               <Link
                 href="#safehome"
