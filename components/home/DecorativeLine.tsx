@@ -12,6 +12,8 @@ interface DecorativeLineProps {
   points: string;
   dots: DotConfig[];
   strokeColor?: string;
+  strokeWidth?: number;
+  dotRadius?: number;
   className?: string;
 }
 
@@ -20,18 +22,20 @@ export default function DecorativeLine({
   points,
   dots,
   strokeColor = "#FF0000",
+  strokeWidth = 1.5,
+  dotRadius = 12,
   className = "w-full h-auto",
 }: DecorativeLineProps) {
   const RIPPLE_INTERVAL = 0.5;
 
   return (
-   <svg
-  viewBox={viewBox}
-  xmlns="http://www.w3.org/2000/svg"
-  className={className}
-  preserveAspectRatio="xMidYMid meet"
-  style={{ overflow: "visible" }}
->
+    <svg
+      viewBox={viewBox}
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      preserveAspectRatio="xMidYMid meet"
+      style={{ overflow: "visible" }}
+    >
       <defs>
         <style>{`
           @keyframes dl-ripple {
@@ -49,7 +53,7 @@ export default function DecorativeLine({
         points={points}
         fill="none"
         stroke={strokeColor}
-        strokeWidth="1.5"
+        strokeWidth={strokeWidth}
       />
 
       {dots.map((dot, i) => {
@@ -64,7 +68,7 @@ export default function DecorativeLine({
                 key={ringIdx}
                 cx={dot.cx}
                 cy={dot.cy}
-                r={12}
+                r={dotRadius}
                 fill={strokeColor} // ← KEY CHANGE: filled circle, not outline
                 stroke="none"
                 className="dl-ripple-ring"
@@ -74,7 +78,12 @@ export default function DecorativeLine({
               />
             ))}
             {/* Core solid dot — rendered last so it's always on top */}
-            <circle cx={dot.cx} cy={dot.cy} r={9} fill={strokeColor} />
+            <circle
+              cx={dot.cx}
+              cy={dot.cy}
+              r={dotRadius * 0.75}
+              fill={strokeColor}
+            />
           </g>
         );
       })}
