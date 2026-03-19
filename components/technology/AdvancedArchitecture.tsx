@@ -18,7 +18,7 @@ export default function AdvancedArchitecture() {
                         <HighlightedText
                             text="Advanced cybersecurity"
                             className="font-bold text-[#323232]"
-                            imageClassName="bottom-[-20px] md:bottom-[-22px] right-[-20px] md-right-[-30px] -translate-x-1/2"
+                            imageClassName="bottom-[-22px] md:bottom-[-22px] right-[20px] md-right-[-30px] translate-x-1/400 md:translate-x-0"
                         /> architecture that safeguards every connected device seamlessly.
                     </h2>
                 </div>

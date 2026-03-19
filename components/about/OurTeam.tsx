@@ -113,12 +113,12 @@ export default function OurTeam() {
                                     href={member.linkedinUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center justify-center w-[32px] h-[32px] md:w-[38px] md:h-[38px] rounded-full bg-white shadow-sm shrink-0 transition-transform hover:scale-[1.05]"
+                                    className="flex items-center justify-center w-[38px] h-[38px] md:w-[46px] md:h-[46px] rounded-full bg-white shadow-sm shrink-0 transition-transform hover:scale-[1.05]"
                                 >
                                     <Image
                                         src="/images/global/linkedin-vector.png"
                                         alt="LinkedIn"
-                                        width={18}
+                                        width={20}
                                         height={18}
                                         className="object-contain w-full h-full"
                                     />

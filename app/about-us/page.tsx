@@ -32,7 +32,7 @@ export default function PartnersPage() {
                             <HighlightedText 
                                 text="Cybersecurity" 
                                 className="font-bold text-[#FFFFFF]" 
-                                imageClassName="bottom-[-25px] md:bottom-[-22px] right-[-10px]  " 
+                                imageClassName="bottom-[-27px] md:bottom-[-22px] right-[-10px]  " 
                             />
                             {" "}Through Simplicity
                         </h1>
