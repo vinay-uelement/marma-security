@@ -6,7 +6,7 @@ export default function Footer() {
         <footer className="footer-container">
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-             
+
                     <div className="flex flex-col h-full ">
                         {/* Top: Logo & Description */}
                         <div className="flex flex-col items-start pb-8 lg:pb-15 gap-10 w-full">
@@ -17,7 +17,7 @@ export default function Footer() {
                                 height={40}
                                 className="footer-logo"
                             />
-                            
+
                             <p className="footer-desc-text">
                                 All security updates, patches, and improvements are handled automatically in the background.
                             </p>
@@ -33,7 +33,7 @@ export default function Footer() {
                             <a href="/partners" className="hover:text-white/70 transition-colors">Partners</a>
                             <a href="/contact-us" className="hover:text-white/70 transition-colors">Contact</a>
                         </div>
-                        
+
                         <div className="w-full h-px bg-[#FFFFFF33] mb-10 md-mb-15 mix-blend-screen" />
 
                         <div className="flex flex-col gap-10 flex-grow">
@@ -104,10 +104,23 @@ export default function Footer() {
             </div>
 
             {/* Copyright Bottom Bar */}
-            <div className="footer-bottom-bar">
+            <div
+                className="footer-bottom-bar"
+                style={{
+                    background: `
+                            linear-gradient(
+                            90deg,
+                            #7D0202 0%,
+                            rgba(187,4,4,0.93) 25%,
+                            #7D0202 50%,
+                            #BB0404 75%,
+                            #7D0202 100%
+                            )`
+                }}
+            >
                 <div className="max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-center">
                     <p className="footer-copyright text-white">
-                         &copy; Copyright  {new Date().getFullYear()}  - Lift Media
+                        &copy; Copyright  {new Date().getFullYear()}  - Lift Media
                     </p>
                 </div>
             </div>

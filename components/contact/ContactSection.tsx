@@ -84,8 +84,8 @@ export default function ContactSection() {
                                     <Image
                                         src="/images/contact/contact-us-calling-icon.png"
                                         alt="Phone"
-                                        width={52}
-                                        height={52}
+                                        width={75}
+                                        height={75}
                                         className="object-contain"
                                     />
                                 </div>
@@ -100,7 +100,7 @@ export default function ContactSection() {
                             {/* Corporate Office */}
                             <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB] w-full">
                                 <div className="flex items-center justify-center w-[74px] h-[74px] rounded-full bg-[#EDEDED] shrink-0">
-                                    <Image src="/images/contact/contact-us-map.png" alt="Location" width={52} height={52} className="object-contain" />
+                                    <Image src="/images/contact/contact-us-map.png" alt="Location" width={75} height={75} className="object-contain" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <span className="contact-card-label">Corporate Office</span>
@@ -111,7 +111,7 @@ export default function ContactSection() {
                             {/* Email */}
                             <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB]  w-full">
                                 <div className="flex items-center justify-center w-[74px] h-[74px] rounded-full bg-[#EDEDED] shrink-0">
-                                    <Image src="/images/contact/contact-us-mail.png" alt="Email" width={52} height={52} className="object-contain" />
+                                    <Image src="/images/contact/contact-us-mail.png" alt="Email" width={75} height={75} className="object-contain" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <span className="contact-card-label">Email</span>
