@@ -212,7 +212,7 @@ img {
    =============================================================== */
 
 .tm-header-pro {
-  @apply font-title font-[500] text-[32px] leading-[1.2] md:text-[42px] lg:text-[52px] lg:leading-[42px] tracking-normal;
+  @apply font-title font-[500] text-[26px] md:text-[36px] leading-[1.2] lg:leading-[42px] tracking-normal;
 }
 
 .tm-card-name-bold {
@@ -499,11 +499,11 @@ img {
 }
 
 .home-cards-heading {
-  @apply font-title font-medium text-[32px] md:text-[46px] leading-[1.2] md:leading-[62px] text-[#323232] tracking-[-0.01em];
+  @apply font-title font-medium text-[26px] md:text-[36px] leading-[1.2] md:leading-[62px] text-[#323232] tracking-[-0.01em];
 }
 
 .home-protect-heading {
-  @apply font-title font-normal text-[36px] md:text-[52px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232];
+  @apply font-title font-normal text-[26px] md:text-[36px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232];
 }
 
 .home-protect-title {
@@ -527,7 +527,7 @@ img {
 }
 
 .home-challenge-heading {
-  @apply font-title text-[36px] md:text-[52px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232];
+  @apply font-title text-[24px] md:text-[32px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232];
 }
 
 .home-challenge-tab-active {
