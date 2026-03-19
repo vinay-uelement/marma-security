@@ -87,21 +87,21 @@ export default function Home() {
               <DecorativeLine
                 viewBox="0 0 800 80"
                 points="0,40 310,40"
-                dots={[{ cx: 310, cy: 40, rippleCount: 2 }]}
+                dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
                 className="w-full h-auto scale-x-[-1]"
               />
 
               <DecorativeLine
                 viewBox="0 0 1560 500"
                 points="600,280 960,280 1020,420 1560,420"
-                dots={[{ cx: 600, cy: 280, rippleCount: 2 }]}
+                dots={[{ cx: 600, cy: 280, rippleCount: 3 }]}
                 className="w-full h-auto"
               />
 
               <DecorativeLine
                 viewBox="0 0 800 80"
                 points="0,40 310,40"
-                dots={[{ cx: 310, cy: 40, rippleCount: 2 }]}
+                dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
                 className="w-full h-auto"
               />
             </div>

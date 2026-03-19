@@ -1,19 +1,18 @@
-// components/global/DecorativeLine.tsx
 "use client";
 
 interface DotConfig {
   cx: number;
   cy: number;
-  rippleCount?: number; // how many ripple rings (default: 3)
-  rippleBaseDelay?: number; // stagger start (default: 0)
+  rippleCount?: number;
+  rippleBaseDelay?: number;
 }
 
 interface DecorativeLineProps {
-  viewBox: string; // e.g. "0 0 1100 120"
-  points: string; // SVG polyline points string
+  viewBox: string;
+  points: string;
   dots: DotConfig[];
-  strokeColor?: string; // default #FF0000
-  className?: string; // for outer <svg> sizing
+  strokeColor?: string;
+  className?: string;
 }
 
 export default function DecorativeLine({
@@ -23,7 +22,7 @@ export default function DecorativeLine({
   strokeColor = "#FF0000",
   className = "w-full h-auto",
 }: DecorativeLineProps) {
-  const RIPPLE_INTERVAL = 0.6; // seconds between each ring wave
+  const RIPPLE_INTERVAL = 0.5;
 
   return (
     <svg
@@ -33,28 +32,18 @@ export default function DecorativeLine({
       preserveAspectRatio="xMidYMid meet"
     >
       <defs>
-        {/* Soft glow around dots */}
-        <filter id="dl-glow" x="-80%" y="-80%" width="260%" height="260%">
-          <feGaussianBlur stdDeviation="5" result="coloredBlur" />
-          <feMerge>
-            <feMergeNode in="coloredBlur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-
-        {/* Keyframes via inline style tag */}
         <style>{`
           @keyframes dl-ripple {
-            0%   { r: 10; opacity: 0.7; }
-            100% { r: 38; opacity: 0; }
+            0%   { r: 12; opacity: 0.30; }
+            100% { r: 50; opacity: 0; }
           }
           .dl-ripple-ring {
-            animation: dl-ripple 1.8s ease-out infinite;
+            animation: dl-ripple 2.5s ease-out infinite;
           }
         `}</style>
       </defs>
 
-      {/* The line path */}
+      {/* Line */}
       <polyline
         points={points}
         fill="none"
@@ -62,30 +51,28 @@ export default function DecorativeLine({
         strokeWidth="1.5"
       />
 
-      {/* Dots with ripple */}
       {dots.map((dot, i) => {
-        const count = dot.rippleCount ?? 3;
+        const count = dot.rippleCount ?? 5; // ← more rings = more layers visible at once
         const baseDelay = dot.rippleBaseDelay ?? 0;
 
         return (
-          <g key={i} filter="url(#dl-glow)">
-            {/* Ripple rings */}
+          <g key={i}>
+            {/* Ripple rings — filled, not stroked */}
             {Array.from({ length: count }).map((_, ringIdx) => (
               <circle
                 key={ringIdx}
                 cx={dot.cx}
                 cy={dot.cy}
-                r={10}
-                fill="none"
-                stroke={strokeColor}
-                strokeWidth="1"
+                r={12}
+                fill={strokeColor} // ← KEY CHANGE: filled circle, not outline
+                stroke="none"
                 className="dl-ripple-ring"
                 style={{
                   animationDelay: `${baseDelay + ringIdx * RIPPLE_INTERVAL}s`,
                 }}
               />
             ))}
-            {/* Core solid dot */}
+            {/* Core solid dot — rendered last so it's always on top */}
             <circle cx={dot.cx} cy={dot.cy} r={9} fill={strokeColor} />
           </g>
         );
