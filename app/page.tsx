@@ -23,7 +23,7 @@ const Testimonial = dynamic(
 
 export default function Home() {
   return (
-    <div className="flex flex-col bg-[#FFFFFF] min-h-screen">
+    <div className="flex flex-col bg-[#FFFFFF] min-h-screen overflow-x-clip">
       <main className="flex-grow">
         <Banner
           backgroundImage="/images/banners/Banner-homepage-new.webp" // Solid dark bg for testing before image is added
@@ -57,7 +57,7 @@ export default function Home() {
         />
       </main>
       {/* Updated section with responsive top padding and overflow control */}
-      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-16 md:pt-24 bg-[#FFFFFF] overflow-x-clip">
+      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-16 md:pt-24 bg-[#FFFFFF] ">
         {/* The flex container now stays flex-col until 901px */}
         <div className="flex flex-col min-[901px]:flex-row justify-between items-center mb-16 gap-8">
           {/* TEXT: Centered below 901px, left-aligned above */}
@@ -73,36 +73,19 @@ export default function Home() {
           </h2>
 
           {/* IMAGE: Fully right-aligned correctly across all sizes with clamped margins */}
-          <div className="relative flex items-center w-full min-[901px]:max-w-[400px] lg:max-w-[500px]">
-            <div className="absolute right-0 w-[280px] sm:w-[320px] md:w-[400px] lg:w-[500px]">
-              <DecorativeLine
-                viewBox="0 0 700 120"
-                points="100,30 280,90 1100,90"
-                dots={[{ cx: 100, cy: 30, rippleCount: 3, rippleBaseDelay: 0 }]}
-                className="w-full h-auto"
-              />
-
-              <DecorativeLine
-                viewBox="0 0 700 80"
-                points="0,40 210,40"
-                dots={[{ cx: 210, cy: 40, rippleCount: 3 }]}
-                className="w-full h-auto scale-x-[-1]"
-              />
-
-              {/* <DecorativeLine
-                viewBox="0 0 1560 500"
-                points="600,280 960,280 1020,420 1560,420"
-                dots={[{ cx: 600, cy: 280, rippleCount: 3 }]}
-                className="w-full h-auto"
-              /> */}
-
-              {/* <DecorativeLine
-                viewBox="0 0 800 80"
-                points="0,40 310,40"
-                dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
-                className="w-full h-auto"
-              /> */}
-            </div>
+          <div className="hidden min-[901px]:flex flex-col w-full min-[901px]:w-[45%]">
+            <DecorativeLine
+              viewBox="0 0 500 120"
+              points="80,30 250,90 3000,90"
+              dots={[{ cx: 80, cy: 30, rippleCount: 3, rippleBaseDelay: 0 }]}
+              className="w-full h-auto"
+            />
+            <DecorativeLine
+              viewBox="0 0 500 80"
+              points="-3000,40 200,40"   
+              dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
+              className="w-full h-auto scale-x-[-1]"  
+            />
           </div>
         </div>
       </section>
