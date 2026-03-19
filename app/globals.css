@@ -139,22 +139,22 @@ backdrop-filter: blur(45.73509216308594px);
 
 .footer-input-field {
   background: rgba(212, 212, 212, 0.08);
-border: 1px solid #FFFFFF52;  
+  border: 1px solid #FFFFFF52;  
   color: #D4D4D433;
   box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
-  @apply font-body font-normal text-[20px] leading-[30px] rounded-[14px] px-5 py-4 text-white placeholder-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all w-full;
+  @apply font-body font-normal text-[18px] leading-[28px] rounded-[14px] px-5 py-4 text-white placeholder-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all w-full;
 }
 
 .footer-input-field::placeholder {
-  @apply text-[#FFFFFFCC] font-body font-normal text-[18px] leading-[30px];
+  @apply text-[#FFFFFFCC] font-body font-normal text-[18px] leading-[28px];
 }
 
 .footer-desc-text {
-  @apply font-body font-normal text-[20px] leading-[28px] tracking-[-0.01em] text-[#898989];
+  @apply font-body font-normal text-[18px] leading-[26px] tracking-[-0.01em] text-[#898989];
 }
 
 .footer-nav-grid {
-  @apply font-title font-semibold text-[18px] text-white;
+  @apply font-title font-semibold text-[16px] text-white;
 }
 
 .footer-contact-text {
