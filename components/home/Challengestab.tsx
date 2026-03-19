@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import HighlightedText from '../global/HighlightedText';
+import DecorativeLine from './DecorativeLine';
 
 interface TabData {
     id: string;
@@ -59,15 +60,24 @@ export default function Challengestab() {
                 </h2>
 
                 {/* Decorative Red Line Graphic */}
-                <div className="hidden md:flex items-start justify-end w-full max-w-[400px] lg:max-w-[500px] lg:-mr-12 -mt-16 lg:-mt-24">
-                    <Image
-                        src="/images/home/homepage-right-decorativesection.webp"
-                        alt="Decorative Line"
-                        width={500}
-                        height={60}
-                        className="object-contain w-full h-auto transform -translate-y-4 lg:-translate-y-8"
-                    />
-                </div>
+               <div className="hidden md:flex items-start justify-end w-full max-w-[400px] lg:max-w-[500px] -mt-16 lg:-mt-24">
+
+  <div className="relative w-screen right-1/2 translate-x-1/2 flex justify-end">
+
+    <div className="w-[400px] lg:w-[500px]">
+
+      <DecorativeLine
+                viewBox="0 0 800 500"
+                points="600,280 960,280 1020,420 1560,420"
+                dots={[{ cx: 600, cy: 280, rippleCount: 3 }]}
+                className="w-full h-auto"
+              />
+
+    </div>
+
+  </div>
+
+</div>
             </div>
 
             {/* Tabs Navigation */}

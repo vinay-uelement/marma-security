@@ -25,12 +25,13 @@ export default function DecorativeLine({
   const RIPPLE_INTERVAL = 0.5;
 
   return (
-    <svg
-      viewBox={viewBox}
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      preserveAspectRatio="xMidYMid meet"
-    >
+   <svg
+  viewBox={viewBox}
+  xmlns="http://www.w3.org/2000/svg"
+  className={className}
+  preserveAspectRatio="xMidYMid meet"
+  style={{ overflow: "visible" }}
+>
       <defs>
         <style>{`
           @keyframes dl-ripple {

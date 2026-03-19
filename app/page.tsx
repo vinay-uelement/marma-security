@@ -75,35 +75,36 @@ export default function Home() {
           </h2>
 
           {/* IMAGE: Fully right-aligned correctly across all sizes with clamped margins */}
-          <div className="flex items-center justify-end w-full max-w-full min-[901px]:max-w-[400px] lg:max-w-[500px]">
-            <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[500px] -mr-6 md:-mr-12 lg:-mr-16 b">
-              <DecorativeLine
-                viewBox="0 0 1100 120"
+         <div className="relative flex items-center w-full min-[901px]:max-w-[400px] lg:max-w-[500px]">
+
+  <div className="absolute right-0 w-[280px] sm:w-[320px] md:w-[400px] lg:w-[500px]">
+                <DecorativeLine
+                viewBox="0 0 700 120"
                 points="100,30 280,90 1100,90"
                 dots={[{ cx: 100, cy: 30, rippleCount: 3, rippleBaseDelay: 0 }]}
                 className="w-full h-auto"
               />
 
               <DecorativeLine
-                viewBox="0 0 800 80"
-                points="0,40 310,40"
-                dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
+                viewBox="0 0 700 80"
+                points="0,40 210,40"
+                dots={[{ cx: 210, cy: 40, rippleCount: 3 }]}
                 className="w-full h-auto scale-x-[-1]"
               />
 
-              <DecorativeLine
+              {/* <DecorativeLine
                 viewBox="0 0 1560 500"
                 points="600,280 960,280 1020,420 1560,420"
                 dots={[{ cx: 600, cy: 280, rippleCount: 3 }]}
                 className="w-full h-auto"
-              />
+              /> */}
 
-              <DecorativeLine
+              {/* <DecorativeLine
                 viewBox="0 0 800 80"
                 points="0,40 310,40"
                 dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
                 className="w-full h-auto"
-              />
+              /> */}
             </div>
           </div>
         </div>
@@ -117,16 +118,21 @@ export default function Home() {
 
       {/* Inverted Solutions Info Component */}
       <div className="w-full max-w-[1440px] mx-auto pt-14 bg-[#fff]">
-        {/* Red Decorative Line container on Home page only */}
-        <div className="flex mb-12 relative h-[30px] md:h-[50px] w-[500px] md:w-[600px] lg:w-[1000px]">
-          <Image
-            src="/images/solutions/red-decorative-line-solution-info.png"
-            alt="Red Decorative Line"
-            fill
-            sizes="(max-width: 768px) 350px, (max-width: 1024px) 600px, 800px"
-            className="object-contain object-left"
-          />
-        </div>
+  {/* Red Decorative Line container on Home page only */}
+<div className="relative mb-12 w-screen left-1/2 -translate-x-1/2">
+
+  <div className="w-[500px] md:w-[600px] lg:w-[1000px]">
+
+    <DecorativeLine
+      viewBox="0 0 1500 80"
+      points="0,40 310,40"
+      dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
+      className="w-full h-auto"
+    />
+
+  </div>
+
+</div>
       </div>
       <div className="pb-12 bg-[#fff]">
         <HomeSolutionsInfo />

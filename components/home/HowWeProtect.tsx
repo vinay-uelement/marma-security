@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import HighlightedText from '../global/HighlightedText';
 import Link from 'next/link';
+import DecorativeLine from './DecorativeLine';
 
 interface FeatureItem {
     id: string;
@@ -87,22 +88,32 @@ export default function HowWeProtect() {
         <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-20 md:py-24 bg-[#FFFFFF]">
 
             {/* Header Section */}
-            <div className="flex flex-col md:flex-row justify-between items-center md:items-center mb-16 md:mb-24 gap-8 text-center md:text-left">
-                <h2 className="home-protect-heading w-full">
-                    How we <HighlightedText text="protect you?" className="font-bold text-[#323232]" imageClassName="absolute h-auto object-contain pointer-events-none -z-10 bottom-[-20px] md:bottom-[-24px] left-3/4 -translate-x-1/2 w-[70%]" />
-                </h2>
+          <div className="relative flex flex-col md:flex-row justify-between items-start mb-16 md:mb-24 gap-8 text-center md:text-left">
 
-                {/* Decorative Red Line Graphic */}
-                <div className="hidden md:flex items-center justify-end w-full max-w-[400px] lg:max-w-[500px] lg:-mr-12">
-                    <Image
-                        src="/images/home/homepage-right-side-how-we-protect.png" // User can upload custom red line image here
-                        alt="Decorative Line"
-                        width={500}
-                        height={60}
-                        className="object-xcontain w-full h-auto"
-                    />
-                </div>
-            </div>
+  <h2 className="home-protect-heading w-full md:max-w-[520px]">
+    How we <HighlightedText
+      text="protect you?"
+      className="font-bold text-[#323232]"
+      imageClassName="absolute h-auto object-contain pointer-events-none -z-10 bottom-[-20px] md:bottom-[-24px] left-3/4 -translate-x-1/2 w-[70%]"
+    />
+  </h2>
+
+ <div className="hidden md:block absolute right-0 top-0">
+
+  <div className="relative w-screen right-1/2 translate-x-1/2">
+
+    <DecorativeLine
+      viewBox="0 0 700 80"
+      points="100,40 1100,40"
+      dots={[{ cx: 100, cy: 40, rippleCount: 3 }]}
+      className="w-[400px] lg:w-[500px] h-auto ml-auto"
+    />
+
+  </div>
+
+</div>
+
+</div>
 
             {/* Features List Layout */}
             <div className="flex flex-col gap-12 lg:gap-16">

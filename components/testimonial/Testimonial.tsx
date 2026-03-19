@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import HighlightedText from "../global/HighlightedText";
-
+import DecorativeLine from "../home/DecorativeLine";
 const testimonials = [
   {
     name: "Ganesh",
@@ -63,8 +63,14 @@ export default function Testimonial() {
 
           {/* The decorative red line reaches the container edge naturally */}
           <div className="flex items-center w-full md:w-[35vw] xl:w-[450px]">
-            <div className="w-4 h-4 rounded-full bg-[#FF0000] shrink-0" />
-            <div className="h-[2px] bg-[#FF0000] w-full" />
+
+            <DecorativeLine
+              viewBox="0 0 700 80"
+              points="100,40 1100,40"
+              dots={[{ cx: 100, cy: 40, rippleCount: 3 }]}
+              className="w-full h-auto"
+            />
+
           </div>
         </div>
       </div>
@@ -129,3 +135,4 @@ export default function Testimonial() {
     </section>
   );
 }
+

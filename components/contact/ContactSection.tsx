@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import HighlightedText from '@/components/global/HighlightedText';
+import DecorativeLine from '../home/DecorativeLine';
 
 export default function ContactSection() {
     const [formData, setFormData] = useState({
@@ -27,14 +28,19 @@ export default function ContactSection() {
         <section className="relative w-full bg-[#F5F5F5] py-16 md:py-[250px] lg:py-[150px] overflow-hidden">
 
             {/* Right-side decorative image placeholder — user replaces this src */}
-            <div className="absolute top-0 mt-[100px] md-mt-[120px] right-0 h-full w-[140px] lg:w-[220px] pointer-events-none z-0 hidden lg:block">
-                <Image
-                    src="/images/contact/contact-us-right.png"
-                    alt="Decorative"
-                    fill
-                    sizes="220px"
-                    className="object-contain object-right-top"
-                />
+            <div className="absolute top-[120px] right-0 w-screen pointer-events-none z-0 hidden lg:block">
+
+                <div className="ml-auto w-[220px]">
+
+                    <DecorativeLine
+                        viewBox="0 0 700 80"
+                        points="100,40 900,40"
+                        dots={[{ cx: 100, cy: 40, rippleCount: 3 }]}
+                        className="w-[400px] lg:w-[500px] h-auto ml-auto"
+                    />
+
+                </div>
+
             </div>
 
             <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 mt-[40px] lg:px-12">
@@ -202,8 +208,23 @@ export default function ContactSection() {
                                         className="inline-flex items-center gap-3 bg-[#FF0000] hover:bg-[#D10000] text-white rounded-full pl-7 pr-2 py-2 transition-colors"
                                     >
                                         <span className="contact-submit-text">Submit</span>
-                                        <div className="flex items-center justify-center w-[34px] h-[34px] rounded-full bg-white border border-[#FF0000]">
-                                            <Image src="/images/contact/contact-us-arrow.png" alt="Arrow" width={10} height={10} className="object-contain" />
+                                        <div className="flex items-center justify-center w-[34px] h-[34px] rounded-full bg-white border border-[#FF0000] text-[#FF0000] hover:bg-[#F5F5F5] transition-colors">
+
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth="2.5"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            >
+                                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                                <polyline points="7 7 17 7 17 17"></polyline>
+                                            </svg>
+
                                         </div>
                                     </button>
                                 </div>
