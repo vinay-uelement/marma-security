@@ -76,7 +76,7 @@ export default function Home() {
           <div className="hidden min-[901px]:flex flex-col w-full min-[901px]:w-[45%]">
             <DecorativeLine
               viewBox="0 0 500 120"
-              points="80,30 250,90 3000,90"
+              points="80,30 130,90 3000,90"
               dots={[{ cx: 80, cy: 30, rippleCount: 3, rippleBaseDelay: 0 }]}
               className="w-full h-auto"
             />
