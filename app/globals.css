@@ -125,7 +125,7 @@ img {
 }
 
 .footer-btn-text {
-  @apply font-banner font-normal text-[24px];
+  @apply font-banner font-normal text-[16px] md:text-[20px];
 }
 
 .footer-container {
@@ -354,11 +354,11 @@ img {
 }
 
 .partners-banner-btn-text {
-  @apply text-[#FFFFFF] font-banner font-normal tracking-wide text-[16px] md:text-[18px];
+  @apply text-[#FFFFFF] font-banner font-normal tracking-wide text-[16px] md:text-[20px];
 }
 
 .partners-simplify-heading {
-  @apply font-title text-[36px] md:text-[52px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232];
+  @apply font-title text-[36px] md:text-[45px] leading-[1.2] md:leading-[55px] tracking-[-0.01em] text-[#323232];
 }
 
 .partners-simplify-title {
@@ -366,11 +366,11 @@ img {
 }
 
 .partners-simplify-strong {
-  @apply font-body font-semibold text-[20px] leading-[28px] tracking-[-0.01em] text-[#323232];
+  @apply font-body font-semibold text-[16px] lg:text-[18px] leading-[28px] tracking-[-0.01em] text-[#323232];
 }
 
 .partners-simplify-desc {
-  @apply font-body font-normal text-[18px] leading-[24px] tracking-[-0.01em] text-[#323232];
+  @apply font-body font-normal text-[14px] md:text-[16px] leading-[24px] tracking-[-0.01em] text-[#323232];
 }
 
 .partners-btm-title {
@@ -394,15 +394,15 @@ img {
    =============================================================== */
 
 .stats-value {
-  @apply font-body font-semibold text-[26px] md:text-[40px] leading-[32px] md:leading-[60px]  text-[#FFFFFF];
+  @apply font-body font-semibold text-[32px] md:text-[42px] leading-[62px] tracking-[-0.01em] text-[#FFFFFF];
 }
 
 .stats-label {
-  @apply font-body font-bold text-[16px] md:text-[24px] leading-[22px] md:leading-[62px] tracking-[-0.01em] text-[#FFFFFF];
+  @apply font-body font-bold text-[20px] md:text-[24px] leading-[62px] tracking-[-0.01em] text-[#FFFFFF];
 }
 
 .stats-desc {
-  @apply font-title font-normal text-[14px] md:text-[20px] leading-[20px] md:leading-[30px] tracking-[-0.01em] text-[#FFFFFF];
+  @apply font-title font-normal text-[16px] md:text-[20px] leading-[30px] tracking-[-0.01em] text-[#FFFFFF];
 }
 
 .stats-glass-card {
@@ -419,7 +419,7 @@ img {
 }
 
 .about-banner-title {
-  @apply font-title font-normal text-[36px] md:text-[42px] lg:text-[52px] leading-[1.2] tracking-[-0.01em] text-white drop-shadow-sm;
+  @apply font-title font-normal text-[36px] md:text-[52px] leading-[1.2] tracking-[-0.01em] text-white drop-shadow-sm;
 }
 
 .about-banner-subtitle {
@@ -431,7 +431,7 @@ img {
 }
 
 .about-section-heading {
-  @apply font-title font-normal text-[36px] md:text-[52px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232];
+  @apply font-title font-normal text-[36px] md:text-[45px] leading-[1.2] md:leading-[55px] tracking-[-0.01em] text-[#323232];
 }
 
 .about-team-name {

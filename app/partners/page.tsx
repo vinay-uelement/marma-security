@@ -31,7 +31,7 @@ export default function PartnersPage() {
                             <HighlightedText
                                 text="Partners."
                                 className="font-bold text-[#FFFFFF]"
-                                imageClassName="bottom-[-16px] md:bottom-[-20px] right-[5the 0px]"
+                                imageClassName="bottom-[-20px] md:bottom-[-20px] right-[-5px]"
                             />
                         </h1>
 

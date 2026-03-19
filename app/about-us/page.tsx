@@ -54,13 +54,13 @@ export default function PartnersPage() {
             <section className="w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-12 md:pt-36 bg-[#FFFFFF]">
 
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row justify-between items-center md:items-center mb-10 md:mb-[70px] gap-8 text-center md:text-left">
-                    <h2 className="about-section-heading">
+                <div className="flex flex-row justify-between items-center mb-10 md:mb-[70px] gap-4 text-left">
+                    <h2 className="about-section-heading whitespace-nowrap">
                         Our <HighlightedText text="Team" className='font-bold text-[#323232]' imageClassName="bottom-[-10px] md:bottom-[-20px] right-[-10px]" />
                     </h2>
 
                     {/* Decorative Red Line Graphic */}
-                    <div className="hidden md:flex items-start justify-end w-full max-w-[400px] lg:max-w-[500px] lg:-mr-12 -mt-16 lg:-mt-24">
+                    <div className="flex items-start justify-end w-full max-w-[200px] md:max-w-[400px] lg:max-w-[500px] -mr-4 md:-mr-6 lg:-mr-12 -mt-10 md:-mt-16 lg:-mt-24">
                         <Image
                             src="/images/banners/Technology-below-banner.webp"
                             alt="Decorative Line"   
