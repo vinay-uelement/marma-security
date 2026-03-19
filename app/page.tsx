@@ -66,7 +66,7 @@ export default function Home() {
             <HighlightedText
               text="Business and Home"
               className="text-[#323232] font-bold"
-              imageClassName="bottom-[-5px] md:bottom-[-15px] right-[-40px] w-[100px] md:w-[140px]"
+              imageClassName="bottom-[-5px] md:bottom-[-15px] right-[25px] w-[100px] md:w-[140px]"
             />{" "}
             are more <br className="hidden min-[901px]:block" /> exposed to
             cybercrime than you think.
