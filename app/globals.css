@@ -487,15 +487,15 @@ img {
 }
 
 .home-cybercrime-title {
-  @apply font-body font-semibold text-[30px] leading-[40px] tracking-[-0.01em] text-[#323232];
+  @apply font-body font-semibold text-[28px] leading-[35px] tracking-[-0.01em] text-[#323232];
 }
 
 .home-cybercrime-body {
-  @apply font-body font-light text-[20px] leading-[30px] tracking-[-0.01em] text-[#323232];
+  @apply font-body font-light text-[18px] leading-[26px] tracking-[-0.01em] text-[#323232];
 }
 
 .home-cybercrime-emphasis {
-  @apply font-body font-semibold text-[18px] leading-[26px] tracking-[-0.01em] text-[#323232];
+  @apply font-body font-semibold text-[16px] leading-[24px] tracking-[-0.01em] text-[#323232];
 }
 
 .home-cards-heading {

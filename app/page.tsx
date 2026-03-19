@@ -36,7 +36,7 @@ export default function Home() {
               <br className="hidden lg:block" /> Businesses and Home
             </>
           }
-          titleClassName="font-banner font-normal text-[32px] md:text-[40px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white"
+          titleClassName="font-banner font-normal text-[28px] md:text-[36px] leading-[1.2] md:leading-[50px] tracking-[-0.01em] text-white"
           subtitle={
             <>
               Enterprise-grade cybersecurity that works in minutes.{" "}
@@ -61,24 +61,21 @@ export default function Home() {
         {/* The flex container now stays flex-col until 901px */}
         <div className="flex flex-col min-[901px]:flex-row justify-between items-center mb-16 gap-8">
           {/* TEXT: Centered below 901px, left-aligned above */}
-          <h2 className="w-full font-title text-[36px] md:text-[42px] min-[1121px]:text-[52px] leading-[1.2] md:leading-[62px] tracking-[-0.01em] text-[#323232] text-center min-[901px]:text-left">
+          <h2 className="w-full font-title text-[24px] md:text-[32px] min-[1121px]:text-[32px] leading-[1.2] md:leading-[48px] tracking-[-0.01em] text-[#323232] text-center min-[901px]:text-left">
             Your{" "}
             <HighlightedText
               text="Business and Home"
               className="text-[#323232] font-bold"
               imageClassName="bottom-[-5px] md:bottom-[-15px] right-[-40px] w-[100px] md:w-[140px]"
             />{" "}
-            are
-            <br className="hidden min-[901px]:block" /> more exposed to
-            cybercrime
-            <br className="hidden min-[901px]:block" /> than you think.
+            are more <br className="hidden min-[901px]:block" /> exposed to
+            cybercrime than you think.
           </h2>
 
           {/* IMAGE: Fully right-aligned correctly across all sizes with clamped margins */}
-         <div className="relative flex items-center w-full min-[901px]:max-w-[400px] lg:max-w-[500px]">
-
-  <div className="absolute right-0 w-[280px] sm:w-[320px] md:w-[400px] lg:w-[500px]">
-                <DecorativeLine
+          <div className="relative flex items-center w-full min-[901px]:max-w-[400px] lg:max-w-[500px]">
+            <div className="absolute right-0 w-[280px] sm:w-[320px] md:w-[400px] lg:w-[500px]">
+              <DecorativeLine
                 viewBox="0 0 700 120"
                 points="100,30 280,90 1100,90"
                 dots={[{ cx: 100, cy: 30, rippleCount: 3, rippleBaseDelay: 0 }]}
@@ -118,21 +115,17 @@ export default function Home() {
 
       {/* Inverted Solutions Info Component */}
       <div className="w-full max-w-[1440px] mx-auto pt-14 bg-[#fff]">
-  {/* Red Decorative Line container on Home page only */}
-<div className="relative mb-12 w-screen left-1/2 -translate-x-1/2">
-
-  <div className="w-[500px] md:w-[600px] lg:w-[1000px]">
-
-    <DecorativeLine
-      viewBox="0 0 1500 80"
-      points="0,40 310,40"
-      dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
-      className="w-full h-auto"
-    />
-
-  </div>
-
-</div>
+        {/* Red Decorative Line container on Home page only */}
+        <div className="relative mb-12 w-screen left-1/2 -translate-x-1/2">
+          <div className="w-[500px] md:w-[600px] lg:w-[1000px]">
+            <DecorativeLine
+              viewBox="0 0 1500 80"
+              points="0,40 310,40"
+              dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
       </div>
       <div className="pb-12 bg-[#fff]">
         <HomeSolutionsInfo />

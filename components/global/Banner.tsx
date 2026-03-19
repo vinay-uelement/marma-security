@@ -39,7 +39,7 @@ export default function Banner({
   middleText,
   middleTextClassName = "font-title font-medium text-[20px] md:text-[24px] leading-[34px] tracking-[-0.01em] text-white max-w-[550px]",
   subtitle,
-  subtitleClassName = "font-body text-lg md:text-xl text-white/90 max-w-[550px] leading-relaxed font-light",
+  subtitleClassName = "font-title text-[20px] md:text-[24px] text-white/90 max-w-[550px] tracking-[-0.01em] leading-relaxed font-light",
   buttons = [],
   rightImage,
   rightImageAlt = "Banner Image",
