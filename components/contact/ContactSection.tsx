@@ -43,10 +43,10 @@ export default function ContactSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-[5fr_8fr] gap-12 lg:gap-16 items-stretch">
 
                     {/* ───── Left Column ───── */}
-                    <div className="flex flex-col justify-between h-full gap-0">
+                    <div className="flex flex-col justify-between h-full gap-0 w-full">
 
                         {/* Top block: "Let's Talk" + sub-heading */}
-                        <div className="flex flex-col">
+                        <div className="flex flex-col h-full">
                             {/* "Let's Talk" heading */}
                             <h2 className="contact-section-heading">
                                 Let&apos;s{' '}
@@ -64,28 +64,37 @@ export default function ContactSection() {
                             <h3 className="contact-subheading">
                                 Get advice any time.
                             </h3>
-                            <p className="contact-subheading-desc mt-3 max-w-[380px]">
+                            <p className="contact-subheading-desc mt-3 max-w-[520px] lg:max-w-none">
                                 Connect with our team for reliable, expert guidance whenever you need it.
                             </p>
                         </div>
 
                         {/* Contact Info Cards — bottom-aligned to match form height */}
-                        <div className="flex flex-col gap-4 pt-10">
+                        <div className="flex flex-col gap-4 pt-10 w-full">
                             {/* Phone */}
-                            <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB]">
-                                <div className="flex items-center justify-center w-[68px] h-[68px] rounded-full bg-[#EDEDED] shrink-0">
-                                    <Image src="/images/contact/contact-us-calling-icon.png" alt="Phone" width={28} height={28} className="object-contain" />
+                            <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB] w-full">
+
+                                <div className="flex items-center justify-center w-[74px] h-[74px] rounded-full bg-[#EDEDED] shrink-0">
+                                    <Image
+                                        src="/images/contact/contact-us-calling-icon.png"
+                                        alt="Phone"
+                                        width={52}
+                                        height={52}
+                                        className="object-contain"
+                                    />
                                 </div>
+
                                 <div className="flex flex-col gap-1">
                                     <span className="contact-card-label">Phone Number</span>
                                     <span className="contact-card-value">+91 45687412232</span>
                                 </div>
+
                             </div>
 
                             {/* Corporate Office */}
-                            <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB]">
-                                <div className="flex items-center justify-center w-[68px] h-[68px] rounded-full bg-[#EDEDED] shrink-0">
-                                    <Image src="/images/contact/contact-us-map.png" alt="Location" width={28} height={28} className="object-contain" />
+                            <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB] w-full">
+                                <div className="flex items-center justify-center w-[74px] h-[74px] rounded-full bg-[#EDEDED] shrink-0">
+                                    <Image src="/images/contact/contact-us-map.png" alt="Location" width={52} height={52} className="object-contain" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <span className="contact-card-label">Corporate Office</span>
@@ -94,9 +103,9 @@ export default function ContactSection() {
                             </div>
 
                             {/* Email */}
-                            <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB]">
-                                <div className="flex items-center justify-center w-[68px] h-[68px] rounded-full bg-[#EDEDED] shrink-0">
-                                    <Image src="/images/contact/contact-us-mail.png" alt="Email" width={28} height={28} className="object-contain" />
+                            <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB]  w-full">
+                                <div className="flex items-center justify-center w-[74px] h-[74px] rounded-full bg-[#EDEDED] shrink-0">
+                                    <Image src="/images/contact/contact-us-mail.png" alt="Email" width={52} height={52} className="object-contain" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <span className="contact-card-label">Email</span>
@@ -106,7 +115,7 @@ export default function ContactSection() {
                         </div>
 
                         {/* Social icons */}
-                    
+
                     </div>
 
                     {/* ───── Right Column: Form ───── */}
@@ -115,7 +124,7 @@ export default function ContactSection() {
                             Let&apos;s talk about your business.
                         </h3>
 
-                        <div className="bg-white rounded-[12px] border border-[#E5E5E5] shadow-sm p-6 md:p-8 lg:p-10">
+                        <div className="bg-white rounded-[12px] border border-[#E5E5E5] shadow-sm p-6 md:p-8 lg:p-10 flex flex-col h-full">
                             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
 
                                 {/* Row 1: Name + Email */}
