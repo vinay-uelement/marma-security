@@ -39,11 +39,13 @@ export default function DecorativeLine({
       <defs>
         <style>{`
           @keyframes dl-ripple {
-            0%   { r: 12; opacity: 0.30; }
-            100% { r: 50; opacity: 0; }
+            0%   { transform: scale(1);  opacity: 0.30; }
+            100% { transform: scale(5);  opacity: 0; }
           }
           .dl-ripple-ring {
             animation: dl-ripple 2.5s ease-out infinite;
+            transform-box: fill-box;
+            transform-origin: center;
           }
         `}</style>
       </defs>
@@ -57,19 +59,18 @@ export default function DecorativeLine({
       />
 
       {dots.map((dot, i) => {
-        const count = dot.rippleCount ?? 5; // ← more rings = more layers visible at once
+        const count = dot.rippleCount ?? 5;
         const baseDelay = dot.rippleBaseDelay ?? 0;
 
         return (
           <g key={i}>
-            {/* Ripple rings — filled, not stroked */}
             {Array.from({ length: count }).map((_, ringIdx) => (
               <circle
                 key={ringIdx}
                 cx={dot.cx}
                 cy={dot.cy}
                 r={dotRadius}
-                fill={strokeColor} // ← KEY CHANGE: filled circle, not outline
+                fill={strokeColor}
                 stroke="none"
                 className="dl-ripple-ring"
                 style={{
@@ -77,7 +78,6 @@ export default function DecorativeLine({
                 }}
               />
             ))}
-            {/* Core solid dot — rendered last so it's always on top */}
             <circle
               cx={dot.cx}
               cy={dot.cy}

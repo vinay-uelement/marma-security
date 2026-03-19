@@ -97,7 +97,7 @@ export default function IntelligentSecurity() {
               dots={[{ cx: 0, cy: 150, rippleCount: 3 }]}
               className="w-full h-auto -mt-20"
               strokeWidth={3}
-              dotRadius={16}
+              dotRadius={22}
             />
           </div>
         </div>
