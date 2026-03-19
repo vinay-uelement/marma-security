@@ -10,7 +10,7 @@ interface HighlightedTextProps {
 export default function HighlightedText({
     text,
     className = "text-white font-bold",
-    imageClassName = "bottom-[-22px] md:bottom-[-24px] left-3/4 -translate-x-1/2 w-[70%]"
+    imageClassName = "bottom-[-22px] md:bottom-[-15px] left-3/4 -translate-x-1/2 w-[70%]"
 }: HighlightedTextProps) {
     return (
         <span className={`relative inline-block z-10 ${className}`}>
