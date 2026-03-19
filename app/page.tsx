@@ -47,7 +47,7 @@ export default function Home() {
           subtitleClassName="font-title font-light text-[18px] md:text-[24px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-white max-w-[550px]"
           buttons={[
             { label: "Order", href: "#", variant: "primary", icon: true },
-            { label: "Store", href: "#", variant: "outline", icon: true },
+            { label: "Store", href: "#", variant: "secondary", icon: true },
           ]}
           rightImageAlt="Marma Security Device"
           rightImage="/images/banners/homepage-right-banner1.webp"
