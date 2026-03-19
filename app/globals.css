@@ -7,26 +7,30 @@
   --font-banner: var(--font-sora), sans-serif;
 
   /* ================= Colors ================= */
-  --color-bg-primary: #F5F5F5;
+  --color-bg-primary: #f5f5f5;
   --color-text-primary: #323232;
-  --color-accent: #FF0000;
-  --color-white: #FFFFFF;
+  --color-accent: #ff0000;
+  --color-white: #ffffff;
   --color-nav-text: #101010;
 
   /* ================= Navbar Styles ================= */
-  --nav-gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.36) 100%);
+  --nav-gradient: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.36) 100%
+  );
   --nav-blur: blur(1000px);
   --nav-shadow: 0px 4px 24px -1px #00000033;
 
   /* Optional future tokens */
-  --color-border: #E5E5E5;
-  --color-muted: #6B7280;
+  --color-border: #e5e5e5;
+  --color-muted: #6b7280;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg-primary: #F5F5F5;
-    --color-text-primary: #F5F5F5;
+    --color-bg-primary: #f5f5f5;
+    --color-text-primary: #f5f5f5;
   }
 }
 
@@ -54,6 +58,11 @@ body {
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 p {
@@ -128,9 +137,13 @@ img {
 }
 
 .footer-form-glass {
-background: linear-gradient(130.96deg, rgba(255, 255, 255, 0.176) -36.72%, rgba(255, 255, 255, 0.032) 100%);
-border: 1px solid #FFFFFF47;
-backdrop-filter: blur(45.73509216308594px);
+  background: linear-gradient(
+    130.96deg,
+    rgba(255, 255, 255, 0.176) -36.72%,
+    rgba(255, 255, 255, 0.032) 100%
+  );
+  border: 1px solid #ffffff47;
+  backdrop-filter: blur(45.73509216308594px);
 
   box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
 
@@ -139,8 +152,8 @@ backdrop-filter: blur(45.73509216308594px);
 
 .footer-input-field {
   background: rgba(212, 212, 212, 0.08);
-  border: 1px solid #FFFFFF52;  
-  color: #D4D4D433;
+  border: 1px solid #ffffff52;
+  color: #d4d4d433;
   box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
   @apply font-body font-normal text-[18px] leading-[28px] rounded-[14px] px-5 py-4 text-white placeholder-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all w-full;
 }
@@ -208,12 +221,12 @@ backdrop-filter: blur(45.73509216308594px);
 
 .tm-card-text-body {
   @apply font-body font-normal text-[13px] leading-[1.6] lg:text-[14px] lg:leading-[28px] tracking-normal;
-  color: #EAEAEA;
+  color: #eaeaea;
 }
 
 .tm-card-subtitle-reg {
   @apply font-body font-normal text-[14px] leading-[1.5] lg:text-[16px] lg:leading-[42px] tracking-normal;
-  color: #ECECEC;
+  color: #ececec;
 }
 
 .tm-card-rating {
@@ -393,12 +406,16 @@ backdrop-filter: blur(45.73509216308594px);
 }
 
 .stats-glass-card {
-  background: linear-gradient(130.96deg, rgba(255, 255, 255, 0.2035) -36.72%, rgba(255, 255, 255, 0.037) 100%);
+  background: linear-gradient(
+    130.96deg,
+    rgba(255, 255, 255, 0.2035) -36.72%,
+    rgba(255, 255, 255, 0.037) 100%
+  );
   -webkit-backdrop-filter: blur(45.7px);
-backdrop-filter: blur(45.7px);
+  backdrop-filter: blur(45.7px);
   box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
   border-radius: 18.29px;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
 }
 
 .about-banner-title {

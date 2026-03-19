@@ -57,7 +57,7 @@ export default function Navbar() {
                                 href={link.href}
                                 className={`fl2 ${
                                     isActive
-                                        ? "!font-bold !text-[13px] xl:!text-[14px] !text-[#000000]"
+                                        ? "!font-bold !text-[#000000]"
                                         : ""
                                 }`}
                             >
@@ -131,7 +131,7 @@ export default function Navbar() {
                                 href={link.href}
                                 className={`fl2 ${!isLast ? "border-b border-gray-200/30" : ""} pb-3 ${
                                     isActive
-                                        ? "!font-bold !text-[13px] xl:!text-[14px] !text-[#000000]"
+                                        ? "!font-bold !text-[#000000]"
                                         : ""
                                 }`}
                                 onClick={() => setIsMobileMenuOpen(false)}
