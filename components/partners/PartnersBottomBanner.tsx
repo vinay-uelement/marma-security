@@ -1,14 +1,26 @@
 import React from 'react';
 import Image from 'next/image';
+import DecorativeLine from '../home/DecorativeLine';
 
 export default function PartnersBottomBanner() {
     return (
         <section className="w-full relative py-12 lg:py-16 mb-3 md-mb-20 bg-[#fff]">
             
             {/* Top Left Decorative Red Line */}
-            <div className="flex absolute top-12 lg:top-16 left-0 w-[15%] h-[1.5px] bg-[#FF0000] z-20 items-center">
-                <div className="absolute right-0 translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#FF0000] shadow-[0_0_12px_4px_rgba(255,0,0,0.25)]" />
-            </div>
+            <div className="absolute top-12 lg:top-16 left-0 w-screen z-20">
+
+  <div className="w-[180px] md:w-[240px] lg:w-[320px]">
+
+     <DecorativeLine
+              viewBox="0 0 600 80"
+              points="0,40 310,40"
+              dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
+              className="w-full h-auto"
+            />
+
+  </div>
+
+</div>
 
             {/* The grey background strip that goes across the bottom */}
             <div className="absolute bottom-0 w-full h-[3%] lg:h-[10%] bg-[#F2F2F2] z-0" />

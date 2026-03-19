@@ -4,6 +4,7 @@ import Image from 'next/image';
 import HighlightedText from '../global/HighlightedText';
 import Link from 'next/link';
 import nextimage from 'next/image';
+import DecorativeLine from '../home/DecorativeLine';
 interface TechFeatureItem {
     id: string;
     iconUrl: string; // The URL for the icon
@@ -75,16 +76,35 @@ export default function IntelligentSecurity() {
         <section className="w-full bg-[#FFFFFF] pt-24 pb-20 overflow-x-clip relative">
 
             {/* Desktop right-edge bleed image, strictly sticking to 0px from right screen edge */}
-            <div className="absolute right-0 top-[12%] lg:top-[12%] z-0 hidden min-[901px]:flex justify-end w-[400px] lg:w-[500px] pointer-events-none">
-                <Image
-                    src="/images/banners/Technology-below-banner.webp"
-                    alt="Background wire graphic"
-                    width={500}
-                    height={150}
-                    className="object-contain w-full h-auto -translate-y-[20%]"
-                    priority
-                />
-            </div>
+         <div className="hidden lg:flex items-center justify-end w-full absolute right-0 top-[120px] pointer-events-none">
+
+  {/* viewport anchor */}
+  <div className="relative w-screen left-1/2 -translate-x-1/2">
+
+    {/* right aligned container */}
+    <div className="ml-auto w-[320px] lg:w-[450px] flex flex-col">
+
+
+<DecorativeLine
+        viewBox="0 0 700 80"
+        points="0,40 210,40"
+        dots={[{ cx: 210, cy: 40, rippleCount: 3 }]}
+        className="w-full h-auto scale-x-[-1]"
+      />
+ <DecorativeLine
+  viewBox="0 0 1260 500"
+  points="420,150 740,150 800,270 1340,270"
+  dots={[{ cx: 400, cy: 150, rippleCount: 5 }]}
+  className="w-full h-auto"
+/>
+
+      
+
+    </div>
+
+  </div>
+
+</div>
 
             <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative flex flex-col pt-0 lg:pt-24 ">
 

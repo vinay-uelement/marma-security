@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import HighlightedText from '../global/HighlightedText';
+import DecorativeLine from '../home/DecorativeLine';
 
 interface TabData {
     id: string;
@@ -60,19 +61,35 @@ export default function SolutionsTabs() {
 
             {/* Header Section */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 md:mb-26 gap-8">
-                <h2 className="solutions-section-heading">
+               <h2 className="solutions-section-heading md:flex-1 md:min-w-[520px]">
                     Security That <HighlightedText text='Adapts ' className='text-[#323232] font-bold' imageClassName='bottom-[-10px] md:bottom-[-22px]' /><br className="hidden md:block" /> to You
                 </h2>
 
-                {/* Decorative Red Line Graphic */}
-                <div className="hidden md:flex items-center justify-end w-full max-w-[400px] lg:max-w-[500px] lg:-mr-12">
-                    <Image
-                        src="/images/home/rightside-section-homepage-new.webp"
-                        alt="Decorative Line"
-                        width={500}
-                        height={60}
-                        className="object-contain w-full h-auto"
-                    />
+                <div className="hidden md:flex items-center justify-end w-full">
+
+                    <div className="relative w-full">
+
+                        {/* right aligned container */}
+                        <div className="ml-auto w-[240px] md:w-[300px] lg:w-[420px] flex flex-col">
+
+                            <DecorativeLine
+                                viewBox="530 0 700 80"
+                                points="0,40,710,40"
+                                dots={[{ cx: 710, cy: 40, rippleCount: 3 }]}
+                                className="w-full h-auto scale-x-[-1]"
+                            />
+
+                            <DecorativeLine
+                                viewBox="0 0 700 460"
+                                points="220,30 280,90 3000,90"
+                                dots={[{ cx: 220, cy: 30, rippleCount: 3 }]}
+                                className="w-full h-auto"
+                            />
+
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
 
@@ -131,4 +148,3 @@ export default function SolutionsTabs() {
         </section>
     );
 }
-  
