@@ -57,14 +57,39 @@ const cards: SecurityCard[] = [
   },
 ];
 
-const CARDS_PER_PAGE = 4;
+const CARDS_PER_PAGE_FALLBACK = 4;
 
 export default function SecurityCards() {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = cards.length - CARDS_PER_PAGE + 1;
+  const [cardsPerPage, setCardsPerPage] = useState(CARDS_PER_PAGE_FALLBACK);
+  const [isClient, setIsClient] = useState(false);
+
+  React.useEffect(() => {
+    setIsClient(true);
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setCardsPerPage(2);
+      } else if (window.innerWidth < 1024) {
+        setCardsPerPage(3);
+      } else {
+        setCardsPerPage(4);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const totalPages = Math.max(1, cards.length - cardsPerPage + 1);
+
+  React.useEffect(() => {
+    if (currentPage > totalPages && isClient) {
+      setCurrentPage(totalPages);
+    }
+  }, [currentPage, totalPages, isClient]);
 
   const start = currentPage - 1;
-  const visibleCards = cards.slice(start, start + CARDS_PER_PAGE);
+  const visibleCards = isClient ? cards.slice(start, start + cardsPerPage) : cards.slice(0, 4);
 
   const getPaginationItems = (): (number | "...")[] => {
     if (totalPages <= 3) {
@@ -84,18 +109,18 @@ export default function SecurityCards() {
   };
 
   return (
-    <section className="w-full bg-[#FAFAFA] pt-0 lg:pt-40 pb-24 relative z-0">
+    <section className="w-full bg-[#FAFAFA] pt-0 lg:pt-40 pb-6 md:pb-24 relative z-0">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="w-full h-[1px] px-10 bg-[#E5E5E5] mb-16 lg:mb-20" />
 
-        <div className="text-center mb-16 md:mb-24 relative z-10">
+        <div className="text-center mb-4 md:mb-24 relative z-10">
           <h2 className="home-cards-heading">
             Robust cybersecurity at an affordable price
           </h2>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-15">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-15">
           {visibleCards.map((card, index) => (
             <div
               key={`${card.number}-${index}`}
@@ -125,14 +150,14 @@ export default function SecurityCards() {
               </div>
 
               {/* Card Content */}
-              <div className="flex flex-col flex-grow bg-[#F3F3F3] border border-[#E5E5E5] rounded-[24px] p-[24px] md:p-[32px] min-h-[307px]">
+              <div className="flex flex-col flex-grow bg-[#F3F3F3] border border-[#E5E5E5] rounded-[16px] md:rounded-[24px] p-[16px] md:p-[32px] md:min-h-[307px]">
                 <h3 className="security-card-title mb-[8px]">{card.title}</h3>
-                <p className="security-card-desc flex-grow mb-[32px]">
+                <p className="security-card-desc flex-grow mb-[16px] md:mb-[32px]">
                   {card.description}
                 </p>
                 <Link
                   href={card.linkHref || "#"}
-                  className="inline-flex items-center gap-4 group mt-auto w-fit pb-2"
+                  className="inline-flex items-center gap-4 group mt-auto w-fit md:pb-2"
                 >
                   <span className="security-card-link-text text-[#FF0000] group-hover:text-[#E10000] transition-colors">
                     Explore
@@ -162,7 +187,7 @@ export default function SecurityCards() {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="flex items-center justify-center gap-2 mt-16">
+          <div className="flex items-center justify-center gap-2 mt-4 md:mt-16">
             {/* Left arrow — hidden on first page */}
             {currentPage > 1 && (
               <button

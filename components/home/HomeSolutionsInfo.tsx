@@ -4,11 +4,6 @@ import SolutionsInfo from '../solutions/SolutionsInfo';
 export default function HomeSolutionsInfo() {
     return (
         <div className="w-full max-w-[1440px] mx-auto">
-            {/* 
-              We reuse the SolutionsInfo component but set imagePosition="right"
-              so the image displays on the right side and text on the left.
-              You can easily change the imageSrc, title, and description here later!
-            */}
             <SolutionsInfo
                 imagePosition="right"
                 imageSrc="/images/home/solution-info-homepage.webp"

@@ -32,7 +32,7 @@ export default function Navbar() {
     return (
         <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[93%] max-w-[1400px] z-50">
             {/* Main Navbar Container */}
-            <div className="navbar-glass flex items-center justify-between gap-4 lg:gap-6 px-3 py-2 ps-10 rounded-full shadow-lg relative z-50 border-[0.5px]">
+            <div className="navbar-glass flex items-center justify-between gap-4 lg:gap-6 px-3 py-1 md:py-2 ps-3 md:ps-10 rounded-2xl md:rounded-full shadow-lg relative z-50">
                 {/* Left Side: Logo */}
                 <div className="flex flex-1 items-center min-w-0">
                     <Link href="/">
@@ -42,7 +42,7 @@ export default function Navbar() {
                             width={1000}
                             height={1000}
                             className="nav-logo"
-                            priority /* Since it's LCP for the header */
+                            priority 
                         />
                     </Link>
                 </div>
@@ -69,34 +69,36 @@ export default function Navbar() {
 
                 {/* Right Side: Icons & Mobile Toggle */}
                 <div className="flex flex-1 items-center gap-3 justify-end min-w-0">
-                    {/* Phone/Contact Icon — linked to Contact Us page */}
-                    <Link
-                        href="/contact-us"
-                        className="flex items-center justify-center transition-transform hover:scale-105"
-                        aria-label="Contact Us"
-                    >
-                        <Image
-                            src="/images/global/call-nav.png"
-                            alt="Call"
-                            width={34}
-                            height={34}
-                            className="nav-icon"
-                        />
-                    </Link>
+                    <div className="hidden lg:flex items-center gap-3">
+                        {/* Phone/Contact Icon — linked to Contact Us page */}
+                        <Link
+                            href="/contact-us"
+                            className="flex items-center justify-center transition-transform hover:scale-105"
+                            aria-label="Contact Us"
+                        >
+                            <Image
+                                src="/images/global/call-nav.png"
+                                alt="Call"
+                                width={34}
+                                height={34}
+                                className="nav-icon"
+                            />
+                        </Link>
 
-                    {/* Portal/Cart Icon */}
-                    <button
-                        className="flex items-center justify-center transition-transform hover:scale-105"
-                        aria-label="Portal/Shop"
-                    >
-                        <Image
-                            src="/images/global/shop-nav.png"
-                            alt="Shop"
-                            width={34}
-                            height={34}
-                            className="nav-icon"
-                        />
-                    </button>
+                        {/* Portal/Cart Icon */}
+                        <button
+                            className="flex items-center justify-center transition-transform hover:scale-105"
+                            aria-label="Portal/Shop"
+                        >
+                            <Image
+                                src="/images/global/shop-nav.png"
+                                alt="Shop"
+                                width={34}
+                                height={34}
+                                className="nav-icon"
+                            />
+                        </button>
+                    </div>
 
                     {/* Hamburger Menu Toggle Button (Mobile Only) */}
                     <button
@@ -124,12 +126,11 @@ export default function Navbar() {
                 <div className="lg:hidden absolute top-[110%] left-0 w-full navbar-glass rounded-2xl py-5 px-6 shadow-xl flex flex-col space-y-4 z-40">
                     {navLinks.map((link, index) => {
                         const isActive = pathname === link.href;
-                        const isLast = index === navLinks.length - 1;
                         return (
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className={`fl2 ${!isLast ? "border-b border-gray-200/30" : ""} pb-3 ${
+                                className={`fl2 border-b border-gray-200/30 pb-3 ${
                                     isActive
                                         ? "!font-bold !text-[#000000]"
                                         : ""
@@ -140,6 +141,36 @@ export default function Navbar() {
                             </Link>
                         );
                     })}
+
+                    <Link
+                        href="/contact-us"
+                        className="flex items-center gap-3 fl2 border-b border-gray-200/30 pb-3"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                        <Image
+                            src="/images/global/call-nav.png"
+                            alt="Call"
+                            width={24}
+                            height={24}
+                            className="nav-icon"
+                        />
+                        <span>Contact us</span>
+                    </Link>
+
+                    <Link
+                        href="#"
+                        className="flex items-center gap-3 fl2 pb-3"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                        <Image
+                            src="/images/global/shop-nav.png"
+                            alt="Shop"
+                            width={24}
+                            height={24}
+                            className="nav-icon"
+                        />
+                        <span>Cart</span>
+                    </Link>
                 </div>
             )}
         </header>
