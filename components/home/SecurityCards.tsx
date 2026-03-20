@@ -130,7 +130,7 @@ export default function SecurityCards() {
               <div className="flex items-end justify-center h-[120px] md:h-[140px] mb-6 relative w-full">
                   <div className="absolute bottom-0 w-full aspect-4/3 max-h-[140px] rounded-[12px] overflow-hidden bg-gray-200 habsolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <Image
-                      src={card.image}
+                      src={card.image || ''}
                       alt={card.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
