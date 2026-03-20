@@ -514,11 +514,7 @@ img {
 }
 
 .home-cards-heading {
-<<<<<<< HEAD
-  @apply font-title font-medium text-[26px] md:text-[36px] leading-[1.2]  text-[#323232] tracking-[-0.01em];
-=======
   @apply font-title font-medium text-[14px] md:text-[28px] lg:text-[36px] leading-[62px] text-[#323232] tracking-[-0.01em];
->>>>>>> d393abd430b46e9521c02910c4ad232e2d9d4690
 }
 
 .home-protect-heading {
