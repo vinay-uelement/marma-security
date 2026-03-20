@@ -17,12 +17,14 @@ const cards: SecurityCard[] = [
     title: "PhishBlock",
     description: "Protection against phishing attacks",
     number: "01",
+    image: "/images/features/Malware-guard.webp",
     linkHref: "#",
   },
   {
     title: "NetImmunity",
     description: "Protection against network-based attacks",
     number: "02",
+    image: "/images/features/Malware-guard.webp",
     linkHref: "#",
   },
   {
@@ -36,18 +38,21 @@ const cards: SecurityCard[] = [
     title: "RansomGuard",
     description: "Protection against dangerous ransomware",
     number: "04",
+    image: "/images/features/Malware-guard.webp",
     linkHref: "#",
   },
   {
     title: "SpyShield",
     description: "Protection against spyware and tracking",
     number: "05",
+    image: "/images/features/Malware-guard.webp",
     linkHref: "#",
   },
   {
     title: "DDoSGuard",
     description: "Protection against distributed denial of service attacks",
     number: "06",
+    image: "/images/features/Malware-guard.webp",
     linkHref: "#",
   },
 ];
@@ -119,12 +124,11 @@ export default function SecurityCards() {
           {visibleCards.map((card, index) => (
             <div
               key={`${card.number}-${index}`}
-              className="flex flex-col h-full relative"
+              className="flex flex-col h-full relative group"
             >
               {/* Top Area: Number or Image */}
               <div className="flex items-end justify-center h-[120px] md:h-[140px] mb-6 relative w-full">
-                {card.image ? (
-                  <div className="absolute bottom-0 w-full aspect-[4/3] max-h-[140px] rounded-[12px] overflow-hidden bg-gray-200">
+                  <div className="absolute bottom-0 w-full aspect-4/3 max-h-[140px] rounded-[12px] overflow-hidden bg-gray-200 habsolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <Image
                       src={card.image}
                       alt={card.title}
@@ -133,9 +137,8 @@ export default function SecurityCards() {
                       className="object-cover"
                     />
                   </div>
-                ) : (
                   <span
-                    className="font-title font-bold leading-none text-transparent"
+                    className="font-title font-bold leading-none text-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500"
                     style={{
                       WebkitTextStroke: "2px #DED8D8",
                       fontSize: "clamp(100px, 12vw, 150px)",
@@ -144,7 +147,6 @@ export default function SecurityCards() {
                   >
                     {card.number}
                   </span>
-                )}
               </div>
 
               {/* Card Content */}

@@ -88,7 +88,7 @@ className={`relative w-full flex items-start lg:items-center overflow-visible ov
 
             {/* Render Buttons conditionally */}
             {buttons && buttons.length > 0 && (
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 pt-6 md:pt-8 lg:pt-16 w-full">
+              <div className=" lg:absolute flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 pt-6 md:pt-8 lg:pt-16 w-full lg:bottom-0">
                 {buttons.map((btn, index) => {
                   const isPrimary =
                     btn.variant !== "secondary" && btn.variant !== "outline";

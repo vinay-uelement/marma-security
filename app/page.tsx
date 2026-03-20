@@ -51,7 +51,7 @@ export default function Home() {
           ]}
           rightImageAlt="Marma Security Device"
           rightImage="/images/banners/homepage-right-banner1.webp"
-rightImageClassName="w-[95%] sm:w-[80%] md:w-[70%] lg:w-[72vh] lg:h-[730px] lg:-translate-x-[-70px] lg:translate-y-[15%] xl:translate-y-[15%] z-30 transform-gpu object-contain"
+rightImageClassName="w-[95%] sm:w-[80%] md:w-[70%] lg:w-[65vh] lg:h-[730px] lg:-translate-x-[-70px] lg:translate-y-[15%] xl:translate-y-[22%] z-30 transform-gpu object-contain"
           backgroundSize="cover"
           sectionClassName="py-8 lg:py-12"
         />
