@@ -57,23 +57,23 @@ rightImageClassName="w-[95%] sm:w-[80%] md:w-[70%] lg:w-[72vh] lg:h-[730px] lg:-
         />
       </main>
       {/* Updated section with responsive top padding and overflow control */}
-      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-16 md:pt-24 bg-[#FFFFFF] ">
+      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-16 md:pt-24 bg-[#FFFFFF] relative">
         {/* The flex container now stays flex-col until 901px */}
-        <div className="flex flex-col min-[901px]:flex-row justify-between items-center mb-16 gap-8">
-          {/* TEXT: Centered below 901px, left-aligned above */}
-          <h2 className="w-full font-title text-[24px] md:text-[32px] min-[1121px]:text-[32px] leading-[1.2] md:leading-[48px] tracking-[-0.01em] text-[#323232] text-center min-[901px]:text-left">
+        <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-16 gap-8 relative z-10 w-full mb-16">
+          {/* TEXT */}
+          <h2 className="w-full min-[901px]:w-[55%] home-exposed-heading text-left">
             Your{" "}
             <HighlightedText
-              text="Business and Home"
+              text="business and home"
               className="text-[#323232] font-bold"
-              imageClassName="bottom-[-5px] md:bottom-[-15px] right-[25px] w-[100px] md:w-[140px]"
+              imageClassName="bottom-[-12px] md:bottom-[-10px] right-[0px] md:right-[25px] w-[80px] md:w-[100px] lg:w-[140px]"
             />{" "}
-            are more <br className="hidden min-[901px]:block" /> exposed to
+            are more <br /> exposed to
             cybercrime than you think.
           </h2>
 
           {/* IMAGE: Fully right-aligned correctly across all sizes with clamped margins */}
-          <div className="hidden min-[901px]:flex flex-col w-full min-[901px]:w-[45%]">
+          <div className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-4 min-[901px]:mt-0 pointer-events-none z-0">
             <DecorativeLine
               viewBox="0 0 500 120"
               points="80,30 130,90 3000,90"
@@ -82,9 +82,9 @@ rightImageClassName="w-[95%] sm:w-[80%] md:w-[70%] lg:w-[72vh] lg:h-[730px] lg:-
             />
             <DecorativeLine
               viewBox="0 0 500 80"
-              points="-3000,40 200,40"   
+              points="-3000,40 200,40"
               dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
-              className="w-full h-auto scale-x-[-1]"  
+              className="w-full h-auto scale-x-[-1]"
             />
           </div>
         </div>
