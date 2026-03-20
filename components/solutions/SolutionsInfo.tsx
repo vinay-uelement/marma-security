@@ -48,14 +48,16 @@ export default function SolutionsInfo({
         
         {/* Content Side */}
         <div
-          className={`flex flex-col z-10 relative w-full items-center text-center lg:items-start lg:text-left order-1 ${
+          className={`flex flex-col z-10 relative w-full h-full items-center text-center lg:items-start lg:text-left order-1 ${
             isRight ? "lg:order-1" : "lg:order-2"
           }`}
         >
-          <div className="bg-transparent flex flex-col justify-center items-center lg:items-start relative">
-            <h3 className="solutions-info-title pb-[20px] lg:mb-6">{title}</h3>
+          <div className="bg-transparent flex flex-col justify-between h-full items-center lg:items-start relative">
+            <div className="flex flex-col">
+              <h3 className="solutions-info-title pb-[20px] lg:mb-6">{title}</h3>
 
-            <p className="solutions-info-desc mb-2 lg:mb-20">{description}</p>
+              <p className="solutions-info-desc mb-2 lg:mb-20">{description}</p>
+            </div>
 
             {/* Outlined Explore Button (Desktop only, bound inside the text bounds) */}
             <ExploreButton className="hidden lg:flex" />
