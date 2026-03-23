@@ -50,8 +50,8 @@ export default function Home() {
             { label: "Store", href: "#", variant: "secondary", icon: true },
           ]}
           rightImageAlt="Marma Security Device"
-          rightImage="/images/banners/homepage-right-banner1.webp"
-          rightImageClassName="w-[95%] sm:w-[80%] md:w-[70%] lg:w-[65vh] lg:h-[730px] lg:-translate-x-[-70px] lg:translate-y-[15%] xl:translate-y-[22%] z-30 transform-gpu object-contain"
+          rightImage="/images/banners/homepage-right-banner1.png"
+          rightImageClassName="w-[95%] sm:w-[80%] md:w-[70%] lg:w-[80vh] lg:h-[730px] lg:-translate-x-[-70px] lg:translate-y-[15%] xl:translate-y-[22%] z-30 transform-gpu object-contain"
           backgroundSize="cover"
           sectionClassName="py-8 lg:py-12"
         />

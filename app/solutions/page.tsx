@@ -37,9 +37,9 @@ export default function SolutionsPage() {
             icon: true,
           },
         ]}
-        rightImage="/images/banners/solution-banner-right1.webp"
+        rightImage="/images/banners/solution-banner-right1.png"
         showRightImageCircle={false}
-        rightImageClassName="lg:w-[72dvh] sm:w-[500px] h-auto lg:-translate-x-[-90px] translate-y-[15%] lg:translate-y-[15%] xl:translate-y-[20%] z-30 transform-gpu"
+        rightImageClassName="lg:w-[66dvh] sm:w-[500px] h-auto lg:-translate-x-[-90px] translate-y-[15%] lg:translate-y-[15%] xl:translate-y-[20%] z-30 transform-gpu"
       />
 
       <SolutionsTabs />
