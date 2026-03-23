@@ -74,11 +74,11 @@ export default function Testimonial() {
              </div>
           </div>
 
-          <h2 className="tm-header-pro text-[#323232] whitespace-normal md:whitespace-nowrap w-full relative z-10">
+          <h2 className="tm-header-pro text-text-dark whitespace-normal md:whitespace-nowrap w-full relative z-10">
             See what our{" "}
             <HighlightedText
               text="customers"
-              className="text-[#323232] font-bold"
+              className="text-text-dark font-bold"
               imageClassName="bottom-[-10px] md:bottom-[-20px] left-0 md:left-2/4 md:-translate-x-1/2 w-[100%]"
             />{" "}
             say
@@ -108,7 +108,7 @@ export default function Testimonial() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative bg-[#F0F0F0] border border-[#D9D9D98C] rounded-[19] px-[18px] py-[24px] flex flex-col flex-shrink-0 w-full max-w-full min-w-0 sm:w-[70vw] md:w-[45vw] lg:w-[30vw] xl:w-[380px] snap-center md:snap-start mr-6 sm:mr-0"
+              className="relative bg-bg-card border border-border-card rounded-[19] px-[18px] py-[24px] flex flex-col flex-shrink-0 w-full max-w-full min-w-0 sm:w-[70vw] md:w-[45vw] lg:w-[30vw] xl:w-[380px] snap-center md:snap-start mr-6 sm:mr-0"
             >
               {/* Quote Icon */}
               <div className="absolute top-8 right-8">
@@ -123,12 +123,12 @@ export default function Testimonial() {
 
               {/* Header: Name and Title */}
               <div className="mb-[0px]">
-                <h3 className="tm-card-name-bold text-[#323232]">{testimonial.name}</h3>
-                <p className="tm-card-subtitle-reg text-[#727272]">{testimonial.title}</p>
+                <h3 className="tm-card-name-bold text-text-dark">{testimonial.name}</h3>
+                <p className="tm-card-subtitle-reg text-text-muted">{testimonial.title}</p>
               </div>
 
               {/* Content */}
-              <p className="tm-card-text-body text-[#727272] leading-relaxed mb-2">{testimonial.content}</p>
+              <p className="tm-card-text-body text-text-muted leading-relaxed mb-2">{testimonial.content}</p>
 
               {/* Rating Stars (Moved Below) */}
               <div className="flex items-center gap-2 mt-auto">
@@ -149,7 +149,7 @@ export default function Testimonial() {
                     </svg>
                   ))}
                 </div>
-                <span className="tm-card-rating ml-3 text-[#323232]">
+                <span className="tm-card-rating ml-3 text-text-dark">
                   {testimonial.rating.toFixed(1)}
                 </span>
               </div>
@@ -165,7 +165,7 @@ export default function Testimonial() {
               key={index}
               onClick={() => scrollTo(index)}
               className={`rounded-full transition-all duration-300 pointer-events-auto cursor-pointer ${
-                activeIndex === index ? "bg-[#FF0000] w-[14px] h-[14px] shadow-sm" : "bg-[#D9D9D9] w-[10px] h-[10px]"
+                activeIndex === index ? "bg-brand-red w-[14px] h-[14px] shadow-sm" : "bg-[#D9D9D9] w-[10px] h-[10px]"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

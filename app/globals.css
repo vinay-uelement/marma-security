@@ -6,11 +6,18 @@
   --font-body: var(--font-inter), sans-serif;
   --font-banner: var(--font-sora), sans-serif;
 
-  /* ================= Colors ================= */
-  --color-bg-primary: #f5f5f5;
-  --color-text-primary: #323232;
-  --color-accent: #ff0000;
-  --color-white: #ffffff;
+  /* ================= Global Variables ================= */
+  /* Re-defining strict semantic color tokens mapping to the homepage elements natively */
+  --color-brand-red: #FF0000;
+  --color-brand-red-hover: #d12222;
+  --color-text-dark: #323232;
+  --color-text-muted: #727272;
+  
+  --color-bg-white: #ffffff;
+  --color-bg-light: #F7F7F7;
+  --color-bg-card: #F0F0F0;
+  --color-border-card: #d9d9d98c;
+  
   --color-nav-text: #101010;
 
   /* ================= Navbar Styles ================= */
@@ -21,26 +28,25 @@
   );
   --nav-blur: blur(1000px);
   --nav-shadow: 0px 4px 24px -1px #00000033;
-
-  /* Optional future tokens */
-  --color-border: #e5e5e5;
-  --color-muted: #6b7280;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg-primary: #f5f5f5;
-    --color-text-primary: #f5f5f5;
+    /* Enforce light-mode aesthetic universally mapping back to core */
+    --color-text-dark: #323232;
+    --color-bg-white: #ffffff;
   }
 }
 
 @theme inline {
-  --color-bg-primary: var(--color-bg-primary);
-  --color-text-primary: var(--color-text-primary);
-  --color-accent: var(--color-accent);
-  --color-white: var(--color-white);
-  --color-border: var(--color-border);
-  --color-muted: var(--color-muted);
+  --color-brand-red: var(--color-brand-red);
+  --color-brand-red-hover: var(--color-brand-red-hover);
+  --color-text-dark: var(--color-text-dark);
+  --color-text-muted: var(--color-text-muted);
+  --color-bg-white: var(--color-bg-white);
+  --color-bg-light: var(--color-bg-light);
+  --color-bg-card: var(--color-bg-card);
+  --color-border-card: var(--color-border-card);
   --color-nav-text: var(--color-nav-text);
 
   --font-title: var(--font-title);
@@ -242,17 +248,17 @@ img {
 
 .tm-card-text-body {
   font-family: var(--font-body);
-  @apply font-normal text-[13px] lg:text-[14px] leading-[1.6] lg:leading-[28px] tracking-normal text-[#727272];
+  @apply font-normal text-[13px] lg:text-[14px] leading-[1.6] lg:leading-[28px] tracking-normal;
 }
 
 .tm-card-subtitle-reg {
   font-family: var(--font-body);
-  @apply font-normal text-[13px] lg:text-[14px] leading-[1.5] lg:leading-[40px] tracking-normal text-[#727272];
+  @apply font-normal text-[13px] lg:text-[14px] leading-[1.5] lg:leading-[40px] tracking-normal;
 }
 
 .tm-card-rating {
   font-family: var(--font-title);
-  @apply font-bold text-[16px] lg:text-[18px] leading-[42px] text-[#323232];
+  @apply font-bold text-[16px] lg:text-[18px] leading-[42px];
 }
 
 /* ===============================================================
@@ -534,7 +540,7 @@ img {
 
 .home-protect-title {
   font-family: var(--font-body);
-  @apply font-normal md:font-light text-[12px] md:text-[28px] lg:text-[32px] leading-[34px] tracking-[-0.01em] text-[#323232];
+  @apply font-normal md:font-light text-[12px] md:text-[28px] lg:text-[32px] leading-[18px] md:leading-[34px] tracking-[-0.01em] text-[#323232];
 }
 
 .home-protect-strong {

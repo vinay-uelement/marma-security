@@ -23,10 +23,10 @@ const features: FeatureItem[] = [
                     No technical expertise, networking knowledge, or complex configurations required—simply plug in and go.
                 </p>
                 <Link href="#" className="flex items-center gap-4 group w-fit">
-                    <span className="home-protect-link group-hover:text-[#E10000] transition-colors">
+                    <span className="home-protect-link group-hover:text-brand-red-hover transition-colors">
                         Learn more
                     </span>
-                    <span className="text-[#FF0000] group-hover:text-[#E10000] transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
+                    <span className="text-brand-red group-hover:text-brand-red-hover transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
                         <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 9L5 5L1 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
@@ -46,10 +46,10 @@ const features: FeatureItem[] = [
                     Marma continuously monitors your network and blocks threats in real time, without any manual intervention.
                 </p>
                 <Link href="#" className="flex items-center gap-4 group w-fit">
-                    <span className="home-protect-link group-hover:text-[#E10000] transition-colors">
+                    <span className="home-protect-link group-hover:text-brand-red-hover transition-colors">
                         Learn more
                     </span>
-                    <span className="text-[#FF0000] group-hover:text-[#E10000] transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
+                    <span className="text-brand-red group-hover:text-brand-red-hover transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
                         <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 9L5 5L1 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
@@ -69,10 +69,10 @@ const features: FeatureItem[] = [
                     All security updates, patches, and improvements are handled automatically in the background.
                 </p>
                 <Link href="#" className="flex items-center gap-4 group w-fit">
-                    <span className="home-protect-link group-hover:text-[#E10000] transition-colors">
+                    <span className="home-protect-link group-hover:text-brand-red-hover transition-colors">
                         Learn more
                     </span>
-                    <span className="text-[#FF0000] group-hover:text-[#E10000] transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
+                    <span className="text-brand-red group-hover:text-brand-red-hover transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
                         <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 9L5 5L1 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
@@ -85,7 +85,7 @@ const features: FeatureItem[] = [
 
 export default function HowWeProtect() {
     return (
-        <section className="w-full bg-[#FFFFFF]">
+        <section className="w-full bg-bg-white">
 
             {/* Header Section */}
             <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-20 md:pt-24">
@@ -106,7 +106,7 @@ export default function HowWeProtect() {
                     <h2 className="home-protect-heading w-full md:max-w-[520px] relative z-10">
                         How we <HighlightedText
                             text="protect you?"
-                            className="font-bold text-[#323232]"
+                            className="font-bold text-text-dark"
                             imageClassName="absolute h-auto object-contain pointer-events-none -z-10 bottom-[-10px] md:bottom-[-24px]  left-2/4 -translate-x-1/2 w-[70%]"
                         />
                     </h2>
@@ -132,7 +132,7 @@ export default function HowWeProtect() {
                     <div key={feature.id} className="w-full relative">
                         {/* Independent Full-Width Desktop/Mobile Background strictly for the 2nd Row */}
                         {index === 1 && (
-                            <div className="absolute inset-y-[-32px] lg:inset-y-[-48px] w-[200vw] left-1/2 -translate-x-1/2 bg-[#F7F7F7] -z-10 pointer-events-none" />
+                            <div className="absolute inset-y-[-32px] lg:inset-y-[-48px] w-[200vw] left-1/2 -translate-x-1/2 bg-bg-light -z-10 pointer-events-none" />
                         )}
                         <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
                             
@@ -140,11 +140,11 @@ export default function HowWeProtect() {
                             <div className="grid grid-cols-[1fr_1.1fr] sm:grid-cols-[1fr_1.2fr] md:grid-cols-2 lg:hidden gap-3 sm:gap-6 md:gap-8 items-stretch text-left w-full">
                                 
                                 {/* Column 1: Title + Image */}
-                                <div className="flex flex-col gap-0 md:gap-4">
+                                <div className="flex flex-col mt-2 md:mt-0 gap-0 md:gap-4">
                                     <h3 className="home-protect-title whitespace-pre-line text-left">
                                         {feature.title}
                                     </h3>
-                                    <div className="relative w-full aspect-[427/237] rounded-[8px] md:rounded-[12px] overflow-hidden shadow-sm mt-1 md:mt-auto border border-[#E5E5E5]/50">
+                                    <div className="relative w-full aspect-[427/237] rounded-[8px] md:rounded-[12px] overflow-hidden shadow-sm mt-2 md:mt-auto border border-[#E5E5E5]/50">
                                         <div className="bg-gray-100 w-full h-full absolute inset-0 z-0" />
                                         <Image
                                             src={feature.image}
