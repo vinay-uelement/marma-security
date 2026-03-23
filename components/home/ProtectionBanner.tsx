@@ -20,7 +20,7 @@ export default function ProtectionBanner() {
                 <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent pointer-events-none z-0" />
 
                 {/* Bottom Text */}
-                <div className="absolute bottom-6 inset-x-0 w-full text-center md:text-left md:bottom-12 md:left-12 lg:bottom-16 lg:left-16 z-10 px-4">
+                <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 lg:bottom-16 lg:left-16 z-10 pr-6 text-left">
                     <h2 className="home-protection-banner-title">
                         Protection against phishing <br className="hidden sm:block" />attacks
                     </h2>

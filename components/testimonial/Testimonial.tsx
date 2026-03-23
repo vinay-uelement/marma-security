@@ -36,27 +36,16 @@ const testimonials = [
 export default function Testimonial() {
   return (
     <section className="relative w-full py-16 lg:py-24 overflow-hidden">
-      {/* Background Image with Blur and Overlay */}
-      <div className="absolute inset-0 z-0">
-        {/* The user will add the actual image named testimonial-home */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('/images/home/Testimonial-section.webp')`,
-          }}
-        />
-        {/* Dark overlay and blur effect */}
-        <div className="absolute " />
-      </div>
+      {/* Removed Background Image */}
 
       <div className="relative z-10 w-full mb-10 lg:mb-16 pl-6 lg:pl-12 pr-0 max-w-[1440px] mx-auto">
         <div className="flex flex-col items-center text-center md:flex-row md:items-center md:text-left justify-between gap-6 md:gap-12 relative w-full">
-          <h2 className="tm-header-pro text-white whitespace-normal md:whitespace-nowrap w-full">
+          <h2 className="tm-header-pro text-[#323232] whitespace-normal md:whitespace-nowrap w-full">
             See what our{" "}
             <HighlightedText
               text="customers"
-              className="text-[#FFF] font-bold"
-              imageClassName="bottom-[-20px] right-0 md:bottom-[-33px]"
+              className="text-[#323232] font-bold"
+              imageClassName="bottom-[-10px] md:bottom-[-20px] left-0 md:left-2/4 md:-translate-x-1/2 w-[100%]"
             />{" "}
             say
           </h2>
@@ -77,13 +66,11 @@ export default function Testimonial() {
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12">
         {/* Testimonial Cards */}
-        <div className="flex gap-8 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+        <div className="flex gap-8 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 flex flex-col
-        flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[45vw] lg:w-[30vw] xl:w-[380px]
-        snap-start"
+              className="relative bg-[#F0F0F0] border border-[#D9D9D98C] rounded-2xl p-8 flex flex-col flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[45vw] lg:w-[30vw] xl:w-[380px] snap-start"
             >
               {/* Quote Icon */}
               <div className="absolute top-8 right-8">
@@ -97,9 +84,9 @@ export default function Testimonial() {
               </div>
 
               {/* Header: Name and Title */}
-              <div className="">
-                <h3 className="tm-card-name-bold mb-1">{testimonial.name}</h3>
-                <p className="tm-card-subtitle-reg ">{testimonial.title}</p>
+              <div className="mb-[24px]">
+                <h3 className="tm-card-name-bold mb-1 text-[#323232]">{testimonial.name}</h3>
+                <p className="tm-card-subtitle-reg text-[#727272]">{testimonial.title}</p>
               </div>
 
               {/* Rating Stars */}
@@ -108,8 +95,8 @@ export default function Testimonial() {
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
-                      width="30"
-                      height="30"
+                      width="16"
+                      height="15"
                       viewBox="0 0 16 15"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -121,13 +108,13 @@ export default function Testimonial() {
                     </svg>
                   ))}
                 </div>
-                <span className="tm-card-rating ml-3">
+                <span className="tm-card-rating ml-3 text-[#323232]">
                   {testimonial.rating.toFixed(1)}
                 </span>
               </div>
 
               {/* Content */}
-              <p className="tm-card-text-body">{testimonial.content}</p>
+              <p className="tm-card-text-body text-[#727272] leading-relaxed">{testimonial.content}</p>
             </div>
           ))}
         </div>
