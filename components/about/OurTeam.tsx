@@ -131,7 +131,7 @@ export default function OurTeam() {
                                 >
 
                                     <Image
-                                        src="/images/global/linkedin-vector.png"
+                                        src="/images/global/linkedin-vector.svg"
                                         alt="LinkedIn"
                                         width={20}
                                         height={18}

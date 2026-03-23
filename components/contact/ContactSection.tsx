@@ -80,9 +80,9 @@ export default function ContactSection() {
                             {/* Phone */}
                             <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB] w-full">
 
-                                <div className="flex items-center justify-center w-[74px] h-[74px] rounded-full bg-[#EDEDED] shrink-0">
+                                <div className="flex items-center p-4 justify-center w-[60px] h-[60px] rounded-full bg-[#EDEDED] shrink-0">
                                     <Image
-                                        src="/images/contact/contact-us-calling-icon.png"
+                                        src="/images/contact/contact-us-calling-icon.svg"
                                         alt="Phone"
                                         width={75}
                                         height={75}
@@ -99,8 +99,8 @@ export default function ContactSection() {
 
                             {/* Corporate Office */}
                             <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB] w-full">
-                                <div className="flex items-center justify-center w-[74px] h-[74px] rounded-full bg-[#EDEDED] shrink-0">
-                                    <Image src="/images/contact/contact-us-map.png" alt="Location" width={75} height={75} className="object-contain" />
+                                <div className="flex items-center justify-center p-4 w-[60px] h-[60px] rounded-full bg-[#EDEDED] shrink-0">
+                                    <Image src="/images/contact/contact-us-map.svg" alt="Location" width={75} height={75} className="object-contain" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <span className="contact-card-label">Corporate Office</span>
@@ -110,8 +110,8 @@ export default function ContactSection() {
 
                             {/* Email */}
                             <div className="flex items-center gap-6 bg-white rounded-[15px] px-6 py-5 shadow-sm border border-[#EBEBEB]  w-full">
-                                <div className="flex items-center justify-center w-[74px] h-[74px] rounded-full bg-[#EDEDED] shrink-0">
-                                    <Image src="/images/contact/contact-us-mail.png" alt="Email" width={75} height={75} className="object-contain" />
+                                <div className="flex items-center justify-center p-4 w-[60px] h-[60px] rounded-full bg-[#EDEDED] shrink-0">
+                                    <Image src="/images/contact/contact-us-mail.svg" alt="Email" width={75} height={75} className="object-contain" />
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <span className="contact-card-label">Email</span>
@@ -192,13 +192,13 @@ export default function ContactSection() {
                                     {/* Mini social icons */}
                                     <div className="flex items-center gap-4">
                                         <Link href="#" aria-label="X / Twitter" className="hover:opacity-70 transition-opacity">
-                                            <Image src="/images/contact/contact-us-x.png" alt="X/Twitter" width={72} height={72} className="object-contain" />
+                                            <Image src="/images/contact/contact-us-x.svg" alt="X/Twitter" width={72} height={72} className="object-contain" />
                                         </Link>
                                         <Link href="#" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
-                                            <Image src="/images/contact/contact-us-insta.png" alt="Instagram" width={72} height={72} className="object-contain" />
+                                            <Image src="/images/contact/contact-us-insta.svg" alt="Instagram" width={72} height={72} className="object-contain" />
                                         </Link>
                                         <Link href="#" aria-label="LinkedIn" className="hover:opacity-70 transition-opacity">
-                                            <Image src="/images/contact/contact-us-linkedin.png" alt="LinkedIn" width={72} height={72} className="object-contain" />
+                                            <Image src="/images/contact/contact-us-linkedin.svg" alt="LinkedIn" width={72} height={72} className="object-contain" />
                                         </Link>
                                     </div>
 
