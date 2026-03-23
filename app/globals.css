@@ -132,11 +132,13 @@ img {
 }
 
 .footer-link {
-  @apply font-body font-semibold text-[20px] leading-[100%] text-white hover:text-white/70 transition-colors;
+  font-family: var(--font-body);
+  @apply font-semibold text-[20px] leading-[100%] text-white hover:text-white/70 transition-colors;
 }
 
 .footer-btn-text {
-  @apply font-banner font-normal text-[16px] md:text-[20px];
+  font-family: var(--font-banner);
+  @apply font-normal text-white text-[16px] md:text-[20px];
 }
 
 .footer-container {
@@ -162,31 +164,37 @@ img {
 }
 
 .footer-input-field {
+  font-family: var(--font-body);
   background: rgba(212, 212, 212, 0.08);
   border: 1px solid #ffffff52;
   color: #d4d4d433;
   box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
-  @apply font-body font-normal text-[18px] leading-[28px] rounded-[14px] px-5 py-4 text-white placeholder-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all w-full;
+  @apply font-normal text-[12px] md:text-[18px] leading-[20px] md:leading-[28px] rounded-[14px] px-5 py-3 md:py-4 text-white placeholder-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all w-full;
 }
 
 .footer-input-field::placeholder {
-  @apply text-[#FFFFFFCC] font-body font-normal text-[18px] leading-[28px];
+  font-family: var(--font-body);
+  @apply text-[#FFFFFFCC] font-normal text-[12px] md:text-[18px] leading-[20px] md:leading-[28px];
 }
 
 .footer-desc-text {
-  @apply font-body font-normal text-[18px] leading-[26px] tracking-[-0.01em] text-[#898989];
+  font-family: var(--font-body);
+  @apply font-normal text-[10px] md:text-[18px] leading-[18px] md:leading-[26px] tracking-[-0.01em] text-[#898989];
 }
 
 .footer-nav-grid {
-  @apply font-title font-semibold text-[16px] text-white;
+  font-family: var(--font-title);
+  @apply font-semibold text-[10px] md:text-[16px] text-white;
 }
 
 .footer-contact-text {
-  @apply font-body font-normal text-[16px] text-[#FFFFFF];
+  font-family: var(--font-body);
+  @apply font-normal text-[10px] md:text-[16px] text-[#FFFFFF];
 }
 
 .footer-copyright {
-  @apply text-[13px] font-body text-center;
+  font-family: var(--font-body);
+  @apply text-[10px] md:text-[13px] text-center;
 }
 
 /* ===============================================================
@@ -223,25 +231,28 @@ img {
    =============================================================== */
 
 .tm-header-pro {
-  @apply font-title font-[500] text-[26px] md:text-[36px] leading-[1.2] lg:leading-[42px] tracking-normal;
+  font-family: var(--font-title);
+  @apply font-[500] text-[14px] md:text-[36px] leading-[21px] lg:leading-[42px] tracking-normal;
 }
 
 .tm-card-name-bold {
-  @apply font-title font-semibold text-[24px] leading-[1.2] lg:text-[30px] lg:leading-[42px] tracking-normal;
+  font-family: var(--font-title);
+  @apply font-semibold text-[24px] md:text-[30px] leading-[1.2] lg:leading-[42px] tracking-normal;
 }
 
 .tm-card-text-body {
-  @apply font-body font-normal text-[13px] leading-[1.6] lg:text-[14px] lg:leading-[28px] tracking-normal;
-  color: #eaeaea;
+  font-family: var(--font-body);
+  @apply font-normal text-[13px] lg:text-[14px] leading-[1.6] lg:leading-[28px] tracking-normal text-[#727272];
 }
 
 .tm-card-subtitle-reg {
-  @apply font-body font-normal text-[14px] leading-[1.5] lg:text-[16px] lg:leading-[42px] tracking-normal;
-  color: #ececec;
+  font-family: var(--font-body);
+  @apply font-normal text-[13px] lg:text-[14px] leading-[1.5] lg:leading-[40px] tracking-normal text-[#727272];
 }
 
 .tm-card-rating {
-  @apply font-title font-bold text-[16px] lg:text-[18px] leading-[42px] text-[#B1B1B1];
+  font-family: var(--font-title);
+  @apply font-bold text-[16px] lg:text-[18px] leading-[42px] text-[#323232];
 }
 
 /* ===============================================================
@@ -522,19 +533,23 @@ img {
 }
 
 .home-protect-title {
-  @apply font-body font-normal md:font-light text-[12px] md:text-[28px] lg:text-[32px] leading-[18px] md:leading-[34px] tracking-[-0.01em] text-[#323232];
+  font-family: var(--font-body);
+  @apply font-normal md:font-light text-[12px] md:text-[28px] lg:text-[32px] leading-[34px] tracking-[-0.01em] text-[#323232];
 }
 
 .home-protect-strong {
-  @apply font-body font-semibold text-[12px] md:text-[18px] leading-[18px] md:leading-[26px] tracking-[-0.01em] md:tracking-[-0.01em] text-[#323232];
+  font-family: var(--font-body);
+  @apply font-semibold text-[12px] md:text-[18px] leading-[18px] md:leading-[26px] tracking-[-0.01em] md:tracking-[-0.01em] text-[#323232];
 }
 
 .home-protect-desc {
-  @apply font-body font-light text-[10px] md:text-[16px] leading-[18px] md:leading-[26px] tracking-normal md:tracking-[-0.01em] text-[#989898];
+  font-family: var(--font-body);
+  @apply font-light text-[10px] md:text-[16px] leading-[18px] md:leading-[26px] tracking-normal md:tracking-[-0.01em] text-[#989898];
 }
 
 .home-protect-link {
-  @apply font-title font-normal text-[13px] md:text-[16px] leading-[34px] md:leading-normal tracking-[-0.01em] text-[#FF0000];
+  font-family: var(--font-title);
+  @apply font-normal text-[13px] md:text-[16px] leading-[34px] md:leading-normal tracking-[-0.01em] text-[#FF0000];
 }
 
 .home-protection-banner-title {

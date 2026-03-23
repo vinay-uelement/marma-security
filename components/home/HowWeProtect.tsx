@@ -18,7 +18,7 @@ const features: FeatureItem[] = [
         title: "Quick & Effortless Setup",
         description: (
             <>
-                <strong className="home-protect-strong block mb-[2px] md:mb-4">Get protected in under 5<br />minutes.</strong>
+                <strong className="home-protect-strong block mb-[7px] md:mb-4">Get protected in under 5<br />minutes.</strong>
                 <p className="home-protect-desc mb-[10px] md:mb-6">
                     No technical expertise, networking knowledge, or complex configurations required—simply plug in and go.
                 </p>
@@ -41,7 +41,7 @@ const features: FeatureItem[] = [
         title: "Fully Automated Protection",
         description: (
             <>
-                <strong className="home-protect-strong block mb-[2px] md:mb-4">Security that runs itself.</strong>
+                <strong className="home-protect-strong block mb-[7px] md:mb-4">Security that runs itself.</strong>
                 <p className="home-protect-desc mb-[10px] md:mb-6">
                     Marma continuously monitors your network and blocks threats in real time, without any manual intervention.
                 </p>
@@ -64,7 +64,7 @@ const features: FeatureItem[] = [
         title: "Zero Maintenance Required",
         description: (
             <>
-                <strong className="home-protect-strong block mb-[2px] md:mb-4">No updates, no <br />monitoring, no hassle.</strong>
+                <strong className="home-protect-strong block mb-[7px] md:mb-4">No updates, no <br />monitoring, no hassle.</strong>
                 <p className="home-protect-desc mb-[10px] md:mb-6">
                     All security updates, patches, and improvements are handled automatically in the background.
                 </p>
@@ -92,7 +92,7 @@ export default function HowWeProtect() {
                 <div className="relative flex flex-col md:flex-row justify-between items-start mb-12 md:mb-24 gap-4 md:gap-8 text-left w-full sm:h-[80px] md:h-auto">
 
                     {/* Decorative Red Line Graphic (Mobile & Tablet Layout) -> Absolute to not push content down */}
-                    <div className="flex md:hidden absolute top-[-10px] sm:top-[-20px] right-[-24px] items-start justify-end w-[280px] pointer-events-none overflow-hidden z-0">
+                    <div className="flex md:hidden absolute top-[-50px] right-[-24px] items-start justify-end w-[280px] pointer-events-none overflow-hidden z-0">
                         <div className="w-full flex justify-end">
                             <DecorativeLine
                                 viewBox="0 0 700 80"
@@ -127,10 +127,14 @@ export default function HowWeProtect() {
             </div>
 
             {/* Features List Layout */}
-            <div className="flex flex-col w-full pb-8 md:pb-16">
+            <div className="flex flex-col w-full pb-8 md:pb-16 gap-16 lg:gap-24 relative overflow-hidden">
                 {features.map((feature, index) => (
-                    <div key={feature.id} className={`w-full ${index === 1 ? 'bg-[#F7F7F7] py-12 lg:py-16' : 'bg-[#FFFFFF]  pb-12 lg:pb-16'}`}>
-                        <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12">
+                    <div key={feature.id} className="w-full relative">
+                        {/* Independent Full-Width Desktop/Mobile Background strictly for the 2nd Row */}
+                        {index === 1 && (
+                            <div className="absolute inset-y-[-32px] lg:inset-y-[-48px] w-[200vw] left-1/2 -translate-x-1/2 bg-[#F7F7F7] -z-10 pointer-events-none" />
+                        )}
+                        <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
                             
                             {/* MOBILE & TABLET LAYOUT */}
                             <div className="grid grid-cols-[1fr_1.1fr] sm:grid-cols-[1fr_1.2fr] md:grid-cols-2 lg:hidden gap-3 sm:gap-6 md:gap-8 items-stretch text-left w-full">
@@ -140,7 +144,7 @@ export default function HowWeProtect() {
                                     <h3 className="home-protect-title whitespace-pre-line text-left">
                                         {feature.title}
                                     </h3>
-                                    <div className="relative w-full aspect-[427/237] rounded-[8px] md:rounded-[12px] overflow-hidden shadow-sm mt-5 md:mt-auto border border-[#E5E5E5]/50">
+                                    <div className="relative w-full aspect-[427/237] rounded-[8px] md:rounded-[12px] overflow-hidden shadow-sm mt-1 md:mt-auto border border-[#E5E5E5]/50">
                                         <div className="bg-gray-100 w-full h-full absolute inset-0 z-0" />
                                         <Image
                                             src={feature.image}
