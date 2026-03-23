@@ -32,12 +32,12 @@ export default function Navbar() {
     return (
         <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[93%] max-w-[1400px] z-50">
             {/* Main Navbar Container */}
-            <div className="navbar-glass flex items-center justify-between gap-4 lg:gap-6 px-3 py-1 md:py-2 ps-3 md:ps-10 rounded-2xl md:rounded-full shadow-lg relative z-50">
+            <div className="navbar-glass flex items-center justify-between gap-4 lg:gap-6 px-3 py-1 md:py-2 ps-3 md:ps-10 rounded-2xl md:rounded-2xl shadow-lg relative z-50">
                 {/* Left Side: Logo */}
                 <div className="flex flex-1 items-center min-w-0">
                     <Link href="/">
                         <Image
-                            src="/images/global/logo.png"
+                            src="/images/global/logo.svg"
                             alt="Marma Security"
                             width={1000}
                             height={1000}
@@ -77,7 +77,7 @@ export default function Navbar() {
                             aria-label="Contact Us"
                         >
                             <Image
-                                src="/images/global/call-nav.png"
+                                src="/images/global/call-nav.svg"
                                 alt="Call"
                                 width={34}
                                 height={34}
@@ -91,7 +91,7 @@ export default function Navbar() {
                             aria-label="Portal/Shop"
                         >
                             <Image
-                                src="/images/global/shop-nav.png"
+                                src="/images/global/shop-nav.svg"
                                 alt="Shop"
                                 width={34}
                                 height={34}
@@ -148,7 +148,7 @@ export default function Navbar() {
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
                         <Image
-                            src="/images/global/call-nav.png"
+                            src="/images/global/call-nav.svg"
                             alt="Call"
                             width={24}
                             height={24}
@@ -163,7 +163,7 @@ export default function Navbar() {
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
                         <Image
-                            src="/images/global/shop-nav.png"
+                            src="/images/global/shop-nav.svg"
                             alt="Shop"
                             width={24}
                             height={24}

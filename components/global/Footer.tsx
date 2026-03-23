@@ -11,7 +11,7 @@ export default function Footer() {
                         {/* Top: Logo & Description */}
                         <div className="flex flex-col items-start pb-6 md:pb-8 lg:pb-15 gap-4 md:gap-10 w-full">
                             <Image
-                                src="/images/global/marmalogofooter.png"
+                                src="/images/global/marmalogofooter.svg"
                                 alt="Marma Security"
                                 width={200}
                                 height={40}
@@ -54,13 +54,13 @@ export default function Footer() {
                                 {/* Desktop Social Icons */}
                                 <div className="flex items-end space-x-6 pb-2 mt-auto">
                                     <a href="#" aria-label="Instagram" className="hover:opacity-80 transition-opacity">
-                                        <Image src="/images/global/insta-icon.png" alt="Instagram" width={28} height={28} className="object-contain" />
+                                        <Image src="/images/global/insta-icon.svg" alt="Instagram" width={34} height={34} className="object-contain" />
                                     </a>
                                     <a href="#" aria-label="Facebook" className="hover:opacity-80 transition-opacity">
-                                        <Image src="/images/global/fb-icon.png" alt="Facebook" width={28} height={28} className="object-contain" />
+                                        <Image src="/images/global/fb-icon.svg" alt="Facebook" width={30} height={30} className="object-contain" />
                                     </a>
                                     <a href="#" aria-label="Twitter" className="hover:opacity-80 transition-opacity">
-                                        <Image src="/images/global/twitter-icon.png" alt="Twitter" width={28} height={28} className="object-contain" />
+                                        <Image src="/images/global/twitter-icon.svg" alt="Twitter" width={30} height={30} className="object-contain" />
                                     </a>
                                 </div>
                             </div>
@@ -146,13 +146,13 @@ export default function Footer() {
                         {/* Mobile Social Icons explicitly mapped below form strictly for Mobile constraints */}
                         <div className="flex md:hidden items-center justify-start space-x-6 pt-10 pb-0 w-full">
                             <a href="#" aria-label="Instagram" className="hover:opacity-80 transition-opacity">
-                                <Image src="/images/global/insta-icon.png" alt="Instagram" width={24} height={24} className="object-contain" />
+                                <Image src="/images/global/insta-icon.svg" alt="Instagram" width={24} height={24} className="object-contain" />
                             </a>
                             <a href="#" aria-label="Facebook" className="hover:opacity-80 transition-opacity">
-                                <Image src="/images/global/fb-icon.png" alt="Facebook" width={24} height={24} className="object-contain" />
+                                <Image src="/images/global/fb-icon.svg" alt="Facebook" width={24} height={24} className="object-contain" />
                             </a>
                             <a href="#" aria-label="Twitter" className="hover:opacity-80 transition-opacity">
-                                <Image src="/images/global/twitter-icon.png" alt="Twitter" width={24} height={24} className="object-contain" />
+                                <Image src="/images/global/twitter-icon.svg" alt="Twitter" width={24} height={24} className="object-contain" />
                             </a>
                         </div>
                     </div>
