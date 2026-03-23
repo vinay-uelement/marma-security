@@ -15,37 +15,37 @@ interface TechFeatureItem {
 const features: TechFeatureItem[] = [
   {
     id: "phishblock",
-    iconUrl: "/images/global/ic_outline-message.png",
+    iconUrl: "/images/global/ic_outline-message.svg",
     title: "PhishBlock",
     description: "Protection against phishing attacks",
   },
   {
     id: "netimmunity",
-    iconUrl: "/images/global/bx_globe.png",
+    iconUrl: "/images/global/bx_globe.svg",
     title: "NetImmunity",
     description: "Protection against network-based attacks",
   },
   {
     id: "malwareguard",
-    iconUrl: "/images/global/tabler_virus.png",
+    iconUrl: "/images/global/tabler_virus.svg",
     title: "MalwareGuard",
     description: "Protection against dangerous malware and spyware",
   },
   {
     id: "ransomguard",
-    iconUrl: "/images/global/ic_outline-shield.png",
+    iconUrl: "/images/global/ic_outline-shield.svg",
     title: "RansomGuard",
     description: "Protection against dangerous ransomware",
   },
   {
     id: "phishblock-2",
-    iconUrl: "/images/global/ic_outline-message.png",
+    iconUrl: "/images/global/ic_outline-message.svg",
     title: "PhishBlock",
     description: "Protection against phishing attacks",
   },
   {
     id: "phishblock-3",
-    iconUrl: "/images/global/ic_outline-shield.png",
+    iconUrl: "/images/global/ic_outline-shield.svg",
     title: "PhishBlock",
     description: "Protection against phishing attacks",
   },
