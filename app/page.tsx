@@ -51,7 +51,7 @@ export default function Home() {
           ]}
           rightImageAlt="Marma Security Device"
           rightImage="/images/banners/homepage-right-banner1.webp"
-rightImageClassName="w-[95%] sm:w-[80%] md:w-[70%] lg:w-[65vh] lg:h-[730px] lg:-translate-x-[-70px] lg:translate-y-[15%] xl:translate-y-[22%] z-30 transform-gpu object-contain"
+          rightImageClassName="w-[95%] sm:w-[80%] md:w-[70%] lg:w-[65vh] lg:h-[730px] lg:-translate-x-[-70px] lg:translate-y-[15%] xl:translate-y-[22%] z-30 transform-gpu object-contain"
           backgroundSize="cover"
           sectionClassName="py-8 lg:py-12"
         />
@@ -68,8 +68,7 @@ rightImageClassName="w-[95%] sm:w-[80%] md:w-[70%] lg:w-[65vh] lg:h-[730px] lg:-
               className="text-[#323232] font-bold"
               imageClassName="bottom-[-12px] md:bottom-[-10px] right-[0px] md:right-[25px] w-[80px] md:w-[100px] lg:w-[140px]"
             />{" "}
-            are more <br /> exposed to
-            cybercrime than you think.
+            are more <br /> exposed to cybercrime than you think.
           </h2>
 
           {/* IMAGE: Fully right-aligned correctly across all sizes with clamped margins */}
@@ -79,12 +78,16 @@ rightImageClassName="w-[95%] sm:w-[80%] md:w-[70%] lg:w-[65vh] lg:h-[730px] lg:-
               points="80,30 130,90 3000,90"
               dots={[{ cx: 80, cy: 30, rippleCount: 3, rippleBaseDelay: 0 }]}
               className="w-full h-auto"
+              strokeWidth={1}
+              dotRadius={8}
             />
             <DecorativeLine
               viewBox="0 0 500 80"
               points="-3000,40 200,40"
               dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
               className="w-full h-auto scale-x-[-1]"
+              strokeWidth={1}
+              dotRadius={8}
             />
           </div>
         </div>

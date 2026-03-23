@@ -89,7 +89,9 @@ export default function SecurityCards() {
   }, [currentPage, totalPages, isClient]);
 
   const start = currentPage - 1;
-  const visibleCards = isClient ? cards.slice(start, start + cardsPerPage) : cards.slice(0, 4);
+  const visibleCards = isClient
+    ? cards.slice(start, start + cardsPerPage)
+    : cards.slice(0, 4);
 
   const getPaginationItems = (): (number | "...")[] => {
     if (totalPages <= 3) {
@@ -128,29 +130,30 @@ export default function SecurityCards() {
             >
               {/* Top Area: Number or Image */}
               <div className="flex items-end justify-center h-[120px] md:h-[140px] mb-6 relative w-full">
-                  <div className="absolute bottom-0 w-full aspect-4/3 max-h-[140px] rounded-[12px] overflow-hidden bg-gray-200 habsolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <Image
-                      src={card.image || ''}
-                      alt={card.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  <span
-                    className="font-title font-bold leading-none text-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500"
-                    style={{
-                      WebkitTextStroke: "2px #DED8D8",
-                      fontSize: "clamp(100px, 12vw, 150px)",
-                      userSelect: "none",
-                    }}
-                  >
-                    {card.number}
-                  </span>
+                <div className="absolute bottom-0 w-full aspect-4/3 max-h-[140px] rounded-[12px] overflow-hidden bg-gray-200 habsolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <Image
+                    src={card.image || ""}
+                    alt={card.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover"
+                  />
+                </div>
+                <span
+                  className="font-title font-bold leading-none text-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500"
+                  style={{
+                    WebkitTextStroke: "2px #DED8D8",
+                    fontSize: "clamp(100px, 12vw, 150px)",
+                    userSelect: "none",
+                  }}
+                >
+                  {card.number}
+                </span>
               </div>
 
               {/* Card Content */}
-              <div className="flex flex-col flex-grow bg-[#F3F3F3] border border-[#E5E5E5] rounded-[16px] md:rounded-[24px] p-[16px] md:p-[32px] md:min-h-[307px]">
+              <div className="flex flex-col flex-grow bg-[#F3F3F3] border border-[#E5E5E5] rounded-[16px] md:rounded-[24px] p-[16px] md:p-[32px] md:min-h-[307px] group-hover:shadow-[2px_2px_4px_0px_rgba(0,0,0,0.15)]">
+                {" "}
                 <h3 className="security-card-title mb-[8px]">{card.title}</h3>
                 <p className="security-card-desc flex-grow mb-[16px] md:mb-[32px]">
                   {card.description}
