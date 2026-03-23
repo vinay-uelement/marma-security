@@ -54,10 +54,8 @@ export default function Challengestab() {
 
   return (
     <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-4 bg-[#FFFFFF]">
-      
       {/* Header Section */}
       <div className="flex items-start md:items-center justify-between gap-4 md:gap-8 mb-[10px] md:mb-[60px] w-full">
-        
         {/* Heading */}
         <h2 className="home-challenge-heading relative z-10 flex-1">
           Overcoming your{" "}
@@ -72,10 +70,13 @@ export default function Challengestab() {
         <div className="flex md:hidden justify-end items-start flex-shrink-0 pointer-events-none relative z-0">
           <div className="w-[160px] sm:w-[240px] translate-y-[-70%]">
             <DecorativeLine
-              viewBox="0 0 800 500"
-              points="600,280 960,280 1020,420 1560,420"
-              dots={[{ cx: 600, cy: 280, rippleCount: 3 }]}
-              className="w-full h-auto"
+              viewBox="0 0 1260 500"
+              points="20,150 500,150 600,270 3000,270"
+              //   points="20,150 200,150 280,270 3000,270"
+              dots={[{ cx: 0, cy: 150, rippleCount: 3 }]}
+              className="w-full h-auto -mt-20"
+              strokeWidth={3}
+              dotRadius={22}
             />
           </div>
         </div>
@@ -85,10 +86,13 @@ export default function Challengestab() {
           <div className="relative w-screen right-1/2 translate-x-1/2 flex justify-end">
             <div className="w-[400px] lg:w-[500px]">
               <DecorativeLine
-                viewBox="0 0 800 500"
-                points="600,280 960,280 1020,420 1560,420"
-                dots={[{ cx: 600, cy: 280, rippleCount: 3 }]}
-                className="w-full h-auto"
+                viewBox="0 0 1260 500"
+                points="20,150 500,150 600,270 3000,270"
+                //   points="20,150 200,150 280,270 3000,270"
+                dots={[{ cx: 0, cy: 150, rippleCount: 3 }]}
+                className="w-full h-auto -mt-20"
+                strokeWidth={3}
+                dotRadius={22}
               />
             </div>
           </div>
@@ -111,8 +115,20 @@ export default function Challengestab() {
           </select>
           {/* Custom Chevron Array */}
           <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-[#323232]">
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg
+              width="10"
+              height="6"
+              viewBox="0 0 10 6"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1L5 5L9 1"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </div>
         </div>
@@ -145,13 +161,10 @@ export default function Challengestab() {
 
       {/* Tab Content */}
       <div className="relative pb-8 w-full">
-        
         {/* MOBILE & TABLET LAYOUT */}
         <div className="flex flex-col lg:hidden gap-6 items-center w-full">
-          <h3 className="home-challenge-title w-full">
-            {activeData.title}
-          </h3>
-          
+          <h3 className="home-challenge-title w-full">{activeData.title}</h3>
+
           <div className="w-full flex justify-center max-w-[600px]">
             <Image
               key={`${activeData.id}-mobile`}
@@ -163,9 +176,7 @@ export default function Challengestab() {
             />
           </div>
 
-          <p className="home-challenge-desc w-full">
-            {activeData.description}
-          </p>
+          <p className="home-challenge-desc w-full">{activeData.description}</p>
         </div>
 
         {/* DESKTOP LAYOUT */}
@@ -190,7 +201,6 @@ export default function Challengestab() {
             />
           </div>
         </div>
-
       </div>
     </section>
   );
