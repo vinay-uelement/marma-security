@@ -1,8 +1,8 @@
 import HighlightedText from "@/components/global/HighlightedText";
-import Banner from "@/components/global/Banner";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import DecorativeLine from "@/components/home/DecorativeLine";
+import Banner from "@/components/home/Banner";
 
 // Dynamically import below-the-fold components to reduce initial JavaScript payload and main-thread execution time
 const CybercrimeStats = dynamic(
@@ -24,11 +24,8 @@ const Testimonial = dynamic(
 export default function Home() {
   return (
     <div className="flex flex-col bg-[#FFFFFF] min-h-screen overflow-x-clip">
-      <main className="flex-grow">
         <Banner
-          backgroundImage="/images/banners/Banner-homepage-new.webp" // Solid dark bg for testing before image is added
-          heightVariant="900"
-          ContinerClass="h-[93vh]"
+          backgroundImage="/images/banners/homepage-banner.webp" // Solid dark bg for testing before image is added
           title={
             <>
               Radically Simplified <br className="hidden md:block" />
@@ -51,11 +48,7 @@ export default function Home() {
           ]}
           rightImageAlt="Marma Security Device"
           rightImage="/images/banners/homepage-right-banner1.png"
-          rightImageClassName="w-[95%] sm:w-[80%] md:w-[70%] lg:w-[80vh] lg:h-[730px] lg:-translate-x-[-70px] lg:translate-y-[15%] xl:translate-y-[22%] z-30 transform-gpu object-contain"
-          backgroundSize="cover"
-          sectionClassName="py-8 lg:py-12"
         />
-      </main>
       {/* Updated section with responsive top padding and overflow control */}
       <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-16 md:pt-24 bg-[#FFFFFF] relative">
         {/* The flex container now stays flex-col until 901px */}
