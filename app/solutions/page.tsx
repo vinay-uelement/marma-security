@@ -38,6 +38,8 @@ export default function SolutionsPage() {
           },
         ]}
         rightImage="/images/banners/solution-banner-right1.png"
+        rightImageAlt="Banner Image"
+        rightImageClassName='w-[35vw]! max-sm:w-3/5! md:bottom-8'
       />
 
       <SolutionsTabs />

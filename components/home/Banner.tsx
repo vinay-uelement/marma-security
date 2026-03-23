@@ -42,7 +42,7 @@ export default function Banner({
   rightImage,
   rightImageAlt = "Banner Image",
   titleClassName = "font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white drop-shadow-sm",
-  rightImageClassName = "scale-[1.15] drop-shadow-2xl",
+  rightImageClassName = "",
 }: BannerProps) {
   // Dynamic height class assignment based on the prop
 
@@ -153,7 +153,7 @@ export default function Banner({
         width={1000}
         height={1000}
         priority={true}
-        className="absolute w-[40vw] max-sm:w-4/5 object-cover object-center bottom-8 right-0 md:bottom-0 md:right-0 z-0"
+        className={`absolute w-[40vw] max-sm:w-4/5 object-cover object-center bottom-8 right-0 md:bottom-0 md:right-0 z-0 ${rightImageClassName}`}
         fetchPriority="high"
       />
     </section>
