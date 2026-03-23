@@ -53,11 +53,12 @@ export default function Challengestab() {
   const activeData = tabItems.find((t) => t.id === activeTab) || tabItems[0];
 
   return (
-    <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-4 bg-bg-white">
+    <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 mt-8 bg-bg-white">
+      
       {/* Header Section */}
       <div className="flex items-start md:items-center justify-between gap-4 md:gap-8 mb-[10px] md:mb-[60px] w-full">
         {/* Heading */}
-        <h2 className="home-challenge-heading relative z-10 flex-1">
+        <h2 className="home-challenge-heading relative z-10 mb-3 md:mb-0 flex-1 whitespace-nowrap">
           Overcoming your{" "}
           <HighlightedText
             text="challenges"
@@ -67,8 +68,8 @@ export default function Challengestab() {
         </h2>
 
         {/* Decorative Line (Mobile + Tablet) */}
-        <div className="flex md:hidden justify-end items-start flex-shrink-0 pointer-events-none relative z-0">
-          <div className="w-[160px] sm:w-[240px] translate-y-[-70%]">
+        <div className="flex md:hidden justify-end items-start  flex-shrink-0 pointer-events-none relative z-0">
+          <div className="w-[160px] sm:w-[240px] translate-y-[-50%]">
             <DecorativeLine
               viewBox="0 0 1260 500"
               points="20,150 500,150 600,270 3000,270"
@@ -162,7 +163,7 @@ export default function Challengestab() {
       {/* Tab Content */}
       <div className="relative pb-8 w-full">
         {/* MOBILE & TABLET LAYOUT */}
-        <div className="flex flex-col lg:hidden gap-6 items-center w-full">
+        <div className="flex flex-col lg:hidden gap-6 items-center justify-center w-full">
           <h3 className="home-challenge-title w-full">{activeData.title}</h3>
 
           <div className="w-full flex justify-center max-w-[600px]">

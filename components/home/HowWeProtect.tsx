@@ -135,10 +135,10 @@ export default function HowWeProtect() {
                             <div className="absolute inset-y-[-32px] lg:inset-y-[-48px] w-[200vw] left-1/2 -translate-x-1/2 bg-bg-light -z-10 pointer-events-none" />
                         )}
                         <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
-                            
+
                             {/* MOBILE & TABLET LAYOUT */}
                             <div className="grid grid-cols-[1fr_1.1fr] sm:grid-cols-[1fr_1.2fr] md:grid-cols-2 lg:hidden gap-3 sm:gap-6 md:gap-8 items-stretch text-left w-full">
-                                
+
                                 {/* Column 1: Title + Image */}
                                 <div className="flex flex-col mt-2 md:mt-0 gap-0 md:gap-4">
                                     <h3 className="home-protect-title whitespace-pre-line text-left">
@@ -155,7 +155,7 @@ export default function HowWeProtect() {
                                         />
                                         {/* Mobile diamond accent overlay bottom-right based on SS */}
                                         <div className="absolute right-1 bottom-1 z-20 opacity-30 select-none pointer-events-none">
-                                            <svg width="6" height="6" viewBox="0 0 10 10" fill="currentColor" className="text-white"><path d="M5 0L6.5 3.5L10 5L6.5 6.5L5 10L3.5 6.5L0 5L3.5 3.5L5 0Z"/></svg>
+                                            <svg width="6" height="6" viewBox="0 0 10 10" fill="currentColor" className="text-white"><path d="M5 0L6.5 3.5L10 5L6.5 6.5L5 10L3.5 6.5L0 5L3.5 3.5L5 0Z" /></svg>
                                         </div>
                                     </div>
                                 </div>

@@ -6,7 +6,8 @@ import HighlightedText from "../global/HighlightedText";
 import DecorativeLine from "../home/DecorativeLine";
 
 const testimonials = [
-  {    name: "Ganesh",
+  {
+    name: "Ganesh",
     title: "CEO, Lorem ispum",
     rating: 5.0,
     content:
@@ -61,17 +62,17 @@ export default function Testimonial() {
 
       <div className="relative z-10 w-full mb-10 lg:mb-16 px-6 lg:px-12 max-w-[1440px] mx-auto">
         <div className="relative flex flex-col items-start md:flex-row md:items-center text-left justify-between gap-6 md:gap-12 w-full h-auto mt-8 md:mt-0">
-          
+
           {/* Decorative Red Line Graphic (Mobile & Tablet Layout) strictly mapped above the tm-header-pro */}
           <div className="flex md:hidden absolute top-[-50px] right-[-24px] items-start justify-end w-[280px] pointer-events-none overflow-hidden z-0">
-             <div className="w-full flex justify-end">
-                 <DecorativeLine
-                     viewBox="0 0 700 80"
-                     points="100,40 1100,40"
-                     dots={[{ cx: 100, cy: 40, rippleCount: 3 }]}
-                     className="w-full h-auto translate-x-[15%]"
-                 />
-             </div>
+            <div className="w-full flex justify-end">
+              <DecorativeLine
+                viewBox="0 0 700 80"
+                points="100,40 1100,40"
+                dots={[{ cx: 100, cy: 40, rippleCount: 3 }]}
+                className="w-full h-auto translate-x-[15%]"
+              />
+            </div>
           </div>
 
           <h2 className="tm-header-pro text-text-dark whitespace-normal md:whitespace-nowrap w-full relative z-10">
@@ -86,21 +87,21 @@ export default function Testimonial() {
 
           {/* Decorative Red Line Graphic (Desktop Layout) */}
           <div className="hidden md:block absolute right-0 top-0 pointer-events-none z-0">
-              <div className="relative w-[35vw] flex justify-end">
-                  <DecorativeLine
-                      viewBox="0 0 700 80"
-                      points="100,40 1100,40"
-                      dots={[{ cx: 100, cy: 40, rippleCount: 3 }]}
-                      className="w-[300px] lg:w-[400px] h-auto ml-auto"
-                  />
-              </div>
+            <div className="relative w-[35vw] flex justify-end">
+              <DecorativeLine
+                viewBox="0 0 700 80"
+                points="100,40 1100,40"
+                dots={[{ cx: 100, cy: 40, rippleCount: 3 }]}
+                className="w-[300px] lg:w-[400px] h-auto ml-auto"
+              />
+            </div>
           </div>
         </div>
       </div>
 
       <div className="relative z-10 max-w-[1440px] ml-6 mr-6 lg:ml-12">
         {/* Testimonial Cards */}
-        <div 
+        <div
           ref={scrollRef}
           onScroll={handleScroll}
           className="flex gap-6 md:gap-8 overflow-x-auto pb-4 md:pb-8 snap-x snap-mandatory scrollbar-hide"
@@ -164,9 +165,8 @@ export default function Testimonial() {
             <button
               key={index}
               onClick={() => scrollTo(index)}
-              className={`rounded-full transition-all duration-300 pointer-events-auto cursor-pointer ${
-                activeIndex === index ? "bg-brand-red w-[14px] h-[14px] shadow-sm" : "bg-[#D9D9D9] w-[10px] h-[10px]"
-              }`}
+              className={`rounded-full transition-all duration-300 pointer-events-auto cursor-pointer ${activeIndex === index ? "bg-brand-red w-[14px] h-[14px] shadow-sm" : "bg-[#D9D9D9] w-[10px] h-[10px]"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
