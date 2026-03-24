@@ -40,9 +40,9 @@ export default function ProductShowcase({ productName, mainFeature, subFeatures 
                             <Image
                                 src={mainFeature.image}
                                 alt={mainFeature.title}
-                                width={310}
-                                height={376}
-                                className="object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)] w-[85%] sm:w-[70%] md:w-[60%] lg:w-[75%] max-w-[368px] h-auto"
+                                width={1000}
+                                height={1000}
+                                className="object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)] w-2/3 m-4 md:w-1/2 md:m-10"
                                 priority
                             />
                         )}

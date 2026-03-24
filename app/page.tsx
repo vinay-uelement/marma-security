@@ -47,14 +47,14 @@ export default function Home() {
             { label: "Store", href: "#", variant: "secondary", icon: true },
           ]}
           rightImageAlt="Marma Security Device"
-          rightImage="/images/banners/homepage-right-banner1.png"
+          rightImage="/images/banners/homepage-right-banner1.webp"
         />
       {/* Updated section with responsive top padding and overflow control */}
       <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-16 md:pt-24 bg-[#FFFFFF] relative">
         {/* The flex container now stays flex-col until 901px */}
         <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-16 gap-8 relative z-10 w-full mb-16">
           {/* TEXT */}
-          <h2 className="w-full min-[901px]:w-[55%] fl2 text-left">
+          <h2 className="w-full min-[901px]:w-[55%] home-exposed-heading text-left">
             Your{" "}
             <HighlightedText
               text="business and home"

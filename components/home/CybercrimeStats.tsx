@@ -11,7 +11,7 @@ export default function CybercrimeStats() {
                     <div className="flex justify-center items-center w-full h-full min-h-[500px]">
                         <div className="relative w-full max-w-[423px] aspect-[423/495] translate-y-[25%] z-30">
                             <Image
-                                src="/images/home/black-device-homepage.webp"
+                                src="/images/banners/solution-banner-right1.webp"
                                 alt="Marma Security Black Device"
                                 fill
                                 sizes="50vw"

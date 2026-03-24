@@ -106,7 +106,7 @@ export default function ProductPage() {
               title: "CYBERSECURITY PROTECTION",
               description:
                 "SafeBiz Security Gateway protects all internet-connected devices on your network from phishing, ransomware, malware, IoT/Network attacks, and the latest cyber threats.",
-              image: "/images/product/product1safehome.png",
+              image: "/images/banners/solution-banner-right1.webp",
             }}
             subFeatures={[
               {
@@ -131,7 +131,7 @@ export default function ProductPage() {
               title: "ENTERPRISE SECURITY",
               description:
                 "SafeBiz provides robust protection for enterprise networks, shielding sensitive business data and infrastructure from advanced persisting threats and unauthorized access.",
-              image: "/images/product/product2biz.png",
+              image: "/images/banners/homepage-right-banner1.webp",
             }}
             subFeatures={[
               {

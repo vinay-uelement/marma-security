@@ -153,7 +153,7 @@ export default function Banner({
         width={1000}
         height={1000}
         priority={true}
-        className={`absolute w-[50vh] max-sm:w-[55vw] object-cover object-center bottom-[5vh] right-[8vw] md:bottom-[3vh] md:right-[4vw] z-0 ${rightImageClassName}`}
+        className={`absolute w-[50vh] max-sm:w-[55vw] object-cover object-center bottom-[5vh] right-10 md:bottom-[3vh] md:right-15 z-0 ${rightImageClassName}`}
         fetchPriority="high"
       />
     </section>

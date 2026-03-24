@@ -37,7 +37,7 @@ export default function SolutionsPage() {
             icon: true,
           },
         ]}
-        rightImage="/images/banners/solution-banner-right1.png"
+        rightImage="/images/banners/solution-banner-right1.webp"
         rightImageAlt="Banner Image"
       />
 
