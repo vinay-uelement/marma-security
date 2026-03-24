@@ -102,9 +102,8 @@ export default function IntelligentSecurity() {
         <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-6 md:mb-2 gap-8 relative z-10 w-full md:mb-16">
           {/* TEXT: Centered below 901px, left-aligned above */}
           <h2 className="w-full min-[901px]:w-[55%] fl2 text-left">
-            Intelligent{" "}
             <HighlightedText
-              text="security"
+              text="Intelligent security"
               className="font-bold text-[#323232]"
               imageClassName="bottom-[-15px] md:bottom-[-20px] left-1/2 -translate-x-1/2"
             />{" "}

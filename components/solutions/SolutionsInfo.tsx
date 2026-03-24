@@ -20,9 +20,8 @@ export default function SolutionsInfo({
 }: SolutionsInfoProps) {
   const isRight = imagePosition === "right";
 
-
   return (
-    <section className="relative w-full mt-8 md:pt-12 pb-0 md:pb-16 md:pt-10 md:pb-24 flex flex-col items-center overflow-x-clip">
+    <section className="relative w-full mt-8 md:pt-12 pb-0 md:pb-16 md:pt-10 md:pb-24 flex flex-col items-center ">
       {/* Faded Background Text */}
       <div className="w-full absolute top-[-8] md:top-3 -translate-y-1/2 flex justify-center z-0 select-none pointer-events-none px-0 md:px-4 max-w-[1440px] mx-auto">
         <span className="solutions-info-bg-text w-full whitespace-nowrap">
@@ -32,7 +31,6 @@ export default function SolutionsInfo({
 
       {/* Main Content Grid */}
       <div className="w-full max-w-[1440px] bg-[#f7f7f7] mx-auto px-6 lg:px-12 flex flex-col lg:grid py-12 lg:py-20 lg:grid-cols-2 gap-8 lg:gap-16 relative z-10 items-center rounded-sm">
-        
         {/* Content Side */}
         <div
           className={`flex flex-col z-10 relative w-full h-full items-center text-center lg:items-start lg:text-left order-1 ${
@@ -41,13 +39,21 @@ export default function SolutionsInfo({
         >
           <div className="bg-transparent flex flex-col justify-between h-full items-center lg:items-start relative">
             <div className="flex flex-col">
-              <h3 className="solutions-info-title pb-[20px] lg:mb-6">{title}</h3>
+              <h3 className="solutions-info-title pb-[20px] lg:mb-6">
+                {title}
+              </h3>
 
               <p className="solutions-info-desc mb-2 lg:mb-20">{description}</p>
             </div>
 
             {/* Outlined Explore Button (Desktop only, bound inside the text bounds) */}
-              <Button icon variant="secondary" label="Explore" textContainer="text-black!" className=" border-gray-400! hidden lg:flex"/>
+            <Button
+              icon
+              variant="secondary"
+              label="Explore"
+              textContainer="text-black!"
+              className=" border-gray-400! hidden lg:flex"
+            />
           </div>
         </div>
 
@@ -68,9 +74,14 @@ export default function SolutionsInfo({
 
         {/* Outlined Explore Button (Mobile/Tablet only, situated beneath the image physically) */}
         <div className="flex lg:hidden justify-center items-center w-full order-3 mt-4">
-        <Button icon variant="secondary" label="Explore" textContainer="text-black!" className=" border-gray-400!"/>
+          <Button
+            icon
+            variant="secondary"
+            label="Explore"
+            textContainer="text-black!"
+            className=" border-gray-400!"
+          />
         </div>
-
       </div>
     </section>
   );

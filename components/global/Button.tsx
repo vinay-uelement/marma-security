@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 
 type Props = {
   variant?: "primary" | "secondary" | "outline";
@@ -10,7 +10,17 @@ type Props = {
 };
 
 const Button = (props: Props) => {
-  const { variant = "primary", label, onClick, icon, className, textContainer } = props;
+  const uid = useId(); // generates a unique ID per component instance
+  const maskId = `arrowMask-${uid.replace(/:/g, "")}`;
+
+  const {
+    variant = "primary",
+    label,
+    onClick,
+    icon,
+    className,
+    textContainer,
+  } = props;
 
   const isPrimary = variant !== "secondary";
 
@@ -30,7 +40,10 @@ const Button = (props: Props) => {
     : "w-6 h-6 md:w-8 md:h-8 ";
 
   return (
-    <button onClick={onClick} className={`${baseClass} ${variantClass} ${className}`}>
+    <button
+      onClick={onClick}
+      className={`${baseClass} ${variantClass} ${className}`}
+    >
       <span className={`${textClass} ${textContainer}`}>{label}</span>
 
       {icon && (
@@ -52,36 +65,35 @@ const Button = (props: Props) => {
             </svg>
           ) : (
             <svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 100 100"
-  width="28"
-  height="28"
-  className="w-full h-full"
->
-  <defs>
-    <mask id="arrowMask">
-      <rect width="100%" height="100%" fill="white" />
-      <path
-        d="M 50 28 L 50 72 M 32 54 L 50 72 L 68 54"
-        transform="rotate(-135 50 50)"
-        stroke="black"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
-    </mask>
-  </defs>
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 100"
+              width="28"
+              height="28"
+              className="w-full h-full"
+            >
+              <defs>
+                <mask id={maskId}>
+                  <rect width="100%" height="100%" fill="white" />
+                  <path
+                    d="M 50 28 L 50 72 M 32 54 L 50 72 L 68 54"
+                    transform="rotate(-135 50 50)"
+                    stroke="black"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                  />
+                </mask>
+              </defs>
 
-  <circle
-    cx="50"
-    cy="50"
-    r="45"
-    fill="#FF0000"
-    mask="url(#arrowMask)"
-  />
-</svg>
-
+              <circle
+                cx="50"
+                cy="50"
+                r="45"
+                fill="#FF0000"
+                mask={`url(#${maskId})`}
+              />
+            </svg>
           )}
         </div>
       )}
