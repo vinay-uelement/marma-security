@@ -95,11 +95,11 @@ export default function Testimonial() {
     scrollTo(Math.min(activeIndex + 1, testimonials.length - 1));
 
   return (
-    <section className="relative w-full py-16 lg:py-24 overflow-hidden">
+    <section className="relative w-full py-4 lg:py-24 overflow-x-clip">
       <div className="relative z-10 w-full mb-10 lg:mb-16 px-6 lg:px-12 max-w-[1440px] mx-auto">
         <div className="relative flex flex-col items-start md:flex-row md:items-center text-left justify-between gap-6 md:gap-12 w-full h-auto mt-8 md:mt-0">
           {/* Decorative Line — Mobile */}
-          <div className="flex md:hidden absolute top-[-50px] right-[-24px] items-start justify-end w-[280px] pointer-events-none overflow-hidden z-0">
+          <div className="flex md:hidden absolute top-[-50px] right-[-24px] items-start justify-end w-[280px] pointer-events-none overflow-x-clip z-0">
             <div className="w-full flex justify-end">
               <DecorativeLine
                 viewBox="0 0 700 80"
@@ -200,7 +200,7 @@ export default function Testimonial() {
         </div>
 
         {/* Progress Bar + Arrows */}
-        <div className="w-full flex justify-between items-center mt-8 md:mt-12 pt-6 md:pt-8 gap-6 md:gap-12 pr-6 lg:pr-12">
+        <div className="w-full flex justify-between items-center mt-2 md:mt-12 pt-2 md:pt-8 gap-6 md:gap-12 pr-6 lg:pr-12">
           {/* Progress Bar */}
           <div className="flex-grow relative h-[3px]">
             <div className="absolute inset-0 w-full h-full bg-[#E5E5E5] rounded-full z-10" />

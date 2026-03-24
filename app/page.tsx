@@ -50,7 +50,7 @@ export default function Home() {
           rightImage="/images/banners/homepage-right-banner1.webp"
         />
       {/* Updated section with responsive top padding and overflow control */}
-      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-16 md:pt-24 bg-[#FFFFFF] relative">
+      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-0 md:pt-24 bg-[#FFFFFF] relative">
         {/* The flex container now stays flex-col until 901px */}
         <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-2 gap-8 relative z-10 w-full md:mb-16">
           {/* TEXT */}
@@ -93,9 +93,9 @@ export default function Home() {
       <SecurityCards />
 
       {/* Inverted Solutions Info Component */}
-      <div className="w-full max-w-[1440px] mx-auto pt-14 bg-[#fff]">
+      <div className="w-full max-w-[1440px] mx-auto pt-8 md:pt-14 bg-[#fff]">
         {/* Red Decorative Line container on Home page only */}
-        <div className="relative mb-12 w-screen left-1/2 -translate-x-1/2">
+        <div className="relative mb-2 md:mb-12 w-screen left-1/2 -translate-x-1/2">
           <div className="w-[500px] md:w-[600px] lg:w-[1000px]">
             <DecorativeLine
               viewBox="0 0 1500 80"
@@ -106,7 +106,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="pb-12 bg-[#fff]">
+      <div className="pb-18 bg-[#fff]">
         <HomeSolutionsInfo />
       </div>
 

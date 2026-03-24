@@ -53,7 +53,7 @@ export default function ProductShowcase({ productName, mainFeature, subFeatures 
                         <h3 className="fl3-3  mb-0 md:mb-4 w-full">
                             {mainFeature.title}
                         </h3>
-                        <p className="fl5-2 text-text-dark! font-light max-w-[420px]">
+                        <p className="fl5-2 !text-text-dark font-light max-w-[420px]">
                             {mainFeature.description}
                         </p>
                     </div>
@@ -71,7 +71,7 @@ export default function ProductShowcase({ productName, mainFeature, subFeatures 
                                     <h3 className="fl3-3 mb-1 md:mb-4">
                                         {feat.title}
                                     </h3>
-                                    <p className="fl5-2 text-text-dark! font-light ">
+                                    <p className="fl5-2 !text-text-dark font-light ">
                                         {feat.description}
                                     </p>
                                 </div>

@@ -113,7 +113,7 @@ export default function SecurityCards() {
   return (
     <section className="w-full bg-[#FAFAFA] pt-0 lg:pt-40 pb-6 md:pb-24 relative z-0">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-        <div className="w-full h-[1px] px-10 bg-[#E5E5E5] mb-16 lg:mb-20" />
+        <div className="w-full h-[1px] px-10 bg-[#E5E5E5] mb-2 md:mb-16 lg:mb-20" />
 
         <div className="text-center mb-4 md:mb-24 relative z-10">
           <h2 className="fl2-1">

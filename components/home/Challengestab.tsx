@@ -179,7 +179,7 @@ export default function Challengestab() {
         }
       `}</style>
 
-      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 mt-8 bg-bg-white">
+      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 mt-4 bg-bg-white">
         {/* Header Section */}
         <div className="flex items-start md:items-center justify-between gap-4 md:gap-8 mb-[10px] md:mb-[60px] w-full">
           <h2 className="fl2 z-10 mb-3 md:mb-0 flex-1 whitespace-nowrap">
@@ -193,12 +193,12 @@ export default function Challengestab() {
 
           {/* Decorative Line — Mobile */}
           <div className="flex md:hidden justify-end items-start flex-shrink-0 pointer-events-none relative z-0">
-            <div className="w-[160px] sm:w-[240px] translate-y-[-50%]">
+            <div className="w-[160px] sm:w-[240px] translate-y-[-20%]">
               <DecorativeLine
                 viewBox="0 0 1260 500"
                 points="20,150 500,150 600,270 3000,270"
                 dots={[{ cx: 0, cy: 150, rippleCount: 3 }]}
-                className="w-full h-auto -mt-20"
+                className="w-full h-auto -mt-18"
                 strokeWidth={3}
                 dotRadius={22}
               />
@@ -293,7 +293,7 @@ export default function Challengestab() {
             key={`mobile-${active.id}`}
             className={`flex flex-col lg:hidden gap-6 items-center justify-center w-full ${mobileSlideClass}`}
           >
-            <h3 className="home-challenge-title w-full">{active.title}</h3>
+            <h3 className="fl3-2 font-semibold w-full">{active.title}</h3>
             <div className="w-full flex justify-center max-w-[600px]">
               <Image
                 src={active.image}
@@ -303,7 +303,7 @@ export default function Challengestab() {
                 className="w-full h-auto object-contain rounded-[16px] shadow-xl"
               />
             </div>
-            <p className="home-challenge-desc w-full">{active.description}</p>
+            <p className="fl4-2 w-full">{active.description}</p>
           </div>
 
           <div className="hidden lg:block relative w-full">
