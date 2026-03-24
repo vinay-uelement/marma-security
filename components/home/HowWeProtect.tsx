@@ -18,12 +18,12 @@ const features: FeatureItem[] = [
         title: "Quick & Effortless Setup",
         description: (
             <>
-                <strong className="home-protect-strong block mb-[7px] md:mb-4">Get protected in under 5<br />minutes.</strong>
-                <p className="home-protect-desc mb-[10px] md:mb-6">
+                <strong className="fl5-1 block mb-[7px] md:mb-4">Get protected in under 5<br />minutes.</strong>
+                <p className="fl4-1 mb-[10px] md:mb-6">
                     No technical expertise, networking knowledge, or complex configurations required—simply plug in and go.
                 </p>
                 <Link href="#" className="flex items-center gap-4 group w-fit">
-                    <span className="home-protect-link group-hover:text-brand-red-hover transition-colors">
+                    <span className="fl5-2 group-hover:text-brand-red-hover transition-colors">
                         Learn more
                     </span>
                     <span className="text-brand-red group-hover:text-brand-red-hover transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
@@ -41,12 +41,12 @@ const features: FeatureItem[] = [
         title: "Fully Automated Protection",
         description: (
             <>
-                <strong className="home-protect-strong block mb-[7px] md:mb-4">Security that runs itself.</strong>
-                <p className="home-protect-desc mb-[10px] md:mb-6">
+                <strong className="fl5-1 block mb-[7px] md:mb-4">Security that runs itself.</strong>
+                <p className="fl4-1 mb-[10px] md:mb-6">
                     Marma continuously monitors your network and blocks threats in real time, without any manual intervention.
                 </p>
                 <Link href="#" className="flex items-center gap-4 group w-fit">
-                    <span className="home-protect-link group-hover:text-brand-red-hover transition-colors">
+                    <span className="fl5-2 group-hover:text-brand-red-hover transition-colors">
                         Learn more
                     </span>
                     <span className="text-brand-red group-hover:text-brand-red-hover transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
@@ -64,12 +64,12 @@ const features: FeatureItem[] = [
         title: "Zero Maintenance Required",
         description: (
             <>
-                <strong className="home-protect-strong block mb-[7px] md:mb-4">No updates, no <br />monitoring, no hassle.</strong>
-                <p className="home-protect-desc mb-[10px] md:mb-6">
+                <strong className="fl5-1 block mb-[7px] md:mb-4">No updates, no <br />monitoring, no hassle.</strong>
+                <p className="fl4-1 mb-[10px] md:mb-6">
                     All security updates, patches, and improvements are handled automatically in the background.
                 </p>
                 <Link href="#" className="flex items-center gap-4 group w-fit">
-                    <span className="home-protect-link group-hover:text-brand-red-hover transition-colors">
+                    <span className="fl5-2 group-hover:text-brand-red-hover transition-colors">
                         Learn more
                     </span>
                     <span className="text-brand-red group-hover:text-brand-red-hover transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
@@ -103,7 +103,7 @@ export default function HowWeProtect() {
                         </div>
                     </div>
 
-                    <h2 className="home-protect-heading w-full md:max-w-[520px] relative z-10">
+                    <h2 className="fl2-2 w-full md:max-w-[520px] relative z-10">
                         How we <HighlightedText
                             text="protect you?"
                             className="font-bold text-text-dark"
@@ -141,7 +141,7 @@ export default function HowWeProtect() {
 
                                 {/* Column 1: Title + Image */}
                                 <div className="flex flex-col mt-2 md:mt-0 gap-0 md:gap-4">
-                                    <h3 className="home-protect-title whitespace-pre-line text-left">
+                                    <h3 className="fl3-1 whitespace-pre-line text-left">
                                         {feature.title}
                                     </h3>
                                     <div className="relative w-full aspect-[427/237] rounded-[8px] md:rounded-[12px] overflow-hidden shadow-sm mt-2 md:mt-auto border border-[#E5E5E5]/50">
@@ -183,7 +183,7 @@ export default function HowWeProtect() {
 
                                 {/* 2. Title Column */}
                                 <div className="flex flex-col justify-start md:pt-5 h-full">
-                                    <h3 className="home-protect-title whitespace-pre-line">
+                                    <h3 className="fl3-1 whitespace-pre-line">
                                         {feature.title}
                                     </h3>
                                 </div>

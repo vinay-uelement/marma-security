@@ -14,11 +14,11 @@ export default function AdvancedArchitecture() {
 
                 {/* Typography Layout */}
                 <div className="text-center w-full max-w-[900px] mx-auto">
-                    <h2 className="tech-architecture-heading">
+                    <h2 className="fl2">
                         <HighlightedText
                             text="Advanced cybersecurity"
                             className="font-bold text-[#323232]"
-                            imageClassName="bottom-[-22px] md:bottom-[-22px] right-[20px] md-right-[-30px] translate-x-1/400 md:translate-x-0"
+                            imageClassName="bottom-[-26px] md:bottom-[-22px] right-[7px] md-right-[-30px] translate-x-1/400 md:translate-x-0 scale-[0.8] md:scale-[1]"
                         /> architecture that safeguards every connected device seamlessly.
                     </h2>
                 </div>

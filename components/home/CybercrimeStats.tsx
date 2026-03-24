@@ -22,13 +22,13 @@ export default function CybercrimeStats() {
 
                     {/* Right Column: Text Content */}
                     <div className="flex flex-col space-y-6 relative z-10 text-left items-start pb-0">
-                        <h3 className="text-cybercrime-title pb-[20px]">
+                        <h3 className="fl3 pb-[20px]">
                             Cybercriminals don’t discriminate—small businesses and homes are their easiest targets.
                         </h3>
-                        <p className="text-cybercrime-body pb-[10px] ">
+                        <p className="fl4 pb-[10px] ">
                             43% of cyberattacks are targeted at small businesses and about 41% of small businesses have experienced some form of cyberattack in the last 12 months. In addition, nearly 1 million Americans reported being the victim of a cybercrime to the FBI in 2023, and 1.1 million Americans experienced identity theft in 2023.
                         </p>
-                        <p className="text-cybercrime-emphasis">
+                        <p className="fl5">
                             We think that’s unacceptable.
                         </p>
                     </div>
@@ -51,7 +51,7 @@ export default function CybercrimeStats() {
                         </div>
                     </div>
                     <div className="w-[55%] pb-2 text-left flex flex-col  justify-end md:justify-center mt-2">
-                        <h3 className="text-cybercrime-title mt-4 sm:mt-6 mr-10 md:mr-0">
+                        <h3 className="fl3 mt-4 sm:mt-6 mr-10 md:mr-0">
                             Cybercriminals don’t discriminate small businesses and homes are their easiest targets.
                         </h3>
                     </div>
@@ -59,10 +59,10 @@ export default function CybercrimeStats() {
 
                 {/* Bottom Half: Grey bg (#F7F7F7) */}
                 <div className="bg-[#F7F7F7] w-full px-6 pt-12 sm:pt-16  pb-2 md:pb-12 relative z-10">
-                    <p className="text-cybercrime-body pb-[15px] text-[#666666]">
+                    <p className="fl4 pb-[15px] text-[#666666]">
                         43% of cyberattacks are targeted at small businesses and about 41% of small businesses have experienced some form of cyberattack in the last 12 months. In addition, nearly 1 million Americans reported being the victim of a cybercrime to the FBI in 2023, and 1.1 million Americans experienced identity theft in 2023.
                     </p>
-                    <p className="text-cybercrime-emphasis">
+                    <p className="fl5">
                         We think that’s unacceptable.
                     </p>
                 </div>

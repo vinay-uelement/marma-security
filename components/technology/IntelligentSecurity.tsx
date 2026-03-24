@@ -53,8 +53,26 @@ const features: TechFeatureItem[] = [
 
 export default function IntelligentSecurity() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const ITEMS_PER_PAGE = 4;
-  const maxIndex = Math.max(0, features.length - ITEMS_PER_PAGE);
+  const [itemsPerPage, setItemsPerPage] = useState(4);
+  const [isMounted, setIsMounted] = useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+    const handleResize = () => {
+      setItemsPerPage(window.innerWidth < 1024 ? 2 : 4);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const maxIndex = Math.max(0, features.length - itemsPerPage);
+
+  React.useEffect(() => {
+    if (currentIndex > maxIndex) {
+      setCurrentIndex(maxIndex);
+    }
+  }, [currentIndex, maxIndex]);
 
   const handleNext = () => {
     setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
@@ -64,26 +82,40 @@ export default function IntelligentSecurity() {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
 
-  // Slice to the 4 items currently active
+  // Slice to the items currently active
   const visibleFeatures = features.slice(
     currentIndex,
-    currentIndex + ITEMS_PER_PAGE,
+    currentIndex + itemsPerPage,
   );
 
-  // Dynamic progress bar calculation (based on how max items we have scrolled)
+  // Dynamic progress bar calculation
   const progressPercentage =
     features.length > 0
-      ? Math.min(((currentIndex + ITEMS_PER_PAGE) / features.length) * 100, 100)
+      ? Math.min(((currentIndex + itemsPerPage) / features.length) * 100, 100)
       : 100;
 
+  if (!isMounted) return null; // Safe SSR hydration wait
+
   return (
-    <section className="w-full bg-[#FFFFFF] pt-24 pb-20 overflow-x-clip relative">
-      {/* Desktop right-edge bleed image, strictly sticking to 0px from right screen edge */}
-      <div className="hidden lg:flex items-center justify-end w-full absolute right-0 top-[120px] pointer-events-none">
-        {/* viewport anchor */}
-        <div className="relative w-screen left-1/2 -translate-x-1/2">
-          {/* right aligned container */}
-          <div className="ml-auto w-[320px] lg:w-[450px] flex flex-col">
+    <section className="w-full bg-[#FFFFFF] pt-16 md:pt-24 pb-10 overflow-x-clip relative">
+      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 relative flex flex-col pt-0">
+        {/* The flex container now stays flex-col until 901px */}
+        <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-12 md:mb-8 md:mb-16 gap-8 relative z-10 w-full">
+          {/* TEXT */}
+          <h2 className="w-full min-[901px]:w-[55%] fl2 text-left">
+            {" "}
+            <HighlightedText
+              text="Intelligent security"
+              className="font-bold text-[#323232]"
+              imageClassName="bottom-[-20px] md:bottom-[-20px] left-1/2 -translate-x-1/2 scale(0.9)"
+            />{" "}
+            that works
+            <br className="hidden min-[901px]:block" /> silently in the
+            background.
+          </h2>
+
+          {/* IMAGE: Fully right-aligned correctly across all sizes with clamped margins */}
+          <div className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-10 min-[901px]:mt-0 pointer-events-none z-0">
             <DecorativeLine
               viewBox="0 0 700 80"
               points="0,40 210,40"
@@ -93,7 +125,6 @@ export default function IntelligentSecurity() {
             <DecorativeLine
               viewBox="0 0 1260 500"
               points="20,150 500,150 600,270 3000,270"
-              //   points="20,150 200,150 280,270 3000,270"
               dots={[{ cx: 0, cy: 150, rippleCount: 3 }]}
               className="w-full h-auto -mt-20"
               strokeWidth={3}
@@ -101,43 +132,8 @@ export default function IntelligentSecurity() {
             />
           </div>
         </div>
-      </div>
 
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative flex flex-col pt-0 lg:pt-24 ">
-        {/* The flex container now stays flex-col until 901px */}
-        <div className="flex flex-col min-[901px]:flex-row justify-between items-center z-10 relative mb-16 gap-8">
-          {/* TEXT: Centered below 901px, left-aligned above */}
-          <h2 className="w-full tech-section-heading text-center min-[901px]:text-left">
-            Intelligent{" "}
-            <HighlightedText
-              text="security"
-              className="font-bold text-[#323232]"
-              imageClassName="bottom-[-15px] md:bottom-[-20px] left-1/2 -translate-x-1/2"
-            />{" "}
-            that works
-            <br className="hidden min-[901px]:block" /> silently in the
-            background.
-          </h2>
-
-          {/* Desktop Spacer to maintain the flex layout width allocation */}
-          <div className="hidden min-[901px]:block w-full max-w-[400px] lg:max-w-[500px]"></div>
-
-          {/* Mobile-only Image (keeps normal flow) pulled against the true right screen edge via -mr-6 padding cancellation */}
-          <div className="flex min-[901px]:hidden items-center justify-end w-full mt-8 -mr-6">
-            <div className="w-full max-w-[320px] sm:max-w-[400px]">
-              <Image
-                src="/images/banners/Technology-below-banner.webp"
-                alt="Background wire graphic"
-                width={300}
-                height={90}
-                className="object-contain w-full h-auto"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="relative z-10 grid grid-cols-1 md:ms-20 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 w-full mt-4 min-h-[300px]">
+        <div className="relative z-10 grid grid-cols-2 md:ms-20 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 sm:gap-x-8 gap-y-12 w-full mt-4 min-h-[300px]">
           {visibleFeatures.map((feature, index) => (
             <div
               key={`${feature.id}-${index + currentIndex}`}
@@ -157,12 +153,12 @@ export default function IntelligentSecurity() {
               </div>
 
               {/* Feature Title */}
-              <h3 className="tech-feature-title mb-4 text-center sm:text-left w-full">
+              <h3 className="fl3-3 mb-0 md:mb-4 text-center sm:text-left w-full">
                 {feature.title}
               </h3>
 
               {/* Feature Text/Description */}
-              <p className="tech-feature-desc  text-center sm:text-left w-full h-[40%] sm:max-w-[60%]">
+              <p className="fl4-3  text-center sm:text-left w-full h-[20%] md:h-[40%] sm:max-w-[60%]">
                 {feature.description}
               </p>
 
@@ -171,7 +167,7 @@ export default function IntelligentSecurity() {
                 href="#"
                 className="inline-flex items-center gap-4 group/btn mx-auto sm:mx-0 pt-2 pb-1"
               >
-                <span className="tech-feature-explore group-hover/btn:text-[#E10000] transition-colors">
+                <span className="fl5-3 group-hover/btn:text-[#E10000] transition-colors">
                   Explore
                 </span>
                 <span className="text-[#FF0000] group-hover/btn:text-[#E10000] transition-transform group-hover/btn:translate-x-1 flex items-center justify-center translate-y-[2px]">
@@ -197,7 +193,7 @@ export default function IntelligentSecurity() {
         </div>
 
         {/* Bottom Carousel Navigation block */}
-        {features.length > ITEMS_PER_PAGE && (
+        {features.length > itemsPerPage && (
           <div className="w-full flex justify-between items-center mt-12 md:mt-20 pt-6 md:pt-10 gap-6 md:gap-12">
             {/* Progress Bar Container - dynamically flexes to fill available space besides buttons */}
             <div className="flex-grow relative h-[3px]">

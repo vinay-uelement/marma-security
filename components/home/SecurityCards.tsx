@@ -116,7 +116,7 @@ export default function SecurityCards() {
         <div className="w-full h-[1px] px-10 bg-[#E5E5E5] mb-16 lg:mb-20" />
 
         <div className="text-center mb-4 md:mb-24 relative z-10">
-          <h2 className="text-cards-heading">
+          <h2 className="fl2-1">
             Robust cybersecurity at an affordable price
           </h2>
         </div>
@@ -154,15 +154,15 @@ export default function SecurityCards() {
               {/* Card Content */}
               <div className="flex flex-col flex-grow bg-[#F3F3F3] border border-[#E5E5E5] rounded-[16px] md:rounded-[24px] p-[16px] md:p-[32px] md:min-h-[307px] group-hover:shadow-[2px_2px_4px_0px_rgba(0,0,0,0.15)]">
                 {" "}
-                <h3 className="text-card-title mb-[8px]">{card.title}</h3>
-                <p className="text-card-desc flex-grow mb-[16px] md:mb-[32px]">
+                <h3 className="fl3-3 mb-[8px]">{card.title}</h3>
+                <p className="fl4-3 flex-grow mb-[16px] md:mb-[32px]">
                   {card.description}
                 </p>
                 <Link
                   href={card.linkHref || "#"}
                   className="inline-flex items-center gap-4 group mt-auto w-fit md:pb-2"
                 >
-                  <span className="text-card-link text-[#FF0000] group-hover:text-[#E10000] transition-colors">
+                  <span className="fl5-3 text-[#FF0000] group-hover:text-[#E10000] transition-colors">
                     Explore
                   </span>
                   <span className="text-[#FF0000] group-hover:text-[#E10000] transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[2px]">
