@@ -7,9 +7,11 @@
   --font-banner: var(--font-sora), sans-serif;
 
   /* ================= Navbar Styles ================= */
-  --nav-gradient: linear-gradient(90deg,
-      rgba(255, 255, 255, 0.9) 0%,
-      rgba(255, 255, 255, 0.36) 100%);
+  --nav-gradient: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.36) 100%
+  );
   --nav-blur: blur(1000px);
   --nav-shadow: 0px 4px 24px -1px #00000033;
 }
@@ -20,8 +22,8 @@
   --color-text-dark: #323232;
   --color-text-muted: #727272;
   --color-bg-white: #ffffff;
-  --color-bg-light: #F7F7F7;
-  --color-bg-card: #F0F0F0;
+  --color-bg-light: #f7f7f7;
+  --color-bg-card: #f0f0f0;
   --color-border-card: #d9d9d98c;
   --color-nav-text: #101010;
 
@@ -84,11 +86,15 @@ img {
 }
 
 .navbar-glass {
-  background: linear-gradient(186.29deg, rgba(255, 255, 255, 0.308) -32.46%, rgba(255, 255, 255, 0.056) 279.84%);
+  background: linear-gradient(
+    186.29deg,
+    rgba(255, 255, 255, 0.308) -32.46%,
+    rgba(255, 255, 255, 0.056) 279.84%
+  );
   backdrop-filter: blur(45.73509216308594px);
   -webkit-backdrop-filter: blur(45.73509216308594px);
   box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
-  border: 1px solid #FFFFFF47;
+  border: 1px solid #ffffff47;
 }
 
 @media (min-width: 1024px) {
@@ -132,9 +138,11 @@ img {
 }
 
 .footer-form-glass {
-  background: linear-gradient(130.96deg,
-      rgba(255, 255, 255, 0.176) -36.72%,
-      rgba(255, 255, 255, 0.032) 100%);
+  background: linear-gradient(
+    130.96deg,
+    rgba(255, 255, 255, 0.176) -36.72%,
+    rgba(255, 255, 255, 0.032) 100%
+  );
   border: 1px solid #ffffff47;
   backdrop-filter: blur(45.73509216308594px);
 
@@ -408,9 +416,11 @@ img {
 }
 
 .stats-glass-card {
-  background: linear-gradient(130.96deg,
-      rgba(255, 255, 255, 0.2035) -36.72%,
-      rgba(255, 255, 255, 0.037) 100%);
+  background: linear-gradient(
+    130.96deg,
+    rgba(255, 255, 255, 0.2035) -36.72%,
+    rgba(255, 255, 255, 0.037) 100%
+  );
   -webkit-backdrop-filter: blur(45.7px);
   backdrop-filter: blur(45.7px);
   box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
@@ -491,7 +501,6 @@ img {
 }
 
 @layer components {
-
   /* ===============================================================
      HOMEPAGE: Cybercrime Stats Typography
      =============================================================== */
@@ -653,4 +662,31 @@ img {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.slide-in-right {
+  animation: slideInFromRight 0.32s ease forwards;
+}
+.slide-in-left {
+  animation: slideInFromLeft 0.32s ease forwards;
 }
