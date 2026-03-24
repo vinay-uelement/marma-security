@@ -65,7 +65,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`fl2 ${isActive ? "!font-bold !text-[#000000]" : ""}`}
+                className={`fl2-nav ${isActive ? "!font-bold !text-[#000000]" : ""}`}
               >
                 {link.label}
               </Link>
@@ -156,7 +156,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`fl2 border-b border-gray-200/30 pb-3 ${isActive ? "!font-bold !text-[#000000]" : ""}`}
+                className={`fl2-nav border-b border-gray-200/30 pb-3 ${isActive ? "!font-bold !text-[#000000]" : ""}`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
@@ -166,7 +166,7 @@ export default function Navbar() {
 
           <Link
             href="/contact-us"
-            className="flex items-center gap-3 fl2 border-b border-gray-200/30 pb-3"
+            className="flex items-center gap-3 fl2-nav border-b border-gray-200/30 pb-3"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <Image
@@ -181,7 +181,7 @@ export default function Navbar() {
 
           <Link
             href="#"
-            className="flex items-center gap-3 fl2 pb-3"
+            className="flex items-center gap-3 fl2-nav pb-3"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <Image

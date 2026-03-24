@@ -182,7 +182,7 @@ export default function Challengestab() {
       <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 mt-8 bg-bg-white">
         {/* Header Section */}
         <div className="flex items-start md:items-center justify-between gap-4 md:gap-8 mb-[10px] md:mb-[60px] w-full">
-          <h2 className="home-challenge-heading relative z-10 mb-3 md:mb-0 flex-1 whitespace-nowrap">
+          <h2 className="fl2 z-10 mb-3 md:mb-0 flex-1 whitespace-nowrap">
             Overcoming your{" "}
             <HighlightedText
               text="challenges"
