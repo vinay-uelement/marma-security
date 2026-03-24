@@ -58,7 +58,7 @@ export default function Challengestab() {
       {/* Header Section */}
       <div className="flex items-start md:items-center justify-between gap-4 md:gap-8 mb-[10px] md:mb-[60px] w-full">
         {/* Heading */}
-        <h2 className="home-challenge-heading relative z-10 mb-3 md:mb-0 flex-1 whitespace-nowrap">
+        <h2 className="fl2-3 relative z-10 mb-3 md:mb-0 flex-1 whitespace-nowrap">
           Overcoming your{" "}
           <HighlightedText
             text="challenges"
@@ -144,7 +144,7 @@ export default function Challengestab() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative pb-4 text-[20px] font-body transition-colors leading-[30px] tracking-[-0.01em] text-left whitespace-normal w-fit max-w-[200px] ${
+                className={`relative pb-4 text-[20px] font-body transition-colors leading-[30px] tracking-[-0.01em] text-left whitespace-normal w-fit max-w-[180px] ${
                   isActive
                     ? "text-text-dark font-semibold"
                     : "text-[#989898] font-medium hover:text-[#666666]"
@@ -164,7 +164,7 @@ export default function Challengestab() {
       <div className="relative pb-8 w-full">
         {/* MOBILE & TABLET LAYOUT */}
         <div className="flex flex-col lg:hidden gap-6 items-center justify-center w-full">
-          <h3 className="home-challenge-title w-full">{activeData.title}</h3>
+          <h3 className="fl3-2 w-full">{activeData.title}</h3>
 
           <div className="w-full flex justify-center max-w-[600px]">
             <Image
@@ -177,17 +177,17 @@ export default function Challengestab() {
             />
           </div>
 
-          <p className="home-challenge-desc w-full">{activeData.description}</p>
+          <p className="fl4-2 w-full">{activeData.description}</p>
         </div>
 
         {/* DESKTOP LAYOUT */}
         <div className="hidden lg:grid lg:grid-cols-2 gap-24 items-start w-full">
           {/* Left Content */}
           <div className="flex flex-col items-start lg:text-left">
-            <h3 className="home-challenge-title mb-12 max-w-[450px]">
+            <h3 className="fl3-2 mb-12 max-w-[450px]">
               {activeData.title}
             </h3>
-            <p className="home-challenge-desc">{activeData.description}</p>
+            <p className="fl4-2">{activeData.description}</p>
           </div>
 
           {/* Right Image */}

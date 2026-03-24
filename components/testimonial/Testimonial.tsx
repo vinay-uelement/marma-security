@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import HighlightedText from "../global/HighlightedText";
 import DecorativeLine from "../home/DecorativeLine";
@@ -34,36 +34,71 @@ const testimonials = [
     content:
       "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. It gives us peace of mind knowing our systems are protected around the clock.",
   },
+  {
+    name: "Ganesh",
+    title: "CEO, Lorem ispum",
+    rating: 5.0,
+    content:
+      "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. It gives us peace of mind knowing our systems are protected around the clock.",
+  },
+  {
+    name: "Ganesh",
+    title: "CEO, Lorem ispum",
+    rating: 5.0,
+    content:
+      "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. It gives us peace of mind knowing our systems are protected around the clock.",
+  },
 ];
 
 export default function Testimonial() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    if (!scrollRef.current) return;
+    const { scrollWidth, clientWidth } = scrollRef.current;
+    setScrollProgress((clientWidth / scrollWidth) * 100);
+  }, []);
 
   const handleScroll = () => {
     if (!scrollRef.current || scrollRef.current.children.length === 0) return;
-    const cardWidth = scrollRef.current.children[0].clientWidth;
-    // Calculate safely which array item is taking up the center scroll viewport natively
-    const index = Math.round(scrollRef.current.scrollLeft / cardWidth);
-    setActiveIndex(index);
+
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+
+    // (scrollLeft + clientWidth) / scrollWidth = % of content that has been seen
+    // At start: clientWidth/scrollWidth (already visible portion, not 0)
+    // At end: scrollWidth/scrollWidth = 100%
+    setScrollProgress(((scrollLeft + clientWidth) / scrollWidth) * 100);
+
+    const cardEl = scrollRef.current.children[0] as HTMLElement;
+    const cardWidth = cardEl.offsetWidth;
+    const computedGap = parseInt(getComputedStyle(scrollRef.current).gap) || 24;
+    const index = Math.round(scrollLeft / (cardWidth + computedGap));
+    setActiveIndex(Math.min(index, testimonials.length - 1));
   };
 
   const scrollTo = (index: number) => {
     if (!scrollRef.current || scrollRef.current.children.length === 0) return;
-    const cardWidth = scrollRef.current.children[0].clientWidth;
-    const gap = 24; // 24px = gap-6 in Tailwind natively applied on mobile tracking
-    scrollRef.current.scrollTo({ left: index * (cardWidth + gap), behavior: "smooth" });
+    const cardEl = scrollRef.current.children[0] as HTMLElement;
+    const cardWidth = cardEl.offsetWidth;
+    const computedGap = parseInt(getComputedStyle(scrollRef.current).gap) || 24;
+    scrollRef.current.scrollTo({
+      left: index * (cardWidth + computedGap),
+      behavior: "smooth",
+    });
     setActiveIndex(index);
   };
 
+  const handlePrev = () => scrollTo(Math.max(activeIndex - 1, 0));
+  const handleNext = () =>
+    scrollTo(Math.min(activeIndex + 1, testimonials.length - 1));
+
   return (
     <section className="relative w-full py-16 lg:py-24 overflow-hidden">
-      {/* Removed Background Image */}
-
       <div className="relative z-10 w-full mb-10 lg:mb-16 px-6 lg:px-12 max-w-[1440px] mx-auto">
         <div className="relative flex flex-col items-start md:flex-row md:items-center text-left justify-between gap-6 md:gap-12 w-full h-auto mt-8 md:mt-0">
-
-          {/* Decorative Red Line Graphic (Mobile & Tablet Layout) strictly mapped above the tm-header-pro */}
+          {/* Decorative Line — Mobile */}
           <div className="flex md:hidden absolute top-[-50px] right-[-24px] items-start justify-end w-[280px] pointer-events-none overflow-hidden z-0">
             <div className="w-full flex justify-end">
               <DecorativeLine
@@ -85,7 +120,7 @@ export default function Testimonial() {
             say
           </h2>
 
-          {/* Decorative Red Line Graphic (Desktop Layout) */}
+          {/* Decorative Line — Desktop */}
           <div className="hidden md:block absolute right-0 top-0 pointer-events-none z-0">
             <div className="relative w-[35vw] flex justify-end">
               <DecorativeLine
@@ -109,7 +144,7 @@ export default function Testimonial() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative bg-bg-card border border-border-card rounded-[19] px-[18px] py-[24px] flex flex-col flex-shrink-0 w-full max-w-full min-w-0 sm:w-[70vw] md:w-[45vw] lg:w-[30vw] xl:w-[380px] snap-center md:snap-start mr-6 sm:mr-0"
+              className="relative bg-bg-card border border-border-card rounded-[19px] px-[18px] py-[24px] flex flex-col flex-shrink-0 w-full max-w-full min-w-0 sm:w-[70vw] md:w-[45vw] lg:w-[30vw] xl:w-[380px] snap-center md:snap-start mr-6 sm:mr-0"
             >
               {/* Quote Icon */}
               <div className="absolute top-8 right-8">
@@ -122,16 +157,22 @@ export default function Testimonial() {
                 />
               </div>
 
-              {/* Header: Name and Title */}
+              {/* Header */}
               <div className="mb-[0px]">
-                <h3 className="tm-card-name-bold text-text-dark">{testimonial.name}</h3>
-                <p className="tm-card-subtitle-reg text-text-muted">{testimonial.title}</p>
+                <h3 className="tm-card-name-bold text-text-dark">
+                  {testimonial.name}
+                </h3>
+                <p className="tm-card-subtitle-reg text-text-muted">
+                  {testimonial.title}
+                </p>
               </div>
 
               {/* Content */}
-              <p className="tm-card-text-body text-text-muted leading-relaxed mb-2">{testimonial.content}</p>
+              <p className="tm-card-text-body text-text-muted leading-relaxed mb-2">
+                {testimonial.content}
+              </p>
 
-              {/* Rating Stars (Moved Below) */}
+              {/* Rating */}
               <div className="flex items-center gap-2 mt-auto">
                 <div className="flex items-center gap-3">
                   {[...Array(5)].map((_, i) => (
@@ -154,25 +195,73 @@ export default function Testimonial() {
                   {testimonial.rating.toFixed(1)}
                 </span>
               </div>
-
             </div>
           ))}
         </div>
 
-        {/* Mobile Pagination Dot Controller */}
-        <div className="flex justify-center items-center gap-2 mt-4 md:hidden pr-6">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollTo(index)}
-              className={`rounded-full transition-all duration-300 pointer-events-auto cursor-pointer ${activeIndex === index ? "bg-brand-red w-[14px] h-[14px] shadow-sm" : "bg-[#D9D9D9] w-[10px] h-[10px]"
-                }`}
-              aria-label={`Go to slide ${index + 1}`}
+        {/* Progress Bar + Arrows */}
+        <div className="w-full flex justify-between items-center mt-8 md:mt-12 pt-6 md:pt-8 gap-6 md:gap-12 pr-6 lg:pr-12">
+          {/* Progress Bar */}
+          <div className="flex-grow relative h-[3px]">
+            <div className="absolute inset-0 w-full h-full bg-[#E5E5E5] rounded-full z-10" />
+            <div
+              className="absolute left-0 top-0 h-full bg-[#FF0000] z-20 transition-all duration-300 ease-in-out rounded-full"
+              style={{ width: `${scrollProgress}%` }}
             />
-          ))}
+          </div>
+
+          {/* Arrows */}
+          <div className="flex justify-end gap-3 shrink-0">
+            <button
+              onClick={handlePrev}
+              disabled={activeIndex === 0}
+              className={`w-10 h-10 rounded-full bg-[#f4f4f4] flex flex-shrink-0 items-center justify-center transition-colors
+                ${activeIndex === 0 ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-200 cursor-pointer"}`}
+              aria-label="Previous"
+            >
+              <svg
+                width="6"
+                height="10"
+                viewBox="0 0 6 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="rotate-180"
+              >
+                <path
+                  d="M1 9L5 5L1 1"
+                  stroke="#FF0000"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={handleNext}
+              disabled={activeIndex === testimonials.length - 1}
+              className={`w-10 h-10 rounded-full bg-[#f4f4f4] flex flex-shrink-0 items-center justify-center transition-colors
+                ${activeIndex === testimonials.length - 1 ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-200 cursor-pointer"}`}
+              aria-label="Next"
+            >
+              <svg
+                width="6"
+                height="10"
+                viewBox="0 0 6 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 9L5 5L1 1"
+                  stroke="#FF0000"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-

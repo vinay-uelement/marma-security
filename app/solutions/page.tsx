@@ -42,8 +42,9 @@ export default function SolutionsPage() {
       />
 
       <SolutionsTabs />
-
+      <div className="md:pt-25">
       <SolutionsInfo />
+      </div>
     </main>
   );
 }

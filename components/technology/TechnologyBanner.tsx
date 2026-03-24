@@ -33,7 +33,7 @@ export default function TechnologyBanner({
                 <div className="flex flex-col space-y-6 lg:space-y-8 items-center max-w-[900px] mt-10 md:mt-20">
 
                     {/* Title text */}
-                    <h1 className="tech-banner-title">
+                    <h1 className="fl1 text-white">
                         {title}
                     </h1>
 

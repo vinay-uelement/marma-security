@@ -48,25 +48,25 @@ export default function StatsSection() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 [@media(min-width:1176px)]:grid-cols-4 gap-2 md:gap-8 [@media(min-width:1176px)]:gap-10 my-[10px] md:my-0">
                         
                         {stats.map((stat, index) => (
-                            <div key={index} className="flex flex-col  ">
+                            <div key={index} className="flex flex-col">
                                 
                                 {/* Value */}
-                                <h3 className="stats-value">
+                                <h3 className="fl2 text-white! font-bold">
                                     {stat.value}
                                 </h3>
 
                                 {/* Divider */}
-                                <div className="pr-1 mt-4 md:mt-6 mb-1">
+                                <div className="pr-1 mt-2 md:mt-6 mb-1">
                                     <div className="border-b border-[#FFFFFF]"></div>
                                 </div>
 
                                 {/* Label */}
-                                <p className="stats-label mt-[5px] md:mt-0">
+                                <p className="fl3-1 text-white! font-bold! mt-[5px] md:mt-0">
                                     {stat.label}
                                 </p>
 
                                 {/* Description */}
-                                <p className="stats-desc">
+                                <p className="fl4 text-white!">
                                     {stat.description}
                                 </p>
 
