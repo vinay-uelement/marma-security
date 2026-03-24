@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import Link from 'next/link';
+import Button from '../global/Button';
 
 export interface TechnologyBannerProps {
     title?: React.ReactNode;
@@ -47,12 +48,7 @@ export default function TechnologyBanner({
                     {/* Explore Button */}
                     {buttonText && (
                         <Link href={buttonLink}>
-                            <button className="relative flex items-center justify-center rounded-full pl-8 pr-12 py-1 min-w-[160px] md:min-w-[180px] transition-transform hover:scale-[1.02] group shadow-sm bg-[#FF0000] text-white hover:bg-[#E10000] cursor-pointer">
-                                <span className="font-banner text-[16px] md:text-[20px] font-normal tracking-[-0.01em]">{buttonText}</span>
-                                <div className="bg-[#F4F4F4] text-[#FF0000] rounded-full p-1 flex items-center justify-center shrink-0 group-hover:bg-white transition-colors absolute right-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                                </div>
-                            </button>
+                            <Button icon label={buttonText} />
                         </Link>
                     )}
 

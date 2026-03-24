@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../global/Button";
 
 export interface BannerButton {
   label: string;
@@ -73,53 +74,8 @@ export default function Banner({
             {buttons && buttons.length > 0 && (
               <div className=" lg:absolute flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 pt-6 md:pt-8 lg:pt-16 w-full lg:bottom-0">
                 {buttons.map((btn, index) => {
-                  const isPrimary =
-                    btn.variant !== "secondary" && btn.variant !== "outline";
-
-                  const baseClass =
-                    "relative flex items-center justify-center rounded-full pl-8 pr-12 py-1 min-w-[160px] md:min-w-[180px] transition-transform hover:scale-[1.02] group shadow-sm";
-
-                  const variantClass = isPrimary
-                    ? "bg-[#FF0000] text-white hover:bg-[#E10000]"
-                    : "bg-transparent border border-[#FFFFFF40] text-white hover:bg-white/10";
-
-                  const textClass = isPrimary
-                    ? "font-banner text-[16px] md:text-[20px] font-normal tracking-[-0.01em]"
-                    : "text-[16px] md:text-[20px] tracking-[0.02em]";
-
-                  const iconContainerClass = isPrimary
-                    ? "bg-[#F4F4F4] text-[#FF0000] rounded-full p-1 flex items-center justify-center shrink-0 group-hover:bg-white transition-colors"
-                    : "border border-[#ffffff] text-white rounded-full p-1 flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-colors";
-
                   const ButtonContent = (
-                    <button
-                      key={`btn-inner-${index}`}
-                      onClick={btn.onClick}
-                      className={`${baseClass} ${variantClass}`}
-                    >
-                      <span className={textClass}>{btn.label}</span>
-
-                      {btn.icon && (
-                        <div
-                          className={`${iconContainerClass} absolute right-1`}
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <line x1="7" y1="17" x2="17" y2="7"></line>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                          </svg>
-                        </div>
-                      )}
-                    </button>
+                   <Button key={`btn-inner-${index}`}  label={btn.label} variant={btn.variant} icon={btn.icon} onClick={btn.onClick}/>
                   );
 
                   return btn.href ? (

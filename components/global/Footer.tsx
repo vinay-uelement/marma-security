@@ -1,5 +1,6 @@
 'use client'
 import Image from "next/image";
+import Button from "./Button";
 
 export default function Footer() {
     return (
@@ -127,18 +128,7 @@ export default function Footer() {
                                 />
 
                                 <div className="flex justify-center lg:justify-end pt-3">
-                                    <button type="submit" className="relative flex items-center justify-center rounded-full pl-8 pr-12 py-1 min-w-[160px] md:min-w-[180px] transition-transform hover:scale-[1.02] bg-[#FF0000] text-[#ffffff] hover:bg-[#d12222] w-fit group">
-                                        <span className="footer-btn-text text-white">Submit</span>
-                                        <div className="bg-white rounded-full p-1 flex items-center justify-center shrink-0 group-hover:bg-gray-100 transition-colors absolute right-1">
-                                            <Image
-                                                src="/images/global/arrow-red.png"
-                                                alt="Arrow"
-                                                width={20}
-                                                height={20}
-                                                className="object-contain"
-                                            />
-                                        </div>
-                                    </button>
+                                   <Button icon label="Submit"/>
                                 </div>
                             </form>
                         </div>

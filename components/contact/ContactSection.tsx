@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import HighlightedText from '@/components/global/HighlightedText';
 import DecorativeLine from '../home/DecorativeLine';
+import Button from '../global/Button';
 
 export default function ContactSection() {
     const [formData, setFormData] = useState({
@@ -203,30 +204,7 @@ export default function ContactSection() {
                                     </div>
 
                                     {/* Submit button */}
-                                    <button
-                                        type="submit"
-                                        className="inline-flex items-center gap-3 bg-[#FF0000] hover:bg-[#D10000] text-white rounded-full pl-7 pr-2 py-2 transition-colors"
-                                    >
-                                        <span className="contact-submit-text">Submit</span>
-                                        <div className="flex items-center justify-center w-[34px] h-[34px] rounded-full bg-white border border-[#FF0000] text-[#FF0000] hover:bg-[#F5F5F5] transition-colors">
-
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="16"
-                                                height="16"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeWidth="2.5"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            >
-                                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                                <polyline points="7 7 17 7 17 17"></polyline>
-                                            </svg>
-
-                                        </div>
-                                    </button>
+                                   <Button icon label="Submit" />
                                 </div>
 
                             </form>

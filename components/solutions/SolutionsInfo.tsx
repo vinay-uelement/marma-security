@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Button from "../global/Button";
 
 interface SolutionsInfoProps {
   imageSrc?: string;
@@ -19,20 +20,6 @@ export default function SolutionsInfo({
 }: SolutionsInfoProps) {
   const isRight = imagePosition === "right";
 
-  const ExploreButton = ({ className = "" }: { className?: string }) => (
-    <button className={`relative flex items-center justify-center rounded-full pl-8 pr-12 py-[9px] min-w-[160px] transition-transform hover:scale-[1.02] bg-transparent border border-[#FF000040] text-[#FF0000] hover:bg-[#FF0000]/5 w-fit group ${className}`}>
-      <span className="solutions-info-btn-text">Explore</span>
-      <div className="border border-[#FF0000] text-[#FF0000] rounded-full p-1 flex items-center justify-center shrink-0 group-hover:bg-[#FF0000]/10 transition-colors absolute right-1">
-        <Image
-          src="/images/global/arrow-red.png"
-          alt="Arrow"
-          width={20}
-          height={20}
-          className="object-contain"
-        />
-      </div>
-    </button>
-  );
 
   return (
     <section className="relative w-full pt-12 pb-0 md:pb-16 md:pt-10 md:pb-24 flex flex-col items-center overflow-x-clip">
@@ -60,7 +47,7 @@ export default function SolutionsInfo({
             </div>
 
             {/* Outlined Explore Button (Desktop only, bound inside the text bounds) */}
-            <ExploreButton className="hidden lg:flex" />
+              <Button icon variant="secondary" label="Explore" textContainer="text-black!" className=" border-gray-400! hidden lg:flex"/>
           </div>
         </div>
 
@@ -81,7 +68,7 @@ export default function SolutionsInfo({
 
         {/* Outlined Explore Button (Mobile/Tablet only, situated beneath the image physically) */}
         <div className="flex lg:hidden justify-center items-center w-full order-3 mt-4">
-            <ExploreButton className="flex lg:hidden" />
+        <Button icon variant="secondary" label="Explore" textContainer="text-black!" className=" border-gray-400!"/>
         </div>
 
       </div>
