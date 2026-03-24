@@ -65,9 +65,9 @@ const Button = (props: Props) => {
         d="M 50 28 L 50 72 M 32 54 L 50 72 L 68 54"
         transform="rotate(-135 50 50)"
         stroke="black"
-        stroke-width="4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         fill="none"
       />
     </mask>
