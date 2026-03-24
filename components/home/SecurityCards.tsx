@@ -15,42 +15,42 @@ interface SecurityCard {
 const cards: SecurityCard[] = [
   {
     title: "PhishBlock",
-    description: "Protection against phishing attacks",
+    description: "leverages AI-powered URL reputation checking and SSL inspection to identify and neutralize phishing attempts and credential theft in real time.",
     number: "01",
     image: "/images/features/Malware-guard.webp",
     linkHref: "#",
   },
   {
     title: "NetImmunity",
-    description: "Protection against network-based attacks",
+    description: "acts as a high-performance Intrusion Prevention System (IPS), neutralizing DDoS attacks, brute-force attempts, and unauthorized network scans before they reach your devices.",
     number: "02",
     image: "/images/features/Malware-guard.webp",
     linkHref: "#",
   },
   {
     title: "MalwareGuard",
-    description: "Protection against dangerous malware and spyware",
+    description: "provides advanced zero-day defense, using heuristic analysis and sandboxing to identify and block sophisticated malware and spyware before they can compromise your network.",
     number: "03",
     image: "/images/features/Malware-guard.webp",
     linkHref: "#",
   },
   {
     title: "RansomGuard",
-    description: "Protection against dangerous ransomware",
+    description: "utilizes behavioral analysis and multi-layered blocking to detect ransomware activity and sever unauthorized communications with command-and-control (C2) servers in real time.",
     number: "04",
     image: "/images/features/Malware-guard.webp",
     linkHref: "#",
   },
   {
     title: "SpyShield",
-    description: "Protection against spyware and tracking",
+    description: "prevents unauthorized surveillance and data harvesting by blocking spyware, keyloggers, and tracking scripts that attempt to monitor your activity or access your device’s camera and microphone.",
     number: "05",
     image: "/images/features/Malware-guard.webp",
     linkHref: "#",
   },
   {
     title: "DDoSGuard",
-    description: "Protection against distributed denial of service attacks",
+    description: "provides high-capacity mitigation against Distributed Denial of Service (DDoS) attacks, filtering malicious traffic and ensuring your network remains responsive and available even during massive, automated connection attempts.",
     number: "06",
     image: "/images/features/Malware-guard.webp",
     linkHref: "#",
@@ -155,7 +155,7 @@ export default function SecurityCards() {
               <div className="flex flex-col flex-grow bg-[#F3F3F3] border border-[#E5E5E5] rounded-[16px] md:rounded-[24px] p-[16px] md:p-[32px] md:min-h-[307px] group-hover:shadow-[2px_2px_4px_0px_rgba(0,0,0,0.15)]">
                 {" "}
                 <h3 className="fl3-3 mb-[8px]">{card.title}</h3>
-                <p className="fl4-3 flex-grow mb-[16px] md:mb-[32px]">
+                <p className="fl4-2 flex-grow mb-[16px] md:mb-[32px]">
                   {card.description}
                 </p>
                 <Link
