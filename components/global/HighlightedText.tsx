@@ -15,13 +15,6 @@ export default function HighlightedText({
     return (
         <span className={`relative inline-block z-10 ${className}`}>
             {text}
-            <Image
-                src="/images/global/highlighting.png"
-                alt="highlight"
-                width={180}
-                height={28}
-                className={`absolute h-auto object-contain pointer-events-none -z-10 ${imageClassName}`}
-            />
         </span>
     );
 }

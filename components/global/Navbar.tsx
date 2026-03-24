@@ -32,7 +32,7 @@ export default function Navbar() {
     return (
         <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[93%] max-w-[1400px] z-50">
             {/* Main Navbar Container */}
-            <div className="navbar-glass flex items-center justify-between gap-4 lg:gap-6 px-3 py-1 md:py-2 ps-3 md:ps-10 rounded-2xl md:rounded-2xl shadow-lg relative z-50">
+            <div className="navbar-glass flex items-center justify-between gap-4 lg:gap-6 px-3 py-1 md:py-2 ps-3 md:ps-10 rounded-2xl md:rounded-full shadow-lg relative z-50">
                 {/* Left Side: Logo */}
                 <div className="flex flex-1 items-center min-w-0">
                     <Link href="/">

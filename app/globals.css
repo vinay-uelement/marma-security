@@ -316,7 +316,7 @@ img {
 }
 
 .solutions-info-bg-text {
-  @apply font-body font-extrabold text-[23px] leading-[62px] tracking-[0.18em] sm:text-[28px] sm:leading-[56px] sm:tracking-[0.12em] md:font-bold md:text-[42px] md:leading-[52px] md:tracking-[-0.01em] lg:text-[75px] lg:leading-[62px] text-[#F1F1F1] uppercase text-center;
+  @apply font-body font-extrabold text-[23px] leading-[62px] tracking-[0.18em] sm:text-[28px] sm:leading-[56px] sm:tracking-[0.12em] md:font-bold md:text-[42px] md:leading-[52px] md:tracking-[-0.01em] lg:text-[80px] lg:leading-[62px] text-[#F1F1F1] uppercase text-center;
 }
 
 .solutions-info-title {
