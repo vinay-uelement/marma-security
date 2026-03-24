@@ -50,7 +50,7 @@ export default function Home() {
           rightImage="/images/banners/homepage-right-banner1.png"
         />
       {/* Updated section with responsive top padding and overflow control */}
-      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-16 md:pt-24 bg-[#FFFFFF] relative">
+      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-0 md:pt-24 bg-[#FFFFFF] relative">
         {/* The flex container now stays flex-col until 901px */}
         <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-2 gap-8 relative z-10 w-full md:mb-16">
           {/* TEXT */}

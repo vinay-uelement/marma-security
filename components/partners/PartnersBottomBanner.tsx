@@ -6,7 +6,7 @@ export default function PartnersBottomBanner() {
     return (
         <>
             {/* DESKTOP VIEW */}
-            <section className="hidden lg:block w-full relative py-5 md:py-12 lg:py-16 mb-0 md:mb-4 bg-[#fff]">
+            <section className="hidden lg:block w-full relative py-0 md:py-12 lg:py-16 mb-4 md:mb-0 bg-[#fff]">
                 
                 {/* Top Left Decorative Red Line */}
                 <div className="absolute top-12 lg:top-16 left-0 w-screen z-20">
@@ -23,7 +23,7 @@ export default function PartnersBottomBanner() {
                 {/* The grey background strip that goes across the bottom */}
                 <div className="absolute bottom-0 w-full h-[3%] lg:h-[10%] bg-[#F2F2F2] z-0" />
                 
-                <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 relative z-20 mt-6 md:mt-16 lg:mt-0">
+                <div className="w-full max-w-[1440px] mx-auto px-6 pb-3 lg:px-12 relative z-20 mt-6 md:mt-16 lg:mt-0">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 lg:gap-20 items-end">
                         
                         {/* Left Column: Device Image */}
@@ -66,7 +66,7 @@ export default function PartnersBottomBanner() {
             </section>
 
             {/* MOBILE & TABLET VIEW */}
-            <section className="lg:hidden w-full relative z-20 flex flex-col pt-10 md:pt-4">
+            <section className="lg:hidden w-full relative z-20 flex flex-col pt-10 md:pt-4 pb-5 md:pb-0">
                 {/* Top Left Decorative Red Line */}
                 <div className="absolute top-2 sm:top-4 left-0 w-screen z-20">
                     <div className="w-[180px] sm:w-[240px]">

@@ -79,7 +79,8 @@ export default function SimplifyLife() {
         </h2>
 
         {/* Decorative Red Line Graphic */}
-          <div className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-4 min-[901px]:mt-0 pointer-events-none z-0">
+          <div className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-12
+           min-[901px]:mt-0 pointer-events-none z-0">
           <DecorativeLine
             viewBox="0 0 500 80"
             points="-3000,40 200,40"

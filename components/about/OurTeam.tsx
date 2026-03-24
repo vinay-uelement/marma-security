@@ -111,11 +111,11 @@ export default function OurTeam() {
 
                             <div className="flex flex-col">
 
-                                <h3 className="about-team-name">
+                                <h3 className="fl5-3 font-semibold text-text-dark!">
                                     {member.name}
                                 </h3>
 
-                                <p className="about-team-role">
+                                <p className="fl4-3 text-text-muted!">
                                     {member.role}
                                 </p>
 

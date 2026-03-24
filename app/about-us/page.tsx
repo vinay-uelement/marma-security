@@ -56,8 +56,9 @@ export default function PartnersPage() {
       <section className="w-full bg-[#FFFFFF]">
         <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-12 md:pt-36">
           {/* Header */}
-          <div className="flex flex-col md:flex-row justify-between items-center mb-10 md:mb-[70px] gap-8 text-center md:text-left">
-            <h2 className="about-section-heading md:flex-1">
+        <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-6 md:mb-2 gap-8 relative z-10 w-full md:mb-16">
+          {/* TEXT */}
+          <h2 className="w-full min-[901px]:w-[55%] fl2 text-left">
               Our{" "}
               <HighlightedText
                 text="Team"
@@ -67,7 +68,7 @@ export default function PartnersPage() {
             </h2>
 
             {/* Decorative */}
-            <div className="ml-auto w-[320px] lg:w-[450px] flex flex-col">
+          <div className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-4 min-[901px]:mt-0 pointer-events-none z-0">
               <DecorativeLine
                 viewBox="0 0 700 80"
                 points="-3000,40 210,40"
