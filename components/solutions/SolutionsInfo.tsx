@@ -22,9 +22,9 @@ export default function SolutionsInfo({
 
 
   return (
-    <section className="relative w-full pt-12 pb-0 md:pb-16 md:pt-10 md:pb-24 flex flex-col items-center overflow-x-clip">
+    <section className="relative w-full mt-8 md:pt-12 pb-0 md:pb-16 md:pt-10 md:pb-24 flex flex-col items-center overflow-x-clip">
       {/* Faded Background Text */}
-      <div className="w-full absolute top-10 md:top-3 -translate-y-1/2 flex justify-center z-0 select-none pointer-events-none px-0 md:px-4 max-w-[1440px] mx-auto">
+      <div className="w-full absolute top-[-8] md:top-3 -translate-y-1/2 flex justify-center z-0 select-none pointer-events-none px-0 md:px-4 max-w-[1440px] mx-auto">
         <span className="solutions-info-bg-text w-full whitespace-nowrap">
           {bgText}
         </span>
