@@ -18,9 +18,9 @@ export default function ProductPage() {
           sectionClassName="py-16 lg:py-24"
           title={
             <>
-              Security{" "}
+              Enterprise-Grade{" "}
               <HighlightedText
-                text="Products"
+                text="Cybersecurity"
                 imageClassName="bottom-[-18px] md:bottom-[-20px]"
               />
               <br className="hidden lg:block" /> for Every Network
@@ -29,15 +29,13 @@ export default function ProductPage() {
           titleClassName="font-banner font-normal text-[32px] md:text-[45px] lg:text-[60px] leading-[1.2] tracking-[-0.01em] text-white"
           subtitle={
             <>
-              Marma offers a range of intelligent cybersecurity
+              Marma Security serves three distinct markets 
               <br className="hidden lg:block" />
-              products designed to protect entire networks with ease.
+              with tailored product lines, 
               <br className="hidden lg:block" />
-              Built for both homes and businesses, our solutions
+              all powered by our unified AI-driven cloud platform. 
               <br className="hidden lg:block" />
-              deliver enterprise-grade security without the complexity
-              <br className="hidden lg:block" />
-              of traditional tools.
+              Choose the protection that fits your scale.
             </>
           }
           subtitleClassName="font-body font-light text-[16px] md:text-[20px] lg:text-[24px] leading-[1.6] md:leading-[35px] text-[#E0E0E0] max-w-[650px] mt-6"
@@ -105,7 +103,7 @@ export default function ProductPage() {
             mainFeature={{
               title: "CYBERSECURITY PROTECTION",
               description:
-                "SafeBiz Security Gateway protects all internet-connected devices on your network from phishing, ransomware, malware, IoT/Network attacks, and the latest cyber threats.",
+                "SafeHome Firewall is an AI-powered, plug-and-play security gateway that protects every internet-connected device wirelessly in minutes.",
               image: "/images/banners/solution-banner-right1.webp",
             }}
             subFeatures={[
@@ -128,9 +126,9 @@ export default function ProductPage() {
           <ProductShowcase
             productName="SafeBiz"
             mainFeature={{
-              title: "ENTERPRISE SECURITY",
+              title: "SMB SECURITY",
               description:
-                "SafeBiz provides robust protection for enterprise networks, shielding sensitive business data and infrastructure from advanced persisting threats and unauthorized access.",
+                "SafeBiz Firewall is specifically designed for SMBs that require enterprise-grade security without a dedicated IT security team. It delivers comprehensive protection against phishing, ransomware, Advanced Persistent Threats (APTs), social engineering, and other cyber threats.",
               image: "/images/banners/homepage-right-banner1.webp",
             }}
             subFeatures={[
@@ -141,9 +139,9 @@ export default function ProductPage() {
                 image: "/images/features/customer-safebiz.webp", // Asset not provided yet
               },
               {
-                title: "ZERO TRUST ARCHITECTURE",
+                title: "ENDPOINT PROTECTION",
                 description:
-                  "Implement strict access controls and verify every request regardless of origin, protecting your endpoints with industry-leading zero trust frameworks.",
+                  "Windows Agent Software: Firewall integration, Anti-Virus, DNS Security, URL Filtering, AI/DLP.",
                 image: "/images/features/securehome-safehome.webp", // Asset not provided yet
               },
             ]}

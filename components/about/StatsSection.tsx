@@ -10,7 +10,7 @@ const stats: StatItem[] = [
     {
         value: "8 million +",
         label: "Verified Sites",
-        description: "Protection against dangerous ransomware"
+        description: "Real-time URL reputation checking and SSL inspection to ensure safe browsing."
     },
     {
         value: "7.9 Million +",

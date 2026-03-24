@@ -7,11 +7,11 @@ import DecorativeLine from "../home/DecorativeLine";
 
 const testimonials = [
   {
-    name: "Ganesh",
+    name: "C. Booth",
     title: "CEO, Lorem ispum",
     rating: 5.0,
     content:
-      "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. It gives us peace of mind knowing our systems are protected around the clock.",
+      "Outstanding Cybersecurity Solution!",
   },
   {
     name: "Ganesh",

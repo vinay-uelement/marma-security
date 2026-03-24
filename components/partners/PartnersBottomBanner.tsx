@@ -57,7 +57,7 @@ export default function PartnersBottomBanner() {
                             </p>
                             
                             <p className="partners-btm-emphasis">
-                                We think that’s unacceptable.
+                            Join the Marma Security Partner Program to gain access to comprehensive training, enablement, and co-marketing support.
                             </p>
                         </div>
 

@@ -22,7 +22,7 @@ export default function TechnologyPage() {
             Technology
           </>
         }
-        subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        subtitle="Marma Security's products are powered by a comprehensive suite of enterprise-grade security technologies, all orchestrated through AI-powered automation. The platform uses continuous machine learning, behavioral analysis, and global cloud intelligence to deliver autonomous, predictive protection."
         backgroundImage="/images/banners/Technology-banner.webp"
         buttonText="Explore"
       />
