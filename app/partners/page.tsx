@@ -33,6 +33,12 @@ export default function PartnersPage() {
               />
             </h1>
 
+<<<<<<< HEAD
+                        {/* Subtitle */}
+                        <p className="partners-banner-subtitle max-w-[700px] mx-auto mt-4">
+                        Marma Security operates a comprehensive partner program designed to extend reach and enhance service delivery. Our ecosystem enables VARs, MSPs, MSSPs, and System Integrators to offer enterprise-grade cybersecurity to all customer segments with simplified deployment and strong recurring revenue potential.
+                        </p>
+=======
             {/* Subtitle */}
             <p className="partners-banner-subtitle max-w-[700px] mx-auto mt-4">
               Marma offers a range of intelligent cybersecurity products
@@ -40,6 +46,7 @@ export default function PartnersPage() {
               homes and businesses, our solutions deliver enterprise-grade
               security without the complexity of traditional tools.
             </p>
+>>>>>>> 7e194c87c68c6386a5c69c8266eded6b5496647e
 
             {/* Buttons Row */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8 w-full">

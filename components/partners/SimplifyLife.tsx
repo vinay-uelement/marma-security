@@ -30,11 +30,11 @@ const features: FeatureItem[] = [
   {
     id: "proof-of-value",
     image: "/images/partners/simplify-img2.webp", // Using existing placeholder
-    title: "Continous Proof of Value",
+    title: "Continuous Proof of Value",
     description: (
       <>
         <strong className="fl5-1 block mb-[7px] md:mb-4">
-          Measurable securitperformance in real time.
+        Measurable security performance in real time.
         </strong>
         <p className="fl4-1 mb-[10px] md:mb-6">
           Cybersecurity often works invisibly—making value hard to see. Marma

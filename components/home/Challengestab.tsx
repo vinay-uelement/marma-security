@@ -17,33 +17,33 @@ const tabItems: TabData[] = [
   {
     id: "healthcare",
     label: "Complex Setup & Maintenance",
-    title: "Clear & Benefit-Focused",
+    title: "Zero-Touch Deployment",
     description:
-      "Marma installs in under five minutes and begins protecting your network immediately. Designed with simplicity at its core, it requires no technical knowledge, manual configurations, or ongoing maintenance. Once set up, Marma runs automatically in the background, continuously monitoring and defending your entire Wi-Fi network against cyber threats.",
+      "Marma's AI-powered security gateways install in under five minutes with true plug-and-play simplicity. Designed for users with zero IT knowledge, the cloud-managed platform runs autonomously in the background, handling all updates and threat monitoring without manual configurations or ongoing maintenance.",
     image: "/images/solutions/healthcare-solution.webp",
   },
   {
     id: "legal",
     label: "Privacy & Data Safety Concerns",
-    title: "Clear & Benefit-Focused",
+    title: "Comprehensive Identity & Data Protection",
     description:
-      "Law firms handle highly sensitive client data. Marma provides enterprise-grade encryption and network monitoring to prevent unauthorized access to privileged communications and case files across your entire infrastructure.",
+      "Your private data is shielded by our SafeID™ and NetImmunity™ engines, which proactively scan for identity theft attempts, prevent credential theft, and block unauthorized network access. Marma ensures your sensitive information remains secure and supports compliance with major privacy frameworks like HIPAA, PCI-DSS, and GDPR.",
     image: "/images/solutions/healthcare-solution.webp",
   },
   {
     id: "finance",
     label: "Rising Cyber Threats",
-    title: "Clear & Benefit-Focused",
+    title: "AI-Powered Threat Neutralization",
     description:
-      "Financial institutions require the highest level of security. Our zero-trust architecture ensures that every transaction, client portfolio, and internal communication remains completely isolated from external threats.",
+      "Stay ahead of evolving cybercriminals with an autonomous security platform. Marma leverages continuous machine learning and global cloud intelligence to predict and block modern threats in real time—including phishing attacks, dangerous ransomware, zero-day malware, and the latest cyber scams.",
     image: "/images/solutions/healthcare-solution.webp",
   },
   {
     id: "manufacturing",
     label: "Expensive Security Solutions",
-    title: "Clear & Benefit-Focused",
+    title: "Enterprise-Grade Security, Democratized",
     description:
-      "Modern manufacturing relies on connected IoT devices. Marma protects operational technology (OT) from disruption, ensuring production lines continue running without vulnerability to external network attacks.",
+      "Marma Security eliminates the high costs of traditional enterprise security. By consolidating multiple security tools into a single gateway that protects dozens of devices, we deliver robust, network-wide protection without expensive per-device licensing fees or hidden IT overhead.",
     image: "/images/solutions/healthcare-solution.webp",
   },
 ];

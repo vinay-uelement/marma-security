@@ -93,7 +93,7 @@ export default function ContactSection() {
 
                                 <div className="flex flex-col gap-1">
                                     <span className="contact-card-label">Phone Number</span>
-                                    <span className="contact-card-value">+91 45687412232</span>
+                                    <span className="contact-card-value">+1-408-582-8962</span>
                                 </div>
 
                             </div>
@@ -105,7 +105,7 @@ export default function ContactSection() {
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <span className="contact-card-label">Corporate Office</span>
-                                    <span className="contact-card-value">sdfghjkfghjnmk., sdfghj</span>
+                                    <span className="contact-card-value">Marma Security Inc., 180 Promenade Ste. 300, Sacramento, CA - 95834</span>
                                 </div>
                             </div>
 
@@ -116,7 +116,7 @@ export default function ContactSection() {
                                 </div>
                                 <div className="flex flex-col gap-1">
                                     <span className="contact-card-label">Email</span>
-                                    <span className="contact-card-value">asdfghjk@gmail.com</span>
+                                    <span className="contact-card-value">info@marmasec.com</span>
                                 </div>
                             </div>
                         </div>

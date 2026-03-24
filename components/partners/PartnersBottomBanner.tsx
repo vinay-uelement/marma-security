@@ -55,9 +55,15 @@ export default function PartnersBottomBanner() {
                             <p className="fl4-1 pb-0 text-justify md:text-left !text-text-dark">
                                 Marma delivers automated, network-level security that is easy to deploy, manage, and scale removing complexity while ensuring consistent protection for every client With centralized control and real-time threat protection, it secures all connected devices without added operational effort.
                             </p>
+<<<<<<< HEAD
+                            
+                            <p className="partners-btm-emphasis">
+                            Join the Marma Security Partner Program to gain access to comprehensive training, enablement, and co-marketing support.
+=======
 
                             <p className="fl5-1">
                                 We think that’s unacceptable.
+>>>>>>> 7e194c87c68c6386a5c69c8266eded6b5496647e
                             </p>
                         </div>
 
