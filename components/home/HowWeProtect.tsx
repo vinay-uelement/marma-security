@@ -89,10 +89,10 @@ export default function HowWeProtect() {
 
             {/* Header Section */}
             <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-20 md:pt-24">
-                <div className="relative flex flex-col md:flex-row justify-between items-start mb-12 md:mb-24 gap-4 md:gap-8 text-left w-full sm:h-[80px] md:h-auto">
+                <div className="relative flex flex-col md:flex-row justify-between items-start mb-6 md:mb-24 gap-4 md:gap-8 text-left w-full sm:h-[80px] md:h-auto">
 
                     {/* Decorative Red Line Graphic (Mobile & Tablet Layout) -> Absolute to not push content down */}
-                    <div className="flex md:hidden absolute top-[-50px] right-[-24px] items-start justify-end w-[280px] pointer-events-none overflow-hidden z-0">
+                    <div className="flex md:hidden absolute top-[-50px] right-[-24px] items-start justify-end w-[280px] pointer-events-none overflow-x-clip z-0">
                         <div className="w-full flex justify-end">
                             <DecorativeLine
                                 viewBox="0 0 700 80"
@@ -127,7 +127,7 @@ export default function HowWeProtect() {
             </div>
 
             {/* Features List Layout */}
-            <div className="flex flex-col w-full pb-8 md:pb-16 gap-16 lg:gap-24 relative overflow-hidden">
+            <div className="flex flex-col w-full pb-8 md:pb-16 gap-10 lg:gap-24 relative overflow-hidden">
                 {features.map((feature, index) => (
                     <div key={feature.id} className="w-full relative">
                         {/* Independent Full-Width Desktop/Mobile Background strictly for the 2nd Row */}

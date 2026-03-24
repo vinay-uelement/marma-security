@@ -93,9 +93,9 @@ export default function Home() {
       <SecurityCards />
 
       {/* Inverted Solutions Info Component */}
-      <div className="w-full max-w-[1440px] mx-auto pt-14 bg-[#fff]">
+      <div className="w-full max-w-[1440px] mx-auto pt-8 md:pt-14 bg-[#fff]">
         {/* Red Decorative Line container on Home page only */}
-        <div className="relative mb-12 w-screen left-1/2 -translate-x-1/2">
+        <div className="relative mb-2 md:mb-12 w-screen left-1/2 -translate-x-1/2">
           <div className="w-[500px] md:w-[600px] lg:w-[1000px]">
             <DecorativeLine
               viewBox="0 0 1500 80"
@@ -106,7 +106,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="pb-12 bg-[#fff]">
+      <div className="pb-18 bg-[#fff]">
         <HomeSolutionsInfo />
       </div>
 
