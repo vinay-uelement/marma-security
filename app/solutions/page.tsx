@@ -1,14 +1,14 @@
 import HighlightedText from "@/components/global/HighlightedText";
-import Banner from "@/components/global/Banner";
 import SolutionsTabs from "@/components/solutions/SolutionsTabs";
 import SolutionsInfo from "@/components/solutions/SolutionsInfo";
 import Image from "next/image";
+import Banner from "@/components/home/Banner";
 
 export default function SolutionsPage() {
   return (
     <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
       <Banner
-        backgroundImage="/images/banners/banner-solution.webp"
+        backgroundImage="/images/banners/banner-solution.png"
         heightVariant="900"
         ContinerClass="h-[93vh]"
         title={
@@ -37,9 +37,9 @@ export default function SolutionsPage() {
             icon: true,
           },
         ]}
-        rightImage="/images/banners/solution-banner-right1.webp"
-        showRightImageCircle={false}
-        rightImageClassName="lg:w-[72dvh] sm:w-[500px] h-auto lg:-translate-x-[-90px] translate-y-[15%] lg:translate-y-[15%] xl:translate-y-[20%] z-30 transform-gpu"
+        rightImage="/images/banners/solution-banner-right1.png"
+        rightImageAlt="Banner Image"
+        rightImageClassName='w-[35vw]! max-sm:w-3/5! md:bottom-8'
       />
 
       <SolutionsTabs />

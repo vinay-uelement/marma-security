@@ -211,7 +211,7 @@ export default function IntelligentSecurity() {
               <button
                 onClick={handlePrev}
                 disabled={currentIndex === 0}
-                className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#f4f4f4] flex flex-shrink-0 items-center justify-center transition-colors
+                className={`w-10 h-10 rounded-full bg-[#f4f4f4] flex flex-shrink-0 items-center justify-center transition-colors
                                     ${currentIndex === 0 ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-200 cursor-pointer"}`}
               >
                 {/* Left Arrow Icon */}
@@ -235,7 +235,7 @@ export default function IntelligentSecurity() {
               <button
                 onClick={handleNext}
                 disabled={currentIndex === maxIndex}
-                className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#f4f4f4] flex flex-shrink-0 items-center justify-center transition-colors 
+                className={`w-10 h-10 rounded-full bg-[#f4f4f4] flex flex-shrink-0 items-center justify-center transition-colors 
                                     ${currentIndex === maxIndex ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-200 cursor-pointer"}`}
               >
                 {/* Right Arrow Icon */}
