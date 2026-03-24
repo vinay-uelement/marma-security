@@ -23,7 +23,7 @@ export default function PartnersPage() {
                 <div className="relative z-10 w-full px-6 lg:px-12 flex flex-col items-center justify-center text-center">
                     <div className="flex flex-col space-y-6 lg:space-y-8 items-center max-w-[900px] mt-10 md:mt-20">
                         {/* Title text */}
-                        <h1 className="partners-banner-title">
+                        <h1 className="fl1 text-white!">
                             MSP, MSSP and ITSP{" "}
                             <HighlightedText
                                 text="Partners."
