@@ -54,7 +54,7 @@ export default function Home() {
         {/* The flex container now stays flex-col until 901px */}
         <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-2 gap-8 relative z-10 w-full md:mb-16">
           {/* TEXT */}
-          <h2 className="w-full min-[901px]:w-[55%] home-exposed-heading text-left">
+          <h2 className="fl2 w-full min-[901px]:w-[55%] home-exposed-heading text-left">
             Your{" "}
             <HighlightedText
               text="business and home"
