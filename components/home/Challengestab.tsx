@@ -212,10 +212,13 @@ export default function Challengestab() {
                 <DecorativeLine
                   viewBox="0 0 1260 500"
                   points="20,150 500,150 600,270 3000,270"
-                  dots={[{ cx: 0, cy: 150, rippleCount: 3 }]}
+                  dots={[
+                    { cx: 0, cy: 150, rippleCount: 3, rippleBaseDelay: 0.9 },
+                  ]}
                   className="w-full h-auto -mt-20"
                   strokeWidth={3}
-                  dotRadius={22}
+                  dotRadius={20}
+                  animationDuration={3.2}
                 />
               </div>
             </div>

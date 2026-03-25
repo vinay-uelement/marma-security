@@ -14,6 +14,7 @@ interface DecorativeLineProps {
   strokeColor?: string;
   strokeWidth?: number;
   dotRadius?: number;
+  animationDuration?: number;
   className?: string;
 }
 
@@ -24,6 +25,7 @@ export default function DecorativeLine({
   strokeColor = "#FF0000",
   strokeWidth = 1.5,
   dotRadius = 12,
+  animationDuration = 2.5,
   className = "w-full h-auto",
 }: DecorativeLineProps) {
   const RIPPLE_INTERVAL = 0.5;
@@ -75,6 +77,7 @@ export default function DecorativeLine({
                 className="dl-ripple-ring"
                 style={{
                   animationDelay: `${baseDelay + ringIdx * RIPPLE_INTERVAL}s`,
+                  animationDuration: `${animationDuration}s`,
                 }}
               />
             ))}

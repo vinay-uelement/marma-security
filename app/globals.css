@@ -321,7 +321,7 @@ img {
 
 .tm-card-subtitle-reg {
   font-family: var(--font-body);
-  @apply font-normal text-[13px] lg:text-[14px] leading-[1.5] lg:leading-[40px] tracking-normal;
+  @apply font-normal text-[15px] lg:text-[16px] leading-[1.5] lg:leading-[40px] tracking-normal;
 }
 
 .tm-card-rating {

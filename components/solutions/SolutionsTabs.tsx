@@ -197,14 +197,16 @@ export default function SolutionsTabs() {
               points="-3000,40 200,40"
               dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
               className="w-full h-auto scale-x-[-1]"
-              dotRadius={8}
+              dotRadius={7}
+              animationDuration={2.2}
             />
             <DecorativeLine
               viewBox="0 0 500 120"
               points="20,20 80,90 3000,90"
-              dots={[{ cx: 20, cy: 20, rippleCount: 3, rippleBaseDelay: 0 }]}
-              className="w-full h-auto -mt-20"
+              dots={[{ cx: 20, cy: 20, rippleCount: 4, rippleBaseDelay: 0.5 }]}
+              className="w-full h-auto -mt-28"
               dotRadius={8}
+              animationDuration={3}
             />
           </div>
         </div>

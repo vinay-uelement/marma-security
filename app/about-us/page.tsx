@@ -74,15 +74,20 @@ export default function PartnersPage() {
                 points="-3000,40 210,40"
                 dots={[{ cx: 210, cy: 40, rippleCount: 3 }]}
                 className="w-full h-auto scale-x-[-1]"
+                dotRadius={10}
+                animationDuration={2.2}
               />
               <DecorativeLine
                 viewBox="0 0 1260 500"
                 points="20,150 500,150 600,270 3000,270"
                 //   points="20,150 200,150 280,270 3000,270"
-                dots={[{ cx: 0, cy: 150, rippleCount: 3 }]}
+                dots={[
+                  { cx: 0, cy: 150, rippleCount: 4, rippleBaseDelay: 0.2 },
+                ]}
                 className="w-full h-auto -mt-10 md:-mt-28"
                 strokeWidth={3}
-                dotRadius={22}
+                dotRadius={20}
+                animationDuration={2.6}
               />
             </div>
           </div>
