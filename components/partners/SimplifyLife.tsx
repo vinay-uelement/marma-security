@@ -86,7 +86,7 @@ export default function SimplifyLife() {
             points="-3000,40 200,40"
             dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
             className="w-full h-auto scale-x-[-1]"
-            dotRadius={7}
+            dotRadius={6}
             animationDuration={2.5}
           />
           <DecorativeLine
@@ -94,7 +94,7 @@ export default function SimplifyLife() {
             points="20,20 80,90 3000,90"
             dots={[{ cx: 20, cy: 20, rippleCount: 4, rippleBaseDelay: 0.9 }]}
             className="w-full h-auto -mt-28"
-            dotRadius={8}
+            dotRadius={7}
             animationDuration={3}
           />
         </div>
