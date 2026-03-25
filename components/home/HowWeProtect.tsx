@@ -214,7 +214,7 @@ export default function HowWeProtect() {
                 </div>
 
                 {/* Column 2: Description Data Area */}
-                <div className="flex flex-col justify-start text-left h-full pt-[2px]">
+                <div className="flex flex-col justify-start text-left h-full mt-2">
                   {feature.description}
                 </div>
               </div>
@@ -239,7 +239,7 @@ export default function HowWeProtect() {
                 </div>
 
                 {/* 3. Description Column with conditional Left Border on Desktop */}
-                <div className="flex flex-col justify-center items-center md:items-start h-full border-l-0 border-t-[1.5px] md:border-t-0 md:border-l-[1.5px] border-[#E5E5E5] pt-6 md:pt-0 pl-0 md:pl-8 lg:pl-10 mt-2 md:mt-0">
+                <div className="flex flex-col justify-start items-center md:items-start h-full border-l-0 border-t-[1.5px] md:border-t-0 md:border-l-[1.5px] border-[#E5E5E5] pt-6 md:pt-5 pl-0 md:pl-8 lg:pl-10 mt-2 md:mt-0">
                   <div className="flex flex-col justify-center items-center md:items-start w-full">
                     {feature.description}
                   </div>
