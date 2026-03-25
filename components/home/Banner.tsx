@@ -55,16 +55,16 @@ export default function Banner({
         alt="hero-background"
         width={1000}
         height={1000}
-        className="absolute w-full h-[92vh]! object-cover object-center"
+        className="absolute w-full h-[97dvh]! md:h-[95dvh]! object-cover object-center"
         priority={true}
         fetchPriority="high"
       />
 
-      <div className="h-[92dvh] relative z-0 overflow-hidden w-full flex items-center md:items-end">
+      <div className="h-[97dvh] md:h-[95dvh] relative z-0 overflow-hidden w-full flex items-center md:items-end">
         {/* Main Content Container inside the Banner */}
-        <div className="relative z-10 px-6 lg:px-12 h-3/5 mb-14 w-full py-12 lg:py-0">
+        <div className="relative z-10 px-6 lg:px-12 h-3/5 mb-14 w-full md:py-12 lg:py-0">
           {/* Left Column: Text, Subtitle, and Buttons */}
-          <div className="flex flex-col space-y-4 md:space-y-6 pb-5 mt-12 md:mt-16 lg:mt-0 text-white z-20 items-center lg:items-start text-center lg:text-left">
+          <div className="flex flex-col space-y-4  md:space-y-6 pb-5 md:mt-16 lg:mt-0 text-white z-20 items-center lg:items-start text-center lg:text-left">
             {" "}
             {/* Title text */}
             <div className={titleClassName}>{title}</div>
@@ -94,7 +94,7 @@ export default function Banner({
         </div>
       {/*  background circle */}
       <div
-        className=" absolute max-sm:left-1/2 max-sm:-translate-x-1/2 md:-right-6 bottom-0 md:-bottom-4 w-[35vh] h-[35vh] md:w-[75vh] md:h-[75vh] rounded-full opacity-50
+        className=" absolute max-sm:left-1/2 max-sm:-translate-x-1/2 md:-right-6 bottom-0 md:-bottom-4 w-[80vw] h-[80vw] md:w-[75dvh] md:h-[75dvh] rounded-full opacity-50
             bg-[linear-gradient(290deg,rgba(255,0,0,0.01)_0%,rgba(255,0,0,1)_100%)]
             backdrop-blur-[60px]
             "
@@ -102,14 +102,16 @@ export default function Banner({
       </div>
 
 
+
       {/* product image */}
+     
       <Image
         src={rightImage || ""}
         alt={rightImageAlt}
         width={1000}
         height={1000}
         priority={true}
-        className={`absolute w-[50vh] max-sm:w-[55vw] object-cover object-center bottom-[5vh] right-10 md:bottom-[3vh] md:right-15 z-0 ${rightImageClassName}`}
+        className={`absolute  w-[55dvw] md:w-[50dvh] object-cover object-center bottom-0! right-10 md:bottom-0 md:right-15 z-0 ${rightImageClassName}`}
         fetchPriority="high"
       />
     </section>
