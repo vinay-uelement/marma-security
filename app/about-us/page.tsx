@@ -54,9 +54,9 @@ export default function PartnersPage() {
         </div>
       </section>
       <section className="w-full bg-[#FFFFFF]">
-        <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-12 md:pt-36">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-12 md:pt-20">
           {/* Header */}
-          <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-6 md:mb-2 gap-8 relative z-10 w-full md:mb-4">
+          <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-6 md:mb-2 gap-8 relative z-10 w-full ">
             {/* TEXT */}
             <h2 className="w-full min-[901px]:w-[55%] fl2 text-left">
               Our{" "}
@@ -84,7 +84,7 @@ export default function PartnersPage() {
                 dots={[
                   { cx: 0, cy: 150, rippleCount: 4, rippleBaseDelay: 0.2 },
                 ]}
-                className="w-full h-auto -mt-10 md:-mt-28"
+                className="w-full h-auto -mt-10 md:-mt-20 lg:-mt-28"
                 strokeWidth={3}
                 dotRadius={18}
                 animationDuration={2.6}
