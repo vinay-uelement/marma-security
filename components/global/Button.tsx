@@ -46,7 +46,7 @@ const Button = (props: Props) => {
       onClick={onClick}
       className={`${baseClass} ${variantClass} ${className}`}
     >
-      <span className={`${textClass} ${textContainer}`}>{label}</span>
+      <span className={`${textClass} ${textContainer} pb-[1px]`}>{label}</span>
 
       {icon && (
         <div className={`${iconContainerClass} absolute right-1`}>

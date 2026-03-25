@@ -98,7 +98,7 @@ img {
   }
   .fl3-1 {
     font-family: var(--font-body);
-    @apply font-normal md:font-light text-[12px] md:text-[28px] lg:text-[32px] leading-[18px] md:leading-[34px] tracking-[-0.01em] text-text-dark;
+    @apply font-normal md:font-light text-[12px] md:text-[28px] lg:text-[32px] leading-[18px] md:leading-[40px] tracking-[-0.01em] text-text-dark;
   }
   .fl3-2 {
     font-family: var(--font-body);
@@ -509,7 +509,7 @@ img {
   backdrop-filter: blur(45.7px);
   box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
   border-radius: 18.29px;
-  border: 1px solid #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .about-banner-title {

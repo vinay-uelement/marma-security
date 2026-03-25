@@ -15,9 +15,9 @@ export default function SolutionsPage() {
           <>
             Complete <HighlightedText text="Cybersecurity" />
             <br className="hidden md:block" />
-            for Homes, Businesses and
+            for Enterprises, Businesses, Homes and
             <br className="hidden md:block" />
-            others.
+            more.
           </>
         }
         titleClassName="font-banner font-normal text-[28px] md:text-[36px] leading-[1.2] md:leading-[50px] tracking-[-0.01em] text-white"
@@ -43,7 +43,7 @@ export default function SolutionsPage() {
 
       <SolutionsTabs />
       <div className="md:pt-25">
-      <SolutionsInfo />
+        <SolutionsInfo />
       </div>
     </main>
   );

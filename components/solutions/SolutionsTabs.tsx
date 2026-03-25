@@ -54,6 +54,14 @@ const tabItems: TabData[] = [
       "Small businesses are frequent targets for cyberattacks. Marma provides affordable, plug-and-play network security that protects your entire office network without requiring a dedicated IT security team.",
     image: "/images/solutions/healthcare-solution.webp",
   },
+  {
+    id: "education",
+    label: "Educational Institution",
+    title: "Advanced security for modern learning environments.",
+    description:
+      "Educational institutions handle sensitive student and staff data while supporting large, open networks. Marma delivers reliable, easy-to-deploy network security that safeguards campuses, classrooms, and digital learning systems without adding complexity for IT teams.",
+    image: "/images/solutions/healthcare-solution.webp",
+  },
 ];
 
 const SLIDE_DURATION = 380;

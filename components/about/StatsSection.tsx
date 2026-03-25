@@ -1,81 +1,77 @@
-import React from 'react';
+import React from "react";
 
 interface StatItem {
-    value: string;
-    label: string;
-    description: string;
+  value: string;
+  label: string;
+  description: string;
 }
 
 const stats: StatItem[] = [
-    {
-        value: "8 million +",
-        label: "Verified Sites",
-        description: "Real-time URL reputation checking and SSL inspection to ensure safe browsing."
-    },
-    {
-        value: "7.9 Million +",
-        label: "Allowed Requests",
-        description: "Marma intelligently analyzes traffic and allows safe requests while blocking suspicious activity."
-    },
-    {
-        value: "14000",
-        label: "Blocked Requests",
-        description: "Marma prevents unauthorized access before threats reach your network."
-    },
-    {
-        value: "27400",
-        label: "Blocked Threats",
-        description: "Marma stops malware, phishing, and intrusion attempts before they impact your network."
-    }
+  {
+    value: "8 million +",
+    label: "Verified Sites",
+    description:
+      "Real-time URL reputation checking and SSL inspection to ensure safe browsing.",
+  },
+  {
+    value: "7.9 Million +",
+    label: "Allowed Requests",
+    description:
+      "Marma intelligently analyzes traffic and allows safe requests while blocking suspicious activity.",
+  },
+  {
+    value: "14000",
+    label: "Blocked Requests",
+    description:
+      "Marma prevents unauthorized access before threats reach your network.",
+  },
+  {
+    value: "27400",
+    label: "Blocked Threats",
+    description:
+      "Marma stops malware, phishing, and intrusion attempts before they impact your network.",
+  },
 ];
 
 export default function StatsSection() {
-    return (
-        <section className="relative w-full py-0 overflow-hidden">
-            {/* Background */}
-            <div className="absolute inset-0 z-0">
-                <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url('/images/about/background-stats.webp')` }}
-                />
-            </div>
+  return (
+    <section className="relative w-full py-0 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/images/about/background-stats.webp')`,
+          }}
+        />
+      </div>
 
-            <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-10 md:py-16 lg:py-20">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-10 md:py-16 lg:py-20">
+        {/* Stats Glass Card */}
+        <div className="stats-glass-card p-[10px] md:p-[71px] lg:p-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 [@media(min-width:1176px)]:grid-cols-4 gap-2 md:gap-8 [@media(min-width:1176px)]:gap-10 my-[10px] md:my-0">
+            {stats.map((stat, index) => (
+              <div key={index} className="flex flex-col">
+                {/* Value */}
+                <h3 className="fl2 text-white! font-bold">{stat.value}</h3>
 
-                {/* Stats Glass Card */}
-                <div className="stats-glass-card p-[10px] md:p-[71px] lg:p-12">
-                    
-                    <div className="grid grid-cols-1 sm:grid-cols-2 [@media(min-width:1176px)]:grid-cols-4 gap-2 md:gap-8 [@media(min-width:1176px)]:gap-10 my-[10px] md:my-0">
-                        
-                        {stats.map((stat, index) => (
-                            <div key={index} className="flex flex-col">
-                                
-                                {/* Value */}
-                                <h3 className="fl2 text-white! font-bold">
-                                    {stat.value}
-                                </h3>
-
-                                {/* Divider */}
-                                <div className="pr-1 mt-2 md:mt-6 mb-1">
-                                    <div className="border-b border-[#FFFFFF]"></div>
-                                </div>
-
-                                {/* Label */}
-                                <p className="fl3-1 text-white! font-bold! mt-[5px] md:mt-0">
-                                    {stat.label}
-                                </p>
-
-                                {/* Description */}
-                                <p className="fl4 text-white!">
-                                    {stat.description}
-                                </p>
-
-                            </div>
-                        ))}
-                    </div>
-
+                {/* Divider */}
+                <div className="pr-1 mt-1 md:mt-3 mb-1">
+                  <div className="border-b border-[#FFFFFF]/30"></div>
                 </div>
-            </div>
-        </section>
-    );
+
+                {/* Label */}
+                <p className="fl4-3 text-white! font-bold! mt-[5px] md:mt-0 mb-2">
+                  {stat.label}
+                </p>
+
+                {/* Description */}
+                <p className="fl4 text-white!">{stat.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

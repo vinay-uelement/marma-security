@@ -97,7 +97,7 @@ export default function IntelligentSecurity() {
 
   return (
     <section className="w-full bg-[#FFFFFF] pt-12 md:pt-24 pb-5 md:pb-20 overflow-x-clip relative">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative flex flex-col pt-0 lg:pt-24 ">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative flex flex-col ">
         {/* The flex container now stays flex-col until 901px */}
         <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-6 md:mb-2 gap-8 relative z-10 w-full md:mb-16">
           {/* TEXT: Centered below 901px, left-aligned above */}

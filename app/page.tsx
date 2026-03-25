@@ -29,8 +29,8 @@ export default function Home() {
         title={
           <>
             Radically Simplified <br className="hidden md:block" />
-            <HighlightedText text="Cybersecurity" /> for Small
-            <br className="hidden lg:block" /> Businesses and Home
+            <HighlightedText text="Cybersecurity" /> for Enterprises, Small
+            <br className="hidden lg:block" /> Businesses and Homes
           </>
         }
         titleClassName="font-banner font-normal text-[28px] md:text-[36px] leading-[1.2] md:leading-[50px] tracking-[-0.01em] text-white"
@@ -57,7 +57,7 @@ export default function Home() {
           <h2 className="fl2 w-full min-[901px]:w-[55%] home-exposed-heading text-left">
             Your{" "}
             <HighlightedText
-              text="business and home"
+              text="enterprise, business and home"
               className="text-[#323232] font-bold"
               imageClassName="bottom-[-12px] md:bottom-[-10px] right-[0px] md:right-[25px] w-[80px] md:w-[100px] lg:w-[140px]"
             />{" "}
