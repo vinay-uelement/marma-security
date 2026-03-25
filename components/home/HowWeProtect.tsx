@@ -24,7 +24,7 @@ const features: FeatureItem[] = [
         </strong>
         <p className="fl4-1 mb-[10px] md:mb-6">
           No technical expertise, networking knowledge, or complex
-          configurations required—simply plug in and go.
+          configurations required simply plug in and go.
         </p>
         <Link href="#" className="flex items-center gap-4 group w-fit">
           <span className="fl5-2 group-hover:text-brand-red-hover transition-colors">

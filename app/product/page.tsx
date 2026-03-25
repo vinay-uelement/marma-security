@@ -139,7 +139,7 @@ export default function ProductPage() {
         />
 
         {/* Decorative */}
-        <div className="absolute bottom-0 right-0 w-[320px] lg:w-[450px] flex flex-col z-20 pointer-events-none">
+        <div className="absolute bottom-6 right-0 w-[320px] lg:w-[450px] flex flex-col justify-end z-20 pointer-events-none">
           <DecorativeLine
             viewBox="0 0 700 80"
             points="-3000,40 210,40"
@@ -149,11 +149,10 @@ export default function ProductPage() {
             animationDuration={2.5}
           />
           <DecorativeLine
-            viewBox="0 0 1260 500"
+            viewBox="0 120 1260 160"
             points="20,150 500,150 600,270 3000,270"
-            //   points="20,150 200,150 280,270 3000,270"
             dots={[{ cx: 0, cy: 150, rippleCount: 4 }]}
-            className="w-full h-auto -mt-20"
+            className="w-full h-auto -mt-4 md:-mt-10"
             strokeWidth={3}
             dotRadius={22}
             animationDuration={2.5}

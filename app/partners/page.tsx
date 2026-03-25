@@ -22,7 +22,6 @@ export default function PartnersPage() {
       >
         {/* Main Content Container — fills entire banner height */}
         <div className="relative z-10 w-full flex-1 px-6 lg:px-12 flex flex-col items-center text-center pt-28 md:pt-32">
-
           {/* Title + Subtitle group — sits near the top-center */}
           <div className="flex flex-col space-y-6 lg:space-y-8 items-center max-w-[900px] mt-10 md:mt-20">
             {/* Title text */}
@@ -37,13 +36,17 @@ export default function PartnersPage() {
 
             {/* Subtitle */}
             <p className="partners-banner-subtitle max-w-[700px] mx-auto mt-4">
-              Marma Security operates a comprehensive partner program designed to extend reach and enhance service delivery. Our ecosystem enables VARs, MSPs, MSSPs, and System Integrators to offer enterprise-grade cybersecurity to all customer segments with simplified deployment and strong recurring revenue potential.
+              Marma Security operates a comprehensive partner program designed
+              to extend reach and enhance service delivery. Our ecosystem
+              enables VARs, MSPs, MSSPs, and System Integrators to offer
+              enterprise-grade cybersecurity to all customer segments with
+              simplified deployment and strong recurring revenue potential.
             </p>
           </div>
 
           {/* Buttons — vertically centered in the remaining space below subtitle */}
           <div className="flex-1 flex items-center">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full">
+            <div className="flex flex-row items-center justify-center gap-4 sm:gap-6 w-full">
               {/* Get Started Button */}
               <Link href="#">
                 <Button icon label="Get Started" />
@@ -55,7 +58,6 @@ export default function PartnersPage() {
               </Link>
             </div>
           </div>
-
         </div>
       </section>
 
