@@ -140,7 +140,7 @@ export default function Footer() {
                 </a>
 
                 {/* Desktop Social Icons */}
-                <div className="flex items-end space-x-6 pb-2 mt-auto">
+                <div className="flex items-end space-x-6 mt-auto">
                   <a
                     href="#"
                     aria-label="Instagram"
