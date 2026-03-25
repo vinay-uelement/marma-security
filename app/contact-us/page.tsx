@@ -40,10 +40,10 @@ export default function PartnersPage() {
                 {/* Overlapping Phones Image Block */}
                 <div className="relative w-full max-w-[850px] mx-auto mt-12 md:mt-15 lg:mb-[-120px] flex justify-center z-20 px-4">
                     <Image
-                        src="/images/banners/banner-contact-secondry.webp"
+                        src="/images/banners/banner-contact-us-mobile.webp"
                         alt="Marma Security Mobile App"
-                        width={600}
-                        height={500}
+                        width={1000}
+                        height={1000}
                         className="object-contain w-full sm:w-[85%] md:w-[680px] h-auto drop-shadow-2xl"
                         priority
                         sizes="(max-width: 768px) 100vw, 850px"
