@@ -152,7 +152,7 @@ export default function SecurityCards() {
               </div>
 
               {/* Card Content */}
-              <div className="flex flex-col flex-grow bg-[#F3F3F3] border border-[#E5E5E5] rounded-[16px] md:rounded-[24px] p-[16px] md:p-[32px] md:min-h-[307px] group-hover:shadow-[2px_2px_4px_0px_rgba(0,0,0,0.15)]">
+              <div className="flex flex-col flex-grow bg-[#F3F3F3] border border-[#E5E5E5] rounded-[16px] md:rounded-[24px] p-[16px] md:p-[32px] lg:p-[20px] min-[1150px]:p-[32px] md:min-h-[307px] group-hover:shadow-[2px_2px_4px_0px_rgba(0,0,0,0.15)]">
                 {" "}
                 <h3 className="fl3-3 mb-[8px]">{card.title}</h3>
                 <p className="fl4-2 flex-grow mb-[16px] md:mb-[32px]">
