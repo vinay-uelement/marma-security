@@ -162,7 +162,7 @@ export default function Testimonial() {
                 <h3 className="tm-card-name-bold text-text-dark">
                   {testimonial.name}
                 </h3>
-                <p className="tm-card-subtitle-reg text-text-muted">
+                <p className="tm-card-subtitle-reg ">
                   {testimonial.title}
                 </p>
               </div>
