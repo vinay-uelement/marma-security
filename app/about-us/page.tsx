@@ -74,7 +74,7 @@ export default function PartnersPage() {
                 points="-3000,40 210,40"
                 dots={[{ cx: 210, cy: 40, rippleCount: 3 }]}
                 className="w-full h-auto scale-x-[-1]"
-                dotRadius={10}
+                dotRadius={8}
                 animationDuration={2.2}
               />
               <DecorativeLine
@@ -86,7 +86,7 @@ export default function PartnersPage() {
                 ]}
                 className="w-full h-auto -mt-10 md:-mt-28"
                 strokeWidth={3}
-                dotRadius={20}
+                dotRadius={18}
                 animationDuration={2.6}
               />
             </div>
