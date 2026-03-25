@@ -112,11 +112,11 @@ img {
   /* FL4: Descriptions & Body Copy */
   .fl4 {
     font-family: var(--font-body);
-    @apply font-light text-[10px] leading-[16px] lg:text-[18px] lg:leading-[26px] tracking-[-0.01em] text-text-dark;
+    @apply font-normal text-[10px] leading-[16px] lg:text-[18px] lg:leading-[26px] tracking-[-0.01em] text-text-dark;
   }
   .fl4-1 {
     font-family: var(--font-body);
-    @apply font-light text-[10px] md:text-[16px] leading-[18px] md:leading-[26px] tracking-normal md:tracking-[-0.01em] text-[#989898];
+    @apply font-light text-[10px] md:text-[16px] leading-[18px] md:leading-[26px] tracking-normal md:tracking-[-0.01em] text-[#000000];
   }
   .fl4-2 {
     font-family: var(--font-body);
@@ -418,7 +418,7 @@ img {
 }
 
 .solutions-info-desc {
-  @apply font-body font-light text-[10px] tracking-normal text-center md:text-[16px] lg:text-[18px] md:leading-[1.6] lg:leading-[26px] md:text-left md:tracking-[-0.01em] text-text-dark;
+  @apply font-body font-normal text-[10px] tracking-normal text-center md:text-[16px] lg:text-[18px] md:leading-[1.6] lg:leading-[26px] md:text-left md:tracking-[-0.01em] text-text-dark;
 }
 
 .solutions-info-btn-text {
