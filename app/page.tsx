@@ -24,31 +24,31 @@ const Testimonial = dynamic(
 export default function Home() {
   return (
     <div className="flex flex-col bg-[#FFFFFF] min-h-screen overflow-x-clip">
-        <Banner
-          backgroundImage="/images/banners/homepage-banner.webp" // Solid dark bg for testing before image is added
-          title={
-            <>
-              Radically Simplified <br className="hidden md:block" />
-              <HighlightedText text="Cybersecurity" /> for Small
-              <br className="hidden lg:block" /> Businesses and Home
-            </>
-          }
-          titleClassName="font-banner font-normal text-[28px] md:text-[36px] leading-[1.2] md:leading-[50px] tracking-[-0.01em] text-white"
-          subtitle={
-            <>
-              Enterprise-grade cybersecurity that works in minutes.{" "}
-              <br className="hidden sm:block" />
-              No IT or technical expertise needed.
-            </>
-          }
-          subtitleClassName="font-title font-light text-[18px] md:text-[24px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-white max-w-[550px]"
-          buttons={[
-            { label: "Order", href: "#", variant: "primary", icon: true },
-            { label: "Store", href: "#", variant: "secondary", icon: true },
-          ]}
-          rightImageAlt="Marma Security Device"
-          rightImage="/images/banners/homepage-right-banner1.webp"
-        />
+      <Banner
+        backgroundImage="/images/banners/homepage-banner.webp" // Solid dark bg for testing before image is added
+        title={
+          <>
+            Radically Simplified <br className="hidden md:block" />
+            <HighlightedText text="Cybersecurity" /> for Small
+            <br className="hidden lg:block" /> Businesses and Home
+          </>
+        }
+        titleClassName="font-banner font-normal text-[28px] md:text-[36px] leading-[1.2] md:leading-[50px] tracking-[-0.01em] text-white"
+        subtitle={
+          <>
+            Enterprise-grade cybersecurity that works in minutes.{" "}
+            <br className="hidden sm:block" />
+            No IT or technical expertise needed.
+          </>
+        }
+        subtitleClassName="font-title font-light text-[18px] md:text-[24px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-white max-w-[550px]"
+        buttons={[
+          { label: "Order", href: "#", variant: "primary", icon: true },
+          { label: "Store", href: "#", variant: "secondary", icon: true },
+        ]}
+        rightImageAlt="Marma Security Device"
+        rightImage="/images/banners/homepage-right-banner1.webp"
+      />
       {/* Updated section with responsive top padding and overflow control */}
       <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-8 lg:px-12 pt-0 md:pt-24 bg-[#FFFFFF] relative">
         {/* The flex container now stays flex-col until 901px */}
@@ -69,18 +69,20 @@ export default function Home() {
             <DecorativeLine
               viewBox="0 0 500 120"
               points="80,30 130,90 3000,90"
-              dots={[{ cx: 80, cy: 30, rippleCount: 3, rippleBaseDelay: 0 }]}
+              dots={[{ cx: 80, cy: 30, rippleCount: 3, rippleBaseDelay: 0.1 }]}
               className="w-full h-auto"
               strokeWidth={1}
-              dotRadius={8}
+              dotRadius={7}
+              animationDuration={3}
             />
             <DecorativeLine
               viewBox="0 0 500 80"
               points="-3000,40 200,40"
-              dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
+              dots={[{ cx: 200, cy: 40, rippleCount: 4 }]}
               className="w-full h-auto scale-x-[-1] -mt-2 md:-mt-8"
               strokeWidth={1}
-              dotRadius={8}
+              dotRadius={6}
+              animationDuration={2.5}
             />
           </div>
         </div>
@@ -102,6 +104,7 @@ export default function Home() {
               points="0,40 310,40"
               dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
               className="w-full h-auto"
+              animationDuration={2.4}
             />
           </div>
         </div>

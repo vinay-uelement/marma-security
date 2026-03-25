@@ -144,6 +144,7 @@ export default function HowWeProtect() {
                 points="100,40 1100,40"
                 dots={[{ cx: 100, cy: 40, rippleCount: 3 }]}
                 className="w-full h-auto translate-x-[15%]"
+                animationDuration={2.8}
               />
             </div>
           </div>
@@ -165,6 +166,7 @@ export default function HowWeProtect() {
                 points="100,40 1100,40"
                 dots={[{ cx: 100, cy: 40, rippleCount: 3 }]}
                 className="w-[300px] lg:w-[400px] h-auto ml-auto"
+                animationDuration={2.8}
               />
             </div>
           </div>

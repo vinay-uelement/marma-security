@@ -117,16 +117,19 @@ export default function IntelligentSecurity() {
             <DecorativeLine
               viewBox="0 0 700 80"
               points="0,40 210,40"
-              dots={[{ cx: 210, cy: 40, rippleCount: 3 }]}
+              dots={[{ cx: 210, cy: 40, rippleCount: 4 }]}
               className="w-full h-auto scale-x-[-1]"
+              dotRadius={8}
+              animationDuration={2.5}
             />
             <DecorativeLine
               viewBox="0 0 1260 500"
               points="20,150 500,150 600,270 3000,270"
               dots={[{ cx: 0, cy: 150, rippleCount: 3 }]}
-              className="w-full h-auto -mt-20"
-              strokeWidth={3}
-              dotRadius={22}
+              className="w-full h-auto -mt-28"
+              strokeWidth={4}
+              dotRadius={20}
+              animationDuration={3}
             />
           </div>
         </div>
@@ -192,7 +195,7 @@ export default function IntelligentSecurity() {
 
         {/* Bottom Carousel Navigation block */}
         {features.length > itemsPerPage && (
-          <div className="w-full flex justify-between items-center mt-8 md:mt-20 pt-6 md:pt-10 gap-6 md:gap-12">
+          <div className="w-full flex justify-between items-center mt-8 md:mt-14 gap-6 md:gap-12">
             {/* Progress Bar Container - dynamically flexes to fill available space besides buttons */}
             <div className="flex-grow relative h-[3px]">
               {/* Inactive Gray Track */}
