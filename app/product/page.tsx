@@ -29,46 +29,110 @@ export default function ProductPage() {
           titleClassName="font-banner font-normal text-[32px] md:text-[45px] lg:text-[60px] leading-[1.2] tracking-[-0.01em] text-white"
           subtitle={
             <>
-              Marma Security serves three distinct markets 
+              Marma Security serves three distinct markets
               <br className="hidden lg:block" />
-              with tailored product lines, 
+              with tailored product lines,
               <br className="hidden lg:block" />
-              all powered by our unified AI-driven cloud platform. 
+              all powered by our unified AI-driven cloud platform.
               <br className="hidden lg:block" />
               Choose the protection that fits your scale.
             </>
           }
           subtitleClassName="font-body font-light text-[16px] md:text-[20px] lg:text-[24px] leading-[1.6] md:leading-[35px] text-[#E0E0E0] max-w-[650px] mt-6"
           rightContent={
-            <div className="flex flex-col sm:flex-row gap-4 lg:gap-3 items-center justify-center lg:justify-end w-full h-full lg:translate-x-[-20px] z-30 py-8 lg:py-0">
+            <div className="flex flex-col sm:flex-row gap-4 lg:gap-4 items-center justify-center lg:justify-end w-full h-full z-30 py-8 lg:py-0">
               {/* SafeHome Card */}
               <Link
                 href="#safehome"
-                className="group relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] transition-transform hover:-translate-y-2 duration-300"
+                className="group relative w-full max-w-[260px] lg:max-w-[280px] rounded-[20px] transition-transform hover:-translate-y-2 duration-300 flex flex-col"
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.18)",
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                }}
               >
-                <Image
-                  src="/images/banners/right-side-product-banner1.webp"
-                  alt="SafeHome Product"
-                  width={340}
-                  height={420}
-                  className="object-contain w-full h-auto drop-shadow-2xl"
-                  priority
-                />
+                {/* Arrow */}
+                <div className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-md">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path
+                      d="M2 12L12 2M12 2H4M12 2V10"
+                      stroke="#FF0000"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                {/* Product Image — overlaps label below */}
+                <div className="relative z-10 flex items-end justify-center px-8 pt-6 h-[260px] lg:h-[300px] mb-[-20px]">
+                  <Image
+                    src="/images/banners/solution-banner-right1.webp"
+                    alt="SafeHome Product"
+                    width={170}
+                    height={210}
+                    className="object-contain w-[170px] lg:w-[190px] h-auto drop-shadow-2xl"
+                    priority
+                  />
+                </div>
+
+                {/* Label — taller to show overlap */}
+                <div
+                  className="pt-[30px] pb-6 px-6 text-center border-t border-white/10 rounded-b-[20px]"
+                  style={{ background: "rgba(237,237,237,0.21)" }}
+                >
+                  <p className="text-white font-title font-bold text-[20px] lg:text-[22px] leading-none">
+                    SafeHome
+                  </p>
+                </div>
               </Link>
 
               {/* SafeBiz Card */}
               <Link
                 href="#safebiz"
-                className="group relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[340px] transition-transform hover:-translate-y-2 duration-300"
+                className="group relative w-full max-w-[260px] lg:max-w-[280px] rounded-[20px] transition-transform hover:-translate-y-2 duration-300 flex flex-col"
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.18)",
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                }}
               >
-                <Image
-                  src="/images/banners/right-side-product-banner2.webp"
-                  alt="SafeBiz Product"
-                  width={340}
-                  height={420}
-                  className="object-contain w-full h-auto drop-shadow-2xl"
-                  priority
-                />
+                {/* Arrow */}
+                <div className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-md">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path
+                      d="M2 12L12 2M12 2H4M12 2V10"
+                      stroke="#FF0000"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                {/* Product Image — overlaps label below */}
+                <div className="relative z-10 flex items-end justify-center px-8 pt-6 h-[260px] lg:h-[300px] mb-[-20px]">
+                  <Image
+                    src="/images/banners/homepage-right-banner1.webp"
+                    alt="SafeBiz Product"
+                    width={170}
+                    height={210}
+                    className="object-contain w-[170px] lg:w-[190px] h-auto drop-shadow-2xl"
+                    priority
+                  />
+                </div>
+
+                {/* Label — taller to show overlap */}
+                <div
+                  className="pt-[30px] pb-6 px-6 text-center border-t border-white/10 rounded-b-[20px]"
+                  style={{ background: "rgba(237,237,237,0.21)" }}
+                >
+                  <p className="text-white font-title font-bold text-[20px] lg:text-[22px] leading-none">
+                    SafeBiz
+                  </p>
+                </div>
               </Link>
             </div>
           }
