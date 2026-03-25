@@ -15,12 +15,13 @@ const navLinks = [
 
 const frostedGlass = {
   background:
-    "linear-gradient(90deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.25) 100%)",
+    "linear-gradient(90deg, rgba(255,255,255,0.60) 0%, rgba(255,255,255,0.35) 100%)",
   backdropFilter: "blur(36px)",
   WebkitBackdropFilter: "blur(36px)",
   boxShadow: "0px 4px 24px -1px rgba(0,0,0,0.2)",
   border: "1px solid rgba(255,255,255,0.28)",
 } as const;
+
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
