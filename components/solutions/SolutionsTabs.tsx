@@ -20,7 +20,7 @@ const tabItems: TabData[] = [
     title: "Securing digital healthcare ecosystems.",
     description:
       "Marma secures healthcare networks against data breaches, ransomware, and unauthorized access by delivering continuous, network-level protection across the entire digital infrastructure. From patient record systems and administrative platforms to connected medical devices and IoT equipment, Marma ensures every device on the network is protected in real time.",
-    image: "/images/solutions/healthcare-solution.webp",
+    image: "/images/solutions/hospital-banner.webp",
   },
   {
     id: "legal",
