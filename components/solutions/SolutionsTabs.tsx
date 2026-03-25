@@ -193,7 +193,7 @@ export default function SolutionsTabs() {
             Security That{" "}
             <HighlightedText
               text="Adapts "
-              className="text-[#323232] font-bold"
+              className="text-[#323232] !font-extrabold"
               imageClassName="bottom-[-10px] md:bottom-[-22px]"
             />
             <br className="hidden md:block" /> to You

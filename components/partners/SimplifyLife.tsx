@@ -71,7 +71,7 @@ export default function SimplifyLife() {
         <h2 className="fl2 w-full min-[901px]:w-[55%] fl2 text-left">
           <HighlightedText
             text="Simplify"
-            className="text-[#323232] font-bold"
+            className="text-[#323232] !font-extrabold"
             imageClassName="bottom-[-10px] md:bottom-[-20px] right-[0]"
           />{" "}
           Your Life.
