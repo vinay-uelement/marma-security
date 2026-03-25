@@ -15,7 +15,7 @@ export default function Footer() {
                 alt="Marma Security"
                 width={200}
                 height={40}
-                className="w-[140px] md:w-[200px] h-auto object-contain"
+                className="w-[140px] md:w-[280px] h-auto object-contain"
               />
 
               <p className="footer-desc-text max-w-full">
@@ -149,8 +149,8 @@ export default function Footer() {
                     <Image
                       src="/images/global/insta-icon.svg"
                       alt="Instagram"
-                      width={34}
-                      height={34}
+                      width={30}
+                      height={30}
                       className="object-contain"
                     />
                   </a>

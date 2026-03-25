@@ -56,9 +56,9 @@ export default function PartnersPage() {
       <section className="w-full bg-[#FFFFFF]">
         <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-12 md:pt-36">
           {/* Header */}
-        <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-6 md:mb-2 gap-8 relative z-10 w-full md:mb-16">
-          {/* TEXT */}
-          <h2 className="w-full min-[901px]:w-[55%] fl2 text-left">
+          <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-6 md:mb-2 gap-8 relative z-10 w-full md:mb-4">
+            {/* TEXT */}
+            <h2 className="w-full min-[901px]:w-[55%] fl2 text-left">
               Our{" "}
               <HighlightedText
                 text="Team"
@@ -68,7 +68,7 @@ export default function PartnersPage() {
             </h2>
 
             {/* Decorative */}
-          <div className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-4 min-[901px]:mt-0 pointer-events-none z-0">
+            <div className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-4 min-[901px]:mt-0 pointer-events-none z-0">
               <DecorativeLine
                 viewBox="0 0 700 80"
                 points="-3000,40 210,40"
@@ -80,7 +80,7 @@ export default function PartnersPage() {
                 points="20,150 500,150 600,270 3000,270"
                 //   points="20,150 200,150 280,270 3000,270"
                 dots={[{ cx: 0, cy: 150, rippleCount: 3 }]}
-                className="w-full h-auto -mt-20"
+                className="w-full h-auto -mt-10 md:-mt-28"
                 strokeWidth={3}
                 dotRadius={22}
               />

@@ -47,7 +47,7 @@ const features: FeatureItem[] = [
   {
     id: "wfh-use-cases",
     image: "/images/partners/simplify-img3.webp", // Using existing placeholder
-    title: "Serve WFH Use Cases",
+    title: "Serve Work From Home Use Cases",
     description: (
       <>
         <strong className="fl5-1 block mb-[7px] md:mb-4">
