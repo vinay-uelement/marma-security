@@ -3,7 +3,7 @@ import HighlightedText from '../global/HighlightedText';
 
 export default function AdvancedArchitecture() {
     return (
-        <section className="w-full bg-[#FAFAFA] pt-16 lg:pt-24 pb-20  relative">
+        <section className="w-full bg-[#FAFAFA] pt-8 lg:pt-24 pb-10 md:pb-20  relative">
             <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col items-center">
 
                 {/* Image Placeholder Block */}

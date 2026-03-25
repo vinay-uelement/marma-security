@@ -192,7 +192,7 @@ export default function IntelligentSecurity() {
 
         {/* Bottom Carousel Navigation block */}
         {features.length > itemsPerPage && (
-          <div className="w-full flex justify-between items-center mt-12 md:mt-20 pt-6 md:pt-10 gap-6 md:gap-12">
+          <div className="w-full flex justify-between items-center mt-8 md:mt-20 pt-6 md:pt-10 gap-6 md:gap-12">
             {/* Progress Bar Container - dynamically flexes to fill available space besides buttons */}
             <div className="flex-grow relative h-[3px]">
               {/* Inactive Gray Track */}

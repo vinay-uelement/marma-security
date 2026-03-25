@@ -80,7 +80,7 @@ export default function PartnersBottomBanner() {
                 </div>
 
                 {/* Top Half: White bg */}
-                <div className="bg-[#FFFFFF] w-full px-6 flex flex-row items-stretch gap-4 relative z-20 pt-0 mt-2">
+                <div className="bg-[#FFFFFF] w-full px-6 flex flex-row items-stretch gap-4 relative z-20 pt-0 mt-0">
                     <div className="w-[45%] flex justify-end items-end relative min-h-[200px] sm:min-h-[220px] translate-y-8 sm:translate-y-12 z-30">
                         <div className="relative w-full max-w-[180px] sm:max-w-[240px] aspect-[423/495]">
                             <Image
