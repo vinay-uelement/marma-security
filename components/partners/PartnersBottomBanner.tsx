@@ -7,7 +7,7 @@ export default function PartnersBottomBanner() {
     <>
       {/* DESKTOP VIEW */}
       <section className="hidden lg:block w-full relative py-0 md:py-12 lg:py-16 mb-4 md:mb-0 bg-[#fff]">
-        {/* Top Left Decorative Red Line */}
+        {/* Top right Decorative Red Line */}
         <div className="absolute top-12 lg:top-16 left-0 w-screen z-20 flex justify-end">
           <div className="w-[180px] md:w-[240px] lg:w-[320px]">
             <DecorativeLine
@@ -70,14 +70,14 @@ export default function PartnersBottomBanner() {
 
       {/* MOBILE & TABLET VIEW */}
       <section className="lg:hidden w-full relative z-20 flex flex-col pt-10 md:pt-4 pb-5 md:pb-0">
-        {/* Top Left Decorative Red Line */}
-        <div className="absolute top-2 sm:top-4 left-0 w-screen z-20">
+        {/* Top right Decorative Red Line */}
+        <div className="absolute top-2 sm:top-4 left-0 w-screen z-20 flex justify-end">
           <div className="w-[180px] sm:w-[240px]">
             <DecorativeLine
               viewBox="0 0 600 80"
-              points="0,40 310,40"
+              points="-3000,40 310,40"
               dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
-              className="w-full h-auto"
+              className="w-full h-auto scale-x-[-1]"
             />
           </div>
         </div>

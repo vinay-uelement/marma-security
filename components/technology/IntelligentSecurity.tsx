@@ -72,7 +72,9 @@ export default function IntelligentSecurity() {
 
   // Auto-clamp current index if maxIndex shrinks
   useEffect(() => {
-    setCurrentIndex((prev) => Math.min(prev, Math.max(0, features.length - itemsPerPage)));
+    setCurrentIndex((prev) =>
+      Math.min(prev, Math.max(0, features.length - itemsPerPage)),
+    );
   }, [itemsPerPage]);
 
   const handleNext = () => {
@@ -126,7 +128,7 @@ export default function IntelligentSecurity() {
               viewBox="0 0 1260 500"
               points="20,150 500,150 600,270 3000,270"
               dots={[{ cx: 0, cy: 150, rippleCount: 3 }]}
-              className="w-full h-auto -mt-28"
+              className="w-full h-auto -mt-10 md:-mt-28"
               strokeWidth={4}
               dotRadius={20}
               animationDuration={3}
@@ -154,12 +156,12 @@ export default function IntelligentSecurity() {
               </div>
 
               {/* Feature Title */}
-              <h3 className="fl3-3 mb-2 md:mb-4 text-center sm:text-left w-full">
+              <h3 className="fl3-3 mb-2 md:mb-4 text-center sm:text-left w-full !leading-normal">
                 {feature.title}
               </h3>
 
               {/* Feature Text/Description */}
-              <p className="fl4  text-center sm:text-left w-full h-[20%] md:h-[40%] sm:max-w-[60%]">
+              <p className="fl4  text-center sm:text-left w-full h-[15%] md:h-[40%] sm:max-w-[60%]">
                 {feature.description}
               </p>
 
@@ -195,7 +197,7 @@ export default function IntelligentSecurity() {
 
         {/* Bottom Carousel Navigation block */}
         {features.length > itemsPerPage && (
-          <div className="w-full flex justify-between items-center mt-8 md:mt-14 gap-6 md:gap-12">
+          <div className="w-full flex justify-between items-center mt-0 md:mt-14 gap-6 md:gap-12">
             {/* Progress Bar Container - dynamically flexes to fill available space besides buttons */}
             <div className="flex-grow relative h-[3px]">
               {/* Inactive Gray Track */}

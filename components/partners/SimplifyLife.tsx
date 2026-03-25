@@ -68,7 +68,7 @@ export default function SimplifyLife() {
       {/* The flex container now stays flex-col until 901px */}
       <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-16 gap-8 relative z-10 w-full mb-16">
         {/* TEXT */}
-        <h2 className="w-full min-[901px]:w-[55%] fl2 text-left">
+        <h2 className="fl2 w-full min-[901px]:w-[55%] fl2 text-left">
           <HighlightedText
             text="Simplify"
             className="text-[#323232] font-bold"
@@ -79,7 +79,7 @@ export default function SimplifyLife() {
 
         {/* Decorative Red Line Graphic */}
         <div
-          className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-12
+          className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-0 md:mt-12
            min-[901px]:mt-0 pointer-events-none z-0"
         >
           <DecorativeLine
@@ -94,7 +94,7 @@ export default function SimplifyLife() {
             viewBox="0 0 500 120"
             points="150,20 210,90 3000,90"
             dots={[{ cx: 150, cy: 20, rippleCount: 4, rippleBaseDelay: 0.9 }]}
-            className="w-full h-auto -mt-28"
+            className="w-full h-auto -mt-10 md:-mt-28"
             dotRadius={7}
             animationDuration={3}
           />
