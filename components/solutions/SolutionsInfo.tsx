@@ -52,7 +52,7 @@ export default function SolutionsInfo({
               variant="secondary"
               label="Explore"
               textContainer="text-black!"
-              className=" border-gray-400! hidden lg:flex"
+              className=" border-gray-300! hidden lg:flex"
             />
           </div>
         </div>

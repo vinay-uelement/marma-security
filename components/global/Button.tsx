@@ -36,8 +36,10 @@ const Button = (props: Props) => {
     : "text-[16px] md:text-[20px] tracking-[0.02em]";
 
   const iconContainerClass = isPrimary
-    ? "w-5 h-5 md:w-7 md:h-7 bg-[#F4F4F4] text-[#FF0000] rounded-full p-1 flex items-center justify-center shrink-0 group-hover:bg-white transition-colors"
-    : "w-6 h-6 md:w-8 md:h-8 ";
+    ? "w-6 h-6 md:w-8 md:h-8"
+    : "w-6 h-6 md:w-8 md:h-8";
+
+  const circleColor = isPrimary ? "#F4F4F4" : "#FF0000";
 
   return (
     <button
@@ -48,53 +50,36 @@ const Button = (props: Props) => {
 
       {icon && (
         <div className={`${iconContainerClass} absolute right-1`}>
-          {isPrimary ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 100 100"
-              width="28"
-              height="28"
-              className="w-full h-full"
-            >
-              <defs>
-                <mask id={maskId}>
-                  <rect width="100%" height="100%" fill="white" />
-                  <path
-                    d="M 50 28 L 50 72 M 32 54 L 50 72 L 68 54"
-                    transform="rotate(-135 50 50)"
-                    stroke="black"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                  />
-                </mask>
-              </defs>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 100 100"
+            width="28"
+            height="28"
+            className="w-full h-full"
+          >
+            <defs>
+              <mask id={maskId}>
+                <rect width="100%" height="100%" fill="white" />
+                <path
+                  d="M 50 28 L 50 72 M 32 54 L 50 72 L 68 54"
+                  transform="rotate(-135 50 50)"
+                  stroke="black"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                />
+              </mask>
+            </defs>
 
-              <circle
-                cx="50"
-                cy="50"
-                r="45"
-                fill="#FF0000"
-                mask={`url(#${maskId})`}
-              />
-            </svg>
-          )}
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              fill={circleColor}
+              mask={`url(#${maskId})`}
+            />
+          </svg>
         </div>
       )}
     </button>

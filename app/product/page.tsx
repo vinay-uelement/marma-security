@@ -26,7 +26,7 @@ export default function ProductPage() {
               <br className="hidden lg:block" /> for Every Network
             </>
           }
-          titleClassName="font-banner font-normal text-[32px] md:text-[45px] lg:text-[60px] leading-[1.2] tracking-[-0.01em] text-white"
+          titleClassName="font-banner font-normal text-[28px] md:text-[36px] leading-[1.2] md:leading-[50px] tracking-[-0.01em] text-white"
           subtitle={
             <>
               Marma Security serves three distinct markets
@@ -38,7 +38,7 @@ export default function ProductPage() {
               Choose the protection that fits your scale.
             </>
           }
-          subtitleClassName="font-body font-light text-[16px] md:text-[20px] lg:text-[24px] leading-[1.6] md:leading-[35px] text-[#E0E0E0] max-w-[650px] mt-6"
+          subtitleClassName="font-title font-light text-[18px] md:text-[24px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-white max-w-[550px]"
           rightContent={
             <div className="flex flex-col sm:flex-row gap-4 lg:gap-4 items-center justify-center lg:justify-end w-full h-full z-30 py-8 lg:py-0">
               {/* SafeHome Card */}
