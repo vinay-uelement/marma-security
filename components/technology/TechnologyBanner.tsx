@@ -20,7 +20,7 @@ export default function TechnologyBanner({
 }: TechnologyBannerProps) {
     return (
         <section
-            className="relative w-full min-h-[100vh] flex justify-center items-center overflow-x-clip py-28 md:py-32"
+            className="relative w-full min-h-[100vh] flex flex-col overflow-x-clip"
             style={{
                 backgroundImage: `url('${backgroundImage}')`,
                 backgroundSize: 'cover',
@@ -28,11 +28,11 @@ export default function TechnologyBanner({
                 backgroundRepeat: 'no-repeat'
             }}
         >
-            {/* Main Content Container inside the Banner */}
-            <div className="relative z-10 w-full px-6 lg:px-12 flex flex-col items-center justify-center text-center">
+            {/* Main Content Container — fills entire banner height */}
+            <div className="relative z-10 w-full flex-1 px-6 lg:px-12 flex flex-col items-center text-center pt-28 md:pt-32 pb-16 md:pb-20">
 
+                {/* Title + Subtitle group — sits near the top-center */}
                 <div className="flex flex-col space-y-6 lg:space-y-8 items-center max-w-[900px] mt-10 md:mt-20">
-
                     {/* Title text */}
                     <h1 className="fl1 text-white">
                         {title}
@@ -44,15 +44,17 @@ export default function TechnologyBanner({
                             {subtitle}
                         </p>
                     )}
+                </div>
 
-                    {/* Explore Button */}
-                    {buttonText && (
+                {/* Explore Button — vertically centered in the remaining space below subtitle */}
+                {buttonText && (
+                    <div className="flex-1 flex items-center">
                         <Link href={buttonLink}>
                             <Button icon label={buttonText} />
                         </Link>
-                    )}
+                    </div>
+                )}
 
-                </div>
             </div>
         </section>
     );

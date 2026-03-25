@@ -12,7 +12,7 @@ export default function PartnersPage() {
     <main className="w-full flex-grow flex flex-col items-center">
       {/* Centered Hero Banner (Similar to TechnologyBanner) */}
       <section
-        className="relative w-full min-h-[100vh] flex justify-center items-center overflow-x-clip py-28 md:py-32"
+        className="relative w-full min-h-[100vh] flex flex-col overflow-x-clip"
         style={{
           backgroundImage: `url('/images/banners/banner-partners.webp')`,
           backgroundSize: "cover",
@@ -20,8 +20,10 @@ export default function PartnersPage() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Main Content Container inside the Banner */}
-        <div className="relative z-10 w-full px-6 lg:px-12 flex flex-col items-center justify-center text-center">
+        {/* Main Content Container — fills entire banner height */}
+        <div className="relative z-10 w-full flex-1 px-6 lg:px-12 flex flex-col items-center text-center pt-28 md:pt-32">
+
+          {/* Title + Subtitle group — sits near the top-center */}
           <div className="flex flex-col space-y-6 lg:space-y-8 items-center max-w-[900px] mt-10 md:mt-20">
             {/* Title text */}
             <h1 className="fl1 text-white!">
@@ -33,13 +35,15 @@ export default function PartnersPage() {
               />
             </h1>
 
-                        {/* Subtitle */}
-                        <p className="partners-banner-subtitle max-w-[700px] mx-auto mt-4">
-                        Marma Security operates a comprehensive partner program designed to extend reach and enhance service delivery. Our ecosystem enables VARs, MSPs, MSSPs, and System Integrators to offer enterprise-grade cybersecurity to all customer segments with simplified deployment and strong recurring revenue potential.
-                        </p>
+            {/* Subtitle */}
+            <p className="partners-banner-subtitle max-w-[700px] mx-auto mt-4">
+              Marma Security operates a comprehensive partner program designed to extend reach and enhance service delivery. Our ecosystem enables VARs, MSPs, MSSPs, and System Integrators to offer enterprise-grade cybersecurity to all customer segments with simplified deployment and strong recurring revenue potential.
+            </p>
+          </div>
 
-            {/* Buttons Row */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8 w-full">
+          {/* Buttons — vertically centered in the remaining space below subtitle */}
+          <div className="flex-1 flex items-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full">
               {/* Get Started Button */}
               <Link href="#">
                 <Button icon label="Get Started" />
@@ -51,6 +55,7 @@ export default function PartnersPage() {
               </Link>
             </div>
           </div>
+
         </div>
       </section>
 
