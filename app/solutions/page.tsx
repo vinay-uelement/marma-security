@@ -20,7 +20,7 @@ export default function SolutionsPage() {
             others.
           </>
         }
-        titleClassName="font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white"
+        titleClassName="font-banner font-normal text-[28px] md:text-[36px] leading-[1.2] md:leading-[50px] tracking-[-0.01em] text-white"
         subtitle={
           <>
             Enterprise-grade cybersecurity that works in minutes.

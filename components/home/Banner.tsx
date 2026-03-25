@@ -48,7 +48,7 @@ export default function Banner({
   // Dynamic height class assignment based on the prop
 
   return (
-    <section className="h-screen w-screen">
+    <section className="relative h-dvh w-screen">
       {/* Background Image */}
       <Image
         src={backgroundImage}
@@ -94,7 +94,7 @@ export default function Banner({
         </div>
       {/*  background circle */}
       <div
-        className=" absolute max-sm:left-1/2 max-sm:-translate-x-1/2 md:-right-6 bottom-0 md:-bottom-4 w-[80vw] h-[80vw] md:w-[75dvh] md:h-[75dvh] rounded-full opacity-50
+        className=" absolute max-sm:left-1/2 max-sm:-translate-x-1/2 md:-right-6 bottom-0 md:-bottom-4 w-[42dvh] h-[42dvh] md:w-[75dvh] md:h-[75dvh] rounded-full opacity-50
             bg-[linear-gradient(290deg,rgba(255,0,0,0.01)_0%,rgba(255,0,0,1)_100%)]
             backdrop-blur-[60px]
             "
