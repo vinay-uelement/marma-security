@@ -316,7 +316,7 @@ img {
 
 .tm-card-text-body {
   font-family: var(--font-body);
-  @apply font-normal text-[13px] lg:text-[14px] leading-[1.6] lg:leading-[28px] tracking-normal;
+  @apply font-normal text-[13px] lg:text-[14px] leading-[1.6] lg:leading-[26px] tracking-normal;
 }
 
 .tm-card-subtitle-reg {
@@ -615,11 +615,11 @@ img {
 }
 
 .contact-form-input {
-  @apply w-full px-4 py-3 bg-[#F9F9F9] border border-[#E5E5E5] rounded-[8px] font-body font-normal text-[13px] md:text-[16px] text-text-dark placeholder:text-[#BBBBBB] outline-none focus:border-brand-red transition-colors;
+  @apply w-full px-4 py-3 bg-[#F9F9F9] border border-[#E5E5E5] rounded-[8px] font-body font-normal text-[12px] md:text-[16px] text-text-dark placeholder:text-[#BBBBBB] outline-none focus:border-brand-red transition-colors;
 }
 
 .contact-form-select {
-  @apply w-full px-4 py-3 bg-[#F9F9F9] border border-[#E5E5E5] rounded-[8px] font-body font-normal text-[13px] md:text-[16px] text-[#989898] outline-none focus:border-brand-red transition-colors appearance-none;
+  @apply w-full px-4 py-3 bg-[#F9F9F9] border border-[#E5E5E5] rounded-[8px] font-body font-normal text-[12px] md:text-[16px] text-[#989898] outline-none focus:border-brand-red transition-colors appearance-none;
 }
 
 .contact-submit-text {

@@ -251,10 +251,10 @@ export default function Challengestab() {
         </div>
 
         {/* Desktop Tabs — sliding indicator */}
-        <div className="hidden lg:block w-full border-b-[6px] border-[#F1F1F1] mb-16 select-none">
+        <div className="hidden lg:block mb-16 select-none">
           <div
             ref={tabsContainerRef}
-            className="relative flex items-start gap-12 min-w-max -mb-[1px]"
+            className="relative flex items-start gap-12 w-fit border-b-[6px] border-[#F1F1F1] -mb-[1px] pb-0"
           >
             {tabItems.map((tab) => {
               const isActive = active.id === tab.id;
@@ -288,12 +288,12 @@ export default function Challengestab() {
           </div>
         </div>
 
-        <div className="relative pb-8 w-full overflow-hidden">
+        <div className="relative pb-16 w-full overflow-hidden">
           <div
             key={`mobile-${active.id}`}
             className={`flex flex-col lg:hidden gap-6 items-center justify-center w-full ${mobileSlideClass}`}
           >
-            <h3 className="fl3-2 font-semibold w-full">{active.title}</h3>
+            <h3 className="fl3-1 w-full">{active.title}</h3>
             <div className="w-full flex justify-center max-w-[600px]">
               <Image
                 src={active.image}
@@ -332,20 +332,19 @@ export default function Challengestab() {
 
 function DesktopContent({ data }: { data: TabData }) {
   return (
-    <div className="grid lg:grid-cols-2 gap-24 items-start w-full">
+    <div className="grid lg:grid-cols-2 gap-24 items-center w-full">
       <div className="flex flex-col items-start lg:text-left">
-        <h3 className="home-challenge-title mb-12 max-w-[450px]">
-          {data.title}
-        </h3>
+        <h3 className="fl3-1 mb-12 max-w-[450px]">{data.title}</h3>
         <p className="home-challenge-desc">{data.description}</p>
       </div>
-      <div className="w-full flex justify-start mt-1">
+
+      <div className="relative w-full h-[380px] rounded-[20px] overflow-hidden shadow-xl">
         <Image
           src={data.image}
           alt={data.title}
-          width={600}
-          height={400}
-          className="w-full h-auto object-contain rounded-[20px] shadow-xl"
+          fill
+          className="object-cover object-center"
+          sizes="(max-width: 1024px) 100vw, 50vw"
         />
       </div>
     </div>
