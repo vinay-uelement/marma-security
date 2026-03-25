@@ -25,7 +25,7 @@ const Button = (props: Props) => {
   const isPrimary = variant !== "secondary";
 
   const baseClass =
-    "relative flex items-center justify-center rounded-full pl-8 pr-12 py-1 min-w-[160px] md:min-w-[180px] transition-transform hover:scale-[1.02] group shadow-sm";
+    "relative flex items-center justify-center rounded-full pl-8 pr-12 py-1 min-w-[160px] md:min-w-[180px] transition-transform hover:scale-[1.02] group ";
 
   const variantClass = isPrimary
     ? "bg-[#FF0000] text-white hover:bg-[#E10000]"
