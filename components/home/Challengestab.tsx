@@ -296,7 +296,7 @@ export default function Challengestab() {
             key={`mobile-${active.id}`}
             className={`flex flex-col lg:hidden gap-6 items-center justify-center w-full ${mobileSlideClass}`}
           >
-            <h3 className="fl3-1 w-full">{active.title}</h3>
+            <h3 className="fl3-2 w-full text-center">{active.title}</h3>
             <div className="w-full flex justify-center max-w-[600px]">
               <Image
                 src={active.image}

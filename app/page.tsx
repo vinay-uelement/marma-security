@@ -79,7 +79,7 @@ export default function Home() {
               viewBox="0 0 500 80"
               points="-3000,40 200,40"
               dots={[{ cx: 200, cy: 40, rippleCount: 4 }]}
-              className="w-full h-auto scale-x-[-1] -mt-2 md:-mt-8"
+              className="w-full h-auto scale-x-[-1] -mt-3 md:-mt-8"
               strokeWidth={1}
               dotRadius={6}
               animationDuration={2.5}
