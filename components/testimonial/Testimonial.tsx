@@ -109,11 +109,11 @@ export default function Testimonial() {
             </div>
           </div>
 
-          <h2 className="tm-header-pro text-text-dark whitespace-normal md:whitespace-nowrap w-full relative z-10">
+          <h2 className="fl2 whitespace-normal md:whitespace-nowrap w-full relative z-10">
             See what our{" "}
             <HighlightedText
               text="customers"
-              className="text-text-dark font-bold"
+              className="text-[#323232] !font-extrabold"
               imageClassName="bottom-[-10px] md:bottom-[-20px] left-0 md:left-2/4 md:-translate-x-1/2 w-[100%]"
             />{" "}
             say
