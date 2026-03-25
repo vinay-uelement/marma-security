@@ -94,7 +94,7 @@ export default function Banner({
         </div>
       {/*  background circle */}
       <div
-        className=" absolute max-sm:left-1/2 max-sm:-translate-x-1/2 md:-right-6 bottom-0 md:-bottom-4 w-[42dvh] h-[42dvh] md:w-[75dvh] md:h-[75dvh] rounded-full opacity-50
+        className=" absolute max-sm:left-1/2 max-sm:-translate-x-1/2 md:-right-6 bottom-0 md:-bottom-4 w-[40dvh] h-[40dvh] md:w-[75dvh] md:h-[75dvh] rounded-full opacity-50
             bg-[linear-gradient(290deg,rgba(255,0,0,0.01)_0%,rgba(255,0,0,1)_100%)]
             backdrop-blur-[60px]
             "
@@ -111,7 +111,7 @@ export default function Banner({
         width={1000}
         height={1000}
         priority={true}
-        className={`absolute  w-[55dvw] md:w-[50dvh] object-cover object-center bottom-0! right-10 md:bottom-0 md:right-15 z-0 ${rightImageClassName}`}
+        className={`absolute  w-[27dvh] md:w-[50dvh] object-cover object-center bottom-0! right-10 md:bottom-0 md:right-15 z-0 ${rightImageClassName}`}
         fetchPriority="high"
       />
     </section>
