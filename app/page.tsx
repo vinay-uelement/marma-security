@@ -3,6 +3,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import DecorativeLine from "@/components/home/DecorativeLine";
 import Banner from "@/components/home/Banner";
+import TypewriterText from "@/components/home/TypewriterText";
 
 // Dynamically import below-the-fold components to reduce initial JavaScript payload and main-thread execution time
 const CybercrimeStats = dynamic(
@@ -28,9 +29,20 @@ export default function Home() {
         backgroundImage="/images/banners/homepage-banner.webp" // Solid dark bg for testing before image is added
         title={
           <>
-            Radically Simplified <br className="hidden md:block" />
-            <HighlightedText text="Cybersecurity" /> for Enterprises, Small
-            <br className="hidden lg:block" /> Businesses and Homes
+            Radically Simplified  <br className="hidden md:block" />
+            <HighlightedText text="Cybersecurity" />{" "}
+            for {""}
+            <br className="block md:hidden" />
+            <TypewriterText
+              phrases={[
+                "Enterprises",
+                "Small Businesses",
+                "Homes",
+              ]}
+              typingSpeed={70}
+              deletingSpeed={35}
+              pauseDuration={2000}
+            />
           </>
         }
         titleClassName="font-banner font-normal text-[28px] md:text-[36px] leading-[1.2] md:leading-[50px] tracking-[-0.01em] text-white"

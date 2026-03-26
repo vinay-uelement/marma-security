@@ -3,6 +3,7 @@ import SolutionsTabs from "@/components/solutions/SolutionsTabs";
 import SolutionsInfo from "@/components/solutions/SolutionsInfo";
 import Image from "next/image";
 import Banner from "@/components/home/Banner";
+import TypewriterText from "@/components/home/TypewriterText";
 
 export default function SolutionsPage() {
   return (
@@ -14,10 +15,18 @@ export default function SolutionsPage() {
         title={
           <>
             Complete <HighlightedText text="Cybersecurity" />
-            <br className="hidden md:block" />
-            for Enterprises, Businesses, Homes and
-            <br className="hidden md:block" />
-            more.
+            <br className="block md:block" />{""}
+            for 
+                      <TypewriterText
+                        phrases={[
+                          " Enterprises",
+                          " Small Businesses",
+                          " Homes and more",
+                        ]}
+                        typingSpeed={70}
+                        deletingSpeed={35}
+                        pauseDuration={2000}
+                      />
           </>
         }
         titleClassName="font-banner font-normal text-[28px] md:text-[36px] leading-[1.2] md:leading-[50px] tracking-[-0.01em] text-white"
