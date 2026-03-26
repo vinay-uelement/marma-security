@@ -9,12 +9,14 @@ interface SolutionsInfoProps {
   bgText?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
+  bgTextClassName?: string;
 }
 
 export default function SolutionsInfo({
   imageSrc = "/images/solutions/OneSolution.webp",
   imagePosition = "left",
   bgText = "One Solution. Every Environment",
+  bgTextClassName = "text-[clamp(14px,3.5dvw,54px)] tracking-[0.18em]",
   title = "A unified cybersecurity platform designed to protect networks across homes, businesses, and critical industries.",
   description = "Marma delivers enterprise-grade, network-level cybersecurity that adapts seamlessly to a wide range of use cases—from residential environments and small businesses to healthcare, finance, education, and other critical sectors. Built for simplicity and scale, Marma protects every device connected to your Wi-Fi network without requiring complex setups or technical expertise.",
 }: SolutionsInfoProps) {
@@ -23,8 +25,8 @@ export default function SolutionsInfo({
   return (
     <section className="relative w-full mt-8 md:pt-12 pb-0 md:pb-16 md:pt-10 md:pb-24 flex flex-col items-center ">
       {/* Faded Background Text */}
-      <div className="w-full absolute top-[-7px] md:top-[32px] lg:top-[30px] -translate-y-1/2 flex justify-center z-0 select-none pointer-events-none px-0 md:px-4 max-w-[1440px] mx-auto">
-        <span className="solutions-info-bg-text w-full whitespace-nowrap">
+      <div className="w-full absolute -translate-y-3/4 flex justify-center z-0 select-none pointer-events-none max-w-[1440px] mx-auto">
+        <span className={`solutions-info-bg-text w-full whitespace-nowrap ${bgTextClassName}`}>
           {bgText}
         </span>
       </div>

@@ -414,7 +414,7 @@ img {
 }
 
 .solutions-info-bg-text {
-  @apply font-body font-extrabold text-[17px] leading-[52px] tracking-[0.18em] sm:text-[28px] sm:leading-[56px] sm:tracking-[0.12em] md:font-bold md:text-[42px] md:leading-[52px] md:tracking-[-0.01em] lg:text-[50px] lg:leading-[62px] min-[1430px]:text-[40px] min-[1430px]:leading-[62px] text-[#F1F1F1] uppercase text-center;
+  @apply font-body font-extrabold text-[#F1F1F1] uppercase text-center;
 }
 
 .solutions-info-title {
