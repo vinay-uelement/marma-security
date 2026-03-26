@@ -55,16 +55,16 @@ function getCardProps(offset: number) {
 
   switch (abs) {
     case 0:
-      return { x: 0, scale: 1, opacity: 1, zIndex: 30 };
+      return { x: 0,         scale: 1,    opacity: 1,    zIndex: 30 };
     case 1:
-      return { x: dir * 205, scale: 0.76, opacity: 0.72, zIndex: 20 };
+      return { x: dir * 250, scale: 0.76, opacity: 0.72, zIndex: 20 }; 
     default:
-      return { x: dir * 420, scale: 0.58, opacity: 0, zIndex: 0 };
+      return { x: dir * 490, scale: 0.58, opacity: 0,    zIndex: 0  }; 
   }
 }
 
 // ── Constants ─────────────────────────────────────────────────────────────────
-const CARD_WIDTH = 220;
+const CARD_WIDTH = 260;
 const CARD_HEIGHT = 300;
 
 // ── HeroCarousel ──────────────────────────────────────────────────────────────
