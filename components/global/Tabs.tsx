@@ -19,7 +19,7 @@ const Tabs = (props: Props) => {
         {tabs.map((tab, index) => (
           <div
             key={index}
-            className={`pt-10 px-4 cursor-pointer grow ${activeTabId === tab.id ? "bg-[linear-gradient(180.48deg,rgba(255,188,188,0)_38.62%,#FF0000_109.23%)]" : ""}`}
+            className={`pt-10 px-4 cursor-pointer grow text-center ${activeTabId === tab.id ? "bg-[linear-gradient(180.48deg,rgba(255,188,188,0)_38.62%,#FF0000_109.23%)]" : ""}`}
             onClick={ () => onTabChange(tab.id)}
           >
             {tab.label}
