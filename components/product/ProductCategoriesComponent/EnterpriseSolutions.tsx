@@ -155,8 +155,8 @@ export default function EnterpriseSolutions() {
           />
         </div>
 
-        <div className="max-md:px-6">
         <div className={productSectionTitleClassName}>Management Platform</div>
+        <div className="max-md:px-6">
         <ManagementProductCard
           title="Enterprise Management Platform"
           description="Cloud-based or Private Data Center hosted platform for centrally managing Security Gateways, Endpoint Protection, and Cloud Services across the enterprise."

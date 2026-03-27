@@ -74,8 +74,8 @@ export default function SMBSoluations() {
           </div>
         </div>
 
-        <div className="max-md:px-6">
         <div className={productSectionTitleClassName}>Management Platform</div>
+        <div className="max-md:px-6">
 
         <ManagementProductCard
           title="SMB Management Platform"

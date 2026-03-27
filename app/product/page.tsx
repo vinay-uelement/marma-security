@@ -31,22 +31,22 @@ const heroProducts = [
   {
     id: "safeenterprise",
     href: "#safeenterprise",
-    label: "SafeEnterprise",
-    image: "/images/banners/solution-banner-right1.webp",
+    label: "SafeEnterprise 200",
+    image: "/images/product/SafeEnterprise2001.webp",
     alt: "SafeEnterprise Product",
   },
   {
     id: "safegov",
     href: "#safegov",
-    label: "SafeGov",
-    image: "/images/banners/homepage-right-banner1.webp",
+    label: "SafeEnterprise 400",
+    image: "/images/product/SafeEnterprise4001.webp",
     alt: "SafeGov Product",
   },
   {
     id: "safecloud",
     href: "#safecloud",
-    label: "SafeCloud",
-    image: "/images/banners/solution-banner-right1.webp",
+    label: "SafeEnterprise 400",
+    image: "/images/product/SafeEnterprise4002.webp",
     alt: "SafeCloud Product",
   },
 ];
@@ -449,7 +449,7 @@ export default function ProductPage() {
         <ActiveComponent />
       </div>
 
-      <div className="mx-auto w-full max-md:px-6 max-w-[1280px]">
+      <div className="mx-auto w-full max-w-[1280px]">
         <ProductSummaryTable
           title="Product Summary"
           columns={columns}

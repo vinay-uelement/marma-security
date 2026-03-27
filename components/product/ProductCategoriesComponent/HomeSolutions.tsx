@@ -64,8 +64,8 @@ export default function HomeSolutions() {
           </div>
         </div>
       
-        <div className="max-md:px-6">
         <div className={productSectionTitleClassName}>Mobile Application</div>
+        <div className="max-md:px-6">
 
         <EndpointProductCard
           name="Mobile App"
