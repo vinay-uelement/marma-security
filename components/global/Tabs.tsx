@@ -15,7 +15,7 @@ const Tabs = (props: Props) => {
   const { tabs, activeTabId, onTabChange } = props;
   return (
     <div className="max-w-[1440px] m-auto w-full">
-      <div className="w-[70%] mx-auto flex justify-between fl2-1 border-b-3 border-brand-red">
+      <div className="w-[70%] mx-auto flex justify-between fl3-2 border-b-3 border-brand-red">
         {tabs.map((tab, index) => (
           <div
             key={index}
