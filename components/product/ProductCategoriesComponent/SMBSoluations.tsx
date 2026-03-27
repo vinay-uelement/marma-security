@@ -4,6 +4,13 @@ import ManagementProductCard from "../ManagementProductCard";
 import SpecificationProductCard, {
   SpecificationProductItem,
 } from "../SpecificationProductCard";
+import {
+  productDecoratedSectionClassName,
+  productHalfSectionTitleClassName,
+  productSectionClassName,
+  productSectionTitleClassName,
+  productSplitSectionHeaderClassName,
+} from "./sectionSpacing";
 
 const smbGatewaySpecifications: SpecificationProductItem[] = [
   {
@@ -41,46 +48,46 @@ const smbManagementDescription =
 export default function SMBSoluations() {
   return (
     <div className="mx-auto w-full max-w-[1280px]">
-      <div className="fl2-4 pb-6 sm:pb-8 lg:pb-10 xl:pb-12">
+      <div className={productSectionTitleClassName}>
         Security Gateways
       </div>
 
       <SpecificationProductCard
         title="SafeBiz Firewall | SMB Office Security"
         descript={smbGatewayDescription}
-        image="/images/product/product1safehome.png"
+        image="/images/banners/solution-banner-right1.webp"
         imageAlt="SafeBiz Firewall SMB office security device"
         specification={smbGatewaySpecifications}
       />
 
-      <div className="relative mt-2 w-screen left-1/2 -translate-x-1/2">
-        <div className="w-[220px] sm:w-[280px] md:w-[360px] lg:w-[460px]">
-          <DecorativeLine
-            viewBox="0 0 700 80"
-            points="-3000,40 210,40"
-            dots={[{ cx: 210, cy: 40, rippleCount: 3 }]}
-            className="w-full h-auto"
-            dotRadius={10}
-            animationDuration={2.4}
-          />
+      <div className={productDecoratedSectionClassName}>
+        <div className="relative w-screen left-1/2 -translate-x-1/2">
+          <div className="w-[220px] sm:w-[280px] md:w-[360px] lg:w-[460px]">
+            <DecorativeLine
+              viewBox="0 0 700 80"
+              points="-3000,40 210,40"
+              dots={[{ cx: 210, cy: 40, rippleCount: 3 }]}
+              className="w-full h-auto"
+              dotRadius={10}
+              animationDuration={2.4}
+            />
+          </div>
         </div>
+
+        <div className={productSectionTitleClassName}>Management Platform</div>
+
+        <ManagementProductCard
+          title="SMB Management Platform"
+          description={smbManagementDescription}
+        />
       </div>
 
-      <div className="fl2-4 pt-10 pb-6 sm:pt-12 sm:pb-8 lg:pt-14 lg:pb-10 xl:pt-16 xl:pb-12">
-        Management Platform
-      </div>
-
-      <ManagementProductCard
-        title="SMB Management Platform"
-        description={smbManagementDescription}
-      />
-
-      <div className="pt-10 sm:pt-12 lg:pt-14 xl:pt-16">
-        <div className="flex w-full flex-col lg:flex-row">
-          <div className="fl2-4 pb-6 sm:pb-8 lg:w-1/2 lg:pb-10 xl:pb-12">
+      <div className={productSectionClassName}>
+        <div className={productSplitSectionHeaderClassName}>
+          <div className={productHalfSectionTitleClassName}>
             Endpoint Software
           </div>
-          <div className="fl2-4 pb-6 sm:pb-8 lg:w-1/2 lg:pb-10 xl:pb-12">
+          <div className={productHalfSectionTitleClassName}>
             Mobile Application
           </div>
         </div>

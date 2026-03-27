@@ -38,14 +38,14 @@ export default function SpecificationProductCard({
           </p>
         </div>
 
-        <div className="flex w-full justify-center max-md:self-center max-w-[150px] lg:max-w-[250px] lg:justify-end">
+        <div className="flex w-full justify-center max-md:self-center max-w-[300px] max-h-[300px] lg:max-w-[500px] lg:max-h-[300px] lg:justify-end">
           <Image
             src={image}
             alt={imageAlt}
             width={1000}
             height={1000}
             sizes="(max-width: 1024px) 50vw, 52vw"
-            className="h-auto w-full max-w-[700px] object-fill"
+            className="h-auto w-full max-w-[700px] object-contain"
           />
         </div>
       </div>
