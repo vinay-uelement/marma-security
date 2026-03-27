@@ -1,13 +1,15 @@
 "use client";
 import Image from "next/image";
 import Button from "./Button";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
   return (
     <footer className="footer-container">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-24">
-          <div className="flex flex-col h-full ">
+        <div className="flex flex-col lg:flex-row justify-between w-full gap-0 lg:gap-24">
+          <div className="flex flex-col h-full grow">
             {/* Top: Logo & Description */}
             <div className="flex flex-col items-start pb-6 md:pb-8 lg:pb-15 gap-4 md:gap-10 w-full">
               <Image
@@ -27,11 +29,11 @@ export default function Footer() {
             {/* ======================================= */}
             {/* DESKTOP-ONLY MIDDLE NAV & CONTACT GRID */}
             {/* ======================================= */}
-            <div className="hidden md:flex flex-col h-full w-full">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-4 pb-15 w-full footer-nav-grid place-items-start">
+            <div className={`hidden md:flex w-full justify-between`}>
+              <div className={`grid grow grid-cols-2`}>
                 <a
                   href="/technology"
-                  className="hover:text-white/70 transition-colors"
+                  className="hover:text-white/70 transition-colors h-fit"
                 >
                   Technology
                 </a>
@@ -68,10 +70,8 @@ export default function Footer() {
                 </a>
               </div>
 
-              <div className="w-full h-px bg-[#FFFFFF33] mb-10 md:mb-15 mix-blend-screen" />
 
-              <div className="flex flex-col gap-10 flex-grow">
-                <div className="flex flex-col sm:flex-row gap-8 justify-between pr-5 sm:gap-16 footer-contact-text items-start">
+              <div className={`flex gap-10 flex-col`}>
                   <a
                     href="tel:+14085828962"
                     className="flex items-center gap-4 hover:opacity-80 transition-opacity"
@@ -111,7 +111,6 @@ export default function Footer() {
                     </svg>
                     <span>info@marmasec.com</span>
                   </a>
-                </div>
                 <a
                   href="#"
                   className="flex items-start gap-4 hover:opacity-80 transition-opacity break-all sm:break-normal"
@@ -139,8 +138,10 @@ export default function Footer() {
                   </span>
                 </a>
 
+              </div>
+            </div>
                 {/* Desktop Social Icons */}
-                <div className="flex items-end space-x-6 mt-auto">
+                <div className="hidden md:flex items-end space-x-6 mt-auto">
                   <a
                     href="#"
                     aria-label="Instagram"
@@ -181,8 +182,6 @@ export default function Footer() {
                     />
                   </a>
                 </div>
-              </div>
-            </div>
 
             {/* ======================================= */}
             {/* MOBILE-ONLY UNIFIED 3-COLUMN GRID       */}
@@ -278,16 +277,42 @@ export default function Footer() {
                       info@marmasec.com
                     </span>
                   </a>
+                  <a
+                  href="#"
+                  className="flex items-start gap-1 hover:opacity-80 transition-opacity break-all sm:break-normal"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 90 90"
+                    width="12"
+                    height="12"
+                    fill="none"
+                    stroke="#fff"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M45 90c-.35 0-.68-.19-.86-.49l-4.71-7.97C30.22 65.98 20.7 49.88 17.64 43.73a30.4 30.4 0 0 1-3.06-13.31C14.58 13.65 28.23 0 45 0s30.42 13.65 30.42 30.42c0 4.66-1.03 9.14-3.06 13.31-3.1 6.19-12.58 22.23-21.76 37.74l-4.71 7.97A1 1 0 0 1 45 90z" />
+                    <circle cx="45" cy="29.2" r="11.2" />
+                  </svg>
+                  <span>
+                    Marma Security Inc.,
+                    <br />
+                    180 Promenade <br /> Ste. 300,
+                    
+                    Sacramento, <br/> CA - 95834
+                  </span>
+                </a>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right Column: Contact Form */}
-          <div className="flex flex-col items-center lg:items-end justify-center lg:justify-end mt-4 lg:mt-0 lg:mb-0 w-full">
-            <div className="footer-form-glass w-full">
+      <div className="flex flex-col items-center lg:items-end justify-center lg:justify-end mt-4 lg:mt-0 lg:mb-0 md:w-1/2">
+            <div className="footer-form-glass">
               <form
-                className="flex flex-col gap-5 md:gap-6"
+                className="flex flex-col gap-5 md:gap-4"
                 onSubmit={(e) => e.preventDefault()}
               >
                 <input
@@ -308,7 +333,7 @@ export default function Footer() {
                 <textarea
                   placeholder="Let us know how we can help..."
                   rows={4}
-                  className="footer-input-field resize-none min-h-[120px] md:min-h-[140px]"
+                  className="footer-input-field resize-none min-h-[80px] md:min-h-[100px]"
                 />
 
                 <div className="flex justify-center lg:justify-end pt-3">

@@ -8,6 +8,8 @@ import ProductShowcase from "@/components/product/ProductShowcase";
 import Banner from "@/components/global/Banner";
 import HighlightedText from "@/components/global/HighlightedText";
 import DecorativeLine from "@/components/home/DecorativeLine";
+import Tabs from "@/components/global/Tabs";
+import { ProductCategoriesMapping } from "@/components/product/ProductCategoriesComponent/ProductComponentMapping";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 const heroProducts = [
@@ -55,11 +57,11 @@ function getCardProps(offset: number) {
 
   switch (abs) {
     case 0:
-      return { x: 0,         scale: 1,    opacity: 1,    zIndex: 30 };
+      return { x: 0, scale: 1, opacity: 1, zIndex: 30 };
     case 1:
-      return { x: dir * 250, scale: 0.76, opacity: 0.72, zIndex: 20 }; 
+      return { x: dir * 250, scale: 0.76, opacity: 0.72, zIndex: 20 };
     default:
-      return { x: dir * 490, scale: 0.58, opacity: 0,    zIndex: 0  }; 
+      return { x: dir * 490, scale: 0.58, opacity: 0, zIndex: 0 };
   }
 }
 
@@ -258,6 +260,13 @@ function HeroCarousel() {
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 export default function ProductPage() {
+
+  const [activeProductTab, setActiveProductTab] = useState<keyof typeof ProductCategoriesMapping>('enterprise');
+  const onTabChange = (tabId: string) => {
+    setActiveProductTab(tabId as keyof typeof ProductCategoriesMapping);
+  };
+  const ActiveComponent = ProductCategoriesMapping[activeProductTab];
+
   return (
     <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
       <div className="relative">
@@ -315,55 +324,17 @@ export default function ProductPage() {
       </div>
 
       {/* Product Showcases */}
-      <div className="flex-grow max-w-[1440px] w-full mx-auto px-6 lg:px-12">
-        <div className="pb-20 max-sm:pb-2">
-          <ProductShowcase
-            productName="SafeHome"
-            mainFeature={{
-              title: "CYBERSECURITY PROTECTION",
-              description:
-                "SafeHome Firewall is an AI-powered, plug-and-play security gateway that protects every internet-connected device wirelessly in minutes.",
-              image: "/images/banners/solution-banner-right1.webp",
-            }}
-            subFeatures={[
-              {
-                title: "DATA PROTECTION",
-                description:
-                  "SafeHome protects all connected devices on your network from cyberattacks targeting your financial and personal data, safeguarding your privacy and protecting your family on the internet.",
-                image: "/images/features/data-protect-safehome.webp",
-              },
-              {
-                title: "SECURE SMART HOME",
-                description:
-                  "SafeHome protects all smart devices in your smart home connected to your wifi network such as cameras, digital doorlock, appliances.",
-                image: "/images/features/securehome-safehome.webp",
-              },
-            ]}
-          />
-          <ProductShowcase
-            productName="SafeBiz"
-            mainFeature={{
-              title: "SMB SECURITY",
-              description:
-                "SafeBiz Firewall is specifically designed for SMBs that require enterprise-grade security without a dedicated IT security team.",
-              image: "/images/banners/homepage-right-banner1.webp",
-            }}
-            subFeatures={[
-              {
-                title: "CLOUD PROTECTION",
-                description:
-                  "Ensure your cloud workloads and remote environments remain inaccessible to attackers with real-time continuous monitoring.",
-                image: "/images/features/customer-safebiz.webp",
-              },
-              {
-                title: "ENDPOINT PROTECTION",
-                description:
-                  "Windows Agent Software: Firewall integration, Anti-Virus, DNS Security, URL Filtering, AI/DLP.",
-                image: "/images/features/securehome-safehome.webp",
-              },
-            ]}
-          />
-        </div>
+      <Tabs
+        tabs={[
+          { label: "Enterprise Solutions", id: 'enterprise'},
+          { label: "SMB Solutions", id: 'smb'},
+          { label: "Home Solutions", id: 'home'}
+        ]}
+        activeTabId={activeProductTab}
+        onTabChange={onTabChange}
+      />
+      <div className="fl2-2">
+        <ActiveComponent />
       </div>
     </main>
   );
