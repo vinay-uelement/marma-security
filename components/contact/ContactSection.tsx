@@ -83,7 +83,7 @@ export default function ContactSection() {
           <div>
             <h2 className="faq-heading mb-8">FAQ</h2>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-8">
               {faqs.map((faq, index) => (
                 <div
                   key={faq.id}
@@ -94,7 +94,7 @@ export default function ContactSection() {
                   <span className="faq-item-number shrink-0">{faq.id}</span>
 
                   {/* CONTENT BOX (BACKGROUND) */}
-                  <div className="flex-1 bg-[#F7F7F7] rounded-[37px] px-[20px] lg:px-[27px] py-5 lg:py-8 transition-all group-hover:bg-[#efefef] ">
+                  <div className="flex-1 bg-[#F7F7F7] rounded-[37px] px-[20px] lg:px-[27px] py-4 transition-all group-hover:bg-[#efefef] ">
                     <div className="flex justify-between items-center gap-4">
                       <p className="faq-item-question">{faq.question}</p>
 
@@ -120,7 +120,7 @@ export default function ContactSection() {
                           transition={{ duration: 0.3, ease: "easeInOut" }}
                           className="overflow-hidden"
                         >
-                          <p className="faq-item-answer pt-0">{faq.answer}</p>
+                          <p className="faq-item-answer pt-2">{faq.answer}</p>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -136,21 +136,22 @@ export default function ContactSection() {
 
         <div className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] scale-x-[-1] mt-4 min-[901px]:mt-0 pointer-events-none z-0">
           <DecorativeLine
+            viewBox="0 150 1260 20"
+            points="480,270 700,270 800,150 3000,150"
+            dots={[{ cx: 480, cy: 270, rippleCount: 4, rippleBaseDelay: 0.2 }]}
+            className="w-full h-auto"
+            strokeWidth={3}
+            dotRadius={18}
+            animationDuration={2.6}
+          />
+
+          <DecorativeLine
             viewBox="0 0 700 80"
             points="-3000,40 210,40"
             dots={[{ cx: 210, cy: 40, rippleCount: 3 }]}
             className="w-full h-auto scale-x-[-1]"
             dotRadius={8}
             animationDuration={2.2}
-          />
-          <DecorativeLine
-            viewBox="0 0 1260 500"
-            points="480,150 700,150 800,270 3000,270"
-            dots={[{ cx: 480, cy: 150, rippleCount: 4, rippleBaseDelay: 0.2 }]}
-            className="w-full h-auto -mt-10 md:-mt-20 lg:-mt-28"
-            strokeWidth={3}
-            dotRadius={18}
-            animationDuration={2.6}
           />
         </div>
       </div>
