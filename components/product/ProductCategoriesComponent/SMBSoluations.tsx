@@ -9,7 +9,6 @@ import {
   productHalfSectionTitleClassName,
   productSectionClassName,
   productSectionTitleClassName,
-  productSplitSectionHeaderClassName,
 } from "./sectionSpacing";
 
 const smbGatewaySpecifications: SpecificationProductItem[] = [
@@ -85,38 +84,39 @@ export default function SMBSoluations() {
       </div>
 
       <div className={`max-md:px-6 ${productSectionClassName}`}>
-        <div className={productSplitSectionHeaderClassName}>
-          <div className={productHalfSectionTitleClassName}>
-            Endpoint Software
+        <div className="flex flex-col gap-8 lg:flex-row lg:gap-6">
+          <div className="flex flex-col lg:w-1/2">
+            <div className={productHalfSectionTitleClassName}>
+              Endpoint Software
+            </div>
+            <EndpointProductCard
+              name="Agent Software for Windows"
+              tagline="24x7 Endpoint Protection"
+              primaryFeature="FW & Anti-Virus Integration"
+              features={[
+                "DNS Security",
+                "URL Filtering",
+                "Scam Protection",
+                "AI / Data Loss Prevention",
+              ]}
+            />
           </div>
-          <div className={productHalfSectionTitleClassName}>
-            Mobile Application
+          <div className="flex flex-col lg:w-1/2">
+            <div className={productHalfSectionTitleClassName}>
+              Mobile Application
+            </div>
+            <EndpointProductCard
+              name="Mobile App"
+              tagline="iOS & Android"
+              primaryFeature="Firewall Onboarding"
+              features={[
+                "Dashboard",
+                "Alerts",
+                "User Security Config",
+                "QR Phishing Protection",
+              ]}
+            />
           </div>
-        </div>
-
-        <div className="flex flex-col gap-6 lg:flex-row">
-          <EndpointProductCard
-            name="Agent Software for Windows"
-            tagline="24x7 Endpoint Protection"
-            primaryFeature="FW & Anti-Virus Integration"
-            features={[
-              "DNS Security",
-              "URL Filtering",
-              "Scam Protection",
-              "AI / Data Loss Prevention",
-            ]}
-          />
-          <EndpointProductCard
-            name="Mobile App"
-            tagline="iOS & Android"
-            primaryFeature="Firewall Onboarding"
-            features={[
-              "Dashboard",
-              "Alerts",
-              "User Security Config",
-              "QR Phishing Protection",
-            ]}
-          />
         </div>
       </div>
     </div>

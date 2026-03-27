@@ -9,7 +9,6 @@ import {
   productHalfSectionTitleClassName,
   productSectionClassName,
   productSectionTitleClassName,
-  productSplitSectionHeaderClassName,
 } from "./sectionSpacing";
 
 const enterpriseDescription =
@@ -168,40 +167,41 @@ export default function EnterpriseSolutions() {
 
     <div className="max-md:px-6">
       <div className={productSectionClassName}>
-        <div className={productSplitSectionHeaderClassName}>
-          <div className={productHalfSectionTitleClassName}>
-            Endpoint Software
+        <div className="flex flex-col gap-8 lg:flex-row lg:gap-6">
+          <div className="flex flex-col lg:w-1/2">
+            <div className={productHalfSectionTitleClassName}>
+              Endpoint Software
+            </div>
+            <EndpointProductCard
+              name="Agent Software for Windows"
+              tagline="24×7 Endpoint Protection"
+              primaryFeature="FW & Anti-Virus Integration"
+              features={[
+                "DNS Security",
+                "URL Filtering",
+                "Scam Protection",
+                "AI / Data Loss Prevention",
+              ]}
+              image="/images/products/endpoint-software.webp"
+            />
           </div>
-          <div className={productHalfSectionTitleClassName}>
-            Cloud Security Services
+          <div className="flex flex-col lg:w-1/2">
+            <div className={productHalfSectionTitleClassName}>
+              Cloud Security Services
+            </div>
+            <EndpointProductCard
+              name="E-mail Protection Service"
+              tagline="Enterprise Email Security"
+              primaryFeature="Zero-day Phishing Protection"
+              features={[
+                "Zero-day Malware / Ransomware",
+                "Scam Protection",
+                "AI / Data Loss Prevention",
+                "QR Phishing Protection",
+              ]}
+              image="/images/products/email-security.webp"
+            />
           </div>
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-6">
-          <EndpointProductCard
-            name="Agent Software for Windows"
-            tagline="24×7 Endpoint Protection"
-            primaryFeature="FW & Anti-Virus Integration"
-            features={[
-              "DNS Security",
-              "URL Filtering",
-              "Scam Protection",
-              "AI / Data Loss Prevention",
-            ]}
-            image="/images/products/endpoint-software.webp"
-          />
-          <EndpointProductCard
-            name="E-mail Protection Service"
-            tagline="Enterprise Email Security"
-            primaryFeature="Zero-day Phishing Protection"
-            features={[
-              "Zero-day Malware / Ransomware",
-              "Scam Protection",
-              "AI / Data Loss Prevention",
-              "QR Phishing Protection",
-            ]}
-            image="/images/products/email-security.webp"
-          />
         </div>
       </div>
 
