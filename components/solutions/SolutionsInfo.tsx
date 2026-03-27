@@ -26,7 +26,9 @@ export default function SolutionsInfo({
     <section className="relative w-full mt-8 md:pt-12 pb-0 md:pb-16 md:pt-10 md:pb-24 flex flex-col items-center ">
       {/* Faded Background Text */}
       <div className="w-full absolute -translate-y-3/4 flex justify-center z-0 select-none pointer-events-none max-w-[1440px] mx-auto">
-        <span className={`solutions-info-bg-text w-full whitespace-nowrap ${bgTextClassName}`}>
+        <span
+          className={`solutions-info-bg-text w-full whitespace-nowrap ${bgTextClassName}`}
+        >
           {bgText}
         </span>
       </div>
@@ -39,23 +41,14 @@ export default function SolutionsInfo({
             isRight ? "lg:order-1" : "lg:order-2"
           }`}
         >
-          <div className="bg-transparent flex flex-col justify-between h-full items-center lg:items-start relative">
+          <div className="bg-transparent flex flex-col justify-center h-full items-center lg:items-start relative ">
             <div className="flex flex-col">
               <h3 className="solutions-info-title pb-[20px] lg:mb-6">
                 {title}
               </h3>
 
-              <p className="solutions-info-desc mb-2 lg:mb-20">{description}</p>
+              <p className="solutions-info-desc">{description}</p>
             </div>
-
-            {/* Outlined Explore Button (Desktop only, bound inside the text bounds) */}
-            <Button
-              icon
-              variant="secondary"
-              label="Explore"
-              textContainer="text-black!"
-              className=" border-gray-300! hidden lg:flex"
-            />
           </div>
         </div>
 
@@ -71,17 +64,6 @@ export default function SolutionsInfo({
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover object-center"
-          />
-        </div>
-
-        {/* Outlined Explore Button (Mobile/Tablet only, situated beneath the image physically) */}
-        <div className="flex lg:hidden justify-center items-center w-full order-3 mt-4">
-          <Button
-            icon
-            variant="secondary"
-            label="Explore"
-            textContainer="text-black!"
-            className=" border-gray-300!"
           />
         </div>
       </div>
