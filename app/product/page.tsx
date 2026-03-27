@@ -297,83 +297,84 @@ function HeroCarousel() {
   );
 }
 
-const columns = [
-  { key: "enterprise", label: "Enterprise" },
-  { key: "smb", label: "SMB" },
-  { key: "home", label: "Home" },
-];
-
-const rows = [
-  {
-    category: "Security Gateway",
-    values: {
-      enterprise: "SE 200/ SE 400/ SafeRemote",
-      smb: "SafeBiz Firewall",
-      home: "SafeHome Firewall",
-    },
-  },
-  {
-    category: "Peak Throughput",
-    values: { enterprise: "10 Gbps", smb: "1 Gbps", home: "1 Gbps" },
-  },
-  {
-    category: "Wi-Fi",
-    values: {
-      enterprise: "Wi-Fi 6E/ 7",
-      smb: "Wi-Fi 5/ 6E",
-      home: "Wi-Fi 5/ 6E",
-    },
-  },
-  {
-    category: "Max Users",
-    values: { enterprise: "400 per appliance", smb: "128", home: "64" },
-  },
-  {
-    category: "Management Platform",
-    values: { enterprise: "Cloud + Private DC", smb: "Cloud Only", home: "-" },
-  },
-  {
-    category: "Windows Endpoint Agent",
-    values: { enterprise: { check: true }, smb: { check: true }, home: "-" },
-  },
-  {
-    category: "Mobile App",
-    values: {
-      enterprise: "-",
-      smb: { check: true, label: "iOS & Android" },
-      home: { check: true, label: "iOS & Android" },
-    },
-  },
-  {
-    category: "Email Protection",
-    values: {
-      enterprise: { check: true, label: "Cloud Service" },
-      smb: "-",
-      home: "-",
-    },
-  },
-  {
-    category: "SIEM/ SOC Integration",
-    values: { enterprise: { check: true }, smb: "-", home: "-" },
-  },
-  {
-    category: "Made In India",
-    values: {
-      enterprise: { check: true, label: "(All gateways)" },
-      smb: "-",
-      home: "-",
-    },
-  },
-];
-
 // ── Page ──────────────────────────────────────────────────────────────────────
 export default function ProductPage() {
+
   const [activeProductTab, setActiveProductTab] =
     useState<keyof typeof ProductCategoriesMapping>("enterprise");
   const onTabChange = (tabId: string) => {
     setActiveProductTab(tabId as keyof typeof ProductCategoriesMapping);
   };
   const ActiveComponent = ProductCategoriesMapping[activeProductTab];
+
+  const columns = [
+    { key: "enterprise", label: "Enterprise" },
+    { key: "smb", label: "SMB" },
+    { key: "home", label: "Home" },
+  ];
+  
+  const rows = [
+    {
+      category: "Security Gateway",
+      values: {
+        enterprise: "SE 200/ SE 400/ SafeRemote",
+        smb: "SafeBiz Firewall",
+        home: "SafeHome Firewall",
+      },
+    },
+    {
+      category: "Peak Throughput",
+      values: { enterprise: "10 Gbps", smb: "1 Gbps", home: "1 Gbps" },
+    },
+    {
+      category: "Wi-Fi",
+      values: {
+        enterprise: "Wi-Fi 6E/ 7",
+        smb: "Wi-Fi 5/ 6E",
+        home: "Wi-Fi 5/ 6E",
+      },
+    },
+    {
+      category: "Max Users",
+      values: { enterprise: "400 per appliance", smb: "128", home: "64" },
+    },
+    {
+      category: "Management Platform",
+      values: { enterprise: "Cloud + Private DC", smb: "Cloud Only", home: "-" },
+    },
+    {
+      category: "Windows Endpoint Agent",
+      values: { enterprise: { check: true }, smb: { check: true }, home: "-" },
+    },
+    {
+      category: "Mobile App",
+      values: {
+        enterprise: "-",
+        smb: { check: true, label: "iOS & Android" },
+        home: { check: true, label: "iOS & Android" },
+      },
+    },
+    {
+      category: "Email Protection",
+      values: {
+        enterprise: { check: true, label: "Cloud Service" },
+        smb: "-",
+        home: "-",
+      },
+    },
+    {
+      category: "SIEM/ SOC Integration",
+      values: { enterprise: { check: true }, smb: "-", home: "-" },
+    },
+    {
+      category: "Made In India",
+      values: {
+        enterprise: { check: true, label: "(All gateways)" },
+        smb: "-",
+        home: "-",
+      },
+    },
+  ];
 
   return (
     <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
@@ -432,6 +433,7 @@ export default function ProductPage() {
       </div>
 
       {/* Product Showcases */}
+      <div className="mt-20">
       <Tabs
         tabs={[
           { label: "Enterprise Solutions", id: "enterprise" },
@@ -441,15 +443,18 @@ export default function ProductPage() {
         activeTabId={activeProductTab}
         onTabChange={onTabChange}
       />
-      <div className="fl2-2">
+      </div>
+      <div className="my-4 mx-2 md:my-15">
         <ActiveComponent />
       </div>
 
-      <ProductSummaryTable
-        title="Product Summary"
-        columns={columns}
-        rows={rows}
-      />
+      <div className="sm:pt-16 lg:pt-20 xl:pt-24 mx-auto w-full max-w-[1280px]">
+        <ProductSummaryTable
+          title="Product Summary"
+          columns={columns}
+          rows={rows}
+        />
+      </div>
     </main>
   );
 }

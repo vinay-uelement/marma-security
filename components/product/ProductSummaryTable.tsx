@@ -56,14 +56,14 @@ export default function ProductSummaryTable({
   rows,
 }: ProductSummaryTableProps) {
   return (
-    <div className="w-full flex flex-col gap-6">
+    <div className="w-full flex flex-col">
       {title && (
-        <h2 className="font-title font-semibold text-[22px] sm:text-[26px] lg:text-[30px] text-[#AAAAAA]">
+        <h2 className="fl2-4">
           {title}
         </h2>
       )}
 
-      <div className="w-full overflow-x-auto rounded-2xl">
+      <div className="w-full overflow-x-auto rounded-2xl px-4 py-6 sm:px-6 sm:py-8 lg:px-10 lg:py-10 xl:px-12 xl:py-12">
         <table className="w-full min-w-[560px] border-collapse">
           {/* Header */}
           <thead>

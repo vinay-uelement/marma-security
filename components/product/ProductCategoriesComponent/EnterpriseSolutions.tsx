@@ -2,8 +2,13 @@ import DecorativeLine from "@/components/home/DecorativeLine";
 import SpecificationProductCard, {
   SpecificationProductItem,
 } from "../SpecificationProductCard";
+import ManagementProductCard from "../ManagementProductCard";
+import EndpointProductCard from "../EndpointProductCard";
 
-const enterpriseSpecifications: SpecificationProductItem[] = [
+const enterpriseDescription =
+  "SafeEnterprise protects all connected devices on your network from cyberattacks targeting your financial and business data, helping secure privacy, continuity, and connected operations across the office.";
+
+const enterprise200Specifications: SpecificationProductItem[] = [
   {
     label: "Form Factor",
     value: "1U Rack Mounted",
@@ -30,27 +35,166 @@ const enterpriseSpecifications: SpecificationProductItem[] = [
   },
 ];
 
+const enterprise400Specifications: SpecificationProductItem[] = [
+  {
+    label: "Form Factor",
+    value: "2U Rack Mounted",
+  },
+  {
+    label: "Throughput",
+    value: "10 Gbps",
+  },
+  {
+    label: "WAN Ports",
+    value: "1 x 10 Gbps, 2 x 2.5 Gbps",
+  },
+  {
+    label: "LAN Ports",
+    value: "24 x 1 Gbps (Ethernet / PoE / SFP options)",
+  },
+  {
+    label: "Integrated Wi-Fi",
+    value: "Wi-Fi 6E / 7",
+  },
+  {
+    label: "Recommended Users",
+    value: "Up to 400",
+  },
+];
+
+const safeRemoteFirewallSpecifications: SpecificationProductItem[] = [
+  {
+    label: "Form Factor",
+    value: "Table-top / Wall-mounted",
+  },
+  {
+    label: "Throughput",
+    value: "1 Gbps",
+  },
+  {
+    label: "WAN Ports",
+    value: "1 x 2.5 Gbps",
+  },
+  {
+    label: "LAN Ports",
+    value: "4 x 1 Gbps (Ethernet)",
+  },
+  {
+    label: "Integrated Wi-Fi",
+    value: "Wi-Fi 5 / 6E",
+  },
+  {
+    label: "Recommended Users",
+    value: "Up to 64",
+  },
+];
+
+
 export default function EnterpriseSolutions() {
   return (
     <div className="mx-auto w-full max-w-[1280px]">
+      <div className="fl2-4">Security Gateways</div>
       <SpecificationProductCard
         title="SafeEnterprise 200 | Branch Office Security"
-        descript="SafeEnterprise protects all connected devices on your network from cyberattacks targeting your financial and business data, helping secure privacy, continuity, and connected operations across the office."
+        descript={enterpriseDescription}
         image="/images/banners/homepage-right-banner1.webp"
         imageAlt="SafeEnterprise 200 branch office security device"
-        specification={enterpriseSpecifications}
+        specification={enterprise200Specifications}
       />
       <div className="relative mb-2 md:mb-12 w-screen left-1/2 -translate-x-1/2">
-          <div className="w-[500px] md:w-[600px] lg:w-[1000px]">
-            <DecorativeLine
-              viewBox="0 0 1500 80"
-              points="0,40 310,40"
-              dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
-              className="w-full h-auto"
-              animationDuration={2.4}
-            />
-          </div>
+        <div className="w-[500px] md:w-[600px] lg:w-[1000px]">
+          <DecorativeLine
+            viewBox="0 0 1500 80"
+            points="0,40 310,40"
+            dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
+            className="w-full h-auto"
+            animationDuration={2.4}
+          />
         </div>
+      </div>
+      <SpecificationProductCard
+        title="SafeEnterprise 400 | Regional Office / Campus Security"
+        descript={enterpriseDescription}
+        image="/images/banners/homepage-right-banner1.webp"
+        imageAlt="SafeEnterprise 400 regional office and campus security device"
+        specification={enterprise400Specifications}
+      />
+      <div className="mt-6 sm:mt-8 lg:mt-10 xl:mt-12">
+        <SpecificationProductCard
+          title="SafeRemote Firewall | Remote Worker Security"
+          descript={enterpriseDescription}
+          image="/images/banners/homepage-right-banner1.webp"
+          imageAlt="SafeRemote Firewall remote worker security device"
+          specification={safeRemoteFirewallSpecifications}
+        />
+      </div>
+
+      <div className="flex flex-col w-[30%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-10 min-[901px]:mt-0 pointer-events-none z-0">
+        <DecorativeLine
+          viewBox="0 0 500 80"
+          points="-3000,40 200,40"
+          dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
+          className="w-full h-auto scale-x-[-1]"
+          dotRadius={7}
+          animationDuration={2.2}
+        />
+        <DecorativeLine
+          viewBox="0 0 500 120"
+          points="20,20 80,90 3000,90"
+          dots={[{ cx: 20, cy: 20, rippleCount: 4, rippleBaseDelay: 0.5 }]}
+          className="w-full h-auto -mt-8 md:-mt-28"
+          dotRadius={8}
+          animationDuration={3}
+        />
+      </div>
+
+      <div className="fl2-4 pb-6 sm:pb-8 lg:pb-10 xl:pb-12">
+        Management Platform
+      </div>
+      <ManagementProductCard
+        title="Enterprise Management Platform"
+        description="Cloud-based or Private Data Center hosted platform for centrally managing Security Gateways, Endpoint Protection, and Cloud Services across the enterprise."
+        image="/images/products/enterprise-management.webp"
+        imageAlt="Enterprise Management Platform Screenshot"
+      />
+
+
+      <div className="flex w-full pt-6 sm:t-8 lg:pt-10 xl:pt-12">
+        <div className="fl2-4 pb-6 sm:py-8 lg:py-10 xl:py-12 w-1/2">
+        Endpoint Software
+        </div>
+        <div className="fl2-4 pb-6 sm:py-8 lg:py-10 xl:py-12 w-1/2">
+        Window Security Agent
+        </div>
+      </div>
+
+      <div className="flex flex-col lg:flex-row gap-6">
+        
+        <EndpointProductCard
+          name="Agent Software for Windows"
+          tagline="24×7 Endpoint Protection"
+          primaryFeature="FW & Anti-Virus Integration"
+          features={[
+            "DNS Security",
+            "URL Filtering",
+            "Scam Protection",
+            "AI / Data Loss Prevention",
+          ]}
+          image="/images/products/endpoint-software.webp"
+        />
+        <EndpointProductCard
+          name="E-mail Protection Service"
+          tagline="Enterprise Email Security"
+          primaryFeature="Zero-day Phishing Protection"
+          features={[
+            "Zero-day Malware / Ransomware",
+            "Scam Protection",
+            "AI / Data Loss Prevention",
+            "QR Phishing Protection",
+          ]}
+          image="/images/products/email-security.webp"
+        />
+      </div>
     </div>
   );
 }

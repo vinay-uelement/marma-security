@@ -27,10 +27,10 @@ export default function SpecificationProductCard({
   ].filter((group) => group.length > 0);
 
   return (
-    <section className="w-full bg-white px-4 py-6 sm:px-6 sm:py-8 lg:px-10 lg:py-10 xl:px-12 xl:py-12">
-      <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-10 xl:gap-14">
+    <section className="w-full bg-white px-4 pb-6 sm:px-6 sm:pb-8 lg:px-10 lg:pb-10 xl:px-12 xl:pb-12">
+      <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10 xl:gap-14">
         <div className="w-full max-w-[560px]">
-          <h2 className="fl2 text-nowrap">
+          <h2 className="fl3-3 text-nowrap">
             {title}
           </h2>
           <p className="fl4-3 font-light mt-4 max-w-full md:mt-6">

@@ -100,6 +100,9 @@ img {
   .fl2-3 {
     @apply font-title text-[16px] md:text-[32px] leading-[21px] md:leading-[62px] tracking-[-0.01em] text-text-dark;
   }
+  .fl2-4 {
+    @apply font-title font-semibold text-[20px] sm:text-[24px] lg:text-[28px] text-[#AAAAAA];
+  }
 
   /* FL3: Card Titles / Component Data Titles */
   .fl3 {
