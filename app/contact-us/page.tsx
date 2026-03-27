@@ -1,62 +1,54 @@
 
 
-import React from 'react';
-import HighlightedText from "@/components/global/HighlightedText";
-import Banner from "@/components/global/Banner";
-import SimplifyLife from "@/components/partners/SimplifyLife";
-import PartnersBottomBanner from "@/components/partners/PartnersBottomBanner";
-import OurTeam from "@/components/about/OurTeam";
-import StatsSection from "@/components/about/StatsSection";
+'use client';
+
+import React, { useState } from 'react';
+import Banner from "@/components/home/Banner";
 import ContactSection from "@/components/contact/ContactSection";
-import Image from 'next/image';
+import ContactModal from '@/components/contact/ContactModal';
 
+export default function ContactUsPage() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-export default function PartnersPage() {
+    const toggleModal = () => setIsModalOpen(!isModalOpen);
+
     return (
-        <main className="w-full flex-grow flex flex-col items-center">
-            {/* Custom Contact Us Hero Section designed exactly to the Figma reference */}
-            <section
-                className="relative w-full min-h-[100vh] flex flex-col justify-start items-center overflow-x-clip pt-32 lg:pt-40"
-                style={{
-                    backgroundImage: `url('/images/banners/banner-contact-us.webp')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat'
-                }}
-            >
-                {/* Text Content */}
-                <div className="relative z-10 w-full px-6 lg:px-12 flex flex-col items-center justify-center text-center mt-10 md:mt-16">
-                    <h1 className="contact-banner-title mb-6">
-                        We’re here to help you <br className="block sm:hidden" />secure what matters most.
-                    </h1>
-                    
-                    <p className="contact-banner-desc max-w-[850px] mx-auto">
+        <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
+            <Banner
+                backgroundImage="/images/banners/banner-contact-new1.webp"
+                heightVariant="900"
+                ContinerClass="h-[93vh]"
+                title={
+                    <>
+                        We’re here to help you secure <br className="block " /> what matters most.
+                    </>
+                }
+                titleClassName="font-banner font-normal text-[28px] md:text-[36px] leading-[1.2] md:leading-[50px] tracking-[-0.01em] text-white"
+                subtitle={
+                    <>
                         Have questions about Marma or want to learn how our solutions fit your needs? Our team is ready to
                         assist you with product details, deployment guidance, and support. Reach out to us today, and let’s build
                         a safer digital environment together.
-                    </p>
-                </div>
-
-                {/* Overlapping Phones Image Block */}
-                <div className="relative w-full max-w-[850px] mx-auto mt-12 md:mt-15 lg:mb-[-120px] flex justify-center z-20 px-4">
-                    <Image
-                        src="/images/banners/banner-contact-us-mobile.webp"
-                        alt="Marma Security Mobile App"
-                        width={1000}
-                        height={1000}
-                        className="object-contain w-full sm:w-[85%] md:w-[680px] h-auto drop-shadow-2xl"
-                        priority
-                        sizes="(max-width: 768px) 100vw, 850px"
-                    />
-                </div>
-            </section>
-
-
+                    </>
+                }
+                subtitleClassName="font-title font-light text-[18px] md:text-[24px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-[#E0E0E0] max-w-[550px]"
+                buttons={[
+                    {
+                        label: "Contact Us",
+                        variant: "primary",
+                        onClick: toggleModal,
+                        icon: true,
+                    },
+                ]}
+                rightImage="/images/banners/banner-contact-us-mobile.webp"
+                rightImageAlt="Marma Security Mobile App"
+                rightImageClassName="!w-[40vh] right-[70%] md:!w-[681px] md:!h-[513px] md:!bottom-[-35px]"
+            />
 
             <ContactSection />
-
+            
+            <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </main>
-
-
     );
 }
+

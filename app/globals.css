@@ -641,6 +641,25 @@ img {
 }
 
 /* ===============================================================
+   FAQ SECTION
+   ================================= */
+.faq-heading {
+  @apply font-title font-semibold text-[28px] md:text-[38px] leading-[1.2] md:leading-[60px] text-text-dark;
+}
+
+.faq-item-number {
+  @apply font-body font-semibold text-[42px] md:text-[68px] leading-none text-[#DADADA];
+}
+
+.faq-item-question {
+  @apply font-title font-medium text-[14px] sm:text-[18px] md:text-[24px] lg:text-[30px] leading-[1.2] lg:leading-[34px] tracking-tight text-text-dark;
+}
+
+.faq-item-answer {
+  @apply font-body font-normal text-[14px] md:text-[18px] leading-relaxed text-text-muted mt-4;
+}
+
+/* ===============================================================
    SHARED / REUSABLE
    =============================================================== */
 
