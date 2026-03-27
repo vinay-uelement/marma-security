@@ -10,42 +10,48 @@ const testimonials = [
     name: "C. Booth",
     title: "CEO, Lorem ispum",
     rating: 5.0,
+    image: "/images/banners/solution-banner-right1.webp",
     content: "Outstanding Cybersecurity Solution!",
   },
   {
     name: "Ganesh",
     title: "CEO, Lorem ispum",
     rating: 5.0,
+    image: "/images/banners/solution-banner-right1.webp",
     content:
-      "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. It gives us peace of mind knowing our systems are protected around the clock.",
+      "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. ",
   },
   {
     name: "Ganesh",
     title: "CEO, Lorem ispum",
     rating: 5.0,
+    image: "/images/banners/solution-banner-right1.webp",
     content:
-      "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. It gives us peace of mind knowing our systems are protected around the clock.",
+      "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. ",
   },
   {
     name: "Ganesh",
     title: "CEO, Lorem ispum",
     rating: 5.0,
+    image: "/images/banners/solution-banner-right1.webp",
     content:
-      "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. It gives us peace of mind knowing our systems are protected around the clock.",
+      "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. ",
   },
   {
     name: "Ganesh",
     title: "CEO, Lorem ispum",
     rating: 5.0,
+    image: "/images/banners/solution-banner-right1.webp",
     content:
-      "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. It gives us peace of mind knowing our systems are protected around the clock.",
+      "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. ",
   },
   {
     name: "Ganesh",
     title: "CEO, Lorem ispum",
     rating: 5.0,
+    image: "/images/banners/solution-banner-right1.webp",
     content:
-      "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. It gives us peace of mind knowing our systems are protected around the clock.",
+      "MarmaSec made cybersecurity incredibly simple for us. Setup took minutes, and we immediately saw suspicious activity being blocked. ",
   },
 ];
 
@@ -144,57 +150,74 @@ export default function Testimonial() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`relative bg-bg-card border border-border-card rounded-[19px] px-[18px] py-[24px] flex flex-col flex-shrink-0 w-full max-w-full min-w-0 sm:w-[70vw] md:w-[45vw] lg:w-[30vw] xl:w-[380px] snap-center md:snap-start  ${
+              className={`relative bg-bg-card border border-border-card rounded-[19px] px-[18px] py-[24px] flex flex-row flex-shrink-0 w-full max-w-full min-w-0 sm:w-[72vw] md:w-[47vw] lg:w-[32vw] xl:w-[430px] snap-center md:snap-start overflow-hidden ${
                 index === testimonials.length - 1 ? "sm:mr-6" : ""
               }`}
             >
               {/* Quote Icon */}
-              <div className="absolute top-8 right-8">
+              <div className="absolute top-8 right-8 z-0">
                 <Image
                   src="/images/global/quote-icon2.png"
                   alt="Quote"
                   width={50}
                   height={74}
-                  className="object-contain"
+                  className="object-contain opacity-60"
                 />
               </div>
 
-              {/* Header */}
-              <div className="mb-[0px]">
-                <h3 className="tm-card-name-bold text-text-dark">
-                  {testimonial.name}
-                </h3>
-                <p className="tm-card-subtitle-reg ">{testimonial.title}</p>
-              </div>
-
-              {/* Content */}
-              <p className="tm-card-text-body text-text-muted leading-relaxed mb-2">
-                {testimonial.content}
-              </p>
-
-              {/* Rating */}
-              <div className="flex items-center gap-2 mt-auto">
-                <div className="flex items-center gap-3">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      width="18"
-                      height="20"
-                      viewBox="0 0 16 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 0L10.472 4.965L16 5.86L12 9.71L12.944 15L8 12.43L3.056 15L4 9.71L0 5.86L5.528 4.965L8 0Z"
-                        fill="#dfaf2d"
-                      />
-                    </svg>
-                  ))}
+              {/* Left — text content */}
+              <div className="relative z-10 flex flex-col flex-1 min-w-0 pr-2">
+                {/* Header */}
+                <div className="mb-2">
+                  <h3 className="tm-card-name-bold text-text-dark">
+                    {testimonial.name}
+                  </h3>
+                  <p className="tm-card-subtitle-reg">{testimonial.title}</p>
                 </div>
-                <span className="tm-card-rating ml-3 text-text-dark">
-                  {testimonial.rating.toFixed(1)}
-                </span>
+
+                {/* Content */}
+                <p className="tm-card-text-body text-text-muted leading-relaxed mb-2">
+                  {testimonial.content}
+                </p>
+
+                {/* Rating */}
+                <div className="flex items-center gap-2 mt-auto">
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        width="18"
+                        height="20"
+                        viewBox="0 0 16 15"
+                        fill="none"
+                      >
+                        <path
+                          d="M8 0L10.472 4.965L16 5.86L12 9.71L12.944 15L8 12.43L3.056 15L4 9.71L0 5.86L5.528 4.965L8 0Z"
+                          fill="#dfaf2d"
+                        />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="tm-card-rating ml-1 text-text-dark">
+                    {testimonial.rating.toFixed(1)}
+                  </span>
+                </div>
               </div>
+
+              {/* Right — product image, overflows bottom */}
+              {testimonial.image && (
+                <div className="relative z-10 flex-shrink-0 w-[120px] self-stretch">
+                  <div className="absolute bottom-[10px] right-[8px] w-[105px] h-[155px]">
+                    <Image
+                      src={testimonial.image}
+                      alt={`${testimonial.name} product`}
+                      fill
+                      sizes="120px"
+                      className="object-contain object-bottom drop-shadow-xl"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>

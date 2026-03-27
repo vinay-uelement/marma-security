@@ -442,6 +442,7 @@ export default function ProductPage() {
         ]}
         activeTabId={activeProductTab}
         onTabChange={onTabChange}
+        align="center" 
       />
       </div>
       <div className="my-4 mx-2 md:my-15">

@@ -70,7 +70,7 @@ export default function Home() {
             Your{" "}
             <HighlightedText
               text="enterprise, business and home"
-              className="text-[#323232] !font-extrabold"
+              className="text-[#323232] !font-bold"
               imageClassName="bottom-[-12px] md:bottom-[-10px] right-[0px] md:right-[25px] w-[80px] md:w-[100px] lg:w-[140px]"
             />{" "}
             are more <br /> exposed to cybercrime than you think.
