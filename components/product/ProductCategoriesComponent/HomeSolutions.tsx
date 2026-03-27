@@ -51,7 +51,7 @@ export default function HomeSolutions() {
       />
 
       <div className={productDecoratedSectionClassName}>
-        <div className="relative w-screen left-1/2 -translate-x-1/2">
+        <div className="relative w-screen left-1/2 -translate-x-1/2 mb-2 md:mb-8">
           <div className="w-[220px] sm:w-[280px] md:w-[360px] lg:w-[460px]">
             <DecorativeLine
               viewBox="0 0 700 80"
@@ -77,7 +77,7 @@ export default function HomeSolutions() {
             "QR Phishing Protection",
           ]}
         />
-      </div>
+    </div>
     </div>
   );
 }

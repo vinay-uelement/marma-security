@@ -107,7 +107,7 @@ export default function EnterpriseSolutions() {
         imageAlt="SafeEnterprise 200 branch office security device"
         specification={enterprise200Specifications}
       />
-      <div className="relative mb-2 md:mb-12 w-screen left-1/2 -translate-x-1/2">
+      <div className="relative mb-2 md:mb-8 w-screen left-1/2 -translate-x-1/2">
         <div className="w-[500px] md:w-[600px] lg:w-[1000px]">
           <DecorativeLine
             viewBox="0 0 1500 80"

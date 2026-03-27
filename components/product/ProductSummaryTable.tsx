@@ -63,7 +63,7 @@ export default function ProductSummaryTable({
         </h2>
       )}
 
-      <div className="w-full overflow-x-auto rounded-2xl px-4 py-6 sm:px-6 sm:py-8 lg:px-10 lg:py-10 xl:px-12 xl:py-12">
+      <div className="w-full overflow-x-auto rounded-2xl px-2 py-4 sm:px-6 sm:py-6 lg:px-10 lg:py-8 xl:px-12 xl:py-10">
         <table className="w-full min-w-[560px] border-collapse">
           {/* Header */}
           <thead>

@@ -449,7 +449,7 @@ export default function ProductPage() {
         <ActiveComponent />
       </div>
 
-      <div className="sm:pt-8 lg:pt-10 xl:pt-12 mx-auto w-full max-w-[1280px]">
+      <div className="mx-auto w-full max-w-[1280px]">
         <ProductSummaryTable
           title="Product Summary"
           columns={columns}

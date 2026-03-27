@@ -1,5 +1,5 @@
 export const productSectionClassName =
-  "pt-8 sm:pt-10 lg:pt-12 xl:pt-14";
+  "pt-10 sm:pt-12 lg:pt-14 xl:pt-16";
 
 export const productDecoratedSectionClassName =
   "pt-6 sm:pt-8 lg:pt-10 xl:pt-12";
