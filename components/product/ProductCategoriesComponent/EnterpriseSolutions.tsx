@@ -89,7 +89,6 @@ const safeRemoteFirewallSpecifications: SpecificationProductItem[] = [
   },
 ];
 
-
 export default function EnterpriseSolutions() {
   return (
     <div className="mx-auto w-full max-w-[1280px]">
@@ -129,21 +128,21 @@ export default function EnterpriseSolutions() {
         />
       </div>
 
-      <div className="flex flex-col w-[30%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-10 min-[901px]:mt-0 pointer-events-none z-0">
+      <div className="flex flex-col w-[50%] sm:w-[40%] min-[901px]:w-[35%] ml-auto pointer-events-none z-0 mt-0 md:mt-12 min-[901px]:mt-0">
         <DecorativeLine
           viewBox="0 0 500 80"
           points="-3000,40 200,40"
           dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
           className="w-full h-auto scale-x-[-1]"
-          dotRadius={7}
-          animationDuration={2.2}
+          dotRadius={6}
+          animationDuration={2.5}
         />
         <DecorativeLine
           viewBox="0 0 500 120"
-          points="20,20 80,90 3000,90"
-          dots={[{ cx: 20, cy: 20, rippleCount: 4, rippleBaseDelay: 0.5 }]}
-          className="w-full h-auto -mt-8 md:-mt-28"
-          dotRadius={8}
+          points="150,20 210,90 3000,90"
+          dots={[{ cx: 150, cy: 20, rippleCount: 4, rippleBaseDelay: 0.9 }]}
+          className="w-full h-auto -mt-10 md:-mt-24"
+          dotRadius={7}
           animationDuration={3}
         />
       </div>
@@ -158,18 +157,16 @@ export default function EnterpriseSolutions() {
         imageAlt="Enterprise Management Platform Screenshot"
       />
 
-
       <div className="flex w-full pt-6 sm:t-8 lg:pt-10 xl:pt-12">
         <div className="fl2-4 pb-6 sm:py-8 lg:py-10 xl:py-12 w-1/2">
-        Endpoint Software
+          Endpoint Software
         </div>
         <div className="fl2-4 pb-6 sm:py-8 lg:py-10 xl:py-12 w-1/2">
-        Window Security Agent
+          Window Security Agent
         </div>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-6">
-        
         <EndpointProductCard
           name="Agent Software for Windows"
           tagline="24×7 Endpoint Protection"
