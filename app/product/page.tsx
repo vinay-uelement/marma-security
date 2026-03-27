@@ -10,7 +10,7 @@ import HighlightedText from "@/components/global/HighlightedText";
 import DecorativeLine from "@/components/home/DecorativeLine";
 import Tabs from "@/components/global/Tabs";
 import { ProductCategoriesMapping } from "@/components/product/ProductCategoriesComponent/ProductComponentMapping";
-import ProductSummaryTable from "@/components/product/ProductSummaryTable";
+import ProductSummaryTable, { ProductSummaryRow } from "@/components/product/ProductSummaryTable";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 const heroProducts = [
@@ -313,7 +313,7 @@ export default function ProductPage() {
     { key: "home", label: "Home" },
   ];
   
-  const rows = [
+  const rows: ProductSummaryRow[] = [
     {
       category: "Security Gateway",
       values: {
@@ -344,7 +344,7 @@ export default function ProductPage() {
     },
     {
       category: "Windows Endpoint Agent",
-      values: { enterprise: { check: true }, smb: { check: true }, home: "-" },
+      values: { enterprise: { check: true as const }, smb: { check: true as const }, home: "-" },
     },
     {
       category: "Mobile App",
@@ -357,19 +357,19 @@ export default function ProductPage() {
     {
       category: "Email Protection",
       values: {
-        enterprise: { check: true, label: "Cloud Service" },
+        enterprise: { check: true as const, label: "Cloud Service" },
         smb: "-",
         home: "-",
       },
     },
     {
       category: "SIEM/ SOC Integration",
-      values: { enterprise: { check: true }, smb: "-", home: "-" },
+      values: { enterprise: { check: true as const }, smb: "-", home: "-" },
     },
     {
       category: "Made In India",
       values: {
-        enterprise: { check: true, label: "(All gateways)" },
+        enterprise: { check: true as const, label: "(All gateways)" },
         smb: "-",
         home: "-",
       },
