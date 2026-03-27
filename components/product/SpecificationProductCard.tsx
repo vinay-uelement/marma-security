@@ -73,7 +73,7 @@ export default function SpecificationProductCard({
                       <tr key={`${item.label}-${item.value}`}>
                         <th
                           scope="row"
-                          className={`fl5 font-medium px-3 py-1 text-left align-middle md:px-5 md:py-2 text-nowrap ${rowBorderClass} border-r border-dashed border-[#D7D7D7]`}
+                          className={`fl5 font-bold px-3 py-1 text-left align-middle md:px-5 md:py-2 text-nowrap ${rowBorderClass} border-r border-dashed border-[#D7D7D7]`}
                         >
                           {item.label}
                         </th>
