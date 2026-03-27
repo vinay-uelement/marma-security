@@ -5,7 +5,7 @@ interface EndpointProductCardProps {
   tagline: string;
   primaryFeature: string;
   features: string[];
-  image: string;
+  image?: string;
   imageAlt?: string;
 }
 
@@ -57,13 +57,17 @@ export default function EndpointProductCard({
 
         {/* Image */}
         <div className="relative w-full sm:w-[45%] lg:w-[42%] aspect-square sm:aspect-[4/3] rounded-xl overflow-hidden bg-[#D9D9D9] shrink-0">
-          <Image
-            src={image}
-            alt={imageAlt ?? name}
-            fill
-            sizes="(max-width: 640px) 100vw, 45vw"
-            className="object-cover object-center"
-          />
+          {image ? (
+            <Image
+              src={image}
+              alt={imageAlt ?? name}
+              fill
+              sizes="(max-width: 640px) 100vw, 45vw"
+              className="object-cover object-center"
+            />
+          ) : (
+            <div aria-hidden="true" className="h-full w-full bg-[#D9D9D9]" />
+          )}
         </div>
       </div>
     </div>

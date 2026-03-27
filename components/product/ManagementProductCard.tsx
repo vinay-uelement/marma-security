@@ -3,7 +3,7 @@ import Image from "next/image";
 interface ManagementProductCardProps {
   title: string;
   description: string;
-  image: string;
+  image?: string;
   imageAlt?: string;
 }
 
@@ -23,13 +23,17 @@ export default function ManagementProductCard({
 
       {/* Image Block */}
       <div className="relative w-full aspect-[16/7] sm:aspect-[16/6] rounded-xl overflow-hidden bg-[#D9D9D9]">
-        <Image
-          src={image}
-          alt={imageAlt}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
-          className="object-cover object-center"
-        />
+        {image ? (
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
+            className="object-cover object-center"
+          />
+        ) : (
+          <div aria-hidden="true" className="h-full w-full bg-[#D9D9D9]" />
+        )}
       </div>
     </div>
   );

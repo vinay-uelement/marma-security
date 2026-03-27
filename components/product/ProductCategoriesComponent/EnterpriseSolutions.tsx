@@ -164,7 +164,7 @@ export default function EnterpriseSolutions() {
         Endpoint Software
         </div>
         <div className="fl2-4 pb-6 sm:py-8 lg:py-10 xl:py-12 w-1/2">
-        Window Security Agent
+        Cloud Security Services
         </div>
       </div>
 
@@ -193,6 +193,25 @@ export default function EnterpriseSolutions() {
             "QR Phishing Protection",
           ]}
           image="/images/products/email-security.webp"
+        />
+      </div>
+
+      <div className="fl2-4 pt-10 pb-6 sm:pt-12 sm:pb-8 lg:pt-14 lg:pb-10 xl:pt-16 xl:pb-12">
+        Integration Services
+      </div>
+
+      <div className="flex flex-col gap-6 lg:flex-row">
+        <EndpointProductCard
+          name="SIEM Integration Services"
+          tagline="Enterprise SIEM"
+          primaryFeature="Custom integration with 3rd-party Enterprise SIEM solutions."
+          features={[]}
+        />
+        <EndpointProductCard
+          name="SOC Integration Services"
+          tagline="Enterprise SOC"
+          primaryFeature="Custom integration with 3rd-party Enterprise SOC solutions."
+          features={[]}
         />
       </div>
     </div>
