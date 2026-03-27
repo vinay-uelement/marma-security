@@ -35,8 +35,13 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 html {
@@ -652,11 +657,11 @@ img {
 }
 
 .faq-item-question {
-  @apply font-title font-medium text-[14px] sm:text-[18px] md:text-[24px] lg:text-[30px] leading-[1.2] lg:leading-[34px] tracking-tight text-text-dark;
+  @apply font-title font-medium text-[12px] md:text-[18px] lg:text-[24px] leading-[1.2] lg:leading-[34px] tracking-tight text-text-dark;
 }
 
 .faq-item-answer {
-  @apply font-body font-normal text-[14px] md:text-[18px] leading-relaxed text-text-muted mt-4;
+  @apply font-body font-normal text-[9px] md:text-[14px] lg:text-[20px] leading-relaxed text-text-muted mt-4;
 }
 
 /* ===============================================================
