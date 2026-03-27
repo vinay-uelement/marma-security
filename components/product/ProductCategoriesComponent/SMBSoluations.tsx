@@ -74,15 +74,17 @@ export default function SMBSoluations() {
           </div>
         </div>
 
+        <div className="max-md:px-6">
         <div className={productSectionTitleClassName}>Management Platform</div>
 
         <ManagementProductCard
           title="SMB Management Platform"
           description={smbManagementDescription}
         />
+        </div>
       </div>
 
-      <div className={productSectionClassName}>
+      <div className={`max-md:px-6 ${productSectionClassName}`}>
         <div className={productSplitSectionHeaderClassName}>
           <div className={productHalfSectionTitleClassName}>
             Endpoint Software

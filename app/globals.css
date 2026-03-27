@@ -119,7 +119,7 @@ img {
   }
   .fl3-3 {
     font-family: var(--font-body);
-    @apply font-semibold text-[12px] md:text-[18px] lg:text-[24px] leading-[62px] tracking-[-0.01em] text-text-dark;
+    @apply font-semibold text-[12px] md:text-[18px] lg:text-[24px] leading-[22px] md:leading-[62px] tracking-[-0.01em] text-text-dark;
   }
 
   /* FL4: Descriptions & Body Copy */

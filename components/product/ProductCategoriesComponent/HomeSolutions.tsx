@@ -63,7 +63,8 @@ export default function HomeSolutions() {
             />
           </div>
         </div>
-
+      
+        <div className="max-md:px-6">
         <div className={productSectionTitleClassName}>Mobile Application</div>
 
         <EndpointProductCard
@@ -77,6 +78,7 @@ export default function HomeSolutions() {
             "QR Phishing Protection",
           ]}
         />
+        </div>
     </div>
     </div>
   );

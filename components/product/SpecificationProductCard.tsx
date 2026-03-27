@@ -33,7 +33,7 @@ export default function SpecificationProductCard({
           <h2 className="fl3-3 text-nowrap">
             {title}
           </h2>
-          <p className="fl4-3 font-light mt-4 max-w-full md:mt-6">
+          <p className="fl4-3 font-light mt-1 max-w-full md:mt-6">
             {descript}
           </p>
         </div>

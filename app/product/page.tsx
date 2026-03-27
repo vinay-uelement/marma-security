@@ -433,7 +433,7 @@ export default function ProductPage() {
       </div>
 
       {/* Product Showcases */}
-      <div className="mt-20">
+      <div className="mt-6 md:mt-20">
       <Tabs
         tabs={[
           { label: "Enterprise Solutions", id: "enterprise" },
@@ -449,7 +449,7 @@ export default function ProductPage() {
         <ActiveComponent />
       </div>
 
-      <div className="mx-auto w-full max-w-[1280px]">
+      <div className="mx-auto w-full max-md:px-6 max-w-[1280px]">
         <ProductSummaryTable
           title="Product Summary"
           columns={columns}

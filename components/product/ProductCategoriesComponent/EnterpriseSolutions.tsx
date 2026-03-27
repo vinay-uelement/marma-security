@@ -125,7 +125,7 @@ export default function EnterpriseSolutions() {
         imageAlt="SafeEnterprise 400 regional office and campus security device"
         specification={enterprise400Specifications}
       />
-      <div className="mt-6 sm:mt-8 lg:mt-10 xl:mt-12">
+      <div className="mt-2 sm:mt-4 lg:mt-10 xl:mt-12">
         <SpecificationProductCard
           title="SafeRemote Firewall | Remote Worker Security"
           descript={enterpriseDescription}
@@ -155,6 +155,7 @@ export default function EnterpriseSolutions() {
           />
         </div>
 
+        <div className="max-md:px-6">
         <div className={productSectionTitleClassName}>Management Platform</div>
         <ManagementProductCard
           title="Enterprise Management Platform"
@@ -162,8 +163,10 @@ export default function EnterpriseSolutions() {
           image="/images/products/enterprise-management.webp"
           imageAlt="Enterprise Management Platform Screenshot"
         />
+        </div>
       </div>
 
+    <div className="max-md:px-6">
       <div className={productSectionClassName}>
         <div className={productSplitSectionHeaderClassName}>
           <div className={productHalfSectionTitleClassName}>
@@ -219,6 +222,7 @@ export default function EnterpriseSolutions() {
             features={[]}
           />
         </div>
+      </div>
       </div>
     </div>
   );
