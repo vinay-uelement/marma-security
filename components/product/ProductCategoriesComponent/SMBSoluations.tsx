@@ -49,7 +49,7 @@ export default function SMBSoluations() {
   return (
     <div className="mx-auto w-full max-w-[1280px]">
       <div className={productSectionTitleClassName}>
-        Security Gateways
+        Firewall device
       </div>
 
       <SpecificationProductCard

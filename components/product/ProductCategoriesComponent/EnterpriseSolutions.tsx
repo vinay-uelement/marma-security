@@ -99,7 +99,7 @@ const safeRemoteFirewallSpecifications: SpecificationProductItem[] = [
 export default function EnterpriseSolutions() {
   return (
     <div className="mx-auto w-full max-w-[1280px]">
-      <div className={productSectionTitleClassName}>Security Gateways</div>
+      <div className={productSectionTitleClassName}>Firewall device</div>
       <SpecificationProductCard
         title="SafeEnterprise 200 | Branch Office Security"
         descript={enterpriseDescription}
