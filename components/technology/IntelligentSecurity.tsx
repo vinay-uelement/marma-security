@@ -38,15 +38,27 @@ const features: TechFeatureItem[] = [
     description: "Protection against dangerous ransomware",
   },
   {
-    id: "phishblock-2",
+    id: "SafeDevices",
     iconUrl: "/images/global/ic_outline-message.svg",
-    title: "PhishBlock",
+    title: "SafeDevices",
     description: "Protection against phishing attacks",
   },
   {
-    id: "phishblock-3",
+    id: "NetStealth",
     iconUrl: "/images/global/ic_outline-shield.svg",
-    title: "PhishBlock",
+    title: "NetStealth",
+    description: "Protection against phishing attacks",
+  },
+  {
+    id: "SafeID",
+    iconUrl: "/images/global/ic_outline-shield.svg",
+    title: "SafeID",
+    description: "Protection against phishing attacks",
+  },
+  {
+    id: "ScamGuard",
+    iconUrl: "/images/global/ic_outline-shield.svg",
+    title: "ScamGuard",
     description: "Protection against phishing attacks",
   },
 ];
