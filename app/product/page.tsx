@@ -440,6 +440,7 @@ export default function ProductPage() {
         ]}
         activeTabId={activeProductTab}
         onTabChange={onTabChange}
+        align="center" 
       />
       <div className="fl2-2">
         <ActiveComponent />
