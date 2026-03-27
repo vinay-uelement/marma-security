@@ -82,15 +82,15 @@ function HeroCarousel() {
 
   useEffect(() => {
     if (paused) return;
-    const timer = setInterval(next, 2800);
+    const timer = setInterval(next, 1800);
     return () => clearInterval(timer);
   }, [next, paused]);
 
   return (
     <div
-      className="relative flex items-center justify-center w-full h-full min-h-[460px]"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      className="relative flex items-center justify-center w-full h-full min-h-[480px]"
+      // onMouseEnter={() => setPaused(true)}
+      // onMouseLeave={() => setPaused(false)}
     >
       <div className="absolute inset-0 overflow-hidden rounded-xl pointer-events-none" />
 
@@ -239,20 +239,58 @@ function HeroCarousel() {
         );
       })}
 
-      {/* ── Dot Indicators ─────────────────────────────────────────────────── */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-40">
-        {heroProducts.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className="rounded-full transition-all duration-300"
-            style={{
-              background: i === current ? "#ffffff" : "rgba(255,255,255,0.35)",
-              width: i === current ? 24 : 6,
-              height: 6,
-            }}
-          />
-        ))}
+      {/* ── Controls: Prev | Pause/Play | Next ───────────────────────────── */}
+      <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex items-center gap-3 z-40">
+        {/* Prev */}
+        <button
+          onClick={() => setCurrent((prev) => (prev - 1 + total) % total)}
+          className="w-8 h-8 rounded-full flex items-center justify-center bg-white/15 hover:bg-white/30 border border-white/20 transition-all duration-200"
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path
+              d="M9 2L4 7L9 12"
+              stroke="white"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+
+        {/* Pause / Play */}
+        <button
+          onClick={() => setPaused((p) => !p)}
+          className="w-8 h-8 rounded-full flex items-center justify-center bg-white/15 hover:bg-white/30 border border-white/20 transition-all duration-200"
+        >
+          {paused ? (
+            /* Play icon */
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M3 2L10 6L3 10V2Z" fill="white" />
+            </svg>
+          ) : (
+            /* Pause icon */
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <rect x="2" y="2" width="3" height="8" rx="1" fill="white" />
+              <rect x="7" y="2" width="3" height="8" rx="1" fill="white" />
+            </svg>
+          )}
+        </button>
+
+        {/* Next */}
+        <button
+          onClick={() => setCurrent((prev) => (prev + 1) % total)}
+          className="w-8 h-8 rounded-full flex items-center justify-center bg-white/15 hover:bg-white/30 border border-white/20 transition-all duration-200"
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path
+              d="M5 2L10 7L5 12"
+              stroke="white"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );
