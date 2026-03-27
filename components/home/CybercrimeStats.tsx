@@ -23,7 +23,7 @@ export default function CybercrimeStats() {
           {/* Right Column: Text Content */}
           <div className="flex flex-col space-y-6 relative z-10 text-left items-start pb-0">
             <h3 className="fl3 pb-[20px]">
-              Cybercriminals don’t discriminate—small businesses and homes are
+              Cybercriminals don’t discriminate small businesses and homes are
               their easiest targets.
             </h3>
             <p className="fl4 pb-[10px] ">
