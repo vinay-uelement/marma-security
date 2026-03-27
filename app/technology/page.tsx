@@ -32,7 +32,6 @@ export default function TechnologyPage() {
 
       {/* The Advanced Architecture Layout Block */}
       <AdvancedArchitecture />
-      <StatsSection />
     </main>
   );
 }

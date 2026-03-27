@@ -36,37 +36,27 @@ const stats: StatItem[] = [
 export default function StatsSection() {
   return (
     <section className="relative w-full py-0 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('/images/about/background-stats.webp')`,
-          }}
-        />
-      </div>
-
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-10 md:py-16 lg:py-20">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-10 md:py-16 lg:py-20 ">
         {/* Stats Glass Card */}
-        <div className="stats-glass-card p-[10px] md:p-[71px] lg:p-12">
+        <div className="p-[10px] md:p-[71px] lg:p-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 [@media(min-width:1176px)]:grid-cols-4 gap-2 md:gap-8 [@media(min-width:1176px)]:gap-10 my-[10px] md:my-0">
             {stats.map((stat, index) => (
               <div key={index} className="flex flex-col">
                 {/* Value */}
-                <h3 className="fl2 text-white! font-bold">{stat.value}</h3>
+                <h3 className="fl2  font-bold">{stat.value}</h3>
 
                 {/* Divider */}
                 <div className="pr-1 mt-1 md:mt-3 mb-1">
-                  <div className="border-b border-[#FFFFFF]/30"></div>
+                  <div className="border-b border-[#000000]/30"></div>
                 </div>
 
                 {/* Label */}
-                <p className="fl4-3 text-white! font-bold! mt-[5px] md:mt-0 mb-2">
+                <p className="fl4-3  font-bold! mt-[5px] md:mt-0 mb-2">
                   {stat.label}
                 </p>
 
                 {/* Description */}
-                <p className="fl4 text-white!">{stat.description}</p>
+                <p className="fl4 ">{stat.description}</p>
               </div>
             ))}
           </div>
