@@ -1,6 +1,7 @@
 import React from "react";
 import TechnologyBanner from "@/components/technology/TechnologyBanner";
 import IntelligentSecurity from "@/components/technology/IntelligentSecurity";
+import TheMarmaAdvantage from "@/components/technology/TheMarmaAdvantage";
 import AdvancedArchitecture from "@/components/technology/AdvancedArchitecture";
 import HighlightedText from "@/components/global/HighlightedText";
 import StatsSection from "@/components/about/StatsSection";
@@ -27,8 +28,9 @@ export default function TechnologyPage() {
         buttonText="Explore"
       />
 
-      {/* The Intelligent Security Features Layout */}
-      <IntelligentSecurity />
+      {/* The Marma Advantage Section */}
+      <TheMarmaAdvantage />
+
 
       {/* The Advanced Architecture Layout Block */}
       <AdvancedArchitecture />
