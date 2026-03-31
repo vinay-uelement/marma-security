@@ -1,3 +1,36 @@
+export const metadata = {
+  title: "About Us | Marma Security",
+  description:
+    "Redefining cybersecurity through simplicity. Learn more about Marma Security, our team, and our mission to secure digital assets at the network level.",
+  alternates: {
+    canonical: "https://marmasecurity.com/about-us",
+  },
+  openGraph: {
+    title: "About Us | Marma Security",
+    description:
+      "Redefining cybersecurity through simplicity. Learn more about Marma Security, our team, and our mission to secure digital assets at the network level.",
+    url: "https://marmasecurity.com/about-us",
+    siteName: "Marma Security",
+    images: [
+      {
+        url: "/images/banners/banner-about-us.webp",
+        width: 1200,
+        height: 630,
+        alt: "About Marma Security",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Marma Security",
+    description:
+      "Redefining cybersecurity through simplicity. Learn more about our vision.",
+    images: ["/images/banners/banner-about-us.webp"],
+  },
+};
+
 import React from "react";
 import HighlightedText from "@/components/global/HighlightedText";
 import Banner from "@/components/global/Banner";

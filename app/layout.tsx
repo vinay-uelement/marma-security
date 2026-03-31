@@ -24,8 +24,54 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Marma Security",
-  description: "Securing your digital assets with advanced solutions.",
+  title: "Marma Security | Redefining Cybersecurity Through Simplicity",
+  description:
+    "Marma Security bridges the gap between complex, enterprise-grade security and the everyday needs of homes and businesses with automated, network-level protection requiring zero technical expertise.",
+  keywords: [
+    "Cybersecurity",
+    "Network Security",
+    "Automated Security",
+    "Enterprise Security",
+    "Home Network Protection",
+    "SMB Security",
+    "Plug-and-Play Protection",
+    "SafeHome",
+    "SafeBiz",
+    "SafeEnterprise",
+    "SafeGov",
+    "SafeCloud",
+    "AI-Managed Platform",
+    "Zero Trust",
+  ],
+  authors: [{ name: "Marma Security", url: "https://marmasecurity.com" }],
+  creator: "Marma Security",
+  publisher: "Marma Security",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://marmasecurity.com",
+    title: "Marma Security | Redefining Cybersecurity Through Simplicity",
+    description:
+      "Marma Security bridges the gap between complex, enterprise-grade security and the everyday needs of homes and businesses with automated, network-level protection requiring zero technical expertise.",
+    siteName: "Marma Security",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marma Security | Redefining Cybersecurity Through Simplicity",
+    description:
+      "Marma Security provides automated, plug-and-play network-level cybersecurity for enterprises, small businesses, and homes.",
+  },
 };
 
 export default function RootLayout({
@@ -33,13 +79,89 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Structured Data - Organization Schema
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Marma Security",
+    url: "https://marmasecurity.com",
+    logo: "https://marmasecurity.com/logo.png", // Ensure you have a valid logo URL when available
+    description:
+      "A cybersecurity firm dedicated to Redefining Cybersecurity Through Simplicity, offering automated network-level protection.",
+    sameAs: [
+      // Add social links here when available
+    ],
+  };
+
+  // Structured Data - Website Schema
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Marma Security",
+    url: "https://marmasecurity.com",
+  };
+
+  // Structured Data - Site Navigation Schema
+  const siteNavigationSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: [
+      {
+        "@type": "SiteNavigationElement",
+        position: 1,
+        name: "Home",
+        url: "https://marmasecurity.com/",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        position: 2,
+        name: "Solutions",
+        url: "https://marmasecurity.com/solutions",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        position: 3,
+        name: "Products",
+        url: "https://marmasecurity.com/product",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        position: 4,
+        name: "About Us",
+        url: "https://marmasecurity.com/about-us",
+      },
+      {
+        "@type": "SiteNavigationElement",
+        position: 5,
+        name: "Contact",
+        url: "https://marmasecurity.com/contact-us",
+      },
+    ],
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(siteNavigationSchema),
+          }}
+        />
+      </head>
       <body className={`${inter.variable} ${ibmPlexSans.variable} ${sora.variable} antialiased flex flex-col min-h-screen`}>
         <Navbar />
-        <main className="flex-grow ">
-          {children}
-        </main>
+        <main className="flex-grow ">{children}</main>
         <Footer />
       </body>
     </html>
