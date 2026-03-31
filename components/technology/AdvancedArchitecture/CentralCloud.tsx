@@ -8,7 +8,7 @@ interface CentralCloudProps {
 export default function CentralCloud({ cloudRef }: CentralCloudProps) {
   return (
     <div
-      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[45%] z-20 pointer-events-none"
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[45%] z-20 pointer-events-none scale-[0.40] sm:scale-[0.60] md:scale-90 xl:scale-100"
       style={{ width: "320px", height: "160px" }}
     >
       {/* GSAP Target */}

@@ -48,9 +48,6 @@ export default function AdvancedArchitecture() {
           trigger: containerRef.current,
           start: "top 80%",
         },
-        onComplete: () => {
-          startAntigravity();
-        },
       });
 
       // Step 1: Central cloud
@@ -118,36 +115,15 @@ export default function AdvancedArchitecture() {
           repeat: -1,
         });
       });
-
-      // Antigravity Idle State
-      const antigravityTweens: gsap.core.Tween[] = [];
-      const startAntigravity = () => {
-        const floatingElements = [cloudRef.current, ...orbitNodes, ...junctionNodes, ...cardNodes];
-
-        floatingElements.forEach((el) => {
-          if (!el) return;
-          const tween = gsap.to(el, {
-            x: "random(-6, 6)",
-            y: "random(-6, 6)",
-            duration: "random(2.5, 4.5)",
-            ease: "sine.inOut",
-            yoyo: true,
-            repeat: -1,
-            delay: "random(0, 2)",
-          });
-          antigravityTweens.push(tween);
-          (el as any)._antigravityTween = tween;
-        });
-      };
     },
     { scope: containerRef }
   );
 
   return (
-    <section className="w-full bg-[#FAFAFA] pt-16 lg:pt-24 pb-20 md:pb-32 relative overflow-hidden">
+    <section className="w-full bg-[#FAFAFA] pt-12 lg:pt-16 pb-12 md:pb-20 relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col items-center">
         {/* Typography Layout */}
-        <div className="text-center w-full max-w-[900px] mx-auto mb-10 md:mb-16 relative z-20">
+        <div className="text-center w-full max-w-[900px] mx-auto mb-10 md:mb-12 relative z-20">
           <h2 className="fl2">
             <HighlightedText
               text="Advanced cybersecurity"
@@ -161,7 +137,7 @@ export default function AdvancedArchitecture() {
         {/* --- Architecture Diagram Container --- */}
         <div
           ref={containerRef}
-          className="relative w-full max-w-[1240px] aspect-[4/5] sm:aspect-square lg:aspect-[16/11] mx-auto mt-4"
+          className="relative w-full max-w-[1024px] xl:max-w-[1200px] min-h-[500px] aspect-[3/4.5] sm:aspect-[4/4.5] md:aspect-[1/1.1] lg:aspect-[16/10] xl:aspect-[16/11] mx-auto mt-4 lg:mt-0"
         >
           {/* SVG Connection Lines Overlay */}
           <ConnectionLines />
