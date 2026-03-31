@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../global/Button";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface BannerButton {
   label: string;
@@ -75,7 +76,13 @@ export default function Banner({
               <div className=" lg:absolute flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 pt-6 md:pt-8 lg:pt-16 w-full lg:bottom-0">
                 {buttons.map((btn, index) => {
                   const ButtonContent = (
-                   <Button key={`btn-inner-${index}`}  label={btn.label} variant={btn.variant} icon={btn.icon} onClick={btn.onClick}/>
+                    <Button
+                      key={`btn-inner-${index}`}
+                      label={btn.label}
+                      variant={btn.variant}
+                      icon={btn.icon}
+                      onClick={btn.onClick}
+                    />
                   );
 
                   return btn.href ? (
@@ -92,28 +99,64 @@ export default function Banner({
             )}
           </div>
         </div>
-      {/*  background circle */}
-      <div
-        className=" absolute max-sm:left-1/2 max-sm:-translate-x-1/2 md:-right-6 bottom-0 md:-bottom-4 w-[30vh] h-[30vh] md:w-[75svh] md:h-[75svh] rounded-full opacity-50
+        {/*  background circle */}
+        <div
+          className=" absolute max-sm:left-1/2 max-sm:-translate-x-1/2 md:-right-6 bottom-0 md:-bottom-4 w-[30vh] h-[30vh] md:w-[75svh] md:h-[75svh] rounded-full opacity-50
             bg-[linear-gradient(290deg,rgba(255,0,0,0.01)_0%,rgba(255,0,0,1)_100%)]
             backdrop-blur-[60px]
             "
-      ></div>
+        ></div>
       </div>
 
-
-
       {/* product image */}
-     
-      <Image
-        src={rightImage || ""}
-        alt={rightImageAlt}
-        width={1000}
-        height={1000}
-        priority={true}
-        className={`absolute  w-[20vh] md:w-[50svh] object-cover object-center bottom-0! right-1/2 max-md:translate-x-3/4! md:bottom-0 md:right-15 z-0 ${rightImageClassName}`}
-        fetchPriority="high"
-      />
+
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-15 w-[20vh] md:w-[50svh] z-0 pointer-events-none">
+        {" "}
+        <AnimatePresence mode="sync" initial={false}>
+          <motion.div
+            key={rightImage}
+            initial={{
+              y: "-50%",
+              rotateX: 30,
+              opacity: 0,
+              filter: "blur(3px)",
+            }}
+            animate={{
+              y: "0%",
+              rotateX: 0,
+              opacity: 1,
+              filter: "blur(0px)",
+            }}
+            exit={{
+              y: "50%",
+              rotateX: -30,
+              opacity: 0,
+              filter: "blur(3px)",
+              position: "absolute",
+            }}
+            transition={{
+              duration: 1.5,
+              ease: [0.22, 1, 0.36, 1],
+              delay: 0.1, // slight cinematic lag
+            }}
+            style={{
+              position: "absolute",
+              bottom: 0,
+              right: 0,
+              width: "100%",
+            }}
+          >
+            <Image
+              src={rightImage || ""}
+              alt={rightImageAlt}
+              width={1000}
+              height={1000}
+              priority
+              className="w-full h-auto object-contain"
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </section>
   );
 }
