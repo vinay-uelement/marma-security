@@ -49,17 +49,17 @@ export default function SolutionsPage() {
           <>
             Complete <HighlightedText text="Cybersecurity" />
             <br className="block md:block" />{""}
-            for 
-                      <TypewriterText
-                        phrases={[
-                          " Enterprises",
-                          " Small Businesses",
-                          " Homes and more",
-                        ]}
-                        typingSpeed={70}
-                        deletingSpeed={35}
-                        pauseDuration={2000}
-                      />
+            for
+            <TypewriterText
+              phrases={[
+                " Enterprises",
+                " Small Businesses",
+                " Homes and more",
+              ]}
+              typingSpeed={70}
+              deletingSpeed={35}
+              pauseDuration={2000}
+            />
           </>
         }
         titleClassName="font-banner font-normal text-[28px] md:text-[36px] leading-[1.2] md:leading-[50px] tracking-[-0.01em] text-white"

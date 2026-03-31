@@ -24,26 +24,13 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://marmasecurity.com"),
   title: "Marma Security | Redefining Cybersecurity Through Simplicity",
   description:
     "Marma Security bridges the gap between complex, enterprise-grade security and the everyday needs of homes and businesses with automated, network-level protection requiring zero technical expertise.",
-  keywords: [
-    "Cybersecurity",
-    "Network Security",
-    "Automated Security",
-    "Enterprise Security",
-    "Home Network Protection",
-    "SMB Security",
-    "Plug-and-Play Protection",
-    "SafeHome",
-    "SafeBiz",
-    "SafeEnterprise",
-    "SafeGov",
-    "SafeCloud",
-    "AI-Managed Platform",
-    "Zero Trust",
-  ],
-  authors: [{ name: "Marma Security", url: "https://marmasecurity.com" }],
+  keywords:
+    "Cybersecurity, Network Security, Automated Security, Enterprise Security, Home Network Protection, SMB Security, Plug-and-Play Protection, SafeHome, SafeBiz, SafeEnterprise, SafeGov, SafeCloud, AI-Managed Platform, Zero Trust, Marma Security",
+  authors: [{ name: "Marma Security" }],
   creator: "Marma Security",
   publisher: "Marma Security",
   robots: {
@@ -60,17 +47,28 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://marmasecurity.com",
+    url: "/",
     title: "Marma Security | Redefining Cybersecurity Through Simplicity",
     description:
       "Marma Security bridges the gap between complex, enterprise-grade security and the everyday needs of homes and businesses with automated, network-level protection requiring zero technical expertise.",
     siteName: "Marma Security",
+    images: [
+      {
+        url: "/images/global/logo.svg",
+        width: 1200,
+        height: 630,
+        alt: "Marma Security — Redefining Cybersecurity Through Simplicity",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Marma Security | Redefining Cybersecurity Through Simplicity",
     description:
       "Marma Security provides automated, plug-and-play network-level cybersecurity for enterprises, small businesses, and homes.",
+    images: ["/images/global/logo.svg"],
+    creator: "@marmasecurity",
+    site: "@marmasecurity",
   },
 };
 
