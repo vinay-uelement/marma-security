@@ -1,3 +1,36 @@
+export const metadata = {
+  title: "Cybersecurity Solutions | Marma Security",
+  description:
+    "Complete cybersecurity solutions for enterprises, small businesses, and homes. Enterprise-grade protection that works in minutes.",
+  alternates: {
+    canonical: "https://marmasecurity.com/solutions",
+  },
+  openGraph: {
+    title: "Cybersecurity Solutions | Marma Security",
+    description:
+      "Complete cybersecurity solutions for enterprises, small businesses, and homes. Enterprise-grade protection that works in minutes.",
+    url: "https://marmasecurity.com/solutions",
+    siteName: "Marma Security",
+    images: [
+      {
+        url: "/images/banners/banner-solution.png",
+        width: 1200,
+        height: 630,
+        alt: "Marma Security Solutions",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cybersecurity Solutions | Marma Security",
+    description:
+      "Complete cybersecurity solutions for enterprises, small businesses, and homes.",
+    images: ["/images/banners/banner-solution.png"],
+  },
+};
+
 import HighlightedText from "@/components/global/HighlightedText";
 import SolutionsTabs from "@/components/solutions/SolutionsTabs";
 import SolutionsInfo from "@/components/solutions/SolutionsInfo";
