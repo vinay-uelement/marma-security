@@ -1,30 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface TumblingTextProps {
   phrases: string[];
-  interval?: number;
+  index: number;
   className?: string;
 }
 
 export default function TumblingText({
   phrases,
-  interval = 2800,
+  index,
   className = "",
 }: TumblingTextProps) {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % phrases.length);
-    }, interval);
-    return () => clearInterval(timer);
-  }, [phrases.length, interval]);
-
   return (
-    // Outer span clips the tumbling animation — only one face visible at a time
     <span
       className={className}
       style={{
@@ -32,7 +21,7 @@ export default function TumblingText({
         minWidth: "15ch",
         overflow: "hidden",
         verticalAlign: "bottom",
-        perspective: "600px", // Enables the 3D die-roll depth
+        perspective: "600px",
         position: "relative",
       }}
     >
@@ -40,10 +29,10 @@ export default function TumblingText({
         <motion.span
           key={phrases[index]}
           initial={{
-            y: "-60%",
-            rotateX: 40,
+            y: "-50%",
+            rotateX: 30,
             opacity: 0,
-            filter: "blur(4px)",
+            filter: "blur(3px)",
           }}
           animate={{
             y: "0%",
@@ -52,10 +41,10 @@ export default function TumblingText({
             filter: "blur(0px)",
           }}
           exit={{
-            y: "60%",
-            rotateX: -40,
+            y: "50%",
+            rotateX: -30,
             opacity: 0,
-            filter: "blur(4px)",
+            filter: "blur(3px)",
             position: "absolute",
           }}
           transition={{
@@ -64,7 +53,7 @@ export default function TumblingText({
           }}
           style={{
             display: "block",
-            transformOrigin: "center center",
+            transformOrigin: "50% 50%",
             transformStyle: "preserve-3d",
           }}
         >
