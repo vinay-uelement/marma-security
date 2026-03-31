@@ -23,39 +23,110 @@ const TAB_ANCHORS: Record<string, string> = {
   home: "/products#homesolution",
 };
 
-// ── Base Features ─────────────────────────────────────────────────────────────
-const baseFeatures: FeatureItem[] = [
-  {
-    id: "quick-setup",
-    image: "/images/home/protect-image-homepage.webp",
-    title: "Quick & Effortless Setup",
-    subtitle: "Get protected in under 5 minutes.",
-    description:
-      "No technical expertise, networking knowledge, or complex configurations required—simply plug in and go.",
-  },
-  {
-    id: "automated-protection",
-    image: "/images/home/protection-homepage.webp",
-    title: "Fully Automated Protection",
-    subtitle: "Security that runs itself.",
-    description:
-      "Marma continuously monitors your network and blocks threats in real time, without any manual intervention.",
-  },
-  {
-    id: "zero-maintenance",
-    image: "/images/features/zero-maintainace.webp",
-    title: "Zero Maintenance Required",
-    subtitle: "No updates, no monitoring, no hassle.",
-    description:
-      "All security updates, patches, and improvements are handled automatically in the background.",
-  },
-];
-
-// ── Shuffled per tab (same items, different order) ────────────────────────────
+// ── Tab Features ──────────────────────────────────────────────────────────────
 const TAB_FEATURES: Record<string, FeatureItem[]> = {
-  enterprise: [baseFeatures[0], baseFeatures[1], baseFeatures[2]],
-  smb: [baseFeatures[1], baseFeatures[2], baseFeatures[0]],
-  home: [baseFeatures[2], baseFeatures[0], baseFeatures[1]],
+  enterprise: [
+    {
+      id: "enterprise-1",
+      image: "/images/home/protect-image-homepage.webp",
+      title: "Centralized Security Control",
+      subtitle: "One dashboard. Total visibility.",
+      description:
+        "Manage your entire security infrastructure—from gateways to endpoints and cloud services—through a single unified platform with real-time insights.",
+    },
+    {
+      id: "enterprise-2",
+      image: "/images/home/protection-homepage.webp",
+      title: "Advanced Threat Protection",
+      subtitle: "Defend against zero-day attacks.",
+      description:
+        "AI-powered protection detects and blocks phishing, ransomware, and advanced threats across network, email, and endpoints.",
+    },
+    {
+      id: "enterprise-3",
+      image: "/images/features/zero-maintainace.webp",
+      title: "Scalable Enterprise Architecture",
+      subtitle: "Built to grow with your business.",
+      description:
+        "From branch offices to large campuses, deploy high-performance security gateways and scale seamlessly as your organization expands.",
+    },
+    {
+      id: "enterprise-4",
+      image: "/images/home/protect-image-homepage.webp",
+      title: "Seamless Integrations",
+      subtitle: "Works with your existing ecosystem.",
+      description:
+        "Easily integrate with SIEM and SOC systems to enhance monitoring, compliance, and incident response workflows.",
+    },
+  ],
+  smb: [
+    {
+      id: "smb-1",
+      image: "/images/home/protect-image-homepage.webp",
+      title: "Simple Yet Powerful Security",
+      subtitle: "Enterprise-grade protection, simplified.",
+      description:
+        "Get strong network and endpoint security without the complexity of managing large IT systems.",
+    },
+    {
+      id: "smb-2",
+      image: "/images/home/protection-homepage.webp",
+      title: "Easy Cloud Management",
+      subtitle: "Control everything from anywhere.",
+      description:
+        "Manage your firewall, users, and security settings through a cloud-based platform designed for minimal IT overhead.",
+    },
+    {
+      id: "smb-3",
+      image: "/images/features/zero-maintainace.webp",
+      title: "Real-Time Alerts & Monitoring",
+      subtitle: "Stay informed, stay protected.",
+      description:
+        "Receive instant alerts and monitor your business security through an intuitive dashboard and mobile app.",
+    },
+    {
+      id: "smb-4",
+      image: "/images/home/protection-homepage.webp",
+      title: "Quick Deployment",
+      subtitle: "Set up in minutes, not days.",
+      description:
+        "Deploy security solutions effortlessly without requiring dedicated IT teams or advanced configuration.",
+    },
+  ],
+  home: [
+    {
+      id: "home-1",
+      image: "/images/home/protect-image-homepage.webp",
+      title: "Quick & Effortless Setup",
+      subtitle: "Get protected in under 5 minutes.",
+      description:
+        "No technical expertise required—simply plug in and your network is secured instantly.",
+    },
+    {
+      id: "home-2",
+      image: "/images/home/protection-homepage.webp",
+      title: "Fully Automated Protection",
+      subtitle: "Security that runs itself.",
+      description:
+        "Your network is continuously monitored and protected in real time, without manual intervention.",
+    },
+    {
+      id: "home-3",
+      image: "/images/features/zero-maintainace.webp",
+      title: "Zero Maintenance Required",
+      subtitle: "No updates, no hassle.",
+      description:
+        "All patches, updates, and security improvements happen automatically in the background.",
+    },
+    {
+      id: "home-4",
+      image: "/images/home/protect-image-homepage.webp",
+      title: "Family-Wide Protection",
+      subtitle: "Safe browsing for everyone at home.",
+      description:
+        "Protect all devices—from phones to smart TVs—with built-in DNS security, scam protection, and content filtering.",
+    },
+  ],
 };
 
 // ── Learn More Arrow ──────────────────────────────────────────────────────────
