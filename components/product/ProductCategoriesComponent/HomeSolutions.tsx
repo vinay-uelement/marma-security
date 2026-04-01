@@ -17,21 +17,54 @@ const homeGatewaySpecifications: SpecificationProductItem[] = [
   { label: "Recommended Users", value: "Up to 64" },
 ];
 
-export default function HomeSolutions() {
+export default function HomeSolutions({ products = [] }: { products?: any[] }) {
+  const getProduct = (searchString: string) => {
+    return products.find((p: any) =>
+      (p.name || p.title || p.productName || "")?.toLowerCase().includes(searchString.toLowerCase())
+    );
+  };
+
+  const mobileApp = getProduct("Mobile App");
+
+  const fallbackProducts = [
+    {
+      id: "safehome",
+      title: "SafeHome Firewall | Home Network Security",
+      description: "SafeHome protects all connected devices on your network from cyberattacks targeting your financial and personal data, safeguarding your privacy and protecting your family on the internet.",
+      image: "/images/banners/homepage-right-banner1.webp",
+      imageAlt: "SafeHome Firewall home network security device",
+      specifications: homeGatewaySpecifications,
+    }
+  ];
+
+  const deviceProducts = products.filter((p: any) => {
+    const cat = p.category?.toLowerCase() || '';
+    return cat === 'home' || cat === 'homesolutions' || cat === 'home-solutions';
+  });
+
+  const displayProducts = deviceProducts.length > 0 ? deviceProducts : fallbackProducts;
+
   return (
     <div className="mx-auto w-full max-w-[1280px]">
       <div className={productSectionTitleClassName}>Firewall device</div>
 
-      {/* ── SafeHome ← home page "Learn More" lands here ── */}
-      <div id="safehome">
-        <SpecificationProductCard
-          title="SafeHome Firewall | Home Network Security"
-          descript="SafeHome protects all connected devices on your network from cyberattacks targeting your financial and personal data, safeguarding your privacy and protecting your family on the internet."
-          image="/images/banners/homepage-right-banner1.webp"
-          imageAlt="SafeHome Firewall home network security device"
-          specification={homeGatewaySpecifications}
-        />
-      </div>
+      {displayProducts.map((prod: any, idx: number) => {
+        return (
+          <div key={prod.id || idx} id={prod.id || `home-item-${idx}`} className={idx > 0 ? "mt-2 sm:mt-4 lg:mt-10 xl:mt-12" : ""}>
+            <SpecificationProductCard
+              title={prod.name || prod.title || "Home Security Device"}
+              descript={prod.description || "SafeHome protects all connected devices on your network from cyberattacks targeting your financial and personal data, safeguarding your privacy and protecting your family on the internet."}
+              image={prod.image || "/images/banners/homepage-right-banner1.webp"}
+              imageAlt={prod.imageAlt || prod.name || prod.title || "Home security device"}
+              specification={
+                prod.keyCapabilities
+                  ? prod.keyCapabilities.map((c: any) => ({ label: c.title, value: c.description }))
+                  : prod.specifications || homeGatewaySpecifications
+              }
+            />
+          </div>
+        );
+      })}
 
       <div className={productDecoratedSectionClassName}>
         <div className="relative w-screen left-1/2 -translate-x-1/2 mb-2 md:mb-8">
@@ -50,10 +83,10 @@ export default function HomeSolutions() {
         <div className={productSectionTitleClassName}>Mobile Application</div>
         <div className="max-md:px-6">
           <EndpointProductCard
-            name="Mobile App"
-            tagline="iOS & Android"
-            primaryFeature="Firewall Onboarding"
-            features={[
+            name={mobileApp?.name || mobileApp?.title || "Mobile App"}
+            tagline={mobileApp?.tagline || "iOS & Android"}
+            primaryFeature={mobileApp?.primaryFeature || "Firewall Onboarding"}
+            features={mobileApp?.features || [
               "Dashboard",
               "Alerts",
               "User Security Config",

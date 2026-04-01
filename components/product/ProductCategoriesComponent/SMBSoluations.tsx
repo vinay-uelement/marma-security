@@ -26,21 +26,52 @@ const smbGatewayDescription =
 const smbManagementDescription =
   "Cloud-based Marma Management Platform for managing Security Gateways and Endpoint Protection - designed for simplicity with minimal IT overhead.";
 
-export default function SMBSoluations() {
+export default function SMBSoluations({ products = [] }: { products?: any[] }) {
+  const getProduct = (searchString: string) => {
+    return products.find((p: any) =>
+      (p.name || p.title || p.productName || "")?.toLowerCase().includes(searchString.toLowerCase())
+    );
+  };
+
+  const fallbackProducts = [
+    {
+      id: "safebiz",
+      title: "SafeBiz Firewall | SMB Office Security",
+      description: smbGatewayDescription,
+      image: "/images/banners/solution-banner-right1.webp",
+      imageAlt: "SafeBiz Firewall SMB office security device",
+      specifications: smbGatewaySpecifications,
+    }
+  ];
+
+  const deviceProducts = products.filter((p: any) => {
+    const cat = p.category?.toLowerCase() || '';
+    return cat === 'smb' || cat === 'smbsoluations' || cat === 'smb-solutions';
+  });
+
+  const displayProducts = deviceProducts.length > 0 ? deviceProducts : fallbackProducts;
+
   return (
     <div className="mx-auto w-full max-w-[1280px]">
       <div className={productSectionTitleClassName}>Firewall device</div>
 
-      {/* ── SafeBiz ← home page "Learn More" lands here ── */}
-      <div id="safebiz">
-        <SpecificationProductCard
-          title="SafeBiz Firewall | SMB Office Security"
-          descript={smbGatewayDescription}
-          image="/images/banners/solution-banner-right1.webp"
-          imageAlt="SafeBiz Firewall SMB office security device"
-          specification={smbGatewaySpecifications}
-        />
-      </div>
+      {displayProducts.map((prod: any, idx: number) => {
+        return (
+          <div key={prod.id || idx} id={prod.id || `smb-item-${idx}`} className={idx > 0 ? "mt-2 sm:mt-4 lg:mt-10 xl:mt-12" : ""}>
+            <SpecificationProductCard
+              title={prod.name || prod.title || "SMB Security Device"}
+              descript={prod.description || smbGatewayDescription}
+              image={prod.image || "/images/banners/solution-banner-right1.webp"}
+              imageAlt={prod.imageAlt || prod.name || prod.title || "SMB security device"}
+              specification={
+                prod.keyCapabilities
+                  ? prod.keyCapabilities.map((c: any) => ({ label: c.title, value: c.description }))
+                  : prod.specifications || smbGatewaySpecifications
+              }
+            />
+          </div>
+        );
+      })}
 
       <div className={productDecoratedSectionClassName}>
         <div className="relative w-screen left-1/2 -translate-x-1/2 mb-2 md:mb-8">

@@ -41,55 +41,88 @@ const safeRemoteFirewallSpecifications: SpecificationProductItem[] = [
   { label: "Recommended Users", value: "Up to 64" },
 ];
 
-export default function EnterpriseSolutions() {
+export default function EnterpriseSolutions({ products = [] }: { products?: any[] }) {
+  const getProduct = (searchString: string) => {
+    return products.find((p: any) =>
+      (p.name || p.title || p.productName || "")?.toLowerCase().includes(searchString.toLowerCase())
+    );
+  };
+
+  const fallbackProducts = [
+    {
+      id: "safeenterprise-200",
+      title: "SafeEnterprise 200 | Branch Office Security",
+      description: enterpriseDescription,
+      image: "/images/product/SafeEnterprise2001.webp",
+      imageAlt: "SafeEnterprise 200 branch office security device",
+      specifications: enterprise200Specifications,
+    },
+    {
+      id: "safeenterprise-400",
+      title: "SafeEnterprise 400 | Regional Office / Campus Security",
+      description: enterpriseDescription,
+      image: "/images/product/SafeEnterprise4001.webp",
+      imageAlt: "SafeEnterprise 400 regional office and campus security device",
+      specifications: enterprise400Specifications,
+    },
+    {
+      id: "saferemote",
+      title: "SafeRemote Firewall | Remote Worker Security",
+      description: enterpriseDescription,
+      image: "/images/product/SafeEnterprise4002.webp",
+      imageAlt: "SafeRemote Firewall remote worker security device",
+      specifications: safeRemoteFirewallSpecifications,
+    },
+  ];
+
+  const deviceProducts = products.filter((p: any) => {
+    const cat = p.category?.toLowerCase() || '';
+    return cat === 'enterprise' || cat === 'enterprisesolutions' || cat === 'enterprise-solutions';
+  });
+
+  const displayProducts = deviceProducts.length > 0 ? deviceProducts : fallbackProducts;
+
   return (
     <div className="mx-auto w-full max-w-[1280px]">
       <div className={productSectionTitleClassName}>Firewall device</div>
 
-      {/* ── SafeEnterprise 200 ── */}
-      <div id="safeenterprise-200">
-        <SpecificationProductCard
-          title="SafeEnterprise 200 | Branch Office Security"
-          descript={enterpriseDescription}
-          image="/images/product/SafeEnterprise2001.webp"
-          imageAlt="SafeEnterprise 200 branch office security device"
-          specification={enterprise200Specifications}
-        />
-      </div>
+      {displayProducts.map((prod: any, idx: number) => {
+        const isSecond = idx === 1;
+        const isAfterSecond = idx > 1;
 
-      <div className="relative mb-2 md:mb-8 w-screen left-1/2 -translate-x-1/2">
-        <div className="w-[500px] md:w-[600px] lg:w-[1000px]">
-          <DecorativeLine
-            viewBox="0 0 1500 80"
-            points="0,40 310,40"
-            dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
-            className="w-full h-auto"
-            animationDuration={2.4}
-          />
-        </div>
-      </div>
+        return (
+          <div key={prod.id || idx}>
+            {/* Only show the decorative line before the second item */}
+            {isSecond && (
+              <div className="relative mb-2 md:mb-8 w-screen left-1/2 -translate-x-1/2">
+                <div className="w-[500px] md:w-[600px] lg:w-[1000px]">
+                  <DecorativeLine
+                    viewBox="0 0 1500 80"
+                    points="0,40 310,40"
+                    dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
+                    className="w-full h-auto"
+                    animationDuration={2.4}
+                  />
+                </div>
+              </div>
+            )}
 
-      {/* ── SafeEnterprise 400 ← home page "Learn More" lands here ── */}
-      <div id="safeenterprise-400">
-        <SpecificationProductCard
-          title="SafeEnterprise 400 | Regional Office / Campus Security"
-          descript={enterpriseDescription}
-          image="/images/product/SafeEnterprise4001.webp"
-          imageAlt="SafeEnterprise 400 regional office and campus security device"
-          specification={enterprise400Specifications}
-        />
-      </div>
-
-      {/* ── SafeRemote ── */}
-      <div id="saferemote" className="mt-2 sm:mt-4 lg:mt-10 xl:mt-12">
-        <SpecificationProductCard
-          title="SafeRemote Firewall | Remote Worker Security"
-          descript={enterpriseDescription}
-          image="/images/product/SafeEnterprise4002.webp"
-          imageAlt="SafeRemote Firewall remote worker security device"
-          specification={safeRemoteFirewallSpecifications}
-        />
-      </div>
+            <div id={prod.id || `enterprise-item-${idx}`} className={isAfterSecond ? "mt-2 sm:mt-4 lg:mt-10 xl:mt-12" : ""}>
+              <SpecificationProductCard
+                title={prod.name || prod.title || "Enterprise Security Device"}
+                descript={prod.description || enterpriseDescription}
+                image={prod.image || "/images/product/SafeEnterprise2001.webp"}
+                imageAlt={prod.imageAlt || prod.name || prod.title || "Enterprise security device"}
+                specification={
+                  prod.keyCapabilities
+                    ? prod.keyCapabilities.map((c: any) => ({ label: c.title, value: c.description }))
+                    : prod.specifications || enterprise200Specifications
+                }
+              />
+            </div>
+          </div>
+        );
+      })}
 
       <div className={productDecoratedSectionClassName}>
         <div className="flex flex-col w-[50%] sm:w-[40%] min-[901px]:w-[35%] ml-auto pointer-events-none z-0">
