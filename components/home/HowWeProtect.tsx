@@ -205,7 +205,7 @@ export default function HowWeProtect() {
       />
 
       {/* Features List */}
-      <div className="flex flex-col w-full pb-8 md:pb-16 gap-10 lg:gap-24 relative overflow-hidden mt-10 md:mt-16">
+      <div className="flex flex-col w-full pb-8 md:pb-2 gap-10 lg:gap-24 relative overflow-hidden mt-10 md:mt-16">
         {features.map((feature, index) => (
           <div key={`${activeTab}-${feature.id}`} className="w-full relative">
             {index === 1 && (

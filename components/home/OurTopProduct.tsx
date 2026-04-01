@@ -90,7 +90,7 @@ export default function OurTopProduct() {
   }, []);
 
   return (
-    <section className="w-full py-10 md:py-16 bg-white overflow-hidden">
+    <section className="w-full py-8 md:py-20 bg-white overflow-hidden">
       <div className="max-w-[1440px]  px-4 md:px-8">
         
         {/* Header Row */}
