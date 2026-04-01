@@ -2,7 +2,7 @@ import ClientPage from './ClientPage';
 import { fetchApi } from '@/lib/api';
 
 export default async function Page() {
-  let products = null;
+  let products: any[] = [];
   try {
     // Example: Fetching all active products via SSR
     // fetchApi automatically adds the NEXT_PUBLIC_API_URL and x-tenant-slug header
@@ -12,7 +12,7 @@ export default async function Page() {
 
     if (response.ok) {
       const data = await response.json();
-      products = data;
+      products = Array.isArray(data) ? data : (data?.data || []);
     } else {
       console.error('Failed to fetch products. Status:', response.status);
     }

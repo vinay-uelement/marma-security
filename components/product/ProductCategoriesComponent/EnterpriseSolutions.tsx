@@ -50,20 +50,20 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
 
   const fallbackProducts = [
     {
-      id: "safeenterprise-200",
-      title: "SafeEnterprise 200 | Branch Office Security",
-      description: enterpriseDescription,
-      image: "/images/product/SafeEnterprise2001.webp",
-      imageAlt: "SafeEnterprise 200 branch office security device",
-      specifications: enterprise200Specifications,
-    },
-    {
       id: "safeenterprise-400",
       title: "SafeEnterprise 400 | Regional Office / Campus Security",
       description: enterpriseDescription,
       image: "/images/product/SafeEnterprise4001.webp",
       imageAlt: "SafeEnterprise 400 regional office and campus security device",
       specifications: enterprise400Specifications,
+    },
+    {
+      id: "safeenterprise-200",
+      title: "SafeEnterprise 200 | Branch Office Security",
+      description: enterpriseDescription,
+      image: "/images/product/SafeEnterprise2001.webp",
+      imageAlt: "SafeEnterprise 200 branch office security device",
+      specifications: enterprise200Specifications,
     },
     {
       id: "saferemote",
@@ -84,7 +84,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
 
   return (
     <div className="mx-auto w-full max-w-[1280px]">
-      <div className={productSectionTitleClassName}>Firewall device</div>
+      <div className={productSectionTitleClassName}>Security Gateways</div>
 
       {displayProducts.map((prod: any, idx: number) => {
         const isSecond = idx === 1;

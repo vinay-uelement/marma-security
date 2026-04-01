@@ -53,7 +53,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
 
   return (
     <div className="mx-auto w-full max-w-[1280px]">
-      <div className={productSectionTitleClassName}>Firewall device</div>
+      <div className={productSectionTitleClassName}>Security Gateways</div>
 
       {displayProducts.map((prod: any, idx: number) => {
         return (
