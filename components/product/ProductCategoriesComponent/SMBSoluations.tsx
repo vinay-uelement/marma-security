@@ -12,30 +12,12 @@ import {
 } from "./sectionSpacing";
 
 const smbGatewaySpecifications: SpecificationProductItem[] = [
-  {
-    label: "Form Factor",
-    value: "Table-top / Wall-mounted",
-  },
-  {
-    label: "Throughput",
-    value: "1 Gbps",
-  },
-  {
-    label: "WAN Ports",
-    value: "1 x 2.5 Gbps",
-  },
-  {
-    label: "LAN Ports",
-    value: "4 x 1 Gbps (Ethernet)",
-  },
-  {
-    label: "Integrated Wi-Fi",
-    value: "Wi-Fi 5 / 6E",
-  },
-  {
-    label: "Recommended Users",
-    value: "Up to 128",
-  },
+  { label: "Form Factor", value: "Table-top / Wall-mounted" },
+  { label: "Throughput", value: "1 Gbps" },
+  { label: "WAN Ports", value: "1 x 2.5 Gbps" },
+  { label: "LAN Ports", value: "4 x 1 Gbps (Ethernet)" },
+  { label: "Integrated Wi-Fi", value: "Wi-Fi 5 / 6E" },
+  { label: "Recommended Users", value: "Up to 128" },
 ];
 
 const smbGatewayDescription =
@@ -47,17 +29,18 @@ const smbManagementDescription =
 export default function SMBSoluations() {
   return (
     <div className="mx-auto w-full max-w-[1280px]">
-      <div className={productSectionTitleClassName}>
-        Firewall device
-      </div>
+      <div className={productSectionTitleClassName}>Firewall device</div>
 
-      <SpecificationProductCard
-        title="SafeBiz Firewall | SMB Office Security"
-        descript={smbGatewayDescription}
-        image="/images/banners/solution-banner-right1.webp"
-        imageAlt="SafeBiz Firewall SMB office security device"
-        specification={smbGatewaySpecifications}
-      />
+      {/* ── SafeBiz ← home page "Learn More" lands here ── */}
+      <div id="safebiz">
+        <SpecificationProductCard
+          title="SafeBiz Firewall | SMB Office Security"
+          descript={smbGatewayDescription}
+          image="/images/banners/solution-banner-right1.webp"
+          imageAlt="SafeBiz Firewall SMB office security device"
+          specification={smbGatewaySpecifications}
+        />
+      </div>
 
       <div className={productDecoratedSectionClassName}>
         <div className="relative w-screen left-1/2 -translate-x-1/2 mb-2 md:mb-8">
@@ -75,11 +58,10 @@ export default function SMBSoluations() {
 
         <div className={productSectionTitleClassName}>Management Platform</div>
         <div className="max-md:px-6">
-
-        <ManagementProductCard
-          title="SMB Management Platform"
-          description={smbManagementDescription}
-        />
+          <ManagementProductCard
+            title="SMB Management Platform"
+            description={smbManagementDescription}
+          />
         </div>
       </div>
 

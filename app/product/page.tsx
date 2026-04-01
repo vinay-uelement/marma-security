@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import ProductShowcase from "@/components/product/ProductShowcase";
 import Banner from "@/components/global/Banner";
@@ -10,7 +11,9 @@ import HighlightedText from "@/components/global/HighlightedText";
 import DecorativeLine from "@/components/home/DecorativeLine";
 import Tabs from "@/components/global/Tabs";
 import { ProductCategoriesMapping } from "@/components/product/ProductCategoriesComponent/ProductComponentMapping";
-import ProductSummaryTable, { ProductSummaryRow } from "@/components/product/ProductSummaryTable";
+import ProductSummaryTable, {
+  ProductSummaryRow,
+} from "@/components/product/ProductSummaryTable";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 const heroProducts = [
@@ -299,12 +302,55 @@ function HeroCarousel() {
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 export default function ProductPage() {
+  const searchParams = useSearchParams();
+  const tabParam = searchParams.get("tab");
+  const productParam = searchParams.get("product");
 
-  const [activeProductTab, setActiveProductTab] =
-    useState<keyof typeof ProductCategoriesMapping>("enterprise");
+  const [activeProductTab, setActiveProductTab] = useState<
+    keyof typeof ProductCategoriesMapping
+  >(
+    (tabParam && tabParam in ProductCategoriesMapping
+      ? tabParam
+      : "enterprise") as keyof typeof ProductCategoriesMapping,
+  );
+
+  useEffect(() => {
+    if (tabParam && tabParam in ProductCategoriesMapping) {
+      setActiveProductTab(tabParam as keyof typeof ProductCategoriesMapping);
+    }
+  }, [tabParam]);
+
+  useEffect(() => {
+    if (!productParam) return;
+
+    let attempts = 0;
+    const MAX_ATTEMPTS = 30;
+    const NAVBAR_HEIGHT = 100;
+
+    const tryScroll = () => {
+      const el = document.getElementById(productParam);
+
+      if (el) {
+        const top =
+          el.getBoundingClientRect().top + window.scrollY - NAVBAR_HEIGHT;
+        window.scrollTo({ top, behavior: "smooth" });
+        return;
+      }
+
+      attempts++;
+      if (attempts < MAX_ATTEMPTS) {
+        setTimeout(tryScroll, 100);
+      }
+    };
+
+    const timer = setTimeout(tryScroll, 50);
+    return () => clearTimeout(timer);
+  }, [productParam, activeProductTab]);
+
   const onTabChange = (tabId: string) => {
     setActiveProductTab(tabId as keyof typeof ProductCategoriesMapping);
   };
+
   const ActiveComponent = ProductCategoriesMapping[activeProductTab];
 
   const columns = [
@@ -312,7 +358,7 @@ export default function ProductPage() {
     { key: "smb", label: "SMB" },
     { key: "home", label: "Home" },
   ];
-  
+
   const rows: ProductSummaryRow[] = [
     {
       category: "Security Gateway",
@@ -340,11 +386,19 @@ export default function ProductPage() {
     },
     {
       category: "Management Platform",
-      values: { enterprise: "Cloud + Private DC", smb: "Cloud Only", home: "-" },
+      values: {
+        enterprise: "Cloud + Private DC",
+        smb: "Cloud Only",
+        home: "-",
+      },
     },
     {
       category: "Windows Endpoint Agent",
-      values: { enterprise: { check: true as const }, smb: { check: true as const }, home: "-" },
+      values: {
+        enterprise: { check: true as const },
+        smb: { check: true as const },
+        home: "-",
+      },
     },
     {
       category: "Mobile App",
@@ -434,16 +488,16 @@ export default function ProductPage() {
 
       {/* Product Showcases */}
       <div className="mt-6 md:mt-20">
-      <Tabs
-        tabs={[
-          { label: "Enterprise Solutions", id: "enterprise" },
-          { label: "SMB Solutions", id: "smb" },
-          { label: "Home Solutions", id: "home" },
-        ]}
-        activeTabId={activeProductTab}
-        onTabChange={onTabChange}
-        align="center" 
-      />
+        <Tabs
+          tabs={[
+            { label: "Enterprise Solutions", id: "enterprise" },
+            { label: "SMB Solutions", id: "smb" },
+            { label: "Home Solutions", id: "home" },
+          ]}
+          activeTabId={activeProductTab}
+          onTabChange={onTabChange}
+          align="center"
+        />
       </div>
       <div className="my-4 mx-2 md:my-15">
         <ActiveComponent />
