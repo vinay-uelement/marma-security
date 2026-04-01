@@ -1,6 +1,8 @@
 import ClientPage from './ClientPage';
 import { fetchApi } from '@/lib/api';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Page() {
   let products: any[] = [];
   try {
