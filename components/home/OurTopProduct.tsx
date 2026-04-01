@@ -17,32 +17,32 @@ const topProducts: Product[] = [
     id: "safehome",
     name: "SafeHome",
     image: "/images/banners/solution-banner-right1.webp",
-    link: "#safehome",
+    link: "/product?tab=home&product=safehome",
   },
   {
     id: "safebiz",
     name: "SafeBiz",
     image: "/images/banners/homepage-right-banner1.webp",
     isNew: true,
-    link: "#safebiz",
+    link: "/product?tab=smb&product=safebiz",
   },
   {
     id: "safeenterprise",
     name: "SafeEnterprise 200",
     image: "/images/banners/solution-banner-right1.webp",
-    link: "#safeenterprise",
+    link: "/product?tab=enterprise&product=safeenterprise-200",
   },
   {
     id: "safegov",
     name: "SafeEnterprise 400",
     image: "/images/banners/homepage-right-banner1.webp",
-    link: "#safegov",
+    link: "/product?tab=enterprise&product=safeenterprise-400",
   },
   {
     id: "safecloud",
     name: "SafeEnterprise 100",
     image: "/images/banners/solution-banner-right1.webp",
-    link: "#safecloud",
+    link: "/product?tab=enterprise", // ⚠️ no anchor — SE100 has no id in product page yet
   },
 ];
 
@@ -52,25 +52,35 @@ export default function OurTopProduct() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleScroll = () => {
-    if (!scrollContainerRef.current || scrollContainerRef.current.children.length === 0) return;
+    if (
+      !scrollContainerRef.current ||
+      scrollContainerRef.current.children.length === 0
+    )
+      return;
     const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
     if (scrollWidth > 0) {
       setScrollProgress(((scrollLeft + clientWidth) / scrollWidth) * 100);
     }
-    
+
     // Calculate active index for arrows
     const cardEl = scrollContainerRef.current.children[0] as HTMLElement;
     const cardWidth = cardEl.offsetWidth;
-    const computedGap = parseInt(window.getComputedStyle(scrollContainerRef.current).gap) || 24;
+    const computedGap =
+      parseInt(window.getComputedStyle(scrollContainerRef.current).gap) || 24;
     const index = Math.round(scrollLeft / (cardWidth + computedGap));
     setActiveIndex(Math.min(index, topProducts.length - 1));
   };
 
   const scrollTo = (index: number) => {
-    if (!scrollContainerRef.current || scrollContainerRef.current.children.length === 0) return;
+    if (
+      !scrollContainerRef.current ||
+      scrollContainerRef.current.children.length === 0
+    )
+      return;
     const cardEl = scrollContainerRef.current.children[0] as HTMLElement;
     const cardWidth = cardEl.offsetWidth;
-    const computedGap = parseInt(window.getComputedStyle(scrollContainerRef.current).gap) || 24;
+    const computedGap =
+      parseInt(window.getComputedStyle(scrollContainerRef.current).gap) || 24;
     scrollContainerRef.current.scrollTo({
       left: index * (cardWidth + computedGap),
       behavior: "smooth",
@@ -79,11 +89,12 @@ export default function OurTopProduct() {
   };
 
   const handlePrev = () => scrollTo(Math.max(activeIndex - 1, 0));
-  const handleNext = () => scrollTo(Math.min(activeIndex + 1, topProducts.length - 1));
+  const handleNext = () =>
+    scrollTo(Math.min(activeIndex + 1, topProducts.length - 1));
 
   useEffect(() => {
     handleScroll();
-    
+
     // Add resize listener just in case layout changes
     window.addEventListener("resize", handleScroll);
     return () => window.removeEventListener("resize", handleScroll);
@@ -92,23 +103,22 @@ export default function OurTopProduct() {
   return (
     <section className="w-full py-10 md:py-16 bg-white overflow-hidden">
       <div className="max-w-[1440px]  px-4 md:px-8">
-        
         {/* Header Row */}
         <div className="flex flex sm:flex-row justify-between items-start sm:items-center mb-8 md:mb-10 w-full max-w-[1360px] mx-auto gap-4">
           <h2 className="tp-section-heading text-[#888888] m-0">
             Our Top Product
           </h2>
-          <Link 
-            href="/products" 
+          <Link
+            href="/products"
             className="tp-know-more text-[#FF0000] flex items-center gap-2 transition-colors group w-fit"
           >
             <span className="text-[#FF0000] ">Know More</span>
             <span className="flex items-center justify-center">
-              <Image 
-                src="/images/global/line-md_arrow-up.svg" 
-                alt="Arrow" 
-                width={24} 
-                height={24} 
+              <Image
+                src="/images/global/line-md_arrow-up.svg"
+                alt="Arrow"
+                width={24}
+                height={24}
                 className="object-contain w-[18px] h-[18px] md:w-[24px] md:h-[24px]"
               />
             </span>
@@ -116,15 +126,15 @@ export default function OurTopProduct() {
         </div>
 
         {/* Horizontal Scrolling Cards */}
-        <div 
+        <div
           ref={scrollContainerRef}
           onScroll={handleScroll}
           className="flex gap-4 md:gap-6 lg:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-6 mx-auto max-w-[1360px]"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {topProducts.map((product) => (
-            <div 
-              key={product.id} 
+            <div
+              key={product.id}
               className="flex flex-col w-[260px] sm:w-[300px] md:w-[320px] shrink-0 snap-start bg-[#F9F9F9] overflow-hidden group transition-all"
             >
               {/* Top part with Name and conditional New tag */}
@@ -132,17 +142,20 @@ export default function OurTopProduct() {
                 <div className="w-full text-center md:text-left z-10">
                   <h3 className="tp-card-name m-0">{product.name}</h3>
                 </div>
-                
+
                 {product.isNew && (
-                  <div className="tp-new-badge absolute top-0 right-0 px-8 py-2 z-10 flex items-center  justify-center" style={{ borderBottomLeftRadius: '10px' }}>
+                  <div
+                    className="tp-new-badge absolute top-0 right-0 px-8 py-2 z-10 flex items-center  justify-center"
+                    style={{ borderBottomLeftRadius: "10px" }}
+                  >
                     New
                   </div>
                 )}
-                
+
                 {/* Image Wrap */}
                 <div className="relative w-full flex-1 flex items-center justify-start mt-4 transition-transform duration-500 group-hover:scale-105">
                   <div className="w-[95%]  h-full min-h-[160px] md:min-h-[200px] relative">
-                    <Image 
+                    <Image
                       src={product.image}
                       alt={product.name}
                       fill
@@ -154,29 +167,27 @@ export default function OurTopProduct() {
               </div>
 
               {/* Bottom Know More bar */}
-              <div className="bg-[#F3F2F2] py-6 mt-auto">
-                <Link 
-                  href={product.link}
-                  className="tp-know-more flex items-center justify-center gap-2 text-[#FF0000] transition-colors group w-fit mx-auto"
-                >
-                  <span className="text-[#FF0000]">Know More</span>
-                  <span className="transition-transform group-hover:translate-x-1 flex items-center justify-center">
-                    <Image 
-                      src="/images/global/line-md_arrow-up.svg" 
-                      alt="Arrow" 
-                      width={24} 
-                      height={24} 
-                      className="object-contain w-[18px] h-[18px] md:w-[24px] md:h-[24px]"
-                    />
-                  </span>
-                </Link>
-              </div>
+              <Link
+                href={product.link}
+                className="group/knowmore bg-[#F3F2F2] py-6 mt-auto flex items-center justify-center gap-2 text-[#FF0000] transition-colors w-full"
+              >
+                <span className="text-[#FF0000]">Know More</span>
+                <span className="transition-transform group-hover/knowmore:translate-x-1 flex items-center justify-center">
+                  <Image
+                    src="/images/global/line-md_arrow-up.svg"
+                    alt="Arrow"
+                    width={24}
+                    height={24}
+                    className="object-contain w-[18px] h-[18px] md:w-[24px] md:h-[24px]"
+                  />
+                </span>
+              </Link>
             </div>
           ))}
         </div>
 
         {/* Custom Progress Bar */}
- <div className="w-full flex justify-between items-center mt-2  pt-2  gap-6 md:gap-12 pr-6 lg:pr-12">
+        <div className="w-full flex justify-between items-center mt-2  pt-2  gap-6 md:gap-12 pr-6 lg:pr-12">
           {/* Progress Bar */}
           <div className="flex-grow relative h-[3px]">
             <div className="absolute inset-0 w-full h-full bg-[#E5E5E5] rounded-full z-10" />
@@ -237,7 +248,6 @@ export default function OurTopProduct() {
             </button>
           </div>
         </div>
-
       </div>
     </section>
   );
