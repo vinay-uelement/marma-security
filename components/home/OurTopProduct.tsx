@@ -110,7 +110,7 @@ export default function OurTopProduct() {
               className="flex flex-col w-[260px] sm:w-[300px] md:w-[320px] shrink-0 snap-start bg-[#F9F9F9] overflow-hidden group transition-all"
             >
               {/* Top part with Name and conditional New tag */}
-              <div className="relative pt-6 px-6 pb-4 h-[260px] md:h-[300px] flex flex-col items-center bg-[#F7F7F7]">
+              <div className="relative pt-6 px-6 mb-4 h-[260px] md:h-[300px] flex flex-col items-center bg-[#F7F7F7]">
                 <div className="w-full text-center md:text-left z-10">
                   <h3 className="tp-card-name m-0">{product.name}</h3>
                 </div>
