@@ -49,24 +49,40 @@ const topProducts: Product[] = [
 export default function OurTopProduct() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleScroll = () => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      if (scrollWidth > 0) {
-        setScrollProgress(((scrollLeft + clientWidth) / scrollWidth) * 100);
-      }
+    if (!scrollContainerRef.current || scrollContainerRef.current.children.length === 0) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+    if (scrollWidth > 0) {
+      setScrollProgress(((scrollLeft + clientWidth) / scrollWidth) * 100);
     }
+    
+    // Calculate active index for arrows
+    const cardEl = scrollContainerRef.current.children[0] as HTMLElement;
+    const cardWidth = cardEl.offsetWidth;
+    const computedGap = parseInt(window.getComputedStyle(scrollContainerRef.current).gap) || 24;
+    const index = Math.round(scrollLeft / (cardWidth + computedGap));
+    setActiveIndex(Math.min(index, topProducts.length - 1));
   };
 
+  const scrollTo = (index: number) => {
+    if (!scrollContainerRef.current || scrollContainerRef.current.children.length === 0) return;
+    const cardEl = scrollContainerRef.current.children[0] as HTMLElement;
+    const cardWidth = cardEl.offsetWidth;
+    const computedGap = parseInt(window.getComputedStyle(scrollContainerRef.current).gap) || 24;
+    scrollContainerRef.current.scrollTo({
+      left: index * (cardWidth + computedGap),
+      behavior: "smooth",
+    });
+    setActiveIndex(index);
+  };
+
+  const handlePrev = () => scrollTo(Math.max(activeIndex - 1, 0));
+  const handleNext = () => scrollTo(Math.min(activeIndex + 1, topProducts.length - 1));
+
   useEffect(() => {
-    // Initial calculate
-    if (scrollContainerRef.current) {
-      const { scrollWidth, clientWidth } = scrollContainerRef.current;
-      if (scrollWidth > 0) {
-        setScrollProgress((clientWidth / scrollWidth) * 100);
-      }
-    }
+    handleScroll();
     
     // Add resize listener just in case layout changes
     window.addEventListener("resize", handleScroll);
@@ -75,7 +91,7 @@ export default function OurTopProduct() {
 
   return (
     <section className="w-full py-10 md:py-16 bg-white overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8">
+      <div className="max-w-[1440px]  px-4 md:px-8">
         
         {/* Header Row */}
         <div className="flex flex sm:flex-row justify-between items-start sm:items-center mb-8 md:mb-10 w-full max-w-[1360px] mx-auto gap-4">
@@ -84,16 +100,18 @@ export default function OurTopProduct() {
           </h2>
           <Link 
             href="/products" 
-            className="tp-know-more text-[#EF4444] hover:text-[#d12222] flex items-center gap-2 transition-colors"
+            className="tp-know-more text-[#FF0000] flex items-center gap-2 transition-colors group w-fit"
           >
-            Know More
-            <Image 
-              src="/images/global/line-md_arrow-up.svg" 
-              alt="Arrow" 
-              width={24} 
-              height={24} 
-              className="object-contain w-[18px] h-[18px] md:w-[24px] md:h-[24px]"
-            />
+            <span className="text-[#FF0000] ">Know More</span>
+            <span className="flex items-center justify-center">
+              <Image 
+                src="/images/global/line-md_arrow-up.svg" 
+                alt="Arrow" 
+                width={24} 
+                height={24} 
+                className="object-contain w-[18px] h-[18px] md:w-[24px] md:h-[24px]"
+              />
+            </span>
           </Link>
         </div>
 
@@ -139,16 +157,18 @@ export default function OurTopProduct() {
               <div className="bg-[#F3F2F2] py-6 mt-auto">
                 <Link 
                   href={product.link}
-                  className="tp-know-more flex items-center justify-center gap-2 text-[#EF4444] hover:text-[#d12222] transition-colors"
+                  className="tp-know-more flex items-center justify-center gap-2 text-[#FF0000] transition-colors group w-fit mx-auto"
                 >
-                  Know More
-                  <Image 
-                    src="/images/global/line-md_arrow-up.svg" 
-                    alt="Arrow" 
-                    width={24} 
-                    height={24} 
-                    className="object-contain w-[18px] h-[18px] md:w-[24px] md:h-[24px]"
-                  />
+                  <span className="text-[#FF0000]">Know More</span>
+                  <span className="transition-transform group-hover:translate-x-1 flex items-center justify-center">
+                    <Image 
+                      src="/images/global/line-md_arrow-up.svg" 
+                      alt="Arrow" 
+                      width={24} 
+                      height={24} 
+                      className="object-contain w-[18px] h-[18px] md:w-[24px] md:h-[24px]"
+                    />
+                  </span>
                 </Link>
               </div>
             </div>
@@ -156,13 +176,65 @@ export default function OurTopProduct() {
         </div>
 
         {/* Custom Progress Bar */}
-        <div className="flex justify-center mt-6 mb-4 px-20 w-full mx-auto">
-          <div className="w-full relative h-[8px]">
-            <div className="absolute inset-0 w-full h-full bg-[#E5E5E5]  rounded-full z-10" />
-            <div 
+ <div className="w-full flex justify-between items-center mt-2  pt-2  gap-6 md:gap-12 pr-6 lg:pr-12">
+          {/* Progress Bar */}
+          <div className="flex-grow relative h-[3px]">
+            <div className="absolute inset-0 w-full h-full bg-[#E5E5E5] rounded-full z-10" />
+            <div
               className="absolute left-0 top-0 h-full bg-[#FF0000] z-20 transition-all duration-300 ease-in-out rounded-full"
               style={{ width: `${scrollProgress}%` }}
             />
+          </div>
+
+          {/* Arrows */}
+          <div className="flex justify-end gap-3 shrink-0">
+            <button
+              onClick={handlePrev}
+              disabled={activeIndex === 0}
+              className={`w-10 h-10 rounded-full bg-[#f4f4f4] flex flex-shrink-0 items-center justify-center transition-colors
+                ${activeIndex === 0 ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-200 cursor-pointer"}`}
+              aria-label="Previous"
+            >
+              <svg
+                width="6"
+                height="10"
+                viewBox="0 0 6 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="rotate-180"
+              >
+                <path
+                  d="M1 9L5 5L1 1"
+                  stroke="#FF0000"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={handleNext}
+              disabled={activeIndex === topProducts.length - 1}
+              className={`w-10 h-10 rounded-full bg-[#f4f4f4] flex flex-shrink-0 items-center justify-center transition-colors
+                ${activeIndex === topProducts.length - 1 ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-200 cursor-pointer"}`}
+              aria-label="Next"
+            >
+              <svg
+                width="6"
+                height="10"
+                viewBox="0 0 6 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 9L5 5L1 1"
+                  stroke="#FF0000"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
           </div>
         </div>
 
