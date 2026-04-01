@@ -176,6 +176,30 @@ img {
   .fl2-nav {
     @apply font-body font-normal text-[14px] xl:text-[16px] leading-[30px] text-nav-text text-[var(--color-nav-text)];
   }
+
+  /* ===============================================================
+     OUR TOP PRODUCT SECTION
+     =============================================================== */
+  .tp-section-heading {
+    font-family: var(--font-title);
+    @apply font-semibold text-[22px] md:text-[35px] leading-[1.2] md:leading-[60px] tracking-normal;
+  }
+  
+  .tp-card-name {
+    font-family: var(--font-title);
+    @apply font-semibold text-[16px] md:text-[25px] leading-[1.2] md:leading-[60px] tracking-normal text-text-dark;
+  }
+
+  .tp-new-badge {
+    font-family: var(--font-title);
+    @apply font-normal text-[16px] md:text-[20px] leading-[21px] tracking-[-0.01em] text-white;
+    background: linear-gradient(90deg, rgba(255, 0, 0, 0) 9.13%, #FF0000 100%);
+  }
+
+  .tp-know-more {
+    font-family: var(--font-title);
+    @apply font-normal text-[16px] md:text-[20px] leading-[21px] tracking-[-0.01em];
+  }
 }
 
 /* ===============================================================

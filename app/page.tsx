@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import DecorativeLine from "@/components/home/DecorativeLine";
 import Banner from "@/components/home/Banner";
 import TumblingText from "@/components/home/TumblingText";
+import OurTopProduct from "@/components/home/OurTopProduct";
 
 // Dynamic imports
 const CybercrimeStats = dynamic(
@@ -95,6 +96,7 @@ export default function Home() {
 
       <CybercrimeStats />
       <SecurityCards />
+      <OurTopProduct />
       <HomeSolutionsInfo />
       <Challengestab />
       <ProtectionBanner />
