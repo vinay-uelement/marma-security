@@ -74,9 +74,24 @@ interface SlideState {
   animating: boolean;
 }
 
-export default function SolutionsTabs() {
+export default function SolutionsTabs({ solutionData }: { solutionData?: any }) {
+  const tabsToUse: TabData[] = React.useMemo(() => {
+    if (solutionData && Array.isArray(solutionData) && solutionData.length > 0) {
+      return solutionData
+        .sort((a: any, b: any) => (a.display_order || 0) - (b.display_order || 0))
+        .map((item: any) => ({
+          id: item.id || `sol-${Math.random()}`,
+          label: item.badge || 'Solution',
+          title: item.title || '',
+          description: item.description || '',
+          image: item.image_url || "/images/solutions/healthcare-solution.webp"
+        }));
+    }
+    return tabItems;
+  }, [solutionData]);
+
   const [slideState, setSlideState] = useState<SlideState>({
-    active: tabItems[0],
+    active: tabsToUse[0] || tabItems[0],
     outgoing: null,
     direction: "right",
     animating: false,
@@ -90,22 +105,31 @@ export default function SolutionsTabs() {
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
 
   useEffect(() => {
+    // If solutionData changes late (unlikely due to SSR), keep the active index bound securely
+    if (!tabsToUse.find(t => t.id === slideState.active.id) && tabsToUse.length > 0) {
+      setSlideState(prev => ({ ...prev, active: tabsToUse[0] }));
+    }
+  }, [tabsToUse, slideState.active.id]);
+
+  useEffect(() => {
     const btn = tabRefs.current[slideState.active.id];
     const container = tabsContainerRef.current;
     if (!btn || !container) return;
     const cRect = container.getBoundingClientRect();
     const bRect = btn.getBoundingClientRect();
     setIndicatorStyle({ left: bRect.left - cRect.left, width: bRect.width });
-  }, [slideState.active.id]);
+  }, [slideState.active.id, tabsToUse]);
 
   const handleTabChange = (tabId: string) => {
     if (tabId === slideState.active.id || slideState.animating) return;
-    const currentIndex = tabItems.findIndex(
+    const currentIndex = tabsToUse.findIndex(
       (t) => t.id === slideState.active.id,
     );
-    const nextIndex = tabItems.findIndex((t) => t.id === tabId);
+    const nextIndex = tabsToUse.findIndex((t) => t.id === tabId);
+    if (nextIndex === -1) return;
+
     const direction: SlideDir = nextIndex > currentIndex ? "right" : "left";
-    const nextTab = tabItems[nextIndex];
+    const nextTab = tabsToUse[nextIndex];
 
     if (animTimeoutRef.current) clearTimeout(animTimeoutRef.current);
 
@@ -227,7 +251,7 @@ export default function SolutionsTabs() {
               onChange={(e) => handleTabChange(e.target.value)}
               className="w-full appearance-none bg-bg-light border border-[#E5E5E5] rounded-[12px] px-6 py-1 font-body font-bold text-[12px] md:text-[16px] leading-[34px] tracking-[-0.01em] text-text-dark outline-none cursor-pointer"
             >
-              {tabItems.map((tab) => (
+              {tabsToUse.map((tab) => (
                 <option key={tab.id} value={tab.id}>
                   {tab.label}
                 </option>
@@ -253,7 +277,7 @@ export default function SolutionsTabs() {
             ref={tabsContainerRef}
             className="relative flex items-start gap-12 w-fit border-b-[6px] border-[#F1F1F1] -mb-[1px] pb-0"
           >
-            {tabItems.map((tab) => {
+            {tabsToUse.map((tab) => {
               const isActive = active.id === tab.id;
               return (
                 <button
@@ -262,11 +286,10 @@ export default function SolutionsTabs() {
                     tabRefs.current[tab.id] = el;
                   }}
                   onClick={() => handleTabChange(tab.id)}
-                  className={`relative pb-4 text-[20px] font-body transition-colors leading-[30px] tracking-[-0.01em] text-left whitespace-nowrap w-fit ${
-                    isActive
-                      ? "text-text-dark font-semibold"
-                      : "text-[#989898] font-medium hover:text-[#666666]"
-                  }`}
+                  className={`relative pb-4 text-[20px] font-body transition-colors leading-[30px] tracking-[-0.01em] text-left whitespace-nowrap w-fit ${isActive
+                    ? "text-text-dark font-semibold"
+                    : "text-[#989898] font-medium hover:text-[#666666]"
+                    }`}
                 >
                   {tab.label}
                 </button>

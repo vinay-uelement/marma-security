@@ -37,8 +37,28 @@ import SolutionsInfo from "@/components/solutions/SolutionsInfo";
 import Image from "next/image";
 import Banner from "@/components/home/Banner";
 import TypewriterText from "@/components/home/TypewriterText";
+import { fetchApi } from "@/lib/api";
 
-export default function SolutionsPage() {
+export const dynamic = 'force-dynamic';
+
+export default async function SolutionsPage() {
+  let solutionData = [];
+
+  try {
+    const response = await fetchApi('api/v1/solution-highlights/active', {
+      cache: 'no-store'
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      solutionData = data?.data || data; // handle wrapped or unwrapped response
+    } else {
+      console.error('Failed to fetch solutions. Status:', response.status);
+    }
+  } catch (error) {
+    console.error('Error fetching solutions:', error);
+  }
+
   return (
     <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
       <Banner
@@ -83,7 +103,7 @@ export default function SolutionsPage() {
         rightImageAlt="Banner Image"
       />
 
-      <SolutionsTabs />
+      <SolutionsTabs solutionData={solutionData} />
       <div className="md:pt-25">
         <SolutionsInfo />
       </div>
