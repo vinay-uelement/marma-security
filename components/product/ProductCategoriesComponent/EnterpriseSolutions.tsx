@@ -195,7 +195,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
           </div>
         </div>
 
-        <div className={productSectionClassName}>
+        {/* <div className={productSectionClassName}>
           <div className={productSectionTitleClassName}>
             Integration Services
           </div>
@@ -213,7 +213,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               features={[]}
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
