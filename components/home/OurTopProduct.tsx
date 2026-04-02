@@ -109,7 +109,7 @@ export default function OurTopProduct() {
             Our Top Product
           </h2>
           <Link
-            href="/products"
+            href="/product"
             className="tp-know-more text-[#FF0000] flex items-center gap-2 transition-colors group w-fit"
           >
             <span className="text-[#FF0000] ">Know More</span>
