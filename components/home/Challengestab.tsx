@@ -179,10 +179,10 @@ export default function Challengestab() {
         }
       `}</style>
 
-      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 mt-4 bg-bg-white">
+      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 mt-16 md:mt-4 bg-bg-white">
         {/* Header Section */}
-        <div className="flex items-start md:items-center justify-between gap-4 md:gap-8 mb-[10px] md:mb-[60px] w-full">
-          <h2 className="fl2 z-10 mb-3 md:mb-0 flex-1 whitespace-nowrap">
+        <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-8 mb-[25px] md:mb-[60px] w-full sm:h-[60px] md:h-auto">
+          <h2 className="fl2 z-10 mb-3 md:mb-0 w-full md:max-w-[520px] whitespace-normal md:whitespace-nowrap relative">
             Overcoming your{" "}
             <HighlightedText
               text="challenges"
@@ -192,13 +192,13 @@ export default function Challengestab() {
           </h2>
 
           {/* Decorative Line — Mobile */}
-          <div className="flex md:hidden justify-end items-start flex-shrink-0 pointer-events-none relative z-0">
-            <div className="w-[160px] sm:w-[240px] translate-y-[-20%]">
+          <div className="flex md:hidden absolute top-[-50px] sm:top-[-60px] right-[-24px] items-start justify-end w-[240px] sm:w-[280px] pointer-events-none overflow-visible z-0">
+            <div className="w-full flex justify-end">
               <DecorativeLine
                 viewBox="0 0 1260 500"
                 points="20,150 500,150 600,270 3000,270"
                 dots={[{ cx: 0, cy: 150, rippleCount: 3 }]}
-                className="w-full h-auto -mt-18"
+                className="w-full h-auto translate-x-[15%]"
                 strokeWidth={3}
                 dotRadius={22}
               />
@@ -206,7 +206,7 @@ export default function Challengestab() {
           </div>
 
           {/* Decorative Line — Desktop */}
-          <div className="hidden md:flex items-start justify-end w-full max-w-[400px] lg:max-w-[500px] -mt-16 lg:-mt-24 pointer-events-none z-0">
+          <div className="hidden md:block absolute right-0 top-[-64px] lg:top-[-96px] pointer-events-none z-0">
             <div className="relative w-screen right-1/2 translate-x-1/2 flex justify-end">
               <div className="w-[400px] lg:w-[500px]">
                 <DecorativeLine
@@ -215,7 +215,7 @@ export default function Challengestab() {
                   dots={[
                     { cx: 0, cy: 150, rippleCount: 3, rippleBaseDelay: 0.9 },
                   ]}
-                  className="w-full h-auto -mt-20"
+                  className="w-full h-auto"
                   strokeWidth={3}
                   dotRadius={20}
                   animationDuration={3.2}

@@ -100,7 +100,7 @@ export default function Testimonial() {
     scrollTo(Math.min(activeIndex + 1, testimonials.length - 1));
 
   return (
-    <section className="relative w-full py-18 lg:py-24 overflow-x-clip ">
+    <section className="relative w-full py-8 lg:py-24 overflow-x-clip ">
       <div className="relative z-10 w-full mb-10 lg:mb-16 px-6 lg:px-12 max-w-[1440px] mx-auto ">
         <div className="relative flex flex-col items-start md:flex-row md:items-center text-left justify-between gap-6 md:gap-12 w-full h-auto mt-8 md:mt-0">
           {/* Decorative Line — Mobile */}
