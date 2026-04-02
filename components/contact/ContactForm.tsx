@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../global/Button';
+import { submitContactForm } from '@/lib/contactApi';
 
 interface ContactFormProps {
     onSuccess?: () => void;
@@ -17,20 +18,55 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         phone: '',
         message: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+        // Clear status when user starts typing again
+        if (submitStatus) setSubmitStatus(null);
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        if (onSuccess) onSuccess();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        const result = await submitContactForm({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+            extra_field: {
+                source: 'Contact Us Page',
+                subject: formData.subject,
+            }
+        });
+
+        setIsSubmitting(false);
+
+        if (result.success) {
+            setSubmitStatus({ type: 'success', message: result.message });
+            setFormData({ name: '', email: '', subject: '', phone: '', message: '' });
+            if (onSuccess) onSuccess();
+        } else {
+            setSubmitStatus({ type: 'error', message: result.message });
+        }
     };
 
     return (
         <div className="bg-white rounded-[12px] border border-[#E5E5E5] shadow-sm p-6 md:p-8 lg:p-10 flex flex-col h-full">
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+
+                {/* Status Message */}
+                {submitStatus && (
+                    <div className={`px-4 py-3 rounded-lg text-sm font-medium ${submitStatus.type === 'success'
+                            ? 'bg-green-50 text-green-700 border border-green-200'
+                            : 'bg-red-50 text-red-700 border border-red-200'
+                        }`}>
+                        {submitStatus.message}
+                    </div>
+                )}
 
                 {/* Row 1: Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -42,6 +78,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
                         onChange={handleChange}
                         className="contact-form-input"
                         required
+                        disabled={isSubmitting}
                     />
                     <input
                         type="email"
@@ -51,6 +88,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
                         onChange={handleChange}
                         className="contact-form-input"
                         required
+                        disabled={isSubmitting}
                     />
                 </div>
 
@@ -62,6 +100,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
                         onChange={handleChange}
                         className="contact-form-select"
                         required
+                        disabled={isSubmitting}
                     >
                         <option value="" disabled>Select Subject</option>
                         <option value="general">General Inquiry</option>
@@ -77,6 +116,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
                         onChange={handleChange}
                         className="contact-form-input"
                         required
+                        disabled={isSubmitting}
                     />
                 </div>
 
@@ -89,6 +129,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
                     onChange={handleChange}
                     className="contact-form-input resize-none"
                     required
+                    disabled={isSubmitting}
                 />
 
                 {/* Bottom row: Social + Submit */}
@@ -107,10 +148,11 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
                     </div>
 
                     {/* Submit button */}
-                    <Button icon label="Submit" />
+                    <Button icon label={isSubmitting ? "Submitting..." : "Submit"} />
                 </div>
 
             </form>
         </div>
     );
 }
+

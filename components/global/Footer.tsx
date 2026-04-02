@@ -1,7 +1,9 @@
 "use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import Button from "./Button";
 import { usePathname } from "next/navigation";
+import { submitContactForm } from "@/lib/contactApi";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -311,35 +313,7 @@ export default function Footer() {
           {/* Right Column: Contact Form */}
       <div className="flex flex-col items-center lg:items-end justify-center lg:justify-end mt-4 lg:mt-0 lg:mb-0 md:w-1/2">
             <div className="footer-form-glass">
-              <form
-                className="flex flex-col gap-5 md:gap-4"
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="footer-input-field"
-                />
-                <input
-                  type="email"
-                  placeholder="Email address"
-                  className="footer-input-field"
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="footer-input-field"
-                />
-                <textarea
-                  placeholder="Let us know how we can help..."
-                  rows={4}
-                  className="footer-input-field resize-none min-h-[80px] md:min-h-[100px]"
-                />
-
-                <div className="flex justify-center lg:justify-end pt-3">
-                  <Button icon label="Submit" />
-                </div>
-              </form>
+              <FooterContactForm />
             </div>
 
             {/* Mobile Social Icons explicitly mapped below form strictly for Mobile constraints */}
@@ -410,5 +384,106 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (submitStatus) setSubmitStatus(null);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.email) return;
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    const result = await submitContactForm({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      extra_field: {
+        source: 'Footer Form',
+      },
+    });
+
+    setIsSubmitting(false);
+
+    if (result.success) {
+      setSubmitStatus({ type: 'success', message: result.message });
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } else {
+      setSubmitStatus({ type: 'error', message: result.message });
+    }
+  };
+
+  return (
+    <form
+      className="flex flex-col gap-5 md:gap-4"
+      onSubmit={handleSubmit}
+    >
+      {submitStatus && (
+        <div className={`px-3 py-2 rounded-lg text-xs font-medium ${
+          submitStatus.type === 'success'
+            ? 'bg-green-900/30 text-green-300 border border-green-700/40'
+            : 'bg-red-900/30 text-red-300 border border-red-700/40'
+        }`}>
+          {submitStatus.message}
+        </div>
+      )}
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        value={formData.name}
+        onChange={handleChange}
+        className="footer-input-field"
+        disabled={isSubmitting}
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email address"
+        value={formData.email}
+        onChange={handleChange}
+        className="footer-input-field"
+        required
+        disabled={isSubmitting}
+      />
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Phone Number"
+        value={formData.phone}
+        onChange={handleChange}
+        className="footer-input-field"
+        disabled={isSubmitting}
+      />
+      <textarea
+        name="message"
+        placeholder="Let us know how we can help..."
+        rows={4}
+        value={formData.message}
+        onChange={handleChange}
+        className="footer-input-field resize-none min-h-[80px] md:min-h-[100px]"
+        disabled={isSubmitting}
+      />
+
+      <div className="flex justify-center lg:justify-end pt-3">
+        <Button icon label={isSubmitting ? "Submitting..." : "Submit"} />
+      </div>
+    </form>
   );
 }
