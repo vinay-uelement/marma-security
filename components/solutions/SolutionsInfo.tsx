@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Button from "../global/Button";
+import GlassWrapper from "../global/GlassWrapper";
 
 interface SolutionsInfoProps {
   imageSrc?: string;
@@ -37,9 +38,8 @@ export default function SolutionsInfo({
       <div className="w-full max-w-[1440px] bg-[#f7f7f7] mx-auto px-6 lg:px-12 flex flex-col lg:grid py-12 lg:py-20 lg:grid-cols-2 gap-8 lg:gap-16 relative z-10 items-center rounded-sm">
         {/* Content Side */}
         <div
-          className={`flex flex-col z-10 relative w-full h-full items-center text-center lg:items-start lg:text-left order-1 ${
-            isRight ? "lg:order-1" : "lg:order-2"
-          }`}
+          className={`flex flex-col z-10 relative w-full h-full items-center text-center lg:items-start lg:text-left order-1 ${isRight ? "lg:order-1" : "lg:order-2"
+            }`}
         >
           <div className="bg-transparent flex flex-col justify-center h-full items-center lg:items-start relative ">
             <div className="flex flex-col">
@@ -54,17 +54,20 @@ export default function SolutionsInfo({
 
         {/* Image Side */}
         <div
-          className={`relative w-full h-[300px] md:h-[400px] lg:h-[420px] rounded-[24px] overflow-hidden order-2 ${
-            isRight ? "lg:order-2" : "lg:order-1"
-          }`}
+          className={`relative w-full h-[300px] md:h-[400px] lg:h-[420px] order-2 flex items-center justify-center ${isRight ? "lg:order-2" : "lg:order-1"
+            }`}
         >
-          <Image
-            src={imageSrc}
-            alt="Cybersecurity monitoring"
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover object-center"
-          />
+
+          {/* Glass Border Shell (The 12px frame) */}
+          <GlassWrapper>
+            <Image
+              src={imageSrc}
+              alt="Cybersecurity monitoring"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover object-center"
+            />
+          </GlassWrapper>
         </div>
       </div>
     </section>

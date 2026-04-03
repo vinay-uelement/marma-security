@@ -5,6 +5,7 @@ import Image from "next/image";
 import HighlightedText from "../global/HighlightedText";
 import DecorativeLine from "./DecorativeLine";
 import { SlidingTabs } from "../global/SlidingTabs";
+import GlassWrapper from "../global/GlassWrapper";
 
 interface TabData {
   id: string;
@@ -261,13 +262,15 @@ export default function Challengestab() {
           >
             <h3 className="fl3-2 w-full text-center">{active.title}</h3>
             <div className="w-full flex justify-center max-w-[600px]">
-              <Image
-                src={active.image}
-                alt={active.title}
-                width={600}
-                height={400}
-                className="w-full h-auto object-contain rounded-[16px] shadow-xl"
-              />
+              <GlassWrapper>
+                <Image
+                  src={active.image}
+                  alt={active.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain"
+                />
+              </GlassWrapper>
             </div>
             <p className="fl4-2 w-full">{active.description}</p>
           </div>
@@ -304,14 +307,16 @@ function DesktopContent({ data }: { data: TabData }) {
         <p className="home-challenge-desc">{data.description}</p>
       </div>
 
-      <div className="relative w-full h-[380px] rounded-[20px] overflow-hidden shadow-xl">
-        <Image
-          src={data.image}
-          alt={data.title}
-          fill
-          className="object-fill object-center"
-          sizes="(max-width: 1024px) 100vw, 50vw"
-        />
+      <div className="relative w-full h-[380px]">
+        <GlassWrapper>
+          <Image
+            src={data.image}
+            alt={data.title}
+            fill
+            className="object-fill object-center rounded-[28px]"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </GlassWrapper>
       </div>
     </div>
   );
