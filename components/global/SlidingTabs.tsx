@@ -30,7 +30,6 @@ export const SlidingTabs: React.FC<SlidingTabsProps> = ({
   activeClassName = "text-white font-semibold opacity-100",
   inactiveClassName = "text-white font-semibold opacity-40 hover:opacity-70",
   lineClassName = "bg-[#FF1847] h-[2px]",
-  gap = "mr-10",
 }) => {
   const containerRef = useRef<HTMLElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
@@ -127,7 +126,6 @@ export const SlidingTabs: React.FC<SlidingTabsProps> = ({
               }}
               className={`
               transition-all duration-400 ease-in-out last:mr-0
-              ${gap}
             `}
             >
               <button
