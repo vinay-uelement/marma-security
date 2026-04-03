@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import { motion } from "framer-motion";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import ProductShowcase from "@/components/product/ProductShowcase";
 import Banner from "@/components/global/Banner";
 import HighlightedText from "@/components/global/HighlightedText";
@@ -77,6 +78,7 @@ const CARD_HEIGHT = 300;
 function HeroCarousel() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const total = heroProducts.length;
 
   const next = useCallback(
@@ -90,11 +92,63 @@ function HeroCarousel() {
     return () => clearInterval(timer);
   }, [next, paused]);
 
+  useGSAP(
+    () => {
+      heroProducts.forEach((_, i) => {
+        let offset = i - current;
+        if (offset > total / 2) offset -= total;
+        if (offset < -total / 2) offset += total;
+
+        const { x, scale, opacity, zIndex } = getCardProps(offset);
+        const card = containerRef.current?.querySelector(`.card-${i}`);
+        const glow = containerRef.current?.querySelector(`.glow-${i}`);
+
+        if (card) {
+          gsap.to(card, {
+            x,
+            scale,
+            opacity,
+            zIndex,
+            duration: 0.8,
+            ease: "power3.out",
+            overwrite: true,
+          });
+        }
+
+        if (glow) {
+          gsap.killTweensOf(glow);
+          if (offset === 0) {
+            gsap.fromTo(
+              glow,
+              { opacity: 0.5, scaleX: 0.75, scaleY: 1 },
+              {
+                opacity: 0.85,
+                scaleX: 1,
+                scaleY: 1.15,
+                duration: 1.3,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+              },
+            );
+          } else {
+            gsap.to(glow, {
+              opacity: 0,
+              scaleX: 0.5,
+              duration: 0.35,
+              ease: "power2.out",
+            });
+          }
+        }
+      });
+    },
+    { dependencies: [current], scope: containerRef },
+  );
+
   return (
     <div
+      ref={containerRef}
       className="relative flex items-center justify-center w-full h-full min-h-[480px]"
-    // onMouseEnter={() => setPaused(true)}
-    // onMouseLeave={() => setPaused(false)}
     >
       <div className="absolute inset-0 overflow-hidden rounded-xl pointer-events-none" />
 
@@ -103,7 +157,6 @@ function HeroCarousel() {
         if (offset > total / 2) offset -= total;
         if (offset < -total / 2) offset += total;
 
-        const { x, scale, opacity, zIndex } = getCardProps(offset);
         const isCenter = offset === 0;
         const isSide = Math.abs(offset) === 1;
 
@@ -153,37 +206,22 @@ function HeroCarousel() {
         );
 
         return (
-          <motion.div
+          <div
             key={product.id}
+            className={`card-${i}`}
             style={{
               position: "absolute",
               left: "50%",
               top: "50%",
               marginLeft: -(CARD_WIDTH / 2),
               marginTop: -(CARD_HEIGHT / 2) - 30,
-              zIndex,
               cursor: isSide ? "pointer" : "default",
             }}
-            animate={{ x, scale, opacity }}
-            transition={{ type: "spring", stiffness: 280, damping: 28 }}
             onClick={() => isSide && setCurrent(i)}
           >
             {/* ── Pulsing Glow ─────────────────────────────────────────── */}
-            <motion.div
-              animate={
-                isCenter
-                  ? {
-                    opacity: [0.5, 0.85, 0.5],
-                    scaleX: [0.75, 1, 0.75],
-                    scaleY: [1, 1.15, 1],
-                  }
-                  : { opacity: 0, scaleX: 0.5 }
-              }
-              transition={
-                isCenter
-                  ? { duration: 2.6, repeat: Infinity, ease: "easeInOut" }
-                  : { duration: 0.35, ease: "easeOut" }
-              }
+            <div
+              className={`glow-${i}`}
               style={{
                 position: "absolute",
                 bottom: -22,
@@ -239,7 +277,7 @@ function HeroCarousel() {
                 {cardContent}
               </div>
             )}
-          </motion.div>
+          </div>
         );
       })}
 

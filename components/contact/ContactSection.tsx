@@ -1,10 +1,10 @@
 "use client";
-
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import HighlightedText from "@/components/global/HighlightedText";
 import DecorativeLine from "../home/DecorativeLine";
-import { motion, AnimatePresence } from "framer-motion";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const faqs = [
   {
@@ -32,10 +32,34 @@ const faqs = [
 
 export default function ContactSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const faqRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  useGSAP(() => {
+    faqs.forEach((_, i) => {
+      const el = faqRefs.current[i];
+      if (!el) return;
+      
+      if (openIndex === i) {
+        gsap.to(el, {
+          height: "auto",
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.inOut",
+        });
+      } else {
+        gsap.to(el, {
+          height: 0,
+          opacity: 0,
+          duration: 0.4,
+          ease: "power2.inOut",
+        });
+      }
+    });
+  }, [openIndex]);
 
   return (
     <section className="relative w-full bg-white py-8 lg:py-[100px] overflow-x-clip">
@@ -111,19 +135,14 @@ export default function ContactSection() {
                       />
                     </div>
 
-                    <AnimatePresence>
-                      {openIndex === index && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
-                          className="overflow-hidden"
-                        >
-                          <p className="faq-item-answer pt-2">{faq.answer}</p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                    <div
+                      ref={(el) => {
+                        faqRefs.current[index] = el;
+                      }}
+                      className="overflow-hidden h-0 opacity-0"
+                    >
+                      <p className="faq-item-answer pt-2">{faq.answer}</p>
+                    </div>
                   </div>
                 </div>
               ))}

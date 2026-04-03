@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../global/Button";
-import { motion, AnimatePresence } from "framer-motion";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export interface BannerButton {
   label: string;
@@ -46,7 +47,68 @@ export default function Banner({
   titleClassName = "font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white drop-shadow-sm",
   rightImageClassName = "",
 }: BannerProps) {
-  // Dynamic height class assignment based on the prop
+  const [activeImage, setActiveImage] = useState<string | null>(rightImage || null);
+  const [outgoingImage, setOutgoingImage] = useState<string | null>(null);
+  const imgContainerRef = useRef<HTMLDivElement>(null);
+  const isFirstMount = useRef(true);
+
+  useGSAP(
+    () => {
+      if (isFirstMount.current) {
+        isFirstMount.current = false;
+        return;
+      }
+      if (rightImage !== activeImage) {
+        setOutgoingImage(activeImage);
+        setActiveImage(rightImage || null);
+      }
+    },
+    { dependencies: [rightImage], scope: imgContainerRef }
+  );
+
+  useGSAP(
+    () => {
+      if (!activeImage || isFirstMount.current) return;
+
+      const incoming = imgContainerRef.current?.querySelector(".incoming-img");
+      const outgoing = imgContainerRef.current?.querySelector(".outgoing-img");
+
+      if (incoming) {
+        gsap.fromTo(
+          incoming,
+          {
+            y: "-50%",
+            rotateX: 30,
+            opacity: 0,
+            filter: "blur(3px)",
+          },
+          {
+            y: "0%",
+            rotateX: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+            duration: 1.5,
+            ease: "power2.inOut",
+            delay: 0.1,
+          }
+        );
+      }
+
+      if (outgoing) {
+        gsap.to(outgoing, {
+          y: "50%",
+          rotateX: -30,
+          opacity: 0,
+          filter: "blur(3px)",
+          duration: 1.5,
+          ease: "power2.inOut",
+          delay: 0.1,
+          onComplete: () => setOutgoingImage(null),
+        });
+      }
+    },
+    { dependencies: [activeImage], scope: imgContainerRef }
+  );
 
   return (
     <section className="relative h-svh w-screen">
@@ -110,52 +172,45 @@ export default function Banner({
 
       {/* product image */}
 
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-15 w-[20vh] md:w-[50svh] z-0 pointer-events-none">
-        {" "}
-        <AnimatePresence mode="sync" initial={false}>
-          <motion.div
-            key={rightImage}
-            initial={{
-              y: "-50%",
-              rotateX: 30,
-              opacity: 0,
-              filter: "blur(3px)",
-            }}
-            animate={{
-              y: "0%",
-              rotateX: 0,
-              opacity: 1,
-              filter: "blur(0px)",
-            }}
-            exit={{
-              y: "50%",
-              rotateX: -30,
-              opacity: 0,
-              filter: "blur(3px)",
-              position: "absolute",
-            }}
-            transition={{
-              duration: 1.5,
-              ease: [0.22, 1, 0.36, 1],
-              delay: 0.1, // slight cinematic lag
-            }}
+      <div
+        ref={imgContainerRef}
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-15 w-[20vh] md:w-[50svh] z-0 pointer-events-none h-full"
+      >
+        {outgoingImage && (
+          <div
+            className="outgoing-img absolute bottom-0 right-0 w-full"
             style={{
-              position: "absolute",
-              bottom: 0,
-              right: 0,
-              width: "100%",
+              perspective: "1000px",
+              transformStyle: "preserve-3d",
             }}
           >
             <Image
-              src={rightImage || ""}
+              src={outgoingImage}
+              alt={rightImageAlt}
+              width={1000}
+              height={1000}
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        )}
+        {activeImage && (
+          <div
+            className="incoming-img absolute bottom-0 right-0 w-full"
+            style={{
+              perspective: "1000px",
+              transformStyle: "preserve-3d",
+            }}
+          >
+            <Image
+              src={activeImage}
               alt={rightImageAlt}
               width={1000}
               height={1000}
               priority
               className="w-full h-auto object-contain"
             />
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        )}
       </div>
     </section>
   );
