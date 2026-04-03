@@ -118,12 +118,12 @@ export default function Banner({
         alt="hero-background"
         width={1000}
         height={1000}
-        className="absolute w-full h-[97svh]! md:h-[95svh]! object-cover object-center"
+        className="absolute w-full h-[96svh]! md:h-[93svh]! object-cover object-center"
         priority={true}
         fetchPriority="high"
       />
 
-      <div className="h-[97svh] md:h-[95svh] relative z-0 overflow-hidden w-full flex items-center md:items-end">
+      <div className="h-[96svh] md:h-[93svh] relative z-0 overflow-hidden w-full flex items-center md:items-end">
         {/* Main Content Container inside the Banner */}
         <div className="relative z-10 px-6 lg:px-12 h-3/5 mb-14 w-full md:py-12 lg:py-0">
           {/* Left Column: Text, Subtitle, and Buttons */}
@@ -174,7 +174,7 @@ export default function Banner({
 
       <div
         ref={imgContainerRef}
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-15 w-[20vh] md:w-[50svh] z-0 pointer-events-none h-full"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-15 w-[20vh] md:w-[50svh] z-0 pointer-events-none h-full"
       >
         {outgoingImage && (
           <div
