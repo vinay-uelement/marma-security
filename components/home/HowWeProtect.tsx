@@ -5,7 +5,7 @@ import Image from "next/image";
 import HighlightedText from "../global/HighlightedText";
 import Link from "next/link";
 import DecorativeLine from "./DecorativeLine";
-import Tabs from "../global/Tabs";
+import Tabs from "../global/TabsComponent";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface FeatureItem {

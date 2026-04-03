@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import HighlightedText from "../global/HighlightedText";
 import DecorativeLine from "./DecorativeLine";
+import { SlidingTabs } from "../global/SlidingTabs";
 
 interface TabData {
   id: string;
@@ -68,20 +69,6 @@ export default function Challengestab() {
   });
 
   const animTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  // Refs for tab indicator
-  const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
-  const tabsContainerRef = useRef<HTMLDivElement>(null);
-  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
-
-  useEffect(() => {
-    const btn = tabRefs.current[slideState.active.id];
-    const container = tabsContainerRef.current;
-    if (!btn || !container) return;
-    const cRect = container.getBoundingClientRect();
-    const bRect = btn.getBoundingClientRect();
-    setIndicatorStyle({ left: bRect.left - cRect.left, width: bRect.width });
-  }, [slideState.active.id]);
 
   const handleTabChange = (tabId: string) => {
     if (tabId === slideState.active.id || slideState.animating) return;
@@ -255,39 +242,16 @@ export default function Challengestab() {
 
         {/* Desktop Tabs — sliding indicator */}
         <div className="hidden lg:block mb-16 select-none">
-          <div
-            ref={tabsContainerRef}
-            className="relative flex items-start gap-12 w-fit border-b-[6px] border-[#F1F1F1] -mb-[1px] pb-0"
-          >
-            {tabItems.map((tab) => {
-              const isActive = active.id === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  ref={(el) => {
-                    tabRefs.current[tab.id] = el;
-                  }}
-                  onClick={() => handleTabChange(tab.id)}
-                  className={`relative pb-4 text-[20px] font-body transition-colors leading-[30px] tracking-[-0.01em] text-left whitespace-normal w-fit max-w-[200px] ${isActive
-                    ? "text-text-dark font-semibold"
-                    : "text-[#989898] font-medium hover:text-[#666666]"
-                    }`}
-                >
-                  {tab.label}
-                </button>
-              );
-            })}
-
-            {/* Sliding red indicator */}
-            <div
-              className="absolute -bottom-[6px] h-[6px] bg-brand-red z-10 rounded-sm"
-              style={{
-                left: indicatorStyle.left,
-                width: indicatorStyle.width,
-                transition: "left 0.32s ease, width 0.32s ease",
-              }}
-            />
-          </div>
+          <SlidingTabs
+            tabs={tabItems}
+            activeTabId={active.id}
+            onChange={(id) => handleTabChange(id)}
+            containerClassName="relative flex items-start gap-12 w-fit"
+            activeClassName="relative pb-4 text-[20px] font-body transition-colors leading-[30px] tracking-[-0.01em] text-left whitespace-normal w-fit max-w-[200px] text-text-dark font-semibold"
+            inactiveClassName="relative pb-4 text-[20px] font-body transition-colors leading-[30px] tracking-[-0.01em] text-left whitespace-normal w-fit max-w-[200px] text-[#989898] font-medium hover:text-[#666666]"
+            lineClassName="bg-brand-red h-[4px] -bottom-[6px] rounded-sm"
+            gap="p-0"
+          />
         </div>
 
         <div className="relative pb-16 w-full overflow-hidden">

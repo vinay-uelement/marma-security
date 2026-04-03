@@ -9,7 +9,7 @@ import ProductShowcase from "@/components/product/ProductShowcase";
 import Banner from "@/components/global/Banner";
 import HighlightedText from "@/components/global/HighlightedText";
 import DecorativeLine from "@/components/home/DecorativeLine";
-import Tabs from "@/components/global/Tabs";
+import Tabs from "@/components/global/TabsComponent";
 import { ProductCategoriesMapping } from "@/components/product/ProductCategoriesComponent/ProductComponentMapping";
 import ProductSummaryTable, {
   ProductSummaryRow,
@@ -93,8 +93,8 @@ function HeroCarousel() {
   return (
     <div
       className="relative flex items-center justify-center w-full h-full min-h-[480px]"
-      // onMouseEnter={() => setPaused(true)}
-      // onMouseLeave={() => setPaused(false)}
+    // onMouseEnter={() => setPaused(true)}
+    // onMouseLeave={() => setPaused(false)}
     >
       <div className="absolute inset-0 overflow-hidden rounded-xl pointer-events-none" />
 
@@ -173,10 +173,10 @@ function HeroCarousel() {
               animate={
                 isCenter
                   ? {
-                      opacity: [0.5, 0.85, 0.5],
-                      scaleX: [0.75, 1, 0.75],
-                      scaleY: [1, 1.15, 1],
-                    }
+                    opacity: [0.5, 0.85, 0.5],
+                    scaleX: [0.75, 1, 0.75],
+                    scaleY: [1, 1.15, 1],
+                  }
                   : { opacity: 0, scaleX: 0.5 }
               }
               transition={
@@ -500,7 +500,7 @@ export default function ClientPage({ products }: { products: any }) {
           ]}
           activeTabId={activeProductTab}
           onTabChange={onTabChange}
-          align="center"
+          align="left"
         />
       </div>
       <div className="my-4 mx-2 md:my-15">
