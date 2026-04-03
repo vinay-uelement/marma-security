@@ -3,6 +3,7 @@ import { Inter, IBM_Plex_Sans, Sora } from "next/font/google";
 import Navbar from "@/components/global/Navbar";
 import Footer from "@/components/global/Footer";
 import "./globals.css";
+import CookieConsent from "@/components/global/CookieConsent";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -157,10 +158,13 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${ibmPlexSans.variable} ${sora.variable} antialiased flex flex-col min-h-screen`}>
+      <body
+        className={`${inter.variable} ${ibmPlexSans.variable} ${sora.variable} antialiased flex flex-col min-h-screen`}
+      >
         <Navbar />
         <main className="flex-grow ">{children}</main>
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );
