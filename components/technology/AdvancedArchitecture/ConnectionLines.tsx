@@ -7,28 +7,28 @@ export default function ConnectionLines() {
       {/* Lines from Cloud to Orbiting Nodes */}
       {orbitingNodes.map((node) => (
         <g key={`group-orb-${node.id}`}>
-          <line className="svg-line" x1="50%" y1="50%" x2={node.pos.left} y2={node.pos.top} stroke="#E5E5E5" strokeWidth="1" />
+          <line className="svg-line" x1="50%" y1="50%" x2={node.pos.left} y2={node.pos.top} stroke="#E5E5E5" strokeWidth="1" strokeDasharray="4 4" />
           <line className="svg-data-flow" x1="50%" y1="50%" x2={node.pos.left} y2={node.pos.top} stroke="#FF4444" strokeWidth="1.5" opacity="0.5" />
         </g>
       ))}
 
-      {/* Bottom track Lines: Center to junction */}
       <g>
-        <line className="svg-line" x1="50%" y1="50%" x2="50%" y2="68%" stroke="#E5E5E5" strokeWidth="1" />
-        <line className="svg-data-flow" x1="50%" y1="50%" x2="50%" y2="68%" stroke="#FF4444" strokeWidth="1.5" opacity="0.5" />
+        <line className="svg-line" x1="50%" y1="50%" x2="50%" y2="64.4%" stroke="#E5E5E5" strokeWidth="1" strokeDasharray="4 4" />
+        <line className="svg-data-flow" x1="50%" y1="50%" x2="50%" y2="64.4%" stroke="#FF4444" strokeWidth="1.5" opacity="0.5" />
       </g>
 
       {/* Horizontal Line Left */}
       <g>
-        <line className="svg-line" x1="50%" y1="68%" x2="20%" y2="68%" stroke="#E5E5E5" strokeWidth="1" />
-        <line className="svg-data-flow" x1="50%" y1="68%" x2="20%" y2="68%" stroke="#FF4444" strokeWidth="1.5" opacity="0.5" />
+        <line className="svg-line" x1="50%" y1="64.4%" x2="26%" y2="64.4%" stroke="#E5E5E5" strokeWidth="1" strokeDasharray="4 4" />
+        <line className="svg-data-flow" x1="50%" y1="64.4%" x2="26%" y2="64.4%" stroke="#FF4444" strokeWidth="1.5" opacity="0.5" />
       </g>
 
       {/* Horizontal Line Right */}
       <g>
-        <line className="svg-line" x1="50%" y1="68%" x2="80%" y2="68%" stroke="#E5E5E5" strokeWidth="1" />
-        <line className="svg-data-flow" x1="50%" y1="68%" x2="80%" y2="68%" stroke="#FF4444" strokeWidth="1.5" opacity="0.5" />
+        <line className="svg-line" x1="50%" y1="64.4%" x2="74%" y2="64.4%" stroke="#E5E5E5" strokeWidth="1" strokeDasharray="4 4" />
+        <line className="svg-data-flow" x1="50%" y1="64.4%" x2="74%" y2="64.4%" stroke="#FF4444" strokeWidth="1.5" opacity="0.5" />
       </g>
+
     </svg>
   );
 }

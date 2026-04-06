@@ -129,7 +129,6 @@ export default function PartnersPage() {
           <OurTeam />
         </div>
       </section>
-      <AdvancedArchitecture />
       <StatsSection />
     </main>
   );

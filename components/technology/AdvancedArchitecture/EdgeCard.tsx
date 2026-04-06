@@ -14,7 +14,7 @@ export default function EdgeCard({ card }: EdgeCardProps) {
       style={{ left: card.pos.left, top: card.pos.top }}
     >
       <div
-        className="card-node-inner flex flex-col items-center bg-[#FAFAFA] md:bg-white p-3 md:p-5 rounded-[12px] md:rounded-[20px] cursor-pointer shadow-[0px_8px_30px_rgba(0,0,0,0.04)] border border-[#F0F0F0] w-[130px] sm:w-[160px] md:w-[220px]"
+        className="card-node-inner flex flex-col items-center md:bg-white p-3 md:p-5 rounded-[12px] md:rounded-[20px] cursor-pointer shadow-[0px_8px_30px_rgba(0,0,0,0.04)] border border-[#F0F0F0] w-[130px] sm:w-[160px] md:w-[220px]"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

@@ -37,20 +37,18 @@ export default function AdvancedArchitecture() {
       gsap.set(junctionNodes, { scale: 0, opacity: 0 });
       gsap.set(cardNodes, { y: 20, opacity: 0 });
 
-      // Init line drawing paths (prepare dashed arrays)
-      lines.forEach((line) => {
-        gsap.set(line, { strokeDasharray: 1000, strokeDashoffset: 1000 });
-      });
+      // Prepare lines for entrance
+      gsap.set(lines, { opacity: 0 });
 
       // 1. Entrance Sequence Timeline
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 5%",
+          start: "top -1%",
           scrub: 2,
           pin: true,
           pinSpacing: true,
-          end: "110%",
+          end: "80%",
         },
       });
 
@@ -62,13 +60,13 @@ export default function AdvancedArchitecture() {
         ease: "back.out(1.7)",
       });
 
-      // Step 2: Lines drawing out
+      // Step 2: Lines drawing out (using opacity toggle to preserve dashed style)
+      tl.set(lines, { opacity: 0 });
       tl.to(
         lines,
         {
-          strokeDashoffset: 0,
-          duration: 1.5,
-          ease: "power2.inOut",
+          opacity: 1,
+          duration: 0.8,
           stagger: { amount: 0.5, from: "center" },
         },
         "-=0.8"
@@ -109,16 +107,58 @@ export default function AdvancedArchitecture() {
         "-=0.4"
       );
 
-      // Data Flow Continuous Animation
-      dataFlows.forEach((flow) => {
-        gsap.set(flow, { strokeDasharray: "8, 16", strokeDashoffset: 0 });
-        gsap.to(flow, {
-          strokeDashoffset: -24,
-          duration: "random(0.8, 1.5)",
+      // Data Flow Continuous Animation & Synchronized Blinking
+      dataFlows.forEach((flow, index) => {
+        const line = flow as SVGLineElement;
+        const totalLength = line.getTotalLength();
+        const duration = gsap.utils.random(1.2, 2.0);
+
+        // Map line index to corresponding node
+        let targetNode: HTMLElement | null = null;
+        if (index < 7) {
+          targetNode = orbitNodes[index]?.querySelector(".node-icon-container");
+        } else if (index === 7) {
+          targetNode = junctionNodes[1]; // Center Monitor
+        } else if (index === 8) {
+          targetNode = junctionNodes[0]; // Left Shield
+        } else if (index === 9) {
+          targetNode = junctionNodes[2]; // Right Smartphone
+        } else if (index >= 10 && index <= 12) {
+          // Bottom Cards (index 10-12)
+          targetNode = cardNodes[index - 10];
+        }
+
+        // Pattern is 8px dash, 16px gap. Total 24px cycle.
+        const initialShift = -totalLength;
+        gsap.set(line, { strokeDasharray: "8, 16", strokeDashoffset: initialShift });
+
+        // Animating the pattern flow
+        gsap.to(line, {
+          strokeDashoffset: initialShift - 24,
+          duration: duration,
           ease: "none",
-          repeat: -1,
+          repeat: -1
         });
       });
+
+      // Master pulse animation for all icon containers
+      const allIcons = containerRef.current?.querySelectorAll(".node-icon-container");
+      if (allIcons && allIcons.length > 0) {
+        const pulseTl = gsap.timeline({ repeat: -1 });
+        pulseTl.to(allIcons, {
+          borderColor: "#FF4444",
+          background: "#FFF0F0",
+          boxShadow: "0 0 15px rgba(255, 68, 68, 0.4)",
+          duration: 0.2,
+          ease: "power2.in"
+        }).to(allIcons, {
+          borderColor: "#FFE0E0",
+          background: "#FFF0F0",
+          boxShadow: "0 0 0px rgba(255, 68, 68, 0)",
+          duration: 0.4,
+          ease: "power2.out"
+        }, "+=1.5"); // Pause between pulses for a "heartbeat" feel
+      }
     },
     { scope: containerRef }
   );
