@@ -538,7 +538,7 @@ export default function ClientPage({ products }: { products: any }) {
           ]}
           activeTabId={activeProductTab}
           onTabChange={onTabChange}
-          align="left"
+          align="center"
         />
       </div>
       <div className="my-4 mx-2 md:my-15">
