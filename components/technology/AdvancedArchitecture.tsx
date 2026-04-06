@@ -46,7 +46,11 @@ export default function AdvancedArchitecture() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
+          start: "top 5%",
+          scrub: 2,
+          pin: true,
+          pinSpacing: true,
+          end: "110%",
         },
       });
 
@@ -54,7 +58,7 @@ export default function AdvancedArchitecture() {
       tl.to(cloudRef.current, {
         scale: 1,
         opacity: 1,
-        duration: 1.2,
+        duration: 0.5,
         ease: "back.out(1.7)",
       });
 
