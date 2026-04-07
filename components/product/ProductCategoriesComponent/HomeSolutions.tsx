@@ -81,7 +81,7 @@ export default function HomeSolutions({ products = [] }: { products?: any[] }) {
         </div>
 
         <div className={productSectionTitleClassName}>Mobile Application</div>
-        <div className="max-md:px-6">
+        <div className="max-md:px-6 md:px-12">
           <EndpointProductCard
             name={mobileApp?.name || mobileApp?.title || "Mobile App"}
             tagline={mobileApp?.tagline || "iOS & Android"}

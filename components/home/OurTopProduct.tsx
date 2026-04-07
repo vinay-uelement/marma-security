@@ -101,7 +101,7 @@ export default function OurTopProduct() {
   }, []);
 
   return (
-    <section className="w-full py-8 md:py-20 bg-white overflow-hidden">
+    <section className="w-full max-w-[1440px] mx-auto py-8 md:py-20 bg-white overflow-hidden">
       <div className="max-w-[1440px]  px-4 md:px-8">
         {/* Header Row */}
         <div className="flex flex sm:flex-row justify-between items-start sm:items-center mb-8 md:mb-10 w-full max-w-[1360px] mx-auto gap-4">

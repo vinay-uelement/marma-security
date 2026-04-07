@@ -145,7 +145,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
         </div>
 
         <div className={productSectionTitleClassName}>Management Platform</div>
-        <div className="max-md:px-6">
+        <div className="max-md:px-6 md:px-12">
           <ManagementProductCard
             title="Enterprise Management Platform"
             description="Cloud-based or Private Data Center hosted platform for centrally managing Security Gateways, Endpoint Protection, and Cloud Services across the enterprise."
@@ -162,35 +162,39 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               <div className={productHalfSectionTitleClassName}>
                 Endpoint Software
               </div>
-              <EndpointProductCard
-                name="Agent Software for Windows"
-                tagline="24×7 Endpoint Protection"
-                primaryFeature="FW & Anti-Virus Integration"
-                features={[
-                  "DNS Security",
-                  "URL Filtering",
-                  "Scam Protection",
-                  "AI / Data Loss Prevention",
-                ]}
-                image="/images/products/endpoint-software.webp"
-              />
+              <div className="md:ps-12">
+                <EndpointProductCard
+                  name="Agent Software for Windows"
+                  tagline="24×7 Endpoint Protection"
+                  primaryFeature="FW & Anti-Virus Integration"
+                  features={[
+                    "DNS Security",
+                    "URL Filtering",
+                    "Scam Protection",
+                    "AI / Data Loss Prevention",
+                  ]}
+                  image="/images/products/endpoint-software.webp"
+                />
+              </div>
             </div>
             <div className="flex flex-col lg:w-1/2">
               <div className={productHalfSectionTitleClassName}>
                 Cloud Security Services
               </div>
-              <EndpointProductCard
-                name="E-mail Protection Service"
-                tagline="Enterprise Email Security"
-                primaryFeature="Zero-day Phishing Protection"
-                features={[
-                  "Zero-day Malware / Ransomware",
-                  "Scam Protection",
-                  "AI / Data Loss Prevention",
-                  "QR Phishing Protection",
-                ]}
-                image="/images/products/email-security.webp"
-              />
+              <div className="md:pe-12">
+                <EndpointProductCard
+                  name="E-mail Protection Service"
+                  tagline="Enterprise Email Security"
+                  primaryFeature="Zero-day Phishing Protection"
+                  features={[
+                    "Zero-day Malware / Ransomware",
+                    "Scam Protection",
+                    "AI / Data Loss Prevention",
+                    "QR Phishing Protection",
+                  ]}
+                  image="/images/products/email-security.webp"
+                />
+              </div>
             </div>
           </div>
         </div>

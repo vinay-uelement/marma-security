@@ -88,7 +88,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
         </div>
 
         <div className={productSectionTitleClassName}>Management Platform</div>
-        <div className="max-md:px-6">
+        <div className="max-md:px-6 md:px-12">
           <ManagementProductCard
             title="SMB Management Platform"
             description={smbManagementDescription}
@@ -102,33 +102,37 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
             <div className={productHalfSectionTitleClassName}>
               Endpoint Software
             </div>
-            <EndpointProductCard
-              name="Agent Software for Windows"
-              tagline="24x7 Endpoint Protection"
-              primaryFeature="FW & Anti-Virus Integration"
-              features={[
-                "DNS Security",
-                "URL Filtering",
-                "Scam Protection",
-                "AI / Data Loss Prevention",
-              ]}
-            />
+            <div className="md:ps-12">
+              <EndpointProductCard
+                name="Agent Software for Windows"
+                tagline="24x7 Endpoint Protection"
+                primaryFeature="FW & Anti-Virus Integration"
+                features={[
+                  "DNS Security",
+                  "URL Filtering",
+                  "Scam Protection",
+                  "AI / Data Loss Prevention",
+                ]}
+              />
+            </div>
           </div>
           <div className="flex flex-col lg:w-1/2">
             <div className={productHalfSectionTitleClassName}>
               Mobile Application
             </div>
-            <EndpointProductCard
-              name="Mobile App"
-              tagline="iOS & Android"
-              primaryFeature="Firewall Onboarding"
-              features={[
-                "Dashboard",
-                "Alerts",
-                "User Security Config",
-                "QR Phishing Protection",
-              ]}
-            />
+            <div className="md:pe-12">
+              <EndpointProductCard
+                name="Mobile App"
+                tagline="iOS & Android"
+                primaryFeature="Firewall Onboarding"
+                features={[
+                  "Dashboard",
+                  "Alerts",
+                  "User Security Config",
+                  "QR Phishing Protection",
+                ]}
+              />
+            </div>
           </div>
         </div>
       </div>
