@@ -28,7 +28,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
   enterprise: [
     {
       id: "enterprise-1",
-      image: "/images/home/protect-image-homepage.webp",
+      image: "/images/home/Centralized Security Control.webp",
       title: "Centralized Security Control",
       subtitle: "One dashboard. Total visibility.",
       description:
@@ -36,7 +36,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
     },
     {
       id: "enterprise-2",
-      image: "/images/home/protection-homepage.webp",
+      image: "/images/home/Advanced Threat Protection.webp",
       title: "Advanced Threat Protection",
       subtitle: "Defend against zero-day attacks.",
       description:
@@ -44,7 +44,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
     },
     {
       id: "enterprise-3",
-      image: "/images/features/zero-maintainace.webp",
+      image: "/images/home/Scalable Enterprise Architecture.webp",
       title: "Scalable Enterprise Architecture",
       subtitle: "Built to grow with your business.",
       description:
@@ -52,7 +52,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
     },
     {
       id: "enterprise-4",
-      image: "/images/home/protect-image-homepage.webp",
+      image: "/images/home/Seamless Integrations.webp",
       title: "Seamless Integrations",
       subtitle: "Works with your existing ecosystem.",
       description:
@@ -62,7 +62,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
   smb: [
     {
       id: "smb-1",
-      image: "/images/home/protect-image-homepage.webp",
+      image: "/images/home/Simple Yet Powerful Security.webp",
       title: "Simple Yet Powerful Security",
       subtitle: "Enterprise-grade protection, simplified.",
       description:
@@ -70,7 +70,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
     },
     {
       id: "smb-2",
-      image: "/images/home/protection-homepage.webp",
+      image: "/images/home/Easy Cloud Management.webp",
       title: "Easy Cloud Management",
       subtitle: "Control everything from anywhere.",
       description:
@@ -78,7 +78,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
     },
     {
       id: "smb-3",
-      image: "/images/features/zero-maintainace.webp",
+      image: "/images/home/Real-Time Alerts & Monitoring.webp",
       title: "Real-Time Alerts & Monitoring",
       subtitle: "Stay informed, stay protected.",
       description:
@@ -86,7 +86,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
     },
     {
       id: "smb-4",
-      image: "/images/home/protection-homepage.webp",
+      image: "/images/home/Quick Deployment.webp",
       title: "Quick Deployment",
       subtitle: "Set up in minutes, not days.",
       description:
@@ -96,7 +96,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
   home: [
     {
       id: "home-1",
-      image: "/images/home/protect-image-homepage.webp",
+      image: "/images/home/Quick & Effortless Setup.webp",
       title: "Quick & Effortless Setup",
       subtitle: "Get protected in under 5 minutes.",
       description:
@@ -112,7 +112,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
     },
     {
       id: "home-3",
-      image: "/images/features/zero-maintainace.webp",
+      image: "/images/home/Zero Maintenance Required.webp",
       title: "Zero Maintenance Required",
       subtitle: "No updates, no hassle.",
       description:
