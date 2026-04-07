@@ -14,36 +14,37 @@ interface Product {
 
 const topProducts: Product[] = [
   {
-    id: "safehome",
-    name: "SafeHome",
-    image: "/images/banners/solution-banner-right1.webp",
-    link: "/product?tab=home&product=safehome",
+    id: "safegov",
+    name: "SafeEnterprise 400",
+    image: "/images/product/SafeEnterprise4001.webp",
+    link: "/product?tab=enterprise&product=safeenterprise-400",
+  },
+  {
+    id: "safeenterprise",
+    name: "SafeEnterprise 200",
+    image: "/images/product/SafeEnterprise2001.webp",
+    link: "/product?tab=enterprise&product=safeenterprise-200",
+  },
+  {
+    id: "safecloud",
+    name: "SafeEnterprise 100",
+    image: "/images/product/SafeEnterprise4002.webp",
+    isNew: true,
+    link: "/product?tab=enterprise&product=saferemote",
   },
   {
     id: "safebiz",
     name: "SafeBiz",
     image: "/images/banners/homepage-right-banner1.webp",
-    isNew: true,
     link: "/product?tab=smb&product=safebiz",
   },
   {
-    id: "safeenterprise",
-    name: "SafeEnterprise 200",
+    id: "safehome",
+    name: "SafeHome",
     image: "/images/banners/solution-banner-right1.webp",
-    link: "/product?tab=enterprise&product=safeenterprise-200",
+    link: "/product?tab=home&product=safehome",
   },
-  {
-    id: "safegov",
-    name: "SafeEnterprise 400",
-    image: "/images/banners/homepage-right-banner1.webp",
-    link: "/product?tab=enterprise&product=safeenterprise-400",
-  },
-  {
-    id: "safecloud",
-    name: "SafeEnterprise 100",
-    image: "/images/banners/solution-banner-right1.webp",
-    link: "/product?tab=enterprise", // ⚠️ no anchor — SE100 has no id in product page yet
-  },
+
 ];
 
 export default function OurTopProduct() {
