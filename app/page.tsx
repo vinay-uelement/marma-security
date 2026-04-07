@@ -29,7 +29,7 @@ export default function Home() {
   const phrases = ["Enterprises", "Small Businesses", "Homes"];
 
   const images = [
-    "/images/banners/homepage-right-banner1.webp",
+    "/images/product/SafeEnterprise4001.webp",
     "/images/banners/solution-banner-right1.webp",
     "/images/banners/homepage-right-banner1.webp",
   ];
