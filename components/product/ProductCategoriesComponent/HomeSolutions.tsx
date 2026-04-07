@@ -54,7 +54,7 @@ export default function HomeSolutions({ products = [] }: { products?: any[] }) {
             <SpecificationProductCard
               title={prod.name || prod.title || "Home Security Device"}
               descript={prod.description || "SafeHome protects all connected devices on your network from cyberattacks targeting your financial and personal data, safeguarding your privacy and protecting your family on the internet."}
-              image={prod.image || "/images/banners/homepage-right-banner1.webp"}
+              image={prod.image || "/images/banners/solution-banner-right1.webp"}
               imageAlt={prod.imageAlt || prod.name || prod.title || "Home security device"}
               specification={
                 prod.keyCapabilities

@@ -61,7 +61,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
             <SpecificationProductCard
               title={prod.name || prod.title || "SMB Security Device"}
               descript={prod.description || smbGatewayDescription}
-              image={prod.image || "/images/banners/solution-banner-right1.webp"}
+              image={prod.image || "/images/banners/homepage-right-banner1.webp"}
               imageAlt={prod.imageAlt || prod.name || prod.title || "SMB security device"}
               specification={
                 prod.keyCapabilities

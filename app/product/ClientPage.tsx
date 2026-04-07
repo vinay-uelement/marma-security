@@ -19,40 +19,44 @@ import ProductSummaryTable, {
 // ── Data ──────────────────────────────────────────────────────────────────────
 const heroProducts = [
   {
+    id: "safegov",
+    href: "?tab=enterprise&product=safeenterprise-400",
+    label: "SafeEnterprise 400",
+    isEnterprise: true,
+    image: "/images/product/SafeEnterprise4001.webp",
+    alt: "SafeGov Product",
+  },
+  {
+    id: "safeenterprise",
+    href: "?tab=enterprise&product=safeenterprise-200",
+    label: "SafeEnterprise 200",
+    isEnterprise: true,
+    image: "/images/product/SafeEnterprise2001.webp",
+    alt: "SafeEnterprise Product",
+  },
+  {
+    id: "safecloud",
+    href: "?tab=enterprise&product=saferemote",
+    label: "SafeEnterprise 100",
+    isEnterprise: true,
+    image: "/images/product/SafeEnterprise4002.webp",
+    alt: "SafeCloud Product",
+  },
+  {
     id: "safehome",
-    href: "#safehome",
+    href: "?tab=home&product=safehome",
     label: "SafeHome",
     image: "/images/banners/solution-banner-right1.webp",
     alt: "SafeHome Product",
   },
   {
     id: "safebiz",
-    href: "#safebiz",
+    href: "?tab=smb&product=safebiz",
     label: "SafeBiz",
     image: "/images/banners/homepage-right-banner1.webp",
     alt: "SafeBiz Product",
   },
-  {
-    id: "safeenterprise",
-    href: "#safeenterprise",
-    label: "SafeEnterprise 200",
-    image: "/images/banners/solution-banner-right1.webp",
-    alt: "SafeEnterprise Product",
-  },
-  {
-    id: "safegov",
-    href: "#safegov",
-    label: "SafeEnterprise 400",
-    image: "/images/banners/homepage-right-banner1.webp",
-    alt: "SafeGov Product",
-  },
-  {
-    id: "safecloud",
-    href: "#safecloud",
-    label: "SafeEnterprise 400",
-    image: "/images/banners/solution-banner-right1.webp",
-    alt: "SafeCloud Product",
-  },
+
 ];
 
 // ── Card Style Per Offset From Center ─────────────────────────────────────────
@@ -188,7 +192,7 @@ function HeroCarousel() {
                 alt={product.alt}
                 width={160}
                 height={200}
-                className="object-contain h-auto drop-shadow-2xl"
+                className={`object-contain h-auto drop-shadow-2xl ${product.isEnterprise ? "scale-150 pb-[30%]" : ""}`}
                 priority={isCenter}
               />
             </div>
@@ -340,9 +344,6 @@ function HeroCarousel() {
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 export default function ClientPage({ products }: { products: any }) {
-  useEffect(() => {
-    console.log("Products from SSR (Client side):", products);
-  }, [products]);
 
   const searchParams = useSearchParams();
   const tabParam = searchParams.get("tab");
