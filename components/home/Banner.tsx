@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../global/Button";
@@ -49,21 +49,58 @@ export default function Banner({
 }: BannerProps) {
   const [activeImage, setActiveImage] = useState<string | null>(rightImage || null);
   const [outgoingImage, setOutgoingImage] = useState<string | null>(null);
+  const [activeBg, setActiveBg] = useState<string>(backgroundImage);
+  const [outgoingBg, setOutgoingBg] = useState<string | null>(null);
+
   const imgContainerRef = useRef<HTMLDivElement>(null);
+  const bgContainerRef = useRef<HTMLDivElement>(null);
   const isFirstMount = useRef(true);
+  // Synchronize first mount flag
+  useEffect(() => {
+    isFirstMount.current = false;
+  }, []);
+
+  // Sync product image prop to state for transition
+  useEffect(() => {
+    if (rightImage !== activeImage) {
+      setOutgoingImage(activeImage);
+      setActiveImage(rightImage || null);
+    }
+  }, [rightImage]);
+
+  // Sync background prop to state for transition
+  useEffect(() => {
+    if (backgroundImage !== activeBg) {
+      setOutgoingBg(activeBg);
+      setActiveBg(backgroundImage);
+    }
+  }, [backgroundImage]);
 
   useGSAP(
     () => {
-      if (isFirstMount.current) {
-        isFirstMount.current = false;
-        return;
+      if (!outgoingBg) return;
+
+      const incoming = bgContainerRef.current?.querySelector(".incoming-bg");
+      const outgoing = bgContainerRef.current?.querySelector(".outgoing-bg");
+
+      if (incoming) {
+        gsap.fromTo(incoming,
+          { opacity: 0, scale: 1.1 },
+          { opacity: 1, scale: 1, duration: 1.5, ease: "power2.inOut" }
+        );
       }
-      if (rightImage !== activeImage) {
-        setOutgoingImage(activeImage);
-        setActiveImage(rightImage || null);
+
+      if (outgoing) {
+        gsap.to(outgoing, {
+          opacity: 0,
+          scale: 0.95,
+          duration: 1.5,
+          ease: "power2.inOut",
+          onComplete: () => setOutgoingBg(null)
+        });
       }
     },
-    { dependencies: [rightImage], scope: imgContainerRef }
+    { dependencies: [activeBg], scope: bgContainerRef }
   );
 
   useGSAP(
@@ -77,32 +114,36 @@ export default function Banner({
         gsap.fromTo(
           incoming,
           {
-            y: "-50%",
-            rotateX: 30,
+            x: "0%",
+            z: -500,
+            scale: 0.8,
+            rotateY: 90,
             opacity: 0,
-            filter: "blur(3px)",
+            filter: "blur(8px)",
+            transformOrigin: "50% 50% -250px",
           },
           {
-            y: "0%",
-            rotateX: 0,
+            x: "0%",
+            z: 0,
+            scale: 1,
+            rotateY: 0,
             opacity: 1,
             filter: "blur(0px)",
-            duration: 1.5,
-            ease: "power2.inOut",
-            delay: 0.1,
+            duration: 1.4,
+            ease: "power3.out",
           }
         );
       }
 
       if (outgoing) {
         gsap.to(outgoing, {
-          y: "50%",
-          rotateX: -30,
+          scale: 0.5,
+          z: -1000,
           opacity: 0,
-          filter: "blur(3px)",
-          duration: 1.5,
+          filter: "blur(25px)",
+          duration: 0.8,
           ease: "power2.inOut",
-          delay: 0.1,
+          transformOrigin: "50% 50%",
           onComplete: () => setOutgoingImage(null),
         });
       }
@@ -112,22 +153,34 @@ export default function Banner({
 
   return (
     <section className="relative h-svh w-screen">
-      {/* Background Image */}
-      <Image
-        src={backgroundImage}
-        alt="hero-background"
-        width={1000}
-        height={1000}
-        className="absolute w-full h-[96svh]! md:h-[93svh]! object-cover object-center"
-        priority={true}
-        fetchPriority="high"
-      />
+      {/* Background Image Container */}
+      <div ref={bgContainerRef} className="absolute inset-0 w-full h-[96svh]! md:h-[93svh]! overflow-hidden">
+        {outgoingBg && (
+          <Image
+            src={outgoingBg}
+            alt="hero-background-outgoing"
+            fill
+            className="outgoing-bg object-cover object-center"
+            priority={true}
+          />
+        )}
+        <Image
+          src={activeBg}
+          alt="hero-background-active"
+          fill
+          className="incoming-bg object-cover object-center"
+          priority={true}
+          fetchPriority="high"
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/70 z-[5]" />
+      </div>
 
-      <div className="h-[96svh] md:h-[93svh] relative z-0 overflow-hidden w-full flex items-center md:items-end">
+      <div className="h-[96svh] md:h-[93svh] relative z-10 overflow-hidden w-full flex items-center md:items-end">
         {/* Main Content Container inside the Banner */}
-        <div className="relative z-10 px-6 lg:px-12 h-3/5 mb-14 w-full md:py-12 lg:py-0">
+        <div className="relative z-20 px-6 lg:px-12 h-3/5 mb-14 w-full md:py-12 lg:py-0">
           {/* Left Column: Text, Subtitle, and Buttons */}
-          <div className="flex flex-col space-y-4  md:space-y-6 pb-5 md:mt-16 lg:mt-0 text-white z-20 items-center lg:items-start text-center lg:text-left">
+          <div className="flex flex-col space-y-4  md:space-y-6 pb-5 md:mt-16 lg:mt-0 text-white z-30 items-center lg:items-start text-center lg:text-left">
             {" "}
             {/* Title text */}
             <div className={titleClassName}>{title}</div>
@@ -174,15 +227,13 @@ export default function Banner({
 
       <div
         ref={imgContainerRef}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-15 w-[20vh] md:w-[50svh] z-0 pointer-events-none h-full"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-15 w-[20vh] md:w-[50svh] z-20 pointer-events-none h-full"
+        style={{ perspective: "1500px", transformStyle: "preserve-3d" }}
       >
         {outgoingImage && (
           <div
             className="outgoing-img absolute bottom-0 right-0 w-full"
-            style={{
-              perspective: "1000px",
-              transformStyle: "preserve-3d",
-            }}
+            style={{ transformStyle: "preserve-3d" }}
           >
             <Image
               src={outgoingImage}
@@ -196,10 +247,7 @@ export default function Banner({
         {activeImage && (
           <div
             className="incoming-img absolute bottom-0 right-0 w-full"
-            style={{
-              perspective: "1000px",
-              transformStyle: "preserve-3d",
-            }}
+            style={{ transformStyle: "preserve-3d" }}
           >
             <Image
               src={activeImage}

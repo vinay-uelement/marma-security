@@ -40,6 +40,12 @@ export default function Home() {
     "/product?tab=home&product=safehome",
   ];
 
+  const backgrounds = [
+    "/images/home/Security_Images (1).webp",
+    "/images/home/Security_Images (2).webp",
+    "/images/home/Security_Images (3).webp",
+  ];
+
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -53,7 +59,7 @@ export default function Home() {
   return (
     <div className="flex flex-col bg-[#FFFFFF] min-h-screen overflow-x-clip">
       <Banner
-        backgroundImage="/images/banners/homepage-banner.webp"
+        backgroundImage={backgrounds[index]}
         rightImage={images[index]}
         title={
           <>
@@ -63,7 +69,7 @@ export default function Home() {
             <TumblingText phrases={phrases} index={index} />
           </>
         }
-        titleClassName="font-banner font-normal text-[28px] md:text-[36px] leading-[1.2] md:leading-[50px] tracking-[-0.01em] text-white"
+        titleClassName="font-banner font-normal text-[26px] md:text-[34px] leading-[1.2] md:leading-[48px] tracking-[-0.01em] text-white"
         subtitle={
           <>
             Enterprise-grade cybersecurity that works in minutes.{" "}
@@ -71,7 +77,7 @@ export default function Home() {
             No IT or technical expertise needed.
           </>
         }
-        subtitleClassName="font-title font-light text-[18px] md:text-[24px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-white max-w-[550px]"
+        subtitleClassName="font-title font-light text-[16px] md:text-[22px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-white max-w-[550px]"
         buttons={[
           { label: "Order Now", href: "#", variant: "primary", icon: true },
           {
@@ -85,7 +91,7 @@ export default function Home() {
       />
 
       <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-8 lg:px-12 pt-0 md:pt-24 bg-[#FFFFFF] relative">
-        <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-2 gap-8 relative z-10 w-full md:mb-16">
+        <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-2 gap-8 relative z-10 w-full">
           <h2 className="fl2 w-full min-[901px]:w-[55%] home-exposed-heading text-left">
             Your{" "}
             <HighlightedText
@@ -95,7 +101,7 @@ export default function Home() {
             are more <br /> exposed to cybercrime than you think.
           </h2>
 
-          <div className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-4 min-[901px]:mt-0 pointer-events-none z-0">
+          <div className="flex flex-col w-[40%] sm:w-[30%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-4 min-[901px]:mt-0 pointer-events-none z-0">
             <DecorativeLine
               viewBox="0 0 500 120"
               points="80,30 130,90 3000,90"

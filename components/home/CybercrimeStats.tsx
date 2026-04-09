@@ -8,7 +8,7 @@ export default function CybercrimeStats() {
       <section className="hidden lg:block w-full max-w-[1440px] mx-auto px-12 py-4 bg-[#FFFFFF] relative z-20">
         <div className="grid grid-cols-2 gap-20 items-center">
           {/* Left Column: Device Image */}
-          <div className="flex justify-center items-center w-full h-full min-h-[500px]">
+          <div className="flex justify-center items-center w-full h-full min-h-[100px]">
             <div className="relative w-full max-w-[423px] aspect-[423/495] translate-y-[25%] z-30">
               <Image
                 src="/images/banners/solution-banner-right1.webp"
@@ -33,7 +33,6 @@ export default function CybercrimeStats() {
               reported being the victim of a cybercrime to the FBI in 2023, and
               1.1 million Americans experienced identity theft in 2023.
             </p>
-            <p className="fl5">We think that’s unacceptable.</p>
           </div>
         </div>
       </section>

@@ -32,8 +32,8 @@ const Button = (props: Props) => {
     : "bg-transparent border border-[#FFFFFF40] text-white hover:bg-white/10";
 
   const textClass = isPrimary
-    ? "font-banner text-[16px] md:text-[20px] font-normal tracking-[-0.01em]"
-    : "text-[16px] md:text-[20px] tracking-[0.02em]";
+    ? "font-banner text-[14px] md:text-[18px] font-normal tracking-[-0.01em]"
+    : "text-[14px] md:text-[18px] tracking-[0.02em]";
 
   const iconContainerClass = isPrimary
     ? "w-6 h-6 md:w-8 md:h-8"
