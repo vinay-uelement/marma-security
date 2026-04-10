@@ -1,0 +1,100 @@
+import DecorativeLine from "@/components/home/DecorativeLine";
+import EndpointProductCard from "../EndpointProductCard";
+import SpecificationProductCard, {
+  SpecificationProductItem,
+} from "../SpecificationProductCard";
+import {
+  productDecoratedSectionClassName,
+  productSectionTitleClassName,
+} from "./sectionSpacing";
+
+const homeGatewaySpecifications: SpecificationProductItem[] = [
+  { label: "Form Factor", value: "Desktop" },
+  { label: "Throughput", value: "1 Gbps" },
+  { label: "WAN Ports", value: "1 x 2.5 Gbps" },
+  { label: "LAN Ports", value: "4 x 1 Gbps (Ethernet)" },
+  { label: "Integrated Wi-Fi", value: "Wi-Fi 5 / 6E" },
+  { label: "Recommended Users", value: "Up to 64" },
+];
+
+export default function HomeSolutions({ products = [] }: { products?: any[] }) {
+  const getProduct = (searchString: string) => {
+    return products.find((p: any) =>
+      (p.name || p.title || p.productName || "")?.toLowerCase().includes(searchString.toLowerCase())
+    );
+  };
+
+  const mobileApp = getProduct("Mobile App");
+
+  const fallbackProducts = [
+    {
+      id: "safehome",
+      title: "SafeHome Firewall | Home Network Security",
+      description: "SafeHome protects all connected devices on your network from cyberattacks targeting your financial and personal data, safeguarding your privacy and protecting your family on the internet.",
+      image: "/images/banners/solution-banner-right1.webp",
+      imageAlt: "SafeHome Firewall home network security device",
+      specifications: homeGatewaySpecifications,
+    }
+  ];
+
+  const deviceProducts = products.filter((p: any) => {
+    const cat = p.category?.toLowerCase() || '';
+    return cat === 'home' || cat === 'homesolutions' || cat === 'home-solutions';
+  });
+
+  const displayProducts = deviceProducts.length > 0 ? deviceProducts : fallbackProducts;
+
+  return (
+    <div className="mx-auto w-full max-w-[1280px]">
+      <div className={productSectionTitleClassName}>Security Gateways</div>
+
+      {displayProducts.map((prod: any, idx: number) => {
+        return (
+          <div key={prod.id || idx} id={prod.id || `home-item-${idx}`} className={idx > 0 ? "mt-2 sm:mt-4 lg:mt-10 xl:mt-12" : ""}>
+            <SpecificationProductCard
+              title={prod.name || prod.title || "Home Security Device"}
+              descript={prod.description || "SafeHome protects all connected devices on your network from cyberattacks targeting your financial and personal data, safeguarding your privacy and protecting your family on the internet."}
+              image={prod.image || "/images/banners/solution-banner-right1.webp"}
+              imageAlt={prod.imageAlt || prod.name || prod.title || "Home security device"}
+              specification={
+                prod.keyCapabilities
+                  ? prod.keyCapabilities.map((c: any) => ({ label: c.title, value: c.description }))
+                  : prod.specifications || homeGatewaySpecifications
+              }
+            />
+          </div>
+        );
+      })}
+
+      <div className={productDecoratedSectionClassName}>
+        <div className="relative w-screen left-1/2 -translate-x-1/2 mb-2 md:mb-8">
+          <div className="w-[220px] sm:w-[280px] md:w-[360px] lg:w-[460px]">
+            <DecorativeLine
+              viewBox="0 0 700 80"
+              points="-3000,40 210,40"
+              dots={[{ cx: 210, cy: 40, rippleCount: 3 }]}
+              className="w-full h-auto"
+              dotRadius={10}
+              animationDuration={2.4}
+            />
+          </div>
+        </div>
+
+        <div className={productSectionTitleClassName}>Mobile Application</div>
+        <div className="max-md:px-6 md:px-12">
+          <EndpointProductCard
+            name={mobileApp?.name || mobileApp?.title || "Mobile App"}
+            tagline={mobileApp?.tagline || "iOS & Android"}
+            primaryFeature={mobileApp?.primaryFeature || "Firewall Onboarding"}
+            features={mobileApp?.features || [
+              "Dashboard",
+              "Alerts",
+              "User Security Config",
+              "QR Phishing Protection",
+            ]}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
