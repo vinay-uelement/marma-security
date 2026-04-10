@@ -11,4 +11,4 @@ export const productSplitSectionHeaderClassName =
   "flex w-full flex-col lg:flex-row";
 
 export const productHalfSectionTitleClassName =
-  "fl2-4 pb-4 sm:pb-6 lg:w-1/2 lg:pb-8 xl:pb-10";
+  "fl2-4 pb-4 sm:pb-6 lg:pb-8 xl:pb-10";
