@@ -3,9 +3,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import Banner from "@/components/home/Banner";
 import ContactSection from "@/components/contact/ContactSection";
 import ContactModal from '@/components/contact/ContactModal';
+import Banner from '@/components/global/Banner';
 
 export default function ContactUsPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,7 +18,7 @@ export default function ContactUsPage() {
                 <Banner
                     backgroundImage="/images/banners/banner-contact-new1.webp"
                     heightVariant="900"
-                    ContinerClass="h-[93vh]"
+                    ContinerClass="h-dvh"
                     title={
                         <>
                             We’re here to help you secure <br className="block " /> what matters most.
@@ -50,7 +50,7 @@ export default function ContactUsPage() {
             <div className="snap-start pt-24">
                 <ContactSection />
             </div>
-            
+
             <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </main>
     );

@@ -93,6 +93,7 @@ export default function Home() {
             },
           ]}
           rightImageAlt="Marma Security Device"
+          overlay={true}
         />
       </div>
 

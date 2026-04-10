@@ -34,6 +34,7 @@ export interface BannerProps {
   ContinerClass?: string;
   backgroundSize?: string;
   sectionClassName?: string;
+  overlay?: boolean;
 }
 
 export default function Banner({
@@ -46,6 +47,7 @@ export default function Banner({
   rightImageAlt = "Banner Image",
   titleClassName = "font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white drop-shadow-sm",
   rightImageClassName = "",
+  overlay = false,
 }: BannerProps) {
   const [activeImage, setActiveImage] = useState<string | null>(rightImage || null);
   const [outgoingImage, setOutgoingImage] = useState<string | null>(null);
@@ -173,7 +175,7 @@ export default function Banner({
           fetchPriority="high"
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/70 z-[5]" />
+        {overlay && <div className="absolute inset-0 bg-black/70 z-[5]" />}
       </div>
 
       <div className="h-[96svh] md:h-[93svh] relative z-10 overflow-hidden w-full flex items-center md:items-end">
