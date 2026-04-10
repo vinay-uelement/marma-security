@@ -475,7 +475,7 @@ export default function ClientPage({ products }: { products: any }) {
 
   return (
     <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
-      <div className="relative">
+      <div className="snap-start pt-24 md:pt-0 relative">
         <Banner
           backgroundImage="/images/banners/product-banner.webp"
           heightVariant="900"
@@ -530,7 +530,7 @@ export default function ClientPage({ products }: { products: any }) {
       </div>
 
       {/* Product Showcases */}
-      <div className="mt-6 md:mt-20">
+      <div className="snap-start pt-24 mt-6 md:mt-20">
         <Tabs
           tabs={[
             { label: "Enterprise Solutions", id: "enterprise" },
@@ -541,12 +541,12 @@ export default function ClientPage({ products }: { products: any }) {
           onTabChange={onTabChange}
           align="left"
         />
-      </div>
-      <div className="my-4 mx-2 md:my-15">
-        <ActiveComponent products={products} />
+        <div className="my-4 mx-2">
+          <ActiveComponent products={products} />
+        </div>
       </div>
 
-      <div className="mx-auto w-full max-w-[1280px]">
+      <div className="snap-start pt-24 mx-auto w-full max-w-[1280px]">
         <ProductSummaryTable
           title="Product Summary"
           columns={columns}
