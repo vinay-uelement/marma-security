@@ -126,7 +126,7 @@ img {
 
   .fl3-3 {
     font-family: var(--font-body);
-    @apply font-semibold text-[12px] md:text-[18px] lg:text-[24px] leading-[22px] md:leading-[62px] tracking-[-0.01em] text-text-dark;
+    @apply font-semibold text-[12px] md:text-[16px] lg:text-[20px] leading-[22px] md:leading-[48px] tracking-[-0.01em] text-text-dark;
   }
 
   /* FL4: Descriptions & Body Copy */
@@ -142,7 +142,7 @@ img {
 
   .fl4-2 {
     font-family: var(--font-body);
-    @apply font-light md:font-normal text-[10px] md:text-[16px] lg:text-[18px] leading-[16px] md:leading-[1.5] lg:leading-[28px] tracking-normal md:tracking-[-0.01em] text-center md:text-left text-text-dark;
+    @apply font-light md:font-normal text-[10px] md:text-[16px] leading-[16px] md:leading-[28px] tracking-normal md:tracking-[-0.01em] text-center md:text-left text-text-dark;
   }
 
   .fl4-3 {

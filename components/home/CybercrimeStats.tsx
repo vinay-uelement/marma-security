@@ -5,23 +5,23 @@ export default function CybercrimeStats() {
   return (
     <>
       {/* DESKTOP VIEW */}
-      <section className="hidden lg:block w-full max-w-[1440px] mx-auto px-12 py-4 bg-[#FFFFFF] relative z-20">
-        <div className="grid grid-cols-2 gap-20 items-center">
+      <section className="hidden lg:block w-full max-w-[1440px] mx-auto bg-[#FFFFFF] relative z-20 mt-4">
+        <div className="grid grid-cols-2 gap-20 items-end">
           {/* Left Column: Device Image */}
-          <div className="flex justify-center items-center w-full h-full min-h-[100px]">
-            <div className="relative w-full max-w-[423px] aspect-[423/495] translate-y-[25%] z-30">
+          <div className="flex justify-center items-center w-full h-full min-h-[100px] px-12 translate-y-12 ">
+            <div className="relative w-full max-w-[300px] aspect-423/495 z-30">
               <Image
                 src="/images/banners/solution-banner-right1.webp"
                 alt="Marma Security Black Device"
                 fill
-                sizes="50vw"
+                sizes="20vw"
                 className="object-contain"
               />
             </div>
           </div>
 
           {/* Right Column: Text Content */}
-          <div className="flex flex-col space-y-6 relative z-10 text-left items-start pb-0">
+          <div className="flex flex-col space-y-6 relative z-10 text-left items-start pb-0 px-12 ">
             <h3 className="fl3 pb-[20px]">
               Cybercriminals don’t discriminate small businesses and homes are
               their easiest targets.
@@ -35,6 +35,10 @@ export default function CybercrimeStats() {
             </p>
           </div>
         </div>
+
+        <div className="w-full h-[15vh] bg-[#FAFAFA]">
+        </div>
+        <div className="h-[2px] bg-[#E5E5E5] w-[90%] mx-auto" />
       </section>
 
       {/* MOBILE & TABLET VIEW */}

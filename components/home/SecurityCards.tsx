@@ -34,7 +34,7 @@ const cards: SecurityCard[] = [
     image: "/images/features/Malware-guard.webp",
     linkHref: "#",
   },
-    {
+  {
     title: "RansomGuard",
     description: "provides advanced zero-day defense, using heuristic analysis and sandboxing to identify and block sophisticated malware and spyware before they can compromise your network.",
     number: "04",
@@ -62,7 +62,7 @@ const cards: SecurityCard[] = [
     image: "/images/features/Malware-guard.webp",
     linkHref: "#",
   },
-    {
+  {
     title: "ScamGuard",
     description: "provides high-capacity mitigation against Distributed Denial of Service (DDoS) attacks, filtering malicious traffic and ensuring your network remains responsive and available even during massive, automated connection attempts.",
     number: "08",
@@ -125,11 +125,10 @@ export default function SecurityCards() {
   };
 
   return (
-    <section className="w-full bg-[#FAFAFA] pt-0 lg:pt-40 pb-1 relative z-0">
+    <section className="w-full bg-[#FAFAFA] pt-0 pb-1 relative z-0 md:pt-24">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-        <div className="w-full h-[1px] px-10 bg-[#E5E5E5] mb-2 md:mb-16 lg:mb-20" />
 
-        <div className="text-center mb-4 md:mb-24 relative z-10">
+        <div className="text-center mb-4 md:mb-6 relative z-10">
           <h2 className="fl2-1">
             Robust cybersecurity at an affordable price
           </h2>
@@ -204,7 +203,7 @@ export default function SecurityCards() {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="flex items-center justify-center gap-2 mt-4 md:mt-16">
+          <div className="flex items-center justify-center gap-2 mt-4 md:mt-8">
             {/* Left arrow — hidden on first page */}
             {currentPage > 1 && (
               <button

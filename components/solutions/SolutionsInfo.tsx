@@ -24,7 +24,7 @@ export default function SolutionsInfo({
   const isRight = imagePosition === "right";
 
   return (
-    <section className="relative w-full mt-8 md:pt-12 pb-0 md:pb-16 md:pt-10 md:pb-24 flex flex-col items-center ">
+    <section className="relative w-full mt-8 md:pt-12 pb-0 flex flex-col items-center ">
       {/* Faded Background Text */}
       <div className="w-full absolute -translate-y-3/4 flex justify-center z-0 select-none pointer-events-none max-w-[1440px] mx-auto">
         <span
