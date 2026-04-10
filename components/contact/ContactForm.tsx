@@ -61,8 +61,8 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
                 {/* Status Message */}
                 {submitStatus && (
                     <div className={`px-4 py-3 rounded-lg text-sm font-medium ${submitStatus.type === 'success'
-                            ? 'bg-green-50 text-green-700 border border-green-200'
-                            : 'bg-red-50 text-red-700 border border-red-200'
+                        ? 'bg-green-50 text-green-700 border border-green-200'
+                        : 'bg-red-50 text-red-700 border border-red-200'
                         }`}>
                         {submitStatus.message}
                     </div>
@@ -98,15 +98,16 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className="contact-form-select"
+                        className={`contact-form-select ${formData.subject === '' ? 'text-[#989898]' : 'text-text-dark'}`}
                         required
                         disabled={isSubmitting}
                     >
-                        <option value="" disabled>Select Subject</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="support">Technical Support</option>
-                        <option value="sales">Sales</option>
+                        <option value="" disabled>Area of interest</option>
+                        <option value="sales-agent">Becoming a Sales Agent</option>
                         <option value="partnership">Partnership</option>
+                        <option value="investors">Investors</option>
+                        <option value="product-question">Product Questions</option>
+                        <option value="other">Other</option>
                     </select>
                     <input
                         type="tel"
