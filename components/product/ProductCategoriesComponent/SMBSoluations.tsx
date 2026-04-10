@@ -38,7 +38,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
       id: "safebiz",
       title: "SafeBiz Firewall | SMB Office Security",
       description: smbGatewayDescription,
-      image: "/images/banners/solution-banner-right1.webp",
+      image: "/images/banners/homepage-right-banner1.webp",
       imageAlt: "SafeBiz Firewall SMB office security device",
       specifications: smbGatewaySpecifications,
     }

@@ -31,7 +31,7 @@ export default function HomeSolutions({ products = [] }: { products?: any[] }) {
       id: "safehome",
       title: "SafeHome Firewall | Home Network Security",
       description: "SafeHome protects all connected devices on your network from cyberattacks targeting your financial and personal data, safeguarding your privacy and protecting your family on the internet.",
-      image: "/images/banners/homepage-right-banner1.webp",
+      image: "/images/banners/solution-banner-right1.webp",
       imageAlt: "SafeHome Firewall home network security device",
       specifications: homeGatewaySpecifications,
     }

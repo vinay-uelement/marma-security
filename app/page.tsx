@@ -7,6 +7,7 @@ import DecorativeLine from "@/components/home/DecorativeLine";
 import Banner from "@/components/home/Banner";
 import TumblingText from "@/components/home/TumblingText";
 import OurTopProduct from "@/components/home/OurTopProduct";
+import AdvancedArchitecture from "@/components/technology/AdvancedArchitecture";
 
 // Dynamic imports
 const CybercrimeStats = dynamic(
@@ -30,8 +31,8 @@ export default function Home() {
 
   const images = [
     "/images/product/SafeEnterprise4001.webp",
-    "/images/banners/solution-banner-right1.webp",
     "/images/banners/homepage-right-banner1.webp",
+    "/images/banners/solution-banner-right1.webp",
   ];
 
   const learnMoreLinks = [
@@ -153,6 +154,9 @@ export default function Home() {
       {/* ── SNAP 9: Testimonial ───────────────────────────────────────────── */}
       <div className="snap-start ">
         <Testimonial />
+      </div>
+      <div className="snap-start ">
+        <AdvancedArchitecture />
       </div>
     </div>
   );
