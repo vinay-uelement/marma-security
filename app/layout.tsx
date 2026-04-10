@@ -159,7 +159,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${ibmPlexSans.variable} ${sora.variable} antialiased flex flex-col min-h-screen`}
+        className={`${inter.variable} ${ibmPlexSans.variable} ${sora.variable} antialiased flex flex-col min-h-screen overflow-x-clip`}
       >
         <Navbar />
         <main className="flex-grow ">{children}</main>

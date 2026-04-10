@@ -57,67 +57,103 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col bg-[#FFFFFF] min-h-screen overflow-x-clip">
-      <Banner
-        backgroundImage={backgrounds[index]}
-        rightImage={images[index]}
-        title={
-          <>
-            Radically Simplified <br className="hidden md:block" />
-            <HighlightedText text="Cybersecurity" /> for{" "}
-            <br className="block md:hidden" />
-            <TumblingText phrases={phrases} index={index} />
-          </>
-        }
-        titleClassName="font-banner font-normal text-[26px] md:text-[34px] leading-[1.2] md:leading-[48px] tracking-[-0.01em] text-white"
-        subtitle={
-          <>
-            Enterprise-grade cybersecurity that works in minutes.{" "}
-            <br className="hidden sm:block" />
-            No IT or technical expertise needed.
-          </>
-        }
-        subtitleClassName="font-title font-light text-[16px] md:text-[22px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-white max-w-[550px]"
-        buttons={[
-          { label: "Order Now", href: "#", variant: "primary", icon: true },
-          {
-            label: "Learn More",
-            href: learnMoreLinks[index],
-            variant: "secondary",
-            icon: true,
-          },
-        ]}
-        rightImageAlt="Marma Security Device"
-      />
+    <div
+      className="flex flex-col bg-[#FFFFFF] min-h-screen overflow-x-clip"
+    >
+      {/* ── SNAP 1: Hero Banner ───────────────────────────────────────────── */}
+      <div style={{ scrollSnapAlign: "start" }}>
+        <Banner
+          backgroundImage={backgrounds[index]}
+          rightImage={images[index]}
+          title={
+            <>
+              Radically Simplified <br className="hidden md:block" />
+              <HighlightedText text="Cybersecurity" /> for{" "}
+              <br className="block md:hidden" />
+              <TumblingText phrases={phrases} index={index} />
+            </>
+          }
+          titleClassName="font-banner font-normal text-[26px] md:text-[34px] leading-[1.2] md:leading-[48px] tracking-[-0.01em] text-white"
+          subtitle={
+            <>
+              Enterprise-grade cybersecurity that works in minutes.{" "}
+              <br className="hidden sm:block" />
+              No IT or technical expertise needed.
+            </>
+          }
+          subtitleClassName="font-title font-light text-[16px] md:text-[22px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-white max-w-[550px]"
+          buttons={[
+            { label: "Order Now", href: "#", variant: "primary", icon: true },
+            {
+              label: "Learn More",
+              href: learnMoreLinks[index],
+              variant: "secondary",
+              icon: true,
+            },
+          ]}
+          rightImageAlt="Marma Security Device"
+        />
+      </div>
 
-      <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-8 lg:px-12 pt-0 md:pt-24 bg-[#FFFFFF] relative">
-        <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-2 gap-8 relative z-10 w-full">
-          <h2 className="fl2 w-full min-[901px]:w-[55%] home-exposed-heading text-left">
-            Your{" "}
-            <HighlightedText
-              text="enterprise, business and home"
-              className="text-[#323232] !font-bold"
-            />{" "}
-            are more <br /> exposed to cybercrime than you think.
-          </h2>
+      {/* ── SNAP 2: Cybercrime Stats ──────────────────────────────────────── */}
+      <div style={{ scrollSnapAlign: "start" }}>
+        <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-8 lg:px-12 pt-0 md:pt-24 bg-[#FFFFFF] relative">
+          <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-2 gap-8 relative z-10 w-full">
+            <h2 className="fl2 w-full min-[901px]:w-[55%] home-exposed-heading text-left">
+              Your{" "}
+              <HighlightedText
+                text="enterprise, business and home"
+                className="text-[#323232] !font-bold"
+              />{" "}
+              are more <br /> exposed to cybercrime than you think.
+            </h2>
 
-          <div className="flex flex-col w-[40%] sm:w-[30%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-4 min-[901px]:mt-0 pointer-events-none z-0">
-            <DecorativeLine
-              viewBox="0 0 500 120"
-              points="80,30 130,90 3000,90"
-              dots={[{ cx: 80, cy: 30, rippleCount: 3 }]}
-            />
+            <div className="flex flex-col w-[40%] sm:w-[30%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-4 min-[901px]:mt-0 pointer-events-none z-0">
+              <DecorativeLine
+                viewBox="0 0 500 120"
+                points="80,30 130,90 3000,90"
+                dots={[{ cx: 80, cy: 30, rippleCount: 3 }]}
+              />
+            </div>
           </div>
-        </div>
-      </section>
-      <CybercrimeStats />
-      <SecurityCards />
-      <OurTopProduct />
-      <HomeSolutionsInfo />
-      <Challengestab />
-      <ProtectionBanner />
-      <HowWeProtect />
-      <Testimonial />
+        </section>
+        <CybercrimeStats />
+      </div>
+
+      {/* ── SNAP 3: Security Cards ────────────────────────────────────────── */}
+      <div style={{ scrollSnapAlign: "start" }}>
+        <SecurityCards />
+      </div>
+
+      {/* ── SNAP 4: Our Top Products ──────────────────────────────────────── */}
+      <div style={{ scrollSnapAlign: "start" }}>
+        <OurTopProduct />
+      </div>
+
+      {/* ── SNAP 5: Home Solutions Info ───────────────────────────────────── */}
+      <div style={{ scrollSnapAlign: "start" }}>
+        <HomeSolutionsInfo />
+      </div>
+
+      {/* ── SNAP 6: Challenges Tab ────────────────────────────────────────── */}
+      <div style={{ scrollSnapAlign: "start" }}>
+        <Challengestab />
+      </div>
+
+      {/* ── SNAP 7: Protection Banner ─────────────────────────────────────── */}
+      <div style={{ scrollSnapAlign: "start" }}>
+        <ProtectionBanner />
+      </div>
+
+      {/* ── SNAP 8: How We Protect ────────────────────────────────────────── */}
+      <div style={{ scrollSnapAlign: "start" }}>
+        <HowWeProtect />
+      </div>
+
+      {/* ── SNAP 9: Testimonial ───────────────────────────────────────────── */}
+      <div style={{ scrollSnapAlign: "start" }}>
+        <Testimonial />
+      </div>
     </div>
   );
 }

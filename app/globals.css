@@ -46,6 +46,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -54,11 +55,6 @@ body {
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-html,
-body {
-  overflow-x: hidden;
 }
 
 p {
