@@ -1,37 +1,85 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 interface StatItem {
-  value: string;
+  value: number;
+  suffix: string;
   label: string;
   description: string;
+  decimals?: number;
 }
 
 const stats: StatItem[] = [
   {
-    value: "8 million +",
+    value: 8,
+    suffix: " million +",
     label: "Verified Sites",
     description:
       "Real-time URL reputation checking and SSL inspection to ensure safe browsing.",
   },
   {
-    value: "7.9 Million +",
+    value: 7.9,
+    suffix: " Million +",
     label: "Allowed Requests",
     description:
       "Marma intelligently analyzes traffic and allows safe requests while blocking suspicious activity.",
+    decimals: 1,
   },
   {
-    value: "14000",
+    value: 14000,
+    suffix: "",
     label: "Blocked Requests",
     description:
       "Marma prevents unauthorized access before threats reach your network.",
   },
   {
-    value: "27400",
+    value: 27400,
+    suffix: "",
     label: "Blocked Threats",
     description:
       "Marma stops malware, phishing, and intrusion attempts before they impact your network.",
   },
 ];
+
+const AnimatedCounter = ({ stat }: { stat: StatItem }) => {
+  const numberRef = useRef<HTMLSpanElement>(null);
+  const containerRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    
+    const ctx = gsap.context(() => {
+      const obj = { val: 0 };
+    
+      gsap.to(obj, {
+        val: stat.value,
+        duration: 2.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 85%", 
+          once: true,
+        },
+        onUpdate: () => {
+          if (numberRef.current) {
+            numberRef.current.innerText = obj.val.toFixed(stat.decimals || 0);
+          }
+        }
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [stat]);
+
+  return (
+    <h3 ref={containerRef} className="fl2 font-bold flex items-baseline">
+      <span ref={numberRef}>0</span>
+      <span>{stat.suffix}</span>
+    </h3>
+  );
+};
 
 export default function StatsSection() {
   return (
@@ -43,7 +91,7 @@ export default function StatsSection() {
             {stats.map((stat, index) => (
               <div key={index} className="flex flex-col">
                 {/* Value */}
-                <h3 className="fl2  font-bold">{stat.value}</h3>
+                <AnimatedCounter stat={stat} />
 
                 {/* Divider */}
                 <div className="pr-1 mt-1 md:mt-3 mb-1">
@@ -51,7 +99,7 @@ export default function StatsSection() {
                 </div>
 
                 {/* Label */}
-                <p className="fl4-3  font-bold! mt-[5px] md:mt-0 mb-2">
+                <p className="fl4-3 font-bold! mt-[5px] md:mt-0 mb-2">
                   {stat.label}
                 </p>
 
