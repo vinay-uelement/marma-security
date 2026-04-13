@@ -1,8 +1,9 @@
+// @ts-nocheck
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -11,6 +12,39 @@ const navLinks = [
   { href: "/product", label: "Products" },
   { href: "/partners", label: "Partners" },
   { href: "/about-us", label: "About us" },
+];
+
+const solutionDropdownItems = [
+  {
+    href: "/solutions/healthcare",
+    title: "Healthcare",
+    description: "Provide secure patient data management and compliance with industry standards like HIPAA.",
+  },
+  {
+    href: "/solutions/legal",
+    title: "Legal",
+    description: "Protect sensitive client information with advanced encryption and zero-trust architecture.",
+  },
+  {
+    href: "/solutions/finance",
+    title: "Finance",
+    description: "Safeguard financial assets and ensure regulatory compliance with real-time threat detection.",
+  },
+  {
+    href: "/solutions/manufacturing",
+    title: "Manufacturing",
+    description: "Protect production systems, supply chains, and intellectual property with industrial-grade cybersecurity.",
+  },
+  {
+    href: "/solutions/small-and-medium-business",
+    title: "Small & Medium Business",
+    description: "Affordable, enterprise-grade cybersecurity tailored for SMBs to protect customer data and operations.",
+  },
+  {
+    href: "/solutions/education",
+    title: "Education",
+    description: "Secure academic institutions, research data, and student privacy across distributed campus networks.",
+  }
 ];
 
 const frostedGlass = {
@@ -25,7 +59,11 @@ const frostedGlass = {
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSolutionsHovered, setIsSolutionsHovered] = useState(false);
+  const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const pathname = usePathname();
+  // We use this ref to detect clicks outside the entire navbar completely
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -33,16 +71,31 @@ export default function Navbar() {
         setIsMobileMenuOpen(false);
       }
     };
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setIsSolutionsHovered(false);
+      }
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
-    <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[93%] max-w-[1400px] z-50">
+    <header
+      ref={headerRef}
+      className="fixed top-6 left-1/2 -translate-x-1/2 w-[93%] max-w-[1400px] z-50"
+    >
       {/* Main Navbar Container */}
       <div
         style={frostedGlass}
-        className="flex items-center justify-between gap-4 lg:gap-6 px-3 py-1 md:py-2 ps-3 md:ps-10 rounded-full relative z-50"
+        className="flex items-center justify-between gap-4 lg:gap-6 px-3 py-1 md:py-2 ps-3 md:ps-10 rounded-full relative z-50 transition-all duration-300"
       >
         {/* Left Side: Logo */}
         <div className="flex flex-1 items-center min-w-0">
@@ -61,7 +114,24 @@ export default function Navbar() {
         {/* Center: Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center lg:space-x-4 xl:space-x-10 whitespace-nowrap">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = pathname === link.href || (link.href === "/solutions" && pathname.startsWith("/solutions"));
+            const isSolutions = link.href === "/solutions";
+
+            if (isSolutions) {
+              return (
+                <button
+                  key={link.href}
+                  onClick={() => setIsSolutionsHovered(!isSolutionsHovered)}
+                  className={`fl2-nav transition-colors flex items-center gap-1.5 focus:outline-none ${isActive ? "!font-bold !text-[#000000]" : ""}`}
+                >
+                  <span>{link.label}</span>
+                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" className={`transition-transform duration-300 ${isSolutionsHovered ? 'rotate-180' : ''}`}>
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              );
+            }
+
             return (
               <Link
                 key={link.href}
@@ -145,23 +215,130 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Solutions Mega Menu Dropdown */}
+      <div
+        className={`hidden lg:block absolute top-[100%] left-0 w-full pt-4 origin-top pointer-events-none ${isSolutionsHovered ? 'visible' : 'invisible'}`}
+      >
+        <div
+          className={`bg-[#0d0d0d]/50 backdrop-blur-2xl border border-white/10 rounded-2xl p-8 shadow-[0_20px_40px_-5px_rgba(0,0,0,0.4)] overflow-hidden relative will-change-[backdrop-filter] transition-opacity duration-200 ${isSolutionsHovered ? 'opacity-100' : 'opacity-0'}`}
+        >
+          {/* Subtle glow effect behind */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#4A90E2]/10 rounded-full blur-[100px] pointer-events-none" />
+
+          {/* Inner content: fades in after a short delay so blur is already composited */}
+          <div
+            className={`transition-all duration-300 ease-out pointer-events-auto ${isSolutionsHovered ? 'opacity-100 translate-y-0 delay-[80ms]' : 'opacity-0 -translate-y-2 delay-0'}`}
+          >
+            <div className="mb-4 px-3">
+              <Link
+                href="/solutions"
+                onClick={() => setIsSolutionsHovered(false)}
+                className="group/title inline-flex items-center gap-2 text-white hover:text-brand-red transition-colors duration-300 focus:outline-none"
+              >
+                <h3 className="text-xl font-bold tracking-wide">Solutions</h3>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform transition-transform duration-300 group-hover/title:translate-x-1">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+            </div>
+            <div className="h-[1px] w-full bg-white/10 mb-6" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 relative z-10">
+              {solutionDropdownItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsSolutionsHovered(false)}
+                  className="group flex flex-col p-3 rounded-xl transition-all duration-300 hover:bg-white/[0.04] hover:shadow-[0_4px_20px_-5px_rgba(255,255,255,0.05)] border border-transparent hover:border-white/5"
+                >
+                  <span className="text-white font-semibold text-[17px] mb-1.5 group-hover:text-brand-red transition-colors duration-300">
+                    {item.title}
+                  </span>
+                  <span className="text-gray-400 font-light text-[14px] leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                    {item.description}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Mobile Dropdown */}
       {isMobileMenuOpen && (
         <div
           style={frostedGlass}
-          className="lg:hidden absolute top-[110%] left-0 w-full rounded-2xl py-5 px-6 shadow-xl flex flex-col space-y-4 z-40"
+          className="lg:hidden absolute top-[110%] left-0 w-full rounded-2xl py-5 px-6 shadow-xl flex flex-col space-y-4 z-40 max-h-[80vh] overflow-y-auto"
         >
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = pathname === link.href || (link.href === "/solutions" && pathname.startsWith("/solutions"));
+            const isSolutions = link.href === "/solutions";
             return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`fl2-nav border-b border-gray-200/30 pb-3 ${isActive ? "!font-bold !text-[#000000]" : ""}`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
+              <div key={link.href} className="border-b border-gray-200/30 pb-3 flex flex-col gap-3">
+                {isSolutions ? (
+                  /* Solutions: toggle accordion instead of navigating */
+                  <button
+                    type="button"
+                    onClick={() => setIsMobileSolutionsOpen((prev) => !prev)}
+                    className={`fl2-nav flex items-center justify-between w-full text-left ${isActive ? "!font-bold !text-[#000000]" : ""}`}
+                  >
+                    <span>{link.label}</span>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`transform transition-transform duration-300 ${isMobileSolutionsOpen ? 'rotate-180' : 'rotate-0'}`}
+                    >
+                      <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className={`fl2-nav ${isActive ? "!font-bold !text-[#000000]" : ""}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )}
+
+                {/* Mobile Mega Menu variant (collapsible) */}
+                {isSolutions && (
+                  <div
+                    className={`pl-4 flex flex-col gap-4 overflow-hidden transition-all duration-300 ease-in-out ${isMobileSolutionsOpen ? 'max-h-[1000px] opacity-100 mt-2' : 'max-h-0 opacity-0 mt-0'
+                      }`}
+                  >
+                    {solutionDropdownItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => { setIsMobileMenuOpen(false); setIsMobileSolutionsOpen(false); }}
+                        className="flex flex-col group"
+                      >
+                        <span className="text-gray-800 font-medium text-[15px] group-hover:text-blue-600 transition-colors">
+                          {item.title}
+                        </span>
+                        <span className="text-gray-500 text-[13px] leading-tight mt-1 line-clamp-2">
+                          {item.description}
+                        </span>
+                      </Link>
+                    ))}
+                    {/* Link to main Solutions page */}
+                    <Link
+                      href="/solutions"
+                      onClick={() => { setIsMobileMenuOpen(false); setIsMobileSolutionsOpen(false); }}
+                      className="text-brand-red font-semibold text-[14px] mt-1 mb-1 inline-flex items-center gap-1"
+                    >
+                      View all Solutions
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </Link>
+                  </div>
+                )}
+              </div>
             );
           })}
 

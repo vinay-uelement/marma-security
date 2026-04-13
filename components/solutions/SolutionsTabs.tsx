@@ -2,10 +2,22 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import HighlightedText from "../global/HighlightedText";
 import DecorativeLine from "../home/DecorativeLine";
 import SlidingTabs from "../global/SlidingTabs";
 import GlassWrapper from "../global/GlassWrapper";
+import Button from "../global/Button";
+
+// Maps tab IDs to their URL slugs
+const industrySlugMap: Record<string, string> = {
+  healthcare: "healthcare",
+  legal: "legal",
+  finance: "finance",
+  manufacturing: "manufacturing",
+  smb: "small-and-medium-business",
+  education: "education",
+};
 
 interface TabData {
   id: string;
@@ -291,6 +303,11 @@ export default function SolutionsTabs({ solutionData }: { solutionData?: any }) 
               />
             </div>
             <p className="fl4-2 w-full">{active.description}</p>
+            <div className="mt-6 w-full">
+              <Link href={`/solutions/${industrySlugMap[active.id] || active.id}`}>
+                <Button icon variant="primary" label="Read More" />
+              </Link>
+            </div>
           </div>
 
           {/* Desktop */}
@@ -323,6 +340,11 @@ function DesktopContent({ data }: { data: TabData }) {
       <div className="flex flex-col items-start lg:text-left">
         <h3 className="fl3-1 mb-12 max-w-[450px]">{data.title}</h3>
         <p className="home-challenge-desc">{data.description}</p>
+        <div className="mt-8">
+          <Link href={`/solutions/${industrySlugMap[data.id] || data.id}`}>
+            <Button icon variant="primary" label="Read More" />
+          </Link>
+        </div>
       </div>
 
       <GlassWrapper>
