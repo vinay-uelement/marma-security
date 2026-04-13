@@ -98,7 +98,7 @@ export default function Home() {
       </div>
 
       {/* ── SNAP 2: Cybercrime Stats ──────────────────────────────────────── */}
-      <div className="snap-start">
+      <div className="snap-start md:h-dvh">
         <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-8 lg:px-12 pt-0 md:pt-24 bg-[#FFFFFF] relative">
           <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center gap-8 relative z-10 w-full">
             <h2 className="fl2 w-full min-[901px]:w-[55%] home-exposed-heading text-left">
@@ -123,40 +123,40 @@ export default function Home() {
       </div>
 
       {/* ── SNAP 3: Security Cards ────────────────────────────────────────── */}
-      <div className="snap-start">
+      <div className="snap-start md:h-dvh">
         <SecurityCards />
       </div>
 
       {/* ── SNAP 4: Our Top Products ──────────────────────────────────────── */}
-      <div className="snap-start">
+      <div className="snap-start md:h-dvh">
         <OurTopProduct />
       </div>
 
       {/* ── SNAP 5: Home Solutions Info ───────────────────────────────────── */}
-      <div className="snap-start ">
+      <div className="snap-start md:h-dvh">
         <HomeSolutionsInfo />
       </div>
 
       {/* ── SNAP 6: Challenges Tab ────────────────────────────────────────── */}
-      <div className="snap-start ">
+      <div className="snap-start md:h-dvh">
         <Challengestab />
       </div>
 
       {/* ── SNAP 7: Protection Banner ─────────────────────────────────────── */}
-      <div className="snap-start ">
+      <div className="snap-start md:h-dvh">
         <ProtectionBanner />
       </div>
 
       {/* ── SNAP 8: How We Protect ────────────────────────────────────────── */}
-      <div className="snap-start ">
+      <div className="snap-start">
         <HowWeProtect />
       </div>
 
       {/* ── SNAP 9: Testimonial ───────────────────────────────────────────── */}
-      <div className="snap-start ">
+      <div className="snap-start md:h-dvh">
         <Testimonial />
       </div>
-      <div className="snap-start ">
+      <div className="snap-start">
         <AdvancedArchitecture />
       </div>
     </div>
