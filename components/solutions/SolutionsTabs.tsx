@@ -5,6 +5,7 @@ import Image from "next/image";
 import HighlightedText from "../global/HighlightedText";
 import DecorativeLine from "../home/DecorativeLine";
 import SlidingTabs from "../global/SlidingTabs";
+import GlassWrapper from "../global/GlassWrapper";
 
 interface TabData {
   id: string;
@@ -260,7 +261,7 @@ export default function SolutionsTabs({ solutionData }: { solutionData?: any }) 
         </div>
 
         {/* Desktop Tabs — sliding indicator */}
-        <div className="hidden lg:block mb-16 select-none">
+        <div className="hidden lg:block mb-0 select-none">
           <SlidingTabs
             tabs={tabsToUse.map((tab) => ({ id: tab.id, label: tab.label }))}
             activeTabId={active.id}
@@ -324,15 +325,17 @@ function DesktopContent({ data }: { data: TabData }) {
         <p className="home-challenge-desc">{data.description}</p>
       </div>
 
-      <div className="relative w-full h-[360px] rounded-[20px] overflow-hidden shadow-xl">
-        <Image
-          src={data.image}
-          alt={data.title}
-          fill
-          className="object-cover object-center"
-          sizes="(max-width: 1024px) 100vw, 50vw"
-        />
-      </div>
+      <GlassWrapper>
+        <div className="relative w-full h-[360px] rounded-[20px] overflow-hidden shadow-xl">
+          <Image
+            src={data.image}
+            alt={data.title}
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </div>
+      </GlassWrapper>
     </div>
   );
 }

@@ -36,8 +36,8 @@ const TabsComponent = ({
     setIsOpen(false);
   };
 
-return (
-    <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12">
+  return (
+    <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12" style={{ borderBottom: `2px solid ${borderColor}` }}>
       {/* ── MOBILE: Dropdown ─────────────────────────────── */}
       <div className="sm:hidden" ref={dropdownRef}>
         <div className="flex pl-6">
@@ -117,7 +117,6 @@ return (
         >
           <ul
             className="flex m-0 p-0 pr-12 list-none"
-            style={{ borderBottom: `2px solid ${borderColor}` }}
           >
             {tabs.map((tab) => {
               const isActive = activeTabId === tab.id;
@@ -145,11 +144,10 @@ return (
                   after:rounded-tl-lg after:transition-all after:duration-[250ms] after:ease-in-out
                   after:shadow-[-3px_2px_5px_rgba(0,0,0,0.1),inset_1px_0_0_rgba(255,255,255,0.09)]
 
-                  ${
-                    isActive
+                  ${isActive
                       ? "z-30 bg-brand-red text-white before:bg-brand-red after:bg-brand-red"
                       : "z-20 bg-[#F5F5F5] text-[#777] before:bg-[#F5F5F5] after:bg-[#F5F5F5] hover:bg-[#F4F7F9] hover:text-[#444] hover:before:bg-[#F4F7F9] hover:after:bg-[#F4F7F9]"
-                  }
+                    }
                 `}
                 >
                   {tab.label}
