@@ -25,8 +25,8 @@ export default function AdvancedArchitecture() {
     () => {
       if (!containerRef.current) return;
 
-      const lines = gsap.utils.toArray<SVGLineElement>(".svg-line");
-      const dataFlows = gsap.utils.toArray<SVGLineElement>(".svg-data-flow");
+      const lines = gsap.utils.toArray<SVGPathElement>(".svg-line");
+      const dataFlows = gsap.utils.toArray<SVGPathElement>(".svg-data-flow");
       const orbitNodes = gsap.utils.toArray<HTMLDivElement>(".orbit-node-inner");
       const cardNodes = gsap.utils.toArray<HTMLDivElement>(".card-node-inner");
       const junctionNodes = gsap.utils.toArray<HTMLDivElement>(".junction-node-inner");
@@ -109,11 +109,11 @@ export default function AdvancedArchitecture() {
 
       // Data Flow Continuous Animation & Synchronized Blinking
       dataFlows.forEach((flow, index) => {
-        const line = flow as SVGLineElement;
-        const totalLength = line.getTotalLength();
-        const duration = gsap.utils.random(1.2, 2.0);
+        const path = flow as SVGPathElement;
+        const totalLength = path.getTotalLength();
+        const duration = gsap.utils.random(1.5, 2.5);
 
-        // Map line index to corresponding node
+        // Map path index to corresponding node
         let targetNode: HTMLElement | null = null;
         if (index < 7) {
           targetNode = orbitNodes[index]?.querySelector(".node-icon-container");
@@ -128,13 +128,14 @@ export default function AdvancedArchitecture() {
           targetNode = cardNodes[index - 10];
         }
 
-        // Pattern is 8px dash, 16px gap. Total 24px cycle.
+        // Pattern is 16px dash, 32px gap for a cleaner 'Pro' look on angled paths
+        const dashCycle = 48;
         const initialShift = -totalLength;
-        gsap.set(line, { strokeDasharray: "8, 16", strokeDashoffset: initialShift });
+        gsap.set(path, { strokeDasharray: "12, 36", strokeDashoffset: initialShift });
 
         // Animating the pattern flow
-        gsap.to(line, {
-          strokeDashoffset: initialShift - 24,
+        gsap.to(path, {
+          strokeDashoffset: initialShift - dashCycle,
           duration: duration,
           ease: "none",
           repeat: -1
