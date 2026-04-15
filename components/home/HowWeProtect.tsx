@@ -260,7 +260,7 @@ export default function HowWeProtect() {
                     alt={feature.title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover relative z-10"
+                    className="object-cover relative z-10 scale-150"
                   />
                 </div>
                 <div className="flex flex-col justify-start md:pt-5 h-full">

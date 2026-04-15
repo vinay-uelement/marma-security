@@ -22,14 +22,14 @@ export default function ManagementProductCard({
       </div>
 
       {/* Image Block */}
-      <div className="relative w-full aspect-[16/7] sm:aspect-[16/6] rounded-xl overflow-hidden bg-[#D9D9D9]">
+      <div className="relative w-full aspect-[16/7] sm:aspect-[16/6] rounded-xl overflow-hidden">
         {image ? (
           <Image
             src={image}
             alt={imageAlt}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
-            className="object-cover object-center"
+            className="object-contain object-center"
           />
         ) : (
           <div aria-hidden="true" className="h-full w-full bg-[#D9D9D9]" />
