@@ -89,7 +89,7 @@ export default function PartnersPage() {
         </section>
       </div>
 
-      <div className="snap-start">
+      {false && <div className="snap-start">
         <section className="w-full bg-[#FFFFFF]">
           <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-12 md:pt-20">
             {/* Header */}
@@ -133,7 +133,7 @@ export default function PartnersPage() {
             <OurTeam />
           </div>
         </section>
-      </div>
+      </div>}
 
       <div className="snap-start pt-24">
         <StatsSection />

@@ -393,11 +393,12 @@ function FooterContactForm() {
     email: '',
     phone: '',
     message: '',
+    subject: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     if (submitStatus) setSubmitStatus(null);
   };
@@ -423,7 +424,7 @@ function FooterContactForm() {
 
     if (result.success) {
       setSubmitStatus({ type: 'success', message: result.message });
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '', subject: '' });
     } else {
       setSubmitStatus({ type: 'error', message: result.message });
     }
@@ -461,6 +462,21 @@ function FooterContactForm() {
         required
         disabled={isSubmitting}
       />
+      <select
+        name="subject"
+        value={formData.subject}
+        onChange={handleChange}
+        className={`footer-form-select footer-input-field ${formData.subject === '' ? 'text-[#989898]' : 'text-text-dark'}`}
+        required
+        disabled={isSubmitting}
+      >
+        <option value="" disabled>Area of interest</option>
+        <option value="sales-agent">Becoming a Sales Agent</option>
+        <option value="partnership">Partnership</option>
+        <option value="investors">Investors</option>
+        <option value="product-question">Product Questions</option>
+        <option value="other">Other</option>
+      </select>
       <input
         type="tel"
         name="phone"
@@ -479,6 +495,7 @@ function FooterContactForm() {
         className="footer-input-field resize-none min-h-[80px] md:min-h-[100px]"
         disabled={isSubmitting}
       />
+
 
       <div className="flex justify-center lg:justify-end pt-3">
         <Button icon label={isSubmitting ? "Submitting..." : "Submit"} />

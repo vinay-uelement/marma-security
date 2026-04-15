@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import DecorativeLine from "@/components/home/DecorativeLine";
 import Banner from "@/components/home/Banner";
 import TumblingText from "@/components/home/TumblingText";
-import OurTopProduct from "@/components/home/OurTopProduct";
+// import OurTopProduct from "@/components/home/OurTopProduct";
 import AdvancedArchitecture from "@/components/technology/AdvancedArchitecture";
 
 // Dynamic imports
@@ -128,9 +128,9 @@ export default function Home() {
       </div>
 
       {/* ── SNAP 4: Our Top Products ──────────────────────────────────────── */}
-      <div className="snap-start md:h-dvh">
+      {/* <div className="snap-start md:h-dvh">
         <OurTopProduct />
-      </div>
+      </div> */}
 
       {/* ── SNAP 5: Home Solutions Info ───────────────────────────────────── */}
       <div className="snap-start md:h-dvh">

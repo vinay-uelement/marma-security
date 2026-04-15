@@ -677,6 +677,14 @@ img {
   background-size: 0.75rem;
 }
 
+.footer-form-select {
+  @apply appearance-none;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6683 15.554L0 3.8885L3.89125 0L11.6683 7.777L19.4452 0L23.3365 3.8885L11.6683 15.554Z' fill='%23989898'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 0.75rem;
+}
+
 .contact-submit-text {
   @apply font-body font-medium text-[20px];
 }

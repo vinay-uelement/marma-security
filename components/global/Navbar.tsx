@@ -44,6 +44,11 @@ const solutionDropdownItems = [
     href: "/solutions/education",
     title: "Education",
     description: "Secure academic institutions, research data, and student privacy across distributed campus networks.",
+  },
+  {
+    href: "/solutions/Residential",
+    title: "Residential/commercial projects",
+    description: "Secure residential and commercial projects with advanced cybersecurity solutions.",
   }
 ];
 

@@ -43,19 +43,20 @@ const heroProducts = [
     alt: "SafeCloud Product",
   },
   {
-    id: "safehome",
-    href: "?tab=home&product=safehome",
-    label: "SafeHome",
-    image: "/images/banners/solution-banner-right1.webp",
-    alt: "SafeHome Product",
-  },
-  {
     id: "safebiz",
     href: "?tab=smb&product=safebiz",
     label: "SafeBiz",
     image: "/images/banners/homepage-right-banner1.webp",
     alt: "SafeBiz Product",
   },
+  {
+    id: "safehome",
+    href: "?tab=home&product=safehome",
+    label: "SafeHome",
+    image: "/images/banners/solution-banner-right1.webp",
+    alt: "SafeHome Product",
+  },
+
 
 ];
 

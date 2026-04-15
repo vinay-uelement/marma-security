@@ -219,4 +219,33 @@ export const industriesData: Record<string, IndustryData> = {
       }
     ]
   },
+  Residential: {
+    hero: {
+      description: "Protect your educational institution with advanced protection from Phishing, Ransomware, Advanced Persistent Threats (APTs), Social Engineering, and other cyber threats. Marma Security SafeEnterprise 100 delivers enterprise-grade cybersecurity, designed to safeguard student records, research data, and campus networks. With simplified deployment and AI-powered threat detection, SafeEnterprise 100 ensures schools, colleges, and universities can swiftly implement comprehensive cybersecurity measures, protecting sensitive information, preventing disruptions to learning, and maintaining compliance with FERPA and other data privacy regulations.",
+      imageSrc: "/images/banners/homepage-banner.webp",
+      buttonText: "Learn more about SafeEnterprise 100",
+    },
+    sections: [
+      {
+        title: <>Phishing and Social Engineering: The Top Cyber Threat Targeting Educational Institutions</>,
+        content: <><strong>Phishing attacks</strong> are the most prevalent <strong>cyber threat facing educational institutions</strong>, with cybercriminals targeting students, faculty, and administrative staff through deceptive emails, fake login portals, and impersonation scams. Schools and universities hold vast amounts of <strong>personally identifiable information (PII)</strong>, making them lucrative targets. In 2023, <strong>90% of higher education institutions reported being targeted by phishing campaigns</strong> (Educause). Additionally, <strong>the education sector experienced a 44% increase in social engineering attacks</strong> compared to the previous year, with attackers exploiting the open, collaborative nature of academic environments (Verizon DBIR 2023).<br /><br />Marma SafeBiz provides <strong>cybersecurity for educational institutions</strong>, offering <strong>AI-driven phishing detection</strong>, <strong>email security</strong>, and <strong>real-time threat monitoring</strong> to protect campus networks. Safeguard your students, faculty, and research data—<strong>secure your institution today.</strong></>,
+        imageSrc: "/images/solutions/healthcare-solution.webp"
+      },
+      {
+        title: <>Ransomware in Education: Locking Down Learning</>,
+        content: <><strong>Ransomware attacks</strong> have surged across the <strong>education sector</strong>, crippling school operations, exam systems, and administrative networks. Cybercriminals exploit outdated infrastructure and limited IT budgets to encrypt critical data and demand massive ransom payments. In <strong>2023, 80% of K-12 schools and 79% of higher education institutions reported ransomware attacks</strong>, the highest rate across all industries surveyed (Sophos). The <strong>average cost of recovery for an educational institution reached $1.42 million</strong>, including downtime, data restoration, and reputational damage. With <strong>only 4% of education victims able to recover within a day</strong>, the operational impact is devastating.<br /><br />Marma SafeBiz offers <strong>ransomware protection for schools and universities</strong>, providing <strong>real-time ransomware detection</strong>, <strong>automated backup solutions</strong>, and <strong>network security</strong> to ensure uninterrupted learning. <strong>Don't let ransomware shut down your campus—protect your institution today.</strong></>,
+        imageSrc: "/images/solutions/hospital-banner.webp"
+      },
+      {
+        title: <>Student Data Protection:<br />Safeguarding Privacy and Compliance</>,
+        content: <>Educational institutions manage enormous volumes of <strong>sensitive student data</strong>—including academic records, financial aid information, Social Security numbers, and health records—making them a <strong>high-value target for cybercriminals</strong>. A single breach can expose thousands of students to <strong>identity theft, fraud, and long-term privacy violations</strong>.<br /><br />In 2023, <strong>over 36 million student records were exposed</strong> through data breaches in the education sector (Comparitech). Compliance with <strong>FERPA (Family Educational Rights and Privacy Act)</strong> requires institutions to implement adequate safeguards, yet <strong>only 25% of universities have a dedicated cybersecurity team</strong> (Educause). Failure to protect student data can result in federal funding loss and legal liability.<br /><br />Marma SafeBiz provides <strong>data protection for educational institutions</strong>, offering <strong>encrypted data storage</strong>, <strong>access control management</strong>, and <strong>continuous compliance monitoring</strong> to meet <strong>FERPA, COPPA, and state-level privacy standards</strong>. Protect student privacy before a breach happens—<strong>secure your systems today.</strong></>,
+        imageSrc: "/images/about/mission.png"
+      },
+      {
+        title: <>Campus Network Vulnerabilities:<br />Securing the Connected Classroom</>,
+        content: <>Modern campuses are <strong>hyper-connected environments</strong> with thousands of IoT devices, BYOD laptops, smart classroom equipment, and research lab systems all sharing a single network. This massive <strong>attack surface</strong> makes universities and schools uniquely vulnerable to <strong>lateral movement attacks, DDoS disruptions, and unauthorized access</strong>.<br /><br />The education sector experienced <strong>2,507 cyberattacks per institution per week in 2023</strong>, a <strong>12% increase</strong> from the previous year—making it the most attacked industry globally (Check Point Research). <strong>Unsecured IoT devices accounted for 34% of network intrusions</strong> in academic environments, while <strong>BYOD policies without proper endpoint security</strong> created persistent vulnerabilities across campus networks.<br /><br />Marma SafeBiz delivers <strong>network security for educational institutions</strong>, featuring <strong>zero-trust architecture</strong>, <strong>IoT device monitoring</strong>, and <strong>endpoint protection</strong> to secure every device on campus. With seamless integration and no software installation required, SafeBiz keeps your <strong>connected classroom safe without disrupting learning</strong>. <strong>Future-proof your campus security today.</strong></>,
+        imageSrc: "/images/technology/ai-section.webp"
+      }
+    ]
+  },
 };
