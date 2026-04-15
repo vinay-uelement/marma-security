@@ -33,7 +33,7 @@ export default function Home() {
   const phrases = ["Enterprises", "Small Businesses", "Homes"];
 
   const images = [
-    "/images/product/SafeEnterprise4001.webp",
+    "/images/product/marma-enterprise.webp",
     "/images/banners/homepage-right-banner1.webp",
     "/images/banners/solution-banner-right1.webp",
   ];
@@ -46,8 +46,8 @@ export default function Home() {
 
   const backgrounds = [
     "/images/home/Security_Images (1).webp",
+    "/images/home/Quick & Effortless Setup.webp",
     "/images/home/Security_Images (2).webp",
-    "/images/home/Security_Images (3).webp",
   ];
 
   const [index, setIndex] = useState(0);
