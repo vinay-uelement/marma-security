@@ -16,6 +16,9 @@ const CybercrimeStats = dynamic(
 const BadNewsStats = dynamic(
   () => import("@/components/home/BadNewsStats"),
 );
+const TabletShowcase = dynamic(
+  () => import("@/components/home/TabletShowcase"),
+);
 const SecurityCards = dynamic(() => import("@/components/home/SecurityCards"));
 const HomeSolutionsInfo = dynamic(
   () => import("@/components/home/HomeSolutionsInfo"),
@@ -103,6 +106,11 @@ export default function Home() {
       {/* ── SNAP 1.5: Bad News Stats ──────────────────────────────────────── */}
       <div className="snap-start md:h-dvh flex items-center bg-[#FFFFFF]">
         <BadNewsStats />
+      </div>
+
+      {/* ── SNAP 1.6: Tablet Showcase ─────────────────────────────────────── */}
+      <div className="snap-start">
+        <TabletShowcase />
       </div>
 
       {/* ── SNAP 2: Cybercrime Stats ──────────────────────────────────────── */}
