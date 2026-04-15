@@ -150,7 +150,7 @@ export default function Testimonial() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`relative bg-bg-card border border-border-card rounded-[19px] px-[18px] py-[24px] flex flex-row flex-shrink-0 w-full max-w-full min-w-0 sm:w-[72vw] md:w-[47vw] lg:w-[32vw] xl:w-[430px] snap-center md:snap-start overflow-hidden ${index === testimonials.length - 1 ? "sm:mr-6" : ""
+              className={`relative bg-bg-card border border-border-card rounded-[19px] px-[18px] py-[24px] flex flex-row flex-shrink-0 w-full max-w-full min-w-0 sm:w-[72vw] md:w-[47vw] lg:w-[32vw] xl:w-[430px] snap-center md: overflow-hidden ${index === testimonials.length - 1 ? "sm:mr-6" : ""
                 }`}
             >
               {/* Quote Icon */}

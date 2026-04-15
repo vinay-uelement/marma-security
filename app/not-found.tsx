@@ -6,7 +6,7 @@ import Button from "@/components/global/Button";
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#FFFFFF] snap-start">
+    <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
       <Banner
         backgroundImage="/images/banners/homepage-banner.webp"
         heightVariant="900"

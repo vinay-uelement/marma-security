@@ -8,7 +8,7 @@ import { submitContactForm } from "@/lib/contactApi";
 export default function Footer() {
   const pathname = usePathname();
   return (
-    <footer className={`footer-container snap-end`}>
+    <footer className={`footer-container`}>
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row justify-between w-full gap-0 lg:gap-24">
           <div className="flex flex-col h-full grow">

@@ -13,7 +13,7 @@ export default function PartnersPage() {
       {/* Centered Hero Banner (Similar to TechnologyBanner) */}
 
       <section
-        className="relative w-full min-h-[100vh] flex flex-col overflow-x-clip snap-start"
+        className="relative w-full min-h-[100vh] flex flex-col overflow-x-clip"
         style={{
           backgroundImage: `url('/images/banners/banner-partners.webp')`,
           backgroundSize: "cover",
@@ -67,10 +67,10 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      <div className="snap-start">
+      <div className="">
         <SimplifyLife />
       </div>
-      <div className="snap-start">
+      <div className="">
         <PartnersBottomBanner />
       </div>
     </main>

@@ -30,7 +30,7 @@ export default async function IndustrySolutionPage({ params }: { params: Promise
   const ctaLink = productLinks[industryKey] || "/product?tab=smb&product=safebiz";
 
   return (
-    <main className="flex min-h-screen flex-col bg-[#F3F4F6] snap-start">
+    <main className="flex min-h-screen flex-col bg-[#F3F4F6]">
       {/* Hero Section */}
       <section className="relative w-full pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto flex flex-col md:flex-row items-center gap-12">
         <div className="flex-1 flex flex-col justify-center max-w-2xl">

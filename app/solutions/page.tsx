@@ -61,7 +61,7 @@ export default async function SolutionsPage() {
 
   return (
     <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
-      <div className="snap-start md:pt-0">
+      <div className=" md:pt-0">
         <Banner
           backgroundImage="/images/banners/banner-solution.png"
           heightVariant="900"
@@ -105,11 +105,11 @@ export default async function SolutionsPage() {
         />
       </div>
 
-      <div className="snap-start">
+      <div className="">
         <SolutionsTabs solutionData={solutionData} />
       </div>
 
-      <div className="snap-start pt-16">
+      <div className=" pt-16">
         <SolutionsInfo />
       </div>
     </main>

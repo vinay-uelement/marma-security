@@ -43,7 +43,7 @@ export default function TechnologyPage() {
   return (
     <main className="w-full bg-[#FFFFFF] min-h-screen">
       {/* The new dedicated Technology Banner */}
-      <div className="snap-start">
+      <div className="">
         <TechnologyBanner
           title={
             <>
@@ -64,12 +64,12 @@ export default function TechnologyPage() {
       </div>
 
       {/* The Marma Advantage Section */}
-      <div className="snap-start">
+      <div className="">
         <TheMarmaAdvantage />
       </div>
 
       {/* The Advanced Architecture Layout Block */}
-      <div className="snap-start">
+      <div className="">
         <AdvancedArchitecture />
       </div>
     </main>

@@ -14,7 +14,7 @@ export default function ContactUsPage() {
 
     return (
         <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
-            <div className="snap-start md:pt-0 pt-24">
+            <div className=" md:pt-0 pt-24">
                 <Banner
                     backgroundImage="/images/banners/banner-contact-new1.webp"
                     heightVariant="900"
@@ -47,7 +47,7 @@ export default function ContactUsPage() {
                 />
             </div>
 
-            <div className="snap-start pt-24">
+            <div className=" pt-24">
                 <ContactSection />
             </div>
 

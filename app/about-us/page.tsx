@@ -44,7 +44,7 @@ export default function PartnersPage() {
   return (
     <main className="w-full flex-grow flex flex-col">
       {/* Centered Hero Banner */}
-      <div className="snap-start">
+      <div className="">
         <section
           className="relative w-full min-h-[100vh] flex justify-center items-center overflow-x-clip py-28 md:py-32"
           style={{
@@ -89,7 +89,7 @@ export default function PartnersPage() {
         </section>
       </div>
 
-      {false && <div className="snap-start">
+      {false && <div className="">
         <section className="w-full bg-[#FFFFFF]">
           <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-12 md:pt-20">
             {/* Header */}
@@ -135,7 +135,7 @@ export default function PartnersPage() {
         </section>
       </div>}
 
-      <div className="snap-start pt-24">
+      <div className=" pt-24">
         <StatsSection />
       </div>
     </main>
