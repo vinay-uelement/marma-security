@@ -13,6 +13,9 @@ import AdvancedArchitecture from "@/components/technology/AdvancedArchitecture";
 const CybercrimeStats = dynamic(
   () => import("@/components/home/CybercrimeStats"),
 );
+const BadNewsStats = dynamic(
+  () => import("@/components/home/BadNewsStats"),
+);
 const SecurityCards = dynamic(() => import("@/components/home/SecurityCards"));
 const HomeSolutionsInfo = dynamic(
   () => import("@/components/home/HomeSolutionsInfo"),
@@ -97,6 +100,11 @@ export default function Home() {
         />
       </div>
 
+      {/* ── SNAP 1.5: Bad News Stats ──────────────────────────────────────── */}
+      <div className="snap-start md:h-dvh flex items-center bg-[#FFFFFF]">
+        <BadNewsStats />
+      </div>
+
       {/* ── SNAP 2: Cybercrime Stats ──────────────────────────────────────── */}
       <div className="snap-start md:h-dvh">
         <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-8 lg:px-12 pt-0 md:pt-24 bg-[#FFFFFF] relative">
@@ -143,9 +151,9 @@ export default function Home() {
       </div>
 
       {/* ── SNAP 7: Protection Banner ─────────────────────────────────────── */}
-      <div className="snap-start md:h-dvh">
+      {/* <div className="snap-start md:h-dvh">
         <ProtectionBanner />
-      </div>
+      </div> */}
 
       {/* ── SNAP 8: How We Protect ────────────────────────────────────────── */}
       <div className="snap-start">
@@ -153,9 +161,9 @@ export default function Home() {
       </div>
 
       {/* ── SNAP 9: Testimonial ───────────────────────────────────────────── */}
-      <div className="snap-start md:h-dvh">
+      {/* <div className="snap-start md:h-dvh">
         <Testimonial />
-      </div>
+      </div> */}
       <div className="snap-start">
         <AdvancedArchitecture />
       </div>
