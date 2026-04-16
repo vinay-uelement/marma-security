@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Button from "./Button";
 import { usePathname } from "next/navigation";
+import CustomSelect from "./CustomSelect";
 import { submitContactForm } from "@/lib/contactApi";
 
 export default function Footer() {
@@ -462,21 +463,29 @@ function FooterContactForm() {
         required
         disabled={isSubmitting}
       />
-      <select
-        name="subject"
+      
+      <CustomSelect
+        options={[
+          { value: "sales-agent", label: "Becoming a Sales Agent" },
+          { value: "partnership", label: "Partnership" },
+          { value: "investors", label: "Investors" },
+          { value: "product-question", label: "Product Questions" },
+          { value: "other", label: "Other" },
+        ]}
         value={formData.subject}
-        onChange={handleChange}
-        className={`footer-form-select footer-input-field ${formData.subject === '' ? 'text-[#FFFFFFCC]!' : 'text-white!'}`}
-        required
+        placeholder="Area of interest"
+        onChange={(val) => setFormData({ ...formData, subject: val })}
         disabled={isSubmitting}
-      >
-        <option value="" disabled>Area of interest</option>
-        <option value="sales-agent">Becoming a Sales Agent</option>
-        <option value="partnership">Partnership</option>
-        <option value="investors">Investors</option>
-        <option value="product-question">Product Questions</option>
-        <option value="other">Other</option>
-      </select>
+        triggerClassName="footer-input-field"
+        menuClassName="bg-[#1A1818] border-white/20"
+        activeOptionClassName="bg-brand-red text-white"
+        hoverOptionClassName="hover:bg-white/10 hover:text-white"
+        placeholderColorClass="text-[#FFFFFFCC]"
+        valueColorClass="text-white"
+        arrowColor="white"
+        openDirection="down"
+      />
+
       <input
         type="tel"
         name="phone"
@@ -497,9 +506,11 @@ function FooterContactForm() {
       />
 
 
+
       <div className="flex justify-center lg:justify-end pt-3">
         <Button icon label={isSubmitting ? "Submitting..." : "Submit"} />
       </div>
     </form>
   );
 }
+

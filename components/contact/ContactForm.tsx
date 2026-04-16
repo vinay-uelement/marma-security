@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../global/Button';
+import CustomSelect from '../global/CustomSelect';
 import { submitContactForm } from '@/lib/contactApi';
 
 interface ContactFormProps {
@@ -94,21 +95,27 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
 
                 {/* Row 2: Subject + Phone */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    <select
-                        name="subject"
+                    <CustomSelect
+                        options={[
+                            { value: "sales-agent", label: "Becoming a Sales Agent" },
+                            { value: "partnership", label: "Partnership" },
+                            { value: "investors", label: "Investors" },
+                            { value: "product-question", label: "Product Questions" },
+                            { value: "other", label: "Other" },
+                        ]}
                         value={formData.subject}
-                        onChange={handleChange}
-                        className={`contact-form-select ${formData.subject === '' ? 'text-[#989898]' : 'text-text-dark'}`}
-                        required
+                        placeholder="Area of interest"
+                        onChange={(val) => setFormData({ ...formData, subject: val })}
                         disabled={isSubmitting}
-                    >
-                        <option value="" disabled>Area of interest</option>
-                        <option value="sales-agent">Becoming a Sales Agent</option>
-                        <option value="partnership">Partnership</option>
-                        <option value="investors">Investors</option>
-                        <option value="product-question">Product Questions</option>
-                        <option value="other">Other</option>
-                    </select>
+                        triggerClassName="contact-form-input"
+                        menuClassName="bg-white border-[#E5E5E5]"
+                        activeOptionClassName="bg-brand-red text-white"
+                        hoverOptionClassName="hover:bg-black/5"
+                        placeholderColorClass="text-[#989898]"
+                        valueColorClass="text-text-dark"
+                        arrowColor="#989898"
+                        openDirection="down"
+                    />
                     <input
                         type="tel"
                         name="phone"
