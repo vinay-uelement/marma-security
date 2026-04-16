@@ -36,6 +36,7 @@ import HighlightedText from "@/components/global/HighlightedText";
 import Banner from "@/components/global/Banner";
 import OurTeam from "@/components/about/OurTeam";
 import StatsSection from "@/components/about/StatsSection";
+import WhoWeAre from "@/components/about/WhoWeAre";
 import Image from "next/image";
 import AdvancedArchitecture from "@/components/technology/AdvancedArchitecture";
 import DecorativeLine from "@/components/home/DecorativeLine";
@@ -87,6 +88,10 @@ export default function PartnersPage() {
             </div>
           </div>
         </section>
+      </div>
+
+      <div className="">
+        <WhoWeAre />
       </div>
 
       {false && <div className="">
