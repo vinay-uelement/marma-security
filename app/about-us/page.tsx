@@ -140,9 +140,7 @@ export default function PartnersPage() {
         </section>
       </div>}
 
-      <div className=" pt-24">
-        <StatsSection />
-      </div>
+      <StatsSection />
     </main>
   );
 }

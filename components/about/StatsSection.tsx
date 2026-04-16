@@ -49,17 +49,17 @@ const AnimatedCounter = ({ stat }: { stat: StatItem }) => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     const ctx = gsap.context(() => {
       const obj = { val: 0 };
-    
+
       gsap.to(obj, {
         val: stat.value,
         duration: 2.5,
         ease: "power2.out",
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 85%", 
+          start: "top 85%",
           once: true,
         },
         onUpdate: () => {
@@ -84,7 +84,7 @@ const AnimatedCounter = ({ stat }: { stat: StatItem }) => {
 export default function StatsSection() {
   return (
     <section className="relative w-full py-0 overflow-hidden">
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-10 md:py-16 lg:py-20 ">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 pb-5 md:pb-8 lg:pb-10 ">
         {/* Stats Glass Card */}
         <div className="p-[10px] md:p-[71px] lg:p-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 [@media(min-width:1176px)]:grid-cols-4 gap-2 md:gap-8 [@media(min-width:1176px)]:gap-10 my-[10px] md:my-0">

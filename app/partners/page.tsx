@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import HighlightedText from "@/components/global/HighlightedText";
 import PartneringMadeEasy from "@/components/partners/PartneringMadeEasy";
+import PartnerBenefits from "@/components/partners/PartnerBenefits";
 import SimplifyLife from "@/components/partners/SimplifyLife";
 import PartnersBottomBanner from "@/components/partners/PartnersBottomBanner";
 import Button from "@/components/global/Button";
@@ -83,6 +84,7 @@ export default function PartnersPage() {
         />
       </div>
       <PartneringMadeEasy />
+      <PartnerBenefits />
       <SimplifyLife />
       <PartnersBottomBanner />
       <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

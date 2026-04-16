@@ -45,15 +45,17 @@ export default function WhoWeAre() {
             </h2>
 
             <h3 className="text-xl md:text-[22px] font-bold text-[#323232] mt-12 md:mt-16 leading-snug">
-              Marma installs in under five minutes and begins protecting
+              We’re Making Enterprise-Grade Network Security Simple and Accessible for Everyone
             </h3>
 
             <p className="text-[#666666] text-sm md:text-base leading-relaxed mt-4 max-w-[500px]">
-              Marma installs in under five minutes and begins protecting your
-              network immediately. Designed with simplicity at its core, it
-              requires no technical knowledge, manual configurations, or ongoing
-              maintenance. Once set up, Marma runs automatically in the
-              background, continuously monitoring and
+              In a world where cyber threats are rising and impacting everyday lives, Marma Security was founded with a clear purpose — to make cybersecurity simple, accessible, and effective for everyone.
+
+              We build AI-powered, plug-and-play security solutions that protect enterprises, businesses, homes, and smart devices from evolving digital threats. Our platform works proactively to detect and stop attacks—before they cause damage—without requiring deep technical expertise.
+
+              At our core, we believe cybersecurity should not be complicated or limited to experts. It should be effortless, intelligent, and available to all.
+
+              Because at Marma Security, we’re not just securing systems—we’re securing lives.
             </p>
           </div>
 
@@ -98,11 +100,7 @@ export default function WhoWeAre() {
               />
             </h2>
             <p className="text-[#666666] text-sm md:text-base leading-relaxed max-w-[500px]">
-              Marma installs in under five minutes and begins protecting your
-              network immediately. Designed with simplicity at its core, it
-              requires no technical knowledge, manual configurations, or
-              ongoing maintenance. Once set up, Marma runs automatically
-              in the background, continuously monitoring and
+              To empower organizations and individuals with simple, intelligent, and always-on cybersecurity solutions that proactively prevent threats before they cause harm.
             </p>
           </div>
 
@@ -117,11 +115,7 @@ export default function WhoWeAre() {
               />
             </h2>
             <p className="text-[#666666] text-sm md:text-base leading-relaxed max-w-[500px]">
-              Marma installs in under five minutes and begins protecting your
-              network immediately. Designed with simplicity at its core, it
-              requires no technical knowledge, manual configurations, or
-              ongoing maintenance. Once set up, Marma runs automatically in
-              the background, continuously monitoring and
+              To create a digitally secure world where every individual, business, and smart device is protected from evolving cyber threats.
             </p>
           </div>
         </div>
