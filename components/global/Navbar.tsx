@@ -47,7 +47,7 @@ const solutionDropdownItems = [
   },
   {
     href: "/solutions/Residential",
-    title: "Residential/commercial projects",
+    title: "Residential & Commercial Projects",
     description: "Secure residential and commercial projects with advanced cybersecurity solutions.",
   }
 ];

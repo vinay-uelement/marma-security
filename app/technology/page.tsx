@@ -68,10 +68,6 @@ export default function TechnologyPage() {
         <TheMarmaAdvantage />
       </div>
 
-      {/* The Advanced Architecture Layout Block */}
-      <div className="">
-        <AdvancedArchitecture />
-      </div>
     </main>
   );
 }

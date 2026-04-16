@@ -114,7 +114,7 @@ export default function TheMarmaAdvantage() {
   }
 
   return (
-    <section className="w-full bg-[#FFFFFF] pt-20 md:pt-32 pb-16 md:pb-28 relative z-0 overflow-hidden">
+    <section id="marma-advantage" className="w-full bg-[#FFFFFF] pt-20 md:pt-32 pb-16 md:pb-28 relative z-0 overflow-hidden">
       {/* Decorative ambient background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
         <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(255,0,0,0.03)_0%,rgba(255,255,255,0)_70%)] blur-[60px]" />

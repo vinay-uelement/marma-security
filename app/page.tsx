@@ -20,6 +20,9 @@ const TabletShowcase = dynamic(
   () => import("@/components/home/TabletShowcase"),
 );
 const SecurityCards = dynamic(() => import("@/components/home/SecurityCards"));
+const MobileAppShowcase = dynamic(
+  () => import("@/components/home/MobileAppShowcase"),
+);
 const HomeSolutionsInfo = dynamic(
   () => import("@/components/home/HomeSolutionsInfo"),
 );
@@ -138,10 +141,15 @@ export default function Home() {
         <CybercrimeStats />
       </div>
 
-      {/* ── SNAP 3: Security Cards ────────────────────────────────────────── */}
-      <div className=" md:h-dvh">
-        <SecurityCards />
+      {/* ── SNAP 2.5: Mobile App Showcase ─────────────────────────────────── */}
+      <div className="bg-[#FFFFFF]">
+        <MobileAppShowcase />
       </div>
+
+      {/* ── SNAP 3: Security Cards ────────────────────────────────────────── */}
+      {/* <div className=" md:h-dvh">
+        <SecurityCards />
+      </div> */}
 
       {/* ── SNAP 4: Our Top Products ──────────────────────────────────────── */}
       {/* <div className=" md:h-dvh">
