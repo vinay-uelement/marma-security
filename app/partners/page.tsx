@@ -3,10 +3,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import HighlightedText from "@/components/global/HighlightedText";
+import PartneringMadeEasy from "@/components/partners/PartneringMadeEasy";
 import SimplifyLife from "@/components/partners/SimplifyLife";
 import PartnersBottomBanner from "@/components/partners/PartnersBottomBanner";
 import Button from "@/components/global/Button";
 import ContactModal from "@/components/contact/ContactModal";
+import DecorativeLine from "@/components/home/DecorativeLine";
 
 export default function PartnersPage() {
 
@@ -62,12 +64,27 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      <div className="">
-        <SimplifyLife />
+      <div className="flex flex-col w-[50%] sm:w-[40%] min-[901px]:w-[35%] ml-auto pointer-events-none z-0 mt-4 md:mt-10">
+        <DecorativeLine
+          viewBox="0 0 500 80"
+          points="-3000,40 200,40"
+          dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
+          className="w-full h-auto scale-x-[-1]"
+          dotRadius={6}
+          animationDuration={2.5}
+        />
+        <DecorativeLine
+          viewBox="0 0 500 120"
+          points="150,20 210,90 3000,90"
+          dots={[{ cx: 150, cy: 20, rippleCount: 4, rippleBaseDelay: 0.9 }]}
+          className="w-full h-auto -mt-10 md:-mt-24"
+          dotRadius={7}
+          animationDuration={3}
+        />
       </div>
-      <div className="">
-        <PartnersBottomBanner />
-      </div>
+      <PartneringMadeEasy />
+      <SimplifyLife />
+      <PartnersBottomBanner />
       <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </main>
   );

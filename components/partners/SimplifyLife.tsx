@@ -77,28 +77,7 @@ export default function SimplifyLife() {
           Your Life.
         </h2>
 
-        {/* Decorative Red Line Graphic */}
-        <div
-          className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-0 md:mt-12
-           min-[901px]:mt-0 pointer-events-none z-0"
-        >
-          <DecorativeLine
-            viewBox="0 0 500 80"
-            points="-3000,40 200,40"
-            dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
-            className="w-full h-auto scale-x-[-1]"
-            dotRadius={6}
-            animationDuration={2.5}
-          />
-          <DecorativeLine
-            viewBox="0 0 500 120"
-            points="150,20 210,90 3000,90"
-            dots={[{ cx: 150, cy: 20, rippleCount: 4, rippleBaseDelay: 0.9 }]}
-            className="w-full h-auto -mt-10 md:-mt-28"
-            dotRadius={7}
-            animationDuration={3}
-          />
-        </div>
+
       </div>
 
       {/* Features List Layout */}
