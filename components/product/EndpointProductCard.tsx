@@ -18,7 +18,7 @@ export default function EndpointProductCard({
   imageAlt,
 }: EndpointProductCardProps) {
   return (
-    <div className="w-full rounded-2xl bg-[#F5F5F5] p-5 sm:p-6 lg:p-7 flex flex-col gap-5">
+    <div className="w-full h-full rounded-2xl bg-[#F5F5F5] p-5 sm:p-6 lg:p-7 flex flex-col gap-5">
       {/* Header */}
       <div className="flex items-center gap-3 flex-wrap">
         <span className="fl5-1">
@@ -56,7 +56,7 @@ export default function EndpointProductCard({
         </div>
 
         {/* Image */}
-        <div className="relative w-full sm:w-[45%] lg:w-[42%] aspect-square sm:aspect-[4/3] rounded-xl overflow-hidden bg-[#D9D9D9] shrink-0">
+        <div className="relative w-full sm:w-[45%] lg:w-[60%] aspect-square sm:aspect-[4/3] rounded-xl overflow-hidden bg-[#D9D9D9] shrink-0">
           {image ? (
             <Image
               src={image}

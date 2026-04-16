@@ -158,7 +158,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
       <div className="max-md:px-6">
         <div className={productSectionClassName}>
           <div className="flex flex-col gap-8 lg:flex-row lg:gap-6">
-            <div className="flex flex-col lg:w-1/2">
+            <div className="flex flex-col h-full lg:w-1/2">
               <div className={productHalfSectionTitleClassName}>
                 Endpoint Protection Software
               </div>
@@ -177,7 +177,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                 />
               </div>
             </div>
-            <div className="flex flex-col lg:w-1/2">
+            <div className="flex flex-col h-full lg:w-1/2">
               <div className={productHalfSectionTitleClassName}>
                 Cloud Security Services
               </div>
@@ -208,6 +208,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               name="SIEM Integration Services"
               tagline="Enterprise SIEM"
               primaryFeature="Custom integration with 3rd-party Enterprise SIEM solutions."
+              image="/images/product/software/seim.webp"
               features={[]}
             />
             <EndpointProductCard
