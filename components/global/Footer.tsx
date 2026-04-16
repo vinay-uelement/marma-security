@@ -466,7 +466,7 @@ function FooterContactForm() {
         name="subject"
         value={formData.subject}
         onChange={handleChange}
-        className={`footer-form-select footer-input-field ${formData.subject === '' ? 'text-[#989898]' : 'text-text-dark'}`}
+        className={`footer-form-select footer-input-field ${formData.subject === '' ? 'text-[#FFFFFFCC]!' : 'text-white!'}`}
         required
         disabled={isSubmitting}
       >
