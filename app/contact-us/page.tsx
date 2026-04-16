@@ -41,15 +41,13 @@ export default function ContactUsPage() {
                             icon: true,
                         },
                     ]}
-                    rightImage="/images/banners/banner-contact-us-mobile.webp"
+                    rightImage="/images/about/hero_about_us.webp"
                     rightImageAlt="Marma Security Mobile App"
-                    rightImageClassName="!w-[40vh] right-[70%] md:!w-[681px] md:!h-[513px] md:!bottom-[-35px]"
+                    rightImageClassName="!w-[40vh] right-[70%] md:!w-[681px] md:!h-[513px] rounded-xl! md:!bottom-[-35px]"
                 />
             </div>
 
-            <div className=" pt-24">
-                <ContactSection />
-            </div>
+            <ContactSection />
 
             <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </main>

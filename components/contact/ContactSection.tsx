@@ -42,7 +42,7 @@ export default function ContactSection() {
     faqs.forEach((_, i) => {
       const el = faqRefs.current[i];
       if (!el) return;
-      
+
       if (openIndex === i) {
         gsap.to(el, {
           height: "auto",
@@ -82,7 +82,7 @@ export default function ContactSection() {
           <div className="flex flex-col justify-start">
             <div className="mt-10" />
 
-            <h3 className="fl3-3 font-bold!">Get advice any time.</h3>
+            <h3 className="fl2-3 font-bold!">Get advice any time.</h3>
 
             <p className="fl5-2 text-text-dark mt-3 max-w-[520px]">
               Connect with our team for reliable, expert guidance
@@ -91,12 +91,12 @@ export default function ContactSection() {
           </div>
 
           {/* RIGHT SECTION: IMAGE */}
-          <div className="w-full h-[320px] md:h-[400px] relative rounded-[20px] overflow-hidden">
+          <div className="w-full h-[320px] md:h-[400px] relative rounded-[20px] overflow-hidden border border-gray-200 shadow-2xl">
             <Image
-              src="/images/contact/contact-us-page-image.webp" // replace if needed
+              src="/images/about/get-advice-any-time.webp"
               alt="Contact"
               fill
-              className="object-cover"
+              className="object-cover scale-110"
             />
           </div>
         </div>

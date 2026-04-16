@@ -22,7 +22,7 @@ export interface BannerProps {
   buttons?: BannerButton[];
   rightImage?: string;
   rightImageAlt?: string;
-  
+
   showRightImageCircle?: boolean;
   titleClassName?: string;
   rightImageClassName?: string;
@@ -51,7 +51,7 @@ export default function Banner({
   rightContent,
   ContinerClass = "min-h-[100vh]",
   backgroundSize = "cover",
-sectionClassName = "py-12 md:py-16 lg:py-24"
+  sectionClassName = "py-12 md:py-16 lg:py-24"
 }: BannerProps) {
   // Dynamic height class assignment based on the prop
   const heightMap: Record<string, string> = {
@@ -63,7 +63,7 @@ sectionClassName = "py-12 md:py-16 lg:py-24"
 
   return (
     <section
-className={`relative w-full flex items-start lg:items-center overflow-visible overflow-x-clip ${ContinerClass} ${sectionClassName} ${heightClass}`}
+      className={`relative w-full flex items-start lg:items-center overflow-visible overflow-x-clip ${ContinerClass} ${sectionClassName} ${heightClass}`}
       style={{
         backgroundImage: `url('${backgroundImage}')`,
         backgroundSize: backgroundSize,
@@ -73,9 +73,9 @@ className={`relative w-full flex items-start lg:items-center overflow-visible ov
     >
       {/* Main Content Container inside the Banner */}
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 w-full py-12 lg:py-0">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center h-full justify-items-center lg:justify-items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center h-full justify-items-center lg:justify-items-stretch">
           {/* Left Column: Text, Subtitle, and Buttons */}
-      <div className="flex flex-col space-y-4 md:space-y-6 pb-5 mt-12 md:mt-16 lg:mt-0 text-white z-20 items-center lg:items-start text-center lg:text-left">       {/* Title text */}
+          <div className="flex flex-col space-y-4 md:space-y-6 pb-5 mt-12 md:mt-16 lg:mt-0 text-white z-20 items-center lg:items-start text-center lg:text-left">       {/* Title text */}
             <div className={titleClassName}>{title}</div>
 
             {/* Render Middle Text conditionally */}
@@ -155,13 +155,13 @@ className={`relative w-full flex items-start lg:items-center overflow-visible ov
 
           {/* Right Column: Hero Graphic/Image conditionally */}
           {rightContent ? (
-           <div className="flex justify-center lg:justify-end items-end relative z-20 mt-10 md:mt-16 lg:mt-0 w-full lg:w-auto">
+            <div className="flex justify-center lg:justify-end items-end relative z-20 mt-10 md:mt-16 lg:mt-0 w-full lg:w-auto">
               {rightContent}
             </div>
           ) : (
             rightImage && (
               <div className="flex justify-center lg:justify-end items-center relative z-20 mt-4 lg:mt-0 w-full lg:w-auto">
-              <div className="
+                <div className="
 relative 
 w-full 
 max-w-[260px] 
