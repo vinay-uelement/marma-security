@@ -44,7 +44,7 @@ export default function TabletShowcase() {
 
 
   return (
-    <section ref={sectionRef} className="w-full px-6 lg:px-12 pb-12 sm:pb-24 flex flex-col items-center overflow-hidden bg-[#FFFFFF]" style={{ perspective: "1200px", transformStyle: "preserve-3d" }}>
+    <section ref={sectionRef} className="w-full px-6 lg:px-12 pb-12 sm:pb-24 flex flex-col items-center mt-16 overflow-hidden bg-[#FFFFFF]" style={{ perspective: "1200px", transformStyle: "preserve-3d" }}>
 
       {/* Title Section */}
       <div className="flex flex-col items-center mb-12 sm:mb-20 text-center max-w-4xl mx-auto relative z-10">
