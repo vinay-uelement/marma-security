@@ -63,7 +63,7 @@ export default function WhoWeAre() {
         </div>
 
         {/* Action Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+        {false && <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {cards.map((card, index) => (
             <div
               key={index}
@@ -83,7 +83,7 @@ export default function WhoWeAre() {
               </p>
             </div>
           ))}
-        </div>
+        </div>}
 
         {/* Bottom Section: Mission & Vision */}
         <div className="flex flex-col md:flex-row gap-12 md:gap-16 pt-8 pb-32">

@@ -1,13 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import HighlightedText from "@/components/global/HighlightedText";
 import SimplifyLife from "@/components/partners/SimplifyLife";
 import PartnersBottomBanner from "@/components/partners/PartnersBottomBanner";
 import Button from "@/components/global/Button";
+import ContactModal from "@/components/contact/ContactModal";
 
 export default function PartnersPage() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
+
   return (
     <main className="w-full flex-grow flex flex-col items-center">
       {/* Centered Hero Banner (Similar to TechnologyBanner) */}
@@ -50,17 +55,7 @@ export default function PartnersPage() {
             <div className="flex flex-row items-center justify-center gap-4 sm:gap-6 w-full ">
               {/* Get Started Button */}
               <Link href="#" className="w-full sm:w-auto">
-                <Button icon label="Get Started" className="w-full sm:w-auto whitespace-nowrap" />
-              </Link>
-
-              {/* Learn More Button */}
-              <Link href="#" className="w-full sm:w-auto">
-                <Button
-                  icon
-                  variant="secondary"
-                  label="Learn More"
-                  className="w-full sm:w-auto whitespace-nowrap"
-                />
+                <Button onClick={toggleModal} icon label="Get Started" className="w-full sm:w-auto whitespace-nowrap" />
               </Link>
             </div>
           </div>
@@ -73,6 +68,7 @@ export default function PartnersPage() {
       <div className="">
         <PartnersBottomBanner />
       </div>
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </main>
   );
 }

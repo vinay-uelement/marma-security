@@ -2,6 +2,7 @@ import React from 'react';
 
 export type IndustryData = {
   hero: {
+    title?: string;
     description: string;
     imageSrc: string;
     buttonText: string;
@@ -13,36 +14,6 @@ export type IndustryData = {
   }>;
 };
 
-// Placeholder template function that can generate default content if specific content isn't provided yet
-const getPlaceholderData = (industryName: string): IndustryData => ({
-  hero: {
-    description: `Protect your ${industryName.toLowerCase()} operations with advanced protection from Phishing, Ransomware, Advanced Persistent Threats (APTs), Social Engineering, and other cyber threats. Marma Security SafeBiz delivers enterprise-grade cybersecurity tailored for the ${industryName.toLowerCase()} sector.`,
-    imageSrc: "/images/banners/homepage-banner.webp",
-    buttonText: "Learn more about SafeBiz",
-  },
-  sections: [
-    {
-      title: <>Phishing Scams in {industryName}: A Leading Cause of Data Breaches</>,
-      content: <>Phishing attacks are one of the most common cyber threats in the {industryName.toLowerCase()} industry, where cybercriminals impersonate trusted entities to steal login credentials and access sensitive records.<br /><br />Marma SafeBiz provides cybersecurity solutions, offering AI-driven phishing detection and network security to prevent breaches.</>,
-      imageSrc: "/images/solutions/healthcare-solution.webp"
-    },
-    {
-      title: <>Data Protection:<br />Safeguarding Security</>,
-      content: <>Data is one of the most valuable targets for cybercriminals, making IT security a critical concern in the {industryName.toLowerCase()} sector. Breaches in network security expose sensitive records, leading to identity theft, fraud, and compliance violations.<br /><br />Marma SafeBiz provides cybersecurity solutions, offering secure data storage, encryption, and real-time monitoring to prevent cyberattacks.</>,
-      imageSrc: "/images/solutions/hospital-banner.webp"
-    },
-    {
-      title: <>Growing Internet Connected Devices:<br />The Hidden Risk</>,
-      content: <>The {industryName.toLowerCase()} industry is a prime target for cyber threats, with records, devices, and billing systems at constant risk. A single breach can compromise sensitive information, disrupt operations, and lead to costly legal consequences.<br /><br />SafeBiz provides enterprise-grade cybersecurity securing all connected devices and administrative systems.</>,
-      imageSrc: "/images/about/mission.png"
-    },
-    {
-      title: <>Fighting Back Against<br />Ransomware Attacks</>,
-      content: <>Ransomware is a type of malicious software that locks systems, encrypts records, and demands payment for access.<br /><br />Marma SafeBiz provides cybersecurity, offering real-time ransomware detection, data encryption, and secure network solutions to prevent breaches. Defend your systems before cybercriminals take control.</>,
-      imageSrc: "/images/technology/ai-section.webp"
-    }
-  ]
-});
 
 export const industriesData: Record<string, IndustryData> = {
   healthcare: {
@@ -219,31 +190,32 @@ export const industriesData: Record<string, IndustryData> = {
       }
     ]
   },
-  Residential: {
+  residential: {
     hero: {
-      description: "Protect your educational institution with advanced protection from Phishing, Ransomware, Advanced Persistent Threats (APTs), Social Engineering, and other cyber threats. Marma Security SafeEnterprise 100 delivers enterprise-grade cybersecurity, designed to safeguard student records, research data, and campus networks. With simplified deployment and AI-powered threat detection, SafeEnterprise 100 ensures schools, colleges, and universities can swiftly implement comprehensive cybersecurity measures, protecting sensitive information, preventing disruptions to learning, and maintaining compliance with FERPA and other data privacy regulations.",
+      title: "Cybersecurity Solutions for Residential and Commercial Properties",
+      description: "Protect your residential and commercial properties with advanced protection from Phishing, Ransomware, Advanced Persistent Threats (APTs), Social Engineering, and other cyber threats. Marma Security SafeBiz delivers enterprise-grade cybersecurity designed to safeguard smart building systems, tenant data, surveillance networks, and access control infrastructure. With simplified deployment and AI-powered threat detection, SafeBiz ensures property managers, real estate operators, and facility owners can secure connected systems, prevent unauthorized access, and maintain compliance with modern security standards.",
       imageSrc: "/images/banners/homepage-banner.webp",
-      buttonText: "Learn more about SafeEnterprise 100",
+      buttonText: "Learn more about SafeBiz",
     },
     sections: [
       {
-        title: <>Phishing and Social Engineering: The Top Cyber Threat Targeting Educational Institutions</>,
-        content: <><strong>Phishing attacks</strong> are the most prevalent <strong>cyber threat facing educational institutions</strong>, with cybercriminals targeting students, faculty, and administrative staff through deceptive emails, fake login portals, and impersonation scams. Schools and universities hold vast amounts of <strong>personally identifiable information (PII)</strong>, making them lucrative targets. In 2023, <strong>90% of higher education institutions reported being targeted by phishing campaigns</strong> (Educause). Additionally, <strong>the education sector experienced a 44% increase in social engineering attacks</strong> compared to the previous year, with attackers exploiting the open, collaborative nature of academic environments (Verizon DBIR 2023).<br /><br />Marma SafeBiz provides <strong>cybersecurity for educational institutions</strong>, offering <strong>AI-driven phishing detection</strong>, <strong>email security</strong>, and <strong>real-time threat monitoring</strong> to protect campus networks. Safeguard your students, faculty, and research data—<strong>secure your institution today.</strong></>,
+        title: <>Smart Building Vulnerabilities: The Hidden Cyber Risk</>,
+        content: <>Modern residential and commercial properties rely heavily on connected systems—CCTV cameras, smart locks, HVAC systems, and IoT-enabled infrastructure. While these technologies improve efficiency and convenience, they also introduce new cybersecurity risks.<br /><br />Unsecured devices and poorly configured networks can allow attackers to gain unauthorized access, monitor activity, or disrupt building operations. A single compromised device can act as an entry point into the entire property network.<br /><br /><strong>Marma SafeBiz</strong> provides cybersecurity solutions for smart buildings, offering <strong>real-time device monitoring</strong>, <strong>network security</strong>, and <strong>threat detection</strong> to protect connected infrastructure. Secure your property from the inside out—before vulnerabilities turn into breaches.</>,
         imageSrc: "/images/solutions/healthcare-solution.webp"
       },
       {
-        title: <>Ransomware in Education: Locking Down Learning</>,
-        content: <><strong>Ransomware attacks</strong> have surged across the <strong>education sector</strong>, crippling school operations, exam systems, and administrative networks. Cybercriminals exploit outdated infrastructure and limited IT budgets to encrypt critical data and demand massive ransom payments. In <strong>2023, 80% of K-12 schools and 79% of higher education institutions reported ransomware attacks</strong>, the highest rate across all industries surveyed (Sophos). The <strong>average cost of recovery for an educational institution reached $1.42 million</strong>, including downtime, data restoration, and reputational damage. With <strong>only 4% of education victims able to recover within a day</strong>, the operational impact is devastating.<br /><br />Marma SafeBiz offers <strong>ransomware protection for schools and universities</strong>, providing <strong>real-time ransomware detection</strong>, <strong>automated backup solutions</strong>, and <strong>network security</strong> to ensure uninterrupted learning. <strong>Don't let ransomware shut down your campus—protect your institution today.</strong></>,
+        title: <>Ransomware Attacks: Disrupting Building Operations</>,
+        content: <>Ransomware attacks can bring property operations to a standstill by locking critical systems such as access control, surveillance, and management software. This can disrupt tenant access, compromise security, and lead to financial and reputational damage.<br /><br />As buildings become more digitally connected, the risk of ransomware targeting property infrastructure continues to grow. Without proper safeguards, recovery can be costly and time-consuming.<br /><br /><strong>Marma SafeBiz</strong> provides <strong>advanced ransomware protection</strong>, <strong>real-time threat detection</strong>, and <strong>secure backup solutions</strong> to ensure business continuity. Don’t let cybercriminals lock down your property—protect your systems today.</>,
         imageSrc: "/images/solutions/hospital-banner.webp"
       },
       {
-        title: <>Student Data Protection:<br />Safeguarding Privacy and Compliance</>,
-        content: <>Educational institutions manage enormous volumes of <strong>sensitive student data</strong>—including academic records, financial aid information, Social Security numbers, and health records—making them a <strong>high-value target for cybercriminals</strong>. A single breach can expose thousands of students to <strong>identity theft, fraud, and long-term privacy violations</strong>.<br /><br />In 2023, <strong>over 36 million student records were exposed</strong> through data breaches in the education sector (Comparitech). Compliance with <strong>FERPA (Family Educational Rights and Privacy Act)</strong> requires institutions to implement adequate safeguards, yet <strong>only 25% of universities have a dedicated cybersecurity team</strong> (Educause). Failure to protect student data can result in federal funding loss and legal liability.<br /><br />Marma SafeBiz provides <strong>data protection for educational institutions</strong>, offering <strong>encrypted data storage</strong>, <strong>access control management</strong>, and <strong>continuous compliance monitoring</strong> to meet <strong>FERPA, COPPA, and state-level privacy standards</strong>. Protect student privacy before a breach happens—<strong>secure your systems today.</strong></>,
+        title: <>Tenant and Operational Data Protection: Ensuring Privacy and Trust</>,
+        content: <>Residential and commercial properties handle sensitive data, including tenant records, payment information, lease agreements, and access credentials. A data breach can expose this information, leading to identity theft, financial loss, and legal consequences.<br /><br />Tenants and clients expect their data to be handled securely, making cybersecurity a critical component of property management.<br /><br /><strong>Marma SafeBiz</strong> offers <strong>secure data storage</strong>, <strong>encryption</strong>, and <strong>continuous monitoring</strong> to protect sensitive information and ensure compliance with data protection regulations. Protect your tenants’ privacy and maintain trust with proactive cybersecurity.</>,
         imageSrc: "/images/about/mission.png"
       },
       {
-        title: <>Campus Network Vulnerabilities:<br />Securing the Connected Classroom</>,
-        content: <>Modern campuses are <strong>hyper-connected environments</strong> with thousands of IoT devices, BYOD laptops, smart classroom equipment, and research lab systems all sharing a single network. This massive <strong>attack surface</strong> makes universities and schools uniquely vulnerable to <strong>lateral movement attacks, DDoS disruptions, and unauthorized access</strong>.<br /><br />The education sector experienced <strong>2,507 cyberattacks per institution per week in 2023</strong>, a <strong>12% increase</strong> from the previous year—making it the most attacked industry globally (Check Point Research). <strong>Unsecured IoT devices accounted for 34% of network intrusions</strong> in academic environments, while <strong>BYOD policies without proper endpoint security</strong> created persistent vulnerabilities across campus networks.<br /><br />Marma SafeBiz delivers <strong>network security for educational institutions</strong>, featuring <strong>zero-trust architecture</strong>, <strong>IoT device monitoring</strong>, and <strong>endpoint protection</strong> to secure every device on campus. With seamless integration and no software installation required, SafeBiz keeps your <strong>connected classroom safe without disrupting learning</strong>. <strong>Future-proof your campus security today.</strong></>,
+        title: <>Connected Infrastructure and Access Control: Securing Every Entry Point</>,
+        content: <>From smart locks and access cards to surveillance systems and remote monitoring platforms, modern properties depend on interconnected systems. Each connection point represents a potential vulnerability if not properly secured.<br /><br />Attackers can exploit weak access controls or unsecured networks to gain entry into systems, manipulate controls, or monitor activity.<br /><br /><strong>Marma SafeBiz</strong> secures every layer of your property’s digital infrastructure with <strong>zero-trust architecture</strong>, <strong>access control protection</strong>, and <strong>continuous monitoring</strong>. Ensure every entry point—physical and digital—is protected.</>,
         imageSrc: "/images/technology/ai-section.webp"
       }
     ]

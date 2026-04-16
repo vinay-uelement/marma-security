@@ -16,6 +16,7 @@ export default async function IndustrySolutionPage({ params }: { params: Promise
 
   // Try to grab specific industry data, or fallback to the generic one (which currently defaults to Healthcare if missing, but we handle missing keys in the data file)
   const data = industriesData[industryKey] || industriesData.healthcare;
+  console.log({ data })
 
   // Product mapping based on industry needs
   const productLinks: Record<string, string> = {
@@ -34,9 +35,13 @@ export default async function IndustrySolutionPage({ params }: { params: Promise
       {/* Hero Section */}
       <section className="relative w-full pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto flex flex-col md:flex-row items-center gap-12">
         <div className="flex-1 flex flex-col justify-center max-w-2xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6">
-            Cybersecurity Solutions <br />
-            for {displayIndustry}
+          <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-black leading-tight mb-6">
+            {data.hero.title ? data.hero.title : (
+              <>
+                Cybersecurity Solutions <br />
+                for {displayIndustry}
+              </>
+            )}
           </h1>
           <p className="text-gray-800 text-[15px] md:text-[17px] leading-relaxed mb-8">
             {data.hero.description}

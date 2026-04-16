@@ -9,6 +9,7 @@ export interface TechnologyBannerProps {
     backgroundImage?: string;
     buttonText?: string;
     buttonLink?: string;
+    isButton?: boolean;
 }
 
 export default function TechnologyBanner({
@@ -16,7 +17,8 @@ export default function TechnologyBanner({
     subtitle,
     backgroundImage = "/images/banners/Technology-banner.webp", // Ensure this matches user's file name
     buttonText = "Explore",
-    buttonLink = "#"
+    buttonLink = "#",
+    isButton = true
 }: TechnologyBannerProps) {
     return (
         <section
@@ -47,7 +49,7 @@ export default function TechnologyBanner({
                 </div>
 
                 {/* Explore Button — vertically centered in the remaining space below subtitle */}
-                {buttonText && (
+                {buttonText && isButton && (
                     <div className="flex-1 flex items-center">
                         <Link href={buttonLink}>
                             <Button icon label={buttonText} />

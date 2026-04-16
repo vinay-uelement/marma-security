@@ -38,6 +38,7 @@ import TheMarmaAdvantage from "@/components/technology/TheMarmaAdvantage";
 import AdvancedArchitecture from "@/components/technology/AdvancedArchitecture";
 import HighlightedText from "@/components/global/HighlightedText";
 import StatsSection from "@/components/about/StatsSection";
+import MobileAppShowcase from "@/components/home/MobileAppShowcase";
 
 export default function TechnologyPage() {
   return (
@@ -59,7 +60,7 @@ export default function TechnologyPage() {
           }
           subtitle="Marma Security's products are powered by a comprehensive suite of enterprise-grade security technologies, all orchestrated through AI-powered automation. The platform uses continuous machine learning, behavioral analysis, and global cloud intelligence to deliver autonomous, predictive protection."
           backgroundImage="/images/banners/Technology-banner.webp"
-          buttonText="Explore"
+          isButton={false}
         />
       </div>
 
@@ -67,7 +68,7 @@ export default function TechnologyPage() {
       <div className="">
         <TheMarmaAdvantage />
       </div>
-
+      <MobileAppShowcase />
     </main>
   );
 }
