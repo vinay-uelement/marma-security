@@ -215,6 +215,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               name="SOC Integration Services"
               tagline="Enterprise SOC"
               primaryFeature="Custom integration with 3rd-party Enterprise SOC solutions."
+              image="/images/product/software/soc.webp"
               features={[]}
             />
           </div>

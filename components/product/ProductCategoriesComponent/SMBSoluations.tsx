@@ -128,6 +128,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
                 name="Mobile App"
                 tagline="iOS & Android"
                 primaryFeature="Firewall Onboarding"
+                image="/images/product/software/mobile_app_1.webp"
                 features={[
                   "Dashboard",
                   "Alerts",
