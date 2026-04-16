@@ -115,7 +115,7 @@ export default function Home() {
 
       {/* ── SNAP 2: Cybercrime Stats ──────────────────────────────────────── */}
       <div className="">
-        <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-8 lg:px-12 pt-0 md:pt-24 bg-[#FFFFFF] relative">
+        <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-4 lg:px-12 pt-0 md:pt-12 bg-[#FFFFFF] relative">
           <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center gap-8 relative z-10 w-full">
             <h2 className="fl2 w-full min-[901px]:w-[55%] home-exposed-heading text-left">
               Your{" "}

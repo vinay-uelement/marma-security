@@ -38,7 +38,7 @@ export default function CybercrimeStats() {
 
         <div className="w-full h-[10vh] bg-[#FAFAFA]">
         </div>
-        <div className="h-[2px] bg-[#E5E5E5] w-[90%] mx-auto" />
+        <div className="h-px bg-[#E5E5E5] w-full mx-auto" />
       </section>
 
       {/* MOBILE & TABLET VIEW */}

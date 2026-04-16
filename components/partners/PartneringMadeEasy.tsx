@@ -36,9 +36,9 @@ export default function PartneringMadeEasy() {
   return (
     <section className="relative w-full md:pt-24 pb-0 flex flex-col items-center overflow-hidden font-body">
       {/* Faded Background Text */}
-      <div className="w-full absolute top-0 left-0 flex justify-center z-0 select-none pointer-events-none max-w-[1440px] mx-auto overflow-hidden">
+      <div className="w-full absolute top-0 left-1/2 -translate-x-1/2 flex justify-center items-center z-0 select-none pointer-events-none max-w-[1440px] overflow-hidden">
         <span
-          className="solutions-info-bg-text text-[#e8e8e8]! w-full whitespace-nowrap text-[clamp(18px,6vw,90px)] tracking-[10px] opacity-50"
+          className="solutions-info-bg-text text-[#e8e8e8]! w-full text-center whitespace-nowrap text-[clamp(18px,6vw,90px)] tracking-[10px] opacity-50"
         >
           Partnering Made Easy!
         </span>

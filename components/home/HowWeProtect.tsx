@@ -154,7 +154,7 @@ export default function HowWeProtect() {
   return (
     <section className="w-full bg-bg-white">
       {/* Header */}
-      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-20 md:pt-24">
+      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="relative flex flex-col md:flex-row justify-between items-start mb-6 md:mb-10 gap-4 md:gap-8 text-left w-full sm:h-[80px] md:h-auto">
           {/* Decorative Line — Mobile */}
           <div className="flex md:hidden absolute top-[-50px] right-[-24px] items-start justify-end w-[280px] pointer-events-none overflow-x-clip z-0">

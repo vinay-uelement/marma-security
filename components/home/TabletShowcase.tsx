@@ -44,10 +44,10 @@ export default function TabletShowcase() {
 
 
   return (
-    <section ref={sectionRef} className="w-full px-6 lg:px-12 pb-12 sm:pb-24 flex flex-col items-center mt-16 overflow-hidden bg-[#FFFFFF]" style={{ perspective: "1200px", transformStyle: "preserve-3d" }}>
+    <section ref={sectionRef} className="w-full px-6 lg:px-12 pb-6 sm:pb-12 flex flex-col items-center mt-16 overflow-hidden bg-[#FFFFFF]" style={{ perspective: "1200px", transformStyle: "preserve-3d" }}>
 
       {/* Title Section */}
-      <div className="flex flex-col items-center mb-12 sm:mb-20 text-center max-w-4xl mx-auto relative z-10">
+      <div className="flex flex-col items-center mb-2 sm:mb-6 text-center max-w-4xl mx-auto relative z-10">
         <h2 className="fl2 font-title font-medium text-[#1A1A1A] mb-4">
           Marma Management Platform
         </h2>

@@ -91,7 +91,7 @@ export default function BadNewsStats() {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-[#FFFFFF] text-[#1A1A1A] pt-16 sm:pt-24 px-6 lg:px-12 relative overflow-hidden"
+      className="w-full bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-24 px-6 lg:px-12 relative overflow-hidden"
     >
       {/* Subtle Light Red Glow Effect */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#E83424]/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
