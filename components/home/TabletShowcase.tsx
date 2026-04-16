@@ -64,7 +64,7 @@ export default function TabletShowcase() {
           ref={contentRef}
           className="relative w-full h-full bg-[#0d0d0d] rounded-3xl sm:rounded-3xl overflow-hidden"
         >
-          <Image src="/images/product/managePlatform.webp" alt="Tablet" fill className="object-fill scale-101" />
+          <Image src="/images/product/software/enterprise-dashboard.webp" alt="Tablet" fill className="object-fill scale-101" />
 
 
         </div>

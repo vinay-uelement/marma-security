@@ -149,7 +149,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
           <ManagementProductCard
             title="Enterprise Management Platform"
             description="Cloud-based or Private Data Center hosted platform for centrally managing Security Gateways, Endpoint Protection, and Cloud Services across the enterprise."
-            image="/images/product/managePlatform.webp"
+            image="/images/product/software/firewall-dashboard.webp"
             imageAlt="Enterprise Management Platform Screenshot"
           />
         </div>
@@ -173,7 +173,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                     "Scam Protection",
                     "AI / Data Loss Prevention",
                   ]}
-                  image="/images/products/endpoint-software.webp"
+                  image="/images/product/software/agent-software.webp"
                 />
               </div>
             </div>

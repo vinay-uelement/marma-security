@@ -30,8 +30,8 @@ export default function CybercrimeStats() {
               43% of cyberattacks are targeted at small businesses and about 41%
               of small businesses have experienced some form of cyberattack in
               the last 12 months. In addition, nearly 1 million Americans
-              reported being the victim of a cybercrime to the FBI in 2026, and
-              1.1 million Americans experienced identity theft in 2026.
+              reported being the victim of a cybercrime to the FBI in 2025, and
+              1.1 million Americans experienced identity theft in 2025.
             </p>
           </div>
         </div>
@@ -70,8 +70,8 @@ export default function CybercrimeStats() {
             43% of cyberattacks are targeted at small businesses and about 41%
             of small businesses have experienced some form of cyberattack in the
             last 12 months. In addition, nearly 1 million Americans reported
-            being the victim of a cybercrime to the FBI in 2026, and 1.1 million
-            Americans experienced identity theft in 2026.
+            being the victim of a cybercrime to the FBI in 2025, and 1.1 million
+            Americans experienced identity theft in 2025.
           </p>
           <p className="fl5">We think that’s unacceptable.</p>
         </div>

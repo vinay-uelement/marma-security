@@ -63,7 +63,7 @@ export default function EndpointProductCard({
               alt={imageAlt ?? name}
               fill
               sizes="(max-width: 640px) 100vw, 45vw"
-              className="object-cover object-center"
+              className="object-fill"
             />
           ) : (
             <div aria-hidden="true" className="h-full w-full bg-[#D9D9D9]" />

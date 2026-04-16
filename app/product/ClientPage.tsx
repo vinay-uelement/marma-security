@@ -407,7 +407,7 @@ export default function ClientPage({ products }: { products: any }) {
     {
       category: "Security Gateway",
       values: {
-        enterprise: "SE 200/ SE 400/ SafeRemote",
+        enterprise: "SE 200/ SE 400/ SE 100",
         smb: "SafeBiz Firewall",
         home: "SafeHome Firewall",
       },
