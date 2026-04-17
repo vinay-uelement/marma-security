@@ -5,44 +5,43 @@ import { ArrowUpRight, MapPin, Briefcase, Clock } from "lucide-react";
 import Button from "../global/Button";
 
 const jobs = [
+
   {
     id: 1,
-    title: "Senior Security Engineer",
-    department: "Engineering",
-    location: "London, UK (Hybrid)",
+    title: "Digital Marketing Executive (1-3 Years)",
+    department: "Marketing",
+    location: "Pune, India",
     type: "Full-time",
-  },
-  {
-    id: 2,
-    title: "Product Designer (UI/UX)",
-    department: "Design",
-    location: "Remote",
-    type: "Full-time",
-  },
-  {
-    id: 3,
-    title: "DevSecOps Specialist",
-    department: "Infrastructure",
-    location: "San Francisco, CA (Remote Friendly)",
-    type: "Contract",
-  },
-  {
-    id: 4,
-    title: "Customer Success Manager",
-    department: "Sales & Support",
-    location: "Dubai, UAE",
-    type: "Full-time",
-  },
-  {
-    id: 5,
-    title: "Marketing Lead",
-    department: "Growth",
-    location: "Remote",
-    type: "Full-time",
+    description: "Looking to grow in a fast-paced cybersecurity product company? This could be your next big move. We are looking for a creative and data-driven marketer to drive our growth initiatives.",
+    requirements: [
+      "1–3 years of experience in Digital Marketing",
+      "Hands-on experience with Google Ads, SEO, LinkedIn, and Analytics",
+      "Strong interest in performance marketing & lead generation",
+      "Excellent written and verbal communication skills"
+    ],
+    goodToHave: [
+      "Exposure to Cybersecurity / SaaS / Product-based companies"
+    ],
+    responsibilities: [
+      "Experiment with and scale marketing campaigns",
+      "Drive high-quality lead generation",
+      "Work closely with tech and product teams to refine messaging",
+      "Analyze and report on campaign performance"
+    ]
   },
 ];
 
+import JobDetailModal from "./JobDetailModal";
+
 export default function JobBoard() {
+  const [selectedJob, setSelectedJob] = React.useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  const handleApply = (job: any) => {
+    setSelectedJob(job);
+    setIsModalOpen(true);
+  };
+
   return (
     <section id="openings" className="py-24 bg-[#F8FAFC]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
@@ -88,7 +87,10 @@ export default function JobBoard() {
                   </div>
                 </div>
                 <div className="flex items-center justify-end">
-                  <button className="flex items-center gap-2 bg-brand-red text-white px-6 py-3 rounded-xl font-title font-medium transition-all duration-300 hover:bg-brand-red-hover hover:shadow-lg hover:gap-3 group-hover:translate-x-0">
+                  <button
+                    onClick={() => handleApply(job)}
+                    className="flex items-center gap-2 bg-brand-red text-white px-6 py-3 rounded-xl font-title font-medium transition-all duration-300 hover:bg-brand-red-hover hover:shadow-lg hover:gap-3 group-hover:translate-x-0"
+                  >
                     Apply Now <ArrowUpRight className="w-5 h-5" />
                   </button>
                 </div>
@@ -96,6 +98,12 @@ export default function JobBoard() {
             </div>
           ))}
         </div>
+
+        <JobDetailModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          job={selectedJob}
+        />
 
         <div className="mt-16 bg-white border border-[#E2E8F0] rounded-[32px] p-8 md:p-12 text-center shadow-sm">
           <h3 className="font-banner text-[28px] text-[#1E293B] mb-4">
