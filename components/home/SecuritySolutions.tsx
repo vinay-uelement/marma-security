@@ -13,27 +13,27 @@ if (typeof window !== "undefined") {
 
 const solutions = [
   {
-    icon: <ShieldCheck className="w-8 h-8 text-brand-red" />,
+    icon: ShieldCheck,
     title: "Stop Threats Early",
     description: "Block phishing, ransomware, scams & zero-days—before damage happens.",
   },
   {
-    icon: <Zap className="w-8 h-8 text-brand-red" />,
+    icon: Zap,
     title: "Plug. Play. Protected.",
     description: "No setup headaches. Enterprise-grade security in minutes.",
   },
   {
-    icon: <Bot className="w-8 h-8 text-brand-red" />,
+    icon: Bot,
     title: "AI That Never Sleeps",
     description: "24x7 real-time detection + predictive protection.",
   },
   {
-    icon: <Globe className="w-8 h-8 text-brand-red" />,
+    icon: Globe,
     title: "One Platform. Total Protection.",
     description: "Secure devices, networks, cloud & smart IoT—all in one place.",
   },
   {
-    icon: <Smartphone className="w-8 h-8 text-brand-red" />,
+    icon: Smartphone,
     title: "Stay in Control",
     description: "Instant alerts. Clear visibility. No blind spots.",
   },
@@ -97,24 +97,27 @@ export default function SecuritySolutions() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-          {solutions.map((item, index) => (
-            <div
-              key={index}
-              className="solution-pointer flex items-start gap-5 group"
-            >
-              <div className="w-10 h-10 rounded-lg bg-brand-red/5 flex items-center justify-center shrink-0 group-hover:bg-brand-red/10 transition-colors duration-300">
-                {React.cloneElement(item.icon as React.ReactElement, { className: "w-5 h-5 text-brand-red" })}
+          {solutions.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={index}
+                className="solution-pointer flex items-start gap-5 group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-brand-red/5 flex items-center justify-center shrink-0 group-hover:bg-brand-red/10 transition-colors duration-300">
+                  <Icon className="w-5 h-5 text-brand-red" />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <h3 className="font-banner text-[17px] text-[#1E293B] group-hover:text-brand-red transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="font-title text-[13.5px] text-[#64748B] leading-relaxed max-w-[450px]">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col gap-1.5">
-                <h3 className="font-banner text-[17px] text-[#1E293B] group-hover:text-brand-red transition-colors duration-300">
-                  {item.title}
-                </h3>
-                <p className="font-title text-[13.5px] text-[#64748B] leading-relaxed max-w-[450px]">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="solution-header mt-12 text-center">
