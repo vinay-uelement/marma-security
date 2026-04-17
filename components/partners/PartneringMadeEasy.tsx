@@ -1,8 +1,8 @@
 import React from 'react';
 import { CircleCheck } from 'lucide-react';
 
-const CARD_CLASSES = "bg-white/90 backdrop-blur-xl border border-slate-200/60 rounded-xl p-6 md:p-8 shadow-xl shadow-slate-200/30 flex flex-col transition-all hover:shadow-2xl hover:-translate-y-1 duration-300 group";
-const TITLE_CLASSES = "text-xl md:text-2xl font-bold font-body text-slate-900 mb-4 border-b border-slate-100 pb-3";
+const CARD_CLASSES = "bg-[#FAFAFA] rounded-[24px] p-6 md:p-8 flex flex-col border border-[#FF0000]/20 shadow-[0px_16px_32px_rgba(255,0,0,0.05)] relative overflow-hidden group transition-all duration-500";
+const TITLE_CLASSES = "text-xl md:text-2xl font-bold text-[#FF0000] mb-4 transition-colors duration-500";
 
 const PARTNER_CARDS = [
   {
@@ -50,19 +50,25 @@ export default function PartneringMadeEasy() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-[70%] relative">
           {PARTNER_CARDS.map((card, index) => (
             <div key={index} className={CARD_CLASSES}>
+              {/* Top Accent Line */}
+              <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#FF0000]/0 via-[#FF0000]/80 to-[#FF0000]/0 origin-center scale-x-100"></div>
+              
+              {/* Interior Glow */}
+              <div className="absolute top-[-30px] left-[-30px] w-[140px] h-[140px] bg-[#FF0000]/10 blur-[45px] rounded-full pointer-events-none opacity-100"></div>
+
               <h3 className={TITLE_CLASSES}>
                 {card.title}
               </h3>
               {card.items ? (
-                <ul className="space-y-3 flex-1 list-disc pl-5 md:pl-6 marker:text-slate-700">
+                <ul className="space-y-3 flex-1 list-disc pl-5 md:pl-6 marker:text-[#555555]">
                   {card.items.map((item, idx) => (
-                    <li key={idx} className="text-slate-700">
+                    <li key={idx} className="text-[#555555]">
                       <span className="text-base md:text-lg font-medium leading-tight">{item}</span>
                     </li>
                   ))}
                 </ul>
               ) : (
-                <p className="text-base md:text-lg text-slate-700 leading-relaxed font-medium">
+                <p className="text-base md:text-lg text-[#555555] leading-relaxed font-medium">
                   {card.text}
                 </p>
               )}
