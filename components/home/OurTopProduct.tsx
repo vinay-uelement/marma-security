@@ -28,7 +28,7 @@ const topProducts: Product[] = [
   {
     id: "safecloud",
     name: "SafeEnterprise 100",
-    image: "/images/product/SafeEnterprise4002.webp",
+    image: "/images/product/Frame 209.webp",
     isNew: true,
     link: "/product?tab=enterprise&product=saferemote",
   },

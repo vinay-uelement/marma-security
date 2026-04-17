@@ -39,7 +39,7 @@ const heroProducts = [
     href: "?tab=enterprise&product=saferemote",
     label: "SafeEnterprise 100",
     isEnterprise: true,
-    image: "/images/product/SafeEnterprise4002.webp",
+    image: "/images/product/Frame 209.webp",
     alt: "SafeCloud Product",
   },
   {

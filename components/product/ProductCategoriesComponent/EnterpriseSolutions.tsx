@@ -69,7 +69,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
       id: "saferemote",
       title: "SafeEnterprise 100 | Remote Worker Security",
       description: enterpriseDescription,
-      image: "/images/product/SafeEnterprise4002.webp",
+      image: "/images/product/Frame 209.webp",
       imageAlt: "SafeRemote Firewall remote worker security device",
       specifications: safeRemoteFirewallSpecifications,
     },

@@ -36,7 +36,7 @@ export default function Home() {
   const phrases = ["Enterprises", "Small Businesses", "Homes"];
 
   const images = [
-    "/images/product/marma-enterprise.webp",
+    "/images/product/Frame 212.webp",
     "/images/banners/homepage-right-banner1.webp",
     "/images/banners/solution-banner-right1.webp",
   ];
