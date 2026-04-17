@@ -109,7 +109,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
                 name="Agent Software for Windows"
                 tagline="24x7 Endpoint Protection"
                 primaryFeature="FW & Anti-Virus Integration"
-                image="/images/product/software/agent-software.png"
+                image="/images/product/software/agent-software.webp"
                 features={[
                   "DNS Security",
                   "URL Filtering",

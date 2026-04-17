@@ -56,14 +56,14 @@ export default function EndpointProductCard({
         </div>
 
         {/* Image */}
-        <div className="relative w-full sm:w-[45%] lg:w-[60%] aspect-square sm:aspect-[4/3] rounded-xl overflow-hidden bg-[#D9D9D9] shrink-0">
+        <div className="relative w-full sm:w-[45%] lg:w-[40%] aspect-square sm:aspect-[4/3] rounded-xl overflow-hidden shrink-0">
           {image ? (
             <Image
               src={image}
               alt={imageAlt ?? name}
               fill
               sizes="(max-width: 640px) 100vw, 45vw"
-              className="object-fill"
+              className="object-contain"
             />
           ) : (
             <div aria-hidden="true" className="h-full w-full bg-[#D9D9D9]" />

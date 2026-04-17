@@ -86,7 +86,7 @@ export default function HomeSolutions({ products = [] }: { products?: any[] }) {
             name={mobileApp?.name || mobileApp?.title || "Mobile App"}
             tagline={mobileApp?.tagline || "iOS & Android"}
             primaryFeature={mobileApp?.primaryFeature || "Firewall Onboarding"}
-            image="/images/product/software/mobile_app.webp"
+            image="/images/product/software/mobile_app2.webp"
             features={mobileApp?.features || [
               "Smart Setup: Configure SafeEnterprise, SafeBiz, & SafeHome effortlessly.",
               "Real-Time Threat Intelligence: Instant alerts for malicious domains/URLs.",

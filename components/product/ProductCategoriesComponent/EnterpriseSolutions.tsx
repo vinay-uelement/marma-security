@@ -162,7 +162,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               <div className={productHalfSectionTitleClassName}>
                 Endpoint Protection Software
               </div>
-              <div className="md:ps-12">
+              <div className="md:px-12">
                 <EndpointProductCard
                   name="Agent Software for Windows"
                   tagline="24×7 Endpoint Protection"
@@ -179,7 +179,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                     "Scam Protection",
                     "AI / Data Loss Prevention",
                   ]}
-                  image="/images/product/software/agent-software.png"
+                  image="/images/product/software/agent-software.webp"
                 />
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               <div className={productHalfSectionTitleClassName}>
                 Cloud Security Services
               </div>
-              <div className="md:pe-12">
+              <div className="md:px-12">
                 <EndpointProductCard
                   name="E-mail Protection Service"
                   tagline="Enterprise Email Security"
@@ -198,7 +198,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                     "AI / Data Loss Prevention",
                     "QR Phishing Protection",
                   ]}
-                  image="/images/products/email-security.webp"
+                  image="/images/product/software/agent-software.webp"
                 />
               </div>
             </div>
