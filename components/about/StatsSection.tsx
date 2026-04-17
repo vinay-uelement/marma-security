@@ -86,7 +86,7 @@ export default function StatsSection() {
     <section className="relative w-full py-0 overflow-hidden">
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-6 lg:px-16 pb-5 md:pb-8 lg:pb-10 ">
         {/* Stats Glass Card */}
-        <div className="p-[10px] md:p-[71px] lg:p-12">
+        <div className="p-[10px]  lg:p-12 lg:pt-0">
           <div className="grid grid-cols-1 sm:grid-cols-2 [@media(min-width:1176px)]:grid-cols-4 gap-2 md:gap-8 [@media(min-width:1176px)]:gap-10 my-[10px] md:my-0">
             {stats.map((stat, index) => (
               <div key={index} className="flex flex-col">

@@ -11,7 +11,7 @@ export default function WhoWeAre() {
   });
 
   return (
-    <section className="w-full bg-[#FFFFFF] relative overflow-hidden pt-20 sm:pt-32 pb-16 sm:pb-24">
+    <section className="w-full bg-[#FFFFFF] relative overflow-hidden pt-20 sm:pt-32 pb-16">
       <div className="absolute top-5 right-0 w-[320px] lg:w-[450px] flex flex-col justify-end z-20 pointer-events-none">
         <DecorativeLine
           viewBox="0 0 700 80"
@@ -36,7 +36,7 @@ export default function WhoWeAre() {
         {/* Top Section: Text & Image Placeholder */}
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           <div className="flex-1 w-full flex flex-col items-start pr-0 lg:pr-8">
-            <h2 className="text-4xl md:text-5xl font-medium text-[#1A1A1A] tracking-[-0.02em]">
+            <h2 className="text-3xl md:text-[38px] font-medium text-[#1A1A1A] tracking-[-0.02em]">
               Who we{" "}
               <HighlightedText
                 text="Are?"
@@ -49,14 +49,14 @@ export default function WhoWeAre() {
               We’re Making Enterprise-Grade Network Security Simple and Accessible for Everyone
             </h3>
 
-            <p className="text-[#666666] text-sm md:text-base leading-relaxed mt-4 max-w-[500px]">
-              In a world where cyber threats are rising and impacting everyday lives, Marma Security was founded with a clear purpose — to make cybersecurity simple, accessible, and effective for everyone.
+            <p className="text-[#666666] text-sm md:text-base leading-relaxed mt-4 max-w-[600px]">
+              In a world where cyber threats are rising and impacting everyday lives, Marma Security was founded with a clear purpose to make cybersecurity simple, accessible, and effective for everyone.
 
-              We build AI-powered, plug-and-play security solutions that protect enterprises, businesses, homes, and smart devices from evolving digital threats. Our platform works proactively to detect and stop attacks—before they cause damage—without requiring deep technical expertise.
+              We build AI-powered, plug-and-play security solutions that protect enterprises, businesses, homes, and smart devices from evolving digital threats. Our platform works proactively to detect and stop attacks before they cause damage without requiring deep technical expertise.
 
               At our core, we believe cybersecurity should not be complicated or limited to experts. It should be effortless, intelligent, and available to all.
 
-              Because at Marma Security, we’re not just securing systems—we’re securing lives.
+              Because at Marma Security, we’re not just securing systems we’re securing lives.
             </p>
           </div>
 
@@ -94,7 +94,7 @@ export default function WhoWeAre() {
         <div className="flex flex-col md:flex-row gap-12 md:gap-16 pt-8 pb-32">
           {/* Mission */}
           <div className="flex-1 flex flex-col items-start pr-0 lg:pr-8">
-            <h2 className="text-4xl md:text-[42px] font-medium text-[#1A1A1A] tracking-[-0.02em] mb-8">
+            <h2 className="text-3xl md:text-[30px] font-medium text-[#1A1A1A] tracking-[-0.02em] mb-8">
               Our{" "}
               <HighlightedText
                 text="Mission"
@@ -109,7 +109,7 @@ export default function WhoWeAre() {
 
           {/* Vision */}
           <div className="flex-1 flex flex-col items-start pr-0 lg:pr-8">
-            <h2 className="text-4xl md:text-[42px] font-medium text-[#1A1A1A] tracking-[-0.02em] mb-8">
+            <h2 className="text-3xl md:text-[30px] font-medium text-[#1A1A1A] tracking-[-0.02em] mb-8">
               Our{" "}
               <HighlightedText
                 text="Vision"

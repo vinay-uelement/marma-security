@@ -68,7 +68,7 @@ export default function PartnerBenefits() {
               className="object-cover"
             />
             {/* Let's Partner Ribbon */}
-            <div className="absolute z-10 top-6 md:top-8 right-0 bg-gradient-to-r from-transparent via-red-500 to-red-600 px-4 md:px-8 py-2 md:py-3 flex items-center justify-end w-[220px] md:w-[320px]">
+            <div className="absolute z-10 top-6 md:top-8 right-0 bg-gradient-to-r from-transparent via-red-500 to-red-600 px-4 md:px-8 py-2 md:py-3 flex items-center justify-end w-[220px] md:w-[220px]">
               <span className="text-white font-bold text-lg md:text-[22px] mt-0.5">
                 Let’s Partner!
               </span>
@@ -84,7 +84,7 @@ export default function PartnerBenefits() {
                 {benefit.id}
               </span>
               <div className="flex flex-col gap-2">
-                <h3 className="text-xl md:text-[22px] font-bold text-slate-800 leading-tight">
+                <h3 className="text-xl md:text-[22px] font-medium text-[#323232] leading-tight">
                   {benefit.title}
                 </h3>
                 <p className="text-base text-slate-600 font-medium leading-relaxed">
@@ -102,7 +102,7 @@ export default function PartnerBenefits() {
               key={index}
               className="bg-[#ebebeb] border border-slate-200 rounded-[14px] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 flex flex-col gap-4"
             >
-              <h3 className="text-xl md:text-2xl font-bold text-slate-800">
+              <h3 className="text-xl md:text-2xl font-medium text-slate-800">
                 {card.title}
               </h3>
               <p className="text-base text-slate-600 font-medium leading-relaxed whitespace-pre-line">
