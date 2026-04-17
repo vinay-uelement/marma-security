@@ -531,18 +531,20 @@ export default function ClientPage({ products }: { products: any }) {
       </div>
 
       {/* Product Showcases */}
-      <div className=" pt-24 mt-6 md:mt-20">
-        <Tabs
-          tabs={[
-            { label: "Enterprise Solutions", id: "enterprise" },
-            { label: "SMB Solutions", id: "smb" },
-            { label: "Home Solutions", id: "home" },
-          ]}
-          activeTabId={activeProductTab}
-          onTabChange={onTabChange}
-          align="left"
-        />
-        <div className="my-4 mx-2">
+      <div className=" pt-20">
+        <div className="mb-10">
+          <Tabs
+            tabs={[
+              { label: "Enterprise Solutions", id: "enterprise" },
+              { label: "SMB Solutions", id: "smb" },
+              { label: "Home Solutions", id: "home" },
+            ]}
+            activeTabId={activeProductTab}
+            onTabChange={onTabChange}
+            align="left"
+          />
+        </div>
+        <div className="mb-4 mx-2">
           <ActiveComponent products={products} />
         </div>
       </div>

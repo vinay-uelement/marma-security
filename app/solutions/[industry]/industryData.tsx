@@ -25,7 +25,7 @@ export const industriesData: Record<string, IndustryData> = {
     sections: [
       {
         title: <>Phishing Scams in Healthcare: A Leading Cause of Data Breaches and Hacking</>,
-        content: <>Phishing attacks are one of the most common cyber threats in the industry, where cybercriminals impersonate trusted entities to steal login credentials and access patient records. These attacks exploit human error, bypassing IT security defenses and leading to breaches that expose sensitive medical data.<br /><br />In 2023, 45% of cybersecurity professionals reported that phishing was responsible for their most severe breach (HIPAA Journal). With 92% of providers experiencing at least one cyber attack, phishing remains a primary entry point.<br /><br />Marma SafeBiz provides cybersecurity solutions, offering AI-driven phishing detection and network security to prevent breaches. Enhance security and stop phishing before it compromises patient trust—secure your systems today.</>,
+        content: <>Phishing attacks are one of the most common cyber threats in the industry, where cybercriminals impersonate trusted entities to steal login credentials and access<br />.  patient records. These attacks exploit human error, bypassing IT security defenses and leading to breaches that expose sensitive medical data.<br /><br />In 2023, 45% of cybersecurity professionals reported that phishing was responsible for their most severe breach (HIPAA Journal). With 92% of providers experiencing at least one cyber attack, phishing remains a primary entry point.<br /><br />Marma SafeBiz provides cybersecurity solutions, offering AI-driven phishing detection and network security to prevent breaches. Enhance security and stop phishing before it compromises patient trust—secure your systems today.</>,
         imageSrc: "/images/solutions/healthCare/1.webp"
       },
       {
@@ -34,8 +34,8 @@ export const industriesData: Record<string, IndustryData> = {
         imageSrc: "/images/solutions/healthCare/2.webp"
       },
       {
-        title: <>Growing Internet Connected Devices and Breaches:<br />The Hidden Risk</>,
-        content: <>The industry is a prime target for cyber threats, with records, devices, and billing systems at constant risk. A single breach can compromise sensitive information, disrupt operations, and lead to costly legal consequences.<br /><br />SafeBiz provides enterprise-grade cybersecurity tailored for clinics, hospitals, and offices, securing all connected devices—including databases, IoT equipment, and administrative systems. With AI-powered protection, no software installation, and seamless integration, SafeBiz ensures compliance and uninterrupted care. Keep your clients' trust and your practice secure—because safety goes beyond physical walls.</>,
+        title: <>Growing Internet Connected Devices and Breaches: The Hidden Risk</>,
+        content: <>The industry is a prime target for cyber threats, with records, devices, and billing systems at constant risk. A single breach can compromise sensitive information, disrupt operations, and lead to costly legal consequences.<br /><br />SafeBiz provides enterprise-grade cybersecurity tailored for clinics, hospitals, and offices, securing all connected devices—including databases, IoT equipment, and administrative systems. With AI-powered protection, no software installation, and seamless integration, SafeBiz ensures compliance and uninterrupted care. Keep your clients' trust and your practice secure because safety goes beyond physical walls.</>,
         imageSrc: "/images/solutions/healthCare/3.webp"
       },
       {
@@ -64,7 +64,7 @@ export const industriesData: Record<string, IndustryData> = {
       },
       {
         title: <>Growing Internet Connected Devices and Legal Breaches:<br />The Hidden Risk</>,
-        content: <>The legal industry is a prime target for cyber threats, with client records, devices, and billing systems at constant risk. A single breach can compromise sensitive client information, disrupt operations, and lead to costly legal consequences.<br /><br /><strong>SafeBiz</strong> provides <strong>enterprise-grade cybersecurity</strong> tailored for law firms, legal offices, and corporate legal departments, securing all connected devices—including client databases, IoT office equipment, and administrative systems. With <strong>AI-powered protection</strong>, no software installation, and seamless integration, SafeBiz ensures compliance and uninterrupted operations. <strong>Keep your clients' trust and your practice secure—because in legal, safety goes beyond physical walls.</strong></>,
+        content: <>The legal industry is a prime target for cyber threats, with client records, devices, and billing systems at constant risk. A single breach can compromise sensitive client information, disrupt operations, and lead to costly legal consequences.<br /><br /><strong>SafeBiz</strong> provides <strong>enterprise-grade cybersecurity</strong> tailored for law firms, legal offices, and corporate legal departments, securing all connected devices—including client databases, IoT office equipment, and administrative systems. With <strong>AI-powered protection</strong>, no software installation, and seamless integration, SafeBiz ensures compliance and uninterrupted operations. <strong>Keep your clients' trust and your practice secure because in legal, safety goes beyond physical walls.</strong></>,
         imageSrc: "/images/solutions/legal/3.webp"
       },
       {

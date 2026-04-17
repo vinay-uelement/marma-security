@@ -5,7 +5,7 @@ export const productDecoratedSectionClassName =
   "pt-6 sm:pt-8 lg:pt-10 xl:pt-12";
 
 export const productSectionTitleClassName =
-  "fl2-4 pb-2 sm:pb-4 lg:pb-8 xl:pb-10";
+  "fl2-4 pb-2 sm:pb-4 lg:pb-6 xl:pb-8";
 
 export const productSplitSectionHeaderClassName =
   "flex w-full flex-col lg:flex-row";

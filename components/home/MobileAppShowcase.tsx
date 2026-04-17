@@ -22,12 +22,12 @@ export default function MobileAppShowcase() {
     { text: "Zero Day Phishing protection", Icon: Shield },
     { text: "Scam Protection Service", Icon: AlertTriangle },
     { text: "Smart Devices Protection", Icon: Smartphone },
+    { text: "Dark Web Protection", Icon: EyeOff },
     { text: "IEmail Protection Service", Icon: Mail },
     { text: "Cloud Data Protection", Icon: Cloud },
-    { text: "AI Data Leak Protection / DLP", Icon: Database },
     { text: "Predictive Risk Scoring", Icon: Activity },
     { text: "PCI, HIPPA Compliance", Icon: FileText },
-    { text: "Dark Web Protection", Icon: EyeOff },
+    { text: "AI Data Leak Protection / DLP", Icon: Database },
     { text: "IOT Behavior Anomaly Detection", Icon: Radio },
     { text: "User Behavior Anomaly Detection", Icon: UserCheck },
     { text: "Zero Day Malware / Ransomware Protection", Icon: Lock },
@@ -40,7 +40,7 @@ export default function MobileAppShowcase() {
 
           {/* Left Column */}
           <div className="flex-1 max-w-[750px] flex flex-col justify-start">
-            <h2 className="fl1 font-bold mb-10 md:mb-16">
+            <h2 className="fl2 font-bold mb-10 md:mb-16">
               AI-Powered SASE Cybersecurity Platform
             </h2>
 
@@ -50,8 +50,8 @@ export default function MobileAppShowcase() {
                 const IconComponent = feature.Icon;
                 return (
                   <div key={idx} className="flex items-start gap-4">
-                    <div className="w-[32px] h-[32px] bg-brand-red rounded-md flex items-center justify-center flex-shrink-0 shadow-[0_4px_10px_rgba(145,189,46,0.3)]">
-                      <IconComponent size={18} color="white" strokeWidth={2.5} />
+                    <div className="w-[32px] h-[32px] bg-brand-red/5 rounded-md flex items-center justify-center flex-shrink-0">
+                      <IconComponent size={18} color="#FF0000" strokeWidth={2.5} />
                     </div>
                     <span className="fl5 mt-1">
                       {feature.text}
@@ -63,10 +63,10 @@ export default function MobileAppShowcase() {
           </div>
 
           {/* Right Column */}
-          <div className="flex-1 w-full max-w-[600px] flex flex-col justify-between items-end gap-10 lg:ml-auto">
+          <div className="flex-1 w-full max-w-[400px] h-full! flex flex-col justify-between items-end gap-10 lg:ml-auto">
             {/* Image Placeholder Frame */}
-            <div className="w-full relative rounded-[20px] overflow-hidden aspect-[4/3] lg:aspect-[5/3] flex-shrink-0 shadow-xl border border-[rgba(0,0,0,0.05)] bg-[#E5E5E5] flex items-center justify-center">
-              <Image src="/images/solutions/ai_tech.webp" alt="Marma Mobile App" fill className="object-fill" />
+            <div className="w-full relative rounded-[20px] overflow-hidden aspect-9/12 lg:aspect-9/12 flex-shrink-0 shadow-xl border border-[rgba(0,0,0,0.05)] bg-[#E5E5E5] flex items-center justify-center">
+              <Image src="/images/solutions/ai_tech1.png" alt="Marma Mobile App" fill className="object-fill scale-y-125" />
             </div>
 
           </div>

@@ -33,9 +33,9 @@ export default async function IndustrySolutionPage({ params }: { params: Promise
   return (
     <main className="flex min-h-screen flex-col bg-[#F3F4F6]">
       {/* Hero Section */}
-      <section className="relative w-full pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto flex flex-col md:flex-row items-center gap-12">
-        <div className="flex-1 flex flex-col justify-center max-w-2xl">
-          <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-black leading-tight mb-6">
+      <section className="relative w-full pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-12 lg:px-12 max-w-[1400px] mx-auto flex flex-col md:flex-row items-start gap-12">
+        <div className="flex-1 flex flex-col justify-between max-w-2xl">
+          <h1 className="text-4xl md:text-[26px]lg:text-5xl font-bold text-black leading-tight mb-6">
             {data.hero.title ? data.hero.title : (
               <>
                 Cybersecurity Solutions <br />
@@ -43,7 +43,7 @@ export default async function IndustrySolutionPage({ params }: { params: Promise
               </>
             )}
           </h1>
-          <p className="text-gray-800 text-[15px] md:text-[17px] leading-relaxed mb-8">
+          <p className="text-gray-800 text-[15px] md:text-[17px] leading-relaxed mb-20">
             {data.hero.description}
           </p>
           <div>
@@ -54,7 +54,7 @@ export default async function IndustrySolutionPage({ params }: { params: Promise
             </Link>
           </div>
         </div>
-        <div className="flex-1 w-full h-[300px] md:h-[500px] relative rounded-2xl overflow-hidden shadow-2xl">
+        <div className="flex-1 w-full h-[300px] md:h-[500px] relative rounded-2xl overflow-hidden">
           <Image
             src={data.hero.imageSrc}
             alt={`${displayIndustry} Cybersecurity`}
@@ -66,7 +66,7 @@ export default async function IndustrySolutionPage({ params }: { params: Promise
 
       {/* Content Sections Wrapper */}
       <div className="bg-white py-16 md:py-24">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 flex flex-col gap-20 md:gap-32">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-12 flex flex-col gap-20 md:gap-32">
 
           {data.sections.map((section, index) => {
             // Alternate layout: Image Left on Even indexes (0, 2), Image Right on Odd indexes (1, 3)
@@ -74,7 +74,7 @@ export default async function IndustrySolutionPage({ params }: { params: Promise
             const rowDirection = isImageLeft ? "md:flex-row" : "md:flex-row-reverse";
 
             return (
-              <div key={index} className={`flex flex-col ${rowDirection} items-center gap-10 md:gap-20`}>
+              <div key={index} className={`flex flex-col ${rowDirection} items-start gap-10 md:gap-20`}>
                 <div className="flex-1 w-full aspect-video md:aspect-[4/3] relative rounded-2xl overflow-hidden">
                   <Image
                     src={section.imageSrc}
@@ -83,8 +83,8 @@ export default async function IndustrySolutionPage({ params }: { params: Promise
                     className="object-cover"
                   />
                 </div>
-                <div className="flex-1 flex flex-col justify-center">
-                  <h2 className="text-3xl md:text-4xl font-bold text-black leading-tight mb-6">
+                <div className="flex-1 flex flex-col justify-start">
+                  <h2 className="text-3xl md:text-[26px]font-bold text-black leading-tight mb-10">
                     {section.title}
                   </h2>
                   <p className="text-gray-700 text-[15px] md:text-[16px] leading-relaxed">

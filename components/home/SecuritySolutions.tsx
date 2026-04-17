@@ -37,6 +37,11 @@ const solutions = [
     title: "Stay in Control",
     description: "Instant alerts. Clear visibility. No blind spots.",
   },
+  {
+    icon: CheckCircle2,
+    title: "Cybersecurity Made Simple",
+    description: "Powerful protection without complexity."
+  }
 ];
 
 export default function SecuritySolutions() {
