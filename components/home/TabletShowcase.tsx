@@ -57,16 +57,23 @@ export default function TabletShowcase() {
       </div>
 
       {/* Tablet Mockup Container */}
-      <div className="tablet-container relative w-full max-w-[1200px] aspect-16/10 sm:aspect-video bg-[#1a1a1a] rounded-4xl sm:rounded-4xl p-3 sm:p-5 shadow-2xl overflow-hidden">
+      <div className="tablet-container relative w-full max-w-[1100px] aspect-[16/10] bg-[#1a1a1a] rounded-[20px] sm:rounded-[40px] p-2.5 sm:p-4 shadow-2xl overflow-hidden self-center max-h-[70vh]">
+
+        {/* Camera Lens Detailing (Right Side Bezel) */}
+        <div className="absolute right-[6px] sm:right-[10px] top-1/2 -translate-y-1/2 w-1 h-1 sm:w-2 sm:h-2 bg-[#1d1d1d] rounded-full border border-white/5 opacity-40 z-20"></div>
 
         {/* Screen */}
         <div
           ref={contentRef}
-          className="relative w-full h-full bg-[#0d0d0d] rounded-3xl sm:rounded-3xl overflow-hidden"
+          className="relative w-full h-full bg-[#0d0d0d] rounded-[15px] sm:rounded-[32px] overflow-hidden"
         >
-          <Image src="/images/product/software/enterprise-dashboard.webp" alt="Tablet" fill className="object-fill scale-101" />
-
-
+          <Image
+            src="/images/product/software/enterprise-dashboard.webp"
+            alt="Marma Platform Tablet"
+            fill
+            className="object-fill object-top transition-transform duration-700 ease-out"
+            priority
+          />
         </div>
       </div>
     </section>

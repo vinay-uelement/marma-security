@@ -91,20 +91,20 @@ export default function BadNewsStats() {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-[#FFFFFF] text-[#1A1A1A] py-16 sm:py-24 px-6 lg:px-12 relative overflow-hidden"
+      className="w-full bg-[#FFFFFF] text-[#1A1A1A] py-10 px-6 lg:px-12 relative overflow-hidden"
     >
       {/* Subtle Light Red Glow Effect */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#E83424]/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
-      <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-[#E83424]/[0.03] rounded-full blur-[80px] pointer-events-none z-0"></div>
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-[#E83424]/5 rounded-full blur-[80px] pointer-events-none z-0"></div>
+      <div className="absolute top-1/4 right-0 w-[300px] h-[300px] bg-[#E83424]/[0.03] rounded-full blur-[60px] pointer-events-none z-0"></div>
 
-      <div className="max-w-[1440px] mx-auto w-full relative z-10 flex flex-col-reverse lg:flex-row gap-16 lg:gap-24 items-center">
+      <div className="max-w-[1440px] mx-auto w-full relative z-10 flex flex-col-reverse lg:flex-row gap-12 lg:gap-20 items-center">
         {/* Left Side: Stats with Vertical Bars */}
         <div className="w-full lg:w-1/2 flex flex-col space-y-4 lg:space-y-6">
-          <p className="bad-news-text text-[#FF453A] font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase">
+          <p className="bad-news-text text-[#FF453A] font-semibold tracking-[0.2em] text-[14px] uppercase">
             The Bad News
           </p>
-          <h2 className="bad-news-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-title font-medium leading-[1.1] text-[#1A1A1A]">
-            Attackers are <br className="hidden lg:block" /> supercharging <br className="hidden lg:block" /> their speed <br className="hidden xl:block" /> and scale.
+          <h2 className="bad-news-text text-[20px] md:text-[30px] lg:text-[36px] font-title font-medium leading-[1.1] text-[#1A1A1A]">
+            Attackers are supercharging <br className="hidden lg:block" /> their speed and scale.
           </h2>
         </div>
 
@@ -114,56 +114,56 @@ export default function BadNewsStats() {
 
           {/* Stat 1 */}
           <div className="stat-item flex flex-col items-center text-center">
-            <div className="h-[220px] sm:h-[300px] w-full flex flex-col justify-end items-center mb-4 sm:mb-6 relative">
-              <span className="stat-number text-3xl sm:text-4xl md:text-5xl font-bold font-title mb-4 z-10 drop-shadow-lg leading-none" data-target="56">
+            <div className="h-[180px] sm:h-[240px] w-full flex flex-col justify-end items-center mb-4 sm:mb-6 relative">
+              <span className="stat-number text-2xl sm:text-3xl md:text-[28px] font-bold font-title mb-4 z-10 drop-shadow-lg leading-none" data-target="56">
                 0%
               </span>
               {/* Bar track container */}
-              <div className="w-10 sm:w-14 h-[150px] sm:h-[220px] bg-[#F5F5F5] border border-[#EBEBEB] rounded-t-xl relative overflow-hidden flex justify-center">
+              <div className="w-8 sm:w-12 h-[100px] sm:h-[150px] bg-[#F5F5F5] border border-[#EBEBEB] rounded-t-lg relative overflow-hidden flex justify-center">
                 {/* Growing bar */}
                 <div
-                  className="stat-bar absolute bottom-0 w-full bg-gradient-to-t from-[#A61D15] to-[#FF453A] rounded-t-xl shadow-[0_0_20px_rgba(255,69,58,0.4)]"
+                  className="stat-bar absolute bottom-0 w-full bg-gradient-to-t from-[#A61D15] to-[#FF453A] rounded-t-lg shadow-[0_0_20px_rgba(255,69,58,0.4)]"
                   data-height="56%"
                 ></div>
               </div>
             </div>
-            <p className="text-[9px] sm:text-xs text-[#666666] font-semibold tracking-widest uppercase leading-[1.3]">
+            <p className="text-[11px] text-[#666666] font-semibold tracking-widest uppercase leading-[1.3]">
               Increase In <br className="hidden sm:block" /> Exploited Zero Days <br className="hidden sm:block" /> (YoY, 2025)
             </p>
           </div>
 
           {/* Stat 2 */}
           <div className="stat-item flex flex-col items-center text-center">
-            <div className="h-[220px] sm:h-[300px] w-full flex flex-col justify-end items-center mb-4 sm:mb-6 relative">
-              <span className="stat-number text-3xl sm:text-4xl md:text-5xl font-bold font-title mb-4 z-10 drop-shadow-lg leading-none" data-target="73">
+            <div className="h-[180px] sm:h-[240px] w-full flex flex-col justify-end items-center mb-4 sm:mb-6 relative">
+              <span className="stat-number text-2xl sm:text-3xl md:text-[28px] font-bold font-title mb-4 z-10 drop-shadow-lg leading-none" data-target="73">
                 0%
               </span>
-              <div className="w-10 sm:w-14 h-[150px] sm:h-[220px] bg-[#F5F5F5] border border-[#EBEBEB] rounded-t-xl relative overflow-hidden flex justify-center">
+              <div className="w-8 sm:w-12 h-[100px] sm:h-[150px] bg-[#F5F5F5] border border-[#EBEBEB] rounded-t-lg relative overflow-hidden flex justify-center">
                 <div
-                  className="stat-bar absolute bottom-0 w-full bg-gradient-to-t from-[#A61D15] to-[#FF453A] rounded-t-xl shadow-[0_0_20px_rgba(255,69,58,0.4)]"
+                  className="stat-bar absolute bottom-0 w-full bg-gradient-to-t from-[#A61D15] to-[#FF453A] rounded-t-lg shadow-[0_0_20px_rgba(255,69,58,0.4)]"
                   data-height="73%"
                 ></div>
               </div>
             </div>
-            <p className="text-[9px] sm:text-xs text-[#666666] font-semibold tracking-widest uppercase leading-[1.3]">
+            <p className="text-[11px] text-[#666666] font-semibold tracking-widest uppercase leading-[1.3]">
               Increase In <br className="hidden sm:block" /> Ransomware Attacks <br className="hidden sm:block" /> (YoY, 2025)
             </p>
           </div>
 
           {/* Stat 3 */}
           <div className="stat-item flex flex-col items-center text-center">
-            <div className="h-[220px] sm:h-[300px] w-full flex flex-col justify-end items-center mb-4 sm:mb-6 relative">
-              <span className="stat-number text-3xl sm:text-4xl md:text-5xl font-bold font-title mb-4 z-10 drop-shadow-lg leading-none" data-target="56">
+            <div className="h-[180px] sm:h-[240px] w-full flex flex-col justify-end items-center mb-4 sm:mb-6 relative">
+              <span className="stat-number text-2xl sm:text-3xl md:text-[28px] font-bold font-title mb-4 z-10 drop-shadow-lg leading-none" data-target="56">
                 0%
               </span>
-              <div className="w-10 sm:w-14 h-[150px] sm:h-[220px] bg-[#F5F5F5] border border-[#EBEBEB] rounded-t-xl relative overflow-hidden flex justify-center">
+              <div className="w-8 sm:w-12 h-[100px] sm:h-[150px] bg-[#F5F5F5] border border-[#EBEBEB] rounded-t-lg relative overflow-hidden flex justify-center">
                 <div
-                  className="stat-bar absolute bottom-0 w-full bg-gradient-to-t from-[#A61D15] to-[#FF453A] rounded-t-xl shadow-[0_0_20px_rgba(255,69,58,0.4)]"
+                  className="stat-bar absolute bottom-0 w-full bg-gradient-to-t from-[#A61D15] to-[#FF453A] rounded-t-lg shadow-[0_0_20px_rgba(255,69,58,0.4)]"
                   data-height="56%"
                 ></div>
               </div>
             </div>
-            <p className="text-[9px] sm:text-xs text-[#666666] font-semibold tracking-widest uppercase leading-[1.3]">
+            <p className="text-[11px] text-[#666666] font-semibold tracking-widest uppercase leading-[1.3]">
               Increase In <br className="hidden sm:block" /> Data Breaches <br className="hidden sm:block" /> &amp; Leaks (YoY, 2025)
             </p>
           </div>
