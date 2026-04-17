@@ -56,7 +56,7 @@ export default function PartnerBenefits() {
 
         {/* Section Header & Image Placeholder */}
         <div className="w-full max-w-[1100px] flex flex-col gap-6 md:gap-8">
-          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#333333] leading-tight text-left">
+          <h2 className="text-3xl md:text-4xl lg:text-[42px] text-center font-bold text-[#333333] leading-tight">
             Why Partner With Marma Security?
           </h2>
 

@@ -157,8 +157,8 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
 
       <div className="max-md:px-6">
         <div className={productSectionClassName}>
-          <div className="flex flex-col gap-8 lg:flex-row lg:gap-6">
-            <div className="flex flex-col h-full lg:w-1/2">
+          <div className="flex flex-col gap-8 lg:flex-col lg:gap-6">
+            <div className="flex flex-col h-full">
               <div className={productHalfSectionTitleClassName}>
                 Endpoint Protection Software
               </div>
@@ -168,6 +168,12 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                   tagline="24×7 Endpoint Protection"
                   primaryFeature="FW & Anti-Virus Integration"
                   features={[
+                    "Advanced Deep Packet Inspection for Threat protection",
+                    "Protects from phishing, ransomware, malware, and data breaches",
+                    "AI-Powered DNS Security and URL Filtering and Scam Protection",
+                    "Updated automatically to protect from latest threats",
+                    "24x7 Always-On Protection",
+                    "DNS Filtering",
                     "DNS Security",
                     "URL Filtering",
                     "Scam Protection",
@@ -177,7 +183,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                 />
               </div>
             </div>
-            <div className="flex flex-col h-full lg:w-1/2">
+            <div className="flex flex-col h-full">
               <div className={productHalfSectionTitleClassName}>
                 Cloud Security Services
               </div>

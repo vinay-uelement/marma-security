@@ -23,10 +23,6 @@ export default function Footer() {
                 className="w-[140px] md:w-[280px] h-auto object-contain"
               />
 
-              <p className="footer-desc-text max-w-full">
-                All security updates, patches, and improvements are handled
-                automatically in the background.
-              </p>
             </div>
 
             {/* ======================================= */}
@@ -133,11 +129,37 @@ export default function Footer() {
                     <circle cx="45" cy="29.2" r="11.2" />
                   </svg>
                   <span>
-                    Marma Security Inc.,
+                    Marma Private Limited,
                     <br />
                     180 Promenade Ste. 300,
                     <br />
                     Sacramento, CA - 95834
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="flex items-start gap-4 hover:opacity-80 transition-opacity break-all sm:break-normal"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 90 90"
+                    width="22"
+                    height="22"
+                    fill="none"
+                    stroke="#fff"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M45 90c-.35 0-.68-.19-.86-.49l-4.71-7.97C30.22 65.98 20.7 49.88 17.64 43.73a30.4 30.4 0 0 1-3.06-13.31C14.58 13.65 28.23 0 45 0s30.42 13.65 30.42 30.42c0 4.66-1.03 9.14-3.06 13.31-3.1 6.19-12.58 22.23-21.76 37.74l-4.71 7.97A1 1 0 0 1 45 90z" />
+                    <circle cx="45" cy="29.2" r="11.2" />
+                  </svg>
+                  <span>
+                    Marma Private Limited,
+                    <br />
+                    J 1002, Purvachal building,
+                    <br />
+                    Mhada Towers, Pimpri, Pune - 411017
                   </span>
                 </a>
 
@@ -299,11 +321,37 @@ export default function Footer() {
                       <circle cx="45" cy="29.2" r="11.2" />
                     </svg>
                     <span>
-                      Marma Security Inc.,
+                      Marma Private Limited,
                       <br />
                       180 Promenade <br /> Ste. 300,
 
                       Sacramento, <br /> CA - 95834
+                    </span>
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-start gap-1 hover:opacity-80 transition-opacity break-all sm:break-normal"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 90 90"
+                      width="12"
+                      height="12"
+                      fill="none"
+                      stroke="#fff"
+                      strokeWidth="6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M45 90c-.35 0-.68-.19-.86-.49l-4.71-7.97C30.22 65.98 20.7 49.88 17.64 43.73a30.4 30.4 0 0 1-3.06-13.31C14.58 13.65 28.23 0 45 0s30.42 13.65 30.42 30.42c0 4.66-1.03 9.14-3.06 13.31-3.1 6.19-12.58 22.23-21.76 37.74l-4.71 7.97A1 1 0 0 1 45 90z" />
+                      <circle cx="45" cy="29.2" r="11.2" />
+                    </svg>
+                    <span>
+                      Marma Private Limited,
+                      <br />
+                      J 1002, Purvachal building,
+                      <br />
+                      Mhada Towers, Pimpri, Pune - 411017
                     </span>
                   </a>
                 </div>
@@ -463,7 +511,7 @@ function FooterContactForm() {
         required
         disabled={isSubmitting}
       />
-      
+
       <CustomSelect
         options={[
           { value: "sales-agent", label: "Becoming a Sales Agent" },

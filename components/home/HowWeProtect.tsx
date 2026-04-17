@@ -114,7 +114,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
       id: "home-3",
       image: "/images/home/Zero Maintenance Required.webp",
       title: "Zero Maintenance Required",
-      subtitle: "No updates, no hassle.",
+      subtitle: "Automatic updates, hassle-free.",
       description:
         "All patches, updates, and security improvements happen automatically in the background.",
     },

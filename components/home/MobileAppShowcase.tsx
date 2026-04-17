@@ -20,7 +20,6 @@ import {
 export default function MobileAppShowcase() {
   const features = [
     { text: "Zero Day Phishing protection", Icon: Shield },
-    { text: "Zero Day Malware/Ransomware Protection", Icon: Lock },
     { text: "Scam Protection Service", Icon: AlertTriangle },
     { text: "Smart Devices Protection", Icon: Smartphone },
     { text: "IEmail Protection Service", Icon: Mail },
@@ -31,6 +30,7 @@ export default function MobileAppShowcase() {
     { text: "Dark Web Protection", Icon: EyeOff },
     { text: "IOT Behavior Anomaly Detection", Icon: Radio },
     { text: "User Behavior Anomaly Detection", Icon: UserCheck },
+    { text: "Zero Day Malware / Ransomware Protection", Icon: Lock },
   ];
 
   return (

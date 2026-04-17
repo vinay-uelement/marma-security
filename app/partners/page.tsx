@@ -85,8 +85,11 @@ export default function PartnersPage() {
       </div>
       <PartneringMadeEasy />
       <PartnerBenefits />
-      <SimplifyLife />
-      <PartnersBottomBanner />
+
+      <div className="fl2 max-w-[1200px] text-center mx-auto pb-8">
+        Join the Marma Security Partner Program to gain access to
+        comprehensive training, enablement, and co-marketing support.
+      </div>
       <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </main>
   );
