@@ -23,6 +23,9 @@ const TabletShowcase = dynamic(
 const HomeSolutionsInfo = dynamic(
   () => import("@/components/home/HomeSolutionsInfo"),
 );
+const SecuritySolutions = dynamic(
+  () => import("@/components/home/SecuritySolutions"),
+);
 const Challengestab = dynamic(() => import("@/components/home/Challengestab"));
 const ProtectionBanner = dynamic(
   () => import("@/components/home/ProtectionBanner"),
@@ -106,6 +109,11 @@ export default function Home() {
       {/* ── SNAP 1.5: Bad News Stats ──────────────────────────────────────── */}
       <div className="bg-[#FFFFFF]">
         <BadNewsStats />
+      </div>
+
+      {/* ── SNAP 1.51: Good News Solutions ─────────────────────────────────── */}
+      <div className="">
+        <SecuritySolutions />
       </div>
 
       {/* ── SNAP 1.6: Tablet Showcase ─────────────────────────────────────── */}
