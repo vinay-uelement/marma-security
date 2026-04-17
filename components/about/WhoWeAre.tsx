@@ -32,7 +32,7 @@ export default function WhoWeAre() {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col gap-16 lg:gap-24">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-16 flex flex-col gap-16 lg:gap-24">
         {/* Top Section: Text & Image Placeholder */}
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           <div className="flex-1 w-full flex flex-col items-start pr-0 lg:pr-8">

@@ -201,7 +201,7 @@ export default function HowWeProtect() {
               <div className="absolute inset-y-[-32px] lg:inset-y-[-48px] w-[200vw] left-1/2 -translate-x-1/2 bg-bg-light -z-10 pointer-events-none" />
             )}
 
-            <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
+            <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-16 relative z-10">
               {/* MOBILE & TABLET */}
               <div className="grid grid-cols-[1fr_1.1fr] sm:grid-cols-[1fr_1.2fr] md:grid-cols-2 lg:hidden gap-3 sm:gap-6 md:gap-8 items-stretch text-left w-full">
                 <div className="flex flex-col mt-2 md:mt-0 gap-0 md:gap-4">

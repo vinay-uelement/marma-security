@@ -81,7 +81,7 @@ export default function SecuritySolutions() {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-[#FFFFFF] py-10 px-6 lg:px-12 relative overflow-hidden"
+      className="w-full bg-[#FFFFFF] py-10 px-6 lg:px-16 relative overflow-hidden"
 
     >
 

@@ -30,7 +30,7 @@ const values = [
 export default function WhyMarma() {
   return (
     <section id="culture" className="py-24 bg-white overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
         <div className="flex flex-col items-center text-center mb-16">
           <h2 className="font-banner text-[32px] md:text-[48px] text-[#1E293B] mb-6 leading-tight">
             Why Build at <span className="text-brand-red">Marma?</span>
@@ -43,11 +43,11 @@ export default function WhyMarma() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, idx) => (
             <div key={idx} className="h-full flex flex-col">
-              <GlassWrapper 
-                padding="p-0" 
-                borderRadius="rounded-[32px]" 
-                innerBorderRadius="rounded-[24px]" 
-                showGlow={false} 
+              <GlassWrapper
+                padding="p-0"
+                borderRadius="rounded-[32px]"
+                innerBorderRadius="rounded-[24px]"
+                showGlow={false}
                 className="h-full"
               >
                 <div className="flex flex-col h-full bg-white/40 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/60">

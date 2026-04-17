@@ -91,7 +91,7 @@ export default function BadNewsStats() {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-[#FFFFFF] text-[#1A1A1A] py-10 px-6 lg:px-12 relative overflow-hidden"
+      className="w-full bg-[#FFFFFF] text-[#1A1A1A] py-10 px-6 lg:px-16 relative overflow-hidden"
     >
 
       <div className="max-w-[1440px] mx-auto w-full relative z-10 flex flex-col-reverse lg:flex-row gap-12 lg:gap-20 items-center">

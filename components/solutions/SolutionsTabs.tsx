@@ -78,9 +78,9 @@ const tabItems: TabData[] = [
   },
   {
     id: 'residential',
-    label: 'Residential & Commercial Projects',
+    label: 'Residential Projects',
     title: 'Advanced security for modern living environments.',
-    description: 'Educational institutions handle sensitive student and staff data while supporting large, open networks. Marma delivers reliable, easy-to-deploy network security that safeguards campuses, classrooms, and digital learning systems without adding complexity for IT teams.',
+    description: 'From single-family homes to large apartment complexes, residential security needs to balance safety with convenience. Marma delivers intelligent, easy-to-manage network security that protects families and their devices without adding complexity for homeowners or property managers.',
     image: '/images/solutions/residential/0.webp',
   }
 ];
@@ -218,7 +218,7 @@ export default function SolutionsTabs({ solutionData }: { solutionData?: any }) 
         }
       `}</style>
 
-      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-16 bg-[#FFFFFF] relative">
+      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-16 pt-16 bg-[#FFFFFF] relative">
         {/* Header Section */}
         <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-16 gap-0 md:gap-8 relative z-10 w-full">
           <h2 className="w-full min-[901px]:w-[55%] fl2 text-left">
@@ -228,10 +228,10 @@ export default function SolutionsTabs({ solutionData }: { solutionData?: any }) 
               className="text-[#323232] !font-extrabold"
               imageClassName="bottom-[-10px] md:bottom-[-22px]"
             />
-            <br className="hidden md:block" /> to You
+            to You
           </h2>
 
-          <div className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-10 min-[901px]:mt-0 pointer-events-none z-0">
+          <div className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[40%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-10 min-[901px]:mt-0 pointer-events-none z-0">
             <DecorativeLine
               viewBox="0 0 500 80"
               points="-3000,40 200,40"
@@ -280,7 +280,7 @@ export default function SolutionsTabs({ solutionData }: { solutionData?: any }) 
         </div>
 
         {/* Desktop Tabs — sliding indicator */}
-        <div className="hidden lg:block mb-0 select-none">
+        <div className="hidden lg:block mb-8 select-none">
           <SlidingTabs
             tabs={tabsToUse.map((tab) => ({ id: tab.id, label: tab.label }))}
             activeTabId={active.id}
@@ -347,7 +347,7 @@ function DesktopContent({ data }: { data: TabData }) {
       <div className="flex flex-col items-start lg:text-left">
         <h3 className="fl3-1 mb-12 max-w-[450px]">{data.title}</h3>
         <p className="home-challenge-desc">{data.description}</p>
-        <div className="mt-8">
+        <div className="mt-30">
           <Link href={`/solutions/${industrySlugMap[data.id] || data.id}`}>
             <Button icon variant="primary" label="Read More" />
           </Link>

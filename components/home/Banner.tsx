@@ -181,7 +181,7 @@ export default function Banner({
 
       <div className="h-[96svh] md:h-[93svh] relative z-10 overflow-hidden w-full flex items-center md:items-end">
         {/* Main Content Container inside the Banner */}
-        <div className="relative z-20 px-6 lg:px-12 h-3/5 mb-14 w-full md:py-12 lg:py-0">
+        <div className="relative z-20 px-6 lg:px-16 h-1/2 mb-14 w-full md:py-12 lg:py-0">
           {/* Left Column: Text, Subtitle, and Buttons */}
           <div className="flex flex-col space-y-4  md:space-y-6 pb-5 md:mt-16 lg:mt-0 text-white z-30 items-center lg:items-start text-center lg:text-left">
             {" "}

@@ -121,7 +121,7 @@ export default function TheMarmaAdvantage() {
         <div className="absolute bottom-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(255,0,0,0.02)_0%,rgba(255,255,255,0)_70%)] blur-[60px]" />
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10" ref={containerRef}>
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-16 relative z-10" ref={containerRef}>
         <div className="mb-14 md:mb-20 text-center flex flex-col items-center">
           <h2 className="fl2-1 mb-6">
             The Marma{" "}

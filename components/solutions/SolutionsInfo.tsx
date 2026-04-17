@@ -35,7 +35,7 @@ export default function SolutionsInfo({
       </div>
 
       {/* Main Content Grid */}
-      <div className="w-full max-w-[1440px] bg-[#f7f7f7] mx-auto px-6 lg:px-12 flex flex-col lg:grid py-12 lg:py-10 lg:grid-cols-2 gap-8 lg:gap-16 relative z-10 items-center rounded-sm">
+      <div className="w-full max-w-[1440px] bg-[#f7f7f7] mx-auto px-6 lg:px-16 flex flex-col lg:grid py-12 lg:py-10 lg:grid-cols-2 gap-8 lg:gap-16 relative z-10 items-center rounded-sm">
         {/* Content Side */}
         <div
           className={`flex flex-col z-10 relative w-full h-full items-center text-center lg:items-start lg:text-left order-1 p-10 ${isRight ? "lg:order-1" : "lg:order-2"

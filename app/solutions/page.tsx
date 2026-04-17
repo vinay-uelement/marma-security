@@ -67,9 +67,7 @@ export default async function SolutionsPage() {
         <SolutionsTabs solutionData={solutionData} />
       </div>
 
-      <div className=" pt-16">
-        <SolutionsInfo />
-      </div>
+      <SolutionsInfo />
     </main>
   );
 }

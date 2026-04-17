@@ -47,14 +47,6 @@ export default function SolutionsBanner() {
         </>
       }
       subtitleClassName="font-title font-light text-[18px] md:text-[24px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-[#E0E0E0] max-w-[550px]"
-      buttons={[
-        {
-          label: "Explore",
-          variant: "primary",
-          href: "#explore",
-          icon: true,
-        },
-      ]}
       rightImageAlt="Marma Security Solutions"
     />
   );

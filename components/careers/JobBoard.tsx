@@ -44,7 +44,7 @@ export default function JobBoard() {
 
   return (
     <section id="openings" className="py-24 bg-[#F8FAFC]">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="flex flex-col">
             <h2 className="font-banner text-[32px] md:text-[48px] text-[#1E293B] mb-4">

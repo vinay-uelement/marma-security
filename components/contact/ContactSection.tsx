@@ -75,7 +75,7 @@ export default function ContactSection() {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-[1440px] mt-0 md:mt-4 mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-[1440px] mt-0 md:mt-4 mx-auto px-6 lg:px-16">
         {/* ROW 1: HEADER & IMAGE */}
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_4.5fr]  gap-10 lg:gap-6   items-start">
           {/* LEFT SECTION */}

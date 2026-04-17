@@ -34,7 +34,7 @@ export default function MobileAppShowcase() {
   ];
 
   return (
-    <section className="w-full bg-[#FFFFFF] pb-12 md:pb-24 px-4 sm:px-6 lg:px-12">
+    <section className="w-full bg-[#FFFFFF] pb-12 md:pb-24 px-4 sm:px-6 lg:px-16">
       <div className="max-w-[1440px] mx-auto bg-[#F7F7F7] rounded-[32px] p-8 md:p-12 lg:p-16">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-8 justify-between">
 

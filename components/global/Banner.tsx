@@ -76,7 +76,7 @@ export default function Banner({
       {/* Dark Overlay */}
       {overlay && <div className="absolute inset-0 bg-black/70 z-[5]" />}
       {/* Main Content Container inside the Banner */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 w-full py-12 lg:py-0">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-16 w-full py-12 lg:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center h-full justify-items-center lg:justify-items-stretch">
           {/* Left Column: Text, Subtitle, and Buttons */}
           <div className="flex flex-col space-y-4 md:space-y-6 pb-5 mt-12 md:mt-16 lg:mt-0 text-white z-20 items-center lg:items-start text-center lg:text-left">       {/* Title text */}

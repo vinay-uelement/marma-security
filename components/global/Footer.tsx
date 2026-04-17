@@ -10,7 +10,7 @@ export default function Footer() {
   const pathname = usePathname();
   return (
     <footer className={`footer-container`}>
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
         <div className="flex flex-col lg:flex-row justify-between w-full gap-0 lg:gap-24">
           <div className="flex flex-col h-full grow">
             {/* Top: Logo & Description */}
@@ -28,8 +28,8 @@ export default function Footer() {
             {/* ======================================= */}
             {/* DESKTOP-ONLY MIDDLE NAV & CONTACT GRID */}
             {/* ======================================= */}
-            <div className={`hidden md:flex w-full justify-between`}>
-              <div className={`grid grow grid-cols-2`}>
+            <div className={`hidden md:flex flex-col w-full justify-between gap-20 mb-20`}>
+              <div className={`grid grow grid-cols-4 gap-6`}>
                 <a
                   href="/technology"
                   className="hover:text-white/70 transition-colors h-fit"
@@ -76,7 +76,7 @@ export default function Footer() {
               </div>
 
 
-              <div className={`flex gap-10 flex-col`}>
+              <div className={`grid grid-cols-2 gap-10 justify-between items-start`}>
                 <a
                   href="tel:+14085828962"
                   className="flex items-center gap-4 hover:opacity-80 transition-opacity"

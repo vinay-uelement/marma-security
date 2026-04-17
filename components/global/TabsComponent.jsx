@@ -37,7 +37,7 @@ const TabsComponent = ({
   };
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12" style={{ borderBottom: `2px solid ${borderColor}` }}>
+    <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-16" style={{ borderBottom: `2px solid ${borderColor}` }}>
       {/* ── MOBILE: Dropdown ─────────────────────────────── */}
       <div className="sm:hidden" ref={dropdownRef}>
         <div className="flex pl-6">

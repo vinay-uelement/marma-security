@@ -56,7 +56,7 @@ export default function PartnersPage() {
           }}
         >
           {/* Main Content Container inside the Banner */}
-          <div className="relative z-10 w-full px-6 lg:px-12 flex flex-col items-center justify-center text-center">
+          <div className="relative z-10 w-full px-6 lg:px-16 flex flex-col items-center justify-center text-center">
             <div className="flex flex-col space-y-6 lg:space-y-8 items-center max-w-[1200px] mt-10 md:mt-20">
               {/* Title text */}
               <h1 className="about-banner-title">
@@ -96,7 +96,7 @@ export default function PartnersPage() {
 
       {false && <div className="">
         <section className="w-full bg-[#FFFFFF]">
-          <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 py-12 md:pt-20">
+          <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-16 py-12 md:pt-20">
             {/* Header */}
             <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-6 md:mb-2 gap-8 relative z-10 w-full ">
               {/* TEXT */}

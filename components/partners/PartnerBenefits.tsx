@@ -52,7 +52,7 @@ const CARDS = [
 export default function PartnerBenefits() {
   return (
     <section className="w-full bg-white flex flex-col items-center py-16 lg:py-24 font-body">
-      <div className="w-full max-w-[1440px] px-6 lg:px-12 mx-auto flex flex-col items-center gap-16 lg:gap-20">
+      <div className="w-full max-w-[1440px] px-6 lg:px-16 mx-auto flex flex-col items-center gap-16 lg:gap-20">
 
         {/* Section Header & Image Placeholder */}
         <div className="w-full max-w-[1100px] flex flex-col gap-6 md:gap-8">

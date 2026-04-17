@@ -31,7 +31,7 @@ export default function TechnologyBanner({
             }}
         >
             {/* Main Content Container — fills entire banner height */}
-            <div className="relative z-10 w-full flex-1 px-6 lg:px-12 flex flex-col items-center text-center pt-28 md:pt-32 pb-16 md:pb-20">
+            <div className="relative z-10 w-full flex-1 px-6 lg:px-16 flex flex-col items-center text-center pt-28 md:pt-32 pb-16 md:pb-20">
 
                 {/* Title + Subtitle group — sits near the top-center */}
                 <div className="flex flex-col space-y-6 lg:space-y-8 items-center max-w-[900px] mt-10 md:mt-20">
