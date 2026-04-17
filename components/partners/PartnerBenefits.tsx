@@ -62,7 +62,7 @@ export default function PartnerBenefits() {
 
           <div className="relative w-full aspect-[16/9] md:aspect-[2.2/1] bg-[#d9d9d9] rounded-[10px] overflow-hidden">
             <Image
-              src="/images/partners/partner_demo_banner.png"
+              src="/images/partners/became_a_partner.webp"
               alt="Partnering with Marma Security"
               fill
               className="object-cover"

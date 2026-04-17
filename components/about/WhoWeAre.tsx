@@ -2,6 +2,7 @@ import React from "react";
 import HighlightedText from "@/components/global/HighlightedText";
 import DecorativeLine from "@/components/home/DecorativeLine";
 import { CheckSquare } from "lucide-react";
+import Image from "next/image";
 
 export default function WhoWeAre() {
   const cards = Array(4).fill({
@@ -60,7 +61,9 @@ export default function WhoWeAre() {
           </div>
 
           <div className="flex-1 w-full flex justify-center lg:justify-end">
-            <div className="w-full max-w-[600px] aspect-[4/3] bg-[#D9D9D9] rounded-2xl shadow-sm"></div>
+            <div className="w-full aspect-[4/3] relative rounded-2xl shadow-sm overflow-hidden">
+              <Image src="/images/contact/who_we_are.webp" alt="Marma Mobile App" fill className="object-cover" />
+            </div>
           </div>
         </div>
 

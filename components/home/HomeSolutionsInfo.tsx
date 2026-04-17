@@ -9,8 +9,9 @@ export default function HomeSolutionsInfo() {
         imageSrc="/images/home/solution-info-homepage1.webp"
         bgText="STAY IN THE KNOW"
         bgTextClassName="text-[clamp(24px,5vw,72px)] tracking-[0.18em]"
-        title="Discover the power of the Marma Security mobile app, an essential companion to all Marma Security products."
-        description="Discover valuable insights about your network's safety and see detailed statistics about all connected devices. Stay ahead of threats with real-time risk and threat-detection alerts. The Marma Security mobile app simplifies cybersecurity management so you can worry less about keeping your home and business safe!"
+        title="One Intelligent Platform. Complete Cybersecurity Coverage."
+        description="Powered by AI and built on enterprise-grade security technologies, Marma delivers unified protection across networks, users, devices, and data. By combining advanced threat detection, behavioral analysis, and cloud intelligence, our platform prevents attacks before they happen—without adding complexity.
+From phishing and ransomware to IoT vulnerabilities and data leaks, Marma replaces fragmented security tools with a single, automated solution designed for simplicity, speed, and scale."
       />
     </div>
   );
