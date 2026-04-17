@@ -23,7 +23,7 @@ export default function MobileAppShowcase() {
     { text: "Scam Protection Service", Icon: AlertTriangle },
     { text: "Smart Devices Protection", Icon: Smartphone },
     { text: "Dark Web Protection", Icon: EyeOff },
-    { text: "IEmail Protection Service", Icon: Mail },
+    { text: "Email Protection Service", Icon: Mail },
     { text: "Cloud Data Protection", Icon: Cloud },
     { text: "Predictive Risk Scoring", Icon: Activity },
     { text: "PCI, HIPPA Compliance", Icon: FileText },
