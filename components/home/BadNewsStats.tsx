@@ -93,17 +93,14 @@ export default function BadNewsStats() {
       ref={containerRef}
       className="w-full bg-[#FFFFFF] text-[#1A1A1A] py-10 px-6 lg:px-12 relative overflow-hidden"
     >
-      {/* Subtle Light Red Glow Effect */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-[#E83424]/5 rounded-full blur-[80px] pointer-events-none z-0"></div>
-      <div className="absolute top-1/4 right-0 w-[300px] h-[300px] bg-[#E83424]/[0.03] rounded-full blur-[60px] pointer-events-none z-0"></div>
 
       <div className="max-w-[1440px] mx-auto w-full relative z-10 flex flex-col-reverse lg:flex-row gap-12 lg:gap-20 items-center">
         {/* Left Side: Stats with Vertical Bars */}
         <div className="w-full lg:w-1/2 flex flex-col space-y-4 lg:space-y-6">
-          <p className="bad-news-text text-[#FF453A] font-semibold tracking-[0.2em] text-[14px] uppercase">
+          <p className="bad-news-text text-brand-red font-semibold tracking-[0.2em] text-[14px] uppercase">
             The Bad News
           </p>
-          <h2 className="bad-news-text text-[20px] md:text-[30px] lg:text-[36px] font-title font-medium leading-[1.1] text-[#1A1A1A]">
+          <h2 className="bad-news-text fl3">
             Attackers are supercharging <br className="hidden lg:block" /> their speed and scale.
           </h2>
         </div>

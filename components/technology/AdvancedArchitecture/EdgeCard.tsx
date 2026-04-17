@@ -23,17 +23,14 @@ export default function EdgeCard({ card }: EdgeCardProps) {
         </h4>
 
         {/* Image Placeholder Frame */}
-        <div className="relative w-full aspect-video bg-[#F5F5F5] border border-[#EBEBEB] rounded-[8px] mb-3 overflow-hidden flex items-center justify-center">
-          <span className="text-[#BBBBBB] text-[10px] md:text-[12px] font-body bg-white/50 px-2 py-1 rounded">
-            Image
-          </span>
+        <div className="relative w-full aspect-video rounded-[8px] mb-3 overflow-hidden flex items-center justify-center">
           {card.img && (
             <Image
               src={card.img}
               alt={card.label}
               fill
               sizes="200px"
-              className="object-cover opacity-30 mix-blend-multiply"
+              className="object-contain"
             />
           )}
         </div>

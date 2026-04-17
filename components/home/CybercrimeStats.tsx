@@ -9,9 +9,9 @@ export default function CybercrimeStats() {
         <div className="grid grid-cols-2 gap-20 items-end">
           {/* Left Column: Device Image */}
           <div className="flex justify-center items-center w-full h-full min-h-[100px] px-12 translate-y-12 ">
-            <div className="relative w-full max-w-[300px] aspect-423/495 z-30">
+            <div className="relative w-full max-w-[400px] aspect-423/495 z-30">
               <Image
-                src="/images/banners/solution-banner-right1.webp"
+                src="/images/product/transparentProducts/image.png"
                 alt="Marma Security Black Device"
                 fill
                 sizes="20vw"
@@ -35,10 +35,6 @@ export default function CybercrimeStats() {
             </p>
           </div>
         </div>
-
-        <div className="w-full h-[10vh] bg-[#FAFAFA]">
-        </div>
-        <div className="h-px bg-[#E5E5E5] w-full mx-auto" />
       </section>
 
       {/* MOBILE & TABLET VIEW */}

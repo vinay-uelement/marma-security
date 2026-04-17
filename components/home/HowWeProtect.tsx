@@ -32,7 +32,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
       title: "Centralized Security Control",
       subtitle: "One dashboard. Total visibility.",
       description:
-        "Manage your entire security infrastructure—from gateways to endpoints and cloud services—through a single unified platform with real-time insights.",
+        "Manage your entire security infrastructure from gateways to endpoints and cloud services through a single unified platform with real-time insights.",
     },
     {
       id: "enterprise-2",
@@ -100,7 +100,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
       title: "Quick & Effortless Setup",
       subtitle: "Get protected in under 5 minutes.",
       description:
-        "No technical expertise required—simply plug in and your network is secured instantly.",
+        "No technical expertise required simply plug in and your network is secured instantly.",
     },
     {
       id: "home-2",
@@ -124,7 +124,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
       title: "Family-Wide Protection",
       subtitle: "Safe browsing for everyone at home.",
       description:
-        "Protect all devices—from phones to smart TVs—with built-in DNS security, scam protection, and content filtering.",
+        "Protect all devices from phones to smart TVs with built-in DNS security, scam protection, and content filtering.",
     },
   ],
 };
@@ -152,10 +152,10 @@ export default function HowWeProtect() {
   const learnMoreHref = TAB_ANCHORS[activeTab];
 
   return (
-    <section className="w-full bg-bg-white">
+    <section className="w-full bg-bg-white pb-16">
       {/* Header */}
-      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-12">
-        <div className="relative flex flex-col md:flex-row justify-between items-start mb-6 md:mb-10 gap-4 md:gap-8 text-left w-full sm:h-[80px] md:h-auto">
+      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-16">
+        <div className="relative flex flex-col md:flex-row justify-between items-start mb-8 md:mb-14 gap-4 md:gap-8 text-left w-full sm:h-[80px] md:h-auto">
           {/* Decorative Line — Mobile */}
           <div className="flex md:hidden absolute top-[-50px] right-[-24px] items-start justify-end w-[280px] pointer-events-none overflow-x-clip z-0">
             <div className="w-full flex justify-end">
@@ -178,18 +178,7 @@ export default function HowWeProtect() {
             />
           </h2>
 
-          {/* Decorative Line — Desktop */}
-          <div className="hidden md:block absolute right-0 top-0 pointer-events-none z-0">
-            <div className="relative w-screen right-1/2 translate-x-1/2">
-              <DecorativeLine
-                viewBox="0 0 700 80"
-                points="100,40 1100,40"
-                dots={[{ cx: 100, cy: 40, rippleCount: 3 }]}
-                className="w-[300px] lg:w-[400px] h-auto ml-auto"
-                animationDuration={2.8}
-              />
-            </div>
-          </div>
+
         </div>
       </div>
 
@@ -237,17 +226,6 @@ export default function HowWeProtect() {
                   <p className="fl4-1 mb-[10px] md:mb-6">
                     {feature.description}
                   </p>
-                  <Link
-                    href={learnMoreHref}
-                    className="flex items-center gap-4 group w-fit"
-                  >
-                    <span className="fl5-2 group-hover:text-brand-red-hover transition-colors">
-                      Learn more
-                    </span>
-                    <span className="text-brand-red group-hover:text-brand-red-hover transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
-                      <ArrowIcon />
-                    </span>
-                  </Link>
                 </div>
               </div>
 
@@ -274,17 +252,6 @@ export default function HowWeProtect() {
                     <p className="fl4-1 mb-[10px] md:mb-6">
                       {feature.description}
                     </p>
-                    <Link
-                      href={learnMoreHref}
-                      className="flex items-center gap-4 group w-fit"
-                    >
-                      <span className="fl5-2 group-hover:text-brand-red-hover transition-colors">
-                        Learn more
-                      </span>
-                      <span className="text-brand-red group-hover:text-brand-red-hover transition-transform group-hover:translate-x-1 flex items-center justify-center translate-y-[1px]">
-                        <ArrowIcon />
-                      </span>
-                    </Link>
                   </div>
                 </div>
               </div>

@@ -46,7 +46,7 @@
 
 html {
   scroll-behavior: smooth;
-  
+
 }
 
 body {
@@ -116,7 +116,7 @@ img {
 
   .fl3-1 {
     font-family: var(--font-body);
-    @apply font-normal md:font-light text-[12px] md:text-[28px] lg:text-[32px] leading-[18px] md:leading-[40px] tracking-[-0.01em] text-text-dark;
+    @apply font-normal md:font-normal text-[12px] md:text-[28px] lg:text-[30px] leading-[18px] md:leading-[40px] tracking-[-0.01em] text-text-dark;
   }
 
   .fl3-2 {

@@ -165,7 +165,7 @@ export default function AdvancedArchitecture() {
   );
 
   return (
-    <section className="w-full bg-[#FAFAFA] pt-12 lg:pt-16 pb-12 md:pb-20 relative overflow-hidden">
+    <section className="w-full bg-[#FAFAFA] pt-8 lg:pt-12 pb-12 md:pb-20 relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col items-center">
         {/* Typography Layout */}
         <div className="text-center w-full max-w-[900px] mx-auto mb-10 md:mb-12 relative z-20">

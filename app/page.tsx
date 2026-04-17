@@ -112,7 +112,19 @@ export default function Home() {
       </div>
 
       {/* ── SNAP 1.51: Good News Solutions ─────────────────────────────────── */}
-      <div className="">
+      <div className="relative">
+        {/* Decorative Line — Desktop */}
+        <div className="hidden md:block absolute right-0 top-8 pointer-events-none z-100">
+          <div className="relative w-screen right-1/2 translate-x-1/2">
+            <DecorativeLine
+              viewBox="0 0 700 80"
+              points="100,40 1100,40"
+              dots={[{ cx: 100, cy: 40, rippleCount: 3 }]}
+              className="w-[300px] lg:w-[400px] h-auto ml-auto"
+              animationDuration={2.8}
+            />
+          </div>
+        </div>
         <SecuritySolutions />
       </div>
 
@@ -123,7 +135,7 @@ export default function Home() {
 
       {/* ── SNAP 2: Cybercrime Stats ──────────────────────────────────────── */}
       <div className="">
-        <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-4 lg:px-12 pt-0 md:pt-12 bg-[#FFFFFF] relative">
+        <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-4 lg:px-16 pt-0 md:pt-12 bg-[#FFFFFF] relative">
           <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center gap-8 relative z-10 w-full">
             <h2 className="fl2 w-full min-[901px]:w-[55%] home-exposed-heading text-left">
               Your{" "}

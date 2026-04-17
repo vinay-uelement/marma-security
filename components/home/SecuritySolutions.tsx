@@ -15,7 +15,7 @@ const solutions = [
   {
     icon: ShieldCheck,
     title: "Stop Threats Early",
-    description: "Block phishing, ransomware, scams & zero-days—before damage happens.",
+    description: "Block phishing, ransomware, scams & zero days before damage happens.",
   },
   {
     icon: Zap,
@@ -30,7 +30,7 @@ const solutions = [
   {
     icon: Globe,
     title: "One Platform. Total Protection.",
-    description: "Secure devices, networks, cloud & smart IoT—all in one place.",
+    description: "Secure devices, networks, cloud & smart IoT all in one place.",
   },
   {
     icon: Smartphone,
@@ -82,15 +82,17 @@ export default function SecuritySolutions() {
     <section
       ref={containerRef}
       className="w-full bg-[#FFFFFF] py-10 px-6 lg:px-12 relative overflow-hidden"
+
     >
+
       <div className="max-w-[1440px] mx-auto">
         <div className="solution-header mb-12">
-          <div className="flex items-center gap-3 mb-3">
-            <span className="text-green-500 font-bold tracking-[0.2em] text-[14px] uppercase">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-green-500 font-semibold tracking-[0.2em] text-[14px] uppercase">
               The Good News
             </span>
           </div>
-          <h2 className="font-banner text-[20px] md:text-[30px] lg:text-[36px] text-[#1E293B] leading-[1.1] max-w-[700px]">
+          <h2 className="font-banner fl3">
             Cybersecurity doesn’t have to be <br className="hidden md:block" />
             <HighlightedText text="complicated" className="text-dark" /> anymore.
           </h2>
@@ -108,10 +110,10 @@ export default function SecuritySolutions() {
                   <Icon className="w-5 h-5 text-brand-red" />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <h3 className="font-banner text-[17px] text-[#1E293B] group-hover:text-brand-red transition-colors duration-300">
+                  <h3 className="font-banner text-[18px] font-medium text-[#1E293B] group-hover:text-brand-red transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="font-title text-[13.5px] text-[#64748B] leading-relaxed max-w-[450px]">
+                  <p className="font-title text-[14px] text-[#64748B] leading-relaxed max-w-[450px]">
                     {item.description}
                   </p>
                 </div>
@@ -121,7 +123,7 @@ export default function SecuritySolutions() {
         </div>
 
         <div className="solution-header mt-12 text-center">
-          <p className="font-banner text-[16px] md:text-[20px] text-[#1E293B]">
+          <p className="font-banner text-[16px] md:text-[20px] text-[#1E293B] bg-[#F7F7F7] p-4 px-6 rounded-lg w-fit mx-auto">
             Smarter threats need smarter security. <br className="md:hidden" />
             <span className="text-brand-red">That’s Marma Security.</span>
           </p>

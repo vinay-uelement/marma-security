@@ -37,7 +37,7 @@ const tabItems: TabData[] = [
     label: "Rising Cyber Threats",
     title: "AI-Powered Threat Neutralization",
     description:
-      "Stay ahead of evolving cybercriminals with an autonomous security platform. Marma leverages continuous machine learning and global cloud intelligence to predict and block modern threats in real time—including phishing attacks, dangerous ransomware, zero-day malware, and the latest cyber scams.",
+      "Stay ahead of evolving cybercriminals with an autonomous security platform. Marma leverages continuous machine learning and global cloud intelligence to predict and block modern threats in real time including phishing attacks, dangerous ransomware, zero-day malware, and the latest cyber scams.",
     image: "/images/home/Overcoming challenges (2).webp",
   },
   {
@@ -167,7 +167,7 @@ export default function Challengestab() {
         }
       `}</style>
 
-      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 mt-16 md:mt-24 bg-bg-white">
+      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-16 mt-16 md:mt-24 bg-bg-white">
         {/* Header Section */}
         <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-8 mb-[25px] md:mb-[60px] w-full sm:h-[60px] md:h-auto">
           <h2 className="fl2 z-10 mb-3 md:mb-0 w-full md:max-w-[520px] whitespace-normal md:whitespace-nowrap relative">

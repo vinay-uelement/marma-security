@@ -44,20 +44,20 @@ export default function TabletShowcase() {
 
 
   return (
-    <section ref={sectionRef} className="w-full px-6 lg:px-12 pb-6 sm:pb-12 flex flex-col items-center mt-16 overflow-hidden bg-[#FFFFFF]" style={{ perspective: "1200px", transformStyle: "preserve-3d" }}>
+    <section ref={sectionRef} className="w-full px-6 lg:px-12 pb-6 sm:pb-18 flex flex-col items-center mt-12 overflow-hidden bg-[#FFFFFF]" style={{ perspective: "1200px", transformStyle: "preserve-3d" }}>
 
       {/* Title Section */}
       <div className="flex flex-col items-center mb-2 sm:mb-6 text-center max-w-4xl mx-auto relative z-10">
         <h2 className="fl2 font-title font-medium text-[#1A1A1A] mb-4">
           Marma Management Platform
         </h2>
-        <p className="text-[#666666] text-lg sm:text-xl max-w-2xl font-light leading-relaxed">
+        <p className="text-[#666666] text-lg max-w-2xl font-light leading-relaxed">
           Take absolute control of your security ecosystem. Unify operations, monitor endpoints, and respond to threats in real-time from a single centralized interface.
         </p>
       </div>
 
       {/* Tablet Mockup Container */}
-      <div className="tablet-container relative w-full max-w-[1100px] aspect-[16/10] bg-[#1a1a1a] rounded-[20px] sm:rounded-[40px] p-2.5 sm:p-4 shadow-2xl overflow-hidden self-center max-h-[70vh]">
+      <div className="tablet-container relative w-full max-w-[1100px] aspect-[16/10] bg-[#1a1a1a] rounded-[20px] sm:rounded-[40px] p-2.5 sm:p-4 shadow-2xl shadow-black/50 overflow-hidden self-center max-h-[70vh]">
 
         {/* Camera Lens Detailing (Right Side Bezel) */}
         <div className="absolute right-[6px] sm:right-[10px] top-1/2 -translate-y-1/2 w-1 h-1 sm:w-2 sm:h-2 bg-[#1d1d1d] rounded-full border border-white/5 opacity-40 z-20"></div>
