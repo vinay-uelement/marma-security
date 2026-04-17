@@ -81,7 +81,7 @@ const tabItems: TabData[] = [
     label: 'Residential & Commercial Projects',
     title: 'Advanced security for modern living environments.',
     description: 'Educational institutions handle sensitive student and staff data while supporting large, open networks. Marma delivers reliable, easy-to-deploy network security that safeguards campuses, classrooms, and digital learning systems without adding complexity for IT teams.',
-    image: '/images/home/Security_Images (6).webp',
+    image: '/images/solutions/residential/0.webp',
   }
 ];
 
