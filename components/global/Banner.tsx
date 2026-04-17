@@ -31,6 +31,7 @@ export interface BannerProps {
   ContinerClass?: string;
   backgroundSize?: string;
   sectionClassName?: string;
+  overlay?: boolean;
 }
 
 export default function Banner({
@@ -51,7 +52,8 @@ export default function Banner({
   rightContent,
   ContinerClass = "min-h-[100vh]",
   backgroundSize = "cover",
-  sectionClassName = "py-12 md:py-16 lg:py-24"
+  sectionClassName = "py-12 md:py-16 lg:py-24",
+  overlay = false,
 }: BannerProps) {
   // Dynamic height class assignment based on the prop
   const heightMap: Record<string, string> = {
@@ -71,6 +73,8 @@ export default function Banner({
         backgroundRepeat: "no-repeat",
       }}
     >
+      {/* Dark Overlay */}
+      {overlay && <div className="absolute inset-0 bg-black/70 z-[5]" />}
       {/* Main Content Container inside the Banner */}
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 w-full py-12 lg:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center h-full justify-items-center lg:justify-items-stretch">
@@ -88,7 +92,7 @@ export default function Banner({
 
             {/* Render Buttons conditionally */}
             {buttons && buttons.length > 0 && (
-              <div className=" lg:absolute flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 pt-6 md:pt-8 lg:pt-16 w-full lg:bottom-0">
+              <div className=" flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 pt-6 md:pt-8 lg:pt-16 w-full lg:bottom-0">
                 {buttons.map((btn, index) => {
                   const isPrimary =
                     btn.variant !== "secondary" && btn.variant !== "outline";

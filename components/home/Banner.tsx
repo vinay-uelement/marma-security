@@ -47,6 +47,7 @@ export default function Banner({
   rightImageAlt = "Banner Image",
   titleClassName = "font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white drop-shadow-sm",
   rightImageClassName = "",
+  showRightImageCircle = true,
   overlay = false,
 }: BannerProps) {
   const [activeImage, setActiveImage] = useState<string | null>(rightImage || null);
@@ -217,12 +218,12 @@ export default function Banner({
           </div>
         </div>
         {/*  background circle */}
-        <div
+        {showRightImageCircle && <div
           className=" absolute max-sm:left-1/2 max-sm:-translate-x-1/2 md:-right-6 bottom-0 md:-bottom-4 w-[30vh] h-[30vh] md:w-[75svh] md:h-[75svh] rounded-full opacity-50
             bg-[linear-gradient(290deg,rgba(255,0,0,0.01)_0%,rgba(255,0,0,1)_100%)]
             backdrop-blur-[60px]
             "
-        ></div>
+        ></div>}
       </div>
 
       {/* product image */}
