@@ -93,7 +93,7 @@ export default function SecuritySolutions() {
       <div className="max-w-[1440px] mx-auto">
         <div className="solution-header mb-12">
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-green-500 font-semibold tracking-[0.2em] text-[14px] uppercase">
+            <span className="text-green-500 font-semibold tracking-[0.2em] text-[16px] uppercase">
               The Good News
             </span>
           </div>

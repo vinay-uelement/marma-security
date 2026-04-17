@@ -97,7 +97,7 @@ export default function BadNewsStats() {
       <div className="max-w-[1440px] mx-auto w-full relative z-10 flex flex-col-reverse lg:flex-row gap-12 lg:gap-20 items-center">
         {/* Left Side: Stats with Vertical Bars */}
         <div className="w-full lg:w-1/2 flex flex-col space-y-4 lg:space-y-6">
-          <p className="bad-news-text text-brand-red font-semibold tracking-[0.2em] text-[14px] uppercase">
+          <p className="bad-news-text text-brand-red font-semibold tracking-[0.2em] text-[16px] uppercase">
             The Bad News
           </p>
           <h2 className="bad-news-text fl3">
