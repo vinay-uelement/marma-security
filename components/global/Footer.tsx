@@ -135,7 +135,7 @@ export default function Footer() {
                     <circle cx="45" cy="29.2" r="11.2" />
                   </svg>
                   <span>
-                    Marma Private Limited,
+                    Marma Security Inc.,
                     <br />
                     180 Promenade Ste. 300,
                     <br />
@@ -161,11 +161,11 @@ export default function Footer() {
                     <circle cx="45" cy="29.2" r="11.2" />
                   </svg>
                   <span>
-                    Marma Private Limited,
+                    Marmasec Private Limited,
                     <br />
-                    J 1002, Purvachal building,
+                    J 1002, Mhada Towers,
                     <br />
-                    Mhada Towers, Pimpri, Pune - 411017
+                    Pimpri, Pune - 411017
                   </span>
                 </a>
 
@@ -333,7 +333,7 @@ export default function Footer() {
                       <circle cx="45" cy="29.2" r="11.2" />
                     </svg>
                     <span>
-                      Marma Private Limited,
+                      Marma Security Inc.,
                       <br />
                       180 Promenade <br /> Ste. 300,
 
@@ -359,11 +359,11 @@ export default function Footer() {
                       <circle cx="45" cy="29.2" r="11.2" />
                     </svg>
                     <span>
-                      Marma Private Limited,
+                      Marmasec Private Limited,
                       <br />
-                      J 1002, Purvachal building,
+                      J 1002, Mhada Towers,
                       <br />
-                      Mhada Towers, Pimpri, Pune - 411017
+                      Pimpri, Pune - 411017
                     </span>
                   </a>
                 </div>

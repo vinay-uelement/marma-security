@@ -20,7 +20,7 @@ export default function PrivacyPolicyContent() {
         personal data in accordance with:
       </p>
       <ul className="list-none space-y-1 pl-2">
-        <li>• Digital Personal Data Protection Act, 2023 (India)</li>
+        <li>• Digital Personal Data Protection Act, 2025 (India)</li>
         <li>• ISO/IEC 27001:2022 information security principles</li>
         <li>• Applicable global data protection best practices</li>
       </ul>
