@@ -62,6 +62,12 @@ export default function Footer() {
                   Partners
                 </a>
                 <a
+                  href="/careers"
+                  className="hover:text-white/70 transition-colors"
+                >
+                  Careers
+                </a>
+                <a
                   href="/contact-us"
                   className="hover:text-white/70 transition-colors"
                 >
@@ -248,6 +254,12 @@ export default function Footer() {
                     className="hover:text-white/70 transition-colors"
                   >
                     Partners
+                  </a>
+                  <a
+                    href="/careers"
+                    className="hover:text-white/70 transition-colors"
+                  >
+                    Careers
                   </a>
                   <a
                     href="/contact-us"
