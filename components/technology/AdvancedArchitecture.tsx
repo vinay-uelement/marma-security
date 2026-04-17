@@ -41,16 +41,17 @@ export default function AdvancedArchitecture() {
       gsap.set(lines, { opacity: 0 });
 
       // 1. Entrance Sequence Timeline
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top -1%",
-          scrub: 2,
-          pin: true,
-          pinSpacing: true,
-          end: "80%",
-        },
-      });
+      // const tl = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: containerRef.current,
+      //     start: "top -1%",
+      //     scrub: 2,
+      //     pin: true,
+      //     pinSpacing: true,
+      //     end: "80%",
+      //   },
+      // });
+      const tl = gsap.timeline();
 
       // Step 1: Central cloud
       tl.to(cloudRef.current, {
