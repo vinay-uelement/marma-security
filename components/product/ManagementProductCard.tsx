@@ -22,14 +22,13 @@ export default function ManagementProductCard({
       </div>
 
       {/* Image Block */}
-      <div className="relative w-full  rounded-xl overflow-hidden">
+      <div className="relative rounded-xl overflow-hidden aspect-video">
         {image ? (
           <Image
             src={image}
             alt={imageAlt}
-            width={1000}
-            height={1000}
-            className="object-fill w-full rounded-xl border border-gray-200"
+            fill
+            className="object-fill w-full h-full rounded-xl border border-gray-200"
           />
         ) : (
           <div aria-hidden="true" className="h-full w-full bg-[#D9D9D9]" />

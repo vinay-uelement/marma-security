@@ -93,11 +93,11 @@ export default function Home() {
           }
           subtitleClassName="font-title font-light text-[16px] md:text-[22px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-white max-w-[550px]"
           buttons={[
-            { label: "Order Now", href: "#", variant: "primary", icon: true },
+            // { label: "Order Now", href: "#", variant: "primary", icon: true },
             {
               label: "Learn More",
               href: learnMoreLinks[index],
-              variant: "secondary",
+              variant: "primary",
               icon: true,
             },
           ]}

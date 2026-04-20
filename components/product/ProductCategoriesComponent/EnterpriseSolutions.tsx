@@ -149,7 +149,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
           <ManagementProductCard
             title="Enterprise Management Platform"
             description="Cloud-based or Private Data Center hosted platform for centrally managing Security Gateways, Endpoint Protection, and Cloud Services across the enterprise."
-            image="/images/product/software/firewall-dashboard.webp"
+            image="/images/product/software/firewallDashboard.webp"
             imageAlt="Enterprise Management Platform Screenshot"
           />
         </div>
@@ -179,7 +179,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                     "Scam Protection",
                     "AI / Data Loss Prevention",
                   ]}
-                  image="/images/product/software/marma-agent.webp"
+                  image="/images/product/software/marmaAgent.webp"
                 />
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               name="SIEM Integration Services"
               tagline="Enterprise SIEM"
               primaryFeature="Custom integration with 3rd-party Enterprise SIEM solutions."
-              image="/images/product/software/seim.webp"
+              image="/images/product/software/seimNew.webp"
               features={[]}
             />
             <EndpointProductCard

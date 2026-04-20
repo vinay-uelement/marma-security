@@ -92,7 +92,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
           <ManagementProductCard
             title="Management Platform"
             description={smbManagementDescription}
-            image="/images/product/software/agent-dashboard.webp"
+            image="/images/product/software/securityDashboard.webp"
             imageAlt="Management Platform"
           />
         </div>
@@ -109,7 +109,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
                 name="Agent Software for Windows"
                 tagline="24x7 Endpoint Protection"
                 primaryFeature="FW & Anti-Virus Integration"
-                image="/images/product/software/marma-agent.webp"
+                image="/images/product/software/marmaAgent.webp"
                 features={[
                   "DNS Security",
                   "URL Filtering",
