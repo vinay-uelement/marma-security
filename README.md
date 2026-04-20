@@ -58,7 +58,13 @@ GitHub (push to main)
    └──────────┘
         │
         ▼
-  ALB (internet-facing) → private Fargate tasks
+  ALB (internet-facing, HTTPS)
+        │
+        ▼
+  ACM Certificate (thedigitaldrift.in)
+        │
+        ▼
+  Private Fargate tasks (port 3000)
 ```
 
 ### Infrastructure files
@@ -66,208 +72,423 @@ GitHub (push to main)
 | File | What it creates |
 |------|----------------|
 | `infra/cfn-ecr.yaml` | ECR repository with scan-on-push and lifecycle policy |
-| `infra/cfn-ecs.yaml` | VPC, subnets, NAT Gateway, ALB, ECS Cluster, Fargate service |
+| `infra/cfn-acm.yaml` | ACM SSL/TLS certificate for `thedigitaldrift.in` + `www.thedigitaldrift.in` |
+| `infra/cfn-ecs.yaml` | VPC, subnets, NAT Gateway, ALB, HTTPS listener, ECS Cluster, Fargate service |
 | `infra/cfn-pipeline.yaml` | CodeStar GitHub connection, CodeBuild project, CodePipeline |
 | `buildspec.yml` | CodeBuild build specification (docker build → ECR push) |
-| `Dockerfile` | Multi-stage Next.js container image (Alpine, non-root) |
+| `Dockerfile` | Multi-stage Next.js container image (ECR Public base, Alpine, non-root) |
+| `infra/deploy.sh` | End-to-end deployment script (runs all 5 stacks in order) |
+| `infra/undeploy.sh` | Full teardown script (deletes all stacks in reverse order) |
 
 ---
 
-### Prerequisites
+## AWS Prerequisites
 
-- AWS CLI v2 configured (`aws configure`) with permissions for:
-  - CloudFormation, ECR, ECS, CodeBuild, CodePipeline, IAM, S3, EC2, CodeStar Connections
-- Docker running locally (only needed for the initial bootstrap push)
-- The repository pushed to GitHub under your organisation/user account
+Before running `deploy.sh`, ensure the following are in place.
 
----
+### 1. IAM user / role permissions
 
-### Step 1 — Deploy all infrastructure
+The AWS identity running the script (`aws configure`) must have the following IAM permissions. Attach an inline policy or a custom managed policy containing these actions:
 
-Run the deploy script from the repository root:
-
-```bash
-chmod +x infra/deploy.sh
-./infra/deploy.sh <aws-region> <github-owner>
-
-# Example
-./infra/deploy.sh us-east-1 UElement
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudFormation",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "cloudformation:UpdateStack",
+        "cloudformation:DeleteStack",
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:DescribeStackResource",
+        "cloudformation:GetTemplate",
+        "cloudformation:ValidateTemplate",
+        "cloudformation:CreateChangeSet",
+        "cloudformation:ExecuteChangeSet",
+        "cloudformation:DescribeChangeSet",
+        "cloudformation:DeleteChangeSet"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ECR",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:CreateRepository",
+        "ecr:DeleteRepository",
+        "ecr:DescribeRepositories",
+        "ecr:GetAuthorizationToken",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage",
+        "ecr:InitiateLayerUpload",
+        "ecr:UploadLayerPart",
+        "ecr:CompleteLayerUpload",
+        "ecr:PutImage",
+        "ecr:ListImages",
+        "ecr:BatchDeleteImage",
+        "ecr:PutImageScanningConfiguration",
+        "ecr:PutLifecyclePolicy"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ECS",
+      "Effect": "Allow",
+      "Action": [
+        "ecs:CreateCluster",
+        "ecs:DeleteCluster",
+        "ecs:DescribeClusters",
+        "ecs:RegisterTaskDefinition",
+        "ecs:DeregisterTaskDefinition",
+        "ecs:DescribeTaskDefinition",
+        "ecs:CreateService",
+        "ecs:UpdateService",
+        "ecs:DeleteService",
+        "ecs:DescribeServices",
+        "ecs:ListTasks",
+        "ecs:DescribeTasks"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EC2andVPC",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpc",
+        "ec2:DeleteVpc",
+        "ec2:DescribeVpcs",
+        "ec2:CreateSubnet",
+        "ec2:DeleteSubnet",
+        "ec2:DescribeSubnets",
+        "ec2:CreateInternetGateway",
+        "ec2:DeleteInternetGateway",
+        "ec2:AttachInternetGateway",
+        "ec2:DetachInternetGateway",
+        "ec2:DescribeInternetGateways",
+        "ec2:AllocateAddress",
+        "ec2:ReleaseAddress",
+        "ec2:DescribeAddresses",
+        "ec2:CreateNatGateway",
+        "ec2:DeleteNatGateway",
+        "ec2:DescribeNatGateways",
+        "ec2:CreateRouteTable",
+        "ec2:DeleteRouteTable",
+        "ec2:CreateRoute",
+        "ec2:DeleteRoute",
+        "ec2:AssociateRouteTable",
+        "ec2:DisassociateRouteTable",
+        "ec2:DescribeRouteTables",
+        "ec2:CreateSecurityGroup",
+        "ec2:DeleteSecurityGroup",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:DescribeSecurityGroups",
+        "ec2:ModifyVpcAttribute",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeAccountAttributes"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ELB",
+      "Effect": "Allow",
+      "Action": [
+        "elasticloadbalancing:CreateLoadBalancer",
+        "elasticloadbalancing:DeleteLoadBalancer",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:CreateTargetGroup",
+        "elasticloadbalancing:DeleteTargetGroup",
+        "elasticloadbalancing:DescribeTargetGroups",
+        "elasticloadbalancing:CreateListener",
+        "elasticloadbalancing:DeleteListener",
+        "elasticloadbalancing:DescribeListeners",
+        "elasticloadbalancing:ModifyListener",
+        "elasticloadbalancing:ModifyLoadBalancerAttributes",
+        "elasticloadbalancing:ModifyTargetGroupAttributes",
+        "elasticloadbalancing:AddTags",
+        "elasticloadbalancing:DescribeTags"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ACM",
+      "Effect": "Allow",
+      "Action": [
+        "acm:RequestCertificate",
+        "acm:DeleteCertificate",
+        "acm:DescribeCertificate",
+        "acm:ListCertificates",
+        "acm:AddTagsToCertificate"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CodeBuildAndPipeline",
+      "Effect": "Allow",
+      "Action": [
+        "codebuild:CreateProject",
+        "codebuild:UpdateProject",
+        "codebuild:DeleteProject",
+        "codebuild:BatchGetProjects",
+        "codebuild:StartBuild",
+        "codebuild:BatchGetBuilds",
+        "codepipeline:CreatePipeline",
+        "codepipeline:UpdatePipeline",
+        "codepipeline:DeletePipeline",
+        "codepipeline:GetPipeline",
+        "codepipeline:GetPipelineState",
+        "codepipeline:ListPipelineExecutions",
+        "codepipeline:StartPipelineExecution",
+        "codestar-connections:CreateConnection",
+        "codestar-connections:DeleteConnection",
+        "codestar-connections:GetConnection",
+        "codestar-connections:ListConnections",
+        "codestar-connections:UseConnection",
+        "codestar-connections:PassConnection"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "S3",
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:DeleteBucket",
+        "s3:PutBucketVersioning",
+        "s3:PutBucketEncryption",
+        "s3:PutLifecycleConfiguration",
+        "s3:GetBucketLocation",
+        "s3:ListBucket",
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:GetObjectVersion",
+        "s3:GetBucketVersioning"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAM",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:GetRole",
+        "iam:PassRole",
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy",
+        "iam:PutRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:GetRolePolicy",
+        "iam:ListRolePolicies",
+        "iam:ListAttachedRolePolicies"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Logs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:DeleteLogGroup",
+        "logs:DescribeLogGroups",
+        "logs:PutRetentionPolicy",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "logs:DescribeLogStreams",
+        "logs:GetLogEvents",
+        "logs:FilterLogEvents",
+        "logs:DeleteLogGroup"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
 ```
 
-This script performs four ordered steps automatically:
+> **Tip:** For a team setup, create a dedicated IAM user `marma-deploy`, attach this policy, and generate an access key for CI use. For production, prefer an IAM role with the same policy attached to your deployment machine or CI runner.
 
-1. Creates the ECR repository (`cfn-ecr.yaml`)
-2. Builds and pushes an initial Docker image so ECS has a valid image to start with
-3. Deploys the VPC, ALB, and ECS Fargate service (`cfn-ecs.yaml`)
-4. Deploys CodePipeline and CodeBuild (`cfn-pipeline.yaml`)
+### 2. AWS CLI v2 installed and configured
 
-At the end it prints your **ALB DNS name** and the remaining manual steps.
+```bash
+# Install (Linux)
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip && sudo ./aws/install
 
-> The script is idempotent — re-running it after a partial failure is safe.
+# Configure
+aws configure
+# AWS Access Key ID     : <your-key>
+# AWS Secret Access Key : <your-secret>
+# Default region name   : ap-south-1
+# Default output format : json
+
+# Verify
+aws sts get-caller-identity
+```
+
+### 3. Docker running locally
+
+Required only for the initial image bootstrap in `deploy.sh` Step 2. Subsequent builds are handled by CodeBuild.
+
+```bash
+docker info   # should return engine details without error
+```
+
+### 4. GitHub repository access
+
+The repository must be pushed to GitHub under the organisation/user you pass as `<github-owner>`. The CodeStar GitHub connection created during deployment will request OAuth access to that account.
+
+### 5. Domain DNS access (for HTTPS)
+
+You must be able to add DNS records for `thedigitaldrift.in`. This is needed either:
+- **Automatically** — if the domain is in Route 53 (provide the Hosted Zone ID to `deploy.sh`)
+- **Manually** — if using Cloudflare, GoDaddy, etc. (you add the CNAME record shown in ACM Console)
 
 ---
 
-### Step 2 — Authorise the GitHub connection
+## Deployment
 
-The CodeStar connection is created in a **Pending** state and cannot pull from GitHub until you authorise it.
+### First-time deploy
+
+Run the deploy script from the repository root. It executes all 5 CloudFormation stacks in dependency order.
+
+**With Route 53 (fully automated DNS validation):**
+```bash
+chmod +x infra/deploy.sh
+./infra/deploy.sh ap-south-1 UElement Z1PA6795UKMFR9
+#                 ^region    ^github   ^route53-zone-id
+```
+
+**Without Route 53 (manual DNS validation):**
+```bash
+chmod +x infra/deploy.sh
+./infra/deploy.sh ap-south-1 UElement
+```
+
+When using manual validation, the script will pause at Step 3 and print instructions. You must add the CNAME records shown in **AWS Console → Certificate Manager** to your DNS provider before the script continues.
+
+### What the deploy script does
+
+| Step | Stack | Action |
+|------|-------|--------|
+| 1 | `marma-security-ecr` | Creates ECR repository |
+| 2 | _(local Docker)_ | Builds and pushes initial image to ECR |
+| 3 | `marma-security-acm` | Requests ACM certificate for `thedigitaldrift.in` + `www.thedigitaldrift.in` |
+| 4 | `marma-security-ecs` | Deploys VPC, NAT, ALB with HTTPS listener, ECS Fargate service |
+| 5 | `marma-security-pipeline` | Deploys CodePipeline + CodeBuild (GitHub → ECR → ECS) |
+
+> The script is idempotent — re-running after a partial failure is safe.
+
+---
+
+## Post-deployment steps
+
+### 1 — Authorise the GitHub connection
+
+The CodeStar connection is created in **Pending** state. The pipeline cannot run until authorised.
 
 1. Go to **AWS Console → Developer Tools → Settings → Connections**
-2. Find the connection named `marma-security-github`
-3. Click **Update pending connection**
-4. Follow the OAuth flow to authorise AWS access to your GitHub account/organisation
-5. The connection status changes to **Available**
+2. Find `marma-security-github` → click **Update pending connection**
+3. Follow the OAuth flow to authorise AWS access to your GitHub account/org
+4. Status changes to **Available**
 
-> Until this step is completed the pipeline cannot run.
+### 2 — Point your domain to the ALB
 
----
+The deploy script prints the ALB DNS name at the end. Add these records in your DNS provider:
 
-### Step 3 — Trigger the pipeline
+| Type | Name | Value |
+|------|------|-------|
+| CNAME | `www.thedigitaldrift.in` | `<alb-dns-name>` |
+| CNAME | `thedigitaldrift.in` | `<alb-dns-name>` |
 
-After the GitHub connection is authorised, push any commit to the `main` branch:
+> If using Route 53, use an **A record with Alias** for the apex domain instead of CNAME.
+
+### 3 — Trigger the pipeline
+
+Push a commit to `main`:
 
 ```bash
 git push origin main
 ```
 
-CodePipeline triggers automatically. To watch progress:
+Or start it manually:
 
 ```
-AWS Console → CodePipeline → marma-security-pipeline
-```
-
-Or use the AWS CLI:
-
-```bash
-aws codepipeline get-pipeline-state \
-  --name marma-security-pipeline \
-  --region <aws-region>
+AWS Console → CodePipeline → marma-security-pipeline → Release change
 ```
 
 ---
 
-### Step 4 — DNS integration (manual)
-
-Once the service is running and the ALB DNS name is confirmed healthy:
-
-#### 4a — Request an ACM certificate
-
-```bash
-aws acm request-certificate \
-  --domain-name "yourdomain.com" \
-  --subject-alternative-names "www.yourdomain.com" \
-  --validation-method DNS \
-  --region <aws-region>
-```
-
-Follow the DNS validation instructions shown in the ACM console to prove domain ownership. Note the **certificate ARN** once it reaches `Issued` status.
-
-#### 4b — Add HTTPS listener to the ALB
-
-In `infra/cfn-ecs.yaml`, add an HTTPS listener resource after the existing `ALBListener`:
-
-```yaml
-ALBListenerHTTPS:
-  Type: AWS::ElasticLoadBalancingV2::Listener
-  Properties:
-    LoadBalancerArn: !Ref LoadBalancer
-    Port: 443
-    Protocol: HTTPS
-    Certificates:
-      - CertificateArn: <your-acm-certificate-arn>
-    DefaultActions:
-      - Type: forward
-        TargetGroupArn: !Ref TargetGroup
-```
-
-Optionally redirect HTTP → HTTPS by replacing the `ALBListener` default action:
-
-```yaml
-DefaultActions:
-  - Type: redirect
-    RedirectConfig:
-      Protocol: HTTPS
-      Port: "443"
-      StatusCode: HTTP_301
-```
-
-Re-deploy the ECS stack to apply:
-
-```bash
-aws cloudformation deploy \
-  --template-file infra/cfn-ecs.yaml \
-  --stack-name marma-security-ecs \
-  --region <aws-region> \
-  --capabilities CAPABILITY_NAMED_IAM \
-  --parameter-overrides AppName=marma-security ECRImageUri=<ecr-uri>:latest
-```
-
-#### 4c — Create a DNS record
-
-In your DNS provider (Route 53, Cloudflare, etc.), create a record pointing your domain to the ALB:
-
-| Type | Name | Value |
-|------|------|-------|
-| CNAME | `www.yourdomain.com` | `<alb-dns-name>` |
-| ALIAS / CNAME | `yourdomain.com` | `<alb-dns-name>` |
-
-If using Route 53, an **A record with Alias** is preferred over CNAME for the apex domain.
-
----
+## Ongoing operations
 
 ### Updating the application
 
 Every push to `main` automatically:
-
 1. Triggers CodePipeline
-2. CodeBuild builds a new Docker image tagged with the short commit SHA and pushes it to ECR
-3. CodePipeline updates the ECS service with a rolling deploy (50% minimum healthy, 200% maximum)
-
-No manual intervention is needed after the initial setup.
-
----
+2. CodeBuild builds a new image tagged with the short commit SHA, pushes to ECR
+3. ECS performs a rolling deploy (50% min healthy, 200% max)
 
 ### Useful AWS CLI commands
 
 ```bash
-# View pipeline execution status
-aws codepipeline list-pipeline-executions --pipeline-name marma-security-pipeline --region <region>
+REGION=ap-south-1
 
-# View running ECS tasks
-aws ecs list-tasks --cluster marma-security-cluster --region <region>
+# Pipeline status
+aws codepipeline list-pipeline-executions --pipeline-name marma-security-pipeline --region $REGION
 
-# View container logs
-aws logs tail /ecs/marma-security --follow --region <region>
+# Running ECS tasks
+aws ecs list-tasks --cluster marma-security-cluster --region $REGION
 
-# Force a new ECS deployment (without a code push)
+# Container logs (live)
+aws logs tail /ecs/marma-security --follow --region $REGION
+
+# Force a new deployment without a code push
 aws ecs update-service \
   --cluster marma-security-cluster \
   --service marma-security-service \
   --force-new-deployment \
-  --region <region>
+  --region $REGION
 
 # List ECR images
-aws ecr list-images --repository-name marma-security --region <region>
+aws ecr list-images --repository-name marma-security --region $REGION
+
+# Check certificate status
+aws acm list-certificates --region $REGION
 ```
 
 ---
 
-### Tearing down
+## Teardown
 
-Delete stacks in reverse order to avoid dependency errors:
+To delete all AWS infrastructure:
 
 ```bash
-REGION=us-east-1
-
-aws cloudformation delete-stack --stack-name marma-security-pipeline --region $REGION
-aws cloudformation wait stack-delete-complete --stack-name marma-security-pipeline --region $REGION
-
-aws cloudformation delete-stack --stack-name marma-security-ecs --region $REGION
-aws cloudformation wait stack-delete-complete --stack-name marma-security-ecs --region $REGION
-
-aws cloudformation delete-stack --stack-name marma-security-ecr --region $REGION
+chmod +x infra/undeploy.sh
+./infra/undeploy.sh ap-south-1
 ```
 
-> Empty the S3 artifact bucket manually before deleting the pipeline stack, or the deletion will fail:
+The script will ask for confirmation, then delete stacks in reverse dependency order:
+
+| Step | Action |
+|------|--------|
+| 1 | Empty the S3 artifact bucket (required before stack deletion) |
+| 2 | Delete CodePipeline stack |
+| 3 | Scale ECS service to 0 tasks, then delete ECS stack (VPC, ALB, NAT) |
+| 4 | Delete ACM certificate stack |
+| 5 | Delete ECR images and repository stack |
+
+To keep ECR images (e.g. for a re-deploy):
+```bash
+./infra/undeploy.sh ap-south-1 --keep-ecr-images
+```
+
+> **Note:** The CloudWatch log group `/ecs/marma-security` is intentionally retained after teardown. Delete manually if needed:
 > ```bash
-> aws s3 rm s3://marma-security-pipeline-artifacts-<account-id> --recursive
+> aws logs delete-log-group --log-group-name /ecs/marma-security --region ap-south-1
 > ```
