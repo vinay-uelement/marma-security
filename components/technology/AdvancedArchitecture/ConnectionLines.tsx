@@ -76,7 +76,7 @@ export default function ConnectionLines() {
       {/* 4. Vertical Connectors from Junctions to Cards */}
        <g>
         {/* Left Junction to Left Card */}
-        <path className="svg-line" d="M 26 64.4 V 82.4" fill="none" stroke="#000000" strokeWidth="0.1" stroke Dasharray="1" />
+        <path className="svg-line" d="M 26 64.4 V 82.4" fill="none" stroke="#000000" strokeWidth="0.1" strokeDasharray="1" />
         <path className="svg-data-flow" d="M 26 64.4 V 82.4" fill="none" stroke="#475569" strokeWidth="0.4" opacity="1" />
 
         {/* Center Junction to Center Card */}
