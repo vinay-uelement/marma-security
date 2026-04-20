@@ -2,7 +2,7 @@ import React from 'react';
 import { CircleCheck } from 'lucide-react';
 
 const CARD_CLASSES = "bg-[#FAFAFA] rounded-[24px] p-6 md:p-8 flex flex-col border border-[#FF0000]/20 shadow-[0px_16px_32px_rgba(255,0,0,0.05)] relative overflow-hidden group transition-all duration-500";
-const TITLE_CLASSES = "text-xl md:text-2xl font-bold text-[#FF0000] mb-4 transition-colors duration-500";
+const TITLE_CLASSES = "text-xl md:text-2xl font-medium text-[#FF0000] mb-4 transition-colors duration-500";
 
 const PARTNER_CARDS = [
   {
@@ -52,7 +52,7 @@ export default function PartneringMadeEasy() {
             <div key={index} className={CARD_CLASSES}>
               {/* Top Accent Line */}
               <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#FF0000]/0 via-[#FF0000]/80 to-[#FF0000]/0 origin-center scale-x-100"></div>
-              
+
               {/* Interior Glow */}
               <div className="absolute top-[-30px] left-[-30px] w-[140px] h-[140px] bg-[#FF0000]/10 blur-[45px] rounded-full pointer-events-none opacity-100"></div>
 
