@@ -44,6 +44,12 @@ export default function Home() {
     "/images/banners/solution-banner-right1.webp",
   ];
 
+  const rightImageClasses = [
+    "w-[10vh] md:w-[38svh] right-10! md:right-35!",
+    "w-[20vh] md:w-[50svh]",
+    "w-[20vh] md:w-[50svh]",
+  ];
+
   const learnMoreLinks = [
     "/product?tab=enterprise&product=safeenterprise-400",
     "/product?tab=smb&product=safebiz",
@@ -75,6 +81,7 @@ export default function Home() {
         <Banner
           backgroundImage={backgrounds[index]}
           rightImage={images[index]}
+          rightImageClassName={rightImageClasses[index]}
           title={
             <>
               Radically Simplified <br className="hidden md:block" />
