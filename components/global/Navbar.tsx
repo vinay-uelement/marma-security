@@ -237,14 +237,14 @@ export default function Navbar() {
           >
             <div className="mb-4 px-3">
               <Link
-                href="/solutions"
+                href="/"
                 onClick={() => setIsSolutionsHovered(false)}
-                className="group/title inline-flex items-center gap-2 text-white hover:text-brand-red transition-colors duration-300 focus:outline-none"
+                className="group/title inline-flex items-center gap-2 text-white transition-colors duration-300 focus:outline-none"
               >
                 <h3 className="text-xl font-bold tracking-wide">Solutions</h3>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform transition-transform duration-300 group-hover/title:translate-x-1">
+                {/* <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform transition-transform duration-300 group-hover/title:translate-x-1">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                </svg> */}
               </Link>
             </div>
             <div className="h-[1px] w-full bg-white/10 mb-6" />
