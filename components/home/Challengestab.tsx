@@ -22,7 +22,7 @@ const tabItems: TabData[] = [
     title: "Zero-Touch Deployment",
     description:
       "Marma's AI-powered security gateways install in under five minutes with true plug-and-play simplicity. Designed for users with zero IT knowledge, the cloud-managed platform runs autonomously in the background, handling all updates and threat monitoring without manual configurations or ongoing maintenance.",
-    image: "/images/home/Overcoming challenges (3).webp",
+    image: "/images/home/overcomming1.webp",
   },
   {
     id: "legal",
@@ -30,7 +30,7 @@ const tabItems: TabData[] = [
     title: "Comprehensive Identity & Data Protection",
     description:
       "Your private data is shielded by our SafeID™ and NetImmunity™ engines, which proactively scan for identity theft attempts, prevent credential theft, and block unauthorized network access. Marma ensures your sensitive information remains secure and supports compliance with major privacy frameworks like HIPAA, PCI-DSS, and GDPR.",
-    image: "/images/home/Overcoming challenges (1).webp",
+    image: "/images/home/overcooming2.webp",
   },
   {
     id: "finance",
@@ -38,7 +38,7 @@ const tabItems: TabData[] = [
     title: "AI-Powered Threat Neutralization",
     description:
       "Stay ahead of evolving cybercriminals with an autonomous security platform. Marma leverages continuous machine learning and global cloud intelligence to predict and block modern threats in real time including phishing attacks, dangerous ransomware, zero-day malware, and the latest cyber scams.",
-    image: "/images/home/Overcoming challenges (2).webp",
+    image: "/images/home/oveercomming3.webp",
   },
   {
     id: "manufacturing",
@@ -46,7 +46,7 @@ const tabItems: TabData[] = [
     title: "Enterprise-Grade Security, Democratized",
     description:
       "Marma Security eliminates the high costs of traditional enterprise security. By consolidating multiple security tools into a single gateway that protects dozens of devices, we deliver robust, network-wide protection without expensive per-device licensing fees or hidden IT overhead.",
-    image: "/images/home/Overcoming challenges (4).webp",
+    image: "/images/home/overcomming4.webp",
   },
 ];
 
