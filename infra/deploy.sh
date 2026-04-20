@@ -2,11 +2,13 @@
 # Deploy marma-security CI/CD infrastructure to AWS
 #
 # Usage:
-#   ./infra/deploy.sh <aws-region> <github-owner> [route53-hosted-zone-id]
+#   ./infra/deploy.sh <aws-region> <github-owner> <domain> [route53-hosted-zone-id]
 #
 # Arguments:
 #   aws-region            e.g. ap-south-1
 #   github-owner          GitHub org or username, e.g. UElement
+#   domain                Root domain to issue the ACM certificate for, e.g. thedigitaldrift.in
+#                         www.<domain> is automatically added as a Subject Alternative Name.
 #   route53-hosted-zone-id  Optional. If your domain is in Route 53, pass the
 #                           Hosted Zone ID for fully-automated DNS validation.
 #                           Omit if using Cloudflare / GoDaddy / other provider.
@@ -19,17 +21,17 @@ set -euo pipefail
 
 REGION="${1:-}"
 GITHUB_OWNER="${2:-}"
-HOSTED_ZONE_ID="${3:-}"
+DOMAIN="${3:-}"
+HOSTED_ZONE_ID="${4:-}"
 
-if [[ -z "$REGION" || -z "$GITHUB_OWNER" ]]; then
-  echo "Usage: $0 <aws-region> <github-owner> [route53-hosted-zone-id]"
-  echo "  e.g. $0 ap-south-1 UElement"
-  echo "  e.g. $0 ap-south-1 UElement Z1PA6795UKMFR9"
+if [[ -z "$REGION" || -z "$GITHUB_OWNER" || -z "$DOMAIN" ]]; then
+  echo "Usage: $0 <aws-region> <github-owner> <domain> [route53-hosted-zone-id]"
+  echo "  e.g. $0 ap-south-1 UElement thedigitaldrift.in"
+  echo "  e.g. $0 ap-south-1 UElement thedigitaldrift.in Z1PA6795UKMFR9"
   exit 1
 fi
 
 APP_NAME="marma-security"
-DOMAIN="thedigitaldrift.in"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 ECR_STACK="${APP_NAME}-ecr"

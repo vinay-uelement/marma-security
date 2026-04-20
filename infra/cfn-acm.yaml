@@ -1,10 +1,10 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: ACM certificate for thedigitaldrift.in (DNS validation)
+Description: ACM certificate for DomainName (DNS validation)
 
 Parameters:
   DomainName:
     Type: String
-    Default: thedigitaldrift.in
+    Description: "Root domain name, e.g. example.com (www. is added automatically as a SAN)"
   Route53HostedZoneId:
     Type: String
     Default: ""

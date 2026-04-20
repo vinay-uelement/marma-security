@@ -61,7 +61,7 @@ GitHub (push to main)
   ALB (internet-facing, HTTPS)
         │
         ▼
-  ACM Certificate (thedigitaldrift.in)
+  ACM Certificate (<your-domain>)
         │
         ▼
   Private Fargate tasks (port 3000)
@@ -72,7 +72,7 @@ GitHub (push to main)
 | File | What it creates |
 |------|----------------|
 | `infra/cfn-ecr.yaml` | ECR repository with scan-on-push and lifecycle policy |
-| `infra/cfn-acm.yaml` | ACM SSL/TLS certificate for `thedigitaldrift.in` + `www.thedigitaldrift.in` |
+| `infra/cfn-acm.yaml` | ACM SSL/TLS certificate for `<your-domain>` + `www.<your-domain>` (domain passed at deploy time) |
 | `infra/cfn-ecs.yaml` | VPC, subnets, NAT Gateway, ALB, HTTPS listener, ECS Cluster, Fargate service |
 | `infra/cfn-pipeline.yaml` | CodeStar GitHub connection, CodeBuild project, CodePipeline |
 | `buildspec.yml` | CodeBuild build specification (docker build → ECR push) |
@@ -346,7 +346,7 @@ The repository must be pushed to GitHub under the organisation/user you pass as 
 
 ### 5. Domain DNS access (for HTTPS)
 
-You must be able to add DNS records for `thedigitaldrift.in`. This is needed either:
+You must be able to add DNS records for the domain you pass to `deploy.sh`. This is needed either:
 - **Automatically** — if the domain is in Route 53 (provide the Hosted Zone ID to `deploy.sh`)
 - **Manually** — if using Cloudflare, GoDaddy, etc. (you add the CNAME record shown in ACM Console)
 
@@ -361,14 +361,15 @@ Run the deploy script from the repository root. It executes all 5 CloudFormation
 **With Route 53 (fully automated DNS validation):**
 ```bash
 chmod +x infra/deploy.sh
-./infra/deploy.sh ap-south-1 UElement Z1PA6795UKMFR9
-#                 ^region    ^github   ^route53-zone-id
+./infra/deploy.sh ap-south-1 UElement thedigitaldrift.in Z1PA6795UKMFR9
+#                 ^region    ^github   ^domain             ^route53-zone-id
 ```
 
 **Without Route 53 (manual DNS validation):**
 ```bash
 chmod +x infra/deploy.sh
-./infra/deploy.sh ap-south-1 UElement
+./infra/deploy.sh ap-south-1 UElement thedigitaldrift.in
+#                 ^region    ^github   ^domain
 ```
 
 When using manual validation, the script will pause at Step 3 and print instructions. You must add the CNAME records shown in **AWS Console → Certificate Manager** to your DNS provider before the script continues.
@@ -379,7 +380,7 @@ When using manual validation, the script will pause at Step 3 and print instruct
 |------|-------|--------|
 | 1 | `marma-security-ecr` | Creates ECR repository |
 | 2 | _(local Docker)_ | Builds and pushes initial image to ECR |
-| 3 | `marma-security-acm` | Requests ACM certificate for `thedigitaldrift.in` + `www.thedigitaldrift.in` |
+| 3 | `marma-security-acm` | Requests ACM certificate for `<domain>` + `www.<domain>` passed as argument |
 | 4 | `marma-security-ecs` | Deploys VPC, NAT, ALB with HTTPS listener, ECS Fargate service |
 | 5 | `marma-security-pipeline` | Deploys CodePipeline + CodeBuild (GitHub → ECR → ECS) |
 
@@ -404,8 +405,8 @@ The deploy script prints the ALB DNS name at the end. Add these records in your 
 
 | Type | Name | Value |
 |------|------|-------|
-| CNAME | `www.thedigitaldrift.in` | `<alb-dns-name>` |
-| CNAME | `thedigitaldrift.in` | `<alb-dns-name>` |
+| CNAME | `www.<your-domain>` | `<alb-dns-name>` |
+| CNAME | `<your-domain>` | `<alb-dns-name>` |
 
 > If using Route 53, use an **A record with Alias** for the apex domain instead of CNAME.
 
