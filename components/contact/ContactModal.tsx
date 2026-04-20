@@ -6,6 +6,7 @@ import ContactForm from './ContactForm';
 interface ContactModalProps {
     isOpen: boolean;
     onClose: () => void;
+    defaultTab?: string;
 }
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
@@ -14,15 +15,15 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
             {/* Overlay */}
-            <div 
+            <div
                 className="absolute inset-0 bg-black/60 backdrop-blur-sm"
                 onClick={onClose}
             />
-            
+
             {/* Modal Content */}
             <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl">
                 {/* Close Button */}
-                <button 
+                <button
                     onClick={onClose}
                     className="absolute top-4 right-4 z-10 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
                 >
@@ -34,7 +35,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
                 <div className="bg-white">
                     <div className="p-8 pb-0">
-                         <h3 className="fl-banner-title text-text-dark font-semibold! text-center">
+                        <h3 className="fl-banner-title text-text-dark font-semibold! text-center">
                             Let&apos;s talk about your business.
                         </h3>
                     </div>

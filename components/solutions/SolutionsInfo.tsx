@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Button from "../global/Button";
 import GlassWrapper from "../global/GlassWrapper";
+import Link from "next/link";
 
 interface SolutionsInfoProps {
   imageSrc?: string;
@@ -11,6 +12,10 @@ interface SolutionsInfoProps {
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   bgTextClassName?: string;
+  button?: {
+    label: string;
+    href: string;
+  };
 }
 
 export default function SolutionsInfo({
@@ -20,6 +25,7 @@ export default function SolutionsInfo({
   bgTextClassName = "text-[clamp(14px,3.5dvw,54px)] tracking-[0.18em]",
   title = "A unified cybersecurity platform designed to protect networks across homes, businesses, and critical industries.",
   description = "Marma delivers enterprise-grade, network-level cybersecurity that adapts seamlessly to a wide range of use cases—from residential environments and small businesses to healthcare, finance, education, and other critical sectors. Built for simplicity and scale, Marma protects every device connected to your Wi-Fi network without requiring complex setups or technical expertise.",
+  button
 }: SolutionsInfoProps) {
   const isRight = imagePosition === "right";
 
@@ -35,21 +41,26 @@ export default function SolutionsInfo({
       </div>
 
       {/* Main Content Grid */}
-      <div className="w-full max-w-[1440px] bg-[#f7f7f7] mx-auto px-6 lg:px-12 flex flex-col lg:grid py-12 lg:py-20 lg:grid-cols-2 gap-8 lg:gap-16 relative z-10 items-center rounded-sm">
+      <div className="w-full max-w-[1440px] bg-[#f7f7f7] mx-auto px-6 lg:px-16 flex flex-col lg:grid py-12 lg:py-10 lg:grid-cols-2 gap-8 lg:gap-16 relative z-10 items-center rounded-sm">
         {/* Content Side */}
         <div
-          className={`flex flex-col z-10 relative w-full h-full items-center text-center lg:items-start lg:text-left order-1 ${isRight ? "lg:order-1" : "lg:order-2"
+          className={`flex flex-col z-10 relative w-full h-full items-center text-center lg:items-start lg:text-left order-1 p-10 ${isRight ? "lg:order-1" : "lg:order-2"
             }`}
         >
-          <div className="bg-transparent flex flex-col justify-center h-full items-center lg:items-start relative ">
+          <div className="bg-transparent flex flex-col justify-center h-full items-center lg:items-start relative lg:mb-6 ">
             <div className="flex flex-col">
-              <h3 className="solutions-info-title pb-[20px] lg:mb-6">
+              <h3 className="solutions-info-title pb-[20px]">
                 {title}
               </h3>
 
               <p className="solutions-info-desc">{description}</p>
             </div>
           </div>
+          {button && (
+            <Link href={button.href} >
+              <Button label={button.label} icon textContainer="text-[12px]" />
+            </Link>
+          )}
         </div>
 
         {/* Image Side */}

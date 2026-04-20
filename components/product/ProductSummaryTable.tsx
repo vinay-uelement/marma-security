@@ -63,90 +63,80 @@ export default function ProductSummaryTable({
         </h2>
       )}
       <div className="max-md:px-6">
-      <div className="w-full overflow-x-auto rounded-2xl px-2 py-4 sm:px-6 sm:py-6 lg:px-10 lg:py-8 xl:px-12 xl:py-10">
-        <table className="w-full min-w-[560px] border-collapse">
-          {/* Header */}
-          <thead>
-            <tr>
-              {/* Category column header — sticky */}
-              <th
-                className="fl5-1 font-title! px-5 py-3 sticky left-0 z-20 text-left  rounded-tl-2xl border-r border-dashed border-[#DDDDDD]/50"
-                style={{
-                  background:
-                    "linear-gradient(180deg, #FFECEC 0%, #FFA9A9 100%)",
-                  width: "26%",
-                }}
-              >
-                Category/ Product
-              </th>
-
-              {/* Dynamic column headers */}
-              {columns.map((col, i) => (
+        <div className="w-full overflow-x-auto rounded-2xl px-2 py-4 sm:px-6 sm:py-6 lg:px-10 lg:py-8 xl:px-12 xl:py-10">
+          <table className="w-full min-w-[560px] border-collapse">
+            {/* Header */}
+            <thead>
+              <tr>
+                {/* Category column header — sticky */}
                 <th
-                  key={col.key}
-                  className={`fl5-1 px-5 py-3 font-title! text-center  ${
-                    i === columns.length - 1
-                      ? "rounded-tr-2xl"
-                      : "border-r border-dashed border-[#DDDDDD]/50"
-                  }`}
+                  className="fl5-1 bg-[#DDDDDD] border-r border-dashed border-white font-title! px-5 py-3 sticky left-0 z-20 text-left  rounded-tl-2xl"
                   style={{
-                    background:
-                      "linear-gradient(180deg, #FFECEC 0%, #FFA9A9 100%)",
+                    width: "26%",
                   }}
                 >
-                  {col.label}
+                  Category/ Product
                 </th>
-              ))}
-            </tr>
-          </thead>
 
-          {/* Body */}
-          <tbody>
-            {rows.map((row, rowIdx) => (
-              <tr
-                key={rowIdx}
-                className={
-                  rowIdx !== rows.length - 1
-                    ? "border-b border-dashed border-[#DDDDDD]"
-                    : ""
-                }
-              >
-                {/* Category cell — sticky */}
-                <td
-                  className={`fl5 sticky left-0 z-10 px-5 py-4 border-r border-dashed border-[#DDDDDD] ${
-                    rowIdx === rows.length - 1 ? "rounded-bl-2xl" : ""
-                  }`}
-                  style={{ background: "#FAF4F4" }}
-                >
-                  {row.category}
-                </td>
-
-                {/* Value cells */}
-                {columns.map((col, colIdx) => (
-                  <td
+                {/* Dynamic column headers */}
+                {columns.map((col, i) => (
+                  <th
                     key={col.key}
-                    className={`fl5-2 px-5 py-4 text-center  ${
-                      colIdx !== columns.length - 1
-                        ? "border-r border-dashed border-[#DDDDDD]"
-                        : ""
-                    } ${
-                      rowIdx === rows.length - 1 &&
-                      colIdx === columns.length - 1
-                        ? "rounded-br-2xl"
-                        : ""
-                    }`}
-                    style={{ background: "#F7F7F7" }}
+                    className={`fl5-1 px-5 py-3 font-title! text-center  ${i === columns.length - 1
+                      ? "rounded-tr-2xl bg-[#DDDDDD]"
+                      : "border-r border-dashed border-white bg-[#DDDDDD]"
+                      }`}
                   >
-                    <div className="flex items-center justify-start pl-2">
-                      <Cell value={row.values[col.key] ?? "-"} />
-                    </div>
-                  </td>
+                    {col.label}
+                  </th>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+
+            {/* Body */}
+            <tbody>
+              {rows.map((row, rowIdx) => (
+                <tr
+                  key={rowIdx}
+                  className={
+                    rowIdx !== rows.length - 1
+                      ? "border-b border-dashed border-[#DDDDDD]"
+                      : ""
+                  }
+                >
+                  {/* Category cell — sticky */}
+                  <td
+                    className={`fl5 sticky left-0 z-10 px-5 py-4 border-r border-dashed border-[#DDDDDD] ${rowIdx === rows.length - 1 ? "rounded-bl-2xl" : ""
+                      }`}
+                    style={{ background: "#FAF4F4" }}
+                  >
+                    {row.category}
+                  </td>
+
+                  {/* Value cells */}
+                  {columns.map((col, colIdx) => (
+                    <td
+                      key={col.key}
+                      className={`fl5-2 px-5 py-4 text-center  ${colIdx !== columns.length - 1
+                        ? "border-r border-dashed border-[#DDDDDD]"
+                        : ""
+                        } ${rowIdx === rows.length - 1 &&
+                          colIdx === columns.length - 1
+                          ? "rounded-br-2xl"
+                          : ""
+                        }`}
+                      style={{ background: "#F7F7F7" }}
+                    >
+                      <div className="flex items-center justify-start pl-2">
+                        <Cell value={row.values[col.key] ?? "-"} />
+                      </div>
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

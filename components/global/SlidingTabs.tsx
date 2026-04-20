@@ -125,7 +125,7 @@ export const SlidingTabs: React.FC<SlidingTabsProps> = ({
                 tabsRef.current[index] = el;
               }}
               className={`
-              transition-all duration-400 ease-in-out last:mr-0
+              transition-all duration-400 ease-in-out last:mr-0 w-fit! min-w-fit! max-w-fit!
             `}
             >
               <button

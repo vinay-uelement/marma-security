@@ -69,7 +69,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
       id: "saferemote",
       title: "SafeEnterprise 100 | Remote Worker Security",
       description: enterpriseDescription,
-      image: "/images/product/SafeEnterprise4002.webp",
+      image: "/images/product/Frame 209.webp",
       imageAlt: "SafeRemote Firewall remote worker security device",
       specifications: safeRemoteFirewallSpecifications,
     },
@@ -149,7 +149,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
           <ManagementProductCard
             title="Enterprise Management Platform"
             description="Cloud-based or Private Data Center hosted platform for centrally managing Security Gateways, Endpoint Protection, and Cloud Services across the enterprise."
-            image="/images/products/enterprise-management.webp"
+            image="/images/product/software/firewallDashboard.webp"
             imageAlt="Enterprise Management Platform Screenshot"
           />
         </div>
@@ -157,42 +157,70 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
 
       <div className="max-md:px-6">
         <div className={productSectionClassName}>
-          <div className="flex flex-col gap-8 lg:flex-row lg:gap-6">
-            <div className="flex flex-col lg:w-1/2">
+          <div className="flex flex-col gap-8 lg:flex-col lg:gap-6">
+            <div className="flex flex-col h-full">
               <div className={productHalfSectionTitleClassName}>
                 Endpoint Protection Software
               </div>
-              <div className="md:ps-12">
+              <div className="md:px-12">
                 <EndpointProductCard
                   name="Agent Software for Windows"
                   tagline="24×7 Endpoint Protection"
                   primaryFeature="FW & Anti-Virus Integration"
                   features={[
+                    "Advanced Deep Packet Inspection for Threat protection",
+                    "Protects from phishing, ransomware, malware, and data breaches",
+                    "AI-Powered DNS Security and URL Filtering and Scam Protection",
+                    "Updated automatically to protect from latest threats",
+                    "24x7 Always-On Protection",
+                    "DNS Filtering",
                     "DNS Security",
                     "URL Filtering",
                     "Scam Protection",
                     "AI / Data Loss Prevention",
                   ]}
-                  image="/images/products/endpoint-software.webp"
+                  image="/images/product/software/marmaAgent.webp"
                 />
               </div>
             </div>
-            <div className="flex flex-col lg:w-1/2">
+            <div className="flex flex-col h-full">
               <div className={productHalfSectionTitleClassName}>
                 Cloud Security Services
               </div>
-              <div className="md:pe-12">
+              <div className="md:px-12">
                 <EndpointProductCard
-                  name="E-mail Protection Service"
+                  name="Email Security SaaS"
                   tagline="Enterprise Email Security"
-                  primaryFeature="Zero-day Phishing Protection"
+                  subTitle="Stop Email Scams Before They Reach Your Inbox"
+                  primaryFeature="Email remains a prime target for cybercriminals due to its widespread use. Our AI-powered Email Security platform scans every incoming email using multiple advanced LLMs to detect phishing, fraud, and social engineering attempts in real time. Suspicious emails are automatically isolated into a dedicated Scam folder, keeping your users protected without disrupting their workflow."
                   features={[
-                    "Zero-day Malware / Ransomware",
-                    "Scam Protection",
-                    "AI / Data Loss Prevention",
-                    "QR Phishing Protection",
+                    "Blocks 9/10 Phishing Attempts Before Exposure",
+                    "<100ms Real-Time Email Analysis",
+                    "Trusted by Growing Enterprises",
+                    "Multi-LLM AI Detection Engine",
+                    "Secure SaaS Architecture",
+                    "Continuous AI Learning & Updates",
+                    "Detects Zero-Day Social Engineering Patterns",
                   ]}
-                  image="/images/products/email-security.webp"
+                  image="/images/product/software/emailProtection.webp"
+                />
+                <div className="mt-8" />
+                <EndpointProductCard
+                  name="Cloud Data Protection SaaS"
+                  tagline="Enterprise Data Security"
+                  subTitle="Stop Data Leaks Before They Become Breaches"
+                  primaryFeature="Our AI-powered Data Protection platform continuously scans your organization’s cloud drives to identify how sensitive documents are being shared. Detect files exposed externally, shared across the organization, or accessible via public links—and take control before data leaves your perimeter."
+                  features={[
+                    "Full Visibility Across Shared Documents",
+                    "Real-Time Exposure Detection",
+                    "Protects Sensitive & Confidential Data",
+                    "Seamless SaaS Deployment",
+                    "Built for Enterprise Data Security",
+                    "Reduces Data Exposure Surface",
+                    "Supports Compliance & Governance",
+                    "Enterprise-Grade Security Controls",
+                  ]}
+                  image="/images/product/software/cloudProtection.webp"
                 />
               </div>
             </div>
@@ -208,12 +236,14 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               name="SIEM Integration Services"
               tagline="Enterprise SIEM"
               primaryFeature="Custom integration with 3rd-party Enterprise SIEM solutions."
+              image="/images/product/software/seimNew.webp"
               features={[]}
             />
             <EndpointProductCard
               name="SOC Integration Services"
               tagline="Enterprise SOC"
               primaryFeature="Custom integration with 3rd-party Enterprise SOC solutions."
+              image="/images/product/software/soc.webp"
               features={[]}
             />
           </div>

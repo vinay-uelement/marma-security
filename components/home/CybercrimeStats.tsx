@@ -9,9 +9,9 @@ export default function CybercrimeStats() {
         <div className="grid grid-cols-2 gap-20 items-end">
           {/* Left Column: Device Image */}
           <div className="flex justify-center items-center w-full h-full min-h-[100px] px-12 translate-y-12 ">
-            <div className="relative w-full max-w-[300px] aspect-423/495 z-30">
+            <div className="relative w-full max-w-[400px] aspect-423/495 z-30">
               <Image
-                src="/images/banners/solution-banner-right1.webp"
+                src="/images/product/transparentProducts/image.png"
                 alt="Marma Security Black Device"
                 fill
                 sizes="20vw"
@@ -30,15 +30,11 @@ export default function CybercrimeStats() {
               43% of cyberattacks are targeted at small businesses and about 41%
               of small businesses have experienced some form of cyberattack in
               the last 12 months. In addition, nearly 1 million Americans
-              reported being the victim of a cybercrime to the FBI in 2023, and
-              1.1 million Americans experienced identity theft in 2023.
+              reported being the victim of a cybercrime to the FBI in 2025, and
+              1.1 million Americans experienced identity theft in 2025.
             </p>
           </div>
         </div>
-
-        <div className="w-full h-[10vh] bg-[#FAFAFA]">
-        </div>
-        <div className="h-[2px] bg-[#E5E5E5] w-[90%] mx-auto" />
       </section>
 
       {/* MOBILE & TABLET VIEW */}
@@ -70,8 +66,8 @@ export default function CybercrimeStats() {
             43% of cyberattacks are targeted at small businesses and about 41%
             of small businesses have experienced some form of cyberattack in the
             last 12 months. In addition, nearly 1 million Americans reported
-            being the victim of a cybercrime to the FBI in 2023, and 1.1 million
-            Americans experienced identity theft in 2023.
+            being the victim of a cybercrime to the FBI in 2025, and 1.1 million
+            Americans experienced identity theft in 2025.
           </p>
           <p className="fl5">We think that’s unacceptable.</p>
         </div>

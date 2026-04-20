@@ -9,6 +9,7 @@ export interface TechnologyBannerProps {
     backgroundImage?: string;
     buttonText?: string;
     buttonLink?: string;
+    isButton?: boolean;
 }
 
 export default function TechnologyBanner({
@@ -16,7 +17,8 @@ export default function TechnologyBanner({
     subtitle,
     backgroundImage = "/images/banners/Technology-banner.webp", // Ensure this matches user's file name
     buttonText = "Explore",
-    buttonLink = "#"
+    buttonLink = "#",
+    isButton = true
 }: TechnologyBannerProps) {
     return (
         <section
@@ -29,7 +31,7 @@ export default function TechnologyBanner({
             }}
         >
             {/* Main Content Container — fills entire banner height */}
-            <div className="relative z-10 w-full flex-1 px-6 lg:px-12 flex flex-col items-center text-center pt-28 md:pt-32 pb-16 md:pb-20">
+            <div className="relative z-10 w-full flex-1 px-6 lg:px-16 flex flex-col items-center justify-center text-center pt-28 md:pt-32 pb-16 md:pb-20">
 
                 {/* Title + Subtitle group — sits near the top-center */}
                 <div className="flex flex-col space-y-6 lg:space-y-8 items-center max-w-[900px] mt-10 md:mt-20">
@@ -40,14 +42,14 @@ export default function TechnologyBanner({
 
                     {/* Render Subtitle conditionally */}
                     {subtitle && (
-                        <p className="tech-banner-subtitle max-w-[700px] mx-auto">
+                        <p className="tech-banner-subtitle max-w-[900px] mx-auto mt-8">
                             {subtitle}
                         </p>
                     )}
                 </div>
 
                 {/* Explore Button — vertically centered in the remaining space below subtitle */}
-                {buttonText && (
+                {buttonText && isButton && (
                     <div className="flex-1 flex items-center">
                         <Link href={buttonLink}>
                             <Button icon label={buttonText} />

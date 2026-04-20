@@ -86,11 +86,14 @@ export default function HomeSolutions({ products = [] }: { products?: any[] }) {
             name={mobileApp?.name || mobileApp?.title || "Mobile App"}
             tagline={mobileApp?.tagline || "iOS & Android"}
             primaryFeature={mobileApp?.primaryFeature || "Firewall Onboarding"}
+            image="/images/product/software/mobile_app2.webp"
             features={mobileApp?.features || [
-              "Dashboard",
-              "Alerts",
-              "User Security Config",
-              "QR Phishing Protection",
+              "Smart Setup: Configure SafeEnterprise, SafeBiz, & SafeHome effortlessly.",
+              "Real-Time Threat Intelligence: Instant alerts for malicious domains/URLs.",
+              "Network Visibility: Monitor connected hosts and activity in real-time.",
+              "Security Controls: Block harmful categories, domains, and high-risk IPs.",
+              "Secure QR Verification: Instantly verify QR codes securely.",
+              "Centralized Control: Manage all devices from a single intuitive dashboard.",
             ]}
           />
         </div>

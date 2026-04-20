@@ -24,7 +24,7 @@ export default function PartnersBottomBanner() {
         {/* The grey background strip that goes across the bottom */}
         <div className="absolute bottom-0 w-full h-[3%] lg:h-[10%] bg-[#F2F2F2] z-0" />
 
-        <div className="w-full max-w-[1440px] mx-auto px-6 pb-3 lg:px-12 relative z-20 mt-6 md:mt-16 lg:mt-0">
+        <div className="w-full max-w-[1440px] mx-auto px-6 pb-3 lg:px-16 relative z-20 mt-6 md:mt-16 lg:mt-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 lg:gap-20 items-end">
             {/* Left Column: Device Image */}
             <div className="flex justify-center mt-5 items-center w-full min-h-[250px] md:min-h-[350px] lg:min-h-[500px]">

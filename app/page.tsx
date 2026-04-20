@@ -6,16 +6,25 @@ import dynamic from "next/dynamic";
 import DecorativeLine from "@/components/home/DecorativeLine";
 import Banner from "@/components/home/Banner";
 import TumblingText from "@/components/home/TumblingText";
-import OurTopProduct from "@/components/home/OurTopProduct";
+// import OurTopProduct from "@/components/home/OurTopProduct";
 import AdvancedArchitecture from "@/components/technology/AdvancedArchitecture";
 
 // Dynamic imports
 const CybercrimeStats = dynamic(
   () => import("@/components/home/CybercrimeStats"),
 );
-const SecurityCards = dynamic(() => import("@/components/home/SecurityCards"));
+const BadNewsStats = dynamic(
+  () => import("@/components/home/BadNewsStats"),
+);
+const TabletShowcase = dynamic(
+  () => import("@/components/home/TabletShowcase"),
+);
+
 const HomeSolutionsInfo = dynamic(
   () => import("@/components/home/HomeSolutionsInfo"),
+);
+const SecuritySolutions = dynamic(
+  () => import("@/components/home/SecuritySolutions"),
 );
 const Challengestab = dynamic(() => import("@/components/home/Challengestab"));
 const ProtectionBanner = dynamic(
@@ -30,9 +39,15 @@ export default function Home() {
   const phrases = ["Enterprises", "Small Businesses", "Homes"];
 
   const images = [
-    "/images/product/SafeEnterprise4001.webp",
+    "/images/banners/enterprise-rack.webp",
     "/images/banners/homepage-right-banner1.webp",
     "/images/banners/solution-banner-right1.webp",
+  ];
+
+  const rightImageClasses = [
+    "w-[10vh] md:w-[38svh] right-10! md:right-35!",
+    "w-[20vh] md:w-[50svh]",
+    "w-[20vh] md:w-[50svh]",
   ];
 
   const learnMoreLinks = [
@@ -42,9 +57,9 @@ export default function Home() {
   ];
 
   const backgrounds = [
-    "/images/home/Security_Images (1).webp",
-    "/images/home/Security_Images (2).webp",
-    "/images/home/Security_Images (3).webp",
+    "/images/home/heroEnterprise400.webp",
+    "/images/home/Quick & Effortless Setup.webp",
+    "/images/home/heroHome.webp",
   ];
 
   const [index, setIndex] = useState(0);
@@ -62,14 +77,15 @@ export default function Home() {
       className="flex flex-col bg-[#FFFFFF] min-h-screen overflow-x-clip"
     >
       {/* ── SNAP 1: Hero Banner ───────────────────────────────────────────── */}
-      <div className="snap-start">
+      <div className="">
         <Banner
           backgroundImage={backgrounds[index]}
           rightImage={images[index]}
+          rightImageClassName={rightImageClasses[index]}
           title={
             <>
               Radically Simplified <br className="hidden md:block" />
-              <HighlightedText text="Cybersecurity" /> for{" "}
+              <HighlightedText text="AI Cybersecurity" /> for{" "}
               <br className="block md:hidden" />
               <TumblingText phrases={phrases} index={index} />
             </>
@@ -84,29 +100,57 @@ export default function Home() {
           }
           subtitleClassName="font-title font-light text-[16px] md:text-[22px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-white max-w-[550px]"
           buttons={[
-            { label: "Order Now", href: "#", variant: "primary", icon: true },
+            // { label: "Order Now", href: "#", variant: "primary", icon: true },
             {
               label: "Learn More",
               href: learnMoreLinks[index],
-              variant: "secondary",
+              variant: "primary",
               icon: true,
             },
           ]}
           rightImageAlt="Marma Security Device"
+          overlay={true}
         />
       </div>
 
+      {/* ── SNAP 1.5: Bad News Stats ──────────────────────────────────────── */}
+      <div className="bg-[#FFFFFF]">
+        <BadNewsStats />
+      </div>
+
+      {/* ── SNAP 1.51: Good News Solutions ─────────────────────────────────── */}
+      <div className="relative">
+        {/* Decorative Line — Desktop */}
+        <div className="hidden md:block absolute right-0 top-8 pointer-events-none z-100">
+          <div className="relative w-screen right-1/2 translate-x-1/2">
+            <DecorativeLine
+              viewBox="0 0 700 80"
+              points="100,40 1100,40"
+              dots={[{ cx: 100, cy: 40, rippleCount: 3 }]}
+              className="w-[300px] lg:w-[400px] h-auto ml-auto"
+              animationDuration={2.8}
+            />
+          </div>
+        </div>
+        <SecuritySolutions />
+      </div>
+
+      {/* ── SNAP 1.6: Tablet Showcase ─────────────────────────────────────── */}
+      <div className="">
+        <TabletShowcase />
+      </div>
+
       {/* ── SNAP 2: Cybercrime Stats ──────────────────────────────────────── */}
-      <div className="snap-start">
-        <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-8 lg:px-12 pt-0 md:pt-24 bg-[#FFFFFF] relative">
+      <div className="">
+        <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-4 lg:px-16 pt-0 md:pt-12 bg-[#FFFFFF] relative">
           <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center gap-8 relative z-10 w-full">
             <h2 className="fl2 w-full min-[901px]:w-[55%] home-exposed-heading text-left">
-              Your{" "}
+              {/* Your{" "}
               <HighlightedText
                 text="enterprise, business and home"
                 className="text-[#323232] !font-bold"
               />{" "}
-              are more <br /> exposed to cybercrime than you think.
+              are more <br /> exposed to cybercrime than you think. */}
             </h2>
 
             <div className="flex flex-col w-[40%] sm:w-[30%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-4 min-[901px]:mt-0 pointer-events-none z-0">
@@ -118,44 +162,45 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <CybercrimeStats />
+        {/* <CybercrimeStats /> */}
       </div>
+
 
       {/* ── SNAP 3: Security Cards ────────────────────────────────────────── */}
-      <div className="snap-start">
+      {/* <div className="">
         <SecurityCards />
-      </div>
+      </div> */}
 
       {/* ── SNAP 4: Our Top Products ──────────────────────────────────────── */}
-      <div className="snap-start">
+      {/* <div className="">
         <OurTopProduct />
-      </div>
+      </div> */}
 
       {/* ── SNAP 5: Home Solutions Info ───────────────────────────────────── */}
-      <div className="snap-start ">
+      <div className="">
         <HomeSolutionsInfo />
       </div>
 
       {/* ── SNAP 6: Challenges Tab ────────────────────────────────────────── */}
-      <div className="snap-start ">
+      <div className="">
         <Challengestab />
       </div>
 
       {/* ── SNAP 7: Protection Banner ─────────────────────────────────────── */}
-      <div className="snap-start ">
+      {/* <div className="">
         <ProtectionBanner />
-      </div>
+      </div> */}
 
       {/* ── SNAP 8: How We Protect ────────────────────────────────────────── */}
-      <div className="snap-start ">
+      <div className="">
         <HowWeProtect />
       </div>
 
       {/* ── SNAP 9: Testimonial ───────────────────────────────────────────── */}
-      <div className="snap-start ">
+      {/* <div className="">
         <Testimonial />
-      </div>
-      <div className="snap-start ">
+      </div> */}
+      <div className="">
         <AdvancedArchitecture />
       </div>
     </div>

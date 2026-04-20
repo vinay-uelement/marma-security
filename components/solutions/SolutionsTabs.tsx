@@ -2,9 +2,22 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import HighlightedText from "../global/HighlightedText";
 import DecorativeLine from "../home/DecorativeLine";
 import SlidingTabs from "../global/SlidingTabs";
+import GlassWrapper from "../global/GlassWrapper";
+import Button from "../global/Button";
+
+// Maps tab IDs to their URL slugs
+const industrySlugMap: Record<string, string> = {
+  healthcare: "healthcare",
+  legal: "legal",
+  finance: "finance",
+  manufacturing: "manufacturing",
+  smb: "small-and-medium-business",
+  education: "education",
+};
 
 interface TabData {
   id: string;
@@ -63,6 +76,13 @@ const tabItems: TabData[] = [
       "Educational institutions handle sensitive student and staff data while supporting large, open networks. Marma delivers reliable, easy-to-deploy network security that safeguards campuses, classrooms, and digital learning systems without adding complexity for IT teams.",
     image: "/images/home/Security_Images (6).webp",
   },
+  {
+    id: 'residential',
+    label: 'Residential Projects',
+    title: 'Advanced security for modern living environments.',
+    description: 'From single-family homes to large apartment complexes, residential security needs to balance safety with convenience. Marma delivers intelligent, easy-to-manage network security that protects families and their devices without adding complexity for homeowners or property managers.',
+    image: '/images/solutions/residential/0.webp',
+  }
 ];
 
 const SLIDE_DURATION = 380;
@@ -198,7 +218,7 @@ export default function SolutionsTabs({ solutionData }: { solutionData?: any }) 
         }
       `}</style>
 
-      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-12 pt-16 md:pt-24 bg-[#FFFFFF] relative">
+      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-16 pt-16 bg-[#FFFFFF] relative">
         {/* Header Section */}
         <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center mb-16 gap-0 md:gap-8 relative z-10 w-full">
           <h2 className="w-full min-[901px]:w-[55%] fl2 text-left">
@@ -208,10 +228,10 @@ export default function SolutionsTabs({ solutionData }: { solutionData?: any }) 
               className="text-[#323232] !font-extrabold"
               imageClassName="bottom-[-10px] md:bottom-[-22px]"
             />
-            <br className="hidden md:block" /> to You
+            to You
           </h2>
 
-          <div className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-10 min-[901px]:mt-0 pointer-events-none z-0">
+          <div className="flex flex-col w-[60%] sm:w-[50%] min-[901px]:w-[40%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-10 min-[901px]:mt-0 pointer-events-none z-0">
             <DecorativeLine
               viewBox="0 0 500 80"
               points="-3000,40 200,40"
@@ -260,7 +280,7 @@ export default function SolutionsTabs({ solutionData }: { solutionData?: any }) 
         </div>
 
         {/* Desktop Tabs — sliding indicator */}
-        <div className="hidden lg:block mb-16 select-none">
+        <div className="hidden lg:block mb-8 select-none">
           <SlidingTabs
             tabs={tabsToUse.map((tab) => ({ id: tab.id, label: tab.label }))}
             activeTabId={active.id}
@@ -290,6 +310,11 @@ export default function SolutionsTabs({ solutionData }: { solutionData?: any }) 
               />
             </div>
             <p className="fl4-2 w-full">{active.description}</p>
+            <div className="mt-6 w-full">
+              <Link href={`/solutions/${industrySlugMap[active.id] || active.id}`}>
+                <Button icon variant="primary" label="Read More" />
+              </Link>
+            </div>
           </div>
 
           {/* Desktop */}
@@ -322,17 +347,24 @@ function DesktopContent({ data }: { data: TabData }) {
       <div className="flex flex-col items-start lg:text-left">
         <h3 className="fl3-1 mb-12 max-w-[450px]">{data.title}</h3>
         <p className="home-challenge-desc">{data.description}</p>
+        <div className="mt-30">
+          <Link href={`/solutions/${industrySlugMap[data.id] || data.id}`}>
+            <Button icon variant="primary" label="Read More" />
+          </Link>
+        </div>
       </div>
 
-      <div className="relative w-full h-[360px] rounded-[20px] overflow-hidden shadow-xl">
-        <Image
-          src={data.image}
-          alt={data.title}
-          fill
-          className="object-cover object-center"
-          sizes="(max-width: 1024px) 100vw, 50vw"
-        />
-      </div>
+      <GlassWrapper>
+        <div className="relative w-full h-[360px] rounded-[20px] overflow-hidden shadow-xl">
+          <Image
+            src={data.image}
+            alt={data.title}
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </div>
+      </GlassWrapper>
     </div>
   );
 }

@@ -38,35 +38,37 @@ import TheMarmaAdvantage from "@/components/technology/TheMarmaAdvantage";
 import AdvancedArchitecture from "@/components/technology/AdvancedArchitecture";
 import HighlightedText from "@/components/global/HighlightedText";
 import StatsSection from "@/components/about/StatsSection";
+import MobileAppShowcase from "@/components/home/MobileAppShowcase";
 
 export default function TechnologyPage() {
   return (
     <main className="w-full bg-[#FFFFFF] min-h-screen">
       {/* The new dedicated Technology Banner */}
-      <TechnologyBanner
-        title={
-          <>
-            Built on Enterprise-Grade
-            <br />
-            <HighlightedText
-              text="Security"
-              className="text-[#FFFFFF] font-bold"
-              imageClassName="bottom-[-15px] md:bottom-[-20px] right-[5px]"
-            />{" "}
-            Technology
-          </>
-        }
-        subtitle="Marma Security's products are powered by a comprehensive suite of enterprise-grade security technologies, all orchestrated through AI-powered automation. The platform uses continuous machine learning, behavioral analysis, and global cloud intelligence to deliver autonomous, predictive protection."
-        backgroundImage="/images/banners/Technology-banner.webp"
-        buttonText="Explore"
-      />
+      <div className="">
+        <TechnologyBanner
+          title={
+            <>
+              Built on Enterprise-Grade
+              <br />
+              <HighlightedText
+                text="Security"
+                className="text-[#FFFFFF] font-bold"
+                imageClassName="bottom-[-15px] md:bottom-[-20px] right-[5px]"
+              />{" "}
+              Technology
+            </>
+          }
+          subtitle="Marma Security's products are powered by a comprehensive suite of enterprise-grade security technologies, all orchestrated through AI-powered automation. The platform uses continuous machine learning, behavioral analysis, and global cloud intelligence to deliver autonomous, predictive protection."
+          backgroundImage="/images/banners/Technology-banner.webp"
+          isButton={false}
+        />
+      </div>
 
       {/* The Marma Advantage Section */}
-      <TheMarmaAdvantage />
-
-
-      {/* The Advanced Architecture Layout Block */}
-      <AdvancedArchitecture />
+      <div className="">
+        <TheMarmaAdvantage />
+      </div>
+      <MobileAppShowcase />
     </main>
   );
 }

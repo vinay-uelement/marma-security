@@ -46,7 +46,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+
 }
 
 body {
@@ -116,7 +116,7 @@ img {
 
   .fl3-1 {
     font-family: var(--font-body);
-    @apply font-normal md:font-light text-[12px] md:text-[28px] lg:text-[32px] leading-[18px] md:leading-[40px] tracking-[-0.01em] text-text-dark;
+    @apply font-normal md:font-normal text-[12px] md:text-[28px] lg:text-[30px] leading-[18px] md:leading-[40px] tracking-[-0.01em] text-text-dark;
   }
 
   .fl3-2 {
@@ -293,7 +293,6 @@ img {
   font-family: var(--font-body);
   background: rgba(212, 212, 212, 0.08);
   border: 1px solid #ffffff52;
-  color: #d4d4d433;
   box-shadow: 0px 3.66px 21.95px -0.91px #00000033;
   @apply font-normal text-[12px] md:text-[18px] leading-[20px] md:leading-[28px] rounded-[14px] px-5 py-3 md:py-3 text-bg-white placeholder-white focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all w-full;
 }
@@ -565,11 +564,11 @@ img {
 }
 
 .about-banner-title {
-  @apply font-title font-normal text-[36px] md:text-[52px] leading-[1.2] tracking-[-0.01em] text-bg-white drop-shadow-sm;
+  @apply font-title font-normal text-[26px] md:text-[46px] leading-[1.2] tracking-[-0.01em] text-bg-white drop-shadow-sm;
 }
 
 .about-banner-subtitle {
-  @apply font-title font-semibold text-[18px] md:text-[22px] leading-[1.4] tracking-[-0.01em] text-bg-white;
+  @apply font-title font-semibold text-[20px] md:text-[24px] leading-[1.4] tracking-[-0.01em] text-bg-white;
 }
 
 .about-banner-desc {
@@ -677,6 +676,19 @@ img {
   background-size: 0.75rem;
 }
 
+.footer-form-select {
+  @apply appearance-none;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6683 15.554L0 3.8885L3.89125 0L11.6683 7.777L19.4452 0L23.3365 3.8885L11.6683 15.554Z' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.25rem center;
+  background-size: 0.75rem;
+}
+
+.footer-form-select option {
+  background-color: #201C1C;
+  color: white;
+}
+
 .contact-submit-text {
   @apply font-body font-medium text-[20px];
 }
@@ -689,15 +701,15 @@ img {
 }
 
 .faq-item-number {
-  @apply font-body font-semibold text-[42px] md:text-[68px] leading-none text-[#DADADA];
+  @apply font-body font-semibold text-[32px] md:text-[48px] leading-none text-[#DADADA];
 }
 
 .faq-item-question {
-  @apply font-title font-medium text-[12px] md:text-[16px] lg:text-[22px] leading-[1.2] lg:leading-[34px] tracking-tight text-text-dark;
+  @apply font-title font-medium text-[12px] md:text-[15px] lg:text-[19px] leading-[1.2] lg:leading-[30px] tracking-tight text-text-dark;
 }
 
 .faq-item-answer {
-  @apply font-body font-normal text-[9px] md:text-[12px] lg:text-[18px] leading-relaxed text-text-muted;
+  @apply font-body font-normal text-[9px] md:text-[11px] lg:text-[15px] leading-relaxed text-text-muted;
 }
 
 /* ===============================================================

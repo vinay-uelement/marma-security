@@ -34,6 +34,7 @@ export interface BannerProps {
   ContinerClass?: string;
   backgroundSize?: string;
   sectionClassName?: string;
+  overlay?: boolean;
 }
 
 export default function Banner({
@@ -46,6 +47,8 @@ export default function Banner({
   rightImageAlt = "Banner Image",
   titleClassName = "font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white drop-shadow-sm",
   rightImageClassName = "",
+  showRightImageCircle = true,
+  overlay = false,
 }: BannerProps) {
   const [activeImage, setActiveImage] = useState<string | null>(rightImage || null);
   const [outgoingImage, setOutgoingImage] = useState<string | null>(null);
@@ -173,12 +176,12 @@ export default function Banner({
           fetchPriority="high"
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/70 z-[5]" />
+        {overlay && <div className="absolute inset-0 bg-black/70 z-[5]" />}
       </div>
 
       <div className="h-[96svh] md:h-[93svh] relative z-10 overflow-hidden w-full flex items-center md:items-end">
         {/* Main Content Container inside the Banner */}
-        <div className="relative z-20 px-6 lg:px-12 h-3/5 mb-14 w-full md:py-12 lg:py-0">
+        <div className="relative z-20 px-6 lg:px-16 h-3/5 mb-14 w-full md:py-12 lg:py-0">
           {/* Left Column: Text, Subtitle, and Buttons */}
           <div className="flex flex-col space-y-4  md:space-y-6 pb-5 md:mt-16 lg:mt-0 text-white z-30 items-center lg:items-start text-center lg:text-left">
             {" "}
@@ -215,19 +218,19 @@ export default function Banner({
           </div>
         </div>
         {/*  background circle */}
-        <div
+        {showRightImageCircle && <div
           className=" absolute max-sm:left-1/2 max-sm:-translate-x-1/2 md:-right-6 bottom-0 md:-bottom-4 w-[30vh] h-[30vh] md:w-[75svh] md:h-[75svh] rounded-full opacity-50
             bg-[linear-gradient(290deg,rgba(255,0,0,0.01)_0%,rgba(255,0,0,1)_100%)]
             backdrop-blur-[60px]
             "
-        ></div>
+        ></div>}
       </div>
 
       {/* product image */}
 
       <div
         ref={imgContainerRef}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-15 w-[20vh] md:w-[50svh] z-20 pointer-events-none h-full"
+        className={`absolute bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-15 z-20 pointer-events-none h-full ${rightImageClassName || "w-[20vh] md:w-[50svh]"}`}
         style={{ perspective: "1500px", transformStyle: "preserve-3d" }}
       >
         {outgoingImage && (

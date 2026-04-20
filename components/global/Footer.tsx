@@ -1,15 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Button from "./Button";
 import { usePathname } from "next/navigation";
+import CustomSelect from "./CustomSelect";
 import { submitContactForm } from "@/lib/contactApi";
 
 export default function Footer() {
   const pathname = usePathname();
   return (
-    <footer className={`footer-container ${pathname === "/" ? "snap-end" : ""}`}>
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <footer className={`footer-container`}>
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
         <div className="flex flex-col lg:flex-row justify-between w-full gap-0 lg:gap-24">
           <div className="flex flex-col h-full grow">
             {/* Top: Logo & Description */}
@@ -22,17 +23,13 @@ export default function Footer() {
                 className="w-[140px] md:w-[280px] h-auto object-contain"
               />
 
-              <p className="footer-desc-text max-w-full">
-                All security updates, patches, and improvements are handled
-                automatically in the background.
-              </p>
             </div>
 
             {/* ======================================= */}
             {/* DESKTOP-ONLY MIDDLE NAV & CONTACT GRID */}
             {/* ======================================= */}
-            <div className={`hidden md:flex w-full justify-between`}>
-              <div className={`grid grow grid-cols-2`}>
+            <div className={`hidden md:flex flex-col w-full justify-between gap-20 mb-20`}>
+              <div className={`grid grow grid-cols-4 gap-6`}>
                 <a
                   href="/technology"
                   className="hover:text-white/70 transition-colors h-fit"
@@ -65,6 +62,12 @@ export default function Footer() {
                   Partners
                 </a>
                 <a
+                  href="/careers"
+                  className="hover:text-white/70 transition-colors"
+                >
+                  Careers
+                </a>
+                <a
                   href="/contact-us"
                   className="hover:text-white/70 transition-colors"
                 >
@@ -73,7 +76,7 @@ export default function Footer() {
               </div>
 
 
-              <div className={`flex gap-10 flex-col`}>
+              <div className={`grid grid-cols-2 gap-10 justify-between items-start`}>
                 <a
                   href="tel:+14085828962"
                   className="flex items-center gap-4 hover:opacity-80 transition-opacity"
@@ -137,6 +140,32 @@ export default function Footer() {
                     180 Promenade Ste. 300,
                     <br />
                     Sacramento, CA - 95834
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="flex items-start gap-4 hover:opacity-80 transition-opacity break-all sm:break-normal"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 90 90"
+                    width="22"
+                    height="22"
+                    fill="none"
+                    stroke="#fff"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M45 90c-.35 0-.68-.19-.86-.49l-4.71-7.97C30.22 65.98 20.7 49.88 17.64 43.73a30.4 30.4 0 0 1-3.06-13.31C14.58 13.65 28.23 0 45 0s30.42 13.65 30.42 30.42c0 4.66-1.03 9.14-3.06 13.31-3.1 6.19-12.58 22.23-21.76 37.74l-4.71 7.97A1 1 0 0 1 45 90z" />
+                    <circle cx="45" cy="29.2" r="11.2" />
+                  </svg>
+                  <span>
+                    Marmasec Private Limited,
+                    <br />
+                    J 1002, Mhada Towers,
+                    <br />
+                    Pimpri, Pune - 411017
                   </span>
                 </a>
 
@@ -227,6 +256,12 @@ export default function Footer() {
                     Partners
                   </a>
                   <a
+                    href="/careers"
+                    className="hover:text-white/70 transition-colors"
+                  >
+                    Careers
+                  </a>
+                  <a
                     href="/contact-us"
                     className="hover:text-white/70 transition-colors"
                   >
@@ -303,6 +338,32 @@ export default function Footer() {
                       180 Promenade <br /> Ste. 300,
 
                       Sacramento, <br /> CA - 95834
+                    </span>
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-start gap-1 hover:opacity-80 transition-opacity break-all sm:break-normal"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 90 90"
+                      width="12"
+                      height="12"
+                      fill="none"
+                      stroke="#fff"
+                      strokeWidth="6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M45 90c-.35 0-.68-.19-.86-.49l-4.71-7.97C30.22 65.98 20.7 49.88 17.64 43.73a30.4 30.4 0 0 1-3.06-13.31C14.58 13.65 28.23 0 45 0s30.42 13.65 30.42 30.42c0 4.66-1.03 9.14-3.06 13.31-3.1 6.19-12.58 22.23-21.76 37.74l-4.71 7.97A1 1 0 0 1 45 90z" />
+                      <circle cx="45" cy="29.2" r="11.2" />
+                    </svg>
+                    <span>
+                      Marmasec Private Limited,
+                      <br />
+                      J 1002, Mhada Towers,
+                      <br />
+                      Pimpri, Pune - 411017
                     </span>
                   </a>
                 </div>
@@ -393,11 +454,12 @@ function FooterContactForm() {
     email: '',
     phone: '',
     message: '',
+    subject: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     if (submitStatus) setSubmitStatus(null);
   };
@@ -423,7 +485,7 @@ function FooterContactForm() {
 
     if (result.success) {
       setSubmitStatus({ type: 'success', message: result.message });
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '', subject: '' });
     } else {
       setSubmitStatus({ type: 'error', message: result.message });
     }
@@ -461,6 +523,29 @@ function FooterContactForm() {
         required
         disabled={isSubmitting}
       />
+
+      <CustomSelect
+        options={[
+          { value: "sales-agent", label: "Becoming a Sales Agent" },
+          { value: "partnership", label: "Partnership" },
+          { value: "investors", label: "Investors" },
+          { value: "product-question", label: "Product Questions" },
+          { value: "other", label: "Other" },
+        ]}
+        value={formData.subject}
+        placeholder="Area of interest"
+        onChange={(val) => setFormData({ ...formData, subject: val })}
+        disabled={isSubmitting}
+        triggerClassName="footer-input-field"
+        menuClassName="bg-[#1A1818] border-white/20"
+        activeOptionClassName="bg-brand-red text-white"
+        hoverOptionClassName="hover:bg-white/10 hover:text-white"
+        placeholderColorClass="text-[#FFFFFFCC]"
+        valueColorClass="text-white"
+        arrowColor="white"
+        openDirection="down"
+      />
+
       <input
         type="tel"
         name="phone"
@@ -480,9 +565,12 @@ function FooterContactForm() {
         disabled={isSubmitting}
       />
 
+
+
       <div className="flex justify-center lg:justify-end pt-3">
         <Button icon label={isSubmitting ? "Submitting..." : "Submit"} />
       </div>
     </form>
   );
 }
+

@@ -39,15 +39,8 @@ const heroProducts = [
     href: "?tab=enterprise&product=saferemote",
     label: "SafeEnterprise 100",
     isEnterprise: true,
-    image: "/images/product/SafeEnterprise4002.webp",
+    image: "/images/product/Frame 209.webp",
     alt: "SafeCloud Product",
-  },
-  {
-    id: "safehome",
-    href: "?tab=home&product=safehome",
-    label: "SafeHome",
-    image: "/images/banners/solution-banner-right1.webp",
-    alt: "SafeHome Product",
   },
   {
     id: "safebiz",
@@ -56,6 +49,14 @@ const heroProducts = [
     image: "/images/banners/homepage-right-banner1.webp",
     alt: "SafeBiz Product",
   },
+  {
+    id: "safehome",
+    href: "?tab=home&product=safehome",
+    label: "SafeHome",
+    image: "/images/banners/solution-banner-right1.webp",
+    alt: "SafeHome Product",
+  },
+
 
 ];
 
@@ -66,11 +67,11 @@ function getCardProps(offset: number) {
 
   switch (abs) {
     case 0:
-      return { x: 0, scale: 1, opacity: 1, zIndex: 30 };
+      return { x: 0, scale: 1.15, opacity: 1, zIndex: 30 };
     case 1:
-      return { x: dir * 250, scale: 0.76, opacity: 0.72, zIndex: 20 };
+      return { x: dir * 190, scale: 0.78, opacity: 1, zIndex: 20 };
     default:
-      return { x: dir * 490, scale: 0.58, opacity: 0, zIndex: 0 };
+      return { x: dir * 400, scale: 0.58, opacity: 0, zIndex: 0 };
   }
 }
 
@@ -105,7 +106,6 @@ function HeroCarousel() {
 
         const { x, scale, opacity, zIndex } = getCardProps(offset);
         const card = containerRef.current?.querySelector(`.card-${i}`);
-        const glow = containerRef.current?.querySelector(`.glow-${i}`);
 
         if (card) {
           gsap.to(card, {
@@ -117,32 +117,6 @@ function HeroCarousel() {
             ease: "power3.out",
             overwrite: true,
           });
-        }
-
-        if (glow) {
-          gsap.killTweensOf(glow);
-          if (offset === 0) {
-            gsap.fromTo(
-              glow,
-              { opacity: 0.5, scaleX: 0.75, scaleY: 1 },
-              {
-                opacity: 0.85,
-                scaleX: 1,
-                scaleY: 1.15,
-                duration: 1.3,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-              },
-            );
-          } else {
-            gsap.to(glow, {
-              opacity: 0,
-              scaleX: 0.5,
-              duration: 0.35,
-              ease: "power2.out",
-            });
-          }
         }
       });
     },
@@ -241,52 +215,40 @@ function HeroCarousel() {
             />
 
             {/* ── Card ─────────────────────────────────────────────────── */}
-            {isCenter ? (
-              // Active card — full card is clickable, group enables arrow hover
-              <Link
-                href={product.href}
-                className="group relative flex flex-col"
-                style={{
-                  width: CARD_WIDTH,
-                  background: "rgba(255,255,255,0.14)",
-                  backdropFilter: "blur(28px) saturate(200%)",
-                  WebkitBackdropFilter: "blur(28px) saturate(200%)",
-                  border: "1px solid rgba(255,255,255,0.28)",
-                  borderRadius: 20,
-                  boxShadow: `
-                    inset 0 1px 0 rgba(255,255,255,0.55),
-                    inset 0 -1px 0 rgba(255,255,255,0.08),
-                    0 20px 60px rgba(0,0,0,0.45)
-                  `,
-                }}
-              >
-                {cardContent}
-              </Link>
-            ) : (
-              // Side cards — not clickable as a link, just setCurrent on click
-              <div
-                style={{
-                  width: CARD_WIDTH,
-                  background: "rgba(255,255,255,0.08)",
-                  backdropFilter: "blur(20px) saturate(160%)",
-                  WebkitBackdropFilter: "blur(20px) saturate(160%)",
-                  border: "1px solid rgba(255,255,255,0.14)",
-                  borderRadius: 20,
-                  display: "flex",
-                  flexDirection: "column",
-                  boxShadow:
-                    "inset 0 1px 0 rgba(255,255,255,0.2), 0 8px 24px rgba(0,0,0,0.2)",
-                }}
-              >
-                {cardContent}
-              </div>
-            )}
+            <div
+              onClick={() => {
+                if (isCenter) {
+                  window.location.href = product.href;
+                } else if (isSide) {
+                  setCurrent(i);
+                }
+              }}
+              className="group relative flex flex-col transition-all"
+              style={{
+                width: CARD_WIDTH,
+                cursor: (isCenter || isSide) ? "pointer" : "default",
+                background: isCenter ? "rgba(255,255,255,0.14)" : "rgba(255,255,255,0.04)",
+                backdropFilter: isCenter ? "blur(30px) saturate(180%)" : "blur(12px) saturate(140%)",
+                WebkitBackdropFilter: isCenter ? "blur(30px) saturate(180%)" : "blur(12px) saturate(140%)",
+                border: isCenter ? "1px solid rgba(255,255,255,0.28)" : "1px solid rgba(255,255,255,0.1)",
+                borderRadius: 20,
+                transform: "translateZ(0)",
+                willChange: "transform",
+                isolation: "isolate",
+                transition: "background 0.8s ease, border 0.8s ease, box-shadow 0.8s ease, backdrop-filter 0.8s ease",
+                boxShadow: isCenter
+                  ? "inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -1px 0 rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.45)"
+                  : "0 8px 24px rgba(0,0,0,0.2)",
+              }}
+            >
+              {cardContent}
+            </div>
           </div>
         );
       })}
 
       {/* ── Controls: Prev | Pause/Play | Next ───────────────────────────── */}
-      <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex items-center gap-3 z-40">
+      <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3 z-40">
         {/* Prev */}
         <button
           onClick={() => setCurrent((prev) => (prev - 1 + total) % total)}
@@ -406,7 +368,7 @@ export default function ClientPage({ products }: { products: any }) {
     {
       category: "Security Gateway",
       values: {
-        enterprise: "SE 200/ SE 400/ SafeRemote",
+        enterprise: "SE 200/ SE 400/ SE 100",
         smb: "SafeBiz Firewall",
         home: "SafeHome Firewall",
       },
@@ -475,7 +437,7 @@ export default function ClientPage({ products }: { products: any }) {
 
   return (
     <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
-      <div className="relative">
+      <div className=" pt-24 md:pt-0 relative">
         <Banner
           backgroundImage="/images/banners/product-banner.webp"
           heightVariant="900"
@@ -530,23 +492,25 @@ export default function ClientPage({ products }: { products: any }) {
       </div>
 
       {/* Product Showcases */}
-      <div className="mt-6 md:mt-20">
-        <Tabs
-          tabs={[
-            { label: "Enterprise Solutions", id: "enterprise" },
-            { label: "SMB Solutions", id: "smb" },
-            { label: "Home Solutions", id: "home" },
-          ]}
-          activeTabId={activeProductTab}
-          onTabChange={onTabChange}
-          align="left"
-        />
-      </div>
-      <div className="my-4 mx-2 md:my-15">
-        <ActiveComponent products={products} />
+      <div className=" pt-20">
+        <div className="mb-10">
+          <Tabs
+            tabs={[
+              { label: "Enterprise Solutions", id: "enterprise" },
+              { label: "SMB Solutions", id: "smb" },
+              { label: "Home Solutions", id: "home" },
+            ]}
+            activeTabId={activeProductTab}
+            onTabChange={onTabChange}
+            align="left"
+          />
+        </div>
+        <div className="mb-4 mx-2">
+          <ActiveComponent products={products} />
+        </div>
       </div>
 
-      <div className="mx-auto w-full max-w-[1280px]">
+      <div className=" pt-24 mx-auto w-full max-w-[1280px]">
         <ProductSummaryTable
           title="Product Summary"
           columns={columns}

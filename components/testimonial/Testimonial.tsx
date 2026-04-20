@@ -101,7 +101,7 @@ export default function Testimonial() {
 
   return (
     <section className="relative w-full max-w-[1440px] mx-auto py-8 lg:py-24 overflow-x-clip ">
-      <div className="relative z-10 w-full mb-10 lg:mb-16 px-6 lg:px-12 max-w-[1440px] mx-auto ">
+      <div className="relative z-10 w-full mb-10 lg:mb-16 px-6 lg:px-16 max-w-[1440px] mx-auto ">
         <div className="relative flex flex-col items-start md:flex-row md:items-center text-left justify-between gap-6 md:gap-12 w-full h-auto mt-8 md:mt-0">
           {/* Decorative Line — Mobile */}
           <div className="flex md:hidden absolute top-[-50px] right-[-24px] items-start justify-end w-[280px] pointer-events-none overflow-x-clip z-0">
@@ -150,7 +150,7 @@ export default function Testimonial() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`relative bg-bg-card border border-border-card rounded-[19px] px-[18px] py-[24px] flex flex-row flex-shrink-0 w-full max-w-full min-w-0 sm:w-[72vw] md:w-[47vw] lg:w-[32vw] xl:w-[430px] snap-center md:snap-start overflow-hidden ${index === testimonials.length - 1 ? "sm:mr-6" : ""
+              className={`relative bg-bg-card border border-border-card rounded-[19px] px-[18px] py-[24px] flex flex-row flex-shrink-0 w-full max-w-full min-w-0 sm:w-[72vw] md:w-[47vw] lg:w-[32vw] xl:w-[430px] snap-center md: overflow-hidden ${index === testimonials.length - 1 ? "sm:mr-6" : ""
                 }`}
             >
               {/* Quote Icon */}

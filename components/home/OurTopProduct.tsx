@@ -28,7 +28,7 @@ const topProducts: Product[] = [
   {
     id: "safecloud",
     name: "SafeEnterprise 100",
-    image: "/images/product/SafeEnterprise4002.webp",
+    image: "/images/product/Frame 209.webp",
     isNew: true,
     link: "/product?tab=enterprise&product=saferemote",
   },
@@ -136,7 +136,7 @@ export default function OurTopProduct() {
           {topProducts.map((product) => (
             <div
               key={product.id}
-              className="flex flex-col w-[260px] sm:w-[300px] md:w-[320px] shrink-0 snap-start bg-[#F9F9F9] overflow-hidden group transition-all"
+              className="flex flex-col w-[260px] sm:w-[300px] md:w-[320px] shrink-0 bg-[#F9F9F9] overflow-hidden group transition-all"
             >
               {/* Top part with Name and conditional New tag */}
               <div className="relative pt-6 px-6 mb-4 h-[260px] md:h-[300px] flex flex-col items-center bg-[#F7F7F7]">

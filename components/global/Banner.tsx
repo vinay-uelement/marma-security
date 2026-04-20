@@ -22,7 +22,7 @@ export interface BannerProps {
   buttons?: BannerButton[];
   rightImage?: string;
   rightImageAlt?: string;
-  
+
   showRightImageCircle?: boolean;
   titleClassName?: string;
   rightImageClassName?: string;
@@ -31,6 +31,7 @@ export interface BannerProps {
   ContinerClass?: string;
   backgroundSize?: string;
   sectionClassName?: string;
+  overlay?: boolean;
 }
 
 export default function Banner({
@@ -51,7 +52,8 @@ export default function Banner({
   rightContent,
   ContinerClass = "min-h-[100vh]",
   backgroundSize = "cover",
-sectionClassName = "py-12 md:py-16 lg:py-24"
+  sectionClassName = "py-12 md:py-16 lg:py-24",
+  overlay = false,
 }: BannerProps) {
   // Dynamic height class assignment based on the prop
   const heightMap: Record<string, string> = {
@@ -63,7 +65,7 @@ sectionClassName = "py-12 md:py-16 lg:py-24"
 
   return (
     <section
-className={`relative w-full flex items-start lg:items-center overflow-visible overflow-x-clip ${ContinerClass} ${sectionClassName} ${heightClass}`}
+      className={`relative w-full flex items-start lg:items-center overflow-visible overflow-x-clip ${ContinerClass} ${sectionClassName} ${heightClass}`}
       style={{
         backgroundImage: `url('${backgroundImage}')`,
         backgroundSize: backgroundSize,
@@ -71,11 +73,13 @@ className={`relative w-full flex items-start lg:items-center overflow-visible ov
         backgroundRepeat: "no-repeat",
       }}
     >
+      {/* Dark Overlay */}
+      {overlay && <div className="absolute inset-0 bg-black/70 z-[5]" />}
       {/* Main Content Container inside the Banner */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 w-full py-12 lg:py-0">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center h-full justify-items-center lg:justify-items-stretch">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-16 w-full py-12 lg:py-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center h-full justify-items-center lg:justify-items-stretch">
           {/* Left Column: Text, Subtitle, and Buttons */}
-      <div className="flex flex-col space-y-4 md:space-y-6 pb-5 mt-12 md:mt-16 lg:mt-0 text-white z-20 items-center lg:items-start text-center lg:text-left">       {/* Title text */}
+          <div className="flex flex-col space-y-4 md:space-y-6 pb-5 mt-12 md:mt-16 lg:mt-0 text-white z-20 items-center lg:items-start text-center lg:text-left">       {/* Title text */}
             <div className={titleClassName}>{title}</div>
 
             {/* Render Middle Text conditionally */}
@@ -88,7 +92,7 @@ className={`relative w-full flex items-start lg:items-center overflow-visible ov
 
             {/* Render Buttons conditionally */}
             {buttons && buttons.length > 0 && (
-              <div className=" lg:absolute flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 pt-6 md:pt-8 lg:pt-16 w-full lg:bottom-0">
+              <div className=" flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 pt-6 md:pt-8 lg:pt-16 w-full lg:bottom-0">
                 {buttons.map((btn, index) => {
                   const isPrimary =
                     btn.variant !== "secondary" && btn.variant !== "outline";
@@ -155,13 +159,13 @@ className={`relative w-full flex items-start lg:items-center overflow-visible ov
 
           {/* Right Column: Hero Graphic/Image conditionally */}
           {rightContent ? (
-           <div className="flex justify-center lg:justify-end items-end relative z-20 mt-10 md:mt-16 lg:mt-0 w-full lg:w-auto">
+            <div className="flex justify-center lg:justify-end items-end relative z-20 mt-10 md:mt-16 lg:mt-0 w-full lg:w-auto">
               {rightContent}
             </div>
           ) : (
             rightImage && (
               <div className="flex justify-center lg:justify-end items-center relative z-20 mt-4 lg:mt-0 w-full lg:w-auto">
-              <div className="
+                <div className="
 relative 
 w-full 
 max-w-[260px] 

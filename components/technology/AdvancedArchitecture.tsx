@@ -25,8 +25,8 @@ export default function AdvancedArchitecture() {
     () => {
       if (!containerRef.current) return;
 
-      const lines = gsap.utils.toArray<SVGLineElement>(".svg-line");
-      const dataFlows = gsap.utils.toArray<SVGLineElement>(".svg-data-flow");
+      const lines = gsap.utils.toArray<SVGPathElement>(".svg-line");
+      const dataFlows = gsap.utils.toArray<SVGPathElement>(".svg-data-flow");
       const orbitNodes = gsap.utils.toArray<HTMLDivElement>(".orbit-node-inner");
       const cardNodes = gsap.utils.toArray<HTMLDivElement>(".card-node-inner");
       const junctionNodes = gsap.utils.toArray<HTMLDivElement>(".junction-node-inner");
@@ -41,16 +41,17 @@ export default function AdvancedArchitecture() {
       gsap.set(lines, { opacity: 0 });
 
       // 1. Entrance Sequence Timeline
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top -1%",
-          scrub: 2,
-          pin: true,
-          pinSpacing: true,
-          end: "80%",
-        },
-      });
+      // const tl = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: containerRef.current,
+      //     start: "top -1%",
+      //     scrub: 2,
+      //     pin: true,
+      //     pinSpacing: true,
+      //     end: "80%",
+      //   },
+      // });
+      const tl = gsap.timeline();
 
       // Step 1: Central cloud
       tl.to(cloudRef.current, {
@@ -109,11 +110,11 @@ export default function AdvancedArchitecture() {
 
       // Data Flow Continuous Animation & Synchronized Blinking
       dataFlows.forEach((flow, index) => {
-        const line = flow as SVGLineElement;
-        const totalLength = line.getTotalLength();
-        const duration = gsap.utils.random(1.2, 2.0);
+        const path = flow as SVGPathElement;
+        const totalLength = path.getTotalLength();
+        const duration = gsap.utils.random(1.5, 2.5);
 
-        // Map line index to corresponding node
+        // Map path index to corresponding node
         let targetNode: HTMLElement | null = null;
         if (index < 7) {
           targetNode = orbitNodes[index]?.querySelector(".node-icon-container");
@@ -128,13 +129,14 @@ export default function AdvancedArchitecture() {
           targetNode = cardNodes[index - 10];
         }
 
-        // Pattern is 8px dash, 16px gap. Total 24px cycle.
+        // Pattern is 16px dash, 32px gap for a cleaner 'Pro' look on angled paths
+        const dashCycle = 48;
         const initialShift = -totalLength;
-        gsap.set(line, { strokeDasharray: "8, 16", strokeDashoffset: initialShift });
+        gsap.set(path, { strokeDasharray: "12, 36", strokeDashoffset: initialShift });
 
         // Animating the pattern flow
-        gsap.to(line, {
-          strokeDashoffset: initialShift - 24,
+        gsap.to(path, {
+          strokeDashoffset: initialShift - dashCycle,
           duration: duration,
           ease: "none",
           repeat: -1
@@ -142,30 +144,30 @@ export default function AdvancedArchitecture() {
       });
 
       // Master pulse animation for all icon containers
-      const allIcons = containerRef.current?.querySelectorAll(".node-icon-container");
-      if (allIcons && allIcons.length > 0) {
-        const pulseTl = gsap.timeline({ repeat: -1 });
-        pulseTl.to(allIcons, {
-          borderColor: "#FF4444",
-          background: "#FFF0F0",
-          boxShadow: "0 0 15px rgba(255, 68, 68, 0.4)",
-          duration: 0.2,
-          ease: "power2.in"
-        }).to(allIcons, {
-          borderColor: "#FFE0E0",
-          background: "#FFF0F0",
-          boxShadow: "0 0 0px rgba(255, 68, 68, 0)",
-          duration: 0.4,
-          ease: "power2.out"
-        }, "+=1.5"); // Pause between pulses for a "heartbeat" feel
-      }
+      // const allIcons = containerRef.current?.querySelectorAll(".node-icon-container");
+      // if (allIcons && allIcons.length > 0) {
+      //   const pulseTl = gsap.timeline({ repeat: -1 });
+      //   pulseTl.to(allIcons, {
+      //     borderColor: "#FFFFFF",
+      //     background: "#e0e0e0",
+      //     boxShadow: "0 0 15px rgba(255, 255, 255, 0.4)", // Stronger white glow
+      //     duration: 0.2,
+      //     ease: "power2.in"
+      //   }).to(allIcons, {
+      //     borderColor: "#FFFFFF",
+      //     background: "#e0e0e0",
+      //     boxShadow: "0 0 0px rgba(0, 0, 0, 0)",
+      //     duration: 0.4,
+      //     ease: "power2.out"
+      //   }, "+=1.5"); // Pause between pulses for a "heartbeat" feel
+      // }
     },
     { scope: containerRef }
   );
 
   return (
-    <section className="w-full bg-[#FAFAFA] pt-12 lg:pt-16 pb-12 md:pb-20 relative overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-12 flex flex-col items-center">
+    <section className="w-full bg-[#FAFAFA] pt-8 lg:pt-12 pb-12 md:pb-20 relative overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-16 flex flex-col items-center">
         {/* Typography Layout */}
         <div className="text-center w-full max-w-[900px] mx-auto mb-10 md:mb-12 relative z-20">
           <h2 className="fl2">
