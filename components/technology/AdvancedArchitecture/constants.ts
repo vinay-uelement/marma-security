@@ -63,7 +63,7 @@ export const bottomCards: BottomCardData[] = [
     id: 12,
     title: "Edge AI Agents",
     label: "Endpoint Protection Software",
-    img: "/images/product/software/marma-agent.webp",
+    img: "/images/product/software/marmaAgent.webp",
     pos: { left: "50%", top: "82.4%" },
   },
   {
