@@ -57,9 +57,9 @@ export default function Home() {
   ];
 
   const backgrounds = [
-    "/images/home/Security_Images (1).webp",
+    "/images/home/heroEnterprise400.webp",
     "/images/home/Quick & Effortless Setup.webp",
-    "/images/home/Security_Images (2).webp",
+    "/images/home/heroHome.webp",
   ];
 
   const [index, setIndex] = useState(0);
