@@ -74,9 +74,9 @@ const AnimatedCounter = ({ stat }: { stat: StatItem }) => {
   }, [stat]);
 
   return (
-    <h3 ref={containerRef} className="fl2 font-bold flex items-baseline">
+    <h3 ref={containerRef} className="fl2 font-bold flex items-baseline gap-x-1.5">
       <span ref={numberRef}>0</span>
-      <span>{stat.suffix}</span>
+      <span>{stat.suffix.trim()}</span>
     </h3>
   );
 };

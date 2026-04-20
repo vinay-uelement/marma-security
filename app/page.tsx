@@ -85,7 +85,7 @@ export default function Home() {
           title={
             <>
               Radically Simplified <br className="hidden md:block" />
-              <HighlightedText text="Cybersecurity" /> for{" "}
+              <HighlightedText text="AI Cybersecurity" /> for{" "}
               <br className="block md:hidden" />
               <TumblingText phrases={phrases} index={index} />
             </>
