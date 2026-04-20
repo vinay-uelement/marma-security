@@ -1,6 +1,6 @@
 # Marma Security
 
-A Next.js 16 web application for Marma Security, built with React 19, TypeScript, Tailwind CSS 4, and GSAP animations.
+A Next.js 16 web application for Marma Security, built with React 19, TypeScript, Tailwind CSS 4, and GSAP animations. This runs on a AWS serverless container.
 
 ---
 
