@@ -189,14 +189,36 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               </div>
               <div className="md:px-12">
                 <EndpointProductCard
-                  name="E-mail Protection Service"
+                  name="Email Security SaaS"
                   tagline="Enterprise Email Security"
-                  primaryFeature="Zero-day Phishing Protection"
+                  subTitle="Stop Email Scams Before They Reach Your Inbox"
+                  primaryFeature="Email remains a prime target for cybercriminals due to its widespread use. Our AI-powered Email Security platform scans every incoming email using multiple advanced LLMs to detect phishing, fraud, and social engineering attempts in real time. Suspicious emails are automatically isolated into a dedicated Scam folder, keeping your users protected without disrupting their workflow."
                   features={[
-                    "Zero-day Malware / Ransomware",
-                    "Scam Protection",
-                    "AI / Data Loss Prevention",
-                    "QR Phishing Protection",
+                    "Blocks 9/10 Phishing Attempts Before Exposure",
+                    "<100ms Real-Time Email Analysis",
+                    "Trusted by Growing Enterprises",
+                    "Multi-LLM AI Detection Engine",
+                    "Secure SaaS Architecture",
+                    "Continuous AI Learning & Updates",
+                    "Detects Zero-Day Social Engineering Patterns",
+                  ]}
+                  image="/images/product/software/agent-software.webp"
+                />
+                <div className="mt-8" />
+                <EndpointProductCard
+                  name="Data Protection SaaS"
+                  tagline="Enterprise Data Security"
+                  subTitle="Stop Data Leaks Before They Become Breaches"
+                  primaryFeature="Our AI-powered Data Protection platform continuously scans your organization’s cloud drives to identify how sensitive documents are being shared. Detect files exposed externally, shared across the organization, or accessible via public links—and take control before data leaves your perimeter."
+                  features={[
+                    "Full Visibility Across Shared Documents",
+                    "Real-Time Exposure Detection",
+                    "Protects Sensitive & Confidential Data",
+                    "Seamless SaaS Deployment",
+                    "Built for Enterprise Data Security",
+                    "Reduces Data Exposure Surface",
+                    "Supports Compliance & Governance",
+                    "Enterprise-Grade Security Controls",
                   ]}
                   image="/images/product/software/agent-software.webp"
                 />
