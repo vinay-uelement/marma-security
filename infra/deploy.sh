@@ -2,39 +2,43 @@
 # Deploy marma-security CI/CD infrastructure to AWS
 #
 # Usage:
-#   ./infra/deploy.sh <aws-region> <github-owner>
+#   ./infra/deploy.sh <aws-region> <github-owner> [route53-hosted-zone-id]
+#
+# Arguments:
+#   aws-region            e.g. ap-south-1
+#   github-owner          GitHub org or username, e.g. UElement
+#   route53-hosted-zone-id  Optional. If your domain is in Route 53, pass the
+#                           Hosted Zone ID for fully-automated DNS validation.
+#                           Omit if using Cloudflare / GoDaddy / other provider.
 #
 # Prerequisites:
 #   - AWS CLI v2 configured with sufficient IAM permissions
 #   - Docker running locally (for the initial image push)
-#   - jq installed
-#
-# Steps performed:
-#   1. Create ECR repository
-#   2. Build & push an initial Docker image so ECS has something to start with
-#   3. Deploy VPC + ALB + ECS cluster + Fargate service
-#   4. Deploy CodePipeline + CodeBuild (GitHub → ECR → ECS)
-#   5. Print next steps (GitHub connection auth + DNS)
 
 set -euo pipefail
 
 REGION="${1:-}"
 GITHUB_OWNER="${2:-}"
+HOSTED_ZONE_ID="${3:-}"
 
 if [[ -z "$REGION" || -z "$GITHUB_OWNER" ]]; then
-  echo "Usage: $0 <aws-region> <github-owner>"
-  echo "  e.g. $0 us-east-1 UElement"
+  echo "Usage: $0 <aws-region> <github-owner> [route53-hosted-zone-id]"
+  echo "  e.g. $0 ap-south-1 UElement"
+  echo "  e.g. $0 ap-south-1 UElement Z1PA6795UKMFR9"
   exit 1
 fi
 
 APP_NAME="marma-security"
+DOMAIN="thedigitaldrift.in"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 ECR_STACK="${APP_NAME}-ecr"
+ACM_STACK="${APP_NAME}-acm"
 ECS_STACK="${APP_NAME}-ecs"
 PIPELINE_STACK="${APP_NAME}-pipeline"
 
 # ── Step 1: ECR ────────────────────────────────────────────────────────────────
-echo "=== [1/4] Deploying ECR repository ==="
+echo "=== [1/5] Deploying ECR repository ==="
 aws cloudformation deploy \
   --template-file "${SCRIPT_DIR}/cfn-ecr.yaml" \
   --stack-name "$ECR_STACK" \
@@ -50,16 +54,56 @@ echo "ECR URI: $ECR_URI"
 
 # ── Step 2: Initial image push ─────────────────────────────────────────────────
 echo ""
-echo "=== [2/4] Building and pushing initial Docker image ==="
+echo "=== [2/5] Building and pushing initial Docker image ==="
 AWS_ACCOUNT=$(aws sts get-caller-identity --query Account --output text)
 aws ecr get-login-password --region "$REGION" \
   | docker login --username AWS --password-stdin "${AWS_ACCOUNT}.dkr.ecr.${REGION}.amazonaws.com"
 docker build -t "${ECR_URI}:latest" "${SCRIPT_DIR}/.."
 docker push "${ECR_URI}:latest"
 
-# ── Step 3: ECS infrastructure ─────────────────────────────────────────────────
+# ── Step 3: ACM certificate ────────────────────────────────────────────────────
 echo ""
-echo "=== [3/4] Deploying VPC, ALB, ECS cluster and Fargate service ==="
+echo "=== [3/5] Deploying ACM certificate for ${DOMAIN} ==="
+
+if [[ -n "$HOSTED_ZONE_ID" ]]; then
+  echo "Route 53 Hosted Zone ID provided — DNS validation will be automated."
+  aws cloudformation deploy \
+    --template-file "${SCRIPT_DIR}/cfn-acm.yaml" \
+    --stack-name "$ACM_STACK" \
+    --region "$REGION" \
+    --no-fail-on-empty-changeset \
+    --parameter-overrides \
+      DomainName="$DOMAIN" \
+      Route53HostedZoneId="$HOSTED_ZONE_ID"
+else
+  echo "No Route 53 Hosted Zone ID provided — deploying certificate request."
+  echo "CloudFormation will pause here until DNS validation is completed manually."
+  echo ""
+  echo "  ACTION REQUIRED:"
+  echo "  After this command starts, go to AWS Console → Certificate Manager → Certificates"
+  echo "  find the pending certificate for '${DOMAIN}', expand the domain entries,"
+  echo "  and add the shown CNAME records to your DNS provider (Cloudflare / GoDaddy etc.)."
+  echo "  CloudFormation will resume automatically once the certificate reaches 'Issued'."
+  echo ""
+  aws cloudformation deploy \
+    --template-file "${SCRIPT_DIR}/cfn-acm.yaml" \
+    --stack-name "$ACM_STACK" \
+    --region "$REGION" \
+    --no-fail-on-empty-changeset \
+    --parameter-overrides \
+      DomainName="$DOMAIN"
+fi
+
+CERT_ARN=$(aws cloudformation describe-stacks \
+  --stack-name "$ACM_STACK" \
+  --region "$REGION" \
+  --query "Stacks[0].Outputs[?OutputKey=='CertificateArn'].OutputValue" \
+  --output text)
+echo "Certificate ARN: $CERT_ARN"
+
+# ── Step 4: ECS infrastructure ─────────────────────────────────────────────────
+echo ""
+echo "=== [4/5] Deploying VPC, ALB, ECS cluster and Fargate service ==="
 aws cloudformation deploy \
   --template-file "${SCRIPT_DIR}/cfn-ecs.yaml" \
   --stack-name "$ECS_STACK" \
@@ -68,7 +112,8 @@ aws cloudformation deploy \
   --no-fail-on-empty-changeset \
   --parameter-overrides \
     AppName="$APP_NAME" \
-    ECRImageUri="${ECR_URI}:latest"
+    ECRImageUri="${ECR_URI}:latest" \
+    CertificateArn="$CERT_ARN"
 
 ALB_DNS=$(aws cloudformation describe-stacks \
   --stack-name "$ECS_STACK" \
@@ -85,13 +130,13 @@ ECS_SERVICE=$(aws cloudformation describe-stacks \
   --region "$REGION" \
   --query "Stacks[0].Outputs[?OutputKey=='ECSServiceName'].OutputValue" \
   --output text)
-echo "ALB DNS   : $ALB_DNS"
+echo "ALB DNS    : $ALB_DNS"
 echo "ECS Cluster: $ECS_CLUSTER"
 echo "ECS Service: $ECS_SERVICE"
 
-# ── Step 4: CI/CD pipeline ─────────────────────────────────────────────────────
+# ── Step 5: CI/CD pipeline ─────────────────────────────────────────────────────
 echo ""
-echo "=== [4/4] Deploying CodePipeline + CodeBuild ==="
+echo "=== [5/5] Deploying CodePipeline + CodeBuild ==="
 aws cloudformation deploy \
   --template-file "${SCRIPT_DIR}/cfn-pipeline.yaml" \
   --stack-name "$PIPELINE_STACK" \
@@ -112,7 +157,8 @@ echo "════════════════════════�
 echo " DEPLOYMENT COMPLETE"
 echo "════════════════════════════════════════════════════════"
 echo ""
-echo "App URL (HTTP):  http://${ALB_DNS}"
+echo "App URL (HTTPS): https://${DOMAIN}"
+echo "App URL (ALB)  : http://${ALB_DNS}"
 echo ""
 echo "NEXT STEPS"
 echo ""
@@ -121,15 +167,13 @@ echo "     AWS Console → Developer Tools → Settings → Connections"
 echo "     Find '${APP_NAME}-github' → click 'Update pending connection'"
 echo "     → authorise with your GitHub account"
 echo ""
-echo "  2. Trigger the pipeline:"
-echo "     Push a commit to the 'main' branch — the pipeline fires automatically."
-echo "     Or start it manually in the AWS Console:"
-echo "     https://console.aws.amazon.com/codepipeline/home?region=${REGION}#/view/${APP_NAME}-pipeline"
+echo "  2. Point your domain to the ALB."
+echo "     In your DNS provider add:"
+echo "       CNAME  ${DOMAIN}      →  ${ALB_DNS}"
+echo "       CNAME  www.${DOMAIN}  →  ${ALB_DNS}"
+echo "     (If using Route 53, use an A-Alias record for the apex domain.)"
 echo ""
-echo "  3. DNS integration (manual):"
-echo "     a. Request an ACM certificate for your domain in us-east-1 (or ${REGION})."
-echo "     b. Add an HTTPS listener (port 443) to the ALB in cfn-ecs.yaml"
-echo "        referencing the certificate ARN, then re-deploy the stack."
-echo "     c. In your DNS provider, create a CNAME (or ALIAS) record:"
-echo "           <your-domain>  →  ${ALB_DNS}"
+echo "  3. Trigger the pipeline:"
+echo "     Push a commit to 'main' — pipeline fires automatically, or:"
+echo "     https://console.aws.amazon.com/codepipeline/home?region=${REGION}#/view/${APP_NAME}-pipeline"
 echo ""
