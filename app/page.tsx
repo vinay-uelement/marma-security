@@ -138,12 +138,12 @@ export default function Home() {
         <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-4 lg:px-16 pt-0 md:pt-12 bg-[#FFFFFF] relative">
           <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center gap-8 relative z-10 w-full">
             <h2 className="fl2 w-full min-[901px]:w-[55%] home-exposed-heading text-left">
-              Your{" "}
+              {/* Your{" "}
               <HighlightedText
                 text="enterprise, business and home"
                 className="text-[#323232] !font-bold"
               />{" "}
-              are more <br /> exposed to cybercrime than you think.
+              are more <br /> exposed to cybercrime than you think. */}
             </h2>
 
             <div className="flex flex-col w-[40%] sm:w-[30%] min-[901px]:w-[45%] self-end min-[901px]:self-auto translate-x-8 sm:translate-x-12 min-[901px]:translate-x-0 mt-4 min-[901px]:mt-0 pointer-events-none z-0">
@@ -155,7 +155,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <CybercrimeStats />
+        {/* <CybercrimeStats /> */}
       </div>
 
 

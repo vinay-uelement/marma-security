@@ -36,56 +36,56 @@ export default function ConnectionLines() {
               className="svg-line"
               d={pathD}
               fill="none"
-              stroke="#000000"
+              stroke="#A9A9A9"
               strokeWidth="0.1"
               strokeDasharray="1"
               strokeLinejoin="round"
               strokeLinecap="round"
             />
-             {/* Data Flow Overlay */}
-             <path
-               className="svg-data-flow"
-               d={pathD}
-               fill="none"
-               stroke="#475569"
-               strokeWidth="0.4"
-               opacity="1"
-               strokeLinejoin="round"
-               strokeLinecap="round"
-             />
+            {/* Data Flow Overlay */}
+            <path
+              className="svg-data-flow"
+              d={pathD}
+              fill="none"
+              stroke="#A9A9A9"
+              strokeWidth="0.3"
+              opacity="1"
+              strokeLinejoin="round"
+              strokeLinecap="round"
+            />
           </g>
         );
       })}
 
       {/* 2. Central Vertical Line down to Junction Rail */}
-       <g>
-        <path className="svg-line" d="M 50 50 V 64.4" fill="none" stroke="#000000" strokeWidth="0.1" strokeDasharray="1" />
-        <path className="svg-data-flow" d="M 50 50 V 64.4" fill="none" stroke="#475569" strokeWidth="0.4" opacity="1" />
+      <g>
+        <path className="svg-line" d="M 50 50 V 64.4" fill="none" stroke="#A9A9A9" strokeWidth="0.1" strokeDasharray="1" />
+        <path className="svg-data-flow" d="M 50 50 V 64.4" fill="none" stroke="#A9A9A9" strokeWidth="0.3" opacity="1" />
       </g>
 
       {/* 3. Horizontal Transition Rail (Connecting Left/Center/Right Junctions) */}
-       <g>
+      <g>
         {/* Rail from center to Left (26%) and Right (74%) */}
-        <path className="svg-line" d="M 50 64.4 H 26" fill="none" stroke="#000000" strokeWidth="0.1" strokeDasharray="1" />
-        <path className="svg-data-flow" d="M 50 64.4 H 26" fill="none" stroke="#475569" strokeWidth="0.4" opacity="1" />
+        <path className="svg-line" d="M 50 64.4 H 26" fill="none" stroke="#A9A9A9" strokeWidth="0.1" strokeDasharray="1" />
+        <path className="svg-data-flow" d="M 50 64.4 H 26" fill="none" stroke="#A9A9A9" strokeWidth="0.3" opacity="1" />
 
-        <path className="svg-line" d="M 50 64.4 H 74" fill="none" stroke="#000000" strokeWidth="0.1" strokeDasharray="1" />
-        <path className="svg-data-flow" d="M 50 64.4 H 74" fill="none" stroke="#475569" strokeWidth="0.4" opacity="1" />
+        <path className="svg-line" d="M 50 64.4 H 74" fill="none" stroke="#A9A9A9" strokeWidth="0.1" strokeDasharray="1" />
+        <path className="svg-data-flow" d="M 50 64.4 H 74" fill="none" stroke="#A9A9A9" strokeWidth="0.3" opacity="1" />
       </g>
 
       {/* 4. Vertical Connectors from Junctions to Cards */}
-       <g>
+      <g>
         {/* Left Junction to Left Card */}
-        <path className="svg-line" d="M 26 64.4 V 82.4" fill="none" stroke="#000000" strokeWidth="0.1" strokeDasharray="1" />
-        <path className="svg-data-flow" d="M 26 64.4 V 82.4" fill="none" stroke="#475569" strokeWidth="0.4" opacity="1" />
+        <path className="svg-line" d="M 26 64.4 V 82.4" fill="none" stroke="#A9A9A9" strokeWidth="0.1" strokeDasharray="1" />
+        <path className="svg-data-flow" d="M 26 64.4 V 82.4" fill="none" stroke="#A9A9A9" strokeWidth="0.3" opacity="1" />
 
         {/* Center Junction to Center Card */}
-        <path className="svg-line" d="M 50 64.4 V 82.4" fill="none" stroke="#000000" strokeWidth="0.1" strokeDasharray="1" />
-        <path className="svg-data-flow" d="M 50 64.4 V 82.4" fill="none" stroke="#475569" strokeWidth="0.4" opacity="1" />
+        <path className="svg-line" d="M 50 64.4 V 82.4" fill="none" stroke="#A9A9A9" strokeWidth="0.1" strokeDasharray="1" />
+        <path className="svg-data-flow" d="M 50 64.4 V 82.4" fill="none" stroke="#A9A9A9" strokeWidth="0.3" opacity="1" />
 
         {/* Right Junction to Right Card */}
-        <path className="svg-line" d="M 74 64.4 V 82.4" fill="none" stroke="#000000" strokeWidth="0.1" strokeDasharray="1" />
-        <path className="svg-data-flow" d="M 74 64.4 V 82.4" fill="none" stroke="#475569" strokeWidth="0.4" opacity="1" />
+        <path className="svg-line" d="M 74 64.4 V 82.4" fill="none" stroke="#A9A9A9" strokeWidth="0.1" strokeDasharray="1" />
+        <path className="svg-data-flow" d="M 74 64.4 V 82.4" fill="none" stroke="#A9A9A9" strokeWidth="0.3" opacity="1" />
       </g>
     </svg>
   );

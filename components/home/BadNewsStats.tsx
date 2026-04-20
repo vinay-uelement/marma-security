@@ -101,7 +101,7 @@ export default function BadNewsStats() {
             The Bad News
           </p>
           <h2 className="bad-news-text fl3">
-            Attackers are supercharging <br className="hidden lg:block" /> their speed and scale.
+            Attackers are multiplying  <br className="hidden lg:block" /> their speed and reach..
           </h2>
         </div>
 
