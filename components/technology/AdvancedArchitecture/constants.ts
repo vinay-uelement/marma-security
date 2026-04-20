@@ -56,14 +56,14 @@ export const bottomCards: BottomCardData[] = [
     id: 11,
     title: "Edge AI Agents",
     label: "Plug-n-Play Firewall Solutions",
-    img: "/images/banners/homepage-right-banner1.webp",
+    img: "/images/product/SafeEnterprise4001.webp",
     pos: { left: "26%", top: "82.4%" },
   },
   {
     id: 12,
     title: "Edge AI Agents",
     label: "Endpoint Protection Software",
-    img: "/images/product/software/agent-software.webp",
+    img: "/images/product/software/marma-agent.webp",
     pos: { left: "50%", top: "82.4%" },
   },
   {

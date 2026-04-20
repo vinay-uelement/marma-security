@@ -179,7 +179,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                     "Scam Protection",
                     "AI / Data Loss Prevention",
                   ]}
-                  image="/images/product/software/agent-software.webp"
+                  image="/images/product/software/marma-agent.webp"
                 />
               </div>
             </div>

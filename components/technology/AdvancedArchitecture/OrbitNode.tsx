@@ -21,8 +21,8 @@ export default function OrbitNode({ node }: OrbitNodeProps) {
         onMouseLeave={handleMouseLeave}
       >
         {/* Icon Container (Anchor Point) */}
-        <div className="node-icon-container w-9 h-9 md:w-11 md:h-11 rounded-full bg-[#FFF0F0] flex items-center justify-center shrink-0 shadow-sm border border-[#FFE0E0] transition-transform duration-300">
-          <node.icon className="w-5 h-5 md:w-6 md:h-6 text-brand-red" />
+        <div className="node-icon-container w-9 h-9 md:w-11 md:h-11 rounded-full bg-[#A9A9A9] flex items-center justify-center shrink-0 shadow-sm border border-[#333333] transition-transform duration-300">
+          <node.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
         </div>
 
         {/* Label (Positioned relative to Icon center) */}

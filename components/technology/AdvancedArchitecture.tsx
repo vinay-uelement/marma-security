@@ -148,15 +148,15 @@ export default function AdvancedArchitecture() {
       if (allIcons && allIcons.length > 0) {
         const pulseTl = gsap.timeline({ repeat: -1 });
         pulseTl.to(allIcons, {
-          borderColor: "#FF4444",
-          background: "#FFF0F0",
-          boxShadow: "0 0 15px rgba(255, 68, 68, 0.4)",
+          borderColor: "#FFFFFF",
+          background: "#A9A9A9",
+          boxShadow: "0 0 15px rgba(255, 255, 255, 0.4)", // Stronger white glow
           duration: 0.2,
           ease: "power2.in"
         }).to(allIcons, {
-          borderColor: "#FFE0E0",
-          background: "#FFF0F0",
-          boxShadow: "0 0 0px rgba(255, 68, 68, 0)",
+          borderColor: "#FFFFFF",
+          background: "#A9A9A9",
+          boxShadow: "0 0 0px rgba(0, 0, 0, 0)",
           duration: 0.4,
           ease: "power2.out"
         }, "+=1.5"); // Pause between pulses for a "heartbeat" feel
