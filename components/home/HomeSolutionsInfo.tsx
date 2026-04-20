@@ -6,7 +6,7 @@ export default function HomeSolutionsInfo() {
     <div className="w-full max-w-[1440px] mx-auto pt-10">
       <SolutionsInfo
         imagePosition="right"
-        imageSrc="/images/home/all-device.webp"
+        imageSrc="/images/home/allDevice.webp"
         bgText="STAY IN THE KNOW"
         bgTextClassName="text-[clamp(24px,5vw,72px)] tracking-[0.18em]"
         title={"One Intelligent Platform. Complete Cybersecurity Coverage."}

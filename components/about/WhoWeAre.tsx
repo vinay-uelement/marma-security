@@ -62,7 +62,7 @@ export default function WhoWeAre() {
 
           <div className="flex-1 w-full flex justify-center lg:justify-end">
             <div className="w-full aspect-[4/3] relative rounded-2xl shadow-sm overflow-hidden">
-              <Image src="/images/contact/who_we_are.webp" alt="Marma Mobile App" fill className="object-cover" />
+              <Image src="/images/about/whoWeAre.webp" alt="Marma Mobile App" fill className="object-cover" />
             </div>
           </div>
         </div>

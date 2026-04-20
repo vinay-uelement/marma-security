@@ -161,7 +161,7 @@ export default function ContactSection() {
           {/* RIGHT SECTION: IMAGE */}
           <div className="w-full h-[320px] md:h-[400px] relative rounded-[20px] overflow-hidden border border-gray-200 shadow-2xl">
             <Image
-              src="/images/about/get-advice-any-time.webp"
+              src="/images/contact/getAdvice.webp"
               alt="Contact"
               fill
               className="object-cover scale-110"
@@ -191,9 +191,8 @@ export default function ContactSection() {
                       <p className="faq-item-question font-title">{faq.question}</p>
 
                       <ChevronDown
-                        className={`shrink-0 w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 transition-transform duration-300 ${
-                          openIndex === index ? "rotate-180" : ""
-                        } text-text-dark`}
+                        className={`shrink-0 w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
+                          } text-text-dark`}
                       />
                     </div>
 
