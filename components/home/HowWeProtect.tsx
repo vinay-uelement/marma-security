@@ -62,7 +62,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
   smb: [
     {
       id: "smb-1",
-      image: "/images/home/Simple Yet Powerful Security.webp",
+      image: "/images/home/landing-smb solution-1.webp",
       title: "Simple Yet Powerful Security",
       subtitle: "Enterprise-grade protection, simplified.",
       description:

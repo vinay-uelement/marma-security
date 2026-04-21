@@ -117,8 +117,7 @@ export default function Footer() {
                   <span>info@marmasec.com</span>
                 </a>
                 <a
-                  href="#"
-                  className="flex items-start gap-4 hover:opacity-80 transition-opacity break-all sm:break-normal"
+                  className="flex items-start gap-4 transition-opacity break-all sm:break-normal"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +134,7 @@ export default function Footer() {
                     <circle cx="45" cy="29.2" r="11.2" />
                   </svg>
                   <span>
-                    USA HeadQuarters,
+                    <span className="text-brand-red">  USA HeadQuarters, </span>
                     <br />
                     Marma Security Inc.,
                     <br />
@@ -145,8 +144,7 @@ export default function Footer() {
                   </span>
                 </a>
                 <a
-                  href="#"
-                  className="flex items-start gap-4 hover:opacity-80 transition-opacity break-all sm:break-normal"
+                  className="flex items-start gap-4 transition-opacity break-all sm:break-normal"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +161,7 @@ export default function Footer() {
                     <circle cx="45" cy="29.2" r="11.2" />
                   </svg>
                   <span>
-                    India Office,
+                    <span className="text-brand-red">   India Office, </span>
                     <br />
                     Marmasec Private Limited,
                     <br />
@@ -177,40 +175,16 @@ export default function Footer() {
             </div>
             {/* Desktop Social Icons */}
             <div className="hidden md:flex items-end space-x-6 mt-auto">
+
               <a
-                href="#"
-                aria-label="Instagram"
+                href="https://www.linkedin.com/company/marmasecurity/"
+                target="_blank"
+                aria-label="LinkedIn"
                 className="hover:opacity-80 transition-opacity"
               >
                 <Image
-                  src="/images/global/insta-icon.svg"
-                  alt="Instagram"
-                  width={30}
-                  height={30}
-                  className="object-contain"
-                />
-              </a>
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/global/fb-icon.svg"
-                  alt="Facebook"
-                  width={30}
-                  height={30}
-                  className="object-contain"
-                />
-              </a>
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/global/twitter-icon.svg"
-                  alt="Twitter"
+                  src="/images/global/linkedin.svg"
+                  alt="LinkedIn"
                   width={30}
                   height={30}
                   className="object-contain"
@@ -319,7 +293,7 @@ export default function Footer() {
                     </span>
                   </a>
                   <a
-                    href="#"
+
                     className="flex items-start gap-1 hover:opacity-80 transition-opacity break-all sm:break-normal"
                   >
                     <svg
@@ -337,7 +311,7 @@ export default function Footer() {
                       <circle cx="45" cy="29.2" r="11.2" />
                     </svg>
                     <span>
-                      USA HeadQuarters,
+                      <span className="text-brand-red">  USA HeadQuarters, </span>
                       <br />
                       Marma Security Inc.,
                       <br />
@@ -347,8 +321,7 @@ export default function Footer() {
                     </span>
                   </a>
                   <a
-                    href="#"
-                    className="flex items-start gap-1 hover:opacity-80 transition-opacity break-all sm:break-normal"
+                    className="flex items-start gap-1 transition-opacity break-all sm:break-normal"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -365,7 +338,7 @@ export default function Footer() {
                       <circle cx="45" cy="29.2" r="11.2" />
                     </svg>
                     <span>
-                      India Office,
+                      <span className="text-brand-red">   India Office, </span>
                       <br />
                       Marmasec Private Limited,
                       <br />
@@ -388,41 +361,16 @@ export default function Footer() {
             {/* Mobile Social Icons explicitly mapped below form strictly for Mobile constraints */}
             <div className="flex md:hidden items-center justify-start space-x-6 pt-10 pb-0 w-full">
               <a
-                href="#"
-                aria-label="Instagram"
+                href="https://www.linkedin.com/company/marmasecurity/"
+                target="_blank"
+                aria-label="LinkedIn"
                 className="hover:opacity-80 transition-opacity"
               >
                 <Image
-                  src="/images/global/insta-icon.svg"
-                  alt="Instagram"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-              </a>
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/global/fb-icon.svg"
-                  alt="Facebook"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-              </a>
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/global/twitter-icon.svg"
-                  alt="Twitter"
-                  width={24}
-                  height={24}
+                  src="/images/global/linkedin.svg"
+                  alt="LinkedIn"
+                  width={30}
+                  height={30}
                   className="object-contain"
                 />
               </a>
