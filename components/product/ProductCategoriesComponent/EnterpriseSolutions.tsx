@@ -204,7 +204,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                 />
                 <div className="mt-8" />
                 <EndpointProductCard
-                  name="Cloud Data Protection SaaS"
+                  name="Cloud Data Protection Service"
                   tagline="Enterprise Data Security"
                   subTitle="Stop Data Leaks Before They Become Breaches"
                   primaryFeature="Our AI-powered Data Protection platform continuously scans your organization’s cloud drives to identify how sensitive documents are being shared. Detect files exposed externally, shared across the organization, or accessible via public links and take control before data leaves your perimeter."
