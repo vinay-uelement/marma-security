@@ -67,9 +67,9 @@ function getCardProps(offset: number) {
 
   switch (abs) {
     case 0:
-      return { x: 0, scale: 1.15, opacity: 1, zIndex: 30 };
+      return { x: 0, scale: 1.05, opacity: 1, zIndex: 30 };
     case 1:
-      return { x: dir * 190, scale: 0.78, opacity: 1, zIndex: 20 };
+      return { x: dir * 210, scale: 0.60, opacity: 0.4, zIndex: 20 };
     default:
       return { x: dir * 400, scale: 0.58, opacity: 0, zIndex: 0 };
   }
