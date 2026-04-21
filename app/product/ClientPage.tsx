@@ -447,7 +447,7 @@ export default function ClientPage({ products }: { products: any }) {
             <>
               Enterprise-Grade{" "}
               <HighlightedText
-                text="Cybersecurity"
+                text="AI Cybersecurity"
                 imageClassName="bottom-[-18px] md:bottom-[-20px]"
               />
               <br className="hidden lg:block" /> for Every Network

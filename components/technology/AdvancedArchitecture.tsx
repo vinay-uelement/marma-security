@@ -148,14 +148,14 @@ export default function AdvancedArchitecture() {
       // if (allIcons && allIcons.length > 0) {
       //   const pulseTl = gsap.timeline({ repeat: -1 });
       //   pulseTl.to(allIcons, {
-      //     borderColor: "#FFFFFF",
-      //     background: "#e0e0e0",
+      //     borderColor: "#FF0000",
+      //     background: "#ffb7b7",
       //     boxShadow: "0 0 15px rgba(255, 255, 255, 0.4)", // Stronger white glow
       //     duration: 0.2,
       //     ease: "power2.in"
       //   }).to(allIcons, {
-      //     borderColor: "#FFFFFF",
-      //     background: "#e0e0e0",
+      //     borderColor: "#000000",
+      //     background: "#ffb7b7",
       //     boxShadow: "0 0 0px rgba(0, 0, 0, 0)",
       //     duration: 0.4,
       //     ease: "power2.out"

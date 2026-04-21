@@ -39,13 +39,13 @@ export default function Home() {
   const phrases = ["Enterprises", "Small Businesses", "Homes"];
 
   const images = [
-    "/images/banners/enterprise-rack.webp",
+    "/images/product/SafeEnterprise4001.webp",
     "/images/banners/homepage-right-banner1.webp",
     "/images/banners/solution-banner-right1.webp",
   ];
 
   const rightImageClasses = [
-    "w-[10vh] md:w-[38svh] right-10! md:right-35!",
+    "w-[10vh] md:w-[60svh] right-10! md:right-15! md:bottom-10!",
     "w-[20vh] md:w-[50svh]",
     "w-[20vh] md:w-[50svh]",
   ];
@@ -57,7 +57,7 @@ export default function Home() {
   ];
 
   const backgrounds = [
-    "/images/home/heroEnterprise400.webp",
+    "/images/home/heroEnterprise-400.webp",
     "/images/home/Quick & Effortless Setup.webp",
     "/images/home/heroHome.webp",
   ];
