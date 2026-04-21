@@ -135,6 +135,8 @@ export default function Footer() {
                     <circle cx="45" cy="29.2" r="11.2" />
                   </svg>
                   <span>
+                    USA HeadQuarters,
+                    <br />
                     Marma Security Inc.,
                     <br />
                     180 Promenade Ste. 300,
@@ -161,6 +163,8 @@ export default function Footer() {
                     <circle cx="45" cy="29.2" r="11.2" />
                   </svg>
                   <span>
+                    India Office,
+                    <br />
                     Marmasec Private Limited,
                     <br />
                     J 1002, Mhada Towers,
@@ -333,6 +337,8 @@ export default function Footer() {
                       <circle cx="45" cy="29.2" r="11.2" />
                     </svg>
                     <span>
+                      USA HeadQuarters,
+                      <br />
                       Marma Security Inc.,
                       <br />
                       180 Promenade <br /> Ste. 300,
@@ -359,6 +365,8 @@ export default function Footer() {
                       <circle cx="45" cy="29.2" r="11.2" />
                     </svg>
                     <span>
+                      India Office,
+                      <br />
                       Marmasec Private Limited,
                       <br />
                       J 1002, Mhada Towers,

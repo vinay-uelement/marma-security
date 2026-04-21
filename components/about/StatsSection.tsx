@@ -14,7 +14,7 @@ interface StatItem {
 const stats: StatItem[] = [
   {
     value: 8,
-    suffix: " million +",
+    suffix: " Million +",
     label: "Verified Sites",
     description:
       "Real-time URL reputation checking and SSL inspection to ensure safe browsing.",
