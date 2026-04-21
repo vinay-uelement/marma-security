@@ -193,7 +193,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                   subTitle="Stop Email Scams Before They Reach Your Inbox"
                   primaryFeature="Email remains a prime target for cybercriminals due to its widespread use. Our AI-powered Email Security platform scans every incoming email using multiple advanced LLMs to detect phishing, fraud, and social engineering attempts in real time. Suspicious emails are automatically isolated into a dedicated Scam folder, keeping your users protected without disrupting their workflow."
                   features={[
-                    "Blocks 0-Day Phishing Attempts Before Exposure",
+                    "Blocks 0-Day Phishing Attacks",
                     "Trusted by Growing Enterprises",
                     "Multi-LLM AI Detection Engine",
                     "Secure SaaS Architecture",
