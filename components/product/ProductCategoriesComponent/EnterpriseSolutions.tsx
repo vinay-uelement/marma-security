@@ -200,7 +200,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                     "Continuous AI Learning & Updates",
                     "Detects Zero-Day Social Engineering Patterns",
                   ]}
-                  image="/images/product/software/emailProtection.webp"
+                  image="/images/product/software/email-Protection.webp"
                 />
                 <div className="mt-8" />
                 <EndpointProductCard
@@ -218,7 +218,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                     "Supports Compliance & Governance",
                     "Enterprise-Grade Security Controls",
                   ]}
-                  image="/images/product/software/cloudProtection.webp"
+                  image="/images/product/software/cloud-Protection.webp"
                 />
               </div>
             </div>
