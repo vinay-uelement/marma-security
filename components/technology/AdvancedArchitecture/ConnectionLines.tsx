@@ -26,6 +26,27 @@ export default function ConnectionLines() {
       viewBox="0 0 100 100"
       preserveAspectRatio="none"
     >
+      {
+        orbitingNodes.map((node) => {
+          const pathD = getAngledPath(node.pos);
+          return (
+            <g key={`group-orb-${node.id}`}>
+              {/* Background dashed line */}
+              <path
+                className="svg-line"
+                d={pathD}
+                fill="none"
+                stroke="#333333"
+                strokeWidth="0.1"
+                strokeDasharray="1"
+                strokeLinejoin="round"
+                strokeLinecap="round"
+              />
+
+            </g>
+          );
+        })
+      }
       {/* 1. Lines to Orbiting Nodes */}
       {orbitingNodes.map((node) => {
         const pathD = getAngledPath(node.pos);
@@ -56,6 +77,7 @@ export default function ConnectionLines() {
           </g>
         );
       })}
+
 
       {/* 2. Central Vertical Line down to Junction Rail */}
       <g>
