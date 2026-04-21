@@ -97,7 +97,7 @@ export default function Banner({
         gsap.to(outgoing, {
           opacity: 0,
           scale: 0.85,
-          duration: 0.2,
+          duration: 0.8,
           ease: "power2.inOut",
           onComplete: () => setOutgoingBg(null)
         });
