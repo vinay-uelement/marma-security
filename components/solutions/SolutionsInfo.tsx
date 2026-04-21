@@ -47,7 +47,7 @@ export default function SolutionsInfo({
           className={`flex flex-col z-10 relative w-full h-full items-center text-center lg:items-start lg:text-left order-1 p-10 ${isRight ? "lg:order-1" : "lg:order-2"
             }`}
         >
-          <div className="bg-transparent flex flex-col justify-center h-full items-center lg:items-start relative lg:mb-6 ">
+          <div className="bg-transparent flex flex-col justify-center h-full items-center lg:items-start relative lg:mb-12 ">
             <div className="flex flex-col">
               <h3 className="solutions-info-title pb-[20px]">
                 {title}

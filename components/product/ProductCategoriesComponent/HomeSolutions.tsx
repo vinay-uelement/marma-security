@@ -95,6 +95,7 @@ export default function HomeSolutions({ products = [] }: { products?: any[] }) {
               "Secure QR Verification: Instantly verify QR codes securely.",
               "Centralized Control: Manage all devices from a single intuitive dashboard.",
             ]}
+            imageClass="border-8 p-1 pb-0 border-[#333333]"
           />
         </div>
       </div>

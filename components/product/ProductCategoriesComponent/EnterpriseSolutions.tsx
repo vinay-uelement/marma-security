@@ -236,6 +236,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               primaryFeature="Custom integration with 3rd-party Enterprise SIEM solutions."
               image="/images/product/software/seimNew.webp"
               features={[]}
+              imageClass="object-fill"
             />
             <EndpointProductCard
               name="SOC Integration Services"
@@ -243,6 +244,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               primaryFeature="Custom integration with 3rd-party Enterprise SOC solutions."
               image="/images/product/software/soc.webp"
               features={[]}
+              imageClass="object-fill"
             />
           </div>
         </div>
