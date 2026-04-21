@@ -434,6 +434,7 @@ function FooterContactForm() {
       message: formData.message,
       extra_field: {
         source: 'Footer Form',
+        subject: formData.subject,
       },
     });
 
