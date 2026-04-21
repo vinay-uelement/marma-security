@@ -2,20 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/global/Button";
-import {
-  Shield,
-  Lock,
-  AlertTriangle,
-  Smartphone,
-  Mail,
-  Cloud,
-  Database,
-  Activity,
-  FileText,
-  EyeOff,
-  Radio,
-  UserCheck
-} from "react-feather";
+
+import { Shield, Lock, AlertTriangle, Smartphone, Mail, Cloud, Database, Activity, FileText, EyeOff, Radio, UserCheck } from "lucide-react";
 
 export default function MobileAppShowcase() {
   const features = [
