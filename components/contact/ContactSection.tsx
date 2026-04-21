@@ -99,8 +99,24 @@ export default function ContactSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
   const faqRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const faqSectionRef = useRef<HTMLDivElement>(null);
 
   const visibleFaqs = showAll ? faqs : faqs.slice(0, 5);
+
+  const handleToggleShowAll = () => {
+    if (showAll) {
+      setShowAll(false);
+      // Scroll to the FAQ section start
+      const yOffset = -100; // Account for potential sticky header
+      const element = faqSectionRef.current;
+      if (element) {
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    } else {
+      setShowAll(true);
+    }
+  };
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -170,7 +186,7 @@ export default function ContactSection() {
         </div>
 
         {/* ROW 2: FAQ (Full Width) */}
-        <div className="mt-20 md:mt-[100px]">
+        <div className="mt-20 md:mt-[100px]" ref={faqSectionRef}>
           {/* FAQ */}
           <div>
             <h2 className="faq-heading mb-8">FAQ</h2>
@@ -212,10 +228,14 @@ export default function ContactSection() {
             {/* SHOW MORE BUTTON */}
             <div className="mt-8 flex justify-center">
               <button
-                onClick={() => setShowAll(!showAll)}
-                className="fl5-2 !text-[#323232] font-semibold border-b border-[#323232] hover:opacity-70 transition-opacity"
+                onClick={handleToggleShowAll}
+                className="fl5-2 !text-[#323232] font-semibold border-b border-[#323232] hover:opacity-70 transition-opacity flex items-center gap-2"
               >
                 {showAll ? "Show Less" : "Show More"}
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-300 ${showAll ? "rotate-180" : ""
+                    }`}
+                />
               </button>
             </div>
           </div>
