@@ -59,7 +59,7 @@ export default function TechnologyPage() {
             </>
           }
           subtitle="Marma Security's products are powered by a comprehensive suite of enterprise-grade security technologies, all orchestrated through AI-powered automation. The platform uses continuous machine learning, behavioral analysis, and global cloud intelligence to deliver autonomous, predictive protection."
-          backgroundImage="/images/banners/Technology-banner.webp"
+          backgroundImage="/images/banners/bannerPartners.webp"
           isButton={false}
         />
       </div>

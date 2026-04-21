@@ -45,7 +45,7 @@ export default function Home() {
   ];
 
   const rightImageClasses = [
-    "w-[10vh] md:w-[60svh] right-10! md:right-15! md:bottom-10!",
+    "w-[10vh] md:w-[50svh] right-10! md:right-15! md:bottom-5!",
     "w-[20vh] md:w-[50svh]",
     "w-[20vh] md:w-[50svh]",
   ];

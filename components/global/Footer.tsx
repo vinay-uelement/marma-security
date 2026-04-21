@@ -5,6 +5,7 @@ import Button from "./Button";
 import { usePathname } from "next/navigation";
 import CustomSelect from "./CustomSelect";
 import { submitContactForm } from "@/lib/contactApi";
+import { MapPin } from "lucide-react";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -119,22 +120,9 @@ export default function Footer() {
                 <a
                   className="flex items-start gap-4 transition-opacity break-all sm:break-normal"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 90 90"
-                    width="22"
-                    height="22"
-                    fill="none"
-                    stroke="#fff"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M45 90c-.35 0-.68-.19-.86-.49l-4.71-7.97C30.22 65.98 20.7 49.88 17.64 43.73a30.4 30.4 0 0 1-3.06-13.31C14.58 13.65 28.23 0 45 0s30.42 13.65 30.42 30.42c0 4.66-1.03 9.14-3.06 13.31-3.1 6.19-12.58 22.23-21.76 37.74l-4.71 7.97A1 1 0 0 1 45 90z" />
-                    <circle cx="45" cy="29.2" r="11.2" />
-                  </svg>
+                  <MapPin size={22} />
                   <span>
-                    <span className="text-brand-red">  USA HeadQuarters, </span>
+                    <span className="uppercase font-semibold">  USA HeadQuarters, </span>
                     <br />
                     Marma Security Inc.,
                     <br />
@@ -146,22 +134,9 @@ export default function Footer() {
                 <a
                   className="flex items-start gap-4 transition-opacity break-all sm:break-normal"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 90 90"
-                    width="22"
-                    height="22"
-                    fill="none"
-                    stroke="#fff"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M45 90c-.35 0-.68-.19-.86-.49l-4.71-7.97C30.22 65.98 20.7 49.88 17.64 43.73a30.4 30.4 0 0 1-3.06-13.31C14.58 13.65 28.23 0 45 0s30.42 13.65 30.42 30.42c0 4.66-1.03 9.14-3.06 13.31-3.1 6.19-12.58 22.23-21.76 37.74l-4.71 7.97A1 1 0 0 1 45 90z" />
-                    <circle cx="45" cy="29.2" r="11.2" />
-                  </svg>
+                  <MapPin size={22} />
                   <span>
-                    <span className="text-brand-red">   India Office, </span>
+                    <span className="uppercase font-semibold">   India Office, </span>
                     <br />
                     Marmasec Private Limited,
                     <br />
@@ -296,22 +271,9 @@ export default function Footer() {
 
                     className="flex items-start gap-1 hover:opacity-80 transition-opacity break-all sm:break-normal"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 90 90"
-                      width="12"
-                      height="12"
-                      fill="none"
-                      stroke="#fff"
-                      strokeWidth="6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M45 90c-.35 0-.68-.19-.86-.49l-4.71-7.97C30.22 65.98 20.7 49.88 17.64 43.73a30.4 30.4 0 0 1-3.06-13.31C14.58 13.65 28.23 0 45 0s30.42 13.65 30.42 30.42c0 4.66-1.03 9.14-3.06 13.31-3.1 6.19-12.58 22.23-21.76 37.74l-4.71 7.97A1 1 0 0 1 45 90z" />
-                      <circle cx="45" cy="29.2" r="11.2" />
-                    </svg>
+                    <MapPin size={22} />
                     <span>
-                      <span className="text-brand-red">  USA HeadQuarters, </span>
+                      <span className="uppercase font-semibold">  USA HeadQuarters, </span>
                       <br />
                       Marma Security Inc.,
                       <br />
@@ -323,22 +285,9 @@ export default function Footer() {
                   <a
                     className="flex items-start gap-1 transition-opacity break-all sm:break-normal"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 90 90"
-                      width="12"
-                      height="12"
-                      fill="none"
-                      stroke="#fff"
-                      strokeWidth="6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M45 90c-.35 0-.68-.19-.86-.49l-4.71-7.97C30.22 65.98 20.7 49.88 17.64 43.73a30.4 30.4 0 0 1-3.06-13.31C14.58 13.65 28.23 0 45 0s30.42 13.65 30.42 30.42c0 4.66-1.03 9.14-3.06 13.31-3.1 6.19-12.58 22.23-21.76 37.74l-4.71 7.97A1 1 0 0 1 45 90z" />
-                      <circle cx="45" cy="29.2" r="11.2" />
-                    </svg>
+                    <MapPin size={22} />
                     <span>
-                      <span className="text-brand-red">   India Office, </span>
+                      <span className="uppercase font-semibold">   India Office, </span>
                       <br />
                       Marmasec Private Limited,
                       <br />
