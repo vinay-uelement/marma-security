@@ -14,7 +14,7 @@ export default function MobileAppShowcase() {
     { text: "Email Protection Service", Icon: Mail },
     { text: "Cloud Data Protection", Icon: Cloud },
     { text: "Predictive Risk Scoring", Icon: Activity },
-    { text: "PCI, HIPPA Compliance", Icon: FileText },
+    { text: "PCI, HIPAA Compliance", Icon: FileText },
     { text: "AI Data Leak Protection / DLP", Icon: Database },
     { text: "IOT Behavior Anomaly Detection", Icon: Radio },
     { text: "User Behavior Anomaly Detection", Icon: UserCheck },
