@@ -108,7 +108,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
               <EndpointProductCard
                 name="Agent Software for Windows"
                 tagline="24x7 Endpoint Protection"
-                primaryFeature="FW & Anti-Virus Integration"
+                primaryFeature="Firewall & Anti-Virus Integration"
                 image="/images/product/software/marmaAgent.webp"
                 features={[
                   "DNS Security",

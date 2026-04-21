@@ -176,7 +176,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                     "URL Filtering",
                     "Scam Protection",
                     "Data Loss Prevention",
-                    "FW & Anti-Virus Integration",
+                    "Firewall & Anti-Virus Integration",
                   ]}
                   image="/images/product/software/marmaAgent.webp"
                 />
