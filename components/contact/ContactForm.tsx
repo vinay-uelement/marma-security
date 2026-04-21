@@ -144,13 +144,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
                 <div className="flex items-center justify-between pt-2">
                     {/* Mini social icons */}
                     <div className="flex items-center gap-4">
-                        <Link href="#" aria-label="X / Twitter" className="hover:opacity-70 transition-opacity">
-                            <Image src="/images/contact/contact-us-x.svg" alt="X/Twitter" width={72} height={72} className="object-contain" />
-                        </Link>
-                        <Link href="#" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
-                            <Image src="/images/contact/contact-us-insta.svg" alt="Instagram" width={72} height={72} className="object-contain" />
-                        </Link>
-                        <Link href="#" aria-label="LinkedIn" className="hover:opacity-70 transition-opacity">
+                        <Link href="https://www.linkedin.com/company/marmasecurity/" target='_blank' aria-label="LinkedIn" className="hover:opacity-70 transition-opacity">
                             <Image src="/images/contact/contact-us-linkedin.svg" alt="LinkedIn" width={72} height={72} className="object-contain" />
                         </Link>
                     </div>
