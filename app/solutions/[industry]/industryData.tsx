@@ -135,7 +135,7 @@ export const industriesData: Record<string, IndustryData> = {
   'small-and-medium-business': {
     hero: {
       description: "Protect your small or medium-sized business (SMB) with advanced protection from Phishing, Ransomware, Advanced Persistent Threats (APTs), Social Engineering, and other cyber threats. Marma Security SafeBiz delivers enterprise-grade cybersecurity, designed to safeguard customer data, financial transactions, and business operations. With simplified deployment and AI-powered threat detection, SafeBiz ensures SMBs can swiftly implement comprehensive cybersecurity measures, protecting sensitive information, preventing costly downtime, and maintaining compliance with industry security standards.",
-      imageSrc: "/images/home/Security_Images (2).webp",
+      imageSrc: "/images/solutions/smb/0.webp",
       buttonText: "Learn more about SafeBiz",
     },
     sections: [
