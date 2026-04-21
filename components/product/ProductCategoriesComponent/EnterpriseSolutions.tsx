@@ -166,18 +166,17 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                 <EndpointProductCard
                   name="Agent Software for Windows"
                   tagline="24×7 Endpoint Protection"
-                  primaryFeature="FW & Anti-Virus Integration"
+                  primaryFeature=""
                   features={[
                     "Advanced Deep Packet Inspection for Threat protection",
                     "Protects from phishing, ransomware, malware, and data breaches",
-                    "AI-Powered DNS Security and URL Filtering and Scam Protection",
                     "Updated automatically to protect from latest threats",
-                    "24x7 Always-On Protection",
                     "DNS Filtering",
                     "DNS Security",
                     "URL Filtering",
                     "Scam Protection",
-                    "AI / Data Loss Prevention",
+                    "Data Loss Prevention",
+                    "FW & Anti-Virus Integration",
                   ]}
                   image="/images/product/software/marmaAgent.webp"
                 />
@@ -189,13 +188,12 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               </div>
               <div className="md:px-12">
                 <EndpointProductCard
-                  name="Email Security SaaS"
+                  name="Email Security Service"
                   tagline="Enterprise Email Security"
                   subTitle="Stop Email Scams Before They Reach Your Inbox"
                   primaryFeature="Email remains a prime target for cybercriminals due to its widespread use. Our AI-powered Email Security platform scans every incoming email using multiple advanced LLMs to detect phishing, fraud, and social engineering attempts in real time. Suspicious emails are automatically isolated into a dedicated Scam folder, keeping your users protected without disrupting their workflow."
                   features={[
-                    "Blocks 9/10 Phishing Attempts Before Exposure",
-                    "<100ms Real-Time Email Analysis",
+                    "Blocks 0-Day Phishing Attempts Before Exposure",
                     "Trusted by Growing Enterprises",
                     "Multi-LLM AI Detection Engine",
                     "Secure SaaS Architecture",
