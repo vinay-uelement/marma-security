@@ -21,7 +21,7 @@ const smbGatewaySpecifications: SpecificationProductItem[] = [
 ];
 
 const smbGatewayDescription =
-  "SafeHome protects all connected devices on your network from cyberattacks targeting your financial and personal data, safeguarding your privacy and protecting your family on the internet.";
+  "SafeBiz is a next-generation firewall designed to protect small and medium-sized businesses from cyberattacks. It delivers enterprise-grade security, simplified deployment, and AI-powered threat detection to safeguard sensitive business data and ensure business continuity.";
 
 const smbManagementDescription =
   "Cloud-based Marma Management Platform for managing Security Gateways and Endpoint Protection - designed for simplicity with minimal IT overhead.";
@@ -108,13 +108,14 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
               <EndpointProductCard
                 name="Agent Software for Windows"
                 tagline="24x7 Endpoint Protection"
-                primaryFeature="Firewall & Anti-Virus Integration"
+                primaryFeature=""
                 image="/images/product/software/marmaAgent.webp"
                 features={[
                   "DNS Security",
                   "URL Filtering",
                   "Scam Protection",
-                  "AI / Data Loss Prevention",
+                  "Data Loss Prevention",
+                  "Firewall & Anti-Virus Integration",
                 ]}
               />
             </div>
@@ -127,10 +128,11 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
               <EndpointProductCard
                 name="Mobile App"
                 tagline="iOS & Android"
-                primaryFeature="Firewall Onboarding"
+                primaryFeature=""
                 image="/images/product/software/mobile_app_1.webp"
                 features={[
                   "Dashboard",
+                  "Firewall Onboarding",
                   "Alerts",
                   "User Security Config",
                   "QR Phishing Protection",

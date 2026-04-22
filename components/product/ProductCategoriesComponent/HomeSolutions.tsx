@@ -30,7 +30,7 @@ export default function HomeSolutions({ products = [] }: { products?: any[] }) {
     {
       id: "safehome",
       title: "SafeHome Firewall | Home Network Security",
-      description: "SafeHome protects all connected devices on your network from cyberattacks targeting your financial and personal data, safeguarding your privacy and protecting your family on the internet.",
+      description: "SafeHome is a next-generation firewall designed to protect home networks from advanced cyber threats. It combines deep packet inspection, AI-powered threat detection, and secure SD-WAN capabilities in a compact form factor.",
       image: "/images/banners/solution-banner-right1.webp",
       imageAlt: "SafeHome Firewall home network security device",
       specifications: homeGatewaySpecifications,
@@ -85,10 +85,10 @@ export default function HomeSolutions({ products = [] }: { products?: any[] }) {
           <EndpointProductCard
             name={mobileApp?.name || mobileApp?.title || "Mobile App"}
             tagline={mobileApp?.tagline || "iOS & Android"}
-            primaryFeature={mobileApp?.primaryFeature || "Firewall Onboarding"}
+            primaryFeature={mobileApp?.primaryFeature || ""}
             image="/images/product/software/mobile_app2.webp"
             features={mobileApp?.features || [
-              "Smart Setup: Configure SafeEnterprise, SafeBiz, & SafeHome effortlessly.",
+              "Smart Setup: Configure SafeHome effortlessly.",
               "Real-Time Threat Intelligence: Instant alerts for malicious domains/URLs.",
               "Network Visibility: Monitor connected hosts and activity in real-time.",
               "Security Controls: Block harmful categories, domains, and high-risk IPs.",

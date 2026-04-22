@@ -60,7 +60,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
     {
       id: "safeenterprise-200",
       title: "SafeEnterprise 200 | Branch Office Security",
-      description: enterpriseDescription,
+      description: "SafeEnterprise 200 is a next-generation firewall designed to protect branch offices and small to mid-sized organizations from advanced cyber threats. It combines deep packet inspection, AI-powered threat detection, and secure SD-WAN capabilities in a compact form factor.",
       image: "/images/product/SafeEnterprise2001.webp",
       imageAlt: "SafeEnterprise 200 branch office security device",
       specifications: enterprise200Specifications,
@@ -68,7 +68,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
     {
       id: "saferemote",
       title: "SafeEnterprise 100 | Remote Worker Security",
-      description: enterpriseDescription,
+      description: "SafeEnterprise 100 is a compact, high-performance next-generation firewall designed specifically for remote workers and small branch offices. It delivers enterprise-grade security in a portable form factor, ensuring secure connectivity for distributed teams.",
       image: "/images/product/Frame 209.webp",
       imageAlt: "SafeRemote Firewall remote worker security device",
       specifications: safeRemoteFirewallSpecifications,
@@ -171,7 +171,6 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                     "Advanced Deep Packet Inspection for Threat protection",
                     "Protects from phishing, ransomware, malware, and data breaches",
                     "Updated automatically to protect from latest threats",
-                    "DNS Filtering",
                     "DNS Security",
                     "URL Filtering",
                     "Scam Protection",
@@ -194,7 +193,6 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                   primaryFeature="Email remains a prime target for cybercriminals due to its widespread use. Our AI-powered Email Security platform scans every incoming email using multiple advanced LLMs to detect phishing, fraud, and social engineering attempts in real time. Suspicious emails are automatically isolated into a dedicated Scam folder, keeping your users protected without disrupting their workflow."
                   features={[
                     "Blocks 0-Day Phishing Attacks",
-                    "Trusted by Growing Enterprises",
                     "Multi-LLM AI Detection Engine",
                     "Secure SaaS Architecture",
                     "Continuous AI Learning & Updates",
