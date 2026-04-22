@@ -122,7 +122,7 @@ export default function Footer() {
                 >
                   <MapPin size={22} />
                   <span>
-                    <span className="uppercase font-semibold">  USA HeadQuarters, </span>
+                    <span className="uppercase font-semibold">  USA HeadQuarters </span>
                     <br />
                     Marma Security Inc.,
                     <br />
@@ -136,7 +136,7 @@ export default function Footer() {
                 >
                   <MapPin size={22} />
                   <span>
-                    <span className="uppercase font-semibold">   India Office, </span>
+                    <span className="uppercase font-semibold">   India Office </span>
                     <br />
                     Marmasec Private Limited,
                     <br />
@@ -273,7 +273,7 @@ export default function Footer() {
                   >
                     <MapPin size={22} />
                     <span>
-                      <span className="uppercase font-semibold">  USA HeadQuarters, </span>
+                      <span className="uppercase font-semibold">  USA HeadQuarters </span>
                       <br />
                       Marma Security Inc.,
                       <br />
@@ -287,7 +287,7 @@ export default function Footer() {
                   >
                     <MapPin size={22} />
                     <span>
-                      <span className="uppercase font-semibold">   India Office, </span>
+                      <span className="uppercase font-semibold">   India Office </span>
                       <br />
                       Marmasec Private Limited,
                       <br />
