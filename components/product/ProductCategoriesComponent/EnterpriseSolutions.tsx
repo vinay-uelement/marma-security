@@ -166,7 +166,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                 <EndpointProductCard
                   name="Agent Software for Windows"
                   tagline="24×7 Endpoint Protection"
-                  subTitle="The Marma Security Agent for Windows is next-generation endpoint protection software designed to safeguard computers against phishing, ransomware, malware, and data breaches."
+                  subTitle="Stop Phishing, Ransomware & Malware Before They Strike"
                   primaryFeature={<div>
                     Powered by advanced deep packet inspection (DPI), the Marma Agent inspects all inbound and outbound traffic in real time automatically filtering and blocking threats with seamless performance and virtually no system slowdown.
                     <br />
