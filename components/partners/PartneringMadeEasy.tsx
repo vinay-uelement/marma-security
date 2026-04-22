@@ -28,7 +28,7 @@ const PARTNER_CARDS = [
   },
   {
     title: "Referral Pricing",
-    text: "Partner buys at List from Marma, referral gets 10% commission."
+    text: "Partner buys at List from Marma, referrer gets 10% commission."
   }
 ];
 
