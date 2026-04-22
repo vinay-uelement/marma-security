@@ -166,7 +166,14 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                 <EndpointProductCard
                   name="Agent Software for Windows"
                   tagline="24×7 Endpoint Protection"
-                  primaryFeature=""
+                  subTitle="The Marma Security Agent for Windows is next-generation endpoint protection software designed to safeguard computers against phishing, ransomware, malware, and data breaches."
+                  primaryFeature={<div>
+                    Powered by advanced deep packet inspection (DPI), the Marma Agent inspects all inbound and outbound traffic in real time automatically filtering and blocking threats with seamless performance and virtually no system slowdown.
+                    <br />
+                    Integrated with the Marma AI-Powered Security Cloud, the agent continuously adapts to the latest cyber threats, ensuring users stay protected without manual updates.
+                    <br />
+                    Unlike traditional solutions, the Marma Security Agent does not rely on slow VPN tunnels and never transmits customer data to the cloud, ensuring maximum privacy.
+                  </div>}
                   features={[
                     "Advanced Deep Packet Inspection for Threat protection",
                     "Protects from phishing, ransomware, malware, and data breaches",
@@ -192,7 +199,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                   subTitle="Stop Email Scams Before They Reach Your Inbox"
                   primaryFeature="Email remains a prime target for cybercriminals due to its widespread use. Our AI-powered Email Security platform scans every incoming email using multiple advanced LLMs to detect phishing, fraud, and social engineering attempts in real time. Suspicious emails are automatically isolated into a dedicated Scam folder, keeping your users protected without disrupting their workflow."
                   features={[
-                    "Blocks 0-Day Phishing Attacks",
+                    "Blocks Zero-day Phishing Attacks",
                     "Multi-LLM AI Detection Engine",
                     "Secure SaaS Architecture",
                     "Continuous AI Learning & Updates",
