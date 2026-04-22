@@ -510,7 +510,17 @@ export default function ClientPage({ products }: { products: any }) {
         </div>
       </div>
 
-      <div className=" pt-24 mx-auto w-full max-w-[1280px]">
+      <div className=" pt-12 mx-auto w-full max-w-[1280px]">
+        <div className="flex flex-col w-[50%] sm:w-[40%] min-[901px]:w-[40%] ml-auto pointer-events-none z-0">
+          <DecorativeLine
+            viewBox="0 0 500 80"
+            points="-3000,40 200,40"
+            dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
+            className="w-full h-auto scale-x-[-1]"
+            dotRadius={6}
+            animationDuration={2.5}
+          />
+        </div>
         <ProductSummaryTable
           title="Product Summary"
           columns={columns}
