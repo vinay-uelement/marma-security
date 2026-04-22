@@ -229,11 +229,11 @@ export default function ContactSection() {
             <div className="mt-8 flex justify-center">
               <button
                 onClick={handleToggleShowAll}
-                className="fl5-2 !text-[#323232] font-semibold border-b border-[#323232] hover:opacity-70 transition-opacity flex items-center gap-2"
+                className="text-2xl text-text-dark! font-semibold hover:opacity-70 transition-opacity flex items-center gap-2"
               >
                 {showAll ? "Show Less" : "Show More"}
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-300 ${showAll ? "rotate-180" : ""
+                  className={`w-6 h-6 text-text-dark transition-transform duration-300 ${showAll ? "rotate-180" : ""
                     }`}
                 />
               </button>
