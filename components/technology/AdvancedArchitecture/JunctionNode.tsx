@@ -11,8 +11,8 @@ export default function JunctionNode({ junc }: JunctionNodeProps) {
       className="absolute -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none scale-[0.60] sm:scale-[0.70] md:scale-90 xl:scale-100"
       style={{ left: junc.pos.left, top: junc.pos.top }}
     >
-      <div className="junction-node-inner node-icon-container w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#ffb7b7] border border-brand-red flex items-center justify-center shadow-sm">
-        <junc.icon className="w-4 h-4 md:w-5 md:h-5 text-white" />
+      <div className="junction-node-inner node-icon-container w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#FFF0F0] flex items-center justify-center shadow-sm">
+        <junc.icon className="w-4 h-4 md:w-5 md:h-5 text-brand-red" />
       </div>
     </div>
   );
