@@ -171,7 +171,7 @@ export default function Footer() {
             {/* MOBILE-ONLY UNIFIED 3-COLUMN GRID       */}
             {/* ======================================= */}
             <div className="flex md:hidden flex-col w-full pb-8">
-              <div className="grid grid-cols-[1fr_1fr_1.3fr] gap-x-2 gap-y-6 w-full items-start">
+              <div className="grid grid-cols-[1fr_1fr] gap-x-2 gap-y-6 w-full items-start">
                 {/* Column 1 */}
                 <div className="flex flex-col gap-3 footer-nav-grid text-[10px]">
                   <a
@@ -192,16 +192,16 @@ export default function Footer() {
                   >
                     About us
                   </a>
-                </div>
-
-                {/* Column 2 */}
-                <div className="flex flex-col gap-3 footer-nav-grid text-[10px]">
                   <a
                     href="/product"
                     className="hover:text-white/70 transition-colors"
                   >
                     Products
                   </a>
+                </div>
+
+                {/* Column 2 */}
+                <div className="flex flex-col gap-3 footer-nav-grid text-[10px]">
                   <a
                     href="/partners"
                     className="hover:text-white/70 transition-colors"
@@ -223,10 +223,10 @@ export default function Footer() {
                 </div>
 
                 {/* Column 3 - Contact Links */}
-                <div className="flex flex-col gap-4 footer-contact-text text-[9px] pl-1 break-all">
+                <div className="flex flex-wrap gap-8 footer-contact-text text-[9px] pl-1 break-all col-span-2">
                   <a
                     href="tel:+14085828962"
-                    className="flex items-center gap-1.5 hover:opacity-80 transition-opacity"
+                    className="flex items-center gap-1.5 hover:opacity-80 transition-opacity w-[40%]"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -246,7 +246,7 @@ export default function Footer() {
                   </a>
                   <a
                     href="mailto:info@marmasec.com"
-                    className="flex items-start gap-1.5 hover:opacity-80 transition-opacity"
+                    className="flex items-start gap-1.5 hover:opacity-80 transition-opacity w-[40%]"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -269,9 +269,9 @@ export default function Footer() {
                   </a>
                   <a
 
-                    className="flex items-start gap-1 hover:opacity-80 transition-opacity break-all sm:break-normal"
+                    className="flex items-start gap-1 hover:opacity-80 transition-opacity break-all sm:break-normal w-[40%]"
                   >
-                    <MapPin size={22} />
+                    <MapPin size={16} />
                     <span>
                       <span className="uppercase font-semibold">  USA HeadQuarters </span>
                       <br />
@@ -283,9 +283,9 @@ export default function Footer() {
                     </span>
                   </a>
                   <a
-                    className="flex items-start gap-1 transition-opacity break-all sm:break-normal"
+                    className="flex items-start gap-1 transition-opacity break-all sm:break-normal w-[40%]"
                   >
-                    <MapPin size={22} />
+                    <MapPin size={16} />
                     <span>
                       <span className="uppercase font-semibold">   India Office </span>
                       <br />
