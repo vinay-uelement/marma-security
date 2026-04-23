@@ -14,12 +14,41 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [validationError, setValidationError] = useState("");
 
-  // Note: We intentionally do NOT use preventDefault here. 
-  // We want the native form behavior to trigger the POST action to the target iframe.
-  const handleNativeSubmit = () => {
-    setIsSubmitting(true);
+  // Note: We intentionally do NOT use preventDefault by default here. 
+  // We want the native form behavior to trigger the POST action to the target iframe ONLY if validation passes.
+  const handleNativeSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const formData = new FormData(e.currentTarget);
     
+    // 1. Phone Validation
+    const phone = formData.get("phone") as string;
+    const phoneRegex = /^\+?[\d\s-]{10,15}$/;
+    if (!phoneRegex.test(phone)) {
+      e.preventDefault(); // Block submission
+      setValidationError("Please enter a valid phone number (10-15 digits).");
+      return;
+    }
+
+    // 2. Name Length Validation
+    const name = formData.get("name") as string;
+    if (name.trim().length < 2) {
+      e.preventDefault();
+      setValidationError("Please enter your full name.");
+      return;
+    }
+
+    // 3. File Size Validation (Max 5MB)
+    if (resumeFile && resumeFile.size > 5 * 1024 * 1024) {
+      e.preventDefault();
+      setValidationError("Resume file size must be less than 5MB.");
+      return;
+    }
+
+    // Validation passed, clear errors and allow native submit
+    setValidationError("");
+    setIsSubmitting(true);
+
     // As the form submits to the hidden iframe, we simulate the success state 
     // locally in the UI since cross-origin policies prevent us from intercepting the iframe's onload event reliably.
     setTimeout(() => {
@@ -49,12 +78,12 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
   return (
     <>
       <iframe name="hidden_submit_frame" id="hidden_submit_frame" style={{ display: "none" }}></iframe>
-      <form 
+      <form
         action="https://formsubmit.co/vinay@uelement.in"
         method="POST"
         target="hidden_submit_frame"
-        encType="multipart/form-data" 
-        onSubmit={handleNativeSubmit} 
+        encType="multipart/form-data"
+        onSubmit={handleNativeSubmit}
         className="flex flex-col gap-5"
       >
         {/* FormSubmit Configuration Fields */}
@@ -63,9 +92,17 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="Job Applied For" value={job.title} />
 
+        {/* Validation Error Banner */}
+        {validationError && (
+          <div className="p-4 bg-red-50 text-brand-red rounded-xl flex items-center gap-3 font-title text-[15px] border border-red-100">
+            <AlertCircle className="w-5 h-5 shrink-0" />
+            <span>{validationError}</span>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-bold text-[#1E293B] uppercase tracking-wider">Full Name</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Full Name</label>
             <input
               required
               type="text"
@@ -76,7 +113,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-bold text-[#1E293B] uppercase tracking-wider">Email</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Email</label>
             <input
               required
               type="email"
@@ -89,7 +126,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-bold text-[#1E293B] uppercase tracking-wider">Phone</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Phone</label>
             <input
               required
               type="tel"
@@ -100,7 +137,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-bold text-[#1E293B] uppercase tracking-wider">City</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">City</label>
             <input
               required
               type="text"
@@ -113,7 +150,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-bold text-[#1E293B] uppercase tracking-wider">Total Experience</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Total Experience</label>
             <input
               required
               type="text"
@@ -124,7 +161,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-bold text-[#1E293B] uppercase tracking-wider">Relevant Experience</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Relevant Experience</label>
             <input
               required
               type="text"
@@ -137,7 +174,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-bold text-[#1E293B] uppercase tracking-wider">Current CTC</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Current CTC</label>
             <input
               required
               type="text"
@@ -148,7 +185,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-bold text-[#1E293B] uppercase tracking-wider">Expected CTC</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Expected CTC</label>
             <input
               required
               type="text"
@@ -160,7 +197,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
         </div>
 
         <div className="flex flex-col gap-2">
-          <label className="text-[14px] font-bold text-[#1E293B] uppercase tracking-wider">Notice Period</label>
+          <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Notice Period</label>
           <input
             required
             type="text"
@@ -171,7 +208,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
         </div>
 
         <div className="flex flex-col gap-2">
-          <label className="text-[14px] font-bold text-[#1E293B] uppercase tracking-wider border-0 h-auto p-0 m-0 leading-none">Attach Resume</label>
+          <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider border-0 h-auto p-0 m-0 leading-none">Attach Resume</label>
           <label className="w-full px-5 py-4 bg-[#F8FAFC] border border-dashed border-[#CBD5E1] rounded-xl cursor-pointer hover:bg-[#F1F5F9] transition-colors flex items-center justify-center gap-3">
             <Paperclip className="w-5 h-5 text-[#64748B]" />
             <span className="text-[#64748B] font-medium text-[15px]">
@@ -195,7 +232,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-brand-red text-white py-4 mt-2 rounded-xl font-title font-bold text-[18px] transition-all hover:bg-brand-red-hover hover:shadow-lg flex items-center justify-center gap-3 disabled:opacity-70"
+          className="w-full bg-brand-red text-white py-4 mt-2 rounded-xl font-title font-semibold text-[18px] transition-all hover:bg-brand-red-hover hover:shadow-lg flex items-center justify-center gap-3 disabled:opacity-70"
         >
           {isSubmitting ? "Sending Application..." : "Submit Application"}
           <Send className="w-5 h-5" />

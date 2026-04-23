@@ -29,29 +29,6 @@ const jobs = [
       "Analyze and report on campaign performance"
     ]
   },
-  {
-    id: 2,
-    title: "Digital Marketing Executive (1-3 Years)",
-    department: "Marketing",
-    location: "Pune, India",
-    type: "Full-time",
-    description: "Looking to grow in a fast-paced cybersecurity product company? This could be your next big move. We are looking for a creative and data-driven marketer to drive our growth initiatives.",
-    requirements: [
-      "1–3 years of experience in Digital Marketing",
-      "Hands-on experience with Google Ads, SEO, LinkedIn, and Analytics",
-      "Strong interest in performance marketing & lead generation",
-      "Excellent written and verbal communication skills"
-    ],
-    goodToHave: [
-      "Exposure to Cybersecurity / SaaS / Product-based companies"
-    ],
-    responsibilities: [
-      "Experiment with and scale marketing campaigns",
-      "Drive high-quality lead generation",
-      "Work closely with tech and product teams to refine messaging",
-      "Analyze and report on campaign performance"
-    ]
-  },
 ];
 
 export default function JobBoard() {
@@ -66,7 +43,7 @@ export default function JobBoard() {
   };
 
   return (
-    <section id="openings" className="py-24 bg-[#F8FAFC]">
+    <section id="openings" className="py-12 pt-6 bg-[#F8FAFC]">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="flex flex-col">
@@ -208,7 +185,7 @@ export default function JobBoard() {
           })}
         </div>
 
-        <div className="mt-16 bg-white border border-[#E2E8F0] rounded-[32px] p-8 md:p-12 text-center shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+        {/* <div className="mt-16 bg-white border border-[#E2E8F0] rounded-[32px] p-8 md:p-12 text-center shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
           <h3 className="font-banner text-[28px] text-[#1E293B] mb-4">
             Don't see a role that fits?
           </h3>
@@ -216,7 +193,7 @@ export default function JobBoard() {
             We're always looking for talented individuals who are passionate about cybersecurity. Send us a general application and we'll keep you in mind for future roles.
           </p>
           <Button label="General Application" variant="primary" icon={true} className="mx-auto" />
-        </div>
+        </div> */}
       </div>
     </section>
   );

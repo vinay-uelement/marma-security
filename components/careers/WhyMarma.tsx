@@ -29,9 +29,9 @@ const values = [
 
 export default function WhyMarma() {
   return (
-    <section id="culture" className="py-24 bg-white overflow-hidden">
+    <section id="culture" className="py-2 pt-16 bg-white overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
-        <div className="flex flex-col items-center text-center mb-16">
+        <div className="flex flex-col items-center text-center mb-8">
           <h2 className="font-banner text-[32px] md:text-[48px] text-[#1E293B] mb-6 leading-tight">
             Why Build at <span className="text-brand-red">Marma?</span>
           </h2>
@@ -51,7 +51,7 @@ export default function WhyMarma() {
                 className="h-full"
               >
                 <div className="flex flex-col h-full bg-white/40 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/60">
-                  <div className="mb-6 bg-white/60 w-16 h-16 flex items-center justify-center rounded-2xl shadow-sm border border-white/80">
+                  <div className="mb-6 bg-white/60 w-14 h-14 flex items-center justify-center rounded-2xl shadow-sm border border-white/80">
                     {value.icon}
                   </div>
                   <h3 className="font-banner text-[22px] text-[#1E293B] mb-4">
