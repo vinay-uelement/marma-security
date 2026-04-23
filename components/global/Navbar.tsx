@@ -226,7 +226,7 @@ export default function Navbar() {
         className={`hidden lg:block absolute top-[100%] left-0 w-full pt-4 origin-top pointer-events-none ${isSolutionsHovered ? 'visible' : 'invisible'}`}
       >
         <div
-          className={`bg-[#0d0d0d]/50 backdrop-blur-2xl border border-white/10 rounded-2xl p-8 shadow-[0_20px_40px_-5px_rgba(0,0,0,0.4)] overflow-hidden relative will-change-[backdrop-filter] transition-opacity duration-200 ${isSolutionsHovered ? 'opacity-100' : 'opacity-0'}`}
+          className={`bg-[#0d0d0d]/50 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 lg:p-8 shadow-[0_20px_40px_-5px_rgba(0,0,0,0.4)] overflow-y-auto max-h-[calc(100vh-8rem)] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/20 [&::-webkit-scrollbar-thumb]:rounded-full relative will-change-[backdrop-filter] transition-opacity duration-200 ${isSolutionsHovered ? 'opacity-100' : 'opacity-0'}`}
         >
           {/* Subtle glow effect behind */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#4A90E2]/10 rounded-full blur-[100px] pointer-events-none" />
@@ -236,7 +236,7 @@ export default function Navbar() {
             className={`transition-all duration-300 ease-out pointer-events-auto ${isSolutionsHovered ? 'opacity-100 translate-y-0 delay-[80ms]' : 'opacity-0 -translate-y-2 delay-0'}`}
           >
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-4 lg:gap-y-6 relative z-10">
               {solutionDropdownItems.map((item) => (
                 <Link
                   key={item.href}
