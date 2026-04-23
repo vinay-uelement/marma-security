@@ -102,7 +102,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
         <div className="flex flex-col gap-8 lg:gap-6">
           <div className="flex flex-col">
             <div className={productHalfSectionTitleClassName}>
-              Endpoint Software
+              Endpoint Protection Software
             </div>
             <div className="md:px-12">
               <EndpointProductCard
