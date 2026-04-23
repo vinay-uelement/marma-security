@@ -152,7 +152,7 @@ export default function HowWeProtect() {
   const learnMoreHref = TAB_ANCHORS[activeTab];
 
   return (
-    <section className="w-full bg-bg-white pb-16">
+    <section className="w-full bg-bg-white md:pb-16">
       {/* Header */}
       <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-16">
         <div className="relative flex flex-col md:flex-row justify-between items-start mb-8 md:mb-14 gap-4 md:gap-8 text-left w-full sm:h-[80px] md:h-auto">
