@@ -235,19 +235,6 @@ export default function Navbar() {
           <div
             className={`transition-all duration-300 ease-out pointer-events-auto ${isSolutionsHovered ? 'opacity-100 translate-y-0 delay-[80ms]' : 'opacity-0 -translate-y-2 delay-0'}`}
           >
-            <div className="mb-4 px-3">
-              <Link
-                href="/"
-                onClick={() => setIsSolutionsHovered(false)}
-                className="group/title inline-flex items-center gap-2 text-white transition-colors duration-300 focus:outline-none"
-              >
-                <h3 className="text-xl font-bold tracking-wide">Solutions</h3>
-                {/* <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform transition-transform duration-300 group-hover/title:translate-x-1">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg> */}
-              </Link>
-            </div>
-            <div className="h-[1px] w-full bg-white/10 mb-6" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 relative z-10">
               {solutionDropdownItems.map((item) => (
