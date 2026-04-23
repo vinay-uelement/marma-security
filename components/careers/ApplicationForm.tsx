@@ -20,7 +20,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
   // We want the native form behavior to trigger the POST action to the target iframe ONLY if validation passes.
   const handleNativeSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const formData = new FormData(e.currentTarget);
-    
+
     // 1. Phone Validation
     const phone = formData.get("phone") as string;
     const phoneRegex = /^\+?[\d\s-]{10,15}$/;
@@ -102,22 +102,22 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Full Name</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] capitalize tracking-wider">Full Name</label>
             <input
               required
               type="text"
-              name="name"
+              name="Name"
               placeholder="John Doe"
               className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Email</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] capitalize tracking-wider">Email</label>
             <input
               required
               type="email"
-              name="email"
+              name="Email"
               placeholder="john@example.com"
               className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
             />
@@ -126,22 +126,22 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Phone</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] capitalize tracking-wider">Phone</label>
             <input
               required
               type="tel"
-              name="phone"
+              name="Phone"
               placeholder="+91 98765 43210"
               className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">City</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] capitalize tracking-wider">City</label>
             <input
               required
               type="text"
-              name="city"
+              name="City"
               placeholder="Pune"
               className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
             />
@@ -150,22 +150,22 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Total Experience</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] capitalize tracking-wider">Total Experience</label>
             <input
               required
               type="text"
-              name="total_experience"
+              name="Total Experience"
               placeholder="e.g., 3 Years"
               className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Relevant Experience</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] capitalize tracking-wider">Relevant Experience</label>
             <input
               required
               type="text"
-              name="relevant_experience"
+              name="Relevant Experience"
               placeholder="e.g., 2 Years"
               className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
             />
@@ -174,22 +174,22 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Current CTC</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] capitalize tracking-wider">Current CTC</label>
             <input
               required
               type="text"
-              name="current_ctc"
+              name="Current CTC"
               placeholder="e.g., 8 LPA"
               className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Expected CTC</label>
+            <label className="text-[14px] font-semibold text-[#1E293B] capitalize tracking-wider">Expected CTC</label>
             <input
               required
               type="text"
-              name="expected_ctc"
+              name="Expected CTC"
               placeholder="e.g., 10 LPA"
               className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
             />
@@ -197,18 +197,18 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
         </div>
 
         <div className="flex flex-col gap-2">
-          <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider">Notice Period</label>
+          <label className="text-[14px] font-semibold text-[#1E293B] capitalize tracking-wider">Notice Period</label>
           <input
             required
             type="text"
-            name="notice_period"
+            name="Notice Period"
             placeholder="e.g., 30 Days"
             className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
           />
         </div>
 
         <div className="flex flex-col gap-2">
-          <label className="text-[14px] font-semibold text-[#1E293B] uppercase tracking-wider border-0 h-auto p-0 m-0 leading-none">Attach Resume</label>
+          <label className="text-[14px] font-semibold text-[#1E293B] capitalize tracking-wider border-0 h-auto p-0 m-0 leading-none">Attach Resume</label>
           <label className="w-full px-5 py-4 bg-[#F8FAFC] border border-dashed border-[#CBD5E1] rounded-xl cursor-pointer hover:bg-[#F1F5F9] transition-colors flex items-center justify-center gap-3">
             <Paperclip className="w-5 h-5 text-[#64748B]" />
             <span className="text-[#64748B] font-medium text-[15px]">
@@ -216,7 +216,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
             </span>
             <input
               type="file"
-              name="attachment"
+              name="Attachment"
               required
               className="hidden"
               accept=".pdf,.doc,.docx"
