@@ -437,7 +437,7 @@ export default function ClientPage({ products }: { products: any }) {
 
   return (
     <main className="flex min-h-screen flex-col bg-[#FFFFFF] overflow-x-hidden">
-      <div className=" pt-24 md:pt-0 relative">
+      <div className="relative">
         <Banner
           backgroundImage="/images/banners/product-banner.webp"
           heightVariant="900"
