@@ -96,7 +96,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
   home: [
     {
       id: "home-1",
-      image: "/images/home/Quick & Effortless Setup.webp",
+      image: "/images/home/Quick&Effortless.webp",
       title: "Quick & Effortless Setup",
       subtitle: "Get protected in under 5 minutes.",
       description:
@@ -104,7 +104,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
     },
     {
       id: "home-2",
-      image: "/images/home/protection-homepage.webp",
+      image: "/images/home/FullyAutomatedProtection.webp",
       title: "Fully Automated Protection",
       subtitle: "Security that runs itself.",
       description:
@@ -120,7 +120,7 @@ const TAB_FEATURES: Record<string, FeatureItem[]> = {
     },
     {
       id: "home-4",
-      image: "/images/home/protect-image-homepage.webp",
+      image: "/images/home/Family-WideProtection.webp",
       title: "Family-Wide Protection",
       subtitle: "Safe browsing for everyone at home.",
       description:
@@ -238,7 +238,7 @@ export default function HowWeProtect() {
                     alt={feature.title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover relative z-10 scale-150"
+                    className="object-cover relative z-10"
                   />
                 </div>
                 <div className="flex flex-col justify-start md:pt-5 h-full">
