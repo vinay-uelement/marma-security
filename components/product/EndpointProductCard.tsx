@@ -3,7 +3,7 @@ import Image from "next/image";
 interface EndpointProductCardProps {
   name: string;
   tagline: string;
-  subTitle?: string;
+  subTitle?: React.ReactNode;
   primaryFeature: React.ReactNode;
   features: string[];
   image?: string;

@@ -85,7 +85,8 @@ export default function HomeSolutions({ products = [] }: { products?: any[] }) {
           <EndpointProductCard
             name={mobileApp?.name || mobileApp?.title || "Mobile App"}
             tagline={mobileApp?.tagline || "iOS & Android"}
-            primaryFeature={mobileApp?.primaryFeature || ""}
+            subTitle="Blocks categories, sites, IPs, and countries, providing powerful parental  control."
+            primaryFeature={mobileApp?.primaryFeature || "Our AI cybersecurity 24x7 platform monitors and secures the incoming and outgoing internet traffic from your home and provides real-time alerts on our user-friendly Mobile App when threats are detected and blocked, providing the user with the peace of mind that their network is secure."}
             image="/images/product/software/mobile_app2.webp"
             features={mobileApp?.features || [
               "Smart Setup: Configure SafeHome effortlessly.",
