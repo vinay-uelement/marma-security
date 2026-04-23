@@ -14,7 +14,7 @@ export default function ManagementProductCard({
   imageAlt = title,
 }: ManagementProductCardProps) {
   return (
-    <div className="w-full rounded-2xl bg-[#F5F5F5] p-5 sm:p-6 lg:p-8 flex flex-col gap-4 sm:gap-5">
+    <div className="w-full rounded-2xl bg-[#F5F5F5] p-5 sm:p-6 sm:pb-0 lg:p-8 lg:pb-0 flex flex-col gap-4 sm:gap-5">
       {/* Text Block */}
       <div className="flex flex-col gap-2 sm:gap-3">
         <h3 className="fl5-1">{title}</h3>
@@ -28,7 +28,7 @@ export default function ManagementProductCard({
             src={image}
             alt={imageAlt}
             fill
-            className="object-fill w-full h-full"
+            className="object-contain w-full h-full"
           />
         ) : (
           <div aria-hidden="true" className="h-full w-full" />
