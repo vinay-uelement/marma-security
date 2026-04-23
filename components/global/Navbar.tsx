@@ -11,7 +11,7 @@ const navLinks = [
   { href: "/technology", label: "Technology" },
   { href: "/product", label: "Products" },
   { href: "/partners", label: "Partners" },
-//   { href: "/careers", label: "Careers" },
+  { href: "/careers", label: "Careers" },
   { href: "/about-us", label: "About us" },
 ];
 
@@ -166,7 +166,7 @@ export default function Navbar() {
                 className="nav-icon"
               />
             </Link>
-{/* <button
+            {/* <button
               className="flex items-center justify-center transition-transform hover:scale-105"
               aria-label="Portal/Shop"
             >
@@ -363,7 +363,7 @@ export default function Navbar() {
             <span>Contact us</span>
           </Link>
 
-{/* <Link
+          {/* <Link
             href="#"
             className="flex items-center gap-3 fl2-nav pb-3"
             onClick={() => setIsMobileMenuOpen(false)}
