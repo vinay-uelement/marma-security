@@ -1,3 +1,6 @@
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://marmasecurity.com";
+const absoluteImageUrl = `${baseUrl}/images/banners/banner-partners.webp`;
+
 export const metadata = {
   title: "MSP, MSSP and ITSP Partners | Marma Security",
   description:
@@ -13,7 +16,7 @@ export const metadata = {
     siteName: "Marma Security",
     images: [
       {
-        url: "/images/banners/banner-partners.webp",
+        url: absoluteImageUrl,
         width: 1200,
         height: 630,
         alt: "Marma Security Partners Program",
@@ -27,7 +30,7 @@ export const metadata = {
     title: "MSP, MSSP and ITSP Partners | Marma Security",
     description:
       "Join the Marma Security partner program to offer enterprise-grade cybersecurity with simplified deployment.",
-    images: ["/images/banners/banner-partners.webp"],
+    images: [absoluteImageUrl],
   },
 };
 

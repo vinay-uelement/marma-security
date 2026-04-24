@@ -1,3 +1,6 @@
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://marmasecurity.com";
+const absoluteImageUrl = `${baseUrl}/images/banners/Technology-banner.webp`;
+
 export const metadata = {
   title: "Technology | Marma Security",
   description:
@@ -13,7 +16,7 @@ export const metadata = {
     siteName: "Marma Security",
     images: [
       {
-        url: "/images/banners/Technology-banner.webp",
+        url: absoluteImageUrl,
         width: 1200,
         height: 630,
         alt: "Marma Security Technology",
@@ -27,7 +30,7 @@ export const metadata = {
     title: "Technology | Marma Security",
     description:
       "Learn about our continuous machine learning architecture and global cloud intelligence.",
-    images: ["/images/banners/Technology-banner.webp"],
+    images: [absoluteImageUrl],
   },
 };
 
