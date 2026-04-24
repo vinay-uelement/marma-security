@@ -1,19 +1,22 @@
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://marmasecurity.com";
+const absoluteImageUrl = `${baseUrl}/images/banners/banner-partners.webp`;
+
 export const metadata = {
   title: "MSP, MSSP and ITSP Partners | Marma Security",
   description:
     "Join the Marma Security partner program. Designed for VARs, MSPs, MSSPs, and System Integrators to offer enterprise-grade cybersecurity with simplified deployment and recurring revenue.",
   alternates: {
-    canonical: "https://marmasecurity.com/partners",
+    canonical: "/partners",
   },
   openGraph: {
     title: "MSP, MSSP and ITSP Partners | Marma Security",
     description:
       "Join the Marma Security partner program. Designed for VARs, MSPs, MSSPs, and System Integrators to offer enterprise-grade cybersecurity with simplified deployment and strong recurring revenue potential.",
-    url: "https://marmasecurity.com/partners",
+    url: "/partners",
     siteName: "Marma Security",
     images: [
       {
-        url: "/images/banners/banner-partners.webp",
+        url: absoluteImageUrl,
         width: 1200,
         height: 630,
         alt: "Marma Security Partners Program",
@@ -27,7 +30,7 @@ export const metadata = {
     title: "MSP, MSSP and ITSP Partners | Marma Security",
     description:
       "Join the Marma Security partner program to offer enterprise-grade cybersecurity with simplified deployment.",
-    images: ["/images/banners/banner-partners.webp"],
+    images: [absoluteImageUrl],
   },
 };
 

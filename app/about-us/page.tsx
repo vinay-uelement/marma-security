@@ -1,19 +1,22 @@
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://marmasecurity.com";
+const absoluteImageUrl = `${baseUrl}/images/banners/banner-about-us.webp`;
+
 export const metadata = {
   title: "About Us | Marma Security",
   description:
     "Redefining cybersecurity through simplicity. Learn more about Marma Security, our team, and our mission to secure digital assets at the network level.",
   alternates: {
-    canonical: "https://marmasecurity.com/about-us",
+    canonical: "/about-us",
   },
   openGraph: {
     title: "About Us | Marma Security",
     description:
       "Redefining cybersecurity through simplicity. Learn more about Marma Security, our team, and our mission to secure digital assets at the network level.",
-    url: "https://marmasecurity.com/about-us",
+    url: "/about-us",
     siteName: "Marma Security",
     images: [
       {
-        url: "/images/banners/banner-about-us.webp",
+        url: absoluteImageUrl,
         width: 1200,
         height: 630,
         alt: "About Marma Security",
@@ -27,7 +30,7 @@ export const metadata = {
     title: "About Us | Marma Security",
     description:
       "Redefining cybersecurity through simplicity. Learn more about our vision.",
-    images: ["/images/banners/banner-about-us.webp"],
+    images: [absoluteImageUrl],
   },
 };
 
