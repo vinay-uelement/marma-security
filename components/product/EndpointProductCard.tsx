@@ -3,11 +3,12 @@ import Image from "next/image";
 interface EndpointProductCardProps {
   name: string;
   tagline: string;
-  subTitle?: string;
-  primaryFeature: string;
+  subTitle?: React.ReactNode;
+  primaryFeature: React.ReactNode;
   features: string[];
   image?: string;
   imageAlt?: string;
+  imageClass?: string;
 }
 
 export default function EndpointProductCard({
@@ -18,6 +19,7 @@ export default function EndpointProductCard({
   features,
   image,
   imageAlt,
+  imageClass = "",
 }: EndpointProductCardProps) {
   return (
     <div className="w-full h-full rounded-2xl bg-[#F5F5F5] p-5 sm:p-6 lg:p-7 flex flex-col gap-4">
@@ -67,14 +69,14 @@ export default function EndpointProductCard({
         </div>
 
         {/* Image */}
-        <div className="relative w-full sm:w-[45%] lg:w-[40%] aspect-square sm:aspect-[4/3] rounded-xl overflow-hidden shrink-0">
+        <div className="relative w-full sm:w-[45%] lg:w-[40%] aspect-4/3 rounded-xl overflow-hidden shrink-0">
           {image ? (
             <Image
               src={image}
               alt={imageAlt ?? name}
               fill
               sizes="(max-width: 640px) 100vw, 45vw"
-              className="object-contain rounded-xl"
+              className={`object-contain rounded-xl aspect-auto ${imageClass}`}
             />
           ) : (
             <div aria-hidden="true" className="h-full w-full bg-[#D9D9D9]" />

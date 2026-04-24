@@ -96,8 +96,8 @@ export default function Banner({
       if (outgoing) {
         gsap.to(outgoing, {
           opacity: 0,
-          scale: 0.95,
-          duration: 1.5,
+          scale: 0.85,
+          duration: 0.8,
           ease: "power2.inOut",
           onComplete: () => setOutgoingBg(null)
         });
@@ -230,7 +230,7 @@ export default function Banner({
 
       <div
         ref={imgContainerRef}
-        className={`absolute bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-15 z-20 pointer-events-none h-full ${rightImageClassName || "w-[20vh] md:w-[50svh]"}`}
+        className={`absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-10 z-20 pointer-events-none h-full ${rightImageClassName || "w-[20vh] md:w-[50svh]"}`}
         style={{ perspective: "1500px", transformStyle: "preserve-3d" }}
       >
         {outgoingImage && (

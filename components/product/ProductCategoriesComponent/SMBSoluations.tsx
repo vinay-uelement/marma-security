@@ -21,7 +21,7 @@ const smbGatewaySpecifications: SpecificationProductItem[] = [
 ];
 
 const smbGatewayDescription =
-  "SafeHome protects all connected devices on your network from cyberattacks targeting your financial and personal data, safeguarding your privacy and protecting your family on the internet.";
+  "SafeBiz is a next-generation firewall designed to protect small and medium-sized businesses from cyberattacks. It delivers enterprise-grade security, simplified deployment, and AI-powered threat detection to safeguard sensitive business data and ensure business continuity.";
 
 const smbManagementDescription =
   "Cloud-based Marma Management Platform for managing Security Gateways and Endpoint Protection - designed for simplicity with minimal IT overhead.";
@@ -99,44 +99,57 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
       </div>
 
       <div className={`max-md:px-6 ${productSectionClassName}`}>
-        <div className="flex flex-col gap-8 lg:flex-row lg:gap-6">
-          <div className="flex flex-col lg:w-1/2">
+        <div className="flex flex-col gap-8 lg:gap-6">
+          <div className="flex flex-col">
             <div className={productHalfSectionTitleClassName}>
-              Endpoint Software
+              Endpoint Protection Software
             </div>
-            <div className="md:ps-12">
+            <div className="md:px-12">
               <EndpointProductCard
                 name="Agent Software for Windows"
-                tagline="24x7 Endpoint Protection"
-                primaryFeature="FW & Anti-Virus Integration"
-                image="/images/product/software/marmaAgent.webp"
+                tagline="24×7 Endpoint Protection"
+                subTitle="Stop Phishing, Ransomware & Malware Before They Strike"
+                primaryFeature={<div>
+                  Powered by advanced deep packet inspection (DPI), the Marma Agent inspects all inbound and outbound traffic in real time automatically filtering and blocking threats with seamless performance and virtually no system slowdown.
+                  <br />
+                  Integrated with the Marma AI-Powered Security Cloud, the agent continuously adapts to the latest cyber threats, ensuring users stay protected without manual updates.
+                  <br />
+                  Unlike traditional solutions, the Marma Security Agent does not rely on slow VPN tunnels and never transmits customer data to the cloud, ensuring maximum privacy.
+                </div>}
                 features={[
+                  "Advanced Deep Packet Inspection for Threat protection",
+                  "Protects from phishing, ransomware, malware, and data breaches",
+                  "Updated automatically to protect from latest threats",
                   "DNS Security",
                   "URL Filtering",
                   "Scam Protection",
-                  "AI / Data Loss Prevention",
+                  "Data Loss Prevention",
+                  "Firewall & Anti-Virus Integration",
                 ]}
+                image="/images/product/software/marmaAgent.webp"
               />
             </div>
           </div>
-          <div className="flex flex-col lg:w-1/2">
-            <div className={productHalfSectionTitleClassName}>
-              Mobile Application
-            </div>
-            <div className="md:pe-12">
-              <EndpointProductCard
-                name="Mobile App"
-                tagline="iOS & Android"
-                primaryFeature="Firewall Onboarding"
-                image="/images/product/software/mobile_app_1.webp"
-                features={[
-                  "Dashboard",
-                  "Alerts",
-                  "User Security Config",
-                  "QR Phishing Protection",
-                ]}
-              />
-            </div>
+        </div>
+        <div className="flex flex-col mt-12">
+          <div className={productHalfSectionTitleClassName}>
+            Mobile Application
+          </div>
+          <div className="md:px-12">
+            <EndpointProductCard
+              name="Mobile App"
+              tagline="iOS & Android"
+              image="/images/product/software/mobile_app_1.webp"
+              subTitle={<>Locks down web access-blocking categories, sites,<br />IPs, and regions in real time.</>}
+              primaryFeature="Our AI cybersecurity 24x7 platform monitors and secures the incoming and outgoing internet traffic from your organization and provides real-time alerts on our user-friendly Mobile App when threats are detected and blocked, providing the user with the peace of mind that their network is secure."
+              features={[
+                "Dashboard",
+                "Firewall Onboarding",
+                "Alerts",
+                "User Security Config",
+                "QR Phishing Protection",
+              ]}
+            />
           </div>
         </div>
       </div>

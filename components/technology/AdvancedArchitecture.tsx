@@ -144,23 +144,23 @@ export default function AdvancedArchitecture() {
       });
 
       // Master pulse animation for all icon containers
-      // const allIcons = containerRef.current?.querySelectorAll(".node-icon-container");
-      // if (allIcons && allIcons.length > 0) {
-      //   const pulseTl = gsap.timeline({ repeat: -1 });
-      //   pulseTl.to(allIcons, {
-      //     borderColor: "#FFFFFF",
-      //     background: "#e0e0e0",
-      //     boxShadow: "0 0 15px rgba(255, 255, 255, 0.4)", // Stronger white glow
-      //     duration: 0.2,
-      //     ease: "power2.in"
-      //   }).to(allIcons, {
-      //     borderColor: "#FFFFFF",
-      //     background: "#e0e0e0",
-      //     boxShadow: "0 0 0px rgba(0, 0, 0, 0)",
-      //     duration: 0.4,
-      //     ease: "power2.out"
-      //   }, "+=1.5"); // Pause between pulses for a "heartbeat" feel
-      // }
+      const allIcons = containerRef.current?.querySelectorAll(".node-icon-container");
+      if (allIcons && allIcons.length > 0) {
+        const pulseTl = gsap.timeline({ repeat: -1 });
+        pulseTl.to(allIcons, {
+          borderColor: "#FF4444",
+          background: "#FFF0F0",
+          boxShadow: "0 0 15px rgba(255, 68, 68, 0.4)",
+          duration: 0.2,
+          ease: "power2.in"
+        }).to(allIcons, {
+          borderColor: "#FFE0E0",
+          background: "#FFF0F0",
+          boxShadow: "0 0 0px rgba(255, 68, 68, 0)",
+          duration: 0.4,
+          ease: "power2.out"
+        }, "+=1.5"); // Pause between pulses for a "heartbeat" feel
+      }
     },
     { scope: containerRef }
   );
@@ -169,7 +169,7 @@ export default function AdvancedArchitecture() {
     <section className="w-full bg-[#FAFAFA] pt-8 lg:pt-12 pb-12 md:pb-20 relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-16 flex flex-col items-center">
         {/* Typography Layout */}
-        <div className="text-center w-full max-w-[900px] mx-auto mb-10 md:mb-12 relative z-20">
+        <div className="text-center w-full max-w-[900px] mx-auto mb-2 md:mb-0 relative z-20">
           <h2 className="fl2">
             <HighlightedText
               text="Advanced cybersecurity"
@@ -183,7 +183,7 @@ export default function AdvancedArchitecture() {
         {/* --- Architecture Diagram Container --- */}
         <div
           ref={containerRef}
-          className="relative w-full max-w-[1024px] xl:max-w-[1200px] min-h-[500px] aspect-[3/4.5] sm:aspect-[4/4.5] md:aspect-[1/1.1] lg:aspect-[16/10] xl:aspect-[16/11] mx-auto mt-4 lg:mt-0"
+          className="relative w-full max-w-[1024px] xl:max-w-[1200px] min-h-[400px] md:min-h-[500px] aspect-[4/5] sm:aspect-[1/1]  lg:aspect-[16/8] xl:aspect-[16/11] mx-auto mt-4 lg:-mt-12"
         >
           {/* SVG Connection Lines Overlay */}
           <ConnectionLines />

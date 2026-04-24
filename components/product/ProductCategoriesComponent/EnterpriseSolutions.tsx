@@ -60,7 +60,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
     {
       id: "safeenterprise-200",
       title: "SafeEnterprise 200 | Branch Office Security",
-      description: enterpriseDescription,
+      description: "SafeEnterprise 200 is a next-generation firewall designed to protect branch offices and small to mid-sized organizations from advanced cyber threats. It combines deep packet inspection, AI-powered threat detection, and secure SD-WAN capabilities in a compact form factor.",
       image: "/images/product/SafeEnterprise2001.webp",
       imageAlt: "SafeEnterprise 200 branch office security device",
       specifications: enterprise200Specifications,
@@ -68,7 +68,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
     {
       id: "saferemote",
       title: "SafeEnterprise 100 | Remote Worker Security",
-      description: enterpriseDescription,
+      description: "SafeEnterprise 100 is a compact, high-performance next-generation firewall designed specifically for remote workers and small branch offices. It delivers enterprise-grade security in a portable form factor, ensuring secure connectivity for distributed teams.",
       image: "/images/product/Frame 209.webp",
       imageAlt: "SafeRemote Firewall remote worker security device",
       specifications: safeRemoteFirewallSpecifications,
@@ -166,18 +166,23 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                 <EndpointProductCard
                   name="Agent Software for Windows"
                   tagline="24×7 Endpoint Protection"
-                  primaryFeature="FW & Anti-Virus Integration"
+                  subTitle="Stop Phishing, Ransomware & Malware Before They Strike"
+                  primaryFeature={<div>
+                    Powered by advanced deep packet inspection (DPI), the Marma Agent inspects all inbound and outbound traffic in real time automatically filtering and blocking threats with seamless performance and virtually no system slowdown.
+                    <br />
+                    Integrated with the Marma AI-Powered Security Cloud, the agent continuously adapts to the latest cyber threats, ensuring users stay protected without manual updates.
+                    <br />
+                    Unlike traditional solutions, the Marma Security Agent does not rely on slow VPN tunnels and never transmits customer data to the cloud, ensuring maximum privacy.
+                  </div>}
                   features={[
                     "Advanced Deep Packet Inspection for Threat protection",
                     "Protects from phishing, ransomware, malware, and data breaches",
-                    "AI-Powered DNS Security and URL Filtering and Scam Protection",
                     "Updated automatically to protect from latest threats",
-                    "24x7 Always-On Protection",
-                    "DNS Filtering",
                     "DNS Security",
                     "URL Filtering",
                     "Scam Protection",
-                    "AI / Data Loss Prevention",
+                    "Data Loss Prevention",
+                    "Firewall & Anti-Virus Integration",
                   ]}
                   image="/images/product/software/marmaAgent.webp"
                 />
@@ -189,27 +194,25 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               </div>
               <div className="md:px-12">
                 <EndpointProductCard
-                  name="Email Security SaaS"
+                  name="Email Security Service"
                   tagline="Enterprise Email Security"
                   subTitle="Stop Email Scams Before They Reach Your Inbox"
                   primaryFeature="Email remains a prime target for cybercriminals due to its widespread use. Our AI-powered Email Security platform scans every incoming email using multiple advanced LLMs to detect phishing, fraud, and social engineering attempts in real time. Suspicious emails are automatically isolated into a dedicated Scam folder, keeping your users protected without disrupting their workflow."
                   features={[
-                    "Blocks 9/10 Phishing Attempts Before Exposure",
-                    "<100ms Real-Time Email Analysis",
-                    "Trusted by Growing Enterprises",
+                    "Blocks Zero-day Phishing Attacks",
                     "Multi-LLM AI Detection Engine",
                     "Secure SaaS Architecture",
                     "Continuous AI Learning & Updates",
                     "Detects Zero-Day Social Engineering Patterns",
                   ]}
-                  image="/images/product/software/emailProtection.webp"
+                  image="/images/product/software/email-Protection.webp"
                 />
                 <div className="mt-8" />
                 <EndpointProductCard
-                  name="Cloud Data Protection SaaS"
+                  name="Cloud Data Protection Service"
                   tagline="Enterprise Data Security"
                   subTitle="Stop Data Leaks Before They Become Breaches"
-                  primaryFeature="Our AI-powered Data Protection platform continuously scans your organization’s cloud drives to identify how sensitive documents are being shared. Detect files exposed externally, shared across the organization, or accessible via public links—and take control before data leaves your perimeter."
+                  primaryFeature="Our AI-powered Data Protection platform continuously scans your organization’s cloud drives to identify how sensitive documents are being shared. Detect files exposed externally, shared across the organization, or accessible via public links and take control before data leaves your perimeter."
                   features={[
                     "Full Visibility Across Shared Documents",
                     "Real-Time Exposure Detection",
@@ -220,7 +223,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                     "Supports Compliance & Governance",
                     "Enterprise-Grade Security Controls",
                   ]}
-                  image="/images/product/software/cloudProtection.webp"
+                  image="/images/product/software/cloud-Protection.webp"
                 />
               </div>
             </div>
@@ -238,6 +241,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               primaryFeature="Custom integration with 3rd-party Enterprise SIEM solutions."
               image="/images/product/software/seimNew.webp"
               features={[]}
+              imageClass="object-fill"
             />
             <EndpointProductCard
               name="SOC Integration Services"
@@ -245,6 +249,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               primaryFeature="Custom integration with 3rd-party Enterprise SOC solutions."
               image="/images/product/software/soc.webp"
               features={[]}
+              imageClass="object-fill"
             />
           </div>
         </div>

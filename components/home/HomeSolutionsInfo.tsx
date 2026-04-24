@@ -3,7 +3,7 @@ import SolutionsInfo from "../solutions/SolutionsInfo";
 
 export default function HomeSolutionsInfo() {
   return (
-    <div className="w-full max-w-[1440px] mx-auto pt-10">
+    <div className="w-full max-w-[1440px] mx-auto md:pt-10">
       <SolutionsInfo
         imagePosition="right"
         imageSrc="/images/home/allDevice.webp"

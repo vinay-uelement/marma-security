@@ -5,6 +5,7 @@ import Button from "./Button";
 import { usePathname } from "next/navigation";
 import CustomSelect from "./CustomSelect";
 import { submitContactForm } from "@/lib/contactApi";
+import { MapPin } from "lucide-react";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -117,24 +118,12 @@ export default function Footer() {
                   <span>info@marmasec.com</span>
                 </a>
                 <a
-                  href="#"
-                  className="flex items-start gap-4 hover:opacity-80 transition-opacity break-all sm:break-normal"
+                  className="flex items-start gap-4 transition-opacity break-all sm:break-normal"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 90 90"
-                    width="22"
-                    height="22"
-                    fill="none"
-                    stroke="#fff"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M45 90c-.35 0-.68-.19-.86-.49l-4.71-7.97C30.22 65.98 20.7 49.88 17.64 43.73a30.4 30.4 0 0 1-3.06-13.31C14.58 13.65 28.23 0 45 0s30.42 13.65 30.42 30.42c0 4.66-1.03 9.14-3.06 13.31-3.1 6.19-12.58 22.23-21.76 37.74l-4.71 7.97A1 1 0 0 1 45 90z" />
-                    <circle cx="45" cy="29.2" r="11.2" />
-                  </svg>
+                  <MapPin size={22} />
                   <span>
+                    <span className="uppercase font-semibold">  USA HeadQuarters </span>
+                    <br />
                     Marma Security Inc.,
                     <br />
                     180 Promenade Ste. 300,
@@ -143,24 +132,12 @@ export default function Footer() {
                   </span>
                 </a>
                 <a
-                  href="#"
-                  className="flex items-start gap-4 hover:opacity-80 transition-opacity break-all sm:break-normal"
+                  className="flex items-start gap-4 transition-opacity break-all sm:break-normal"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 90 90"
-                    width="22"
-                    height="22"
-                    fill="none"
-                    stroke="#fff"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M45 90c-.35 0-.68-.19-.86-.49l-4.71-7.97C30.22 65.98 20.7 49.88 17.64 43.73a30.4 30.4 0 0 1-3.06-13.31C14.58 13.65 28.23 0 45 0s30.42 13.65 30.42 30.42c0 4.66-1.03 9.14-3.06 13.31-3.1 6.19-12.58 22.23-21.76 37.74l-4.71 7.97A1 1 0 0 1 45 90z" />
-                    <circle cx="45" cy="29.2" r="11.2" />
-                  </svg>
+                  <MapPin size={22} />
                   <span>
+                    <span className="uppercase font-semibold">   India Office </span>
+                    <br />
                     Marmasec Private Limited,
                     <br />
                     J 1002, Mhada Towers,
@@ -173,40 +150,16 @@ export default function Footer() {
             </div>
             {/* Desktop Social Icons */}
             <div className="hidden md:flex items-end space-x-6 mt-auto">
+
               <a
-                href="#"
-                aria-label="Instagram"
+                href="https://www.linkedin.com/company/marmasecurity/"
+                target="_blank"
+                aria-label="LinkedIn"
                 className="hover:opacity-80 transition-opacity"
               >
                 <Image
-                  src="/images/global/insta-icon.svg"
-                  alt="Instagram"
-                  width={30}
-                  height={30}
-                  className="object-contain"
-                />
-              </a>
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/global/fb-icon.svg"
-                  alt="Facebook"
-                  width={30}
-                  height={30}
-                  className="object-contain"
-                />
-              </a>
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/global/twitter-icon.svg"
-                  alt="Twitter"
+                  src="/images/global/linkedin.svg"
+                  alt="LinkedIn"
                   width={30}
                   height={30}
                   className="object-contain"
@@ -218,7 +171,7 @@ export default function Footer() {
             {/* MOBILE-ONLY UNIFIED 3-COLUMN GRID       */}
             {/* ======================================= */}
             <div className="flex md:hidden flex-col w-full pb-8">
-              <div className="grid grid-cols-[1fr_1fr_1.3fr] gap-x-2 gap-y-6 w-full items-start">
+              <div className="grid grid-cols-[1fr_1fr] gap-x-2 gap-y-6 w-full items-start">
                 {/* Column 1 */}
                 <div className="flex flex-col gap-3 footer-nav-grid text-[10px]">
                   <a
@@ -239,16 +192,16 @@ export default function Footer() {
                   >
                     About us
                   </a>
-                </div>
-
-                {/* Column 2 */}
-                <div className="flex flex-col gap-3 footer-nav-grid text-[10px]">
                   <a
                     href="/product"
                     className="hover:text-white/70 transition-colors"
                   >
                     Products
                   </a>
+                </div>
+
+                {/* Column 2 */}
+                <div className="flex flex-col gap-3 footer-nav-grid text-[10px]">
                   <a
                     href="/partners"
                     className="hover:text-white/70 transition-colors"
@@ -270,10 +223,10 @@ export default function Footer() {
                 </div>
 
                 {/* Column 3 - Contact Links */}
-                <div className="flex flex-col gap-4 footer-contact-text text-[9px] pl-1 break-all">
+                <div className="flex flex-wrap gap-8 footer-contact-text text-[9px] pl-1 break-all col-span-2">
                   <a
                     href="tel:+14085828962"
-                    className="flex items-center gap-1.5 hover:opacity-80 transition-opacity"
+                    className="flex items-center gap-1.5 hover:opacity-80 transition-opacity w-[40%]"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -293,7 +246,7 @@ export default function Footer() {
                   </a>
                   <a
                     href="mailto:info@marmasec.com"
-                    className="flex items-start gap-1.5 hover:opacity-80 transition-opacity"
+                    className="flex items-start gap-1.5 hover:opacity-80 transition-opacity w-[40%]"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -315,24 +268,13 @@ export default function Footer() {
                     </span>
                   </a>
                   <a
-                    href="#"
-                    className="flex items-start gap-1 hover:opacity-80 transition-opacity break-all sm:break-normal"
+
+                    className="flex items-start gap-1 hover:opacity-80 transition-opacity break-all sm:break-normal w-[40%]"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 90 90"
-                      width="12"
-                      height="12"
-                      fill="none"
-                      stroke="#fff"
-                      strokeWidth="6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M45 90c-.35 0-.68-.19-.86-.49l-4.71-7.97C30.22 65.98 20.7 49.88 17.64 43.73a30.4 30.4 0 0 1-3.06-13.31C14.58 13.65 28.23 0 45 0s30.42 13.65 30.42 30.42c0 4.66-1.03 9.14-3.06 13.31-3.1 6.19-12.58 22.23-21.76 37.74l-4.71 7.97A1 1 0 0 1 45 90z" />
-                      <circle cx="45" cy="29.2" r="11.2" />
-                    </svg>
+                    <MapPin size={16} />
                     <span>
+                      <span className="uppercase font-semibold">  USA HeadQuarters </span>
+                      <br />
                       Marma Security Inc.,
                       <br />
                       180 Promenade <br /> Ste. 300,
@@ -341,24 +283,12 @@ export default function Footer() {
                     </span>
                   </a>
                   <a
-                    href="#"
-                    className="flex items-start gap-1 hover:opacity-80 transition-opacity break-all sm:break-normal"
+                    className="flex items-start gap-1 transition-opacity break-all sm:break-normal w-[40%]"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 90 90"
-                      width="12"
-                      height="12"
-                      fill="none"
-                      stroke="#fff"
-                      strokeWidth="6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M45 90c-.35 0-.68-.19-.86-.49l-4.71-7.97C30.22 65.98 20.7 49.88 17.64 43.73a30.4 30.4 0 0 1-3.06-13.31C14.58 13.65 28.23 0 45 0s30.42 13.65 30.42 30.42c0 4.66-1.03 9.14-3.06 13.31-3.1 6.19-12.58 22.23-21.76 37.74l-4.71 7.97A1 1 0 0 1 45 90z" />
-                      <circle cx="45" cy="29.2" r="11.2" />
-                    </svg>
+                    <MapPin size={16} />
                     <span>
+                      <span className="uppercase font-semibold">   India Office </span>
+                      <br />
                       Marmasec Private Limited,
                       <br />
                       J 1002, Mhada Towers,
@@ -380,41 +310,16 @@ export default function Footer() {
             {/* Mobile Social Icons explicitly mapped below form strictly for Mobile constraints */}
             <div className="flex md:hidden items-center justify-start space-x-6 pt-10 pb-0 w-full">
               <a
-                href="#"
-                aria-label="Instagram"
+                href="https://www.linkedin.com/company/marmasecurity/"
+                target="_blank"
+                aria-label="LinkedIn"
                 className="hover:opacity-80 transition-opacity"
               >
                 <Image
-                  src="/images/global/insta-icon.svg"
-                  alt="Instagram"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-              </a>
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/global/fb-icon.svg"
-                  alt="Facebook"
-                  width={24}
-                  height={24}
-                  className="object-contain"
-                />
-              </a>
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/global/twitter-icon.svg"
-                  alt="Twitter"
-                  width={24}
-                  height={24}
+                  src="/images/global/linkedin.svg"
+                  alt="LinkedIn"
+                  width={30}
+                  height={30}
                   className="object-contain"
                 />
               </a>
@@ -478,6 +383,7 @@ function FooterContactForm() {
       message: formData.message,
       extra_field: {
         source: 'Footer Form',
+        subject: formData.subject,
       },
     });
 

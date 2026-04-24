@@ -30,7 +30,7 @@ export default function HomeSolutions({ products = [] }: { products?: any[] }) {
     {
       id: "safehome",
       title: "SafeHome Firewall | Home Network Security",
-      description: "SafeHome protects all connected devices on your network from cyberattacks targeting your financial and personal data, safeguarding your privacy and protecting your family on the internet.",
+      description: "SafeHome is a next-generation firewall designed to protect home networks from advanced cyber threats. It combines deep packet inspection, AI-powered threat detection, and comprehensive Parental Control capabilities in a compact form factor.",
       image: "/images/banners/solution-banner-right1.webp",
       imageAlt: "SafeHome Firewall home network security device",
       specifications: homeGatewaySpecifications,
@@ -85,16 +85,18 @@ export default function HomeSolutions({ products = [] }: { products?: any[] }) {
           <EndpointProductCard
             name={mobileApp?.name || mobileApp?.title || "Mobile App"}
             tagline={mobileApp?.tagline || "iOS & Android"}
-            primaryFeature={mobileApp?.primaryFeature || "Firewall Onboarding"}
+            subTitle="Easily enable and monitor a safe internet for your family with comprehensive parental controls."
+            primaryFeature={mobileApp?.primaryFeature || "Our AI cybersecurity 24x7 platform monitors and secures the incoming and outgoing internet traffic from your home and provides real-time alerts on our user-friendly Mobile App when threats are detected and blocked, providing the user with the peace of mind that their network is secure."}
             image="/images/product/software/mobile_app2.webp"
             features={mobileApp?.features || [
-              "Smart Setup: Configure SafeEnterprise, SafeBiz, & SafeHome effortlessly.",
+              "Smart Setup: Configure SafeHome effortlessly.",
               "Real-Time Threat Intelligence: Instant alerts for malicious domains/URLs.",
               "Network Visibility: Monitor connected hosts and activity in real-time.",
               "Security Controls: Block harmful categories, domains, and high-risk IPs.",
               "Secure QR Verification: Instantly verify QR codes securely.",
               "Centralized Control: Manage all devices from a single intuitive dashboard.",
             ]}
+            imageClass="pt-2 scale-y-[1.01] bg-[#e0e0e0]"
           />
         </div>
       </div>

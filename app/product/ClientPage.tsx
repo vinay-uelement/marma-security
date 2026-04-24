@@ -67,9 +67,9 @@ function getCardProps(offset: number) {
 
   switch (abs) {
     case 0:
-      return { x: 0, scale: 1.15, opacity: 1, zIndex: 30 };
+      return { x: 0, scale: 1.05, opacity: 1, zIndex: 30 };
     case 1:
-      return { x: dir * 190, scale: 0.78, opacity: 1, zIndex: 20 };
+      return { x: dir * 210, scale: 0.60, opacity: 0.4, zIndex: 20 };
     default:
       return { x: dir * 400, scale: 0.58, opacity: 0, zIndex: 0 };
   }
@@ -436,8 +436,8 @@ export default function ClientPage({ products }: { products: any }) {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col bg-[#FFFFFF]">
-      <div className=" pt-24 md:pt-0 relative">
+    <main className="flex min-h-screen flex-col bg-[#FFFFFF] overflow-x-hidden">
+      <div className="relative">
         <Banner
           backgroundImage="/images/banners/product-banner.webp"
           heightVariant="900"
@@ -447,7 +447,7 @@ export default function ClientPage({ products }: { products: any }) {
             <>
               Enterprise-Grade{" "}
               <HighlightedText
-                text="Cybersecurity"
+                text="AI Cybersecurity"
                 imageClassName="bottom-[-18px] md:bottom-[-20px]"
               />
               <br className="hidden lg:block" /> for Every Network
@@ -510,7 +510,17 @@ export default function ClientPage({ products }: { products: any }) {
         </div>
       </div>
 
-      <div className=" pt-24 mx-auto w-full max-w-[1280px]">
+      <div className=" pt-12 mx-auto w-full max-w-[1280px]">
+        <div className="flex flex-col w-[50%] sm:w-[40%] min-[901px]:w-[40%] ml-auto pointer-events-none z-0">
+          <DecorativeLine
+            viewBox="0 0 500 80"
+            points="-3000,40 200,40"
+            dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
+            className="w-full h-auto scale-x-[-1]"
+            dotRadius={6}
+            animationDuration={2.5}
+          />
+        </div>
         <ProductSummaryTable
           title="Product Summary"
           columns={columns}

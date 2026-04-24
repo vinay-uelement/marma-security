@@ -7,12 +7,14 @@ interface TumblingTextProps {
   phrases: string[];
   index: number;
   className?: string;
+  minWidth?: string;
 }
 
 export default function TumblingText({
   phrases,
   index,
   className = "",
+  minWidth = "15ch",
 }: TumblingTextProps) {
   const [activePhrase, setActivePhrase] = useState(phrases[index]);
   const [outgoingPhrase, setOutgoingPhrase] = useState<string | null>(null);
@@ -81,7 +83,7 @@ export default function TumblingText({
       className={className}
       style={{
         display: "inline-block",
-        minWidth: "15ch",
+        minWidth: minWidth,
         overflow: "hidden",
         verticalAlign: "bottom",
         perspective: "600px",

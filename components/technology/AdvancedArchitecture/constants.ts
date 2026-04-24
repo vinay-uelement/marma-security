@@ -41,7 +41,7 @@ export const orbitingNodes: OrbitingNodeData[] = [
   { id: 3, label: "Multi-stage Attack\nCo-relation", pos: { left: "37.2%", top: "24.4%" }, layout: "row-reverse", icon: Network },
   { id: 4, label: "AI Co-Pilot", pos: { left: "50%", top: "18%" }, layout: "col", icon: Bot },
   { id: 5, label: "AI/ML Powered\nAnomaly Detection", pos: { left: "62.8%", top: "24.4%" }, layout: "row", icon: Zap },
-  { id: 6, label: "3rd Party SaaS\nServices", pos: { left: "74%", top: "38%" }, layout: "row", icon: Cloud },
+  { id: 6, label: "Cloud Security Services", pos: { left: "74%", top: "38%" }, layout: "row", icon: Cloud },
   { id: 7, label: "Adaptive Access\nPolicies", pos: { left: "78%", top: "50%" }, layout: "row", icon: Key },
 ];
 

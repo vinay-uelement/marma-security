@@ -13,14 +13,14 @@ interface StatItem {
 
 const stats: StatItem[] = [
   {
-    value: 8,
-    suffix: " million +",
+    value: 50,
+    suffix: " Million +",
     label: "Verified Sites",
     description:
       "Real-time URL reputation checking and SSL inspection to ensure safe browsing.",
   },
   {
-    value: 7.9,
+    value: 49.7,
     suffix: " Million +",
     label: "Allowed Requests",
     description:
@@ -28,14 +28,14 @@ const stats: StatItem[] = [
     decimals: 1,
   },
   {
-    value: 14000,
+    value: 87000,
     suffix: "",
     label: "Blocked Requests",
     description:
       "Marma prevents unauthorized access before threats reach your network.",
   },
   {
-    value: 27400,
+    value: 171000,
     suffix: "",
     label: "Blocked Threats",
     description:

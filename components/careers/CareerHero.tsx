@@ -21,20 +21,21 @@ export default function CareerHero() {
   return (
     <div className="relative">
       <Banner
-        backgroundImage="/images/partners/partner_demo_banner.png"
+        backgroundImage="/images/partners/Job_hero.webp"
+        centerContent={true}
         title={
-          <div className="flex flex-col gap-2">
-            <span className="block">Join the Frontline of</span>
-            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-x-3">
-              <HighlightedText text="Cyber Security" />
+          <div className="flex flex-col gap-2 items-center">
+            <span className="block text-center">Join the Frontline of</span>
+            <div className="flex flex-wrap justify-center items-center gap-x-3">
+              <HighlightedText text="AI Cybersecurity" />
               <span>for</span>
+              <TumblingText phrases={phrases} index={index} className="text-white text-center" minWidth="auto" />
             </div>
-            <TumblingText phrases={phrases} index={index} className="text-brand-red" />
           </div>
         }
-        titleClassName="font-banner font-normal text-[28px] md:text-[45px] lg:text-[56px] leading-[1.1] tracking-[-0.02em] text-white"
+        titleClassName="font-banner font-normal text-[26px] md:text-[34px] leading-[1.2] md:leading-[48px] tracking-[-0.01em] text-white text-center"
         subtitle="Help us build the most radically simplified cybersecurity ecosystem in the world. We're looking for passionate individuals to join our mission."
-        subtitleClassName="font-title font-light text-[18px] md:text-[22px] leading-[1.5] text-[#F3F4F6] max-w-[650px] mt-6"
+        subtitleClassName="font-title font-light text-[14px] md:text-[20px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-[#F3F4F6] max-w-[650px] mt-6 text-center mx-auto"
         buttons={[
           {
             label: "View Openings",

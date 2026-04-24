@@ -101,7 +101,8 @@ export default function BadNewsStats() {
             The Bad News
           </p>
           <h2 className="bad-news-text fl3">
-            Attackers are multiplying  <br className="hidden lg:block" /> their speed and reach..
+            Cyber threats are accelerating—faster,
+            <br className="hidden lg:block" /> smarter, and harder to detect.
           </h2>
         </div>
 
@@ -125,7 +126,7 @@ export default function BadNewsStats() {
               </div>
             </div>
             <p className="text-[11px] text-[#666666] font-semibold tracking-widest uppercase leading-[1.3]">
-              Increase In <br className="hidden sm:block" /> Exploited Zero Days <br className="hidden sm:block" /> (YoY, 2025)
+              Of breaches now <br className="hidden sm:block" /> involve ransomware <br className="hidden sm:block" /> (YoY, 2025)
             </p>
           </div>
 
@@ -143,7 +144,7 @@ export default function BadNewsStats() {
               </div>
             </div>
             <p className="text-[11px] text-[#666666] font-semibold tracking-widest uppercase leading-[1.3]">
-              Increase In <br className="hidden sm:block" /> Ransomware Attacks <br className="hidden sm:block" /> (YoY, 2025)
+              Increase In <br className="hidden sm:block" /> Global Cyberattacks <br className="hidden sm:block" /> (YoY, 2025)
             </p>
           </div>
 
@@ -161,7 +162,7 @@ export default function BadNewsStats() {
               </div>
             </div>
             <p className="text-[11px] text-[#666666] font-semibold tracking-widest uppercase leading-[1.3]">
-              Increase In <br className="hidden sm:block" /> Data Breaches <br className="hidden sm:block" /> &amp; Leaks (YoY, 2025)
+              Rise in Data Breaches Worldwide <br className="hidden sm:block" /> (YoY, 2025)
             </p>
           </div>
 

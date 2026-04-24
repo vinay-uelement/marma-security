@@ -44,7 +44,7 @@ export default function PartnersPage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="partners-banner-subtitle max-w-[700px] mx-auto mt-4">
+            <p className="partners-banner-subtitle max-w-[900px] mx-auto mt-4">
               Marma Security operates a comprehensive partner program designed
               to extend reach and enhance service delivery. Our ecosystem
               enables VARs, MSPs, MSSPs, and System Integrators to offer

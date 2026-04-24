@@ -2,20 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/global/Button";
-import {
-  Shield,
-  Lock,
-  AlertTriangle,
-  Smartphone,
-  Mail,
-  Cloud,
-  Database,
-  Activity,
-  FileText,
-  EyeOff,
-  Radio,
-  UserCheck
-} from "react-feather";
+
+import { Shield, Lock, AlertTriangle, Smartphone, Mail, Cloud, Database, Activity, FileText, EyeOff, Radio, UserCheck } from "lucide-react";
 
 export default function MobileAppShowcase() {
   const features = [
@@ -26,7 +14,7 @@ export default function MobileAppShowcase() {
     { text: "Email Protection Service", Icon: Mail },
     { text: "Cloud Data Protection", Icon: Cloud },
     { text: "Predictive Risk Scoring", Icon: Activity },
-    { text: "PCI, HIPPA Compliance", Icon: FileText },
+    { text: "PCI, HIPAA Compliance", Icon: FileText },
     { text: "AI Data Leak Protection / DLP", Icon: Database },
     { text: "IOT Behavior Anomaly Detection", Icon: Radio },
     { text: "User Behavior Anomaly Detection", Icon: UserCheck },

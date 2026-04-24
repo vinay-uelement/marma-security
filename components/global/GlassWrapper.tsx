@@ -21,8 +21,8 @@ interface GlassWrapperProps {
 const GlassWrapper: React.FC<GlassWrapperProps> = ({
   children,
   className = "",
-  padding = "p-[12px]",
-  borderRadius = "rounded-[40px]",
+  padding = "p-[6px]",
+  borderRadius = "rounded-[34px]",
   innerBorderRadius = "rounded-[28px]",
   showGlow = true,
 }) => {
