@@ -27,7 +27,7 @@ export default function CareerHero() {
           <div className="flex flex-col gap-2 items-center">
             <span className="block text-center">Join the Frontline of</span>
             <div className="flex flex-wrap justify-center items-center gap-x-3">
-              <HighlightedText text="AI Cyber Security" />
+              <HighlightedText text="AI Cybersecurity" />
               <span>for</span>
             </div>
             <TumblingText phrases={phrases} index={index} className="text-white text-center" />
