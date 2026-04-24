@@ -29,8 +29,8 @@ export default function CareerHero() {
             <div className="flex flex-wrap justify-center items-center gap-x-3">
               <HighlightedText text="AI Cybersecurity" />
               <span>for</span>
+              <TumblingText phrases={phrases} index={index} className="text-white text-center" minWidth="auto" />
             </div>
-            <TumblingText phrases={phrases} index={index} className="text-white text-center" />
           </div>
         }
         titleClassName="font-banner font-normal text-[26px] md:text-[34px] leading-[1.2] md:leading-[48px] tracking-[-0.01em] text-white text-center"
