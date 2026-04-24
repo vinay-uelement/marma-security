@@ -21,23 +21,6 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
   const handleNativeSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const formData = new FormData(e.currentTarget);
 
-    // 1. Phone Validation
-    const phone = formData.get("phone") as string;
-    const phoneRegex = /^\+?[\d\s-]{10,15}$/;
-    if (!phoneRegex.test(phone)) {
-      e.preventDefault(); // Block submission
-      setValidationError("Please enter a valid phone number (10-15 digits).");
-      return;
-    }
-
-    // 2. Name Length Validation
-    const name = formData.get("name") as string;
-    if (name.trim().length < 2) {
-      e.preventDefault();
-      setValidationError("Please enter your full name.");
-      return;
-    }
-
     // 3. File Size Validation (Max 5MB)
     if (resumeFile && resumeFile.size > 5 * 1024 * 1024) {
       e.preventDefault();
@@ -79,7 +62,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
     <>
       <iframe name="hidden_submit_frame" id="hidden_submit_frame" style={{ display: "none" }}></iframe>
       <form
-        action="https://formsubmit.co/vinay@uelement.in"
+        action={`https://formsubmit.co/${process.env.NEXT_PUBLIC_FORM_SUBMIT_EMAIL}`}
         method="POST"
         target="hidden_submit_frame"
         encType="multipart/form-data"
