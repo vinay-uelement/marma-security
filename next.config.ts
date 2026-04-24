@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'marmasec.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'marma-security.vercel.app',
       },
     ],
