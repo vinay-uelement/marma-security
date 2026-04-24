@@ -98,7 +98,7 @@ export default async function IndustrySolutionPage({ params }: { params: Promise
             </Link>
           </div>
         </div>
-        <div className="flex-1 w-full h-[300px] md:h-[500px] relative rounded-2xl overflow-hidden">
+        <div className="w-full h-[300px] md:flex-1 md:h-[500px] relative rounded-2xl overflow-hidden">
           <Image
             src={data.hero.imageSrc}
             alt={`${displayIndustry} Cybersecurity`}
