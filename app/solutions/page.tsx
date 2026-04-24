@@ -13,7 +13,7 @@ export const metadata = {
     siteName: "Marma Security",
     images: [
       {
-        url: "/images/banners/banner-solution.png",
+        url: "https://marmasecurity.com/images/banners/banner-solution.png",
         width: 1200,
         height: 630,
         alt: "Marma Security Solutions",
@@ -27,7 +27,7 @@ export const metadata = {
     title: "Cybersecurity Solutions | Marma Security",
     description:
       "Complete cybersecurity solutions for enterprises, small businesses, and homes.",
-    images: ["/images/banners/banner-solution.png"],
+    images: ["https://marmasecurity.com/images/banners/banner-solution.png"],
   },
 };
 
