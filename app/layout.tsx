@@ -5,6 +5,8 @@ import Footer from "@/components/global/Footer";
 import "./globals.css";
 import CookieConsent from "@/components/global/CookieConsent";
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://marmasecurity.com";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -25,7 +27,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://marmasecurity.com"),
+  metadataBase: new URL(BASE_URL),
   title: "Marma Security | Redefining Cybersecurity Through Simplicity",
   description:
     "Marma Security bridges the gap between complex, enterprise-grade security and the everyday needs of homes and businesses with automated, network-level protection requiring zero technical expertise.",
@@ -55,7 +57,7 @@ export const metadata: Metadata = {
     siteName: "Marma Security",
     images: [
       {
-        url: "https://marmasecurity.com/images/global/logo.svg",
+        url: "/images/global/logo.svg",
         width: 1200,
         height: 630,
         alt: "Marma Security — Redefining Cybersecurity Through Simplicity",
@@ -67,7 +69,7 @@ export const metadata: Metadata = {
     title: "Marma Security | Redefining Cybersecurity Through Simplicity",
     description:
       "Marma Security provides automated, plug-and-play network-level cybersecurity for enterprises, small businesses, and homes.",
-    images: ["https://marmasecurity.com/images/global/logo.svg"],
+    images: ["/images/global/logo.svg"],
     creator: "@marmasecurity",
     site: "@marmasecurity",
   },
@@ -83,8 +85,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Marma Security",
-    url: "https://marmasecurity.com",
-    logo: "https://marmasecurity.com/logo.png", // Ensure you have a valid logo URL when available
+    url: BASE_URL,
+    logo: `${BASE_URL}/logo.png`, // Ensure you have a valid logo URL when available
     description:
       "A cybersecurity firm dedicated to Redefining Cybersecurity Through Simplicity, offering automated network-level protection.",
     sameAs: [
@@ -97,7 +99,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Marma Security",
-    url: "https://marmasecurity.com",
+    url: BASE_URL,
   };
 
   // Structured Data - Site Navigation Schema
@@ -109,31 +111,31 @@ export default function RootLayout({
         "@type": "SiteNavigationElement",
         position: 1,
         name: "Home",
-        url: "https://marmasecurity.com/",
+        url: `${BASE_URL}/`,
       },
       {
         "@type": "SiteNavigationElement",
         position: 2,
         name: "Solutions",
-        url: "https://marmasecurity.com/solutions",
+        url: `${BASE_URL}/solutions`,
       },
       {
         "@type": "SiteNavigationElement",
         position: 3,
         name: "Products",
-        url: "https://marmasecurity.com/product",
+        url: `${BASE_URL}/product`,
       },
       {
         "@type": "SiteNavigationElement",
         position: 4,
         name: "About Us",
-        url: "https://marmasecurity.com/about-us",
+        url: `${BASE_URL}/about-us`,
       },
       {
         "@type": "SiteNavigationElement",
         position: 5,
         name: "Contact",
-        url: "https://marmasecurity.com/contact-us",
+        url: `${BASE_URL}/contact-us`,
       },
     ],
   };

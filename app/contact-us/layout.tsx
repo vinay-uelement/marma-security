@@ -3,17 +3,17 @@ export const metadata = {
   description:
     "We are here to help you secure what matters most. Reach out to Marma Security for product details, deployment guidance, and support.",
   alternates: {
-    canonical: "https://marmasecurity.com/contact-us",
+    canonical: "/contact-us",
   },
   openGraph: {
     title: "Contact Us | Marma Security",
     description:
       "Reach out to Marma Security for product details, deployment guidance, and support. We are here to help you secure what matters most.",
-    url: "https://marmasecurity.com/contact-us",
+    url: "/contact-us",
     siteName: "Marma Security",
     images: [
       {
-        url: "https://marmasecurity.com/images/banners/banner-contact-new1.webp",
+        url: "/images/banners/banner-contact-new1.webp",
         width: 1200,
         height: 630,
         alt: "Contact Marma Security",
@@ -27,7 +27,7 @@ export const metadata = {
     title: "Contact Us | Marma Security",
     description:
       "Reach out to Marma Security for product details, deployment guidance, and support.",
-    images: ["https://marmasecurity.com/images/banners/banner-contact-new1.webp"],
+    images: ["/images/banners/banner-contact-new1.webp"],
   },
 };
 

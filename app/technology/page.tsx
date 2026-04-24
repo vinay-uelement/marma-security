@@ -3,17 +3,17 @@ export const metadata = {
   description:
     "Built on enterprise-grade security technology. Discover Marma Security's AI-driven intelligence, continuous machine learning, and advanced cloud architecture.",
   alternates: {
-    canonical: "https://marmasecurity.com/technology",
+    canonical: "/technology",
   },
   openGraph: {
     title: "Technology | Marma Security",
     description:
       "Built on enterprise-grade security technology. Discover Marma Security's AI-driven intelligence and advanced cloud architecture.",
-    url: "https://marmasecurity.com/technology",
+    url: "/technology",
     siteName: "Marma Security",
     images: [
       {
-        url: "https://marmasecurity.com/images/banners/Technology-banner.webp",
+        url: "/images/banners/Technology-banner.webp",
         width: 1200,
         height: 630,
         alt: "Marma Security Technology",
@@ -27,7 +27,7 @@ export const metadata = {
     title: "Technology | Marma Security",
     description:
       "Learn about our continuous machine learning architecture and global cloud intelligence.",
-    images: ["https://marmasecurity.com/images/banners/Technology-banner.webp"],
+    images: ["/images/banners/Technology-banner.webp"],
   },
 };
 

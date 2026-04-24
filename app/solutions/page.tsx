@@ -3,17 +3,17 @@ export const metadata = {
   description:
     "Complete cybersecurity solutions for enterprises, small businesses, and homes. Enterprise-grade protection that works in minutes.",
   alternates: {
-    canonical: "https://marmasecurity.com/solutions",
+    canonical: "/solutions",
   },
   openGraph: {
     title: "Cybersecurity Solutions | Marma Security",
     description:
       "Complete cybersecurity solutions for enterprises, small businesses, and homes. Enterprise-grade protection that works in minutes.",
-    url: "https://marmasecurity.com/solutions",
+    url: "/solutions",
     siteName: "Marma Security",
     images: [
       {
-        url: "https://marmasecurity.com/images/banners/banner-solution.png",
+        url: "/images/banners/banner-solution.png",
         width: 1200,
         height: 630,
         alt: "Marma Security Solutions",
@@ -27,7 +27,7 @@ export const metadata = {
     title: "Cybersecurity Solutions | Marma Security",
     description:
       "Complete cybersecurity solutions for enterprises, small businesses, and homes.",
-    images: ["https://marmasecurity.com/images/banners/banner-solution.png"],
+    images: ["/images/banners/banner-solution.png"],
   },
 };
 
