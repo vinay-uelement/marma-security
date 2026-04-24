@@ -439,7 +439,7 @@ export default function ClientPage({ products }: { products: any }) {
     <main className="flex min-h-screen flex-col bg-[#FFFFFF] overflow-x-hidden">
       <div className="relative">
         <Banner
-          backgroundImage="/images/banners/product-banner.webp"
+          backgroundImage="/images/banners/productHeroBanner.webp"
           heightVariant="900"
           ContinerClass="h-auto lg:h-[100vh]"
           sectionClassName="py-16 lg:py-24"
