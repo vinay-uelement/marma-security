@@ -13,7 +13,7 @@ export const metadata = {
     siteName: "Marma Security",
     images: [
       {
-        url: "/images/banners/banner-partners.webp",
+        url: "https://marmasecurity.com/images/banners/banner-partners.webp",
         width: 1200,
         height: 630,
         alt: "Marma Security Partners Program",
@@ -27,7 +27,7 @@ export const metadata = {
     title: "MSP, MSSP and ITSP Partners | Marma Security",
     description:
       "Join the Marma Security partner program to offer enterprise-grade cybersecurity with simplified deployment.",
-    images: ["/images/banners/banner-partners.webp"],
+    images: ["https://marmasecurity.com/images/banners/banner-partners.webp"],
   },
 };
 
