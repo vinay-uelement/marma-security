@@ -32,6 +32,7 @@ export interface BannerProps {
   backgroundSize?: string;
   sectionClassName?: string;
   overlay?: boolean;
+  centerContent?: boolean;
 }
 
 export default function Banner({
@@ -54,6 +55,7 @@ export default function Banner({
   backgroundSize = "cover",
   sectionClassName = "py-12 md:py-16 lg:py-24",
   overlay = false,
+  centerContent = false,
 }: BannerProps) {
   // Dynamic height class assignment based on the prop
   const heightMap: Record<string, string> = {
@@ -77,9 +79,9 @@ export default function Banner({
       {overlay && <div className="absolute inset-0 bg-black/70 z-[5]" />}
       {/* Main Content Container inside the Banner */}
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-16 w-full py-12 lg:py-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center h-full justify-items-center lg:justify-items-stretch">
+        <div className={`grid grid-cols-1 ${!centerContent ? "lg:grid-cols-2" : "max-w-4xl mx-auto"} gap-8 md:gap-12 lg:gap-20 items-center h-full justify-items-center lg:justify-items-stretch`}>
           {/* Left Column: Text, Subtitle, and Buttons */}
-          <div className="flex flex-col space-y-4 md:space-y-6 pb-5 mt-12 md:mt-16 lg:mt-0 text-white z-20 items-center lg:items-start text-center lg:text-left">       {/* Title text */}
+          <div className={`flex flex-col space-y-4 md:space-y-6 pb-5 mt-12 md:mt-16 lg:mt-0 text-white z-20 items-center text-center ${!centerContent ? "lg:items-start lg:text-left" : ""}`}>       {/* Title text */}
             <div className={titleClassName}>{title}</div>
 
             {/* Render Middle Text conditionally */}
@@ -92,7 +94,7 @@ export default function Banner({
 
             {/* Render Buttons conditionally */}
             {buttons && buttons.length > 0 && (
-              <div className=" flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 pt-6 md:pt-8 lg:pt-16 w-full lg:bottom-0">
+              <div className={`flex flex-wrap items-center justify-center ${!centerContent ? "lg:justify-start" : ""} gap-4 md:gap-6 pt-6 md:pt-8 lg:pt-16 w-full lg:bottom-0`}>
                 {buttons.map((btn, index) => {
                   const isPrimary =
                     btn.variant !== "secondary" && btn.variant !== "outline";
