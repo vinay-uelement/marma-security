@@ -15,12 +15,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000). The page hot-reloads as you edit files under `app/` or `components/`.
 
-| Script | Purpose |
-|--------|---------|
-| `npm run dev` | Start development server |
-| `npm run build` | Production build |
+| Script          | Purpose                            |
+| --------------- | ---------------------------------- |
+| `npm run dev`   | Start development server           |
+| `npm run build` | Production build                   |
 | `npm run start` | Serve the production build locally |
-| `npm run lint` | Run ESLint |
+| `npm run lint`  | Run ESLint                         |
 
 ---
 
@@ -69,16 +69,16 @@ GitHub (push to main)
 
 ### Infrastructure files
 
-| File | What it creates |
-|------|----------------|
-| `infra/cfn-ecr.yaml` | ECR repository with scan-on-push and lifecycle policy |
-| `infra/cfn-acm.yaml` | ACM SSL/TLS certificate for `<your-domain>` + `www.<your-domain>` (domain passed at deploy time) |
-| `infra/cfn-ecs.yaml` | VPC, subnets, NAT Gateway, ALB, HTTPS listener, ECS Cluster, Fargate service |
-| `infra/cfn-pipeline.yaml` | CodeStar GitHub connection, CodeBuild project, CodePipeline |
-| `buildspec.yml` | CodeBuild build specification (docker build → ECR push) |
-| `Dockerfile` | Multi-stage Next.js container image (ECR Public base, Alpine, non-root) |
-| `infra/deploy.sh` | End-to-end deployment script (runs all 5 stacks in order) |
-| `infra/undeploy.sh` | Full teardown script (deletes all stacks in reverse order) |
+| File                      | What it creates                                                                                  |
+| ------------------------- | ------------------------------------------------------------------------------------------------ |
+| `infra/cfn-ecr.yaml`      | ECR repository with scan-on-push and lifecycle policy                                            |
+| `infra/cfn-acm.yaml`      | ACM SSL/TLS certificate for `<your-domain>` + `www.<your-domain>` (domain passed at deploy time) |
+| `infra/cfn-ecs.yaml`      | VPC, subnets, NAT Gateway, ALB, HTTPS listener, ECS Cluster, Fargate service                     |
+| `infra/cfn-pipeline.yaml` | CodeStar GitHub connection, CodeBuild project, CodePipeline                                      |
+| `buildspec.yml`           | CodeBuild build specification (docker build → ECR push)                                          |
+| `Dockerfile`              | Multi-stage Next.js container image (ECR Public base, Alpine, non-root)                          |
+| `infra/deploy.sh`         | End-to-end deployment script (runs all 5 stacks in order)                                        |
+| `infra/undeploy.sh`       | Full teardown script (deletes all stacks in reverse order)                                       |
 
 ---
 
@@ -347,6 +347,7 @@ The repository must be pushed to GitHub under the organisation/user you pass as 
 ### 5. Domain DNS access (for HTTPS)
 
 You must be able to add DNS records for the domain you pass to `deploy.sh`. This is needed either:
+
 - **Automatically** — if the domain is in Route 53 (provide the Hosted Zone ID to `deploy.sh`)
 - **Manually** — if using Cloudflare, GoDaddy, etc. (you add the CNAME record shown in ACM Console)
 
@@ -359,6 +360,7 @@ You must be able to add DNS records for the domain you pass to `deploy.sh`. This
 Run the deploy script from the repository root. It executes all 5 CloudFormation stacks in dependency order.
 
 **With Route 53 (fully automated DNS validation):**
+
 ```bash
 chmod +x infra/deploy.sh
 ./infra/deploy.sh ap-south-1 UElement thedigitaldrift.in Z1PA6795UKMFR9
@@ -366,6 +368,7 @@ chmod +x infra/deploy.sh
 ```
 
 **Without Route 53 (manual DNS validation):**
+
 ```bash
 chmod +x infra/deploy.sh
 ./infra/deploy.sh ap-south-1 UElement thedigitaldrift.in
@@ -376,13 +379,13 @@ When using manual validation, the script will pause at Step 3 and print instruct
 
 ### What the deploy script does
 
-| Step | Stack | Action |
-|------|-------|--------|
-| 1 | `marma-security-ecr` | Creates ECR repository |
-| 2 | _(local Docker)_ | Builds and pushes initial image to ECR |
-| 3 | `marma-security-acm` | Requests ACM certificate for `<domain>` + `www.<domain>` passed as argument |
-| 4 | `marma-security-ecs` | Deploys VPC, NAT, ALB with HTTPS listener, ECS Fargate service |
-| 5 | `marma-security-pipeline` | Deploys CodePipeline + CodeBuild (GitHub → ECR → ECS) |
+| Step | Stack                     | Action                                                                      |
+| ---- | ------------------------- | --------------------------------------------------------------------------- |
+| 1    | `marma-security-ecr`      | Creates ECR repository                                                      |
+| 2    | _(local Docker)_          | Builds and pushes initial image to ECR                                      |
+| 3    | `marma-security-acm`      | Requests ACM certificate for `<domain>` + `www.<domain>` passed as argument |
+| 4    | `marma-security-ecs`      | Deploys VPC, NAT, ALB with HTTPS listener, ECS Fargate service              |
+| 5    | `marma-security-pipeline` | Deploys CodePipeline + CodeBuild (GitHub → ECR → ECS)                       |
 
 > The script is idempotent — re-running after a partial failure is safe.
 
@@ -403,10 +406,10 @@ The CodeStar connection is created in **Pending** state. The pipeline cannot run
 
 The deploy script prints the ALB DNS name at the end. Add these records in your DNS provider:
 
-| Type | Name | Value |
-|------|------|-------|
+| Type  | Name                | Value            |
+| ----- | ------------------- | ---------------- |
 | CNAME | `www.<your-domain>` | `<alb-dns-name>` |
-| CNAME | `<your-domain>` | `<alb-dns-name>` |
+| CNAME | `<your-domain>`     | `<alb-dns-name>` |
 
 > If using Route 53, use an **A record with Alias** for the apex domain instead of CNAME.
 
@@ -431,6 +434,7 @@ AWS Console → CodePipeline → marma-security-pipeline → Release change
 ### Updating the application
 
 Every push to `main` automatically:
+
 1. Triggers CodePipeline
 2. CodeBuild builds a new image tagged with the short commit SHA, pushes to ECR
 3. ECS performs a rolling deploy (50% min healthy, 200% max)
@@ -476,20 +480,22 @@ chmod +x infra/undeploy.sh
 
 The script will ask for confirmation, then delete stacks in reverse dependency order:
 
-| Step | Action |
-|------|--------|
-| 1 | Empty the S3 artifact bucket (required before stack deletion) |
-| 2 | Delete CodePipeline stack |
-| 3 | Scale ECS service to 0 tasks, then delete ECS stack (VPC, ALB, NAT) |
-| 4 | Delete ACM certificate stack |
-| 5 | Delete ECR images and repository stack |
+| Step | Action                                                              |
+| ---- | ------------------------------------------------------------------- |
+| 1    | Empty the S3 artifact bucket (required before stack deletion)       |
+| 2    | Delete CodePipeline stack                                           |
+| 3    | Scale ECS service to 0 tasks, then delete ECS stack (VPC, ALB, NAT) |
+| 4    | Delete ACM certificate stack                                        |
+| 5    | Delete ECR images and repository stack                              |
 
 To keep ECR images (e.g. for a re-deploy):
+
 ```bash
 ./infra/undeploy.sh ap-south-1 --keep-ecr-images
 ```
 
 > **Note:** The CloudWatch log group `/ecs/marma-security` is intentionally retained after teardown. Delete manually if needed:
+>
 > ```bash
 > aws logs delete-log-group --log-group-name /ecs/marma-security --region ap-south-1
 > ```
