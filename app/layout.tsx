@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     siteName: "Marma Security",
     images: [
       {
-        url: "/images/global/logo.svg",
+        url: `${BASE_URL}/images/home/heroEnterprise400.webp`,
         width: 1200,
         height: 630,
         alt: "Marma Security — Redefining Cybersecurity Through Simplicity",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "Marma Security | Redefining Cybersecurity Through Simplicity",
     description:
       "Marma Security provides automated, plug-and-play network-level cybersecurity for enterprises, small businesses, and homes.",
-    images: ["/images/global/logo.svg"],
+    images: [`${BASE_URL}/images/home/heroEnterprise400.webp`],
     creator: "@marmasecurity",
     site: "@marmasecurity",
   },

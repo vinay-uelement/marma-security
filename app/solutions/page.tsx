@@ -1,3 +1,6 @@
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://marmasecurity.com";
+const absoluteImageUrl = `${baseUrl}/images/banners/banner-solution.png`;
+
 export const metadata = {
   title: "Cybersecurity Solutions | Marma Security",
   description:
@@ -13,7 +16,7 @@ export const metadata = {
     siteName: "Marma Security",
     images: [
       {
-        url: "/images/banners/banner-solution.png",
+        url: absoluteImageUrl,
         width: 1200,
         height: 630,
         alt: "Marma Security Solutions",
@@ -27,7 +30,7 @@ export const metadata = {
     title: "Cybersecurity Solutions | Marma Security",
     description:
       "Complete cybersecurity solutions for enterprises, small businesses, and homes.",
-    images: ["/images/banners/banner-solution.png"],
+    images: [absoluteImageUrl],
   },
 };
 

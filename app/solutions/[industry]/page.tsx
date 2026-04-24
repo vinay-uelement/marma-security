@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import HighlightedText from "@/components/global/HighlightedText";
@@ -5,6 +6,49 @@ import Button from "@/components/global/Button";
 import { industriesData } from "./industryData";
 
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata({ params }: { params: Promise<{ industry: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const industryKey = resolvedParams?.industry?.toLowerCase() || 'healthcare';
+  
+  const displayIndustry = industryKey
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase())
+    .replace(/\bAnd\b/g, 'and');
+
+  const data = industriesData[industryKey] || industriesData.healthcare;
+  const title = typeof data.hero.title === 'string' ? data.hero.title : `Cybersecurity Solutions for ${displayIndustry} | Marma Security`;
+  const description = typeof data.hero.description === 'string' ? data.hero.description : `Explore Marma Security's tailored cybersecurity solutions for the ${displayIndustry} industry.`;
+  const imageUrl = data.hero.imageSrc || "/images/banners/solution-banner-right1.webp";
+
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://marmasecurity.com";
+  const absoluteImageUrl = imageUrl.startsWith("http") ? imageUrl : `${baseUrl}${imageUrl}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `/solutions/${industryKey}`,
+      type: "website",
+      images: [
+        {
+          url: absoluteImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${displayIndustry} Cybersecurity`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [absoluteImageUrl],
+    },
+  };
+}
 
 export default async function IndustrySolutionPage({ params }: { params: Promise<{ industry: string }> }) {
   const resolvedParams = await params;
