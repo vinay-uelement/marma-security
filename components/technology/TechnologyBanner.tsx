@@ -10,6 +10,7 @@ export interface TechnologyBannerProps {
     buttonText?: string;
     buttonLink?: string;
     isButton?: boolean;
+    overlay?: boolean;
 }
 
 export default function TechnologyBanner({
@@ -18,7 +19,8 @@ export default function TechnologyBanner({
     backgroundImage = "/images/banners/Technology-banner.webp", // Ensure this matches user's file name
     buttonText = "Explore",
     buttonLink = "#",
-    isButton = true
+    isButton = true,
+    overlay = true
 }: TechnologyBannerProps) {
     return (
         <section
@@ -30,6 +32,9 @@ export default function TechnologyBanner({
                 backgroundRepeat: 'no-repeat'
             }}
         >
+            {/* Dark Overlay */}
+            {overlay && <div className="absolute inset-0 bg-black/70 z-[5]" />}
+
             {/* Main Content Container — fills entire banner height */}
             <div className="relative z-10 w-full flex-1 px-6 lg:px-16 flex flex-col items-center justify-center text-center pt-28 md:pt-32 pb-16 md:pb-20">
 
