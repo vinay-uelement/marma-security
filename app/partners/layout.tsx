@@ -3,17 +3,17 @@ export const metadata = {
   description:
     "Join the Marma Security partner program. Designed for VARs, MSPs, MSSPs, and System Integrators to offer enterprise-grade cybersecurity with simplified deployment and recurring revenue.",
   alternates: {
-    canonical: "https://marmasecurity.com/partners",
+    canonical: "/partners",
   },
   openGraph: {
     title: "MSP, MSSP and ITSP Partners | Marma Security",
     description:
       "Join the Marma Security partner program. Designed for VARs, MSPs, MSSPs, and System Integrators to offer enterprise-grade cybersecurity with simplified deployment and strong recurring revenue potential.",
-    url: "https://marmasecurity.com/partners",
+    url: "/partners",
     siteName: "Marma Security",
     images: [
       {
-        url: "https://marmasecurity.com/images/banners/banner-partners.webp",
+        url: "/images/banners/banner-partners.webp",
         width: 1200,
         height: 630,
         alt: "Marma Security Partners Program",
@@ -27,7 +27,7 @@ export const metadata = {
     title: "MSP, MSSP and ITSP Partners | Marma Security",
     description:
       "Join the Marma Security partner program to offer enterprise-grade cybersecurity with simplified deployment.",
-    images: ["https://marmasecurity.com/images/banners/banner-partners.webp"],
+    images: ["/images/banners/banner-partners.webp"],
   },
 };
 

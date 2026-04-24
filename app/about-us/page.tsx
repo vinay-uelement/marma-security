@@ -3,17 +3,17 @@ export const metadata = {
   description:
     "Redefining cybersecurity through simplicity. Learn more about Marma Security, our team, and our mission to secure digital assets at the network level.",
   alternates: {
-    canonical: "https://marmasecurity.com/about-us",
+    canonical: "/about-us",
   },
   openGraph: {
     title: "About Us | Marma Security",
     description:
       "Redefining cybersecurity through simplicity. Learn more about Marma Security, our team, and our mission to secure digital assets at the network level.",
-    url: "https://marmasecurity.com/about-us",
+    url: "/about-us",
     siteName: "Marma Security",
     images: [
       {
-        url: "https://marmasecurity.com/images/banners/banner-about-us.webp",
+        url: "/images/banners/banner-about-us.webp",
         width: 1200,
         height: 630,
         alt: "About Marma Security",
@@ -27,7 +27,7 @@ export const metadata = {
     title: "About Us | Marma Security",
     description:
       "Redefining cybersecurity through simplicity. Learn more about our vision.",
-    images: ["https://marmasecurity.com/images/banners/banner-about-us.webp"],
+    images: ["/images/banners/banner-about-us.webp"],
   },
 };
 
