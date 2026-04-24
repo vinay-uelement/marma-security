@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import GlassWrapper from "../global/GlassWrapper";
 import { Zap, ShieldCheck, Globe, Users } from "lucide-react";
 
 const values = [
@@ -29,7 +28,7 @@ const values = [
 
 export default function WhyMarma() {
   return (
-    <section id="culture" className="py-2 pt-16 bg-white overflow-hidden">
+    <section id="culture" className="py-16 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
         <div className="flex flex-col items-center text-center mb-8">
           <h2 className="font-banner text-[32px] md:text-[48px] text-[#1E293B] mb-6 leading-tight">
@@ -43,16 +42,12 @@ export default function WhyMarma() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((value, idx) => (
             <div key={idx} className="h-full flex flex-col">
-              <GlassWrapper
-                padding="p-0"
-                borderRadius="rounded-[24px]"
-                innerBorderRadius="rounded-[20px]"
-                showGlow={false}
-                className="h-full"
+              <div
+                className="h-full rounded-[24px] border border-[#E2E8F0] bg-[#ebebeb] overflow-hidden"
               >
                 <div className="flex flex-col h-full bg-white/40 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/60">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="bg-white/80 w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl shadow-sm border border-white/80">
+                    <div className="flex-shrink-0 flex items-center justify-center">
                       {value.icon}
                     </div>
                     <h3 className="font-banner text-[20px] leading-tight text-[#1E293B]">
@@ -63,7 +58,7 @@ export default function WhyMarma() {
                     {value.description}
                   </p>
                 </div>
-              </GlassWrapper>
+              </div>
             </div>
           ))}
         </div>

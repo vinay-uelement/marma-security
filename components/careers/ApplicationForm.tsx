@@ -108,7 +108,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
               type="text"
               name="Name"
               placeholder="John Doe"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
             />
           </div>
 
@@ -119,7 +119,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
               type="email"
               name="Email"
               placeholder="john@example.com"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
             />
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
               type="tel"
               name="Phone"
               placeholder="+91 98765 43210"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
             />
           </div>
 
@@ -143,7 +143,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
               type="text"
               name="City"
               placeholder="Pune"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
             />
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
               type="text"
               name="Total Experience"
               placeholder="e.g., 3 Years"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
             />
           </div>
 
@@ -167,7 +167,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
               type="text"
               name="Relevant Experience"
               placeholder="e.g., 2 Years"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
             />
           </div>
         </div>
@@ -180,7 +180,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
               type="text"
               name="Current CTC"
               placeholder="e.g., 8 LPA"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
             />
           </div>
 
@@ -191,7 +191,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
               type="text"
               name="Expected CTC"
               placeholder="e.g., 10 LPA"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
             />
           </div>
         </div>
@@ -203,7 +203,7 @@ export default function ApplicationForm({ job, onSuccess }: ApplicationFormProps
             type="text"
             name="Notice Period"
             placeholder="e.g., 30 Days"
-            className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors"
+            className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
           />
         </div>
 
