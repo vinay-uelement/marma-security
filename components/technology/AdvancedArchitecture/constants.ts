@@ -50,6 +50,11 @@ export const bottomJunctions: BottomJunctionData[] = [
   { id: 22, pos: { left: "50%", top: "64.4%" }, icon: Monitor },
   { id: 23, pos: { left: "74%", top: "64.4%" }, icon: Smartphone },
 ];
+export const mobileBottomJunctions: BottomJunctionData[] = [
+  { id: 21, pos: { left: "17%", top: "64.4%" }, icon: Shield },
+  { id: 22, pos: { left: "50%", top: "64.4%" }, icon: Monitor },
+  { id: 23, pos: { left: "83%", top: "64.4%" }, icon: Smartphone },
+];
 
 export const bottomCards: BottomCardData[] = [
   {
@@ -72,5 +77,28 @@ export const bottomCards: BottomCardData[] = [
     label: "Cybersecurity Mobile App",
     img: "/images/product/software/mobile_app_1.webp",
     pos: { left: "74%", top: "82.4%" },
+  },
+];
+export const mobileBottomCards: BottomCardData[] = [
+  {
+    id: 11,
+    title: "Edge AI Agents",
+    label: "Plug-n-Play Firewall Solutions",
+    img: "/images/product/SafeEnterprise4001.webp",
+    pos: { left: "15%", top: "82.4%" },
+  },
+  {
+    id: 12,
+    title: "Edge AI Agents",
+    label: "Endpoint Protection Software",
+    img: "/images/product/software/marmaAgent.webp",
+    pos: { left: "50%", top: "82.4%" },
+  },
+  {
+    id: 13,
+    title: "Edge AI Agents",
+    label: "Cybersecurity Mobile App",
+    img: "/images/product/software/mobile_app_1.webp",
+    pos: { left: "85%", top: "82.4%" },
   },
 ];

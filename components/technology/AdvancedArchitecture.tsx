@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import HighlightedText from "../global/HighlightedText";
 
-import { orbitingNodes, bottomJunctions, bottomCards } from "./AdvancedArchitecture/constants";
+import { orbitingNodes, bottomJunctions, bottomCards, mobileBottomCards, mobileBottomJunctions } from "./AdvancedArchitecture/constants";
 import ConnectionLines from "./AdvancedArchitecture/ConnectionLines";
 import CentralCloud from "./AdvancedArchitecture/CentralCloud";
 import OrbitNode from "./AdvancedArchitecture/OrbitNode";
@@ -183,7 +183,7 @@ export default function AdvancedArchitecture() {
         {/* --- Architecture Diagram Container --- */}
         <div
           ref={containerRef}
-          className="relative w-full max-w-[1024px] xl:max-w-[1200px] min-h-[400px] md:min-h-[500px] aspect-[4/5] sm:aspect-[1/1]  lg:aspect-[16/8] xl:aspect-[16/11] mx-auto mt-4 lg:-mt-12"
+          className="relative w-full max-w-[1024px] xl:max-w-[1200px] min-h-[400px] md:min-h-[500px] aspect-2/1  lg:aspect-[16/8] xl:aspect-[16/11] mx-auto mt-4 lg:-mt-12"
         >
           {/* SVG Connection Lines Overlay */}
           <ConnectionLines />
@@ -197,14 +197,30 @@ export default function AdvancedArchitecture() {
           ))}
 
           {/* Bottom Junction Nodes */}
-          {bottomJunctions.map((junc) => (
-            <JunctionNode key={`junct-${junc.id}`} junc={junc} />
-          ))}
+          <div className="hidden lg:block ">
+            {bottomJunctions.map((junc) => (
+              <JunctionNode key={`junct-${junc.id}`} junc={junc} />
+            ))}
+          </div>
+          <div className="block lg:hidden ">
+            {mobileBottomJunctions.map((junc) => (
+              <JunctionNode key={`junct-${junc.id}`} junc={junc} />
+            ))}
+          </div>
 
           {/* Bottom Cards Tier */}
-          {bottomCards.map((card) => (
-            <EdgeCard key={`card-${card.id}`} card={card} />
-          ))}
+          <div className="hidden lg:block ">
+            {bottomCards.map((card) => (
+              <EdgeCard key={`card-${card.id}`} card={card} />
+            ))}
+          </div>
+
+          {/* Mobile */}
+          <div className="block lg:hidden ">
+            {mobileBottomCards.map((card) => (
+              <EdgeCard key={`card-${card.id}`} card={card} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
