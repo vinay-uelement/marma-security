@@ -41,11 +41,11 @@ export default function Banner({
   backgroundImage,
   title,
   subtitle,
-  subtitleClassName = "font-title text-[20px] md:text-[24px] text-white/90 max-w-[550px] tracking-[-0.01em] leading-relaxed font-light",
+  subtitleClassName = "font-title text-[20px] lg:text-[24px] text-white/90 max-w-[550px] tracking-[-0.01em] leading-relaxed font-light",
   buttons = [],
   rightImage,
   rightImageAlt = "Banner Image",
-  titleClassName = "font-banner font-normal text-[32px] md:text-[45px] leading-[1.2] md:leading-[60px] tracking-[-0.01em] text-white drop-shadow-sm",
+  titleClassName = "font-banner font-normal text-[32px] lg:text-[45px] leading-[1.2] lg:leading-[60px] tracking-[-0.01em] text-white drop-shadow-sm",
   rightImageClassName = "",
   showRightImageCircle = true,
   overlay = false,
@@ -157,7 +157,7 @@ export default function Banner({
   return (
     <section className="relative h-svh w-screen">
       {/* Background Image Container */}
-      <div ref={bgContainerRef} className="absolute inset-0 w-full h-[96svh]! md:h-[93svh]! overflow-hidden">
+      <div ref={bgContainerRef} className="absolute inset-0 w-full h-[96svh]! lg:h-[93svh]! overflow-hidden">
         {outgoingBg && (
           <Image
             src={outgoingBg}
@@ -179,11 +179,11 @@ export default function Banner({
         {overlay && <div className="absolute inset-0 bg-black/70 z-[5]" />}
       </div>
 
-      <div className="h-[96svh] md:h-[93svh] relative z-10 overflow-hidden w-full flex items-center md:items-end">
+      <div className="h-[96svh] lg:h-[93svh] relative z-10 overflow-hidden w-full flex items-center lg:items-end">
         {/* Main Content Container inside the Banner */}
-        <div className="relative z-20 px-6 lg:px-16 h-3/5 mb-14 w-full md:py-12 lg:py-0">
+        <div className="relative z-20 px-6 lg:px-16 h-3/5 mb-14 w-full lg:py-12 lg:py-0">
           {/* Left Column: Text, Subtitle, and Buttons */}
-          <div className="flex flex-col space-y-4  md:space-y-6 pb-5 md:mt-16 lg:mt-0 text-white z-30 items-center lg:items-start text-center lg:text-left">
+          <div className="flex flex-col space-y-4  lg:space-y-6 pb-5 lg:mt-16 lg:mt-0 text-white z-30 items-center lg:items-start text-center lg:text-left">
             {" "}
             {/* Title text */}
             <div className={titleClassName}>{title}</div>
@@ -191,7 +191,7 @@ export default function Banner({
             {subtitle && <div className={subtitleClassName}>{subtitle}</div>}
             {/* Render Buttons conditionally */}
             {buttons && buttons.length > 0 && (
-              <div className=" lg:absolute flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 pt-6 md:pt-8 lg:pt-16 w-full lg:bottom-0">
+              <div className=" lg:absolute flex flex-wrap items-center justify-center lg:justify-start gap-4 lg:gap-6 pt-6 lg:pt-8 lg:pt-16 w-full lg:bottom-0">
                 {buttons.map((btn, index) => {
                   const ButtonContent = (
                     <Button
@@ -219,7 +219,7 @@ export default function Banner({
         </div>
         {/*  background circle */}
         {showRightImageCircle && <div
-          className=" absolute max-sm:left-1/2 max-sm:-translate-x-1/2 md:-right-6 bottom-0 md:-bottom-4 w-[30vh] h-[30vh] md:w-[75svh] md:h-[75svh] rounded-full opacity-50
+          className=" absolute max-lg:left-1/2 max-lg:-translate-x-1/2 lg:-right-6 bottom-0 lg:-bottom-4 w-[30vh] h-[30vh] md:w-[40vh] md:h-[40vh] lg:w-[75svh] lg:h-[75svh] rounded-full opacity-50
             bg-[linear-gradient(290deg,rgba(255,0,0,0.01)_0%,rgba(255,0,0,1)_100%)]
             backdrop-blur-[60px]
             "
@@ -230,7 +230,7 @@ export default function Banner({
 
       <div
         ref={imgContainerRef}
-        className={`absolute bottom-0 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-10 z-20 pointer-events-none h-full ${rightImageClassName || "w-[20vh] md:w-[50svh]"}`}
+        className={`absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:right-10 z-20 pointer-events-none h-full ${rightImageClassName || "w-[20vh] lg:w-[50svh]"}`}
         style={{ perspective: "1500px", transformStyle: "preserve-3d" }}
       >
         {outgoingImage && (
