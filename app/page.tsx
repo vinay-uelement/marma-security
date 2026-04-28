@@ -45,9 +45,9 @@ export default function Home() {
   ];
 
   const rightImageClasses = [
-    "w-[25vh] md:w-[60svh] right-10! md:right-10!",
-    "w-[25vh] md:w-[60svh]",
-    "w-[25vh] md:w-[60svh]",
+    "w-[25vh] md:w-[35vh] lg:w-[60svh] right-10! lg:right-10!",
+    "w-[25vh] md:w-[35vh] lg:w-[60svh]",
+    "w-[25vh] md:w-[35vh] lg:w-[60svh]",
   ];
 
   const learnMoreLinks = [
@@ -86,11 +86,11 @@ export default function Home() {
             <>
               Radically Simplified <br className="hidden md:block" />
               <HighlightedText text="AI Cybersecurity" /> for{" "}
-              <br className="block md:hidden" />
+              <br className="block lg:hidden" />
               <TumblingText phrases={phrases} index={index} />
             </>
           }
-          titleClassName="font-banner font-normal text-[26px] md:text-[34px] leading-[1.2] md:leading-[48px] tracking-[-0.01em] text-white"
+          titleClassName="font-banner font-normal text-[26px] lg:text-[34px] leading-[1.2] lg:leading-[48px] tracking-[-0.01em] text-white"
           subtitle={
             <>
               Enterprise-grade cybersecurity that works in minutes.{" "}
@@ -98,7 +98,7 @@ export default function Home() {
               No IT or technical expertise needed.
             </>
           }
-          subtitleClassName="font-title font-light text-[16px] md:text-[22px] leading-[1.4] md:leading-[34px] tracking-[-0.01em] text-white max-w-[550px]"
+          subtitleClassName="font-title font-light text-[16px] lg:text-[22px] leading-[1.4] lg:leading-[34px] tracking-[-0.01em] text-white max-w-[550px]"
           buttons={[
             // { label: "Order Now", href: "#", variant: "primary", icon: true },
             {
@@ -121,7 +121,7 @@ export default function Home() {
       {/* ── SNAP 1.51: Good News Solutions ─────────────────────────────────── */}
       <div className="relative">
         {/* Decorative Line — Desktop */}
-        <div className="hidden md:block absolute right-0 top-8 pointer-events-none z-100">
+        <div className="hidden lg:block absolute right-0 top-8 pointer-events-none z-100">
           <div className="relative w-screen right-1/2 translate-x-1/2">
             <DecorativeLine
               viewBox="0 0 700 80"
@@ -142,7 +142,7 @@ export default function Home() {
 
       {/* ── SNAP 2: Cybercrime Stats ──────────────────────────────────────── */}
       <div className="">
-        <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-4 lg:px-16 pt-0 md:pt-12 bg-[#FFFFFF] relative">
+        <section className="w-full max-w-[1440px] mx-auto px-6 max-sm:pt-4 lg:px-16 pt-0 lg:pt-12 bg-[#FFFFFF] relative">
           <div className="flex flex-col min-[901px]:flex-row justify-between items-start min-[901px]:items-center gap-8 relative z-10 w-full">
             <h2 className="fl2 w-full min-[901px]:w-[55%] home-exposed-heading text-left">
               {/* Your{" "}

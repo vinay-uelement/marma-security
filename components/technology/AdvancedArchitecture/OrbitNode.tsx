@@ -27,7 +27,7 @@ export default function OrbitNode({ node }: OrbitNodeProps) {
 
         {/* Label (Positioned relative to Icon center) */}
         <span
-          className={`font-body font-normal text-[13px] md:text-[14px] text-[#444444] leading-tight absolute whitespace-nowrap text-nowrap  ${isCol
+          className={`font-body font-normal text-[13px] md:text-[14px] text-[#444444] leading-tight absolute max-sm:w-25 md:whitespace-nowrap md:text-nowrap  ${isCol
             ? "top-[-8px] left-1/2 -translate-x-1/2 -translate-y-full pb-2 text-center"
             : isRowReverse
               ? "right-full mr-4 top-1/2 -translate-y-1/2 text-right"

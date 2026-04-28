@@ -86,7 +86,15 @@ export default function ConnectionLines() {
       </g>
 
       {/* 3. Horizontal Transition Rail (Connecting Left/Center/Right Junctions) */}
-      <g>
+      <g className="lg:hidden">
+        {/* Rail from center to Left (17%) and Right (83%) */}
+        <path className="svg-line" d="M 50 64.4 H 17" fill="none" stroke="#333333" strokeWidth="0.1" strokeDasharray="1" />
+        <path className="svg-data-flow" d="M 50 64.4 H 17" fill="none" stroke="#FF0000" strokeWidth="0.3" opacity="1" />
+
+        <path className="svg-line" d="M 50 64.4 H 83" fill="none" stroke="#333333" strokeWidth="0.1" strokeDasharray="1" />
+        <path className="svg-data-flow" d="M 50 64.4 H 83" fill="none" stroke="#FF0000" strokeWidth="0.3" opacity="1" />
+      </g>
+      <g className="hidden lg:block">
         {/* Rail from center to Left (26%) and Right (74%) */}
         <path className="svg-line" d="M 50 64.4 H 26" fill="none" stroke="#333333" strokeWidth="0.1" strokeDasharray="1" />
         <path className="svg-data-flow" d="M 50 64.4 H 26" fill="none" stroke="#FF0000" strokeWidth="0.3" opacity="1" />
@@ -96,7 +104,20 @@ export default function ConnectionLines() {
       </g>
 
       {/* 4. Vertical Connectors from Junctions to Cards */}
-      <g>
+      <g className="lg:hidden">
+        {/* Left Junction to Left Card */}
+        <path className="svg-line" d="M 17 64.4 V 82.4" fill="none" stroke="#333333" strokeWidth="0.1" strokeDasharray="1" />
+        <path className="svg-data-flow" d="M 17 64.4 V 82.4" fill="none" stroke="#FF0000" strokeWidth="0.3" opacity="1" />
+
+        {/* Center Junction to Center Card */}
+        <path className="svg-line" d="M 50 64.4 V 82.4" fill="none" stroke="#333333" strokeWidth="0.1" strokeDasharray="1" />
+        <path className="svg-data-flow" d="M 50 64.4 V 82.4" fill="none" stroke="#FF0000" strokeWidth="0.3" opacity="1" />
+
+        {/* Right Junction to Right Card */}
+        <path className="svg-line" d="M 83 64.4 V 82.4" fill="none" stroke="#333333" strokeWidth="0.1" strokeDasharray="1" />
+        <path className="svg-data-flow" d="M 83 64.4 V 82.4" fill="none" stroke="#FF0000" strokeWidth="0.3" opacity="1" />
+      </g>
+      <g className="hidden lg:block">
         {/* Left Junction to Left Card */}
         <path className="svg-line" d="M 26 64.4 V 82.4" fill="none" stroke="#333333" strokeWidth="0.1" strokeDasharray="1" />
         <path className="svg-data-flow" d="M 26 64.4 V 82.4" fill="none" stroke="#FF0000" strokeWidth="0.3" opacity="1" />
