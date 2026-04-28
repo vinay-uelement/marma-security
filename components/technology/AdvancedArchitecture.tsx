@@ -183,7 +183,7 @@ export default function AdvancedArchitecture() {
         {/* --- Architecture Diagram Container --- */}
         <div
           ref={containerRef}
-          className="relative w-full max-w-[1024px] xl:max-w-[1200px] min-h-[400px] md:min-h-[500px] aspect-2/1  lg:aspect-[16/8] xl:aspect-[16/11] mx-auto mt-4 lg:-mt-12"
+          className="relative w-full max-w-[1024px] xl:max-w-[1200px] min-h-[400px] md:min-h-[800px] aspect-2/1 md:aspect-9/16 lg:aspect-[16/8] xl:aspect-[16/11] mx-auto mt-4 lg:-mt-12"
         >
           {/* SVG Connection Lines Overlay */}
           <ConnectionLines />
