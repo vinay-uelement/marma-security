@@ -45,9 +45,9 @@ export default function Home() {
   ];
 
   const rightImageClasses = [
-    "w-[25vh] md:w-[35vh] lg:w-[60svh] right-10! lg:right-10!",
-    "w-[25vh] md:w-[35vh] lg:w-[60svh]",
-    "w-[25vh] md:w-[35vh] lg:w-[60svh]",
+    "w-[30vh] md:w-[35vh] lg:w-[60svh] right-10! lg:right-10!",
+    "w-[30vh] md:w-[35vh] lg:w-[60svh]",
+    "w-[30vh] md:w-[35vh] lg:w-[60svh]",
   ];
 
   const learnMoreLinks = [

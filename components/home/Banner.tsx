@@ -219,7 +219,7 @@ export default function Banner({
         </div>
         {/*  background circle */}
         {showRightImageCircle && <div
-          className=" absolute max-lg:left-1/2 max-lg:-translate-x-1/2 lg:-right-6 bottom-0 lg:-bottom-4 w-[30vh] h-[30vh] md:w-[40vh] md:h-[40vh] lg:w-[75svh] lg:h-[75svh] rounded-full opacity-50
+          className=" absolute max-lg:left-1/2 max-lg:-translate-x-1/2 lg:-right-6 bottom-0 lg:-bottom-4 w-[35vh] h-[35vh] md:w-[40vh] md:h-[40vh] lg:w-[75svh] lg:h-[75svh] rounded-full opacity-50
             bg-[linear-gradient(290deg,rgba(255,0,0,0.01)_0%,rgba(255,0,0,1)_100%)]
             backdrop-blur-[60px]
             "

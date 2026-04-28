@@ -220,7 +220,7 @@ img {
    =============================================================== */
 
 .nav-logo {
-  @apply w-[109px] lg:w-auto h-auto lg:h-6 object-contain;
+  @apply w-[200px] lg:w-auto h-auto lg:h-6 object-contain;
 }
 
 .nav-icon {
