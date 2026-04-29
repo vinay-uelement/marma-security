@@ -74,6 +74,12 @@ export default function Footer() {
                 >
                   Contact
                 </a>
+                <a
+                  href="/support"
+                  className="hover:text-white/70 transition-colors"
+                >
+                  Support
+                </a>
               </div>
 
 
@@ -219,6 +225,12 @@ export default function Footer() {
                     className="hover:text-white/70 transition-colors"
                   >
                     Contact
+                  </a>
+                  <a
+                    href="/support"
+                    className="hover:text-white/70 transition-colors"
+                  >
+                    Support
                   </a>
                 </div>
 
