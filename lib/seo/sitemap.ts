@@ -1,4 +1,4 @@
-export const DEFAULT_SITE_URL = "https://marmasec.com";
+export const DEFAULT_SITE_URL = "https://www.marmasec.com";
 
 const STATIC_SITEMAP_PATHS = [
   "/",

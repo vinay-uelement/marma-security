@@ -5,7 +5,7 @@ import Footer from "@/components/global/Footer";
 import "./globals.css";
 import CookieConsent from "@/components/global/CookieConsent";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://marmasecurity.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.marmasec.com";
 
 const inter = Inter({
   subsets: ["latin"],
