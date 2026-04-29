@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ industry:
   const description = typeof data.hero.description === 'string' ? data.hero.description : `Explore Marma Security's tailored cybersecurity solutions for the ${displayIndustry} industry.`;
   const imageUrl = data.hero.imageSrc || "/images/banners/solution-banner-right1.webp";
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://marmasecurity.com";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.marmasec.com";
   const absoluteImageUrl = imageUrl.startsWith("http") ? imageUrl : `${baseUrl}${imageUrl}`;
 
   return {

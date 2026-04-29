@@ -118,10 +118,10 @@ export default function TermsOfServiceContent() {
       <p>
         For questions about these Terms, contact us at{" "}
         <a
-          href="mailto:legal@marmasecurity.com"
+          href="mailto:legal@marmasec.com"
           className="text-[#FF0000] hover:text-[#cc0000] underline"
         >
-          legal@marmasecurity.com
+          legal@marmasec.com
         </a>
       </p>
     </div>

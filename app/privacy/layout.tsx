@@ -1,4 +1,4 @@
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://marmasecurity.com";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.marmasec.com";
 
 export const metadata = {
   title: "Privacy Policy | Marma Security",

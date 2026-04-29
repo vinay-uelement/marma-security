@@ -106,10 +106,10 @@ export default function PrivacyPolicyContent() {
       <p>
         For privacy-related queries, contact our Data Protection Officer at{" "}
         <a
-          href="mailto:privacy@marmasecurity.com"
+          href="mailto:privacy@marmasec.com"
           className="text-[#FF0000] hover:text-[#cc0000] underline"
         >
-          privacy@marmasecurity.com
+          privacy@marmasec.com
         </a>
       </p>
     </div>
