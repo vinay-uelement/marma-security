@@ -48,7 +48,7 @@ export default function Footer() {
                   href="/about-us"
                   className="hover:text-white/70 transition-colors"
                 >
-                  About us
+                  About Us
                 </Link>
 
                 <Link
@@ -191,7 +191,7 @@ export default function Footer() {
                     href="/about-us"
                     className="hover:text-white/70 transition-colors"
                   >
-                    About us
+                    About Us
                   </Link>
                   <Link
                     href="/product"

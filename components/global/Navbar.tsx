@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/product", label: "Products" },
   { href: "/partners", label: "Partners" },
   { href: "/careers", label: "Careers" },
-  { href: "/about-us", label: "About us" },
+  { href: "/about-us", label: "About Us" },
 ];
 
 const solutionDropdownItems = [
