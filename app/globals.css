@@ -737,3 +737,49 @@ img {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* ===============================================================
+   PRIVACY POLICY / LEGAL PAGES
+   =============================================================== */
+
+.prose-policy {
+  color: var(--color-text-dark);
+  font-family: var(--font-body);
+}
+
+.prose-policy p {
+  @apply text-[15px] md:text-[16px] leading-[1.75] text-[#444444] mb-4;
+}
+
+.prose-policy a {
+  @apply text-brand-red underline hover:opacity-75 transition-opacity;
+}
+
+.prose-policy ul,
+.prose-policy ol {
+  @apply pl-6 mb-4 space-y-2;
+}
+
+.prose-policy ul {
+  list-style-type: disc;
+}
+
+.prose-policy ol {
+  list-style-type: decimal;
+}
+
+.prose-policy li {
+  @apply text-[15px] md:text-[16px] leading-[1.75] text-[#444444];
+}
+
+.policy-section {
+  @apply mb-10 md:mb-12;
+}
+
+.policy-section h2 {
+  @apply font-title font-bold text-[18px] md:text-[22px] text-text-dark mb-4 mt-2 border-b border-gray-200 pb-2;
+}
+
+.policy-section h3 {
+  @apply font-body font-semibold text-[15px] md:text-[17px] text-text-dark mt-6 mb-2;
+}
