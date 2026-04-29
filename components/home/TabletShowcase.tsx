@@ -73,6 +73,7 @@ export default function TabletShowcase() {
             fill
             className="object-fill object-top transition-transform duration-700 ease-out"
             priority
+            sizes="(max-width: 1100px) 100vw, 1100px"
           />
         </div>
       </div>

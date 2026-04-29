@@ -10,6 +10,7 @@ export default function ProtectionBanner() {
           alt="Protection against phishing attacks"
           fill
           className="object-cover object-center"
+          sizes="100vw"
         />
 
         {/* Dark Gradient Overlay to ensure text legibility */}

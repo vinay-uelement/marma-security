@@ -214,7 +214,7 @@ export default function HowWeProtect() {
                       src={feature.image}
                       alt={feature.title}
                       fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      sizes="(max-width: 1024px) 50vw, 427px"
                       className="object-cover relative z-10"
                     />
                   </div>

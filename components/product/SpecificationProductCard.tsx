@@ -42,9 +42,9 @@ export default function SpecificationProductCard({
           <Image
             src={image}
             alt={imageAlt}
-            width={1000}
-            height={1000}
-            sizes="(max-width: 1024px) 50vw, 52vw"
+            width={600}
+            height={600}
+            sizes="(max-width: 1024px) 300px, 500px"
             className="h-auto w-full max-w-[700px] object-contain"
           />
         </div>
