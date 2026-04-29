@@ -99,7 +99,7 @@ export default function SupportPage() {
               <p className="text-brand-red font-semibold text-base md:text-lg">
                 Submit the form below and we&apos;ll get right back to you!
               </p>
-              <ContactForm />
+              <ContactForm isSupport={true} />
             </div>
 
           </div>
