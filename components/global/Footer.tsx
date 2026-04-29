@@ -51,12 +51,6 @@ export default function Footer() {
                 </a>
 
                 <a
-                  href="/solutions"
-                  className="hover:text-white/70 transition-colors"
-                >
-                  Solutions
-                </a>
-                <a
                   href="/partners"
                   className="hover:text-white/70 transition-colors"
                 >
@@ -79,6 +73,12 @@ export default function Footer() {
                   className="hover:text-white/70 transition-colors"
                 >
                   Support
+                </a>
+                <a
+                  href="/privacy"
+                  className="hover:text-white/70 transition-colors"
+                >
+                  Privacy
                 </a>
               </div>
 
@@ -179,18 +179,12 @@ export default function Footer() {
             <div className="flex md:hidden flex-col w-full pb-8">
               <div className="grid grid-cols-[1fr_1fr] gap-x-2 gap-y-6 w-full items-start">
                 {/* Column 1 */}
-                <div className="flex flex-col gap-3 footer-nav-grid text-[10px]">
+                <div className="flex flex-col gap-3 footer-nav-grid text-[10px] ps-5">
                   <a
                     href="/technology"
                     className="hover:text-white/70 transition-colors"
                   >
                     Technology
-                  </a>
-                  <a
-                    href="/solutions"
-                    className="hover:text-white/70 transition-colors"
-                  >
-                    Solutions
                   </a>
                   <a
                     href="/about-us"
@@ -204,16 +198,16 @@ export default function Footer() {
                   >
                     Products
                   </a>
-                </div>
-
-                {/* Column 2 */}
-                <div className="flex flex-col gap-3 footer-nav-grid text-[10px]">
                   <a
                     href="/partners"
                     className="hover:text-white/70 transition-colors"
                   >
                     Partners
                   </a>
+                </div>
+
+                {/* Column 2 */}
+                <div className="flex flex-col gap-3 footer-nav-grid text-[10px] ps-4">
                   <a
                     href="/careers"
                     className="hover:text-white/70 transition-colors"
@@ -231,6 +225,12 @@ export default function Footer() {
                     className="hover:text-white/70 transition-colors"
                   >
                     Support
+                  </a>
+                  <a
+                    href="/privacy"
+                    className="hover:text-white/70 transition-colors"
+                  >
+                    Privacy
                   </a>
                 </div>
 
