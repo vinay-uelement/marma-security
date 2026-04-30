@@ -9,13 +9,15 @@ import { submitContactForm } from '@/lib/contactApi';
 
 interface ContactFormProps {
     onSuccess?: () => void;
+    isSupport?: boolean;
 }
 
-export default function ContactForm({ onSuccess }: ContactFormProps) {
+export default function ContactForm({ onSuccess, isSupport = false }: ContactFormProps) {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         subject: '',
+        issue: '',
         phone: '',
         message: ''
     });
@@ -39,8 +41,10 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
             phone: formData.phone,
             message: formData.message,
             extra_field: {
-                source: 'Contact Us Page',
-                subject: formData.subject,
+                source: isSupport ? 'Support Page' : 'Contact Us Page',
+                // For support, we don't want 'Area of Interest' (mapped from subject) 
+                // to be populated with the specific issue.
+                ...(isSupport ? { issue: formData.issue } : { subject: formData.subject }),
             }
         });
 
@@ -48,7 +52,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
 
         if (result.success) {
             setSubmitStatus({ type: 'success', message: result.message });
-            setFormData({ name: '', email: '', subject: '', phone: '', message: '' });
+            setFormData({ name: '', email: '', subject: '', issue: '', phone: '', message: '' });
             if (onSuccess) onSuccess();
         } else {
             setSubmitStatus({ type: 'error', message: result.message });
@@ -71,74 +75,166 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
 
                 {/* Row 1: Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Your name here"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="contact-form-input"
-                        required
-                        disabled={isSubmitting}
-                    />
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Your email here"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="contact-form-input"
-                        required
-                        disabled={isSubmitting}
-                    />
+                    {isSupport ? (
+                        <div className="flex flex-col gap-1.5">
+                            <label className="text-sm font-medium text-text-dark px-1">Name</label>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your name here"
+                                value={formData.name}
+                                onChange={handleChange}
+                                className="contact-form-input"
+                                required
+                                disabled={isSubmitting}
+                            />
+                        </div>
+                    ) : (
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Your name here"
+                            value={formData.name}
+                            onChange={handleChange}
+                            className="contact-form-input"
+                            required
+                            disabled={isSubmitting}
+                        />
+                    )}
+                    {isSupport ? (
+                        <div className="flex flex-col gap-1.5">
+                            <label className="text-sm font-medium text-text-dark px-1">Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Your email here"
+                                value={formData.email}
+                                onChange={handleChange}
+                                className="contact-form-input"
+                                required
+                                disabled={isSubmitting}
+                            />
+                        </div>
+                    ) : (
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Your email here"
+                            value={formData.email}
+                            onChange={handleChange}
+                            className="contact-form-input"
+                            required
+                            disabled={isSubmitting}
+                        />
+                    )}
                 </div>
 
                 {/* Row 2: Subject + Phone */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    <CustomSelect
-                        options={[
-                            { value: "sales-agent", label: "Becoming a Sales Agent" },
-                            { value: "partnership", label: "Partnership" },
-                            { value: "investors", label: "Investors" },
-                            { value: "product-question", label: "Product Questions" },
-                            { value: "other", label: "Other" },
-                        ]}
-                        value={formData.subject}
-                        placeholder="Area of interest"
-                        onChange={(val) => setFormData({ ...formData, subject: val })}
-                        disabled={isSubmitting}
-                        triggerClassName="contact-form-input"
-                        menuClassName="bg-white border-[#E5E5E5]"
-                        activeOptionClassName="bg-brand-red text-white"
-                        hoverOptionClassName="hover:bg-black/5"
-                        placeholderColorClass="text-[#989898]"
-                        valueColorClass="text-text-dark"
-                        arrowColor="#989898"
-                        openDirection="down"
-                    />
-                    <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Your phone number"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="contact-form-input"
-                        required
-                        disabled={isSubmitting}
-                    />
+                    {!isSupport ? (
+                        <CustomSelect
+                            options={[
+                                { value: "sales-agent", label: "Becoming a Sales Agent" },
+                                { value: "partnership", label: "Partnership" },
+                                { value: "investors", label: "Investors" },
+                                { value: "product-question", label: "Product Questions" },
+                                { value: "other", label: "Other" },
+                            ]}
+                            value={formData.subject}
+                            placeholder="Area of interest"
+                            onChange={(val) => setFormData({ ...formData, subject: val })}
+                            disabled={isSubmitting}
+                            triggerClassName="contact-form-input"
+                            menuClassName="bg-white border-[#E5E5E5]"
+                            activeOptionClassName="bg-brand-red text-white"
+                            hoverOptionClassName="hover:bg-black/5"
+                            placeholderColorClass="text-[#989898]"
+                            valueColorClass="text-text-dark"
+                            arrowColor="#989898"
+                            openDirection="down"
+                        />
+                    ) : (
+                        <div className="flex flex-col gap-1.5">
+                            <label className="text-sm font-medium text-text-dark px-1">Issue</label>
+                            <CustomSelect
+                                options={[
+                                    { value: "delivery-issue", label: "Product was not delivered to me" },
+                                    { value: "installation-issue", label: "Installation issue" },
+                                    { value: "app-issue", label: "Mobile App Issue" },
+                                    { value: "product-question", label: "Product Questions" },
+                                    { value: "other", label: "Other" },
+                                ]}
+                                value={formData.issue}
+                                placeholder="Select an issue"
+                                onChange={(val) => setFormData({ ...formData, issue: val })}
+                                disabled={isSubmitting}
+                                triggerClassName="contact-form-input"
+                                menuClassName="bg-[#555555] border-[#E5E5E5]"
+                                optionClassName="text-white text-[14px] md:text-[16px]"
+                                activeOptionClassName="bg-brand-red text-white"
+                                hoverOptionClassName="hover:bg-white/10"
+                                placeholderColorClass="text-[#989898]"
+                                valueColorClass="text-text-dark"
+                                arrowColor="#989898"
+                                openDirection="down"
+                            />
+                        </div>
+                    )}
+                    {isSupport ? (
+                        <div className="flex flex-col gap-1.5">
+                            <label className="text-sm font-medium text-text-dark px-1">Phone Number</label>
+                            <input
+                                type="tel"
+                                name="phone"
+                                placeholder="Your phone number"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                className="contact-form-input"
+                                required
+                                disabled={isSubmitting}
+                            />
+                        </div>
+                    ) : (
+                        <input
+                            type="tel"
+                            name="phone"
+                            placeholder="Your phone number"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            className="contact-form-input"
+                            required
+                            disabled={isSubmitting}
+                        />
+                    )}
                 </div>
 
                 {/* Message */}
-                <textarea
-                    name="message"
-                    placeholder="Tell us a few words"
-                    rows={8}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="contact-form-input resize-none"
-                    required
-                    disabled={isSubmitting}
-                />
+                {isSupport ? (
+                    <div className="flex flex-col gap-1.5">
+                        <label className="text-sm font-medium text-text-dark px-1">How can we help?</label>
+                        <textarea
+                            name="message"
+                            placeholder="Tell us a few words"
+                            rows={8}
+                            value={formData.message}
+                            onChange={handleChange}
+                            className="contact-form-input resize-none"
+                            required
+                            disabled={isSubmitting}
+                        />
+                    </div>
+                ) : (
+                    <textarea
+                        name="message"
+                        placeholder="Tell us a few words"
+                        rows={8}
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="contact-form-input resize-none"
+                        required
+                        disabled={isSubmitting}
+                    />
+                )}
 
                 {/* Bottom row: Social + Submit */}
                 <div className="flex items-center justify-between pt-2">

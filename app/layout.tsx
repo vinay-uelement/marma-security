@@ -5,7 +5,7 @@ import Footer from "@/components/global/Footer";
 import "./globals.css";
 import CookieConsent from "@/components/global/CookieConsent";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://marmasecurity.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.marmasec.com";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -86,11 +86,11 @@ export default function RootLayout({
     "@type": "Organization",
     name: "Marma Security",
     url: BASE_URL,
-    logo: `${BASE_URL}/logo.png`, // Ensure you have a valid logo URL when available
+    logo: `${BASE_URL}/images/global/logo.svg`,
     description:
       "A cybersecurity firm dedicated to Redefining Cybersecurity Through Simplicity, offering automated network-level protection.",
     sameAs: [
-      // Add social links here when available
+      "https://www.linkedin.com/company/marmasecurity/",
     ],
   };
 

@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'marmasec.com',
+        hostname: 'www.marmasec.com',
       },
       {
         protocol: 'https',

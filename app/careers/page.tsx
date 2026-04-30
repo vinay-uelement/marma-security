@@ -3,7 +3,7 @@ import CareerHero from "@/components/careers/CareerHero";
 import WhyMarma from "@/components/careers/WhyMarma";
 import JobBoard from "@/components/careers/JobBoard";
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://marmasecurity.com";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.marmasec.com";
 const absoluteImageUrl = `${baseUrl}/images/partners/Job_hero.webp`;
 
 export const metadata = {

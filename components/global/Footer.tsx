@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Button from "./Button";
 import { usePathname } from "next/navigation";
 import CustomSelect from "./CustomSelect";
@@ -31,49 +32,55 @@ export default function Footer() {
             {/* ======================================= */}
             <div className={`hidden md:flex flex-col w-full justify-between gap-20 mb-20`}>
               <div className={`grid grow grid-cols-4 gap-6`}>
-                <a
+                <Link
                   href="/technology"
                   className="hover:text-white/70 transition-colors h-fit"
                 >
                   Technology
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/product"
                   className="hover:text-white/70 transition-colors"
                 >
                   Products
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/about-us"
                   className="hover:text-white/70 transition-colors"
                 >
-                  About us
-                </a>
+                  About Us
+                </Link>
 
-                <a
-                  href="/solutions"
-                  className="hover:text-white/70 transition-colors"
-                >
-                  Solutions
-                </a>
-                <a
+                <Link
                   href="/partners"
                   className="hover:text-white/70 transition-colors"
                 >
                   Partners
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/careers"
                   className="hover:text-white/70 transition-colors"
                 >
                   Careers
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/contact-us"
                   className="hover:text-white/70 transition-colors"
                 >
                   Contact
-                </a>
+                </Link>
+                <Link
+                  href="/support"
+                  className="hover:text-white/70 transition-colors"
+                >
+                  Support
+                </Link>
+                <Link
+                  href="/privacy"
+                  className="hover:text-white/70 transition-colors"
+                >
+                  Privacy
+                </Link>
               </div>
 
 
@@ -173,53 +180,59 @@ export default function Footer() {
             <div className="flex md:hidden flex-col w-full pb-8">
               <div className="grid grid-cols-[1fr_1fr] gap-x-2 gap-y-6 w-full items-start">
                 {/* Column 1 */}
-                <div className="flex flex-col gap-3 footer-nav-grid text-[10px]">
-                  <a
+                <div className="flex flex-col gap-3 footer-nav-grid text-[10px] ps-5">
+                  <Link
                     href="/technology"
                     className="hover:text-white/70 transition-colors"
                   >
                     Technology
-                  </a>
-                  <a
-                    href="/solutions"
-                    className="hover:text-white/70 transition-colors"
-                  >
-                    Solutions
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/about-us"
                     className="hover:text-white/70 transition-colors"
                   >
-                    About us
-                  </a>
-                  <a
+                    About Us
+                  </Link>
+                  <Link
                     href="/product"
                     className="hover:text-white/70 transition-colors"
                   >
                     Products
-                  </a>
-                </div>
-
-                {/* Column 2 */}
-                <div className="flex flex-col gap-3 footer-nav-grid text-[10px]">
-                  <a
+                  </Link>
+                  <Link
                     href="/partners"
                     className="hover:text-white/70 transition-colors"
                   >
                     Partners
-                  </a>
-                  <a
+                  </Link>
+                </div>
+
+                {/* Column 2 */}
+                <div className="flex flex-col gap-3 footer-nav-grid text-[10px] ps-4">
+                  <Link
                     href="/careers"
                     className="hover:text-white/70 transition-colors"
                   >
                     Careers
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/contact-us"
                     className="hover:text-white/70 transition-colors"
                   >
                     Contact
-                  </a>
+                  </Link>
+                  <Link
+                    href="/support"
+                    className="hover:text-white/70 transition-colors"
+                  >
+                    Support
+                  </Link>
+                  <Link
+                    href="/privacy"
+                    className="hover:text-white/70 transition-colors"
+                  >
+                    Privacy
+                  </Link>
                 </div>
 
                 {/* Column 3 - Contact Links */}
