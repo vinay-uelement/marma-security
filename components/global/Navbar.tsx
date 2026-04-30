@@ -53,10 +53,7 @@ const solutionDropdownItems = [
   }
 ];
 
-const aboutDropdownItems = [
-  { href: "/about-us", title: "About Us", description: "Learn about Marma Security's mission, team, and vision." },
-  { href: "/support", title: "Support", description: "Get help with our products via phone, email, or our support form." },
-];
+
 
 const frostedGlass = {
   background:
@@ -72,44 +69,33 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSolutionsHovered, setIsSolutionsHovered] = useState(false);
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
-  const [isAboutHovered, setIsAboutHovered] = useState(false);
-  const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
-  const aboutButtonRef = useRef<HTMLButtonElement>(null);
-  const [aboutDropdownLeft, setAboutDropdownLeft] = useState<number>(0);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
         setIsMobileMenuOpen(false);
       }
-      if (aboutButtonRef.current && headerRef.current) {
-        const buttonRect = aboutButtonRef.current.getBoundingClientRect();
-        const headerRect = headerRef.current.getBoundingClientRect();
-        // Calculate center position relative to the header
-        setAboutDropdownLeft(buttonRect.left - headerRect.left + (buttonRect.width / 2));
-      }
     };
 
     const handleClickOutside = (event: MouseEvent) => {
       if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
         setIsSolutionsHovered(false);
-        setIsAboutHovered(false);
       }
     };
 
     window.addEventListener("resize", handleResize);
     document.addEventListener("mousedown", handleClickOutside);
-    
-    // Initial calculation
+
     handleResize();
 
     return () => {
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isAboutHovered]); // Re-calculate when hovered opens
+  }, []);
+
 
   return (
     <header
@@ -140,7 +126,6 @@ export default function Navbar() {
           {navLinks.map((link) => {
             const isActive = pathname === link.href || (link.href === "/solutions" && pathname.startsWith("/solutions"));
             const isSolutions = link.href === "/solutions";
-            const isAbout = link.href === "/about-us";
 
             if (isSolutions) {
               return (
@@ -148,7 +133,6 @@ export default function Navbar() {
                   key={link.href}
                   onClick={() => {
                     setIsSolutionsHovered(!isSolutionsHovered);
-                    setIsAboutHovered(false);
                   }}
                   className={`fl2-nav transition-colors flex items-center gap-1.5 focus:outline-none ${isActive ? "!font-bold !text-[#000000]" : ""}`}
                 >
@@ -157,26 +141,6 @@ export default function Navbar() {
                     <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
-              );
-            }
-
-            if (isAbout) {
-              return (
-                <div key={link.href} className="relative">
-                  <button
-                    ref={aboutButtonRef}
-                    onClick={() => {
-                      setIsAboutHovered(!isAboutHovered);
-                      setIsSolutionsHovered(false);
-                    }}
-                    className={`fl2-nav transition-colors flex items-center gap-1.5 focus:outline-none ${isActive || pathname === "/support" ? "!font-bold !text-[#000000]" : ""}`}
-                  >
-                    <span>{link.label}</span>
-                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" className={`transition-transform duration-300 ${isAboutHovered ? 'rotate-180' : ''}`}>
-                      <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
-                </div>
               );
             }
 
@@ -286,36 +250,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* About Us Dropdown — header level so backdrop-filter works */}
-      <div
-        className={`hidden lg:block absolute top-[100%] w-64 pt-4 pointer-events-none ${isAboutHovered ? 'visible' : 'invisible'}`}
-        style={{ left: `${aboutDropdownLeft}px`, transform: 'translateX(-50%)' }}
-      >
-        <div
-          className={`bg-[#0d0d0d]/50 backdrop-blur-2xl border border-white/10 rounded-2xl p-4 shadow-[0_20px_40px_-5px_rgba(0,0,0,0.4)] relative will-change-[backdrop-filter] transition-opacity duration-200 whitespace-normal ${isAboutHovered ? 'opacity-100' : 'opacity-0'}`}
-        >
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#4A90E2]/10 rounded-full blur-[60px] pointer-events-none" />
-          <div
-            className={`transition-all duration-300 ease-out pointer-events-auto flex flex-col gap-1 relative z-10 ${isAboutHovered ? 'opacity-100 translate-y-0 delay-[80ms]' : 'opacity-0 -translate-y-2 delay-0'}`}
-          >
-            {aboutDropdownItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsAboutHovered(false)}
-                className="group flex flex-col p-3 rounded-xl transition-all duration-300 hover:bg-white/[0.06] border border-transparent hover:border-white/5"
-              >
-                <span className="text-white font-semibold text-[15px] group-hover:text-brand-red transition-colors duration-300">
-                  {item.title}
-                </span>
-                <span className="text-gray-400 font-light text-[13px] leading-relaxed mt-0.5 group-hover:text-gray-300 transition-colors duration-300">
-                  {item.description}
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
+
       {/* Mobile Dropdown */}
       {isMobileMenuOpen && (
         <div
@@ -325,7 +260,6 @@ export default function Navbar() {
           {navLinks.map((link) => {
             const isActive = pathname === link.href || (link.href === "/solutions" && pathname.startsWith("/solutions"));
             const isSolutions = link.href === "/solutions";
-            const isAbout = link.href === "/about-us";
             return (
               <div key={link.href} className="border-b border-gray-200/30 pb-3 flex flex-col gap-3">
                 {isSolutions ? (
@@ -347,25 +281,7 @@ export default function Navbar() {
                       <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </button>
-                ) : isAbout ? (
-                  /* About us: toggle accordion */
-                  <button
-                    type="button"
-                    onClick={() => setIsMobileAboutOpen((prev) => !prev)}
-                    className={`fl2-nav flex items-center justify-between w-full text-left ${isActive || pathname === "/support" ? "!font-bold !text-[#000000]" : ""}`}
-                  >
-                    <span>{link.label}</span>
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`transform transition-transform duration-300 ${isMobileAboutOpen ? 'rotate-180' : 'rotate-0'}`}
-                    >
-                      <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
+
                 ) : (
                   <Link
                     href={link.href}
@@ -397,42 +313,10 @@ export default function Navbar() {
                         </span>
                       </Link>
                     ))}
-                    {/* Link to main Solutions page */}
-                    <Link
-                      href="/solutions"
-                      onClick={() => { setIsMobileMenuOpen(false); setIsMobileSolutionsOpen(false); }}
-                      className="text-brand-red font-semibold text-[14px] mt-1 mb-1 inline-flex items-center gap-1"
-                    >
-                      View all Solutions
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </Link>
                   </div>
                 )}
 
-                {/* Mobile About accordion */}
-                {isAbout && (
-                  <div
-                    className={`pl-4 flex flex-col gap-3 overflow-hidden transition-all duration-300 ease-in-out ${isMobileAboutOpen ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0 mt-0'}`}
-                  >
-                    {aboutDropdownItems.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={() => { setIsMobileMenuOpen(false); setIsMobileAboutOpen(false); }}
-                        className="flex flex-col group"
-                      >
-                        <span className="text-gray-800 font-medium text-[15px] group-hover:text-brand-red transition-colors">
-                          {item.title}
-                        </span>
-                        <span className="text-gray-500 text-[13px] leading-tight mt-1 text-wrap">
-                          {item.description}
-                        </span>
-                      </Link>
-                    ))}
-                  </div>
-                )}
+
               </div>
             );
           })}
