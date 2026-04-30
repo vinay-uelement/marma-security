@@ -29,6 +29,7 @@ export default function ManagementProductCard({
             alt={imageAlt}
             fill
             className="object-contain w-full h-full"
+            sizes="(max-width: 1280px) 100vw, 1280px"
           />
         ) : (
           <div aria-hidden="true" className="h-full w-full" />

@@ -161,7 +161,7 @@ export default function OurTopProduct() {
                       alt={product.name}
                       fill
                       className="object-contain object-center"
-                      sizes="(max-width: 768px) 100vw, 320px"
+                      sizes="(max-width: 640px) 260px, (max-width: 768px) 300px, 320px"
                     />
                   </div>
                 </div>

@@ -269,6 +269,7 @@ export default function Challengestab() {
                   width={600}
                   height={400}
                   className="w-full h-auto object-contain"
+                  sizes="(max-width: 600px) 100vw, 600px"
                 />
               </GlassWrapper>
             </div>
@@ -314,7 +315,7 @@ function DesktopContent({ data }: { data: TabData }) {
             alt={data.title}
             fill
             className="object-fill object-center rounded-[28px]"
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            sizes="(max-width: 1440px) 50vw, 720px"
           />
         </GlassWrapper>
       </div>

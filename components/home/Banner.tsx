@@ -165,6 +165,8 @@ export default function Banner({
             fill
             className="outgoing-bg object-cover object-center"
             priority={true}
+            sizes="(max-width: 1920px) 100vw, 1920px"
+            quality={70}
           />
         )}
         <Image
@@ -174,6 +176,8 @@ export default function Banner({
           className="incoming-bg object-cover object-center"
           priority={true}
           fetchPriority="high"
+          sizes="(max-width: 1920px) 100vw, 1920px"
+          quality={70}
         />
         {/* Dark Overlay */}
         {overlay && <div className="absolute inset-0 bg-black/70 z-[5]" />}
@@ -241,9 +245,10 @@ export default function Banner({
             <Image
               src={outgoingImage}
               alt={rightImageAlt}
-              width={1000}
-              height={1000}
+              width={700}
+              height={700}
               className="w-full h-auto object-contain"
+              sizes="(max-width: 1024px) 20vh, 50vh"
             />
           </div>
         )}
@@ -255,10 +260,11 @@ export default function Banner({
             <Image
               src={activeImage}
               alt={rightImageAlt}
-              width={1000}
-              height={1000}
+              width={700}
+              height={700}
               priority
               className="w-full h-auto object-contain"
+              sizes="(max-width: 1024px) 20vh, 50vh"
             />
           </div>
         )}

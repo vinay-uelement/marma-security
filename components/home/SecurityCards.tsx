@@ -148,7 +148,7 @@ export default function SecurityCards() {
                     src={card.image || ""}
                     alt={card.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1440px) 25vw, 350px"
                     className="object-cover"
                   />
                 </div>
