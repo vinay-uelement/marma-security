@@ -172,6 +172,20 @@ export default function Navbar() {
                 className="nav-icon"
               />
             </Link>
+
+            <Link
+              href="/store"
+              className="flex items-center justify-center transition-transform hover:scale-105"
+              aria-label="Store"
+            >
+              <Image
+                src="/images/global/shop-nav.svg"
+                alt="Store"
+                width={34}
+                height={34}
+                className="nav-icon"
+              />
+            </Link>
           </div>
 
           {/* Hamburger Menu Toggle (Mobile Only) */}
@@ -334,6 +348,21 @@ export default function Navbar() {
               className="nav-icon"
             />
             <span>Contact us</span>
+          </Link>
+
+          <Link
+            href="/store"
+            className="flex items-center gap-3 fl2-nav border-b border-gray-200/30 pb-3"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <Image
+              src="/images/global/shop-nav.svg"
+              alt="Store"
+              width={24}
+              height={24}
+              className="nav-icon"
+            />
+            <span>Store</span>
           </Link>
         </div>
       )}
