@@ -140,16 +140,15 @@ export default function SingleProductPage() {
       </div>
 
       {/* Middle Decorative Line */}
-      <div className="max-w-[1200px] w-full mx-auto relative mb-16 h-10">
-        <div className="hidden lg:block absolute right-0 top-0 w-[300px] pointer-events-none">
-          <DecorativeLine
-            viewBox="0 0 300 40"
-            points="20,20 300,20"
-            dots={[{ cx: 20, cy: 20 }]}
-            dotRadius={6}
-            strokeWidth={1}
-          />
-        </div>
+      <div className="flex flex-col w-[50%] sm:w-[40%] min-[901px]:w-[40%] ml-auto pointer-events-none z-0">
+        <DecorativeLine
+          viewBox="0 0 500 80"
+          points="-3000,40 200,40"
+          dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
+          className="w-full h-auto scale-x-[-1]"
+          dotRadius={6}
+          animationDuration={2.5}
+        />
       </div>
 
       {/* You may also like */}
