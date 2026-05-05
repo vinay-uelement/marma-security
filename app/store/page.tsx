@@ -51,7 +51,7 @@ export default async function StorePage() {
   });
 
   const buildHref = (product: any) => {
-    const id = product.id || (product.name || product.title || "product").toLowerCase().replace(/ /g, '-');
+    const slug = (product.name || product.title || product.id || "product").toLowerCase().replace(/ /g, '-');
     // We pass minimal required data to avoid huge URLs
     const data = {
       id: product.id,
@@ -63,7 +63,7 @@ export default async function StorePage() {
       images: product.images,
     };
     const encoded = encodeURIComponent(Buffer.from(JSON.stringify(data)).toString('base64'));
-    return `/store/${id}?data=${encoded}`;
+    return `/store/${slug}?data=${encoded}`;
   };
 
   return (

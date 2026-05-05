@@ -193,14 +193,20 @@ export default function ClientProductPage({ product, allProducts, productId }: {
           You may also like
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
-          {(allProducts?.length ? allProducts.filter((p: any) => p.id !== product?.id).slice(0, 3) : []).map((p: any, idx: number) => (
-            <ProductCard 
-              key={p.id || idx} 
-              name={p.name || p.title || "Product"} 
-              image={p.image || defaultImage} 
-              href={`/store/${p.id || (p.name || p.title || "product").toLowerCase().replace(/ /g, '-')}`} 
-            />
-          ))}
+          {(allProducts?.length ? allProducts.filter((p: any) => p.id !== product?.id).slice(0, 3) : []).map((p: any, idx: number) => {
+            const slug = (p.name || p.title || p.id || "product").toLowerCase().replace(/ /g, '-');
+            // Reusing the same optimization: encode product data to avoid refetching
+            const data = { id: p.id, name: p.name || p.title, description: p.description, subTitle: p.subTitle, price: p.price, image: p.image, images: p.images };
+            const encoded = encodeURIComponent(Buffer.from(JSON.stringify(data)).toString('base64'));
+            return (
+              <ProductCard 
+                key={p.id || idx} 
+                name={p.name || p.title || "Product"} 
+                image={p.image || defaultImage} 
+                href={`/store/${slug}?data=${encoded}`} 
+              />
+            );
+          })}
           {(!allProducts || allProducts.length <= 1) && (
             <>
               <ProductCard name="SafeBiz" image="/images/product/SafeEnterprise4001.webp" href="/store/safebiz" />
