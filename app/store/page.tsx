@@ -3,24 +3,67 @@ import StoreBanner from "@/components/store/StoreBanner";
 import HighlightedText from "@/components/global/HighlightedText";
 import DecorativeLine from "@/components/home/DecorativeLine";
 import ProductCard from "@/components/store/ProductCard";
+import { fetchApi } from "@/lib/api";
 
-export default function StorePage() {
-  const products = {
-    enterprise: [
-      { name: "Security Agent", image: "/images/product/SafeEnterprise4001.webp" },
-      { name: "Enter-400", image: "/images/product/SafeEnterprise4001.webp" },
-      { name: "Enter-100", image: "/images/product/SafeEnterprise4001.webp" },
-    ],
-    smb: [
-      { name: "SafeBiz", image: "/images/product/SafeEnterprise4001.webp" },
-      { name: "SafeHome", image: "/images/product/SafeEnterprise4001.webp" },
-      { name: "Email", image: "/images/product/SafeEnterprise4001.webp" },
-    ],
-    home: [
-      { name: "SafeBiz", image: "/images/product/SafeEnterprise4001.webp" },
-      { name: "SafeHome", image: "/images/product/SafeEnterprise4001.webp" },
-      { name: "Email", image: "/images/product/SafeEnterprise4001.webp" },
-    ],
+export const dynamic = 'force-dynamic';
+
+export default async function StorePage() {
+  let products: any[] = [];
+  try {
+    const response = await fetchApi('/api/v1/products/active', {
+      cache: 'no-store'
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      products = Array.isArray(data) ? data : (data?.data || []);
+    } else {
+      console.error('Failed to fetch products. Status:', response.status);
+    }
+  } catch (error) {
+    console.error('Error fetching products:', error);
+  }
+
+  // Fallback products if API returns empty
+  const defaultProducts = [
+    { id: "safeenterprise-400", name: "SafeEnterprise 400", category: "enterprise", image: "/images/product/SafeEnterprise4001.webp" },
+    { id: "safeenterprise-200", name: "SafeEnterprise 200", category: "enterprise", image: "/images/product/SafeEnterprise2001.webp" },
+    { id: "saferemote", name: "SafeEnterprise 100", category: "enterprise", image: "/images/product/Frame 209.webp" },
+    { id: "safebiz", name: "SafeBiz", category: "smb", image: "/images/banners/homepage-right-banner1.webp" },
+    { id: "safehome", name: "SafeHome", category: "home", image: "/images/banners/solution-banner-right1.webp" }
+  ];
+
+  const productsList = products.length > 0 ? products : defaultProducts;
+
+  const enterpriseProducts = productsList.filter((p: any) => {
+    const cat = p.category?.toLowerCase() || '';
+    return cat.includes('enterprise');
+  });
+
+  const smbProducts = productsList.filter((p: any) => {
+    const cat = p.category?.toLowerCase() || '';
+    return cat.includes('smb');
+  });
+
+  const homeProducts = productsList.filter((p: any) => {
+    const cat = p.category?.toLowerCase() || '';
+    return cat.includes('home');
+  });
+
+  const buildHref = (product: any) => {
+    const id = product.id || (product.name || product.title || "product").toLowerCase().replace(/ /g, '-');
+    // We pass minimal required data to avoid huge URLs
+    const data = {
+      id: product.id,
+      name: product.name || product.title,
+      description: product.description,
+      subTitle: product.subTitle,
+      price: product.price,
+      image: product.image,
+      images: product.images,
+    };
+    const encoded = encodeURIComponent(Buffer.from(JSON.stringify(data)).toString('base64'));
+    return `/store/${id}?data=${encoded}`;
   };
 
   return (
@@ -59,8 +102,8 @@ export default function StorePage() {
             Enterprise Solutions
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
-            {products.enterprise.map((product, index) => (
-              <ProductCard key={index} name={product.name} image={product.image} href={`/store/${product.name.toLowerCase().replace(/ /g, '-')}`} />
+            {enterpriseProducts.map((product, index) => (
+              <ProductCard key={product.id || index} name={product.name || product.title} image={product.image || "/images/product/SafeEnterprise4001.webp"} href={buildHref(product)} />
             ))}
           </div>
         </section>
@@ -71,8 +114,8 @@ export default function StorePage() {
             SMB Solutions
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
-            {products.smb.map((product, index) => (
-              <ProductCard key={index} name={product.name} image={product.image} href={`/store/${product.name.toLowerCase().replace(/ /g, '-')}`} />
+            {smbProducts.map((product, index) => (
+              <ProductCard key={product.id || index} name={product.name || product.title} image={product.image || "/images/product/SafeEnterprise4001.webp"} href={buildHref(product)} />
             ))}
           </div>
         </section>
@@ -83,8 +126,8 @@ export default function StorePage() {
             Home Solutions
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
-            {products.home.map((product, index) => (
-              <ProductCard key={index} name={product.name} image={product.image} href={`/store/${product.name.toLowerCase().replace(/ /g, '-')}`} />
+            {homeProducts.map((product, index) => (
+              <ProductCard key={product.id || index} name={product.name || product.title} image={product.image || "/images/product/SafeEnterprise4001.webp"} href={buildHref(product)} />
             ))}
           </div>
         </section>
