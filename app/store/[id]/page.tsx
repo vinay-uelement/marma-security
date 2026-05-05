@@ -5,11 +5,13 @@ import Image from "next/image";
 import DecorativeLine from "@/components/home/DecorativeLine";
 import ProductCard from "@/components/store/ProductCard";
 import SlidingTabs from "@/components/global/SlidingTabs";
+import { useCart } from "@/context/CartContext";
 
 export default function SingleProductPage() {
   const [qty, setQty] = useState(1);
   const [activeTab, setActiveTab] = useState("Description");
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const { addItem } = useCart();
 
   const productImages = [
     "/images/product/SafeEnterprise4001.webp",
@@ -97,10 +99,36 @@ export default function SingleProductPage() {
           </div>
 
           <div className="flex gap-4 max-w-md">
-            <button className="flex-1 py-2.5 border border-gray-200 rounded-full font-medium text-black hover:bg-gray-50 transition-colors bg-[#F9F9F9]">
+            <button
+              className="flex-1 py-2.5 border border-gray-200 rounded-full font-medium text-black hover:bg-gray-50 transition-colors bg-[#F9F9F9]"
+              onClick={() =>
+                addItem(
+                  {
+                    id: "safehome",
+                    name: "SafeHome",
+                    image: productImages[0],
+                    price: 479.99,
+                  },
+                  qty
+                )
+              }
+            >
               Add to Cart
             </button>
-            <button className="flex-1 py-2.5 border border-red-100 bg-white shadow-[0_0_10px_rgba(255,0,0,0.05)] rounded-full font-medium text-red-500 hover:bg-red-50 transition-colors">
+            <button
+              className="flex-1 py-2.5 border border-red-100 bg-white shadow-[0_0_10px_rgba(255,0,0,0.05)] rounded-full font-medium text-red-500 hover:bg-red-50 transition-colors"
+              onClick={() =>
+                addItem(
+                  {
+                    id: "safehome",
+                    name: "SafeHome",
+                    image: productImages[0],
+                    price: 479.99,
+                  },
+                  qty
+                )
+              }
+            >
               Buy Now
             </button>
           </div>

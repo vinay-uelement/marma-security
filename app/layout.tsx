@@ -4,6 +4,7 @@ import Navbar from "@/components/global/Navbar";
 import Footer from "@/components/global/Footer";
 import "./globals.css";
 import CookieConsent from "@/components/global/CookieConsent";
+import ClientProviders from "@/components/global/ClientProviders";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.marmasec.com";
 
@@ -163,10 +164,12 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${ibmPlexSans.variable} ${sora.variable} antialiased flex flex-col min-h-screen overflow-x-clip`}
       >
-        <Navbar />
-        <main className="flex-grow ">{children}</main>
-        <Footer />
-        <CookieConsent />
+        <ClientProviders>
+          <Navbar />
+          <main className="flex-grow ">{children}</main>
+          <Footer />
+          <CookieConsent />
+        </ClientProviders>
       </body>
     </html>
   );
