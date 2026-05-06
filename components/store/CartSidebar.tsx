@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 
 export default function CartSidebar() {
   const {
@@ -15,6 +16,8 @@ export default function CartSidebar() {
     totalItems,
     totalPrice,
   } = useCart();
+  
+  const { formatPrice } = useCurrency();
 
   const sidebarRef = useRef<HTMLDivElement>(null);
 
@@ -183,7 +186,7 @@ export default function CartSidebar() {
 
                       {/* Price */}
                       <span className="font-bold text-sm text-black">
-                        ${(item.price * item.quantity).toFixed(2)}
+                        {formatPrice(item.price * item.quantity)}
                       </span>
                     </div>
                   </div>
@@ -200,7 +203,7 @@ export default function CartSidebar() {
             <div className="flex justify-between items-center">
               <span className="text-sm text-gray-500">Subtotal</span>
               <span className="text-lg font-bold text-black">
-                ${totalPrice.toFixed(2)}
+                {formatPrice(totalPrice)}
               </span>
             </div>
 

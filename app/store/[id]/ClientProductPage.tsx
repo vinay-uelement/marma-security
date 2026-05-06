@@ -6,12 +6,14 @@ import DecorativeLine from "@/components/home/DecorativeLine";
 import ProductCard from "@/components/store/ProductCard";
 import SlidingTabs from "@/components/global/SlidingTabs";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 
 export default function ClientProductPage({ product, allProducts, productId }: { product?: any, allProducts?: any[], productId: string }) {
   const [qty, setQty] = useState(1);
   const [activeTab, setActiveTab] = useState("Description");
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const { addItem } = useCart();
+  const { formatPrice } = useCurrency();
 
   const fallbackName = "SafeHome";
   const fallbackDesc = "AI-Powered Plug-and-Play Home Firewall with Parental Controls";
@@ -103,7 +105,7 @@ export default function ClientProductPage({ product, allProducts, productId }: {
                 </button>
               </div>
             </div>
-            <div className="text-2xl font-bold text-black">${productPrice}</div>
+            <div className="text-2xl font-bold text-black">{formatPrice(productPrice)}</div>
           </div>
 
           <div className="flex gap-4 max-w-md">
