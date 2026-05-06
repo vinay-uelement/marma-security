@@ -18,7 +18,7 @@ export default function FloatingCartButton() {
       <div className="absolute inset-0 rounded-full bg-red-500/20 animate-ping" style={{ animationDuration: "2s" }} />
 
       {/* Main button */}
-      <div className="relative w-14 h-14 bg-black rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.25)] transition-transform group-hover:scale-110 group-active:scale-95">
+      <div className="relative w-14 h-14 bg-text-dark rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.25)] transition-transform group-hover:scale-110 group-active:scale-95">
         {/* Cart Icon */}
         <svg
           width="22"

@@ -22,7 +22,7 @@ export default function ClientProductPage({ product, allProducts, productId }: {
   const productName = product?.name || product?.title || fallbackName;
   const productDesc = product?.description || fallbackDesc;
   const productPrice = product?.price || 479.99;
-  
+
   // Use product images if available, otherwise fallbacks
   const productImages = product?.images?.length ? product.images : [
     product?.image || defaultImage,
@@ -46,8 +46,10 @@ export default function ClientProductPage({ product, allProducts, productId }: {
         <div className="flex flex-col gap-4">
           <div className="bg-[#F6F6F6] rounded-xl relative aspect-square lg:aspect-[4/3] flex items-center justify-center p-8">
             {/* Bestseller Badge */}
-            <div className="absolute top-8 right-0 bg-gradient-to-r from-red-400 to-red-600 text-white text-xs font-bold px-5 py-1.5 rounded-l-md z-10">
-              Bestseller
+            <div className="absolute z-10 top-8 right-0 bg-gradient-to-r from-transparent via-red-500 to-red-600 px-5 py-1.5 flex items-center justify-end w-[130px]">
+              <span className="text-white text-xs font-bold mt-0.5">
+                Bestseller
+              </span>
             </div>
             <Image
               src={productImages[activeImageIndex]}
@@ -201,11 +203,11 @@ export default function ClientProductPage({ product, allProducts, productId }: {
             const data = { id: p.id, name: p.name || p.title, description: p.description, subTitle: p.subTitle, price: p.price, image: p.image, images: p.images };
             const encoded = encodeURIComponent(Buffer.from(JSON.stringify(data)).toString('base64'));
             return (
-              <ProductCard 
-                key={p.id || idx} 
-                name={p.name || p.title || "Product"} 
-                image={p.image || defaultImage} 
-                href={`/store/${slug}?data=${encoded}`} 
+              <ProductCard
+                key={p.id || idx}
+                name={p.name || p.title || "Product"}
+                image={p.image || defaultImage}
+                href={`/store/${slug}?data=${encoded}`}
               />
             );
           })}
