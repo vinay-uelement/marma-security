@@ -207,13 +207,6 @@ export default function ClientProductPage({ product, allProducts, productId }: {
               />
             );
           })}
-          {(!allProducts || allProducts.length <= 1) && (
-            <>
-              <ProductCard name="SafeBiz" image="/images/product/SafeEnterprise4001.webp" href="/store/safebiz" />
-              <ProductCard name="SafeHome" image="/images/product/SafeEnterprise4001.webp" href="/store/safehome" />
-              <ProductCard name="Email" image="/images/product/SafeEnterprise4001.webp" href="/store/email" />
-            </>
-          )}
         </div>
       </div>
 

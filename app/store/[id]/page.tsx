@@ -21,27 +21,24 @@ export default async function Page({ params, searchParams }: { params: Promise<{
     }
   }
 
-  // If no product data was passed (e.g. direct link navigation), or if we still want all products for recommendations,
-  // we can fetch. But if we want to optimize, we can skip fetching if product is already there and we don't strictly need allProducts.
-  // We'll still fetch allProducts if we need them for recommendations, but the user explicitly asked NOT to fetch products again.
-  // So we skip it if product exists.
-  if (!product) {
-    try {
-      const response = await fetchApi('/api/v1/products/active', {
-        cache: 'no-store'
-      });
+  // We always fetch active products for the 'You may also like' section
+  try {
+    const response = await fetchApi('/api/v1/products/active', {
+      cache: 'no-store'
+    });
 
-      if (response.ok) {
-        const data = await response.json();
-        products = Array.isArray(data) ? data : (data?.data || []);
-      } else {
-        console.error('Failed to fetch products. Status:', response.status);
-      }
-    } catch (error) {
-      console.error('Error fetching products:', error);
+    if (response.ok) {
+      const data = await response.json();
+      products = Array.isArray(data) ? data : (data?.data || []);
+    } else {
+      console.error('Failed to fetch products. Status:', response.status);
     }
+  } catch (error) {
+    console.error('Error fetching products:', error);
+  }
 
-    // Find the specific product
+  // If no product data was passed in the URL, find it from the fetched products
+  if (!product) {
     product = products.find((p: any) => p.id === id || (p.name || p.title || "").toLowerCase().replace(/ /g, '-') === id.toLowerCase());
   }
 
