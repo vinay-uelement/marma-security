@@ -213,13 +213,6 @@ export default function ClientProductPage({ product, allProducts, productId }: {
           })}
         </div>
       </div>
-
-      {/* Footer Text */}
-      <div className="pb-16 w-full text-center px-4">
-        <p className="font-bold text-black lg:text-xl">
-          Security Agent, Enter-400, Enter-200, Enter-100, SafeBiz, SafeHome, Email, Cloud
-        </p>
-      </div>
     </main>
   );
 }

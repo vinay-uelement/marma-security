@@ -85,10 +85,28 @@ export default async function StorePage() {
         />
       </div>
 
-      <div className="w-full max-w-[1200px] mx-auto px-6 lg:px-16 pt-16 lg:pt-24 relative">
+      <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-16 pt-16 lg:pt-24 relative">
+        <div className="flex flex-col w-[50%] sm:w-[40%] min-[901px]:w-[35%] ml-auto pointer-events-none z-0">
+          <DecorativeLine
+            viewBox="0 0 500 80"
+            points="-3000,40 200,40"
+            dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
+            className="w-full h-auto scale-x-[-1]"
+            dotRadius={6}
+            animationDuration={2.5}
+          />
+          <DecorativeLine
+            viewBox="0 0 500 120"
+            points="150,20 210,90 3000,90"
+            dots={[{ cx: 150, cy: 20, rippleCount: 4, rippleBaseDelay: 0.9 }]}
+            className="w-full h-auto -mt-10 md:-mt-24"
+            dotRadius={7}
+            animationDuration={3}
+          />
+        </div>
         <div className="flex flex-col lg:flex-row justify-between items-start mb-16 relative">
           <div className="z-10 bg-white pr-4">
-            <h2 className="font-bold text-black text-xl lg:text-2xl mb-1">New</h2>
+            {/* <h2 className="font-bold text-black text-xl lg:text-2xl mb-1">New</h2> */}
             <h2 className="font-bold text-black text-xl lg:text-2xl">
               Order Marma Security Products
             </h2>
@@ -101,7 +119,7 @@ export default async function StorePage() {
           <h3 className="text-xl lg:text-2xl font-semibold text-[#999999] mb-8">
             Enterprise Solutions
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-0">
             {enterpriseProducts.map((product, index) => (
               <ProductCard key={product.id || index} name={product.name || product.title} image={product.image || "/images/product/SafeEnterprise4001.webp"} href={buildHref(product)} />
             ))}
@@ -113,7 +131,7 @@ export default async function StorePage() {
           <h3 className="text-xl lg:text-2xl font-semibold text-[#999999] mb-8">
             SMB Solutions
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-2">
             {smbProducts.map((product, index) => (
               <ProductCard key={product.id || index} name={product.name || product.title} image={product.image || "/images/product/SafeEnterprise4001.webp"} href={buildHref(product)} />
             ))}
@@ -125,19 +143,13 @@ export default async function StorePage() {
           <h3 className="text-xl lg:text-2xl font-semibold text-[#999999] mb-8">
             Home Solutions
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-2">
             {homeProducts.map((product, index) => (
               <ProductCard key={product.id || index} name={product.name || product.title} image={product.image || "/images/product/SafeEnterprise4001.webp"} href={buildHref(product)} />
             ))}
           </div>
         </section>
 
-        {/* Footer Text */}
-        <div className="pt-12 pb-24 relative">
-          <p className="text-center font-bold text-black lg:text-xl max-w-4xl mx-auto z-10 relative bg-white px-4">
-            Security Agent, Enter-400, Enter-200, Enter-100, SafeBiz, SafeHome, Email, Cloud
-          </p>
-        </div>
       </div>
     </main>
   );
