@@ -7,6 +7,7 @@ import ProductCard from "@/components/store/ProductCard";
 import SlidingTabs from "@/components/global/SlidingTabs";
 import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
+import { useRouter } from "next/navigation";
 
 export default function ClientProductPage({ product, allProducts, productId }: { product?: any, allProducts?: any[], productId: string }) {
   const [qty, setQty] = useState(1);
@@ -14,6 +15,21 @@ export default function ClientProductPage({ product, allProducts, productId }: {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const { addItem } = useCart();
   const { formatPrice } = useCurrency();
+  const router = useRouter();
+
+  const handleBuyNow = () => {
+    addItem(
+      {
+        id: product?.id || productId,
+        name: productName,
+        image: productImages[0],
+        price: productPrice,
+      },
+      qty
+    );
+    const orderId = "ORD-" + Math.random().toString(36).substring(2, 9).toUpperCase();
+    router.push(`/order/${orderId}`);
+  };
 
   const fallbackName = "SafeHome";
   const fallbackDesc = "AI-Powered Plug-and-Play Home Firewall with Parental Controls";
@@ -129,17 +145,7 @@ export default function ClientProductPage({ product, allProducts, productId }: {
             </button>
             <button
               className="flex-1 py-2.5 border border-red-100 bg-white shadow-[0_0_10px_rgba(255,0,0,0.05)] rounded-full font-medium text-red-500 hover:bg-red-50 transition-colors"
-              onClick={() =>
-                addItem(
-                  {
-                    id: product?.id || productId,
-                    name: productName,
-                    image: productImages[0],
-                    price: productPrice,
-                  },
-                  qty
-                )
-              }
+              onClick={handleBuyNow}
             >
               Buy Now
             </button>

@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
 
@@ -18,8 +19,15 @@ export default function CartSidebar() {
   } = useCart();
   
   const { formatPrice } = useCurrency();
+  const router = useRouter();
 
   const sidebarRef = useRef<HTMLDivElement>(null);
+
+  const handleCheckout = () => {
+    const orderId = "ORD-" + Math.random().toString(36).substring(2, 9).toUpperCase();
+    closeCart();
+    router.push(`/order/${orderId}`);
+  };
 
   // Close on Escape key
   useEffect(() => {
@@ -215,7 +223,7 @@ export default function CartSidebar() {
             <div className="space-y-2.5">
               <button
                 className="w-full py-3 bg-red-500 hover:bg-red-600 text-white font-semibold text-sm rounded-full transition-colors"
-                onClick={closeCart}
+                onClick={handleCheckout}
               >
                 Checkout
               </button>
