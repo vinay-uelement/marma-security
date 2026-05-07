@@ -1,36 +1,89 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV === "development";
+
+const ContentSecurityPolicy = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://www.recaptcha.net",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com",
+  "img-src 'self' data: blob: https:",
+  "font-src 'self' data: https://fonts.gstatic.com https://api.fontshare.com",
+  isDev
+    ? "connect-src 'self' https: ws://127.0.0.1:* ws://localhost:*"
+    : "connect-src 'self' https:",
+  "form-action 'self' https://formsubmit.co",
+  "frame-src https://www.google.com https://www.recaptcha.net https://formsubmit.co",
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+].join("; ");
+
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
+
   images: {
     minimumCacheTTL: 31536000,
+    qualities: [70, 75],
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'www.marmasec.com',
+        protocol: "https",
+        hostname: "www.marmasec.com",
       },
       {
-        protocol: 'https',
-        hostname: 'marma-security.vercel.app',
+        protocol: "https",
+        hostname: "marma-security.vercel.app",
       },
     ],
   },
+
   async headers() {
     return [
+      // ─── Security headers on ALL routes ───────────────────────────────
       {
-        source: '/images/:path*',
+        source: "/(.*)",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            key: "Strict-Transport-Security",
+            value: "max-age=31536000; includeSubDomains; preload",
+          },
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          {
+            key: "X-Frame-Options",
+            value: "DENY",
+          },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), payment=()",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: ContentSecurityPolicy,
+          },
+        ],
+      },
+
+      // ─── Cache headers  ──────────────
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
       {
-        source: '/favicon.ico',
+        source: "/favicon.ico",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
