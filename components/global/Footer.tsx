@@ -81,6 +81,12 @@ export default function Footer() {
                 >
                   Privacy
                 </Link>
+                <Link
+                  href="/account-deletion"
+                  className="hover:text-white/70 transition-colors"
+                >
+                  Account Deletion
+                </Link>
               </div>
 
 
@@ -232,6 +238,12 @@ export default function Footer() {
                     className="hover:text-white/70 transition-colors"
                   >
                     Privacy
+                  </Link>
+                  <Link
+                    href="/account-deletion"
+                    className="hover:text-white/70 transition-colors"
+                  >
+                    Account Deletion
                   </Link>
                 </div>
 
