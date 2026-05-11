@@ -4,7 +4,7 @@ const isDev = process.env.NODE_ENV === "development";
 
 const ContentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://www.recaptcha.net",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://www.recaptcha.net https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com",
   "img-src 'self' data: blob: https:",
   "object-src 'none'",
@@ -13,7 +13,7 @@ const ContentSecurityPolicy = [
     ? "connect-src 'self' https: ws://127.0.0.1:* ws://localhost:*"
     : "connect-src 'self' https:",
   "form-action 'self' https://formsubmit.co",
-  "frame-src https://www.google.com https://www.recaptcha.net https://formsubmit.co",
+  "frame-src https://www.google.com https://www.recaptcha.net https://formsubmit.co https://www.googletagmanager.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
 ].join("; ");
