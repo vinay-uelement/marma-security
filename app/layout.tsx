@@ -36,6 +36,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Marma Security" }],
   creator: "Marma Security",
   publisher: "Marma Security",
+  verification: {
+    google: "cd0441ae8c912146",
+  },
   robots: {
     index: true,
     follow: true,
@@ -89,9 +92,7 @@ export default function RootLayout({
     logo: `${BASE_URL}/images/global/logo.svg`,
     description:
       "A cybersecurity firm dedicated to Redefining Cybersecurity Through Simplicity, offering automated network-level protection.",
-    sameAs: [
-      "https://www.linkedin.com/company/marmasecurity/",
-    ],
+    sameAs: ["https://www.linkedin.com/company/marmasecurity/"],
   };
 
   // Structured Data - Website Schema
