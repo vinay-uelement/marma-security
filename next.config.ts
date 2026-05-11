@@ -7,6 +7,7 @@ const ContentSecurityPolicy = [
   "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://www.recaptcha.net",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com",
   "img-src 'self' data: blob: https:",
+  "object-src 'none'",
   "font-src 'self' data: https://fonts.gstatic.com https://api.fontshare.com",
   isDev
     ? "connect-src 'self' https: ws://127.0.0.1:* ws://localhost:*"
