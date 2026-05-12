@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
+import { useAuth } from "@/context/AuthContext";
 
 export default function CartSidebar() {
   const {
@@ -19,11 +20,27 @@ export default function CartSidebar() {
   } = useCart();
   
   const { formatPrice } = useCurrency();
+  const { isAuthenticated, openAuthModal, setPendingCheckout, pendingCheckout } = useAuth();
   const router = useRouter();
 
   const sidebarRef = useRef<HTMLDivElement>(null);
 
+  // When user authenticates with a pending checkout, proceed
+  useEffect(() => {
+    if (isAuthenticated && pendingCheckout) {
+      setPendingCheckout(false);
+      const orderId = "ORD-" + Math.random().toString(36).substring(2, 9).toUpperCase();
+      closeCart();
+      router.push(`/order/${orderId}`);
+    }
+  }, [isAuthenticated, pendingCheckout, setPendingCheckout, closeCart, router]);
+
   const handleCheckout = () => {
+    if (!isAuthenticated) {
+      setPendingCheckout(true);
+      openAuthModal();
+      return;
+    }
     const orderId = "ORD-" + Math.random().toString(36).substring(2, 9).toUpperCase();
     closeCart();
     router.push(`/order/${orderId}`);
