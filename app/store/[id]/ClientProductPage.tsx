@@ -42,9 +42,6 @@ export default function ClientProductPage({ product, allProducts, productId }: {
   // Use product images if available, otherwise fallbacks
   const productImages = product?.images?.length ? product.images : [
     product?.image || defaultImage,
-    "/images/product/SafeEnterprise4002.webp",
-    "/images/product/SafeEnterprise4001.webp",
-    "/images/product/SafeEnterprise4002.webp",
   ];
 
   return (
@@ -159,7 +156,6 @@ export default function ClientProductPage({ product, allProducts, productId }: {
           tabs={[
             { id: "Description", label: "Description" },
             { id: "Additional Information", label: "Additional Information" },
-            { id: "Review", label: "Review" },
           ]}
           activeTabId={activeTab}
           onChange={setActiveTab}
@@ -169,20 +165,18 @@ export default function ClientProductPage({ product, allProducts, productId }: {
           containerClassName="relative mb-10 flex justify-center w-full"
         />
 
-        <div className="max-w-4xl mx-auto text-[#666666] text-sm leading-relaxed space-y-6">
-          <p>
-            High Performance Next-Gen Firewall with Web Filtering, Protection from Phishing/Ransomware/Malicious Websites and Provides Parental Control.
-          </p>
-          <p>
-            Marma Security protects all internet-connected devices in Home with its AI-powered CyberSecurity Platform, which is managed in the cloud. The platform enforces security policies and provides threat protection at the user&apos;s premises using the on-premise SafeHome High Performance Firewall. SafeHome is a wireless plug-and-play Firewall device fully autonomously managed from the cloud-based cybersecurity platform. It can be deployed in minutes to secure a home network. A single SafeHome security gateway can secure up to 64 internet - connected devices, provide an aggregate throughput of 4.3 Gbps, and is Wi-Fi6E ready.
-          </p>
-          <p>
-            High Performance Next-Gen Firewall with Web Filtering, Protection from Phishing/Ransomware/Malicious Websites and Provides Parental Control.
-          </p>
-          <p>
-            Marma Security protects all internet-connected devices in Home with its AI-powered CyberSecurity Platform, which is managed in the cloud. The platform enforces security policies and provides threat protection at the user&apos;s premises using the on-premise SafeHome High Performance Firewall. SafeHome is a wireless plug-and-play Firewall device fully autonomously managed from the cloud-based cybersecurity platform. It can be deployed in minutes to secure a home network. A single SafeHome security gateway can secure up to 64 internet - connected devices, provide an aggregate throughput of 4.3 Gbps, and is Wi-Fi6E ready.
-          </p>
-        </div>
+        {activeTab === "Description" ? (
+          <div className="max-w-4xl mx-auto text-[#666666] text-sm leading-relaxed space-y-6">
+            <p>
+              High Performance Next-Gen Firewall with Web Filtering, Protection from Phishing/Ransomware/Malicious Websites and Provides Parental Control.
+            </p>
+            <p>
+              Marma Security protects all internet-connected devices in Home with its AI-powered CyberSecurity Platform, which is managed in the cloud. The platform enforces security policies and provides threat protection at the user&apos;s premises using the on-premise SafeHome High Performance Firewall. SafeHome is a wireless plug-and-play Firewall device fully autonomously managed from the cloud-based cybersecurity platform. It can be deployed in minutes to secure a home network. A single SafeHome security gateway can secure up to 64 internet - connected devices, provide an aggregate throughput of 4.3 Gbps, and is Wi-Fi6E ready.
+            </p>
+          </div>
+        ) : (
+          <SpecificationTable product={product} />
+        )}
       </div>
 
       {/* Middle Decorative Line */}
@@ -220,5 +214,118 @@ export default function ClientProductPage({ product, allProducts, productId }: {
         </div>
       </div>
     </main>
+  );
+}
+
+/* ─── Specification Table (matches product page style) ─── */
+
+interface SpecItem {
+  label: string;
+  value: string;
+}
+
+const homeSpecs: SpecItem[] = [
+  { label: "Form Factor", value: "Desktop" },
+  { label: "Throughput", value: "1 Gbps" },
+  { label: "WAN Ports", value: "1 x 2.5 Gbps" },
+  { label: "LAN Ports", value: "4 x 1 Gbps (Ethernet)" },
+  { label: "Integrated Wi-Fi", value: "Wi-Fi 5 / 6E" },
+  { label: "Recommended Users", value: "Up to 64" },
+];
+
+const enterprise200Specs: SpecItem[] = [
+  { label: "Form Factor", value: "1U Rack Mounted" },
+  { label: "Throughput", value: "2 Gbps" },
+  { label: "WAN Ports", value: "2 x 2.5 Gbps" },
+  { label: "LAN Ports", value: "10 x 1 Gbps (Ethernet / PoE / SFP options)" },
+  { label: "Integrated Wi-Fi", value: "Wi-Fi 6E / 7" },
+  { label: "Recommended Users", value: "Up to 200" },
+];
+
+const enterprise400Specs: SpecItem[] = [
+  { label: "Form Factor", value: "2U Rack Mounted" },
+  { label: "Throughput", value: "10 Gbps" },
+  { label: "WAN Ports", value: "1 x 10 Gbps, 2 x 2.5 Gbps" },
+  { label: "LAN Ports", value: "24 x 1 Gbps (Ethernet / PoE / SFP options)" },
+  { label: "Integrated Wi-Fi", value: "Wi-Fi 6E / 7" },
+  { label: "Recommended Users", value: "Up to 400" },
+];
+
+const smbSpecs: SpecItem[] = [
+  { label: "Form Factor", value: "Table-top / Wall-mounted" },
+  { label: "Throughput", value: "1 Gbps" },
+  { label: "WAN Ports", value: "1 x 2.5 Gbps" },
+  { label: "LAN Ports", value: "4 x 1 Gbps (Ethernet)" },
+  { label: "Integrated Wi-Fi", value: "Wi-Fi 5 / 6E" },
+  { label: "Recommended Users", value: "Up to 64" },
+];
+
+function getSpecsForProduct(product: any): SpecItem[] {
+  // If the API returned keyCapabilities, use those
+  if (product?.keyCapabilities?.length) {
+    return product.keyCapabilities.map((c: any) => ({
+      label: c.title,
+      value: c.description,
+    }));
+  }
+  // If there are explicit specifications on the product, use those
+  if (product?.specifications?.length) {
+    return product.specifications;
+  }
+  // Fallback: infer from name
+  const name = (product?.name || product?.title || "").toLowerCase();
+  if (name.includes("400")) return enterprise400Specs;
+  if (name.includes("200")) return enterprise200Specs;
+  if (name.includes("smb") || name.includes("100") || name.includes("remote")) return smbSpecs;
+  return homeSpecs;
+}
+
+function SpecificationTable({ product }: { product: any }) {
+  const specs = getSpecsForProduct(product);
+  const midpoint = Math.ceil(specs.length / 2);
+  const groups = [specs.slice(0, midpoint), specs.slice(midpoint)].filter(
+    (g) => g.length > 0
+  );
+
+  return (
+    <div className="flex max-md:flex-col gap-5 lg:items-start lg:gap-7 max-w-4xl mx-auto">
+      {groups.map((group, groupIndex) => (
+        <div
+          key={`spec-group-${groupIndex}`}
+          className="self-start overflow-hidden rounded-lg bg-[#F6F6F6] grow max-md:w-full"
+        >
+          <table className="h-auto w-full table-auto border-separate border-spacing-0">
+            <colgroup>
+              <col className="w-[36%]" />
+              <col />
+            </colgroup>
+            <tbody>
+              {group.map((item, itemIndex) => {
+                const isLastItem = itemIndex === group.length - 1;
+                const rowBorderClass = isLastItem
+                  ? ""
+                  : "border-b border-dashed border-[#D7D7D7]";
+
+                return (
+                  <tr key={`${item.label}-${item.value}`}>
+                    <th
+                      scope="row"
+                      className={`text-xs md:text-sm font-bold px-3 py-2 text-left align-middle md:px-5 md:py-3 text-nowrap ${rowBorderClass} border-r border-dashed border-[#D7D7D7]`}
+                    >
+                      {item.label}
+                    </th>
+                    <td
+                      className={`text-xs md:text-sm font-medium px-3 py-2 align-middle md:px-5 md:py-3 text-nowrap ${rowBorderClass}`}
+                    >
+                      {item.value}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      ))}
+    </div>
   );
 }
