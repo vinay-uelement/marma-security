@@ -25,13 +25,12 @@ export default function CartSidebar() {
 
   const sidebarRef = useRef<HTMLDivElement>(null);
 
-  // When user authenticates with a pending checkout, proceed
+  // When user authenticates with a pending checkout, proceed to checkout
   useEffect(() => {
     if (isAuthenticated && pendingCheckout) {
       setPendingCheckout(false);
-      const orderId = "ORD-" + Math.random().toString(36).substring(2, 9).toUpperCase();
       closeCart();
-      router.push(`/order/${orderId}`);
+      router.push(`/order/checkout`);
     }
   }, [isAuthenticated, pendingCheckout, setPendingCheckout, closeCart, router]);
 
@@ -41,9 +40,8 @@ export default function CartSidebar() {
       openAuthModal();
       return;
     }
-    const orderId = "ORD-" + Math.random().toString(36).substring(2, 9).toUpperCase();
     closeCart();
-    router.push(`/order/${orderId}`);
+    router.push(`/order/checkout`);
   };
 
   // Close on Escape key

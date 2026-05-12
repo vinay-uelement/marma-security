@@ -1,6 +1,14 @@
 "use client";
 
-import React, { createContext, useContext, useState, useCallback } from "react";
+import React, { createContext, useContext, useState, useCallback, useEffect } from "react";
+import { useAuth } from "./AuthContext";
+import {
+  fetchCart,
+  addToCart,
+  updateCartItemQuantity,
+  removeCartItem,
+  clearCart as clearCartApi,
+} from "@/lib/cartApi";
 
 export interface CartItem {
   id: string;
@@ -29,6 +37,30 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+  const { isAuthenticated } = useAuth();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      const token = localStorage.getItem("marma_access_token");
+      if (token) {
+        fetchCart(token)
+          .then((cart) => {
+            if (cart && cart.items) {
+              setItems(
+                cart.items.map((i) => ({
+                  id: i.productId,
+                  name: i.name,
+                  image: i.image || "",
+                  price: i.price,
+                  quantity: i.quantity,
+                }))
+              );
+            }
+          })
+          .catch((err) => console.error("Failed to fetch cart:", err));
+      }
+    }
+  }, [isAuthenticated]);
 
   const openCart = useCallback(() => setIsOpen(true), []);
   const closeCart = useCallback(() => setIsOpen(false), []);
@@ -48,12 +80,26 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         return [...prev, { ...item, quantity }];
       });
       setIsOpen(true);
+
+      const token = localStorage.getItem("marma_access_token");
+      if (token) {
+        addToCart(token, item.id, quantity).catch((err) =>
+          console.error("Failed to add to cart:", err)
+        );
+      }
     },
     []
   );
 
   const removeItem = useCallback((id: string) => {
     setItems((prev) => prev.filter((i) => i.id !== id));
+
+    const token = localStorage.getItem("marma_access_token");
+    if (token) {
+      removeCartItem(token, id).catch((err) =>
+        console.error("Failed to remove cart item:", err)
+      );
+    }
   }, []);
 
   const updateQuantity = useCallback((id: string, quantity: number) => {
@@ -61,10 +107,24 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     setItems((prev) =>
       prev.map((i) => (i.id === id ? { ...i, quantity } : i))
     );
+
+    const token = localStorage.getItem("marma_access_token");
+    if (token) {
+      updateCartItemQuantity(token, id, quantity).catch((err) =>
+        console.error("Failed to update cart item quantity:", err)
+      );
+    }
   }, []);
 
   const clearCart = useCallback(() => {
     setItems([]);
+
+    const token = localStorage.getItem("marma_access_token");
+    if (token) {
+      clearCartApi(token).catch((err) =>
+        console.error("Failed to clear cart:", err)
+      );
+    }
   }, []);
 
   const totalItems = items.reduce((sum, i) => sum + i.quantity, 0);
