@@ -21,6 +21,7 @@ export interface ShippingAddress {
 
 export interface CreateOrderPayload {
   customerInfo: CustomerInfo;
+  currency: string;
   shippingAddress: ShippingAddress;
 }
 
