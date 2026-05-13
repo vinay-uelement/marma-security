@@ -8,6 +8,7 @@ import ApplicationForm from "./ApplicationForm";
 const jobs = [
   {
     id: 1,
+    isFilled: true,
     title: "Digital Marketing Executive (1-3 Years)",
     department: "Marketing",
     location: "Pune, India",
@@ -79,6 +80,12 @@ export default function JobBoard() {
                       <span className="flex items-center gap-1.5 text-[#94A3B8] text-[14px]">
                         <Clock className="w-4 h-4" /> {job.type}
                       </span>
+                      {job.isFilled && (
+                        <span className="bg-slate-100 text-slate-500 text-[12px] font-bold px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1.5 border border-slate-200">
+                          <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
+                          Filled
+                        </span>
+                      )}
                     </div>
                     <h3 className="font-banner text-[24px] md:text-[28px] text-[#1E293B] group-hover:text-brand-red transition-colors">
                       {job.title}
@@ -100,7 +107,11 @@ export default function JobBoard() {
                       {isExpanded ? (
                         <>Close Details <ChevronUp className="w-5 h-5" /></>
                       ) : (
-                        <>Apply Now <ArrowUpRight className="w-5 h-5" /></>
+                        job.isFilled ? (
+                          <>Position Filled <CheckCircle2 className="w-5 h-5" /></>
+                        ) : (
+                          <>Apply Now <ArrowUpRight className="w-5 h-5" /></>
+                        )
                       )}
                     </button>
                   </div>
@@ -174,6 +185,7 @@ export default function JobBoard() {
                           <ApplicationForm
                             job={job}
                             onSuccess={() => { }}
+                            isFilled={job.isFilled}
                           />
                         </div>
                       </div>
