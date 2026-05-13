@@ -19,9 +19,7 @@ export default function OrderReviewPage({ params }: { params: Promise<{ id: stri
   const { currency, formatPrice } = useCurrency();
   const { user } = useAuth();
 
-  const taxRate = 0.08;
-  const taxAmount = totalPrice * taxRate;
-  const finalTotal = totalPrice + taxAmount;
+  const finalTotal = totalPrice;
 
   // ─── Multi-step state ────────────────────────────────────────────────
   const [isPlacingOrder, setIsPlacingOrder] = useState(false);
@@ -242,10 +240,6 @@ export default function OrderReviewPage({ params }: { params: Promise<{ id: stri
                   <div className="flex justify-between text-gray-600">
                     <span>Subtotal</span>
                     <span className="font-medium text-black">{formatPrice(totalPrice)}</span>
-                  </div>
-                  <div className="flex justify-between text-gray-600">
-                    <span>Tax (8%)</span>
-                    <span className="font-medium text-black">{formatPrice(taxAmount)}</span>
                   </div>
                   <div className="flex justify-between text-gray-600 border-t border-gray-100 pt-4 mt-2">
                     <span className="font-bold text-black text-base">Total</span>
