@@ -35,11 +35,6 @@ export default function CartSidebar() {
   }, [isAuthenticated, pendingCheckout, setPendingCheckout, closeCart, router]);
 
   const handleCheckout = () => {
-    if (!isAuthenticated) {
-      setPendingCheckout(true);
-      openAuthModal();
-      return;
-    }
     closeCart();
     router.push(`/order/checkout`);
   };

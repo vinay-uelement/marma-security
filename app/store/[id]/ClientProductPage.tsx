@@ -9,16 +9,19 @@ import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
 import { useRouter } from "next/navigation";
 
+import { useAuth } from "@/context/AuthContext";
+
 export default function ClientProductPage({ product, allProducts, productId }: { product?: any, allProducts?: any[], productId: string }) {
   const [qty, setQty] = useState(1);
   const [activeTab, setActiveTab] = useState("Description");
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const { addItem } = useCart();
   const { formatPrice } = useCurrency();
+  const { setPendingCheckout } = useAuth();
   const router = useRouter();
 
   const handleBuyNow = () => {
-    addItem(
+    const success = addItem(
       {
         id: product?.id || productId,
         name: productName,
@@ -27,8 +30,12 @@ export default function ClientProductPage({ product, allProducts, productId }: {
       },
       qty
     );
-    const orderId = "ORD-" + Math.random().toString(36).substring(2, 9).toUpperCase();
-    router.push(`/order/${orderId}`);
+    if (success) {
+      const orderId = "ORD-" + Math.random().toString(36).substring(2, 9).toUpperCase();
+      router.push(`/order/${orderId}`);
+    } else {
+      setPendingCheckout(true);
+    }
   };
 
   const fallbackName = "SafeHome";

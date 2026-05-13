@@ -42,6 +42,9 @@ interface AuthContextType {
   // Pending action after auth
   setPendingCheckout: (pending: boolean) => void;
   pendingCheckout: boolean;
+
+  setPendingCartItem: (item: any) => void;
+  pendingCartItem: any;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -61,6 +64,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [pendingCheckout, setPendingCheckout] = useState(false);
+  const [pendingCartItem, setPendingCartItem] = useState<any>(null);
   const refreshTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // ── Token helpers ──────────────────────────────────────────────────────
@@ -202,6 +206,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const closeAuthModal = useCallback(() => {
     setShowAuthModal(false);
     setPendingCheckout(false);
+    setPendingCartItem(null);
   }, []);
 
   return (
@@ -219,6 +224,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         closeAuthModal,
         setPendingCheckout,
         pendingCheckout,
+        setPendingCartItem,
+        pendingCartItem,
       }}
     >
       {children}

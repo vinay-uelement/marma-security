@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useCallback, useEffect } from "react";
 import { useAuth } from "./AuthContext";
+import { fetchApi } from "@/lib/api";
 import {
   fetchCart,
   addToCart,
@@ -24,7 +25,7 @@ interface CartContextType {
   openCart: () => void;
   closeCart: () => void;
   toggleCart: () => void;
-  addItem: (item: Omit<CartItem, "quantity">, quantity?: number) => void;
+  addItem: (item: Omit<CartItem, "quantity">, quantity?: number) => boolean;
   removeItem: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;
@@ -37,7 +38,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, openAuthModal, setPendingCartItem, pendingCartItem } = useAuth();
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -47,13 +48,15 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           .then((cart) => {
             if (cart && cart.items) {
               setItems(
-                cart.items.map((i) => ({
-                  id: i.productId,
-                  name: i.name,
-                  image: i.image || "",
-                  price: i.price,
-                  quantity: i.quantity,
-                }))
+                cart.items.map((i: any) => {
+                  return {
+                    id: i.productId,
+                    name: i.product?.name || i.name || "Unknown Product",
+                    image: i.product?.image || i.image || "",
+                    price: i.product?.price || i.price || 0,
+                    quantity: i.quantity,
+                  };
+                })
               );
             }
           })
@@ -67,7 +70,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const toggleCart = useCallback(() => setIsOpen((prev) => !prev), []);
 
   const addItem = useCallback(
-    (item: Omit<CartItem, "quantity">, quantity: number = 1) => {
+    (item: Omit<CartItem, "quantity">, quantity: number = 1): boolean => {
+      if (!isAuthenticated) {
+        setPendingCartItem({ item, quantity });
+        openAuthModal();
+        return false;
+      }
+
       setItems((prev) => {
         const existing = prev.find((i) => i.id === item.id);
         if (existing) {
@@ -87,9 +96,19 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           console.error("Failed to add to cart:", err)
         );
       }
+      return true;
     },
-    []
+    [isAuthenticated, openAuthModal, setPendingCartItem]
   );
+
+  // If user authenticates with a pending cart item, add it.
+  useEffect(() => {
+    if (isAuthenticated && pendingCartItem) {
+      const itemToWait = pendingCartItem;
+      setPendingCartItem(null);
+      addItem(itemToWait.item, itemToWait.quantity);
+    }
+  }, [isAuthenticated, pendingCartItem, addItem, setPendingCartItem]);
 
   const removeItem = useCallback((id: string) => {
     setItems((prev) => prev.filter((i) => i.id !== id));

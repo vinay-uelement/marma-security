@@ -2,10 +2,17 @@ import { fetchApi } from "./api";
 
 export interface CartItemResponse {
   id: string; // The cart item ID
+  cartId?: string;
   productId: string;
-  name: string;
-  price: number;
   quantity: number;
+  product?: {
+    id: string;
+    name: string;
+    price: number;
+    image?: string;
+  };
+  name?: string;
+  price?: number;
   image?: string;
 }
 
@@ -17,12 +24,14 @@ export interface CartResponse {
 }
 
 export async function fetchCart(token: string): Promise<CartResponse> {
-  return fetchApi("/api/v1/cart", {
+  const res = await fetchApi("/api/v1/cart", {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
+  if (!res.ok) throw new Error("Failed to fetch cart");
+  return res.json();
 }
 
 export async function addToCart(
@@ -30,13 +39,15 @@ export async function addToCart(
   productId: string,
   quantity: number = 1
 ): Promise<CartResponse> {
-  return fetchApi("/api/v1/cart", {
+  const res = await fetchApi("/api/v1/cart", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ productId, quantity }),
   });
+  if (!res.ok) throw new Error("Failed to add to cart");
+  return res.json();
 }
 
 export async function updateCartItemQuantity(
@@ -44,32 +55,37 @@ export async function updateCartItemQuantity(
   productId: string,
   quantity: number
 ): Promise<CartResponse> {
-  return fetchApi("/api/v1/cart", {
+  const res = await fetchApi("/api/v1/cart", {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ productId, quantity }),
   });
+  if (!res.ok) throw new Error("Failed to update cart item");
+  return res.json();
 }
 
 export async function removeCartItem(
   token: string,
   productId: string
 ): Promise<CartResponse> {
-  return fetchApi(`/api/v1/cart/${productId}`, {
+  const res = await fetchApi(`/api/v1/cart/${productId}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
+  if (!res.ok) throw new Error("Failed to remove cart item");
+  return res.json();
 }
 
 export async function clearCart(token: string): Promise<void> {
-  return fetchApi("/api/v1/cart", {
+  const res = await fetchApi("/api/v1/cart", {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
+  if (!res.ok) throw new Error("Failed to clear cart");
 }

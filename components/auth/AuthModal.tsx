@@ -13,6 +13,7 @@ export default function AuthModal() {
     register,
     verifyEmail,
     pendingCheckout,
+    pendingCartItem,
   } = useAuth();
 
   const [step, setStep] = useState<AuthStep>("login");
@@ -235,14 +236,20 @@ export default function AuthModal() {
                 {step === "otp" && "Verify Email"}
               </h2>
               <p className="text-[13px] text-[#888] mt-1.5">
-                {step === "login" && "Sign in to continue to checkout"}
-                {step === "register" && "Create an account to place your order"}
+                {step === "login" && (pendingCheckout ? "Sign in to continue to checkout" : pendingCartItem ? "Sign in to add to cart" : "Sign in to continue")}
+                {step === "register" && (pendingCheckout ? "Create an account to place your order" : pendingCartItem ? "Create an account to add to cart" : "Create an account to continue")}
                 {step === "otp" && `We sent a 6-digit code to ${email}`}
               </p>
               {pendingCheckout && step !== "otp" && (
                 <div className="mt-3 inline-flex items-center gap-1.5 bg-amber-50 text-amber-700 text-[12px] font-medium px-3 py-1.5 rounded-full border border-amber-200/60">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
                   Sign in required to checkout
+                </div>
+              )}
+              {pendingCartItem && !pendingCheckout && step !== "otp" && (
+                <div className="mt-3 inline-flex items-center gap-1.5 bg-amber-50 text-amber-700 text-[12px] font-medium px-3 py-1.5 rounded-full border border-amber-200/60">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                  Sign in required to add items to cart
                 </div>
               )}
             </div>
