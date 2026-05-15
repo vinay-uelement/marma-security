@@ -111,7 +111,7 @@ img {
   /* FL3: Card Titles / Component Data Titles */
   .fl3 {
     font-family: var(--font-body);
-    @apply font-semibold text-[12px] leading-[16px] lg:text-[26px] lg:leading-[35px] tracking-[-0.01em] text-text-dark;
+    @apply font-semibold text-[12px] leading-[16px] md:text-[18px] lg:text-[26px] lg:leading-[35px] tracking-[-0.01em] text-text-dark;
   }
 
   .fl3-1 {
@@ -220,7 +220,7 @@ img {
    =============================================================== */
 
 .nav-logo {
-  @apply w-[109px] lg:w-auto h-auto lg:h-6 object-contain;
+  @apply w-[200px] lg:w-auto h-auto lg:h-6 object-contain;
 }
 
 .nav-icon {
