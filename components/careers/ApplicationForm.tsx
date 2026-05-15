@@ -8,6 +8,7 @@ interface ApplicationFormProps {
     title: string;
   };
   onSuccess: () => void;
+  isFilled?: boolean;
 }
 
 const ALLOWED_MIME_TYPES = [
@@ -23,6 +24,7 @@ const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
 export default function ApplicationForm({
   job,
   onSuccess,
+  isFilled = false,
 }: ApplicationFormProps) {
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -160,8 +162,9 @@ export default function ApplicationForm({
               required
               type="text"
               name="Name"
-              placeholder="John Doe"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
+              disabled={isFilled}
+              placeholder={isFilled ? "Applications Closed" : "John Doe"}
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -172,8 +175,9 @@ export default function ApplicationForm({
               required
               type="email"
               name="Email"
-              placeholder="john@example.com"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
+              disabled={isFilled}
+              placeholder={isFilled ? "Applications Closed" : "john@example.com"}
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
             />
           </div>
         </div>
@@ -187,8 +191,9 @@ export default function ApplicationForm({
               required
               type="tel"
               name="Phone"
-              placeholder="+91 98765 43210"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
+              disabled={isFilled}
+              placeholder={isFilled ? "Applications Closed" : "+91 98765 43210"}
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -199,8 +204,9 @@ export default function ApplicationForm({
               required
               type="text"
               name="City"
-              placeholder="Pune"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
+              disabled={isFilled}
+              placeholder={isFilled ? "Applications Closed" : "Pune"}
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
             />
           </div>
         </div>
@@ -214,8 +220,9 @@ export default function ApplicationForm({
               required
               type="text"
               name="Total Experience"
-              placeholder="e.g., 3 Years"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
+              disabled={isFilled}
+              placeholder={isFilled ? "Applications Closed" : "e.g., 3 Years"}
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -226,8 +233,9 @@ export default function ApplicationForm({
               required
               type="text"
               name="Relevant Experience"
-              placeholder="e.g., 2 Years"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
+              disabled={isFilled}
+              placeholder={isFilled ? "Applications Closed" : "e.g., 2 Years"}
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
             />
           </div>
         </div>
@@ -241,8 +249,9 @@ export default function ApplicationForm({
               required
               type="text"
               name="Current CTC"
-              placeholder="e.g., 8 LPA"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
+              disabled={isFilled}
+              placeholder={isFilled ? "Applications Closed" : "e.g., 8 LPA"}
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -253,8 +262,9 @@ export default function ApplicationForm({
               required
               type="text"
               name="Expected CTC"
-              placeholder="e.g., 10 LPA"
-              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
+              disabled={isFilled}
+              placeholder={isFilled ? "Applications Closed" : "e.g., 10 LPA"}
+              className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
             />
           </div>
         </div>
@@ -267,8 +277,9 @@ export default function ApplicationForm({
             required
             type="text"
             name="Notice Period"
-            placeholder="e.g., 30 Days"
-            className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60"
+            disabled={isFilled}
+            placeholder={isFilled ? "Applications Closed" : "e.g., 30 Days"}
+            className="w-full px-5 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:border-brand-red/50 transition-colors placeholder-slate-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
           />
         </div>
 
@@ -277,22 +288,28 @@ export default function ApplicationForm({
             Attach Resume
           </label>
           <label
-            className={`w-full px-5 py-4 bg-[#F8FAFC] border border-dashed rounded-xl cursor-pointer hover:bg-[#F1F5F9] transition-colors flex items-center justify-center gap-3 ${
-              validationError && !resumeFile
+            className={`w-full px-5 py-4 bg-[#F8FAFC] border border-dashed rounded-xl transition-colors flex items-center justify-center gap-3 ${
+              isFilled 
+                ? "cursor-not-allowed bg-slate-50 border-slate-200" 
+                : "cursor-pointer hover:bg-[#F1F5F9] border-[#CBD5E1]"
+            } ${
+              validationError && !resumeFile && !isFilled
                 ? "border-red-400"
-                : "border-[#CBD5E1]"
+                : ""
             }`}
           >
             <Paperclip className="w-5 h-5 text-[#64748B]" />
             <span className="text-[#64748B] font-medium text-[15px]">
-              {resumeFile
-                ? resumeFile.name
-                : "Click to upload resume (PDF, DOCX — max 5MB)"}
+              {isFilled 
+                ? "Applications Closed" 
+                : resumeFile
+                  ? resumeFile.name
+                  : "Click to upload resume (PDF, DOCX — max 5MB)"}
             </span>
             <input
               type="file"
               name="Attachment"
-              required
+              disabled={isFilled}
               className="hidden"
               accept=".pdf,.doc,.docx"
               onChange={handleFileChange}
@@ -302,11 +319,15 @@ export default function ApplicationForm({
 
         <button
           type="submit"
-          disabled={isSubmitting}
-          className="w-full bg-brand-red text-white py-4 mt-2 rounded-xl font-title font-semibold text-[18px] transition-all hover:bg-brand-red-hover hover:shadow-lg flex items-center justify-center gap-3 disabled:opacity-70"
+          disabled={isSubmitting || isFilled}
+          className="w-full bg-brand-red text-white py-4 mt-2 rounded-xl font-title font-semibold text-[18px] transition-all hover:bg-brand-red-hover hover:shadow-lg flex items-center justify-center gap-3 disabled:opacity-70 disabled:grayscale disabled:cursor-not-allowed"
         >
-          {isSubmitting ? "Sending Application..." : "Submit Application"}
-          <Send className="w-5 h-5" />
+          {isFilled 
+            ? "Position Filled" 
+            : isSubmitting 
+              ? "Sending Application..." 
+              : "Submit Application"}
+          {!isFilled && <Send className="w-5 h-5" />}
         </button>
       </form>
     </>

@@ -7,7 +7,32 @@ import ApplicationForm from "./ApplicationForm";
 
 const jobs = [
   {
+    id: 2,
+    isFilled: false,
+    title: "Sales Executive / Manager (2-5 Years)",
+    department: "Sales",
+    location: "Mumbai, India",
+    type: "Full-time",
+    description: "Join our fast-growing product company to drive B2B and B2C sales for Marma Security products. We're looking for a motivated individual to build our partner ecosystem and own customer acquisition.",
+    requirements: [
+      "2–5 years of experience in Sales / Business Development",
+      "Proven ability to drive revenue and manage customer relationships",
+      "Strong networking and channel partner management skills",
+      "Excellent communication and strategic thinking"
+    ],
+    goodToHave: [
+      "Exposure to the Cyber Security domain"
+    ],
+    responsibilities: [
+      "Drive B2B & B2C sales for Marma Security products",
+      "Build and scale a strong channel partner ecosystem",
+      "Own revenue targets and customer acquisition",
+      "Work closely with leadership in a fast-growing product company"
+    ]
+  },
+  {
     id: 1,
+    isFilled: true,
     title: "Digital Marketing Executive (1-3 Years)",
     department: "Marketing",
     location: "Pune, India",
@@ -79,6 +104,12 @@ export default function JobBoard() {
                       <span className="flex items-center gap-1.5 text-[#94A3B8] text-[14px]">
                         <Clock className="w-4 h-4" /> {job.type}
                       </span>
+                      {job.isFilled && (
+                        <span className="bg-slate-100 text-slate-500 text-[12px] font-bold px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1.5 border border-slate-200">
+                          <div className="w-1.5 h-1.5 rounded-full bg-slate-400" />
+                          Filled
+                        </span>
+                      )}
                     </div>
                     <h3 className="font-banner text-[24px] md:text-[28px] text-[#1E293B] group-hover:text-brand-red transition-colors">
                       {job.title}
@@ -100,7 +131,11 @@ export default function JobBoard() {
                       {isExpanded ? (
                         <>Close Details <ChevronUp className="w-5 h-5" /></>
                       ) : (
-                        <>Apply Now <ArrowUpRight className="w-5 h-5" /></>
+                        job.isFilled ? (
+                          <>Position Filled <CheckCircle2 className="w-5 h-5" /></>
+                        ) : (
+                          <>Apply Now <ArrowUpRight className="w-5 h-5" /></>
+                        )
                       )}
                     </button>
                   </div>
@@ -174,6 +209,7 @@ export default function JobBoard() {
                           <ApplicationForm
                             job={job}
                             onSuccess={() => { }}
+                            isFilled={job.isFilled}
                           />
                         </div>
                       </div>
