@@ -57,7 +57,7 @@ export default function TabletShowcase() {
       </div>
 
       {/* Tablet Mockup Container */}
-      <div className="tablet-container relative w-full max-w-[1100px] aspect-[16/10] bg-[#1a1a1a] rounded-[20px] sm:rounded-[40px] p-2.5 sm:p-4 shadow-lg md:shadow-2xl shadow-black/50 overflow-hidden self-center max-h-[70vh]">
+      <div className="tablet-container relative w-full max-w-[1100px] aspect-[16/10] bg-[#1a1a1a] rounded-[20px] sm:rounded-[40px] p-2.5 sm:p-4 shadow-lg md:shadow-2xl shadow-black/50 overflow-hidden self-center">
 
         {/* Camera Lens Detailing (Right Side Bezel) */}
         <div className="absolute right-[6px] sm:right-[10px] top-1/2 -translate-y-1/2 w-1 h-1 sm:w-2 sm:h-2 bg-[#1d1d1d] rounded-full border border-white/5 opacity-40 z-20"></div>

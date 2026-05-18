@@ -5,6 +5,7 @@ import Footer from "@/components/global/Footer";
 import "./globals.css";
 import CookieConsent from "@/components/global/CookieConsent";
 import ClientProviders from "@/components/global/ClientProviders";
+import Script from "next/script";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.marmasec.com";
 
@@ -37,6 +38,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Marma Security" }],
   creator: "Marma Security",
   publisher: "Marma Security",
+  verification: {
+    google: "Ei6tcvtpZwNLw19v_uEk2EWkQB7hCIAfPR8RYrT_lNc",
+  },
   robots: {
     index: true,
     follow: true,
@@ -90,9 +94,7 @@ export default function RootLayout({
     logo: `${BASE_URL}/images/global/logo.svg`,
     description:
       "A cybersecurity firm dedicated to Redefining Cybersecurity Through Simplicity, offering automated network-level protection.",
-    sameAs: [
-      "https://www.linkedin.com/company/marmasecurity/",
-    ],
+    sameAs: ["https://www.linkedin.com/company/marmasecurity/"],
   };
 
   // Structured Data - Website Schema
@@ -161,15 +163,50 @@ export default function RootLayout({
           }}
         />
       </head>
+
       <body
         className={`${inter.variable} ${ibmPlexSans.variable} ${sora.variable} antialiased flex flex-col min-h-screen overflow-x-clip`}
       >
+        {/* GTM noscript */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WHWKPVJ5"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
         <ClientProviders>
           <Navbar />
           <main className="flex-grow ">{children}</main>
           <Footer />
           <CookieConsent />
         </ClientProviders>
+
+        {/* analytics scripts */}
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-WHWKPVJ5');
+        `}
+        </Script>
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-S9PDP4YZHK"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S9PDP4YZHK');
+        `}
+        </Script>
       </body>
     </html>
   );
