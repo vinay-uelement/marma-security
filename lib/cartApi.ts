@@ -47,7 +47,7 @@ export async function addToCart(
     body: JSON.stringify({ productId, quantity }),
   });
   if (!res.ok) throw new Error("Failed to add to cart");
-  return res.json();
+  return fetchCart(token);
 }
 
 export async function updateCartItemQuantity(
@@ -63,7 +63,7 @@ export async function updateCartItemQuantity(
     body: JSON.stringify({ productId, quantity }),
   });
   if (!res.ok) throw new Error("Failed to update cart item");
-  return res.json();
+  return fetchCart(token);
 }
 
 export async function removeCartItem(
@@ -77,7 +77,7 @@ export async function removeCartItem(
     },
   });
   if (!res.ok) throw new Error("Failed to remove cart item");
-  return res.json();
+  return fetchCart(token);
 }
 
 export async function clearCart(token: string): Promise<void> {

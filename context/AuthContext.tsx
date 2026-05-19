@@ -205,8 +205,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const openAuthModal = useCallback(() => setShowAuthModal(true), []);
   const closeAuthModal = useCallback(() => {
     setShowAuthModal(false);
-    setPendingCheckout(false);
-    setPendingCartItem(null);
+    
+    // Only clear pending actions if the user did not log in
+    const token = typeof window !== "undefined" ? localStorage.getItem(STORAGE_KEYS.ACCESS_TOKEN) : null;
+    if (!token) {
+      setPendingCheckout(false);
+      setPendingCartItem(null);
+    }
   }, []);
 
   return (

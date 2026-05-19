@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useCallback, useEffect } from "react";
+import React, { createContext, useContext, useState, useCallback, useEffect, useRef } from "react";
 import { useAuth } from "./AuthContext";
 import { fetchApi } from "@/lib/api";
 import {
@@ -39,31 +39,57 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const { isAuthenticated, openAuthModal, setPendingCartItem, pendingCartItem } = useAuth();
+  const hasSyncedCartRef = useRef(false);
 
   useEffect(() => {
-    if (isAuthenticated) {
-      const token = localStorage.getItem("marma_access_token");
-      if (token) {
-        fetchCart(token)
-          .then((cart) => {
-            if (cart && cart.items) {
-              setItems(
-                cart.items.map((i: any) => {
-                  return {
-                    id: i.productId,
-                    name: i.product?.name || i.name || "Unknown Product",
-                    image: i.product?.image || i.image || "",
-                    price: i.product?.price || i.price || 0,
-                    quantity: i.quantity,
-                  };
-                })
-              );
-            }
-          })
-          .catch((err) => console.error("Failed to fetch cart:", err));
-      }
+    if (!isAuthenticated) {
+      setItems([]);
+      hasSyncedCartRef.current = false;
+      return;
     }
-  }, [isAuthenticated]);
+
+    if (hasSyncedCartRef.current) {
+      return;
+    }
+
+    const token = localStorage.getItem("marma_access_token");
+    if (!token) return;
+
+    hasSyncedCartRef.current = true;
+
+    const syncCart = async () => {
+      try {
+        let cart;
+        if (pendingCartItem) {
+          const itemToWait = pendingCartItem;
+          // Clear pendingCartItem immediately so it doesn't get processed again
+          setPendingCartItem(null);
+          // Add to cart on server
+          cart = await addToCart(token, itemToWait.item.id, itemToWait.quantity);
+          setIsOpen(true);
+        } else {
+          // Just fetch the existing cart
+          cart = await fetchCart(token);
+        }
+
+        if (cart && cart.items) {
+          setItems(
+            cart.items.map((i: any) => ({
+              id: i.productId,
+              name: i.product?.name || i.name || "Unknown Product",
+              image: i.product?.image || i.image || "",
+              price: i.product?.price || i.price || 0,
+              quantity: i.quantity,
+            }))
+          );
+        }
+      } catch (err) {
+        console.error("Failed to sync cart after auth:", err);
+      }
+    };
+
+    syncCart();
+  }, [isAuthenticated, pendingCartItem, setPendingCartItem]);
 
   const openCart = useCallback(() => setIsOpen(true), []);
   const closeCart = useCallback(() => setIsOpen(false), []);
@@ -100,15 +126,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     },
     [isAuthenticated, openAuthModal, setPendingCartItem]
   );
-
-  // If user authenticates with a pending cart item, add it.
-  useEffect(() => {
-    if (isAuthenticated && pendingCartItem) {
-      const itemToWait = pendingCartItem;
-      setPendingCartItem(null);
-      addItem(itemToWait.item, itemToWait.quantity);
-    }
-  }, [isAuthenticated, pendingCartItem, addItem, setPendingCartItem]);
 
   const removeItem = useCallback((id: string) => {
     setItems((prev) => prev.filter((i) => i.id !== id));
