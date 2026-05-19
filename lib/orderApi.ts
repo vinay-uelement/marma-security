@@ -21,30 +21,43 @@ export interface ShippingAddress {
 
 export interface CreateOrderPayload {
   customerInfo: CustomerInfo;
-  currency: string;
+  currency?: string;
   shippingAddress: ShippingAddress;
 }
 
 export interface OrderItem {
-  productId: string;
+  productId: string | number;
+  stripeProductId?: string;
+  stripePriceId?: string;
   name: string;
   price: number;
   quantity: number;
 }
 
 export interface Order {
-  id: string;
+  id: string | number;
+  tenantId?: number;
+  userId?: number;
   totalAmount: number;
-  status: string;
+  baseAmountUSD?: number;
+  currency: string;
+  exchangeRate?: number;
+  paymentStatus: string;
+  orderStatus: string;
   items: OrderItem[];
   customerInfo: CustomerInfo;
   shippingAddress: ShippingAddress;
   stripeSessionId: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface PaymentInfo {
+  provider: string;
+  orderId: string | number;
   sessionId: string;
-  url: string;
+  checkoutUrl: string;
+  url?: string; // backup for backward compatibility
 }
 
 export interface CreateOrderResponse {
@@ -57,8 +70,8 @@ export interface VerifyPaymentPayload {
 }
 
 export interface VerifyPaymentResponse {
+  success: boolean;
   order: Order;
-  message: string;
 }
 
 export interface OrderApiError {
@@ -98,7 +111,7 @@ export async function createOrder(
   token: string,
   payload: CreateOrderPayload
 ): Promise<CreateOrderResponse> {
-  const response = await fetchApi(ORDERS_BASE, {
+  const response = await fetchApi(`${ORDERS_BASE}/`, {
     method: "POST",
     headers: authHeaders(token),
     body: JSON.stringify(payload),

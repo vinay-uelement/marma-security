@@ -73,8 +73,9 @@ export default function OrderReviewPage({ params }: { params: Promise<{ id: stri
         },
       });
 
-      if (response.payment?.url) {
-        window.location.href = response.payment.url;
+      const checkoutUrl = response.payment?.checkoutUrl || (response.payment as any)?.url;
+      if (checkoutUrl) {
+        window.location.href = checkoutUrl;
       } else {
         setErrorMessage("Payment session not available. Please try again.");
       }

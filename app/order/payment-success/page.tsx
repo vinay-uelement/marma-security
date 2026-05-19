@@ -129,9 +129,15 @@ function PaymentVerification() {
                 <span className="text-sm font-bold text-black">{order.id}</span>
               </div>
               <div className="flex justify-between items-center mb-4 pb-3 border-b border-gray-200">
-                <span className="text-sm text-gray-500">Status</span>
+                <span className="text-sm text-gray-500">Order Status</span>
                 <span className="text-xs font-bold text-green-600 bg-green-50 px-2.5 py-1 rounded-full">
-                  {order.status}
+                  {order.orderStatus || (order as any).status || "PROCESSING"}
+                </span>
+              </div>
+              <div className="flex justify-between items-center mb-4 pb-3 border-b border-gray-200">
+                <span className="text-sm text-gray-500">Payment Status</span>
+                <span className="text-xs font-bold text-green-600 bg-green-50 px-2.5 py-1 rounded-full">
+                  {order.paymentStatus || "PAID"}
                 </span>
               </div>
               <div className="flex justify-between items-center mb-4 pb-3 border-b border-gray-200">
