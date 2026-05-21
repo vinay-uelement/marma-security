@@ -50,6 +50,11 @@ export default async function StorePage() {
     return cat.includes('home');
   });
 
+  const csProducts = productsList.filter((p: any) => {
+    const cat = p.category?.toLowerCase() || '';
+    return cat.includes('cs-solutions');
+  });
+
   const buildHref = (product: any) => {
     const slug = (product.name || product.title || product.id || "product").toLowerCase().replace(/ /g, '-');
     // We pass minimal required data to avoid huge URLs
@@ -115,40 +120,60 @@ export default async function StorePage() {
         </div>
 
         {/* Enterprise Solutions */}
-        <section className="mb-16">
-          <h3 className="text-xl lg:text-2xl font-semibold text-[#999999] mb-8">
-            Enterprise Solutions
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-0">
-            {enterpriseProducts.map((product, index) => (
-              <ProductCard key={product.id || index} name={product.name || product.title} image={product.image || "/images/product/SafeEnterprise4001.webp"} href={buildHref(product)} />
-            ))}
-          </div>
-        </section>
+        {enterpriseProducts.length > 0 && (
+          <section className="mb-16">
+            <h3 className="text-xl lg:text-2xl font-semibold text-[#999999] mb-8">
+              Enterprise Solutions
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-0">
+              {enterpriseProducts.map((product, index) => (
+                <ProductCard key={product.id || index} name={product.name || product.title} image={product.image || "/images/product/SafeEnterprise4001.webp"} href={buildHref(product)} />
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* SMB Solutions */}
-        <section className="mb-16">
-          <h3 className="text-xl lg:text-2xl font-semibold text-[#999999] mb-8">
-            SMB Solutions
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-2">
-            {smbProducts.map((product, index) => (
-              <ProductCard key={product.id || index} name={product.name || product.title} image={product.image || "/images/product/SafeEnterprise4001.webp"} href={buildHref(product)} />
-            ))}
-          </div>
-        </section>
+        {smbProducts.length > 0 && (
+          <section className="mb-16">
+            <h3 className="text-xl lg:text-2xl font-semibold text-[#999999] mb-8">
+              SMB Solutions
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-2">
+              {smbProducts.map((product, index) => (
+                <ProductCard key={product.id || index} name={product.name || product.title} image={product.image || "/images/product/SafeEnterprise4001.webp"} href={buildHref(product)} />
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Home Solutions */}
-        <section className="mb-16">
-          <h3 className="text-xl lg:text-2xl font-semibold text-[#999999] mb-8">
-            Home Solutions
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-2">
-            {homeProducts.map((product, index) => (
-              <ProductCard key={product.id || index} name={product.name || product.title} image={product.image || "/images/product/SafeEnterprise4001.webp"} href={buildHref(product)} />
-            ))}
-          </div>
-        </section>
+        {homeProducts.length > 0 && (
+          <section className="mb-16">
+            <h3 className="text-xl lg:text-2xl font-semibold text-[#999999] mb-8">
+              Home Solutions
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-2">
+              {homeProducts.map((product, index) => (
+                <ProductCard key={product.id || index} name={product.name || product.title} image={product.image || "/images/product/SafeEnterprise4001.webp"} href={buildHref(product)} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Cyber Security Software Solutions */}
+        {csProducts.length > 0 && (
+          <section className="mb-16">
+            <h3 className="text-xl lg:text-2xl font-semibold text-[#999999] mb-8">
+              Cyber Security Software Solutions
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-2">
+              {csProducts.map((product, index) => (
+                <ProductCard key={product.id || index} name={product.name || product.title} image={product.image || "/images/product/SafeEnterprise4001.webp"} href={buildHref(product)} />
+              ))}
+            </div>
+          </section>
+        )}
 
       </div>
     </main>
