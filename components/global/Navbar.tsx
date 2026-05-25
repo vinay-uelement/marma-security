@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
+import { User } from "lucide-react";
 
 const navLinks = [
   { href: "/solutions", label: "Solutions" },
@@ -196,10 +197,9 @@ export default function Navbar() {
                 className="flex items-center justify-center transition-transform hover:scale-105"
                 aria-label="Profile"
               >
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-nav-text">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
+                <span className="nav-icon w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] lg:w-[34px] lg:h-[34px] rounded-full bg-[#3B3B3B] flex items-center justify-center">
+                  <User className="w-[14px] h-[14px] sm:w-[16px] sm:h-[16px] lg:w-[18px] lg:h-[18px] text-white" strokeWidth={2} />
+                </span>
               </Link>
             ) : (
               <button
@@ -207,10 +207,9 @@ export default function Navbar() {
                 className="flex items-center justify-center transition-transform hover:scale-105"
                 aria-label="Sign In"
               >
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-nav-text">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                </svg>
+                <span className="nav-icon w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] lg:w-[34px] lg:h-[34px] rounded-full bg-[#3B3B3B] flex items-center justify-center">
+                  <User className="w-[14px] h-[14px] sm:w-[16px] sm:h-[16px] lg:w-[18px] lg:h-[18px] text-white" strokeWidth={2} />
+                </span>
               </button>
             )}
           </div>
@@ -399,10 +398,9 @@ export default function Navbar() {
               className="flex items-center gap-3 fl2-nav border-b border-gray-200/30 pb-3"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="nav-icon text-nav-text">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
+              <span className="w-[24px] h-[24px] rounded-full bg-[#3B3B3B] flex items-center justify-center flex-shrink-0">
+                <User className="w-[14px] h-[14px] text-white" strokeWidth={2} />
+              </span>
               <span>My Profile</span>
             </Link>
           ) : (
@@ -410,10 +408,9 @@ export default function Navbar() {
               onClick={() => { setIsMobileMenuOpen(false); openAuthModal(); }}
               className="flex items-center gap-3 fl2-nav border-b border-gray-200/30 pb-3 w-full text-left"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="nav-icon text-nav-text">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
+              <span className="w-[24px] h-[24px] rounded-full bg-[#3B3B3B] flex items-center justify-center flex-shrink-0">
+                <User className="w-[14px] h-[14px] text-white" strokeWidth={2} />
+              </span>
               <span>Sign In</span>
             </button>
           )}
