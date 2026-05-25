@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import { LogOut } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { useCurrency } from "@/context/CurrencyContext";
 import { updateProfile, type UpdateProfilePayload, type FullAddress } from "@/lib/authApi";
@@ -74,7 +75,7 @@ function Section({ title, children, action }: {
 // ═════════════════════════════════════════════════════════════════════════════
 export default function ProfilePage() {
   const router = useRouter();
-  const { user, isAuthenticated, isLoading: authLoading, openAuthModal } = useAuth();
+  const { user, isAuthenticated, isLoading: authLoading, openAuthModal, logout } = useAuth();
   const { formatPrice } = useCurrency();
 
   // ─── Profile edit state ──────────────────────────────────────────────
@@ -174,12 +175,22 @@ export default function ProfilePage() {
 
   // ─── Save address ────────────────────────────────────────────────────
   const handleSaveAddress = async () => {
-    setAddressSaving(true);
     setAddressMsg("");
+
+    // Validate country code before sending
+    const code = (addressForm.country_code || "").trim().toUpperCase();
+    if (code && code.length !== 2) {
+      setAddressMsg("Country code must be a 2-letter ISO code (e.g. IN, US, GB).");
+      return;
+    }
+
+    setAddressSaving(true);
     try {
       const token = localStorage.getItem("marma_access_token");
       if (!token) return;
-      const payload: UpdateProfilePayload = { address: addressForm };
+      const payload: UpdateProfilePayload = {
+        address: { ...addressForm, country_code: code || undefined },
+      };
       const updated = await updateProfile(token, payload);
       localStorage.setItem("marma_user", JSON.stringify(updated));
       setAddressMsg("Address updated!");
@@ -201,10 +212,24 @@ export default function ProfilePage() {
     return new Date(d).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
   };
 
+  const handleLogout = () => {
+    logout();
+    router.push("/");
+  };
+
   return (
     <main className="flex flex-col bg-[#F9F9F9] min-h-screen pt-24 lg:pt-32 pb-20">
       <div className="max-w-[800px] mx-auto px-6 w-full space-y-6">
-        <h1 className="text-3xl font-bold text-black mb-2">My Profile</h1>
+        <div className="flex items-center justify-between">
+          <h1 className="text-3xl font-bold text-black">My Profile</h1>
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 px-5 py-2.5 border border-gray-200 text-gray-600 text-sm font-medium rounded-xl hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-all"
+          >
+            <LogOut className="w-4 h-4" />
+            Logout
+          </button>
+        </div>
 
         {/* ─── PROFILE INFO ──────────────────────────────────────────── */}
         <Section
@@ -292,7 +317,7 @@ export default function ProfilePage() {
               <InputField label="City" value={addressForm.city || ""} onChange={(v) => setAddressForm({ ...addressForm, city: v })} required />
               <InputField label="State" value={addressForm.state || ""} onChange={(v) => setAddressForm({ ...addressForm, state: v })} required />
               <InputField label="Postal Code" value={addressForm.postal_code || ""} onChange={(v) => setAddressForm({ ...addressForm, postal_code: v })} required />
-              <InputField label="Country Code" value={addressForm.country_code || ""} onChange={(v) => setAddressForm({ ...addressForm, country_code: v })} required />
+              <InputField label="Country Code (e.g. IN)" value={addressForm.country_code || ""} onChange={(v) => setAddressForm({ ...addressForm, country_code: v.toUpperCase().slice(0, 2) })} required />
               <div className="sm:col-span-2 flex gap-3 pt-2">
                 <button
                   onClick={handleSaveAddress}

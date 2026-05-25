@@ -137,7 +137,7 @@ export async function verifyPayment(
 
 /** Get all orders for the currently logged-in user */
 export async function getMyOrders(token: string): Promise<Order[]> {
-  const response = await fetchApi(`${ORDERS_BASE}/my-orders`, {
+  const response = await fetchApi(`${ORDERS_BASE}/`, {
     method: "GET",
     headers: authHeaders(token),
   });
