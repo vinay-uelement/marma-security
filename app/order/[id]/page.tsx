@@ -26,6 +26,10 @@ export default function OrderReviewPage({ params }: { params: Promise<{ id: stri
   const [errorMessage, setErrorMessage] = useState("");
 
   // ─── Shipping form state ─────────────────────────────────────────────
+  const [shippingName, setShippingName] = useState(
+    user ? `${user.first_name || ""} ${user.last_name || ""}`.trim() : ""
+  );
+  const [shippingEmail, setShippingEmail] = useState(user?.email || "");
   const [addressLine1, setAddressLine1] = useState("");
   const [addressLine2, setAddressLine2] = useState("");
   const [city, setCity] = useState(user?.address?.city || "");
@@ -34,6 +38,8 @@ export default function OrderReviewPage({ params }: { params: Promise<{ id: stri
   const [postalCode, setPostalCode] = useState("");
 
   const isShippingValid =
+    shippingName.trim() !== "" &&
+    shippingEmail.trim() !== "" &&
     addressLine1.trim() !== "" &&
     city.trim() !== "" &&
     state.trim() !== "" &&
@@ -55,8 +61,8 @@ export default function OrderReviewPage({ params }: { params: Promise<{ id: stri
       }
 
       const customerInfo = {
-        name: user ? `${user.first_name || ""} ${user.last_name || ""}`.trim() || user.email : "",
-        email: user?.email || "",
+        name: shippingName.trim(),
+        email: shippingEmail.trim(),
         phone: user?.phone || "",
       };
 
@@ -155,6 +161,30 @@ export default function OrderReviewPage({ params }: { params: Promise<{ id: stri
             <div className="bg-white p-6 lg:p-8 rounded-2xl shadow-sm border border-gray-100 mt-8">
               <h2 className="text-xl font-semibold text-black mb-6">Shipping Address</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    Full Name <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={shippingName}
+                    onChange={(e) => setShippingName(e.target.value)}
+                    placeholder="John Doe"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm text-black placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-400 transition-all"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                    Email <span className="text-red-400">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    value={shippingEmail}
+                    onChange={(e) => setShippingEmail(e.target.value)}
+                    placeholder="john@example.com"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm text-black placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-400 transition-all"
+                  />
+                </div>
                 <div className="md:col-span-2">
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">
                     Address Line 1 <span className="text-red-400">*</span>
