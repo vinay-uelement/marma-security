@@ -27,24 +27,35 @@ export const CurrencyProvider = ({ children }: { children: React.ReactNode }) =>
         // 1. Fetch user's country and currency
         let userCurrency = "USD";
         try {
-          const ipResponse = await fetch("https://ipapi.co/json/");
-          if (ipResponse.ok) {
-            const ipData = await ipResponse.json();
-            if (ipData.currency) {
-              userCurrency = ipData.currency;
-            }
-          } else {
-            // Fallback to ipapi.is if ipapi.co rate limits
-            const fallbackResponse = await fetch("https://api.ipapi.is/");
-            if (fallbackResponse.ok) {
-              const fallbackData = await fallbackResponse.json();
-              if (fallbackData.location?.currency) {
-                userCurrency = fallbackData.location.currency;
-              }
+          // Primary: ipapi.is (reliable, no Cloudflare blocking)
+          const primaryResponse = await fetch("https://api.ipapi.is/");
+          if (primaryResponse.ok) {
+            const primaryData = await primaryResponse.json();
+            if (primaryData.location?.currency_code) {
+              userCurrency = primaryData.location.currency_code;
+            } else if (primaryData.location?.currency) {
+              userCurrency = primaryData.location.currency;
             }
           }
         } catch (e) {
-          console.warn("Failed to fetch user currency, falling back to USD", e);
+          console.warn("Primary currency API failed, trying fallback...", e);
+        }
+
+        // Fallback: ipapi.co (can be blocked by Cloudflare)
+        if (userCurrency === "USD") {
+          try {
+            const fallbackResponse = await fetch("https://ipapi.co/json/");
+            if (fallbackResponse.ok) {
+              const text = await fallbackResponse.text();
+              // Guard against Cloudflare HTML captcha pages
+              const fallbackData = JSON.parse(text);
+              if (fallbackData.currency) {
+                userCurrency = fallbackData.currency;
+              }
+            }
+          } catch (e) {
+            console.warn("Fallback currency API also failed, using USD", e);
+          }
         }
 
         // 2. Fetch exchange rates
