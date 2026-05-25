@@ -134,3 +134,12 @@ export async function verifyPayment(
   });
   return handleResponse<VerifyPaymentResponse>(response);
 }
+
+/** Get all orders for the currently logged-in user */
+export async function getMyOrders(token: string): Promise<Order[]> {
+  const response = await fetchApi(`${ORDERS_BASE}/my-orders`, {
+    method: "GET",
+    headers: authHeaders(token),
+  });
+  return handleResponse<Order[]>(response);
+}

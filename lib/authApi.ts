@@ -4,6 +4,15 @@ const CLIENT_USERS_BASE = "/api/v1/client-users";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
+export interface FullAddress {
+  line1?: string;
+  line2?: string;
+  city?: string;
+  state?: string;
+  postal_code?: string;
+  country_code?: string;
+}
+
 export interface AuthUser {
   id: string;
   email: string;
@@ -12,10 +21,9 @@ export interface AuthUser {
   phone?: string;
   is_email_verified?: boolean;
   is_active?: boolean;
-  address?: {
-    country_code?: string;
-    city?: string;
-  };
+  address?: FullAddress;
+  avatar_url?: string;
+  created_at?: string;
 }
 
 export interface AuthTokens {
@@ -35,10 +43,7 @@ export interface RegisterPayload {
   first_name?: string;
   last_name?: string;
   phone?: string;
-  address?: {
-    country_code?: string;
-    city?: string;
-  };
+  address?: FullAddress;
 }
 
 export interface LoginPayload {
@@ -55,10 +60,7 @@ export interface UpdateProfilePayload {
   first_name?: string;
   last_name?: string;
   phone?: string;
-  address?: {
-    country_code?: string;
-    city?: string;
-  };
+  address?: FullAddress;
 }
 
 export interface ApiError {

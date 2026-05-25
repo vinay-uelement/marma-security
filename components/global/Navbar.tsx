@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import { useAuth } from "@/context/AuthContext";
 
 const navLinks = [
   { href: "/solutions", label: "Solutions" },
@@ -71,6 +72,7 @@ export default function Navbar() {
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
+  const { isAuthenticated, openAuthModal } = useAuth();
 
   useEffect(() => {
     const handleResize = () => {
@@ -186,6 +188,31 @@ export default function Navbar() {
                 className="nav-icon"
               />
             </Link>
+
+            {/* Profile / Sign In */}
+            {isAuthenticated ? (
+              <Link
+                href="/profile"
+                className="flex items-center justify-center transition-transform hover:scale-105"
+                aria-label="Profile"
+              >
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-nav-text">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </Link>
+            ) : (
+              <button
+                onClick={openAuthModal}
+                className="flex items-center justify-center transition-transform hover:scale-105"
+                aria-label="Sign In"
+              >
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-nav-text">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </button>
+            )}
           </div>
 
           {/* Hamburger Menu Toggle (Mobile Only) */}
@@ -364,6 +391,32 @@ export default function Navbar() {
             />
             <span>Store</span>
           </Link>
+
+          {/* Profile / Sign In (Mobile) */}
+          {isAuthenticated ? (
+            <Link
+              href="/profile"
+              className="flex items-center gap-3 fl2-nav border-b border-gray-200/30 pb-3"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="nav-icon text-nav-text">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <span>My Profile</span>
+            </Link>
+          ) : (
+            <button
+              onClick={() => { setIsMobileMenuOpen(false); openAuthModal(); }}
+              className="flex items-center gap-3 fl2-nav border-b border-gray-200/30 pb-3 w-full text-left"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="nav-icon text-nav-text">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <span>Sign In</span>
+            </button>
+          )}
         </div>
       )}
     </header>
