@@ -66,6 +66,7 @@ export default async function StorePage() {
       price: product.price,
       image: product.image,
       images: product.images,
+      inStock: product.inStock,
     };
     const encoded = encodeURIComponent(Buffer.from(JSON.stringify(data)).toString('base64'));
     return `/store/${slug}?data=${encoded}`;

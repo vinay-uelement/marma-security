@@ -108,52 +108,65 @@ export default function ClientProductPage({ product, allProducts, productId }: {
             {productDesc}
           </p>
 
-          <div className="flex items-center justify-between mb-10 max-w-md">
-            <div className="flex items-center gap-4">
-              <span className="font-bold text-sm text-black">Quantity:</span>
-              <div className="flex items-center bg-[#F5F5F5] rounded-md overflow-hidden">
-                <button
-                  className="px-3 py-1.5 text-gray-600 hover:bg-gray-200"
-                  onClick={() => setQty(Math.max(1, qty - 1))}
-                >
-                  −
-                </button>
-                <span className="px-4 py-1.5 font-medium bg-white text-sm border-x border-gray-100">{qty}</span>
-                <button
-                  className="px-3 py-1.5 text-gray-600 hover:bg-gray-200"
-                  onClick={() => setQty(qty + 1)}
-                >
-                  +
-                </button>
+          {product?.inStock === false ? (
+            <div className="max-w-md">
+              <div className="flex items-center justify-between mb-6">
+                <div className="text-2xl font-bold text-black">{formatPrice(productPrice)}</div>
+              </div>
+              <div className="flex items-center justify-center py-3 border border-red-200 bg-red-50 rounded-full">
+                <span className="text-red-500 font-semibold text-sm">Out of Stock</span>
               </div>
             </div>
-            <div className="text-2xl font-bold text-black">{formatPrice(productPrice)}</div>
-          </div>
+          ) : (
+            <>
+              <div className="flex items-center justify-between mb-10 max-w-md">
+                <div className="flex items-center gap-4">
+                  <span className="font-bold text-sm text-black">Quantity:</span>
+                  <div className="flex items-center bg-[#F5F5F5] rounded-md overflow-hidden">
+                    <button
+                      className="px-3 py-1.5 text-gray-600 hover:bg-gray-200"
+                      onClick={() => setQty(Math.max(1, qty - 1))}
+                    >
+                      −
+                    </button>
+                    <span className="px-4 py-1.5 font-medium bg-white text-sm border-x border-gray-100">{qty}</span>
+                    <button
+                      className="px-3 py-1.5 text-gray-600 hover:bg-gray-200"
+                      onClick={() => setQty(qty + 1)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div className="text-2xl font-bold text-black">{formatPrice(productPrice)}</div>
+              </div>
 
-          <div className="flex gap-4 max-w-md">
-            <button
-              className="flex-1 py-2.5 border border-gray-200 rounded-full font-medium text-black hover:bg-gray-50 transition-colors bg-[#F9F9F9]"
-              onClick={() =>
-                addItem(
-                  {
-                    id: product?.id || productId,
-                    name: productName,
-                    image: productImages[0],
-                    price: productPrice,
-                  },
-                  qty
-                )
-              }
-            >
-              Add to Cart
-            </button>
-            <button
-              className="flex-1 py-2.5 border border-red-100 bg-white shadow-[0_0_10px_rgba(255,0,0,0.05)] rounded-full font-medium text-red-500 hover:bg-red-50 transition-colors"
-              onClick={handleBuyNow}
-            >
-              Buy Now
-            </button>
-          </div>
+              <div className="flex gap-4 max-w-md">
+                <button
+                  className="flex-1 py-2.5 border border-gray-200 rounded-full font-medium text-black hover:bg-gray-50 transition-colors bg-[#F9F9F9]"
+                  onClick={() =>
+                    addItem(
+                      {
+                        id: product?.id || productId,
+                        name: productName,
+                        image: productImages[0],
+                        price: productPrice,
+                      },
+                      qty
+                    )
+                  }
+                >
+                  Add to Cart
+                </button>
+                <button
+                  className="flex-1 py-2.5 border border-red-100 bg-white shadow-[0_0_10px_rgba(255,0,0,0.05)] rounded-full font-medium text-red-500 hover:bg-red-50 transition-colors"
+                  onClick={handleBuyNow}
+                >
+                  Buy Now
+                </button>
+              </div>
+            </>
+          )}
         </div>
       </div>
 
