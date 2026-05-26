@@ -30,12 +30,12 @@ export default function OrderReviewPage({ params }: { params: Promise<{ id: stri
     user ? `${user.first_name || ""} ${user.last_name || ""}`.trim() : ""
   );
   const [shippingEmail, setShippingEmail] = useState(user?.email || "");
-  const [addressLine1, setAddressLine1] = useState("");
-  const [addressLine2, setAddressLine2] = useState("");
+  const [addressLine1, setAddressLine1] = useState(user?.address?.line1 || "");
+  const [addressLine2, setAddressLine2] = useState(user?.address?.line2 || "");
   const [city, setCity] = useState(user?.address?.city || "");
-  const [state, setState] = useState("");
-  const [country, setCountry] = useState("India");
-  const [postalCode, setPostalCode] = useState("");
+  const [state, setState] = useState(user?.address?.state || "");
+  const [country, setCountry] = useState(user?.address?.country_code || "India");
+  const [postalCode, setPostalCode] = useState(user?.address?.postal_code || "");
 
   const isShippingValid =
     shippingName.trim() !== "" &&
