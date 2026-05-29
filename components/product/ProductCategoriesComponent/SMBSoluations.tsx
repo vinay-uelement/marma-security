@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import DecorativeLine from "@/components/home/DecorativeLine";
+import BookDemoModal from "@/components/home/BookDemoModal";
 import EndpointProductCard from "../EndpointProductCard";
 import ManagementProductCard from "../ManagementProductCard";
 import SpecificationProductCard, {
@@ -27,6 +31,8 @@ const smbManagementDescription =
   "Cloud-based Marma Management Platform for managing Security Gateways and Endpoint Protection - designed for simplicity with minimal IT overhead.";
 
 export default function SMBSoluations({ products = [] }: { products?: any[] }) {
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+
   const getProduct = (searchString: string) => {
     return products.find((p: any) =>
       (p.name || p.title || p.productName || "")?.toLowerCase().includes(searchString.toLowerCase())
@@ -52,6 +58,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
   const displayProducts = deviceProducts.length > 0 ? deviceProducts : fallbackProducts;
 
   return (
+    <>
     <div className="mx-auto w-full max-w-[1280px]">
       <div className={productSectionTitleClassName}>Security Gateways</div>
 
@@ -127,6 +134,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
                   "Firewall & Anti-Virus Integration",
                 ]}
                 image="/images/product/software/marmaAgent.webp"
+                onBookDemo={() => setIsDemoModalOpen(true)}
               />
             </div>
           </div>
@@ -154,5 +162,12 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
         </div>
       </div>
     </div>
+
+      {/* Book a Demo Modal */}
+      <BookDemoModal
+        isOpen={isDemoModalOpen}
+        onClose={() => setIsDemoModalOpen(false)}
+      />
+    </>
   );
 }

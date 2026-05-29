@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import DecorativeLine from "@/components/home/DecorativeLine";
+import BookDemoModal from "@/components/home/BookDemoModal";
 import SpecificationProductCard, {
   SpecificationProductItem,
 } from "../SpecificationProductCard";
@@ -42,6 +46,8 @@ const safeRemoteFirewallSpecifications: SpecificationProductItem[] = [
 ];
 
 export default function EnterpriseSolutions({ products = [] }: { products?: any[] }) {
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+
   const getProduct = (searchString: string) => {
     return products.find((p: any) =>
       (p.name || p.title || p.productName || "")?.toLowerCase().includes(searchString.toLowerCase())
@@ -83,6 +89,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
   const displayProducts = deviceProducts.length > 0 ? deviceProducts : fallbackProducts;
 
   return (
+    <>
     <div className="mx-auto w-full max-w-[1280px]">
       <div className={productSectionTitleClassName}>Security Gateways</div>
 
@@ -185,6 +192,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                     "Firewall & Anti-Virus Integration",
                   ]}
                   image="/images/product/software/marmaAgent.webp"
+                  onBookDemo={() => setIsDemoModalOpen(true)}
                 />
               </div>
             </div>
@@ -206,6 +214,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                     "Detects Zero-Day Social Engineering Patterns",
                   ]}
                   image="/images/product/software/email-Protection.webp"
+                  onBookDemo={() => setIsDemoModalOpen(true)}
                 />
                 <div className="mt-8" />
                 <EndpointProductCard
@@ -224,6 +233,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                     "Enterprise-Grade Security Controls",
                   ]}
                   image="/images/product/software/cloud-Protection.webp"
+                  onBookDemo={() => setIsDemoModalOpen(true)}
                 />
               </div>
             </div>
@@ -255,5 +265,12 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
         </div>
       </div>
     </div>
+
+      {/* Book a Demo Modal */}
+      <BookDemoModal
+        isOpen={isDemoModalOpen}
+        onClose={() => setIsDemoModalOpen(false)}
+      />
+    </>
   );
 }
