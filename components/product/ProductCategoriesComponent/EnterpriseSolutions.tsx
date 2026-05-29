@@ -193,6 +193,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                   ]}
                   image="/images/product/software/marmaAgent.webp"
                   onBookDemo={() => setIsDemoModalOpen(true)}
+                  bookDemoLabel="Request Trial License"
                 />
               </div>
             </div>

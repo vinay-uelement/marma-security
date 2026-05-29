@@ -10,6 +10,7 @@ interface EndpointProductCardProps {
   imageAlt?: string;
   imageClass?: string;
   onBookDemo?: () => void;
+  bookDemoLabel?: string;
 }
 
 export default function EndpointProductCard({
@@ -22,6 +23,7 @@ export default function EndpointProductCard({
   imageAlt,
   imageClass = "",
   onBookDemo,
+  bookDemoLabel,
 }: EndpointProductCardProps) {
   return (
     <div className="w-full h-full rounded-2xl bg-[#F5F5F5] p-5 sm:p-6 lg:p-7 flex flex-col gap-4">
@@ -73,7 +75,7 @@ export default function EndpointProductCard({
               onClick={onBookDemo}
               className="mt-4 self-start flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#FF0000] text-white font-banner text-[14px] md:text-[16px] tracking-[-0.01em] hover:bg-[#E10000] transition-colors hover:scale-[1.02] active:scale-[0.98]"
             >
-              Book a Demo
+              {bookDemoLabel || "Book a Demo"}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>

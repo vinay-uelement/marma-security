@@ -110,7 +110,7 @@ export default function Home() {
               icon: true,
             },
             {
-              label: "Book a Demo",
+              label: "connect with us",
               onClick: () => setIsDemoModalOpen(true),
               variant: "secondary",
               icon: true,
