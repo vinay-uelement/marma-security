@@ -8,6 +8,7 @@ import Banner from "@/components/home/Banner";
 import TumblingText from "@/components/home/TumblingText";
 // import OurTopProduct from "@/components/home/OurTopProduct";
 import AdvancedArchitecture from "@/components/technology/AdvancedArchitecture";
+import BookDemoModal from "@/components/home/BookDemoModal";
 
 // Dynamic imports
 const CybercrimeStats = dynamic(
@@ -63,6 +64,7 @@ export default function Home() {
   ];
 
   const [index, setIndex] = useState(0);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -105,6 +107,12 @@ export default function Home() {
               label: "Learn More",
               href: learnMoreLinks[index],
               variant: "primary",
+              icon: true,
+            },
+            {
+              label: "Connect With Us",
+              onClick: () => setIsDemoModalOpen(true),
+              variant: "secondary",
               icon: true,
             },
           ]}
@@ -203,6 +211,12 @@ export default function Home() {
       <div className="">
         <AdvancedArchitecture />
       </div>
+
+      {/* Book a Demo Modal */}
+      <BookDemoModal
+        isOpen={isDemoModalOpen}
+        onClose={() => setIsDemoModalOpen(false)}
+      />
     </div>
   );
 }
