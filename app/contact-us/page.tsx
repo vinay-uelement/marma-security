@@ -43,13 +43,16 @@ export default function ContactUsPage() {
                     </div>
 
                     {/* Buttons — vertically centered in the remaining space below subtitle */}
-                    <div className="flex-1 flex items-center">
+                    <div className="flex-1 flex flex-col items-center justify-center gap-6 w-full mt-4 sm:mt-0">
                         <div className="flex flex-row items-center justify-center gap-4 sm:gap-6 w-full ">
                             {/* Get Started Button */}
                             <Link href="#" className="w-full sm:w-auto">
                                 <Button onClick={toggleModal} icon label="Contact Us" className="w-full sm:w-auto whitespace-nowrap" />
                             </Link>
                         </div>
+                        <p className="text-white/80 text-sm md:text-base text-center">
+                            For product information and support in India, reach us at <a href="tel:+919175511808" className="font-semibold hover:text-white transition-colors">+91 9175511808</a>.
+                        </p>
                     </div>
                 </div>
             </section>
