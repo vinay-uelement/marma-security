@@ -15,6 +15,7 @@ export default function CenteredBookDemo() {
           variant="primary" 
           label="Book a Demo" 
           onClick={() => setIsDemoModalOpen(true)} 
+          textContainer="whitespace-nowrap"
         />
       </div>
       <BookDemoModal 

@@ -17,7 +17,7 @@ export default function SolutionButtons({ ctaLink, buttonText }: SolutionButtons
     <>
       <div className="flex flex-col sm:flex-row items-center gap-4">
         <Link href={ctaLink}>
-          <Button icon variant="primary" label={buttonText} />
+          <Button icon variant="primary" label={buttonText} textContainer="whitespace-nowrap" />
         </Link>
         <Button 
           icon
@@ -25,6 +25,7 @@ export default function SolutionButtons({ ctaLink, buttonText }: SolutionButtons
           label="Book a Demo" 
           onClick={() => setIsDemoModalOpen(true)} 
           className="!text-black !border-black/30 hover:!bg-black/5"
+          textContainer="whitespace-nowrap"
         />
       </div>
       <BookDemoModal 
