@@ -90,75 +90,63 @@ export default function Footer() {
               </div>
 
 
-              <div className={`grid grid-cols-2 gap-10 justify-between items-start`}>
-                <a
-                  href="tel:+14085828962"
-                  className="flex items-center gap-4 hover:opacity-80 transition-opacity"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                  </svg>
-                  <span>+1-408-582-8962</span>
-                </a>
-                <a
-                  href="mailto:info@marmasec.com"
-                  className="flex items-center gap-4 hover:opacity-80 transition-opacity break-all sm:break-normal"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                  </svg>
-                  <span>info@marmasec.com</span>
-                </a>
-                <a
-                  className="flex items-start gap-4 transition-opacity break-all sm:break-normal"
-                >
-                  <MapPin size={22} />
-                  <span>
-                    <span className="uppercase font-semibold">  USA HeadQuarters </span>
-                    <br />
-                    Marma Security Inc.,
-                    <br />
-                    180 Promenade Ste. 300,
-                    <br />
-                    Sacramento, CA - 95834
-                  </span>
-                </a>
-                <a
-                  className="flex items-start gap-4 transition-opacity break-all sm:break-normal"
-                >
-                  <MapPin size={22} />
-                  <span>
-                    <span className="uppercase font-semibold">   India Office </span>
-                    <br />
-                    Marmasec Private Limited,
-                    <br />
-                    J 1002, Mhada Towers,
-                    <br />
-                    Pimpri, Pune - 411017
-                  </span>
-                </a>
+              <div className="flex flex-col gap-10">
+                <div className="grid grid-cols-2 gap-10 justify-between items-start">
+                  {/* USA Column */}
+                  <div className="flex flex-col gap-4">
+                    <div className="flex items-start gap-4 transition-opacity break-all sm:break-normal">
+                      <MapPin size={22} className="shrink-0 mt-1" />
+                      <span>
+                        <span className="uppercase font-semibold">USA HeadQuarters</span>
+                        <br />
+                        Marma Security Inc.,
+                        <br />
+                        180 Promenade Ste. 300,
+                        <br />
+                        Sacramento, CA - 95834
+                      </span>
+                    </div>
+                    <a href="tel:+14085828962" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-[2px]">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                      <span>+1-408-582-8962</span>
+                    </a>
+                  </div>
 
+                  {/* India Column */}
+                  <div className="flex flex-col gap-4">
+                    <div className="flex items-start gap-4 transition-opacity break-all sm:break-normal">
+                      <MapPin size={22} className="shrink-0 mt-1" />
+                      <span>
+                        <span className="uppercase font-semibold">India Office</span>
+                        <br />
+                        Marmasec Private Limited,
+                        <br />
+                        J 1002, Mhada Towers,
+                        <br />
+                        Pimpri, Pune - 411017
+                      </span>
+                    </div>
+                    <a href="tel:+919175511808" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-[2px]">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                      <span>+91 91755 11808</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex justify-start w-full mt-2">
+                  <a href="mailto:info@marmasec.com" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>info@marmasec.com</span>
+                  </a>
+                </div>
               </div>
             </div>
             {/* Desktop Social Icons */}
@@ -248,79 +236,62 @@ export default function Footer() {
                 </div>
 
                 {/* Column 3 - Contact Links */}
-                <div className="flex flex-wrap gap-8 footer-contact-text text-[9px] pl-1 break-all col-span-2">
-                  <a
-                    href="tel:+14085828962"
-                    className="flex items-center gap-1.5 hover:opacity-80 transition-opacity w-[40%]"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="shrink-0"
-                    >
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                    <span>+1-408-582-8962</span>
-                  </a>
-                  <a
-                    href="mailto:info@marmasec.com"
-                    className="flex items-start gap-1.5 hover:opacity-80 transition-opacity w-[40%]"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="shrink-0 mt-[2px]"
-                    >
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                      <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <span className="break-all whitespace-normal">
-                      info@marmasec.com
-                    </span>
-                  </a>
-                  <a
+                <div className="flex flex-col gap-8 footer-contact-text text-[9px] pl-1 break-all col-span-2">
+                  <div className="flex flex-wrap gap-8 w-full justify-between pr-4">
+                    {/* USA Column */}
+                    <div className="flex flex-col gap-3 w-[45%]">
+                      <div className="flex items-start gap-1 break-all sm:break-normal">
+                        <MapPin size={16} className="shrink-0 mt-[2px]" />
+                        <span>
+                          <span className="uppercase font-semibold">USA HeadQuarters</span>
+                          <br />
+                          Marma Security Inc.,
+                          <br />
+                          180 Promenade <br /> Ste. 300,
+                          Sacramento, <br /> CA - 95834
+                        </span>
+                      </div>
+                      <a href="tel:+14085828962" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 ml-[2px]">
+                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>+1-408-582-8962</span>
+                      </a>
+                    </div>
 
-                    className="flex items-start gap-1 hover:opacity-80 transition-opacity break-all sm:break-normal w-[40%]"
-                  >
-                    <MapPin size={16} />
-                    <span>
-                      <span className="uppercase font-semibold">  USA HeadQuarters </span>
-                      <br />
-                      Marma Security Inc.,
-                      <br />
-                      180 Promenade <br /> Ste. 300,
+                    {/* India Column */}
+                    <div className="flex flex-col gap-3 w-[45%]">
+                      <div className="flex items-start gap-1 break-all sm:break-normal">
+                        <MapPin size={16} className="shrink-0 mt-[2px]" />
+                        <span>
+                          <span className="uppercase font-semibold">India Office</span>
+                          <br />
+                          Marmasec Private Limited,
+                          <br />
+                          J 1002, Mhada Towers,
+                          <br />
+                          Pimpri, Pune - 411017
+                        </span>
+                      </div>
+                      <a href="tel:+919175511808" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 ml-[2px]">
+                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>+91 91755 11808</span>
+                      </a>
+                    </div>
+                  </div>
 
-                      Sacramento, <br /> CA - 95834
-                    </span>
-                  </a>
-                  <a
-                    className="flex items-start gap-1 transition-opacity break-all sm:break-normal w-[40%]"
-                  >
-                    <MapPin size={16} />
-                    <span>
-                      <span className="uppercase font-semibold">   India Office </span>
-                      <br />
-                      Marmasec Private Limited,
-                      <br />
-                      J 1002, Mhada Towers,
-                      <br />
-                      Pimpri, Pune - 411017
-                    </span>
-                  </a>
+                  {/* Email */}
+                  <div className="flex justify-start w-full mt-2">
+                    <a href="mailto:info@marmasec.com" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-[2px]">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                      <span>info@marmasec.com</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import HighlightedText from "@/components/global/HighlightedText";
-import Button from "@/components/global/Button";
 import { industriesData } from "./industryData";
+import SolutionButtons from "./SolutionButtons";
+import CenteredBookDemo from "./CenteredBookDemo";
 
 export const dynamic = 'force-dynamic';
 
@@ -90,12 +91,8 @@ export default async function IndustrySolutionPage({ params }: { params: Promise
           <p className="text-gray-800 text-[15px] md:text-[17px] leading-relaxed mb-20">
             {data.hero.description}
           </p>
-          <div>
-            <Link
-              href={ctaLink}
-            >
-              <Button icon variant="primary" label={data.hero.buttonText} />
-            </Link>
+          <div className="flex justify-start">
+            <SolutionButtons ctaLink={ctaLink} buttonText={data.hero.buttonText as string} />
           </div>
         </div>
         <div className="w-full h-[300px] md:flex-1 md:h-[500px] relative rounded-2xl overflow-hidden">
@@ -138,6 +135,8 @@ export default async function IndustrySolutionPage({ params }: { params: Promise
               </div>
             );
           })}
+
+          <CenteredBookDemo />
 
         </div>
       </div>
