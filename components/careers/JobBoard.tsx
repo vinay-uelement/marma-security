@@ -7,8 +7,56 @@ import ApplicationForm from "./ApplicationForm";
 
 const jobs = [
   {
-    id: 2,
+    id: 4,
     isFilled: false,
+    title: "Sales Executive / Manager (2-5 Years)",
+    department: "Sales",
+    location: "Delhi, India",
+    type: "Full-time",
+    description: "Join our fast-growing product company to drive B2B and B2C sales for Marma Security products. We're looking for a motivated individual to build our partner ecosystem and own customer acquisition.",
+    requirements: [
+      "2–5 years of experience in Sales / Business Development",
+      "Proven ability to drive revenue and manage customer relationships",
+      "Strong networking and channel partner management skills",
+      "Excellent communication and strategic thinking"
+    ],
+    goodToHave: [
+      "Exposure to the Cyber Security domain"
+    ],
+    responsibilities: [
+      "Drive B2B & B2C sales for Marma Security products",
+      "Build and scale a strong channel partner ecosystem",
+      "Own revenue targets and customer acquisition",
+      "Work closely with leadership in a fast-growing product company"
+    ]
+  },
+  {
+    id: 3,
+    isFilled: false,
+    title: "Sales Executive / Manager (2-5 Years)",
+    department: "Sales",
+    location: "Kolkata, India",
+    type: "Full-time",
+    description: "Join our fast-growing product company to drive B2B and B2C sales for Marma Security products. We're looking for a motivated individual to build our partner ecosystem and own customer acquisition.",
+    requirements: [
+      "2–5 years of experience in Sales / Business Development",
+      "Proven ability to drive revenue and manage customer relationships",
+      "Strong networking and channel partner management skills",
+      "Excellent communication and strategic thinking"
+    ],
+    goodToHave: [
+      "Exposure to the Cyber Security domain"
+    ],
+    responsibilities: [
+      "Drive B2B & B2C sales for Marma Security products",
+      "Build and scale a strong channel partner ecosystem",
+      "Own revenue targets and customer acquisition",
+      "Work closely with leadership in a fast-growing product company"
+    ]
+  },
+  {
+    id: 2,
+    isFilled: true,
     title: "Sales Executive / Manager (2-5 Years)",
     department: "Sales",
     location: "Mumbai, India",

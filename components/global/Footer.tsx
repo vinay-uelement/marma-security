@@ -137,8 +137,8 @@ export default function Footer() {
                   </div>
                 </div>
 
-                {/* Email */}
-                <div className="flex justify-start w-full mt-2">
+                {/* Email and Social */}
+                <div className="grid grid-cols-2 gap-10 justify-between items-center w-full mt-2">
                   <a href="mailto:info@marmasec.com" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -146,26 +146,23 @@ export default function Footer() {
                     </svg>
                     <span>info@marmasec.com</span>
                   </a>
+
+                  <a
+                    href="https://www.linkedin.com/company/marmasecurity/"
+                    target="_blank"
+                    aria-label="LinkedIn"
+                    className="hover:opacity-80 transition-opacity flex items-center"
+                  >
+                    <Image
+                      src="/images/global/linkedin.svg"
+                      alt="LinkedIn"
+                      width={24}
+                      height={24}
+                      className="object-contain"
+                    />
+                  </a>
                 </div>
               </div>
-            </div>
-            {/* Desktop Social Icons */}
-            <div className="hidden md:flex items-end space-x-6 mt-auto">
-
-              <a
-                href="https://www.linkedin.com/company/marmasecurity/"
-                target="_blank"
-                aria-label="LinkedIn"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/global/linkedin.svg"
-                  alt="LinkedIn"
-                  width={30}
-                  height={30}
-                  className="object-contain"
-                />
-              </a>
             </div>
 
             {/* ======================================= */}
@@ -282,14 +279,29 @@ export default function Footer() {
                     </div>
                   </div>
 
-                  {/* Email */}
-                  <div className="flex justify-start w-full mt-2">
+                  {/* Email and Social */}
+                  <div className="flex w-full justify-between items-center pr-4 mt-2">
                     <a href="mailto:info@marmasec.com" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
                       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-[2px]">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                         <polyline points="22,6 12,13 2,6"></polyline>
                       </svg>
                       <span>info@marmasec.com</span>
+                    </a>
+
+                    <a
+                      href="https://www.linkedin.com/company/marmasecurity/"
+                      target="_blank"
+                      aria-label="LinkedIn"
+                      className="hover:opacity-80 transition-opacity flex items-center"
+                    >
+                      <Image
+                        src="/images/global/linkedin.svg"
+                        alt="LinkedIn"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                      />
                     </a>
                   </div>
                 </div>
@@ -301,24 +313,6 @@ export default function Footer() {
           <div className="flex flex-col items-center lg:items-end justify-center lg:justify-end mt-4 lg:mt-0 lg:mb-0 md:w-1/2">
             <div className="footer-form-glass">
               <FooterContactForm />
-            </div>
-
-            {/* Mobile Social Icons explicitly mapped below form strictly for Mobile constraints */}
-            <div className="flex md:hidden items-center justify-start space-x-6 pt-10 pb-0 w-full">
-              <a
-                href="https://www.linkedin.com/company/marmasecurity/"
-                target="_blank"
-                aria-label="LinkedIn"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src="/images/global/linkedin.svg"
-                  alt="LinkedIn"
-                  width={30}
-                  height={30}
-                  className="object-contain"
-                />
-              </a>
             </div>
           </div>
         </div>
