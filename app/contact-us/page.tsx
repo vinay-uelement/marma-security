@@ -51,7 +51,7 @@ export default function ContactUsPage() {
                             </Link>
                         </div>
                         <p className="text-white/80 text-sm md:text-base text-center">
-                            For product information and support in India, reach us at <a href="tel:+919175511808" className="font-semibold hover:text-white transition-colors">+91 9175511808</a>.
+                            For product information and support in Asia, reach us at <a href="tel:+919175511808" className="font-semibold hover:text-white transition-colors">+91 9175511808</a> and for the USA at <a href="tel:+14085828962" className="font-semibold hover:text-white transition-colors">+1-408-582-8962</a>.
                         </p>
                     </div>
                 </div>
