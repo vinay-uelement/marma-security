@@ -10,12 +10,13 @@ if (typeof window !== "undefined") {
 }
 
 const trustedCompanies = [
-  { name: "TechCorp", logo: null },
-  { name: "SecureNet", logo: null },
-  { name: "CloudFirst", logo: null },
-  { name: "DataShield", logo: null },
-  { name: "CyberGuard", logo: null },
-  { name: "NetProtect", logo: null },
+  { name: "Healthcare", logo: null },
+  { name: "Manufacturing", logo: null },
+  { name: "Finance", logo: null },
+  { name: "Legal", logo: null },
+  { name: "Construction", logo: null },
+  { name: "Energy", logo: null },
+  { name: "Education", logo: null },
 ];
 
 export default function TrustedByStrip() {
@@ -50,7 +51,7 @@ export default function TrustedByStrip() {
       <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
         {/* Label */}
         <p className="trusted-item text-center font-body text-[11px] md:text-[12px] tracking-[0.25em] uppercase text-[#AAAAAA] font-medium mb-8">
-          Trusted by fast-growing companies worldwide
+          Trusted by fast-growing companies worldwide IN
         </p>
 
         {/* Logo Row */}

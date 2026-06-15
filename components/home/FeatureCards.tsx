@@ -6,11 +6,11 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import {
   ShieldCheck,
-  Users,
-  BarChart3,
-  Clock,
-  Zap,
-  Globe,
+  Mail,
+  Cloud,
+  Server,
+  AlertTriangle,
+  FileCheck,
 } from "lucide-react";
 
 if (typeof window !== "undefined") {
@@ -22,54 +22,54 @@ const features = [
     icon: ShieldCheck,
     iconBg: "bg-red-50",
     iconColor: "text-brand-red",
-    title: "Threat Detection",
+    title: "Endpoint Threat Protection",
     description:
-      "AI-powered detection that identifies and blocks phishing, ransomware, and zero-day attacks before they reach your network.",
+      "AI-powered endpoint protection that proactively detects, prevents, and responds to malware, ransomware, fileless attacks, and suspicious behavior across desktops, laptops, and servers, helping organizations stay protected against modern cyber threats.",
     href: "/technology",
   },
   {
-    icon: Users,
+    icon: Mail,
     iconBg: "bg-blue-50",
     iconColor: "text-blue-600",
-    title: "Team Collaboration",
+    title: "Email Security",
     description:
-      "Unified security dashboard where your team can monitor, respond, and collaborate on threats in real-time.",
+      "Advanced email security that identifies and blocks phishing, business email compromise, malicious attachments, scam emails, and other email-borne threats before they reach users, reducing risk and improving organizational resilience.",
     href: "/solutions/enterprise",
   },
   {
-    icon: BarChart3,
+    icon: Cloud,
     iconBg: "bg-violet-50",
     iconColor: "text-violet-600",
-    title: "Advanced Analytics",
+    title: "Cloud Data Protection",
     description:
-      "Make smarter decisions with powerful security insights, custom reports, and behavioral analysis across your network.",
+      "Continuously monitors cloud storage platforms to identify sensitive data exposure, unauthorized sharing, and compliance risks, enabling organizations to secure critical business information and maintain data governance.",
     href: "/technology",
   },
   {
-    icon: Clock,
+    icon: Server,
     iconBg: "bg-sky-50",
     iconColor: "text-sky-600",
-    title: "24/7 Monitoring",
+    title: "Network Security Gateways",
     description:
-      "Round-the-clock real-time monitoring, instant alerts, and predictive protection that never sleeps.",
+      "Intelligent network security appliances that provide DNS security, threat prevention, content control, device quarantining and network visibility to protect users, devices, and business networks from cyber threats and unsafe internet activity.",
     href: "/technology",
   },
   {
-    icon: Zap,
+    icon: AlertTriangle,
     iconBg: "bg-amber-50",
     iconColor: "text-amber-600",
-    title: "Automated Response",
+    title: "Scam Protection",
     description:
-      "Automate repetitive security tasks and incident workflows to save time and reduce human error.",
+      "AI-driven scam detection technology that helps users identify and avoid phishing attempts, social engineering attacks, fraudulent websites, malicious messages, and emerging online scams before they cause harm.",
     href: "/solutions/enterprise",
   },
   {
-    icon: Globe,
+    icon: FileCheck,
     iconBg: "bg-emerald-50",
     iconColor: "text-emerald-600",
-    title: "Cloud Integration",
+    title: "Compliance Framework",
     description:
-      "Seamlessly connect with your favorite cloud tools and platforms — one unified security layer for everything.",
+      "A comprehensive compliance management solution that simplifies regulatory readiness by continuously assessing security controls, identifying gaps, tracking remediation efforts, and supporting frameworks such as DPDP, ISO 27001, NIST, CIS, and more.",
     href: "/technology",
   },
 ];

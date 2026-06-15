@@ -158,7 +158,7 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
                   />
                   <path d="M10 8l6 4-6 4V8z" fill="currentColor" />
                 </svg>
-                Watch Demo
+                Book A Demo
               </button>
             </div>
 
@@ -166,7 +166,7 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 pt-2">
               {[
                 "No credit card required",
-                "14-day free trial",
+                "30-day free trial",
                 "Cancel anytime",
               ].map((text) => (
                 <div
