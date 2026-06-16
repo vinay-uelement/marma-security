@@ -6,9 +6,10 @@ import Button from '../global/Button';
 interface BookDemoModalProps {
     isOpen: boolean;
     onClose: () => void;
+    bookDemoTitle?: string;
 }
 
-export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
+export default function BookDemoModal({ isOpen, onClose, bookDemoTitle }: BookDemoModalProps) {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -90,7 +91,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
 
                 <div className="bg-white p-8 md:p-10">
                     <h3 className="fl-banner-title text-text-dark font-semibold! text-center mb-2">
-                        Book a Demo
+                        {bookDemoTitle ||"Book a Demo"}
                     </h3>
                     <p className="text-center text-[#989898] text-sm md:text-base mb-8">
                         See how Marma Security can protect your business. Fill in your details and we&apos;ll schedule a personalized demo.

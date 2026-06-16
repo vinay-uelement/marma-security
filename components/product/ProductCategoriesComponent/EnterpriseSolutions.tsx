@@ -278,6 +278,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
       {/* Book a Demo Modal */}
       <BookDemoModal
         isOpen={isDemoModalOpen}
+        bookDemoTitle="Start Free Trial"
         onClose={() => setIsDemoModalOpen(false)}
       />
     </>
