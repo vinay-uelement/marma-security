@@ -94,7 +94,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
         {/* 1. Endpoint Protection Software & Cloud Security Services */}
         <div className="max-md:px-6">
           <div className="flex flex-col gap-8 lg:flex-col lg:gap-6">
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col h-full" id="agent-software-for-windows">
               <div className={productSectionTitleClassName}>
                 Endpoint Protection Software
               </div>
@@ -263,7 +263,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
             </div>
   
             <div className={productSectionTitleClassName}>Management Platform</div>
-            <div className="max-md:px-6 md:px-12">
+            <div className="max-md:px-6 md:px-12" id="management-platform">
               <ManagementProductCard
                 title="Enterprise Management Platform"
                 description="Cloud-based or Private Data Center hosted platform for centrally managing Security Gateways, Endpoint Protection, and Cloud Services across the enterprise."

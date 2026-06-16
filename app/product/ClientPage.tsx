@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useCallback, useRef } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ProductShowcase from "@/components/product/ProductShowcase";
@@ -97,6 +97,7 @@ const CARD_HEIGHT = 300;
 
 // ── HeroCarousel ──────────────────────────────────────────────────────────────
 function HeroCarousel() {
+  const router = useRouter();
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -234,7 +235,7 @@ function HeroCarousel() {
             <div
               onClick={() => {
                 if (isCenter) {
-                  window.location.href = product.href;
+                  router.push(product.href, { scroll: false });
                 } else if (isSide) {
                   setCurrent(i);
                 }
