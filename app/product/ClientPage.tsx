@@ -19,6 +19,22 @@ import ProductSummaryTable, {
 // ── Data ──────────────────────────────────────────────────────────────────────
 const heroProducts = [
   {
+    id:"management-platform",
+    href: "?tab=enterprise&product=management-platform",
+    label:"Management Platform",
+    isEnterprise:true,
+    image:"/images/marma-dashboard/enterprise_protection.webp",
+    alt:"Management Platform Product",
+  },
+  {
+    id: "endpoint-protection",
+    href: "?tab=enterprise&product=agent-software-for-windows",
+    label: "Marma Security Agent",
+    isEnterprise: true,
+    image: "/images/marma-dashboard/endpoint_protection.webp",
+    alt: "EndPoint Protection Software Product",
+  },
+  {
     id: "safegov",
     href: "?tab=enterprise&product=safeenterprise-400",
     label: "SafeEnterprise 400",
