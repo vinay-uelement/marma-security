@@ -134,6 +134,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
                     "Firewall & Anti-Virus Integration",
                   ]}
                   image="/images/product/software/marmaAgent.webp"
+                  bookDemoLabel="Start Free Trial"
                   onBookDemo={() => setIsDemoModalOpen(true)}
                 />
               </div>
