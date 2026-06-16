@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -10,8 +10,96 @@ interface SaaSHeroProps {
   onBookDemo: () => void;
 }
 
+const SLIDES = [
+  {
+    src: "/images/marma-dashboard/enterprise_protection.webp",
+    alt: "Marma Management Platform",
+  },
+  {
+    src: "/images/marma-dashboard/endpoint_protection.webp",
+    alt: "Marma Endpoint Protection Software",
+  },
+  // {
+  //   src: "/images/product/check.png",
+  //   alt: "Marma Hardware Security Gateways",
+  // },
+];
+
+const AUTOPLAY_INTERVAL = 4000;
+
 export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
   const containerRef = useRef<HTMLElement>(null);
+  const slidesRef = useRef<(HTMLDivElement | null)[]>([]);
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const isAnimatingRef = useRef(false);
+  const [current, setCurrent] = useState(0);
+  const [progressKey, setProgressKey] = useState(0);
+
+  const goToSlide = useCallback(
+    (next: number, fromAutoplay = false) => {
+      if (isAnimatingRef.current && !fromAutoplay) return;
+      if (next === current) return;
+
+      isAnimatingRef.current = true;
+
+      const currentEl = slidesRef.current[current];
+      const nextEl = slidesRef.current[next];
+
+      if (!currentEl || !nextEl) {
+        isAnimatingRef.current = false;
+        return;
+      }
+
+      gsap.set(nextEl, { opacity: 0, scale: 1.03, zIndex: 2 });
+      gsap.set(currentEl, { zIndex: 1 });
+
+      gsap.to(currentEl, {
+        opacity: 0,
+        scale: 0.97,
+        duration: 0.6,
+        ease: "power2.inOut",
+      });
+
+      gsap.to(nextEl, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        ease: "power2.inOut",
+        onComplete: () => {
+          gsap.set(currentEl, { zIndex: 0, scale: 1 });
+          isAnimatingRef.current = false;
+        },
+      });
+
+      setCurrent(next);
+      setProgressKey((k) => k + 1);
+    },
+    [current],
+  );
+
+  const startAutoplay = useCallback(() => {
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+    autoplayRef.current = setInterval(() => {
+      setCurrent((prev) => {
+        const next = (prev + 1) % SLIDES.length;
+        goToSlide(next, true);
+        return prev;
+      });
+    }, AUTOPLAY_INTERVAL);
+  }, [goToSlide]);
+
+  useEffect(() => {
+    startAutoplay();
+    return () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+    };
+  }, [startAutoplay]);
+
+  const handleDotClick = (idx: number) => {
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+    goToSlide(idx);
+    startAutoplay();
+  };
 
   useGSAP(
     () => {
@@ -27,7 +115,7 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
           duration: 0.8,
           stagger: 0.12,
           ease: "power3.out",
-        }
+        },
       );
 
       // Dashboard mockup entrance
@@ -42,7 +130,7 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
           duration: 1.2,
           delay: 0.3,
           ease: "power3.out",
-        }
+        },
       );
 
       // Floating decorative elements
@@ -72,7 +160,7 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
         yoyo: true,
       });
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
@@ -82,8 +170,8 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
     >
       {/* Subtle background gradient */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#FF000008] via-transparent to-transparent rounded-full" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#FF000005] via-transparent to-transparent rounded-full" />
+        <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-gradient-to-bl from-[#FF000008] via-transparent to-transparent rounded-full" />
+        <div className="absolute bottom-0 left-0 w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-gradient-to-tr from-[#FF000005] via-transparent to-transparent rounded-full" />
       </div>
 
       {/* Floating decorative dots */}
@@ -94,35 +182,30 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
       <div className="absolute bottom-[35%] right-[18%] w-1.5 h-1.5 bg-[#D0D0D0] rounded-full hidden lg:block" />
 
       {/* Main content */}
-      <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-16 pt-24 lg:pt-0 pb-12 lg:pb-0 relative z-10">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-16 pt-24 lg:pt-0 pb-12 lg:pb-0 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Left Column: Text Content */}
-          <div className="hero-text-content w-full lg:w-[48%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
-
+          <div className="hero-text-content w-full lg:w-[48%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 lg:space-y-6">
             {/* Main Headline */}
-            <h1 className="font-banner font-normal text-[32px] md:text-[40px] lg:text-[48px] leading-[1.15] tracking-[-0.02em] text-[#1A1A2E]">
-              The All-in-One{" "}
-              <br className="hidden sm:block" />
-              AI Cybersecurity{" "}
-              <br className="hidden sm:block" />
+            <h1 className="font-banner font-normal text-[28px] sm:text-[36px] md:text-[40px] lg:text-[48px] leading-[1.15] tracking-[-0.02em] text-[#1A1A2E]">
+              The All-in-One <br className="hidden sm:block" />
+              AI Cybersecurity <br className="hidden sm:block" />
               Platform for{" "}
-              <span className="text-brand-red font-medium">
-                Modern Teams
-              </span>
+              <span className="text-brand-red font-medium">Modern Teams</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="font-body font-light text-[16px] lg:text-[18px] leading-[1.6] text-[#5A5A7A] max-w-[480px]">
-              Marma helps you detect, prevent, and respond to cyber threats
-              — all in one powerful platform. Enterprise-grade security in
+            <p className="font-body font-light text-[15px] lg:text-[18px] leading-[1.6] text-[#5A5A7A] max-w-[480px]">
+              Marma helps you detect, prevent, and respond to cyber threats —
+              all in one powerful platform. Enterprise-grade security in
               minutes, no IT expertise needed.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 lg:gap-4 pt-2">
               <button
                 onClick={onBookDemo}
-                className="group relative flex items-center gap-2.5 bg-brand-red text-white rounded-full px-7 py-3 font-banner text-[15px] md:text-[16px] font-normal tracking-[-0.01em] hover:bg-brand-red-hover transition-all duration-300 shadow-lg shadow-brand-red/25 hover:shadow-xl hover:shadow-brand-red/30 hover:scale-[1.02]"
+                className="group relative flex items-center gap-2.5 bg-brand-red text-white rounded-full px-6 lg:px-7 py-3 font-banner text-[14px] md:text-[15px] lg:text-[16px] font-normal tracking-[-0.01em] hover:bg-brand-red-hover transition-all duration-300 shadow-lg shadow-brand-red/25 hover:shadow-xl hover:shadow-brand-red/30 hover:scale-[1.02]"
               >
                 Start Free Trial
                 <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
@@ -140,7 +223,7 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
 
               <button
                 onClick={onBookDemo}
-                className="flex items-center gap-2.5 border border-[#D0D0D0] text-[#333333] rounded-full px-7 py-3 font-banner text-[15px] md:text-[16px] font-normal tracking-[-0.01em] hover:border-[#999999] hover:bg-[#F5F5F5] transition-all duration-300"
+                className="flex items-center gap-2.5 border border-[#D0D0D0] text-[#333333] rounded-full px-6 lg:px-7 py-3 font-banner text-[14px] md:text-[15px] lg:text-[16px] font-normal tracking-[-0.01em] hover:border-[#999999] hover:bg-[#F5F5F5] transition-all duration-300"
               >
                 <svg
                   width="18"
@@ -163,18 +246,15 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
             </div>
 
             {/* Trust indicators */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 pt-2">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 lg:gap-x-6 gap-y-2 pt-2">
               {[
                 "No credit card required",
                 "30-day free trial",
                 "Cancel anytime",
               ].map((text) => (
-                <div
-                  key={text}
-                  className="flex items-center gap-1.5"
-                >
+                <div key={text} className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-brand-red" />
-                  <span className="font-body text-[12px] text-[#777777]">
+                  <span className="font-body text-[11px] sm:text-[12px] text-[#777777]">
                     {text}
                   </span>
                 </div>
@@ -183,51 +263,98 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
           </div>
 
           {/* Right Column: Dashboard Mockup */}
-          <div className="hero-dashboard w-full lg:w-[52%] relative" style={{ perspective: "1200px" }}>
+          <div
+            className="hero-dashboard w-full lg:w-[52%] relative"
+            style={{ perspective: "1200px" }}
+          >
+            {/* Dots navigation — lives OUTSIDE image, below it */}
             <div className="relative">
               {/* Subtle glow behind dashboard */}
               <div className="absolute -inset-8 bg-gradient-to-br from-brand-red/15 via-transparent to-brand-red/10 rounded-[40px] blur-3xl opacity-70" />
 
-              {/* Dashboard image */}
-              <div className="relative rounded-[24px] lg:rounded-[32px] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.4)] overflow-hidden transition-transform duration-700 hover:scale-[1.01] hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)]">
+              {/* Dashboard image slider */}
+              <div className="relative rounded-[16px] sm:rounded-[24px] lg:rounded-[32px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.35)] lg:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.4)] overflow-hidden transition-transform duration-700 hover:scale-[1.01] hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)]">
                 {/* Subtle glass reflection */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none mix-blend-overlay z-20" />
-                <Image
-                  src="/images/home/hero-tablet-dashboard.jpg"
-                  alt="Marma Security Agent Dashboard"
-                  width={1200}
-                  height={900}
-                  className="w-full h-auto object-cover relative z-10"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 52vw"
-                />
+
+                <div className="relative w-full" style={{ aspectRatio: "4/3" }}>
+                  {SLIDES.map((slide, idx) => (
+                    <div
+                      key={slide.src}
+                      ref={(el) => {
+                        slidesRef.current[idx] = el;
+                      }}
+                      className="absolute inset-0"
+                      style={{
+                        opacity: idx === 0 ? 1 : 0,
+                        zIndex: idx === 0 ? 2 : 0,
+                      }}
+                    >
+                      <Image
+                        src={slide.src}
+                        alt={slide.alt}
+                        fill
+                        className="object-cover"
+                        priority={idx === 0}
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 52vw"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Slider dots — placed BELOW the image, never overlapping */}
+              <div className="flex items-center justify-center gap-2 mt-4">
+                {SLIDES.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleDotClick(idx)}
+                    aria-label={`Go to slide ${idx + 1}`}
+                    className="relative h-2 rounded-full overflow-hidden transition-all duration-300 focus-visible:outline-2 focus-visible:outline-brand-red"
+                    style={{
+                      width: idx === current ? "28px" : "8px",
+                      backgroundColor:
+                        idx === current ? "#FF000040" : "#b5b5b5",
+                    }}
+                  >
+                    {idx === current && (
+                      <span
+                        key={progressKey}
+                        className="absolute inset-y-0 left-0 bg-brand-red rounded-full"
+                        style={{
+                          animation: `heroProgress ${AUTOPLAY_INTERVAL}ms linear forwards`,
+                        }}
+                      />
+                    )}
+                  </button>
+                ))}
               </div>
 
               {/* Floating notification card - top right */}
-              <div className="absolute -top-4 -right-4 lg:-top-6 lg:-right-8 bg-white/90 backdrop-blur-md rounded-2xl shadow-[0_15px_40px_-10px_rgba(0,0,0,0.15)] border border-white/50 px-4 py-3 hidden md:flex items-center gap-3 animate-pulse-slow z-30">
-                <div className="w-8 h-8 bg-green-500/10 rounded-full flex items-center justify-center">
-                  <CheckCircle2 className="w-4.5 h-4.5 text-green-600" />
+              <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 lg:-top-6 lg:-right-8 bg-white/90 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-[0_15px_40px_-10px_rgba(0,0,0,0.15)] border border-white/50 px-3 sm:px-4 py-2.5 sm:py-3 hidden sm:flex items-center gap-2.5 sm:gap-3 animate-pulse-slow z-30">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-green-500/10 rounded-full flex items-center justify-center">
+                  <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-600" />
                 </div>
                 <div>
-                  <p className="font-body text-[12px] font-semibold text-[#1A1A2E]">
+                  <p className="font-body text-[11px] sm:text-[12px] font-semibold text-[#1A1A2E]">
                     Threat Blocked
                   </p>
-                  <p className="font-body text-[10px] text-[#777777]">
+                  <p className="font-body text-[9px] sm:text-[10px] text-[#777777]">
                     Just now
                   </p>
                 </div>
               </div>
 
               {/* Floating stat card - bottom left */}
-              <div className="absolute -bottom-4 -left-4 lg:-bottom-6 lg:-left-8 bg-white/90 backdrop-blur-md rounded-2xl shadow-[0_15px_40px_-10px_rgba(0,0,0,0.15)] border border-white/50 px-5 py-3 hidden md:block z-30">
-                <p className="font-body text-[11px] text-[#888888] font-medium tracking-wide">
+              <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 lg:-bottom-6 lg:-left-8 bg-white/90 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-[0_15px_40px_-10px_rgba(0,0,0,0.15)] border border-white/50 px-4 sm:px-5 py-2.5 sm:py-3 hidden sm:block z-30">
+                <p className="font-body text-[10px] sm:text-[11px] text-[#888888] font-medium tracking-wide">
                   Devices Protected
                 </p>
-                <div className="flex items-baseline gap-2 mt-0.5">
-                  <p className="font-banner text-[24px] font-semibold text-[#1A1A2E] tracking-tight">
+                <div className="flex items-baseline gap-1.5 sm:gap-2 mt-0.5">
+                  <p className="font-banner text-[20px] sm:text-[24px] font-semibold text-[#1A1A2E] tracking-tight">
                     8,430
                   </p>
-                  <span className="font-body text-[11px] text-green-600 font-semibold bg-green-50 px-1.5 py-0.5 rounded-md">
+                  <span className="font-body text-[10px] sm:text-[11px] text-green-600 font-semibold bg-green-50 px-1.5 py-0.5 rounded-md">
                     +12.5%
                   </span>
                 </div>
@@ -236,6 +363,13 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes heroProgress {
+          from { width: 0%; }
+          to { width: 100%; }
+        }
+      `}</style>
     </section>
   );
 }
