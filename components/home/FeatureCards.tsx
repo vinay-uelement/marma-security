@@ -96,7 +96,7 @@ const features = [
     iconColor: "text-sky-600",
     title: "Network Security Gateways",
     description:
-      "Intelligent network security appliances that provide DNS security, threat prevention, content control, device quarantining and network visibility to protect users, devices, and business networks from cyber threats and unsafe internet activity.",
+      "Intelligent network security appliances that provide Firewall, Secure Wifi, DNS security, threat prevention, content control, device quarantining and network visibility to protect users, devices, and business networks from cyber threats and unsafe internet activity.",
     href: "/technology",
   },
   {
