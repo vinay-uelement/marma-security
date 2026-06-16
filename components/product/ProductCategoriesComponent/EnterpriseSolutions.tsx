@@ -145,7 +145,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                       "Continuous AI Learning & Updates",
                       "Detects Zero-Day Social Engineering Patterns",
                     ]}
-                    image="/images/product/software/email-Protection.webp"
+                    image="/images/marma-dashboard/email_protection.webp"
                     onBookDemo={() => setIsDemoModalOpen(true)}
                   />
                   <div className="mt-8" />
@@ -164,7 +164,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                       "Supports Compliance & Governance",
                       "Enterprise-Grade Security Controls",
                     ]}
-                    image="/images/product/software/cloud-Protection.webp"
+                    image="/images/marma-dashboard/cloud_data_protection.webp"
                     onBookDemo={() => setIsDemoModalOpen(true)}
                   />
                 </div>
@@ -267,7 +267,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
               <ManagementProductCard
                 title="Enterprise Management Platform"
                 description="Cloud-based or Private Data Center hosted platform for centrally managing Security Gateways, Endpoint Protection, and Cloud Services across the enterprise."
-                image="/images/product/software/firewallDashboard.webp"
+                image="/images/product/software/enterprise_protection.webp"
                 imageAlt="Enterprise Management Platform Screenshot"
               />
             </div>

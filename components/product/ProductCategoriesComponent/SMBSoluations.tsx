@@ -99,7 +99,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
             <ManagementProductCard
               title="Management Platform"
               description={smbManagementDescription}
-              image="/images/product/software/securityDashboard.webp"
+              image="/images/marma-dashboard/security_agents.webp"
               imageAlt="Management Platform"
             />
           </div>
