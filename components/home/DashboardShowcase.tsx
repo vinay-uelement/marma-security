@@ -77,12 +77,19 @@ export default function DashboardShowcase() {
         </p>
       </div>
 
-      <div className="showcase-browser relative w-full max-w-[1100px] bg-white rounded-[16px] sm:rounded-[24px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.12)] border border-[#E8E8EC] overflow-hidden self-center">
-        <div className="flex items-center gap-2 px-4 sm:px-6 py-3 sm:py-4 bg-[#F8F8FA] border-b border-[#ECECEF]">
-          <div className="flex items-center gap-1.5">
-            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FF5F56]" />
-            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FFBD2E]" />
-            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#27C93F]" />
+      <div className="showcase-browser relative w-full max-w-[1100px] bg-white rounded-[8px] sm:rounded-[12px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.12)] border border-[#E8E8EC] overflow-hidden self-center">
+        <div className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-3 bg-[#F8F8FA] border-b border-[#ECECEF]">
+          {/* Windows-style Navigation Arrows */}
+          <div className="flex items-center gap-3 text-[#BBBBBB] ml-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12l6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0zM12 8v4l3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </div>
           <div className="flex-1 mx-4 sm:mx-8">
             <div className="bg-white rounded-md h-6 sm:h-7 flex items-center px-3 border border-[#E5E5E5]">
@@ -109,10 +116,32 @@ export default function DashboardShowcase() {
               </span>
             </div>
           </div>
+          
+          {/* Windows Controls */}
+          <div className="flex items-center text-[#777777]">
+            {/* Minimize */}
+            <div className="px-3 py-1.5 hover:bg-[#E5E5E5] transition-colors cursor-pointer">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <path d="M1 5.5H10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+              </svg>
+            </div>
+            {/* Maximize */}
+            <div className="px-3 py-1.5 hover:bg-[#E5E5E5] transition-colors cursor-pointer">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <rect x="1.5" y="1.5" width="8" height="8" stroke="currentColor" strokeWidth="1.2" />
+              </svg>
+            </div>
+            {/* Close */}
+            <div className="px-3 py-1.5 hover:bg-[#E81123] hover:text-white transition-colors cursor-pointer">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <path d="M2 2L9 9M9 2L2 9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+              </svg>
+            </div>
+          </div>
         </div>
         <div className="relative w-full border-t border-[#ECECEF]">
           <Image
-            src="/images/product/software/enterprise-dashboard.webp"
+            src="/images/product/software/enterprise-dashboard1.webp"
             alt="Marma Platform Dashboard"
             width={1100}
             height={687}
