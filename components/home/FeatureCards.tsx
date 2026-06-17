@@ -234,7 +234,7 @@ export default function FeatureCards() {
               {outerSegmentsData.map((_, i) => (
                 <path
                   key={`outer-path-${i}`}
-                  className="arch-path hover:fill-[#ffdfdf] cursor-pointer"
+                  className="arch-path"
                   d={getArcPath(600, 600, 380, 550, -90 + i * 30, -90 + (i + 1) * 30)}
                   fill="url(#outerGrad)"
                   stroke="#ffcccc"
@@ -245,7 +245,7 @@ export default function FeatureCards() {
               {innerSegmentsData.map((_, i) => (
                 <path
                   key={`inner-path-${i}`}
-                  className="arch-path hover:fill-[#ffd4d4] cursor-pointer"
+                  className="arch-path"
                   d={getArcPath(600, 600, 160, 320, -90 + i * 15, -90 + (i + 1) * 15)}
                   fill="url(#innerGrad)"
                   stroke="#ffffff"
@@ -266,10 +266,10 @@ export default function FeatureCards() {
                 );
               })}
 
-              <line className="arch-base" x1="20" y1="600" x2="1180" y2="600" stroke="#ff0000" strokeWidth="1" opacity="0.3" />
+
 
               {/* Enterprise Security Platform Circular Pill */}
-              <g className="cursor-default group hover:brightness-110">
+              <g className="cursor-default">
                 {/* Main curved pill background */}
                 <path d={getSimpleArc(600, 600, 580, -17, 17)} stroke="url(#pillGradient)" strokeWidth="48" strokeLinecap="round" fill="none" />
                 
@@ -294,13 +294,13 @@ export default function FeatureCards() {
               </g>
 
               {/* AI-powered Security Services Circular Pill */}
-              <g className="cursor-default group hover:brightness-110">
+              <g className="cursor-default">
                 {/* Main curved pill background */}
-                <path d={getSimpleArc(600, 600, 350, -26, 26)} stroke="url(#pillGradient)" strokeWidth="40" strokeLinecap="round" fill="none" />
+                <path d={getSimpleArc(600, 600, 350, -90, 90)} stroke="url(#pillGradient)" strokeWidth="40" strokeLinecap="butt" fill="none" />
                 
                 {/* Inner glassmorphism highlight */}
-                <path d={getSimpleArc(600, 600, 350, -26, 26)} stroke="rgba(255,255,255,0.3)" strokeWidth="38" strokeLinecap="round" fill="none" />
-                <path d={getSimpleArc(600, 600, 350, -26, 26)} stroke="url(#pillGradient)" strokeWidth="36" strokeLinecap="round" fill="none" />
+                <path d={getSimpleArc(600, 600, 350, -90, 90)} stroke="rgba(255,255,255,0.3)" strokeWidth="38" strokeLinecap="butt" fill="none" />
+                <path d={getSimpleArc(600, 600, 350, -90, 90)} stroke="url(#pillGradient)" strokeWidth="36" strokeLinecap="butt" fill="none" />
 
                 {/* Curved Text with Sparkles */}
                 <text fill="#ffffff" fontSize="18" fontWeight="600" letterSpacing="0.03em" className="font-title drop-shadow-md pointer-events-none">
@@ -337,12 +337,9 @@ export default function FeatureCards() {
                     transform: `translate(-50%, -50%) rotate(${angle}deg)`,
                   }}
                 >
-                  <div className="flex flex-col items-center justify-center text-center group cursor-pointer pointer-events-auto">
+                  <div className="flex flex-col items-center justify-center text-center pointer-events-auto">
                     <Icon className="w-10 h-10 text-brand-red mb-3 drop-shadow-sm" strokeWidth={1.5} />
-                    <div className="w-7 h-7 rounded-full bg-brand-red text-white flex items-center justify-center text-[13px] font-bold mb-3 shadow-[0_4px_10px_rgba(255,0,0,0.3)] group-hover:shadow-[0_6px_15px_rgba(255,0,0,0.4)]">
-                      {data.id}
-                    </div>
-                    <div className="font-bold text-[#1A1A2E] text-[14px] md:text-[15px] leading-[1.3] whitespace-pre-line font-title group-hover:text-brand-red">
+                    <div className="font-bold text-[#1A1A2E] text-[14px] md:text-[15px] leading-[1.3] whitespace-pre-line font-title">
                       {data.title}
                     </div>
                   </div>
@@ -367,12 +364,9 @@ export default function FeatureCards() {
                     transform: `translate(-50%, -50%) rotate(${angle}deg)`,
                   }}
                 >
-                  <div className="flex flex-col items-center justify-start text-center group cursor-pointer pointer-events-auto">
-                    <Icon className="w-4 h-4 text-brand-red mb-1 opacity-80 group-hover:opacity-100" strokeWidth={2} />
-                    <div className="w-[18px] h-[18px] rounded-full bg-brand-red text-white flex items-center justify-center text-[9px] font-bold mb-1 shadow-[0_2px_8px_rgba(255,0,0,0.25)] group-hover:shadow-[0_4px_12px_rgba(255,0,0,0.4)]">
-                      {data.id}
-                    </div>
-                    <div className="font-semibold text-[#1A1A2E] text-[8px] md:text-[8.5px] leading-[1.1] whitespace-pre-line font-title tracking-tight group-hover:text-brand-red">
+                  <div className="flex flex-col items-center justify-start text-center pointer-events-auto">
+                    <Icon className="w-4 h-4 text-brand-red mb-1 opacity-80" strokeWidth={2} />
+                    <div className="font-semibold text-[#1A1A2E] text-[8px] md:text-[8.5px] leading-[1.1] whitespace-pre-line font-title tracking-tight">
                       {data.title}
                     </div>
                   </div>
@@ -392,14 +386,14 @@ export default function FeatureCards() {
             return (
               <div
                 key={feature.title}
-                className="feature-card group bg-white rounded-2xl border border-[#F0F0F0] p-6 lg:p-8 hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:border-[#E0E0E0] cursor-default"
+                className="feature-card bg-white rounded-2xl border border-[#F0F0F0] p-6 lg:p-8 cursor-default"
               >
                 <div
-                  className={`w-12 h-12 ${feature.iconBg} rounded-xl flex items-center justify-center mb-5 group-hover:shadow-md`}
+                  className={`w-12 h-12 ${feature.iconBg} rounded-xl flex items-center justify-center mb-5`}
                 >
                   <Icon className={`w-6 h-6 ${feature.iconColor}`} />
                 </div>
-                <h3 className="font-banner text-[18px] md:text-[20px] font-medium text-[#1A1A2E] mb-3 group-hover:text-brand-red">
+                <h3 className="font-banner text-[18px] md:text-[20px] font-medium text-[#1A1A2E] mb-3">
                   {feature.title}
                 </h3>
                 <p className="font-body text-[14px] md:text-[15px] text-[#777777] leading-relaxed mb-5">
@@ -407,7 +401,7 @@ export default function FeatureCards() {
                 </p>
                 <a
                   href={feature.href}
-                  className="inline-flex items-center gap-1.5 font-body text-[14px] font-medium text-brand-red hover:text-brand-red-hover group/link"
+                  className="inline-flex items-center gap-1.5 font-body text-[14px] font-medium text-brand-red"
                 >
                   Learn more
                   <svg
@@ -415,7 +409,7 @@ export default function FeatureCards() {
                     height="14"
                     viewBox="0 0 24 24"
                     fill="none"
-                    className="group-hover/link:translate-x-1"
+                    className=""
                   >
                     <path
                       d="M5 12h14M12 5l7 7-7 7"
