@@ -332,7 +332,7 @@ export default function FeatureCards() {
                 height={90} 
                 className="object-contain drop-shadow-sm mix-blend-multiply" 
               />
-              <span className="absolute top-full mt-2 font-title font-bold text-[16px] md:text-[18px] text-[#2A2A2A] text-center whitespace-nowrap">
+              <span className="absolute top-full -mt-2 font-title font-bold text-[16px] md:text-[18px] text-[#2A2A2A] text-center whitespace-nowrap">
                 Marma AI Cybersecurity Platform
               </span>
             </div>
