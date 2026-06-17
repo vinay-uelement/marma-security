@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export type IndustryData = {
   hero: {
@@ -14,7 +14,6 @@ export type IndustryData = {
   }>;
 };
 
-
 export const industriesData: Record<string, IndustryData> = {
   healthcare: {
     hero: {
@@ -23,16 +22,16 @@ export const industriesData: Record<string, IndustryData> = {
       buttonText: "Learn more about SafeEnterprise 400",
       imageSrc: [
         {
-          src: "/images/home/Security_Images (3).webp",
-          alt: "Healthcare dashboard",
+          src: "/images/marma-dashboard/alerts.webp",
+          alt: "Compliance reporting",
         },
         {
           src: "/images/marma-dashboard/endpoint_protection.webp",
           alt: "Patient data protection",
         },
         {
-          src: "/images/marma-dashboard/alerts.webp",
-          alt: "Compliance reporting",
+          src: "/images/home/Security_Images (3).webp",
+          alt: "Healthcare dashboard",
         },
       ],
     },
@@ -155,16 +154,16 @@ export const industriesData: Record<string, IndustryData> = {
         "Protect your legal practice with advanced protection from Phishing, Ransomware, Advanced Persistent Threats (APTs), Social Engineering, and other cyber threats. Marma Security SafeEnterprise 200 delivers enterprise-grade cybersecurity, designed to safeguard sensitive client information, case files, and critical legal systems. With simplified deployment and AI-powered threat detection, SafeEnterprise 200 ensures law firms can swiftly implement comprehensive cybersecurity measures, protecting confidential data and maintaining compliance with attorney-client privilege and other regulatory standards.",
       imageSrc: [
         {
-          src: "/images/home/Security_Images (2).webp",
-          alt: "Healthcare dashboard",
+          src: "/images/marma-dashboard/email_protection.webp",
+          alt: "Compliance reporting",
         },
         {
           src: "/images/marma-dashboard/endpoint_protection.webp",
           alt: "Patient data protection",
         },
         {
-          src: "/images/marma-dashboard/email_protection.webp",
-          alt: "Compliance reporting",
+          src: "/images/home/Security_Images (2).webp",
+          alt: "Healthcare dashboard",
         },
       ],
       buttonText: "Learn more about SafeEnterprise 200",
@@ -313,16 +312,16 @@ export const industriesData: Record<string, IndustryData> = {
         "Protect your financial practice with comprehensive protection from Phishing, Ransomware, Advanced Persistent Threats (APTs), social engineering and other cyber attacks. Marma Security SafeEnterprise 400 offers enterprise-grade cybersecurity that is simplified to ensure financial customers can deploy comprehensive cybersecurity measures swiftly, safeguarding their sensitive data and maintaining operational integrity.",
       imageSrc: [
         {
-          src: "/images/solutions/finance/0.webp",
-          alt: "Healthcare dashboard",
+          src: "/images/marma-dashboard/firewall_fleet.webp",
+          alt: "Compliance reporting",
         },
         {
           src: "/images/marma-dashboard/endpoint_protection.webp",
           alt: "Patient data protection",
         },
         {
-          src: "/images/marma-dashboard/firewall_fleet.webp",
-          alt: "Compliance reporting",
+          src: "/images/solutions/finance/0.webp",
+          alt: "Healthcare dashboard",
         },
       ],
       buttonText: "Learn more about SafeEnterprise 400",
@@ -472,16 +471,16 @@ export const industriesData: Record<string, IndustryData> = {
         "Protect your manufacturing operations with advanced protection from Phishing, Ransomware, Advanced Persistent Threats (APTs), Social Engineering, and other cyber threats. Marma Security SafeEnterprise 200 delivers enterprise-grade cybersecurity, designed to safeguard intellectual property, production systems, and supply chain data. With simplified deployment and AI-powered threat detection, SafeEnterprise 200 ensures manufacturers can swiftly implement comprehensive cybersecurity measures, protecting critical infrastructure, preventing downtime, and maintaining compliance with industry standards such as NIST and ISO 27001.",
       imageSrc: [
         {
-          src: "/images/home/Security_Images (1).webp",
-          alt: "Healthcare dashboard",
+          src: "/images/marma-dashboard/enterprise_protection.webp",
+          alt: "Compliance reporting",
         },
         {
           src: "/images/marma-dashboard/endpoint_protection.webp",
           alt: "Patient data protection",
         },
         {
-          src: "/images/marma-dashboard/enterprise_protection.webp",
-          alt: "Compliance reporting",
+          src: "/images/home/Security_Images (1).webp",
+          alt: "Healthcare dashboard",
         },
       ],
       buttonText: "Learn more about SafeEnterprise 200",
@@ -664,16 +663,16 @@ export const industriesData: Record<string, IndustryData> = {
         "Protect your small or medium-sized business (SMB) with advanced protection from Phishing, Ransomware, Advanced Persistent Threats (APTs), Social Engineering, and other cyber threats. Marma Security SafeBiz delivers enterprise-grade cybersecurity, designed to safeguard customer data, financial transactions, and business operations. With simplified deployment and AI-powered threat detection, SafeBiz ensures SMBs can swiftly implement comprehensive cybersecurity measures, protecting sensitive information, preventing costly downtime, and maintaining compliance with industry security standards.",
       imageSrc: [
         {
-          src: "/images/solutions/smb/0.webp",
-          alt: "Healthcare dashboard",
+          src: "/images/marma-dashboard/security_agent.webp",
+          alt: "Compliance reporting",
         },
         {
           src: "/images/marma-dashboard/endpoint_protection.webp",
           alt: "Patient data protection",
         },
         {
-          src: "/images/marma-dashboard/security_agent.webp",
-          alt: "Compliance reporting",
+          src: "/images/solutions/smb/0.webp",
+          alt: "Healthcare dashboard",
         },
       ],
       buttonText: "Learn more about SafeBiz",
@@ -847,16 +846,16 @@ export const industriesData: Record<string, IndustryData> = {
         "Protect your educational institution with advanced protection from Phishing, Ransomware, Advanced Persistent Threats (APTs), Social Engineering, and other cyber threats. Marma Security SafeEnterprise 100 delivers enterprise-grade cybersecurity, designed to safeguard student records, research data, and campus networks. With simplified deployment and AI-powered threat detection, SafeEnterprise 100 ensures schools, colleges, and universities can swiftly implement comprehensive cybersecurity measures, protecting sensitive information, preventing disruptions to learning, and maintaining compliance with FERPA and other data privacy regulations.",
       imageSrc: [
         {
-          src: "/Security_Images (6).webp",
-          alt: "Healthcare dashboard",
+          src: "/images/marma-dashboard/cloud_data_protection.webp",
+          alt: "Compliance reporting",
         },
         {
           src: "/images/marma-dashboard/endpoint_protection.webp",
           alt: "Patient data protection",
         },
         {
-          src: "/images/marma-dashboard/cloud_data_protection.webp",
-          alt: "Compliance reporting",
+          src: "/images/home/Security_Images (6).webp",
+          alt: "Healthcare dashboard",
         },
       ],
       buttonText: "Learn more about SafeEnterprise 100",
