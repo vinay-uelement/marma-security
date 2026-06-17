@@ -324,14 +324,17 @@ export default function FeatureCards() {
             </svg>
             
             {/* Marma Logo - centered at arch origin */}
-            <div className="arch-pill absolute z-20" style={{ left: '50%', top: `${(600 / 650) * 100}%`, transform: 'translate(-50%, -50%)' }}>
+            <div className="arch-pill absolute z-20 flex flex-col items-center justify-center -mt-6 md:-mt-8" style={{ left: '50%', top: `${(600 / 650) * 100}%`, transform: 'translate(-50%, -50%)' }}>
               <Image 
-                src="/images/global/logo.svg" 
+                src="/images/global/shortlogo.webp" 
                 alt="Marma Security" 
-                width={180} 
-                height={180} 
-                className="object-contain drop-shadow-sm" 
+                width={90} 
+                height={90} 
+                className="object-contain drop-shadow-sm mix-blend-multiply" 
               />
+              <span className="absolute top-full mt-2 font-title font-bold text-[16px] md:text-[18px] text-[#2A2A2A] text-center whitespace-nowrap">
+                Marma AI Cybersecurity Platform
+              </span>
             </div>
 
             {outerSegmentsData.map((data, i) => {
