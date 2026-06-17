@@ -22,6 +22,7 @@ import {
   ShieldAlert,
   Cpu
 } from "lucide-react";
+import Image from "next/image";
 
 function getArcPath(x: number, y: number, innerRadius: number, outerRadius: number, startAngle: number, endAngle: number) {
   const polarToCartesian = (centerX: number, centerY: number, radius: number, angleInDegrees: number) => {
@@ -253,20 +254,30 @@ export default function FeatureCards() {
                 />
               ))}
 
-              {[-75, -50, -25, 0, 25, 50, 75].map((angle, index) => {
-                const x1 = 600 + 40 * Math.sin(angle * Math.PI / 180);
-                const y1 = 570 - 40 * Math.cos(angle * Math.PI / 180);
-                const x2 = 600 + 90 * Math.sin(angle * Math.PI / 180);
-                const y2 = 570 - 90 * Math.cos(angle * Math.PI / 180);
+              {/* Center radial connector lines */}
+              {[-75, -50, -25, 0, 25, 50, 75].map((angle) => {
+                const x1 = 600 + 85 * Math.sin(angle * Math.PI / 180);
+                const y1 = 600 - 85 * Math.cos(angle * Math.PI / 180);
+                const x2 = 600 + 145 * Math.sin(angle * Math.PI / 180);
+                const y2 = 600 - 145 * Math.cos(angle * Math.PI / 180);
                 return (
                   <g key={`node-${angle}`} className="arch-node">
-                    <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="#ff0000" strokeWidth="2" strokeLinecap="round" className="opacity-70" />
-                    <circle cx={x2} cy={y2} r="4" fill="#ffffff" stroke="#ff0000" strokeWidth="2" className="drop-shadow-[0_0_4px_rgba(255,0,0,0.4)]" />
+                    <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="#ff0000" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+                    <circle cx={x2} cy={y2} r="3.5" fill="#ffffff" stroke="#ff0000" strokeWidth="1.5" className="drop-shadow-[0_0_3px_rgba(255,0,0,0.3)]" />
                   </g>
                 );
               })}
 
-
+              {/* Glowing center backdrop */}
+              <circle cx="600" cy="600" r="100" fill="url(#centerGlow)" opacity="0.9" />
+              
+              <defs>
+                <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="rgba(255,0,0,0.12)" />
+                  <stop offset="70%" stopColor="rgba(255,0,0,0.04)" />
+                  <stop offset="100%" stopColor="rgba(255,0,0,0)" />
+                </radialGradient>
+              </defs>
 
               {/* Enterprise Security Platform Circular Pill */}
               <g className="cursor-default">
@@ -312,12 +323,15 @@ export default function FeatureCards() {
 
             </svg>
             
-            <div className="arch-pill absolute z-20" style={{ left: '50%', top: `${(570 / 650) * 100}%`, transform: 'translate(-50%, -50%)' }}>
-              <div className="relative flex flex-col items-center justify-center w-16 h-16 bg-white rounded-xl shadow-[0_0_30px_rgba(255,0,0,0.25)] border border-[#ffcccc] cursor-default group">
-                <div className="absolute inset-0 bg-brand-red/10 rounded-xl"></div>
-                <Cpu className="w-8 h-8 text-brand-red mb-0.5 relative z-10" />
-                <span className="font-bold text-brand-red text-[14px] leading-none font-title relative z-10">AI</span>
-              </div>
+            {/* Marma Logo - centered at arch origin */}
+            <div className="arch-pill absolute z-20" style={{ left: '50%', top: `${(600 / 650) * 100}%`, transform: 'translate(-50%, -50%)' }}>
+              <Image 
+                src="/images/global/logo.svg" 
+                alt="Marma Security" 
+                width={180} 
+                height={180} 
+                className="object-contain drop-shadow-sm" 
+              />
             </div>
 
             {outerSegmentsData.map((data, i) => {
