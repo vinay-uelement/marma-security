@@ -19,10 +19,10 @@ const SLIDES = [
     src: "/images/marma-dashboard/endpoint_protection.webp",
     alt: "Marma Endpoint Protection Software",
   },
-  // {
-  //   src: "/images/product/check.png",
-  //   alt: "Marma Hardware Security Gateways",
-  // },
+  {
+    src: "/images/product/hardwareDevices.webp",
+    alt: "Marma Hardware Security Gateways",
+  },
 ];
 
 const AUTOPLAY_INTERVAL = 4000;
