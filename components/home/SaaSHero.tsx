@@ -166,7 +166,7 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
   return (
     <section
       ref={containerRef}
-      className="relative w-full min-h-[90vh] lg:min-h-[92vh] bg-[#FAFBFF] overflow-hidden flex items-center"
+      className="relative w-full min-h-fit lg:min-h-[92vh] bg-[#FAFBFF] overflow-hidden flex items-center"
     >
       {/* Subtle background gradient */}
       <div className="absolute inset-0 pointer-events-none">
@@ -182,7 +182,7 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
       <div className="absolute bottom-[35%] right-[18%] w-1.5 h-1.5 bg-[#D0D0D0] rounded-full hidden lg:block" />
 
       {/* Main content */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-16 pt-24 lg:pt-0 pb-12 lg:pb-0 relative z-10">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-16 pt-28 sm:pt-32 lg:pt-28 pb-12 lg:pb-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Left Column: Text Content */}
           <div className="hero-text-content w-full lg:w-[48%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 lg:space-y-6">
