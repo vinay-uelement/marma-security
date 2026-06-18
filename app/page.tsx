@@ -44,6 +44,7 @@ export default function Home() {
       {/* Book a Demo Modal */}
       <BookDemoModal
         isOpen={isDemoModalOpen}
+        bookDemoTitle="Start your free trial"
         onClose={() => setIsDemoModalOpen(false)}
       />
     </div>

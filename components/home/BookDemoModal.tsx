@@ -94,7 +94,7 @@ export default function BookDemoModal({ isOpen, onClose, bookDemoTitle }: BookDe
                         {bookDemoTitle ||"Book a Demo"}
                     </h3>
                     <p className="text-center text-[#989898] text-sm md:text-base mb-8">
-                        See how Marma Security can protect your business. Fill in your details and we&apos;ll schedule a personalized demo.
+                       Fill in your details to start your free trial and experience how Marma Security can protect your business.
                     </p>
 
                     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -170,7 +170,7 @@ export default function BookDemoModal({ isOpen, onClose, bookDemoTitle }: BookDe
 
                         {/* Submit button */}
                         <div className="flex justify-end pt-2">
-                            <Button icon label={isSubmitting ? "Submitting..." : "Book Demo"} />
+                            <Button icon label={isSubmitting ? "Submitting..." : "Submit"} />
                         </div>
                     </form>
                 </div>

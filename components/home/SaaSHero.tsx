@@ -220,29 +220,6 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
                   </svg>
                 </span>
               </button>
-
-              <button
-                onClick={onBookDemo}
-                className="flex items-center gap-2.5 border border-[#D0D0D0] text-[#333333] rounded-full px-6 lg:px-7 py-3 font-banner text-[14px] md:text-[15px] lg:text-[16px] font-normal tracking-[-0.01em] hover:border-[#999999] hover:bg-[#F5F5F5] transition-all duration-300"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="text-[#333333]"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  />
-                  <path d="M10 8l6 4-6 4V8z" fill="currentColor" />
-                </svg>
-                Book A Demo
-              </button>
             </div>
 
             {/* Trust indicators */}
@@ -331,7 +308,7 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
               </div>
 
               {/* Floating notification card - top right */}
-              <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 lg:-top-6 lg:-right-8 bg-white/90 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-[0_15px_40px_-10px_rgba(0,0,0,0.15)] border border-white/50 px-3 sm:px-4 py-2.5 sm:py-3 hidden sm:flex items-center gap-2.5 sm:gap-3 animate-pulse-slow z-30">
+              {/* <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 lg:-top-6 lg:-right-8 bg-white/90 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-[0_15px_40px_-10px_rgba(0,0,0,0.15)] border border-white/50 px-3 sm:px-4 py-2.5 sm:py-3 hidden sm:flex items-center gap-2.5 sm:gap-3 animate-pulse-slow z-30">
                 <div className="w-7 h-7 sm:w-8 sm:h-8 bg-green-500/10 rounded-full flex items-center justify-center">
                   <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-600" />
                 </div>
@@ -343,10 +320,10 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
                     Just now
                   </p>
                 </div>
-              </div>
+              </div> */}
 
               {/* Floating stat card - bottom left */}
-              <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 lg:-bottom-6 lg:-left-8 bg-white/90 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-[0_15px_40px_-10px_rgba(0,0,0,0.15)] border border-white/50 px-4 sm:px-5 py-2.5 sm:py-3 hidden sm:block z-30">
+              {/* <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 lg:-bottom-6 lg:-left-8 bg-white/90 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-[0_15px_40px_-10px_rgba(0,0,0,0.15)] border border-white/50 px-4 sm:px-5 py-2.5 sm:py-3 hidden sm:block z-30">
                 <p className="font-body text-[10px] sm:text-[11px] text-[#888888] font-medium tracking-wide">
                   Devices Protected
                 </p>
@@ -358,7 +335,7 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
                     +12.5%
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
