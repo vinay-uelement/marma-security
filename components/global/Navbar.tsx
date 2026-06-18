@@ -149,6 +149,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`fl2-nav ${isActive ? "!font-bold !text-[#000000]" : ""}`}
+                onClick={() => setIsSolutionsHovered(false)}
               >
                 {link.label}
               </Link>
@@ -163,6 +164,7 @@ export default function Navbar() {
               href="/contact-us"
               className="flex items-center justify-center transition-transform hover:scale-105"
               aria-label="Contact Us"
+              onClick={() => setIsSolutionsHovered(false)}
             >
               <Image
                 src="/images/global/call-nav.svg"
