@@ -280,9 +280,9 @@ export default function Footer() {
                   </div>
 
                   {/* Email and Social */}
-                  <div className="flex w-full justify-between items-center pr-4 mt-2">
+                  <div className="grid grid-cols-2 gap-8 w-full items-center pr-4 mt-2">
                     <a href="mailto:info@marmasec.com" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-[2px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                         <polyline points="22,6 12,13 2,6"></polyline>
                       </svg>
@@ -293,7 +293,7 @@ export default function Footer() {
                       href="https://www.linkedin.com/company/marmasecurity/"
                       target="_blank"
                       aria-label="LinkedIn"
-                      className="hover:opacity-80 transition-opacity flex items-center"
+                      className="hover:opacity-80 transition-opacity flex items-center shrink-0"
                     >
                       <Image
                         src="/images/global/linkedin.svg"
