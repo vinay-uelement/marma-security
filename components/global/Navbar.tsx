@@ -109,7 +109,7 @@ export default function Navbar() {
       >
         {/* Left Side: Logo */}
         <div className="flex flex-1 items-center min-w-0">
-          <Link href="/">
+          <Link href="/" onClick={() => setIsSolutionsHovered(false)}>
             <Image
               src="/images/global/logo.svg"
               alt="Marma Security"
