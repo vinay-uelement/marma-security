@@ -19,7 +19,7 @@ const CARD_WIDTH = 420;
 const CARD_HEIGHT = 300;
 const AUTOPLAY_INTERVAL = 4000;
 
-function getCardProps(offset: number) {
+function getCardProps(offset: number, sideOffset: number) {
   const abs = Math.abs(offset);
   const dir = offset <= 0 ? -1 : 1;
 
@@ -27,9 +27,9 @@ function getCardProps(offset: number) {
     case 0:
       return { x: 0, scale: 1.05, opacity: 1, zIndex: 30 };
     case 1:
-      return { x: dir * 340, scale: 0.72, opacity: 0.45, zIndex: 20 };
+      return { x: dir * sideOffset, scale: 0.72, opacity: 0.45, zIndex: 20 };
     default:
-      return { x: dir * 600, scale: 0.65, opacity: 0, zIndex: 0 };
+      return { x: dir * (sideOffset + 300), scale: 0.65, opacity: 0, zIndex: 0 };
   }
 }
 
@@ -39,12 +39,41 @@ export default function HeroImageSlider({
 }: HeroImageSliderProps) {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [cardWidth, setCardWidth] = useState(CARD_WIDTH);
+  const [cardHeight, setCardHeight] = useState(CARD_HEIGHT);
+  const [sideOffset, setSideOffset] = useState(340);
   const containerRef = useRef<HTMLDivElement>(null);
+  const outerRef = useRef<HTMLDivElement>(null);
   const total = images.length;
+
+  useEffect(() => {
+    const measure = () => {
+      const w = outerRef.current?.offsetWidth ?? 600;
+      const mobile = w < 500;
+      setIsMobile(mobile);
+
+      if (mobile) {
+        const cw = Math.round(w * 0.72);
+        const ch = Math.round(cw * (CARD_HEIGHT / CARD_WIDTH)); // keep aspect ratio
+        setCardWidth(cw);
+        setCardHeight(ch);
+        setSideOffset(Math.round(w * 0.35));
+      } else {
+        // Desktop: restore original values exactly
+        setCardWidth(CARD_WIDTH);
+        setCardHeight(CARD_HEIGHT);
+        setSideOffset(340);
+      }
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
 
   const next = useCallback(
     () => setCurrent((prev) => (prev + 1) % total),
-    [total],
+    [total]
   );
 
   useEffect(() => {
@@ -60,7 +89,7 @@ export default function HeroImageSlider({
         if (offset > total / 2) offset -= total;
         if (offset < -total / 2) offset += total;
 
-        const { x, scale, opacity, zIndex } = getCardProps(offset);
+        const { x, scale, opacity, zIndex } = getCardProps(offset, sideOffset);
         const card = containerRef.current?.querySelector(`.hero-slide-${i}`);
 
         if (card) {
@@ -76,40 +105,75 @@ export default function HeroImageSlider({
         }
       });
     },
-    { dependencies: [current], scope: containerRef },
+    { dependencies: [current, sideOffset], scope: containerRef }
   );
 
-  // Single image 
   if (total === 1) {
     return (
       <div className={`relative rounded-2xl overflow-hidden ${className}`}>
-        <Image
-          src={images[0].src}
-          alt={images[0].alt}
-          fill
-          className="object-cover"
-        />
+        <Image src={images[0].src} alt={images[0].alt} fill className="object-cover" />
       </div>
     );
   }
 
   return (
     <div
-      className={`flex flex-col items-center justify-center ${className}`}
-      style={{
-        // Fade edges horizontally b
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
-        maskImage:
-          "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
-      }}
+      ref={outerRef}
+      className={`relative flex flex-col items-center justify-center ${className}`}
+      style={
+        isMobile
+          ? {
+              // Mobile only: clip horizontal bleed, fade edges with real divs
+              overflowX: "clip",
+              overflowY: "visible",
+            }
+          : {
+              // Desktop: original mask — worked perfectly
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
+              maskImage:
+                "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)",
+            }
+      }
     >
+      {/* Mobile edge fades — real divs, don't clip shadows */}
+      {isMobile && (
+        <>
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "8%",
+              height: "100%",
+              background: "linear-gradient(to right, #F3F4F6, transparent)",
+              zIndex: 40,
+              pointerEvents: "none",
+            }}
+          />
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              top: 0,
+              right: 0,
+              width: "8%",
+              height: "100%",
+              background: "linear-gradient(to left, #F3F4F6, transparent)",
+              zIndex: 40,
+              pointerEvents: "none",
+            }}
+          />
+        </>
+      )}
+
       {/* Carousel track */}
       <div
         ref={containerRef}
         className="relative flex items-center justify-center w-full"
         style={{
-          height: CARD_HEIGHT + 80,
+          height: cardHeight + 80,
           overflow: "visible",
           paddingBottom: 40,
         }}
@@ -130,13 +194,18 @@ export default function HeroImageSlider({
                 position: "absolute",
                 left: "50%",
                 top: "50%",
-                marginLeft: -(CARD_WIDTH / 2),
-                marginTop: -(CARD_HEIGHT / 2),
+                marginLeft: -(cardWidth / 2),
+                marginTop: -(cardHeight / 2),
                 cursor: isSide ? "pointer" : "default",
+                borderRadius: 20,
+                boxShadow: isCenter
+                  ? "0 20px 60px rgba(0,0,0,0.18)"
+                  : "0 8px 24px rgba(0,0,0,0.08)",
+                transition: "box-shadow 0.8s ease",
               }}
               onClick={() => isSide && setCurrent(i)}
             >
-              {/* Glow beneath active card */}
+              {/* Bottom glow */}
               {isCenter && (
                 <div
                   style={{
@@ -157,8 +226,8 @@ export default function HeroImageSlider({
               {/* Card */}
               <div
                 style={{
-                  width: CARD_WIDTH,
-                  height: CARD_HEIGHT,
+                  width: cardWidth,
+                  height: cardHeight,
                   borderRadius: 20,
                   overflow: "hidden",
                   position: "relative",
@@ -166,10 +235,7 @@ export default function HeroImageSlider({
                   border: isCenter
                     ? "1px solid rgba(0,0,0,0.12)"
                     : "1px solid rgba(0,0,0,0.06)",
-                  boxShadow: isCenter
-                    ? "0 20px 60px rgba(0,0,0,0.18)"
-                    : "0 8px 24px rgba(0,0,0,0.08)",
-                  transition: "border 0.8s ease, box-shadow 0.8s ease",
+                  transition: "border 0.8s ease",
                 }}
               >
                 <Image
@@ -185,72 +251,6 @@ export default function HeroImageSlider({
           );
         })}
       </div>
-
-      {/* Controls */}
-      {/* <div className="flex items-center gap-3 mt-4 z-40">
-        <button
-          onClick={() => setCurrent((prev) => (prev - 1 + total) % total)}
-          aria-label="Previous slide"
-          className="w-8 h-8 rounded-full flex items-center justify-center bg-black/10 hover:bg-black/20 border border-black/10 transition-all duration-200"
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path
-              d="M9 2L4 7L9 12"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
-
-        <button
-          onClick={() => setPaused((p) => !p)}
-          aria-label={paused ? "Play" : "Pause"}
-          className="w-8 h-8 rounded-full flex items-center justify-center bg-black/10 hover:bg-black/20 border border-black/10 transition-all duration-200"
-        >
-          {paused ? (
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M3 2L10 6L3 10V2Z" fill="currentColor" />
-            </svg>
-          ) : (
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <rect
-                x="2"
-                y="2"
-                width="3"
-                height="8"
-                rx="1"
-                fill="currentColor"
-              />
-              <rect
-                x="7"
-                y="2"
-                width="3"
-                height="8"
-                rx="1"
-                fill="currentColor"
-              />
-            </svg>
-          )}
-        </button>
-
-        <button
-          onClick={() => setCurrent((prev) => (prev + 1) % total)}
-          aria-label="Next slide"
-          className="w-8 h-8 rounded-full flex items-center justify-center bg-black/10 hover:bg-black/20 border border-black/10 transition-all duration-200"
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path
-              d="M5 2L10 7L5 12"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
-      </div> */}
     </div>
   );
 }
