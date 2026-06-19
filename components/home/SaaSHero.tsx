@@ -191,7 +191,7 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
               The All-in-One <br className="hidden sm:block" />
               AI Cybersecurity <br className="hidden sm:block" />
               Platform for{" "}
-              <span className="text-brand-red font-medium">Modern Teams</span>
+              <span className="text-brand-red font-medium">Modern Enterprises</span>
             </h1>
 
             {/* Subtitle */}
