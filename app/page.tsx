@@ -16,6 +16,36 @@ const AdvancedArchitecture = dynamic(
 );
 
 export default function Home() {
+<<<<<<< HEAD
+=======
+  const phrases = ["Enterprises", "Small Businesses", "Homes"];
+
+  const images = [
+    "/images/product/SafeEnterprise4001.webp",
+    "/images/banners/homepage-right-banner1.webp",
+    "/images/banners/solution-banner-right1.webp",
+  ];
+
+  const rightImageClasses = [
+    "w-[30vh] md:w-[35vh] lg:w-[60svh] right-10! lg:right-10!",
+    "w-[30vh] md:w-[35vh] lg:w-[60svh]",
+    "w-[30vh] md:w-[35vh] lg:w-[60svh]",
+  ];
+
+  const learnMoreLinks = [
+    "/product?tab=enterprise&product=safeenterprise-400",
+    "/product?tab=smb&product=safebiz",
+    "/product?tab=home&product=safehome",
+  ];
+
+  const backgrounds = [
+    "/images/banners/hero400.webp",
+    "/images/home/Quick & Effortless Setup.webp",
+    "/images/home/heroHome.webp",
+  ];
+
+  const [index, setIndex] = useState(0);
+>>>>>>> e94fdd35b0a7c10324850dcac16dd6538608def4
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   return (
