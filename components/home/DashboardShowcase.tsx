@@ -154,7 +154,7 @@ export default function DashboardShowcase() {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 mt-8 lg:mt-12 max-w-[1000px] w-full">
         {[
-          { value: "99.9%", label: "Uptime SLA", trend: null },
+          { value: "99.99%", label: "Uptime SLA", trend: null },
           { value: "2,450+", label: "Threats Blocked Daily", trend: "+18.2%" },
           { value: "<5min", label: "Setup Time", trend: null },
           { value: "Custom", label: "Integrations", trend: null },
