@@ -91,113 +91,45 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
   return (
     <>
       <div className="mx-auto w-full max-w-[1280px]">
-        <div className={productSectionTitleClassName}>Security Gateways</div>
-
-        {displayProducts.map((prod: any, idx: number) => {
-          const isSecond = idx === 1;
-          const isAfterSecond = idx > 1;
-
-          return (
-            <div key={prod.id || idx}>
-              {/* Only show the decorative line before the second item */}
-              {isSecond && (
-                <div className="relative mb-2 md:mb-8 w-screen left-1/2 -translate-x-1/2">
-                  <div className="w-[500px] md:w-[600px] lg:w-[1000px]">
-                    <DecorativeLine
-                      viewBox="0 0 1500 80"
-                      points="0,40 310,40"
-                      dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
-                      className="w-full h-auto"
-                      animationDuration={2.4}
-                    />
-                  </div>
-                </div>
-              )}
-
-              <div id={prod.id || `enterprise-item-${idx}`} className={isAfterSecond ? "mt-2 sm:mt-4 lg:mt-10 xl:mt-12" : ""}>
-                <SpecificationProductCard
-                  title={prod.name || prod.title || "Enterprise Security Device"}
-                  descript={prod.description || enterpriseDescription}
-                  image={prod.image || "/images/product/SafeEnterprise2001.webp"}
-                  imageAlt={prod.imageAlt || prod.name || prod.title || "Enterprise security device"}
-                  specification={
-                    prod.keyCapabilities
-                      ? prod.keyCapabilities.map((c: any) => ({ label: c.title, value: c.description }))
-                      : prod.specifications || enterprise200Specifications
-                  }
+        {/* 1. Endpoint Protection Software & Cloud Security Services */}
+        <div className="max-md:px-6">
+          <div className="flex flex-col gap-8 lg:flex-col lg:gap-6">
+            <div className="flex flex-col h-full" id="agent-software-for-windows">
+              <div className={productSectionTitleClassName}>
+                Endpoint Protection Software
+              </div>
+              <div className="md:px-12">
+                <EndpointProductCard
+                  name="Agent Software for Windows"
+                  tagline="24×7 Endpoint Protection"
+                  subTitle="Stop Phishing, Ransomware & Malware Before They Strike"
+                  primaryFeature={<div>
+                    Powered by advanced deep packet inspection (DPI), the Marma Agent inspects all inbound and outbound traffic in real time automatically filtering and blocking threats with seamless performance and virtually no system slowdown.
+                    <br />
+                    Integrated with the Marma AI-Powered Security Cloud, the agent continuously adapts to the latest cyber threats, ensuring users stay protected without manual updates.
+                    <br />
+                    Unlike traditional solutions, the Marma Security Agent does not rely on slow VPN tunnels and never transmits customer data to the cloud, ensuring maximum privacy.
+                  </div>}
+                  features={[
+                    "Advanced Deep Packet Inspection for Threat protection",
+                    "Protects from phishing, ransomware, malware, and data breaches",
+                    "Updated automatically to protect from latest threats",
+                    "DNS Security",
+                    "URL Filtering",
+                    "Scam Protection",
+                    "Data Loss Prevention",
+                    "Firewall & Anti-Virus Integration",
+                  ]}
+                  image="/images/product/software/marmaAgent.webp"
+                  bookDemoLabel="Start Free Trial"
+                  onBookDemo={() => setIsDemoModalOpen(true)}
                 />
               </div>
             </div>
-          );
-        })}
 
-        <div className={productDecoratedSectionClassName}>
-          <div className="flex flex-col w-[50%] sm:w-[40%] min-[901px]:w-[35%] ml-auto pointer-events-none z-0">
-            <DecorativeLine
-              viewBox="0 0 500 80"
-              points="-3000,40 200,40"
-              dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
-              className="w-full h-auto scale-x-[-1]"
-              dotRadius={6}
-              animationDuration={2.5}
-            />
-            <DecorativeLine
-              viewBox="0 0 500 120"
-              points="150,20 210,90 3000,90"
-              dots={[{ cx: 150, cy: 20, rippleCount: 4, rippleBaseDelay: 0.9 }]}
-              className="w-full h-auto -mt-10 md:-mt-24"
-              dotRadius={7}
-              animationDuration={3}
-            />
-          </div>
-
-          <div className={productSectionTitleClassName}>Management Platform</div>
-          <div className="max-md:px-6 md:px-12">
-            <ManagementProductCard
-              title="Enterprise Management Platform"
-              description="Cloud-based or Private Data Center hosted platform for centrally managing Security Gateways, Endpoint Protection, and Cloud Services across the enterprise."
-              image="/images/product/software/firewallDashboard.webp"
-              imageAlt="Enterprise Management Platform Screenshot"
-            />
-          </div>
-        </div>
-
-        <div className="max-md:px-6">
-          <div className={productSectionClassName}>
-            <div className="flex flex-col gap-8 lg:flex-col lg:gap-6">
-              <div className="flex flex-col h-full">
-                <div className={productHalfSectionTitleClassName}>
-                  Endpoint Protection Software
-                </div>
-                <div className="md:px-12">
-                  <EndpointProductCard
-                    name="Agent Software for Windows"
-                    tagline="24×7 Endpoint Protection"
-                    subTitle="Stop Phishing, Ransomware & Malware Before They Strike"
-                    primaryFeature={<div>
-                      Powered by advanced deep packet inspection (DPI), the Marma Agent inspects all inbound and outbound traffic in real time automatically filtering and blocking threats with seamless performance and virtually no system slowdown.
-                      <br />
-                      Integrated with the Marma AI-Powered Security Cloud, the agent continuously adapts to the latest cyber threats, ensuring users stay protected without manual updates.
-                      <br />
-                      Unlike traditional solutions, the Marma Security Agent does not rely on slow VPN tunnels and never transmits customer data to the cloud, ensuring maximum privacy.
-                    </div>}
-                    features={[
-                      "Advanced Deep Packet Inspection for Threat protection",
-                      "Protects from phishing, ransomware, malware, and data breaches",
-                      "Updated automatically to protect from latest threats",
-                      "DNS Security",
-                      "URL Filtering",
-                      "Scam Protection",
-                      "Data Loss Prevention",
-                      "Firewall & Anti-Virus Integration",
-                    ]}
-                    image="/images/product/software/marmaAgent.webp"
-                    onBookDemo={() => setIsDemoModalOpen(true)}
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col h-full">
-                <div className={productHalfSectionTitleClassName}>
+            <div className="flex flex-col h-full">
+              <div className={productSectionClassName}>
+                <div className={productSectionTitleClassName}>
                   Cloud Security Services
                 </div>
                 <div className="md:px-12">
@@ -213,7 +145,7 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                       "Continuous AI Learning & Updates",
                       "Detects Zero-Day Social Engineering Patterns",
                     ]}
-                    image="/images/product/software/email-Protection.webp"
+                    image="/images/marma-dashboard/email_protection.webp"
                     onBookDemo={() => setIsDemoModalOpen(true)}
                   />
                   <div className="mt-8" />
@@ -232,14 +164,17 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
                       "Supports Compliance & Governance",
                       "Enterprise-Grade Security Controls",
                     ]}
-                    image="/images/product/software/cloud-Protection.webp"
+                    image="/images/marma-dashboard/cloud_data_protection.webp"
                     onBookDemo={() => setIsDemoModalOpen(true)}
                   />
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
+        {/* Integration Services */}
+        <div className="max-md:px-6">
           <div className={productSectionClassName}>
             <div className={productSectionTitleClassName}>
               Integration Services
@@ -264,11 +199,86 @@ export default function EnterpriseSolutions({ products = [] }: { products?: any[
             </div>
           </div>
         </div>
+
+        {/* 3. Security Gateways */}
+        <div className={productSectionClassName}>
+          <div className={productSectionTitleClassName}>Security Gateways</div>
+  
+          {displayProducts.map((prod: any, idx: number) => {
+            const isSecond = idx === 1;
+            const isAfterSecond = idx > 1;
+  
+            return (
+              <div key={prod.id || idx}>
+                {/* Only show the decorative line before the second item */}
+                {isSecond && (
+                  <div className="relative mb-2 md:mb-8 w-screen left-1/2 -translate-x-1/2">
+                    <div className="w-[500px] md:w-[600px] lg:w-[1000px]">
+                      <DecorativeLine
+                        viewBox="0 0 1500 80"
+                        points="0,40 310,40"
+                        dots={[{ cx: 310, cy: 40, rippleCount: 3 }]}
+                        className="w-full h-auto"
+                        animationDuration={2.4}
+                      />
+                    </div>
+                  </div>
+                )}
+  
+                <div id={prod.id || `enterprise-item-${idx}`} className={isAfterSecond ? "mt-2 sm:mt-4 lg:mt-10 xl:mt-12" : ""}>
+                  <SpecificationProductCard
+                    title={prod.name || prod.title || "Enterprise Security Device"}
+                    descript={prod.description || enterpriseDescription}
+                    image={prod.image || "/images/product/SafeEnterprise2001.webp"}
+                    imageAlt={prod.imageAlt || prod.name || prod.title || "Enterprise security device"}
+                    specification={
+                      prod.keyCapabilities
+                        ? prod.keyCapabilities.map((c: any) => ({ label: c.title, value: c.description }))
+                        : prod.specifications || enterprise200Specifications
+                    }
+                  />
+                </div>
+              </div>
+            );
+          })}
+  
+          <div className={productDecoratedSectionClassName}>
+            <div className="flex flex-col w-[50%] sm:w-[40%] min-[901px]:w-[35%] ml-auto pointer-events-none z-0">
+              <DecorativeLine
+                viewBox="0 0 500 80"
+                points="-3000,40 200,40"
+                dots={[{ cx: 200, cy: 40, rippleCount: 3 }]}
+                className="w-full h-auto scale-x-[-1]"
+                dotRadius={6}
+                animationDuration={2.5}
+              />
+              <DecorativeLine
+                viewBox="0 0 500 120"
+                points="150,20 210,90 3000,90"
+                dots={[{ cx: 150, cy: 20, rippleCount: 4, rippleBaseDelay: 0.9 }]}
+                className="w-full h-auto -mt-10 md:-mt-24"
+                dotRadius={7}
+                animationDuration={3}
+              />
+            </div>
+  
+            <div className={productSectionTitleClassName}>Management Platform</div>
+            <div className="max-md:px-6 md:px-12" id="management-platform">
+              <ManagementProductCard
+                title="Enterprise Management Platform"
+                description="Cloud-based or Private Data Center hosted platform for centrally managing Security Gateways, Endpoint Protection, and Cloud Services across the enterprise."
+                image="/images/product/software/enterprise_protection.webp"
+                imageAlt="Enterprise Management Platform Screenshot"
+              />
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Book a Demo Modal */}
       <BookDemoModal
         isOpen={isDemoModalOpen}
+        bookDemoTitle="Start Free Trial"
         onClose={() => setIsDemoModalOpen(false)}
       />
     </>

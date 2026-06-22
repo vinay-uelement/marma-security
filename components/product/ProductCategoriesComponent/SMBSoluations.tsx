@@ -99,7 +99,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
             <ManagementProductCard
               title="Management Platform"
               description={smbManagementDescription}
-              image="/images/product/software/securityDashboard.webp"
+              image="/images/marma-dashboard/security_agents.webp"
               imageAlt="Management Platform"
             />
           </div>
@@ -134,6 +134,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
                     "Firewall & Anti-Virus Integration",
                   ]}
                   image="/images/product/software/marmaAgent.webp"
+                  bookDemoLabel="Start Free Trial"
                   onBookDemo={() => setIsDemoModalOpen(true)}
                 />
               </div>
@@ -166,6 +167,7 @@ export default function SMBSoluations({ products = [] }: { products?: any[] }) {
       {/* Book a Demo Modal */}
       <BookDemoModal
         isOpen={isDemoModalOpen}
+        bookDemoTitle="Start Free Trial"
         onClose={() => setIsDemoModalOpen(false)}
       />
     </>
