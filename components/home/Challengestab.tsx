@@ -21,7 +21,7 @@ const tabItems: TabData[] = [
     label: "Complex Setup & Maintenance",
     title: "Zero-Touch Deployment",
     description:
-      "Marma's AI-powered security gateways install in under five minutes with true plug-and-play simplicity. Designed for users with zero IT knowledge, the cloud-managed platform runs autonomously in the background, handling all updates and threat monitoring without manual configurations or ongoing maintenance.",
+      "Marma’s AI-powered security software and gateways install in under five minutes with true plug-and-play simplicity. Designed for users with zero IT knowledge, the cloud-managed platform runs autonomously in the background, handling all updates and threat monitoring without manual configurations or ongoing maintenance.",
     image: "/images/home/overcomming1.webp",
   },
   {
