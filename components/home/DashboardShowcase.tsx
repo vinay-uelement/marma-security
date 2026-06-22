@@ -157,7 +157,7 @@ export default function DashboardShowcase() {
           { value: "99.9%", label: "Uptime SLA", trend: null },
           { value: "2,450+", label: "Threats Blocked Daily", trend: "+18.2%" },
           { value: "<5min", label: "Setup Time", trend: null },
-          { value: "50+", label: "Integrations", trend: null },
+          { value: "Custom", label: "Integrations", trend: null },
         ].map((stat) => (
           <div
             key={stat.label}
