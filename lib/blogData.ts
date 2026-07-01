@@ -26,7 +26,7 @@ export const blogs: BlogPost[] = [
     content: `
       <h2>Introduction</h2>
       <p>The healthcare industry is rapidly adopting digital technologies such as EHR, cloud systems, and connected medical devices to improve patient care. However, this digital transformation has also increased cybersecurity challenges like ransomware, phishing, and data breaches.</p>
-      <p>Protecting sensitive patient information is now a priority for healthcare organizations. Reliable healthcare cybersecurity solutions help secure healthcare systems, reduce cyber risks, and maintain patient trust. Marma Security provides AI-powered cybersecurity protection to help safeguard patient data, networks, and critical digital infrastructure.</p>
+      <p>Protecting sensitive patient information is now a priority for healthcare organizations. Reliable <a href="/solutions/healthcare">healthcare cybersecurity solutions</a> help secure healthcare systems, reduce cyber risks, and maintain patient trust. Marma Security provides AI-powered cybersecurity protection to help safeguard patient data, networks, and critical digital infrastructure.</p>
       
       <h2>Why Healthcare Organizations Need Advanced Cybersecurity Protection</h2>
       <p>Healthcare providers handle sensitive information, including:</p>
@@ -53,7 +53,7 @@ export const blogs: BlogPost[] = [
       <p>Advanced email security and threat detection solutions help identify malicious attempts before they reach users.</p>
       
       <h2>What Are Healthcare Cybersecurity Solutions?</h2>
-      <p>Healthcare Cybersecurity Solutions are security technologies and services designed specifically to protect healthcare environments from cyber threats.</p>
+      <p><a href="/solutions/healthcare">Healthcare Cybersecurity Solutions</a> are security technologies and services designed specifically to protect healthcare environments from cyber threats.</p>
       <p>These solutions help organizations secure:</p>
       <ul>
         <li>Patient data</li>
@@ -125,7 +125,7 @@ export const blogs: BlogPost[] = [
       </ul>
       
       <h2>How to Choose the Best Healthcare Cybersecurity Companies</h2>
-      <p>When comparing the best healthcare cybersecurity companies, organizations should evaluate:</p>
+      <p>When comparing the <a href="/solutions/healthcare">best healthcare cybersecurity companies</a>, organizations should evaluate:</p>
       
       <h3>Healthcare Industry Experience</h3>
       <p>The provider should understand healthcare-specific security risks and requirements.</p>
@@ -153,7 +153,7 @@ export const blogs: BlogPost[] = [
       
       <h2>Conclusion</h2>
       <p>Healthcare organizations must prioritize cybersecurity to protect patient data, healthcare systems, and digital infrastructure from growing cyber threats. Effective healthcare cybersecurity solutions help prevent data breaches, reduce risks, and maintain patient trust.</p>
-      <p>Marma Security provides AI-powered cybersecurity solutions that help healthcare organizations protect against phishing, ransomware, and evolving cyber threats. Contact us today to secure your healthcare environment and protect critical patient data.</p>
+      <p><a href="/">Marma Security</a> provides AI-powered cybersecurity solutions that help healthcare organizations protect against phishing, ransomware, and evolving cyber threats. <a href="/contact-us">Contact us today</a> to secure your healthcare environment and protect critical patient data.</p>
       
       <h2>FAQs</h2>
       
