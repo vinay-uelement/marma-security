@@ -50,6 +50,12 @@ export default function Footer() {
                 >
                   About Us
                 </Link>
+                <Link
+                  href="/blogs"
+                  className="hover:text-white/70 transition-colors"
+                >
+                  Blogs
+                </Link>
 
                 <Link
                   href="/partners"
@@ -183,6 +189,12 @@ export default function Footer() {
                     className="hover:text-white/70 transition-colors"
                   >
                     About Us
+                  </Link>
+                  <Link
+                    href="/blogs"
+                    className="hover:text-white/70 transition-colors"
+                  >
+                    Blogs
                   </Link>
                   <Link
                     href="/product"

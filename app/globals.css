@@ -783,3 +783,49 @@ img {
 .policy-section h3 {
   @apply font-body font-semibold text-[15px] md:text-[17px] text-text-dark mt-6 mb-2;
 }
+
+/* ===============================================================
+   BLOG PAGES
+   =============================================================== */
+
+.prose-blog {
+  color: var(--color-text-dark);
+  font-family: var(--font-body);
+}
+
+.prose-blog p {
+  @apply text-[16px] md:text-[18px] leading-[1.8] text-[#333333] mb-6 font-light;
+}
+
+.prose-blog a {
+  @apply text-brand-red underline hover:opacity-75 transition-opacity font-medium;
+}
+
+.prose-blog h2 {
+  @apply font-title font-bold text-[24px] md:text-[32px] text-text-dark mt-12 mb-6 tracking-tight;
+}
+
+.prose-blog h3 {
+  @apply font-title font-semibold text-[20px] md:text-[24px] text-text-dark mt-8 mb-4 tracking-tight;
+}
+
+.prose-blog ul,
+.prose-blog ol {
+  @apply pl-6 mb-8 space-y-3;
+}
+
+.prose-blog ul {
+  list-style-type: disc;
+}
+
+.prose-blog ol {
+  list-style-type: decimal;
+}
+
+.prose-blog li {
+  @apply text-[16px] md:text-[18px] leading-[1.8] text-[#333333] font-light;
+}
+
+.prose-blog strong {
+  @apply font-semibold text-text-dark;
+}
