@@ -13,7 +13,7 @@ export default function BlogCard({ blog }: { blog: BlogPost }) {
             fill
             className="object-cover"
           />
-          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
+          <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
             <span className="font-body font-bold text-brand-red uppercase tracking-wide text-[10px]">{blog.category}</span>
           </div>
         </div>
