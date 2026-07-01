@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!blog) return { title: 'Blog Not Found' };
 
   return {
-    title: `${blog.title} | Marma Security Blogs`,
-    description: blog.excerpt,
+    title: blog.metaTitle || `${blog.title} | Marma Security Blogs`,
+    description: blog.metaDescription || blog.excerpt,
   };
 }
 
@@ -59,12 +59,13 @@ export default async function SingleBlogPage({ params }: { params: Promise<{ slu
 
         {/* Featured Image */}
         {blog.imageUrl && (
-          <div className="relative w-full h-[300px] md:h-[400px] mb-12 rounded-[16px] overflow-hidden border border-[#E5E5E5]">
+          <div className="w-full mb-12 rounded-[16px] overflow-hidden border border-[#E5E5E5]">
             <Image
               src={blog.imageUrl}
-              alt={blog.title}
-              fill
-              className="object-cover"
+              alt={blog.altText || blog.title}
+              width={1200}
+              height={630}
+              className="w-full h-auto"
               priority
             />
           </div>
