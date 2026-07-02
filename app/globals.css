@@ -829,3 +829,40 @@ img {
 .prose-blog strong {
   @apply font-semibold text-text-dark;
 }
+
+.prose-blog table {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-spacing: 0;
+  border: 1px solid #D9D9D9;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.prose-blog thead {
+  background-color: #F5F5F5;
+}
+
+.prose-blog th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  padding: 12px 20px;
+  font-size: 15px;
+  border-bottom: 2px solid #D9D9D9;
+}
+
+.prose-blog td {
+  padding: 12px 20px;
+  font-size: 15px;
+  color: #333333;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+.prose-blog tr:last-child td {
+  border-bottom: none;
+}
+
+.prose-blog tbody tr:hover td {
+  background-color: #FAFAFA;
+}
