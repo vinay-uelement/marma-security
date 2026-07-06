@@ -84,8 +84,8 @@ export default function PartnersPage() {
           animationDuration={3}
         />
       </div>
-      <PartneringMadeEasy />
       <RegionalPartners />
+      <PartneringMadeEasy />
       <PartnerBenefits />
 
       <div className="fl3 text-bold max-w-[1200px] text-center mx-auto pb-8">

@@ -50,7 +50,7 @@ export const PARTNERS: Record<RegionKey, Partner[]> = {
     { name: "Antraco Aruba", website: "https://www.antracoaruba.com/", logo: "/images/partners/logos/antraco.jpg", region: "Caribbean" },
   ],
   Thailand: [
-    { name: "PeakSecure", website: "https://www.peaksecure.ai/", logo: "/images/partners/logos/peaksecure.png", region: "Thailand" },
+    { name: "PeakSecure", website: "https://www.peaksecure.ai/", logo: "/images/partners/logos/peaksecure.svg", region: "Thailand", theme: "dark" },
   ],
 };
 
