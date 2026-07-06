@@ -250,7 +250,7 @@ export default function SaaSHero({ onBookDemo }: SaaSHeroProps) {
               <div className="absolute -inset-8 bg-gradient-to-br from-brand-red/15 via-transparent to-brand-red/10 rounded-[40px] blur-3xl opacity-70" />
 
               {/* Dashboard image slider */}
-              <div className="relative rounded-[16px] sm:rounded-[24px] lg:rounded-[32px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.35)] lg:shadow-[0_30px_80px_-20px_rgba(0,0,0,0.4)] overflow-hidden transition-transform duration-700 hover:scale-[1.01] hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)]">
+              <div className="relative overflow-hidden transition-transform duration-700 hover:scale-[1.01]">
                 {/* Subtle glass reflection */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none mix-blend-overlay z-20" />
 
