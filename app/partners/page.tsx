@@ -7,6 +7,7 @@ import PartneringMadeEasy from "@/components/partners/PartneringMadeEasy";
 import PartnerBenefits from "@/components/partners/PartnerBenefits";
 import SimplifyLife from "@/components/partners/SimplifyLife";
 import PartnersBottomBanner from "@/components/partners/PartnersBottomBanner";
+import RegionalPartners from "@/components/partners/RegionalPartners";
 import Button from "@/components/global/Button";
 import ContactModal from "@/components/contact/ContactModal";
 import DecorativeLine from "@/components/home/DecorativeLine";
@@ -84,6 +85,7 @@ export default function PartnersPage() {
         />
       </div>
       <PartneringMadeEasy />
+      <RegionalPartners />
       <PartnerBenefits />
 
       <div className="fl3 text-bold max-w-[1200px] text-center mx-auto pb-8">
