@@ -866,3 +866,22 @@ img {
 .prose-blog tbody tr:hover td {
   background-color: #FAFAFA;
 }
+
+/* ======= Partner Carousel ======= */
+@keyframes partner-carousel-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.partner-carousel-track {
+  animation: partner-carousel-scroll 40s linear infinite;
+}
+
+.partner-carousel-track:hover {
+  animation-play-state: paused;
+}
